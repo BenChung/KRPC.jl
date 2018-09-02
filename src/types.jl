@@ -33,13 +33,13 @@ function getWireValue(arg::Array{UInt8,1})
     return readavailable(opb)
 end
 
-function getWireValue{T}(arg::Array{T, 1})
+function getWireValue(arg::Array{T, 1}) where T
     opb = PipeBuffer()
     ProtoBuf.writeproto(opb, krpc.schema.List(items=map(getWireValue, arg)))
     return readavailable(opb)
 end
 
-function getWireValue{K,V}(arg::Dict{K,V})
+function getWireValue(arg::Dict{K,V}) where {K, V}
     opb = PipeBuffer()
     op = Array{Array{UInt8,1},1}()
     for kv in arg
@@ -50,7 +50,7 @@ function getWireValue{K,V}(arg::Dict{K,V})
     return readavailable(opb)
 end
 
-function getWireValue{T}(arg::Set{T})
+function getWireValue(arg::Set{T}) where T
     opb = PipeBuffer()
     ProtoBuf.writeproto(opb, krpc.schema.Set(items=map(getWireValue, arg)))
     return readavailable(opb)
@@ -86,12 +86,12 @@ end
 function getJuliaValue(value::krpc.schema.Response, rtype::Type)
     return getJuliaValue(value.return_value, rtype)
 end
-function getJuliaValue{T<:kRPCTypes.Class}(value::Array{UInt8, 1}, rtype::Type{T})
+function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{T}) where {T<:kRPCTypes.Class}
     return rtype(ProtoBuf.read_varint(PipeBuffer(value), Int64))
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Void)
-    return Void()
+function getJuliaValue(value::Array{UInt8, 1}, rtype::Nothing)
+    return Nothing()
 end
 
 function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{AbstractString})
@@ -115,27 +115,27 @@ function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{Array{UInt8,1}})
     return ProtoBuf.read_bytes(PipeBuffer(value))
 end
 
-function getJuliaValue{T}(value::Array{UInt8, 1}, rtype::Type{Array{T,1}})
+function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{Array{T,1}}) where T
     res = readproto(PipeBuffer(value), krpc.schema.List())
     return T[getJuliaValue(item,T) for item in res.items]
 end
 
-function getJuliaValue{T <: (Tuple{Vararg{T,N} where T where N})}(value::Array{UInt8, 1}, rtype::Type{T})
+function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{T}) where T <: (Tuple{Vararg{T,N} where T where N})
     res = readproto(PipeBuffer(value), krpc.schema.Tuple_())
-    return ([getJuliaValue(param[1],param[2]) for param in zip(res.items, rtype.parameters)]...)
+    return ([getJuliaValue(param[1],param[2]) for param in zip(res.items, rtype.parameters)]...,)
 end
 
-function getJuliaValue{K,V}(value::Array{UInt8, 1}, rtype::Type{Dict{K,V}})
+function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{Dict{K,V}}) where {K,V}
     res = readproto(PipeBuffer(value), krpc.schema.Dictionary())
     return Dict{K,V}(getJuliaValue(v.key,K) => getJuliaValue(v.value,V) for v in res.entries)
 end
 
-function getJuliaValue{T}(value::Array{UInt8, 1}, rtype::Type{Set{T}})
+function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{Set{T}}) where {T}
     res = readproto(PipeBuffer(value), krpc.schema.Set())
     return Set{T}(getJuliaValue(item,T) for item in res.items)
 end
 
-function getJuliaValue{T<:kRPCTypes.Class}(value::Array{UInt8, 1}, rtype::Type{Nullable{T}})
+function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{Nullable{T}}) where {T<:kRPCTypes.Class}
     res = ProtoBuf.read_varint(PipeBuffer(value), Int64)
     if res == 0
         return Nullable{T}()

@@ -5,28 +5,28 @@ using ..kRPC
 using ProtoBuf
 
 abstract type ProcedureType end
-type Standard <: ProcedureType
+struct Standard <: ProcedureType
     name::String
 end
-type ServiceGetter <: ProcedureType
+struct ServiceGetter <: ProcedureType
     name::String
 end
-type ServiceSetter <: ProcedureType
+struct ServiceSetter <: ProcedureType
     name::String
 end
-type ClassGetter <: ProcedureType
+struct ClassGetter <: ProcedureType
     clss::String
     name::String
 end
-type ClassSetter <: ProcedureType
+struct ClassSetter <: ProcedureType
     clss::String
     name::String
 end
-type StaticMember <: ProcedureType
+struct StaticMember <: ProcedureType
     clss::String
     name::String
 end
-type Member <: ProcedureType
+struct Member <: ProcedureType
     clss::String
     name::String
 end
@@ -54,7 +54,7 @@ function makeparam(kName::String)
     return kName
 end
 
-type SymbolContext
+struct SymbolContext
     current::Symbol # the service we're currently in
     needed::Base.Set{Symbol} # services required to be imported by the current service
     neededEnums::Base.Set{Tuple{Symbol, Symbol}} # service/enum combinations needed
@@ -64,7 +64,7 @@ function kRPCToJuliaType(kType::_Type,ctx::SymbolContext,delayed::Bool)
     kcode = kType.code
     types = kType.types
     if kcode == Type_TypeCode.NONE # ?
-        return Void
+        return Nothing()
     elseif kcode == Type_TypeCode.DOUBLE return :Float64
     elseif kcode == Type_TypeCode.FLOAT return :Float32
     elseif kcode == Type_TypeCode.SINT32 return :Int32
@@ -121,13 +121,13 @@ function getArgument(idx::Int, arg)
 end
 
 
-function generateRemoteCallGenerator(service::AbstractString, proc::Procedure, jlArgs, rtype::Union{Symbol, Expr, Void})
+function generateRemoteCallGenerator(service::AbstractString, proc::Procedure, jlArgs, rtype::Union{Symbol, Expr, Nothing})
     return :(ProcedureCall(service=$service, procedure=$(proc.name), arguments=$jlArgs))
 end
 
-function generateRemoteCall(service::AbstractString, proc::Procedure, jlArgs, rtype::Union{Symbol, Expr, Void})
+function generateRemoteCall(service::AbstractString, proc::Procedure, jlArgs, rtype::Union{Symbol, Expr, Nothing})
     postamble = Array{Expr,1}()
-    if typeof(rtype) != Void
+    if typeof(rtype) != Nothing
         push!(postamble, quote return kRPC.getJuliaValue(result.results[1].value,$rtype) end)
     end
     return Expr(:block,
@@ -139,7 +139,7 @@ function generateRemoteCall(service::AbstractString, proc::Procedure, jlArgs, rt
         postamble...)
 end
 
-function generateRemoteCallDelayed(service::AbstractString, proc::Procedure, jlArgs, rtype::Union{Symbol, Expr, Void}, darg)
+function generateRemoteCallDelayed(service::AbstractString, proc::Procedure, jlArgs, rtype::Union{Symbol, Expr, Nothing}, darg)
     return quote
         return kRPC.kPC($(generateRemoteCallGenerator(service, proc, jlArgs, rtype)), $rtype)
     end
@@ -149,7 +149,7 @@ twopartTypeR = r"^([^_]+)_([^_]+)$"
 threepartTypeR = r"^([^_]+)_([^_]+)_([^_]+)$"
 
 function parseKind(name::String) :: ProcedureType
-    if ismatch(twopartTypeR, name)
+    if occursin(twopartTypeR, name)
         captures = match(twopartTypeR, name).captures
         if captures[1] == "get"
             return ServiceGetter(captures[2])
@@ -158,7 +158,7 @@ function parseKind(name::String) :: ProcedureType
         else
             return Member(captures[1], captures[2])
         end
-    elseif ismatch(threepartTypeR, name)
+    elseif occursin(threepartTypeR, name)
         captures = match(threepartTypeR, name).captures
         if captures[2] == "static"
             return StaticMember(captures[1], captures[3])
@@ -177,7 +177,7 @@ end
 function makeParameter(i::Int, param)
     if length(param.default_value) > 0
         quote
-            if !isa($(Symbol(param.name)), Void)
+            if !isa($(Symbol(param.name)), Nothing)
                 push!(args, Argument(position=$(i-1), value=kRPC.getWireValue($(makeparam(param.name)))))
             end
         end
@@ -201,11 +201,11 @@ function generateProcedureCall(service::String, proc::Procedure, ctx::SymbolCont
     exprargs = Any[ :($(makeparam(param.name)) :: $(kRPCToJuliaType(param._type,ctx,false))) for param in filter(p -> length(p.default_value) == 0, proc.parameters)]
     dexprargs = Any[ :($(makeparam(param.name)) :: $(kRPCToJuliaType(param._type,ctx,true))) for param in filter(p -> length(p.default_value) == 0, proc.parameters)]
 
-    optargs = Any[ Expr(:kw,Expr(:(::),makeparam(param.name),:(Union{Void,$(kRPCToJuliaType(param._type,ctx,false))})),Void()) for param in filter(p -> length(p.default_value) > 0, proc.parameters)]
-    doptargs = Any[ Expr(:kw,Expr(:(::),makeparam(param.name),:(Union{Void,$(kRPCToJuliaType(param._type,ctx,true))})),Void()) for param in filter(p -> length(p.default_value) > 0, proc.parameters)]
+    optargs = Any[ Expr(:kw,Expr(:(::),makeparam(param.name),:(Union{Nothing,$(kRPCToJuliaType(param._type,ctx,false))})),Nothing()) for param in filter(p -> length(p.default_value) > 0, proc.parameters)]
+    doptargs = Any[ Expr(:kw,Expr(:(::),makeparam(param.name),:(Union{Nothing,$(kRPCToJuliaType(param._type,ctx,true))})),Nothing()) for param in filter(p -> length(p.default_value) > 0, proc.parameters)]
     if length(optargs) > 0
-        unshift!(exprargs, Expr(:parameters, optargs...))
-        unshift!(dexprargs, Expr(:parameters, doptargs...))
+        pushfirst!(exprargs, Expr(:parameters, optargs...))
+        pushfirst!(dexprargs, Expr(:parameters, doptargs...))
     end
 
     if ProtoBuf.has_field(proc, :return_type)
@@ -214,13 +214,13 @@ function generateProcedureCall(service::String, proc::Procedure, ctx::SymbolCont
             retty = :(Nullable{$retty})
         end
     else
-        retty = Void()
+        retty = Nothing()
     end
 
     headargs = copy(exprargs)
     dheadargs = copy(dexprargs)
-    fnhead = Expr(:call, unshift!(headargs, name) ...)
-    fnheadd = Expr(:call, unshift!(dheadargs, name) ...)
+    fnhead = Expr(:call, pushfirst!(headargs, name) ...)
+    fnheadd = Expr(:call, pushfirst!(dheadargs, name) ...)
     paramgen = quote
         args = Array{kRPC.krpc.schema.Argument,1}();
         $([makeParameter(i, proc.parameters[i]) for i=1:length(proc.parameters)]...);
@@ -271,7 +271,7 @@ function generateHelpers(info::Services,conn::kRPC.kRPCConnection)
     for service in info.services
         for cls in service.classes
             clsname = sanitizeName(Symbol(cls.name))
-            push!(services[service.name], :(type $clsname <: kRPC.kRPCTypes.Class handle::Base.UInt64 end; 
+            push!(services[service.name], :(struct $clsname <: kRPC.kRPCTypes.Class handle::Base.UInt64 end; 
                                             @doc $(cls.documentation) $clsname;
                                             export $clsname))
         end
@@ -283,7 +283,7 @@ function generateHelpers(info::Services,conn::kRPC.kRPCConnection)
             for val in enu.values
                 val_name,val_value = (Symbol(val.name), val.value)
 
-                push!(enumarr,:(type $val_name <: $enum_name end; export $val_name))
+                push!(enumarr,:(struct $val_name <: $enum_name end; export $val_name))
                 push!(addons,:(function getEnumVal(::$(Symbol(service.name)).$enum_mod_name.$val_name) return $val_value end))
             end
             push!(services[service.name],quote module $enum_mod_name using ..kRPC; $(enumarr...) end end)
@@ -295,13 +295,13 @@ function generateHelpers(info::Services,conn::kRPC.kRPCConnection)
             push!(dservices[service.name], dproc)
         end
         for needed in symbolContext.needed
-            unshift!(services[service.name], Expr(:using, :(.), :(.), needed))
-            unshift!(dservices[service.name], Expr(:using, :(.), :(.), :(.), needed))
+            pushfirst!(services[service.name], Expr(:using, Expr(:., :(.), :(.), needed)))
+            pushfirst!(dservices[service.name], Expr(:using, Expr(:.,:(.), :(.), :(.), needed)))
         end
         for needed in symbolContext.neededEnums
-            unshift!(dservices[service.name], Expr(:import, :(.), :(.), needed[2]))
+            pushfirst!(dservices[service.name], Expr(:import, Expr(:.,:(.), :(.), needed[2])))
         end
-        unshift!(dservices[service.name], Expr(:using, :(.), :(.), Symbol(service.name)))
+        pushfirst!(dservices[service.name], Expr(:using, Expr(:.,:(.), :(.), Symbol(service.name))))
     end
 
 

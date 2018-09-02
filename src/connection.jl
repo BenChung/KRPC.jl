@@ -20,7 +20,7 @@ function connect_or_error(conn, cr :: krpc.schema.ConnectionRequest)
 end
 
 function generateStubs(conn)
-	cachepath = joinpath(@__DIR__, "..", "dep")
+	cachepath = joinpath(@__DIR__, "..", "deps")
 	genpath = joinpath(cachepath, "gen.jl")
 	if isfile(genpath)
 		kRPC.eval(:(include($genpath)))
@@ -37,7 +37,7 @@ function generateStubs(conn)
 end
 
 function kRPCConnect(host::String, port::Int64, stream_port::Int64, client_name::String)
-    if endof(client_name) > 31
+    if lastindex(client_name) > 31
         throw(ArgumentError("client name too long"))
     end 
 
@@ -60,7 +60,7 @@ end
 function SendMessage(conn::kRPCConnection, pcall::kPC)
     res = SendBiMessage(conn, krpc.schema.Request(calls=[pcall.pcall]))
     handle_potential_error(res)
-    if pcall.rty != Void
+    if pcall.rty != Nothing
         return getJuliaValue(res.results[1].value,pcall.rty)
     end
 end
@@ -68,7 +68,7 @@ end
 function SendMessage(conn::kRPCConnection, pcalls::AbstractArray{kPC})
     res = SendBiMessage(conn, krpc.schema.Request(calls=map(p->p.pcall, pcalls)))
     handle_potential_error(res)
-    return [if pcalls[i].rty != Void getJuliaValue(res.results[i].value, pcalls[i].rty) else Void() end for i=1:length(pcalls)]
+    return [if pcalls[i].rty != Nothing getJuliaValue(res.results[i].value, pcalls[i].rty) else Nothing() end for i=1:length(pcalls)]
 end
 
 function kRPCDisconnect(conn::kRPCConnection)

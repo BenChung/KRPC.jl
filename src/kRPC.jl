@@ -2,8 +2,10 @@ __precompile__()
 module kRPC
 include("protobuf/krpc.jl")
 using ProtoBuf
+using Sockets
+using Nullables
 
-type kRPCConnection
+struct kRPCConnection
     conn::TCPSocket
     stream_conn::TCPSocket
     identifier::Array{UInt8, 1}
@@ -11,7 +13,7 @@ end
 
 Base.show(io::IO, z::kRPCConnection) = print(io, "kRPC connection " * base64encode(z.identifier))
 
-type kStream 
+struct kStream 
     id::UInt64
 end
 
@@ -26,24 +28,24 @@ mutable struct kStreamValue
     value::Any
 end
 
-type kRPCException <: Exception
+struct kRPCException <: Exception
     message :: AbstractString
 end
 
-type DelayedCall
+struct DelayedCall
     invocation::krpc.schema.ProcedureCall
     rtype::Type
 end
 
-type DelayCalls
+struct DelayCalls
     calls::Array{DelayedCall, 1}
     DelayCalls()=new(DelayedCall[])
 end
 
-type kEvent end
-type kPC
+struct kEvent end
+struct kPC
     pcall::krpc.schema.ProcedureCall
-    rty::Union{Type,Void}
+    rty::Union{Type,Nothing}
 end
 
 include("types.jl")
@@ -57,7 +59,14 @@ export kRPCConnect, kRPCDisconnect
 export kRPCConnect
 export add_stream, add_multiple_streams, clear_streams
 
-include("../dep/gen.jl")
+macro checkbuilt() 
+    if isfile("../dep/gen.jl")
+        return :(include("../dep/gen.jl"))
+    elseif !@isdefined kRPCBuild
+        error("kRPC not properly built; run Pkg.build(\"kRPC\") and follow prompts.")
+    end
+end
+#@checkbuilt()
 
 
 end

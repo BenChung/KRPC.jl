@@ -36,7 +36,7 @@ function generateStubs(conn)
 	end
 end
 
-function kRPCConnect(host::String, port::Int64, stream_port::Int64, client_name::String)
+function kRPCConnect(client_name::String, host::String="localhost", port::Int64=5000, stream_port::Int64=5001)
     if lastindex(client_name) > 31
         throw(ArgumentError("client name too long"))
     end 
@@ -47,14 +47,23 @@ function kRPCConnect(host::String, port::Int64, stream_port::Int64, client_name:
     resp = connect_or_error(conn, krpc.schema.ConnectionRequest(client_name=client_name,_type=krpc.schema.ConnectionRequest_Type.RPC))
     connect_or_error(str_conn, krpc.schema.ConnectionRequest(client_identifier=resp.client_identifier,_type=krpc.schema.ConnectionRequest_Type.STREAM))
 
-    conn = kRPCConnection(conn, str_conn, resp.client_identifier)
+    conn = kRPCConnection(conn, str_conn, resp.client_identifier, @async stream_listener(str_conn))
     if !isdefined(kRPC, :Remote)
         generateStubs(conn)
     end
 
     kRPC.eval(:(Remote.change_connection($conn))) # whyyyyy
-    @async stream_listener(str_conn)
+    
     return conn
+end
+
+function kRPCConnect(f::Function, client_name::String, host::String="localhost", port::Int64=5000, stream_port::Int64=5001)
+    kc = kRPCConnect(client_name, host, port, stream_port)
+    try
+        f(kc) 
+    finally
+        close(kc)
+    end
 end
 
 function SendMessage(conn::kRPCConnection, pcall::kPC)
@@ -71,7 +80,8 @@ function SendMessage(conn::kRPCConnection, pcalls::AbstractArray{kPC})
     return [if pcalls[i].rty != Nothing getJuliaValue(res.results[i].value, pcalls[i].rty) else Nothing() end for i=1:length(pcalls)]
 end
 
-function kRPCDisconnect(conn::kRPCConnection)
+function close(conn::kRPCConnection)
+    Base.throwto(conn.str_listener, InterruptException())
     close(conn.conn)
 end
 

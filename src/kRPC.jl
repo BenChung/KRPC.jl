@@ -5,10 +5,11 @@ using ProtoBuf
 using Sockets
 using Nullables
 
-struct kRPCConnection
+mutable struct kRPCConnection
     conn::TCPSocket
     stream_conn::TCPSocket
     identifier::Array{UInt8, 1}
+    str_listener::Task
 end
 
 Base.show(io::IO, z::kRPCConnection) = print(io, "kRPC connection " * base64encode(z.identifier))

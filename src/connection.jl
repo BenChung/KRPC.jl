@@ -36,7 +36,7 @@ function generateStubs(conn)
 	end
 end
 
-function kRPCConnect(client_name::String, host::String="localhost", port::Int64=5000, stream_port::Int64=5001)
+function kRPCConnect(client_name::String, host::String="localhost", port::Int64=50000, stream_port::Int64=50001)
     if lastindex(client_name) > 31
         throw(ArgumentError("client name too long"))
     end 
@@ -57,7 +57,7 @@ function kRPCConnect(client_name::String, host::String="localhost", port::Int64=
     return conn
 end
 
-function kRPCConnect(f::Function, client_name::String, host::String="localhost", port::Int64=5000, stream_port::Int64=5001)
+function kRPCConnect(f::Function, client_name::String, host::String="localhost", port::Int64=50000, stream_port::Int64=50001)
     kc = kRPCConnect(client_name, host, port, stream_port)
     try
         f(kc) 

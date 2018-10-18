@@ -83,7 +83,7 @@ end
 
 function close(conn::kRPCConnection)
     conn.running[1] = false
-    close(conn.conn)
+    Base.close(conn.conn)
 end
 
 function handle_potential_error(result) 

@@ -57,8 +57,7 @@ include("streams.jl")
 include("connection.jl")
 
 export kRPCConnection, kEvent, kPC, kStream, DelayCalls, kStreamValue
-export kRPCConnect, kRPCDisconnect
-export kRPCConnect
+export kRPCConnect, close
 export add_stream, add_multiple_streams, clear_streams
 
 macro checkbuilt() 

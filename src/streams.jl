@@ -46,8 +46,8 @@ function clear_streams()
 end
 
 
-function stream_listener(str_conn::TCPSocket)
-    while true
+function stream_listener(str_conn::TCPSocket, running::Array{Bool,1})
+    while running[1]
         data = readproto(RecvRawProto(str_conn), krpc.schema.StreamUpdate())
         for result in data.results
             if haskey(streams, result.id)

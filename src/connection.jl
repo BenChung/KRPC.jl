@@ -47,7 +47,8 @@ function kRPCConnect(client_name::String, host::String="localhost", port::Int64=
     resp = connect_or_error(conn, krpc.schema.ConnectionRequest(client_name=client_name,_type=krpc.schema.ConnectionRequest_Type.RPC))
     connect_or_error(str_conn, krpc.schema.ConnectionRequest(client_identifier=resp.client_identifier,_type=krpc.schema.ConnectionRequest_Type.STREAM))
 
-    conn = kRPCConnection(conn, str_conn, resp.client_identifier, @async stream_listener(str_conn))
+    stream_running = Bool[true]
+    conn = kRPCConnection(conn, str_conn, resp.client_identifier, @async stream_listener(str_conn, stream_running), stream_running)
     if !isdefined(kRPC, :Remote)
         generateStubs(conn)
     end
@@ -81,7 +82,7 @@ function SendMessage(conn::kRPCConnection, pcalls::AbstractArray{kPC})
 end
 
 function close(conn::kRPCConnection)
-    Base.throwto(conn.str_listener, InterruptException())
+    conn.running[1] = false
     close(conn.conn)
 end
 

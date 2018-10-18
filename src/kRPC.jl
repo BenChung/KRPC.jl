@@ -10,6 +10,7 @@ mutable struct kRPCConnection
     stream_conn::TCPSocket
     identifier::Array{UInt8, 1}
     str_listener::Task
+    running::Vector{Bool}
 end
 
 Base.show(io::IO, z::kRPCConnection) = print(io, "kRPC connection " * base64encode(z.identifier))

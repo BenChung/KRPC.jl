@@ -14,7 +14,7 @@ function connect_or_error(conn, cr :: krpc.schema.ConnectionRequest)
     elseif resp.status == krpc.schema.ConnectionResponse_Status.TIMEOUT
         throw("Timeout, check network")
     elseif resp.status == krpc.schema.ConnectionResponse_Status.WRONG_TYPE
-        throw("Wrong type, yell at maintainer")
+        throw("Wrong type, yell at kRPC.jl maintainer")
     end
     return resp
 end

@@ -3,7 +3,6 @@ streams = Dict{UInt64, kStreamInfo}()
 function multistream_listener(svalues::Dict{Int, Tuple{Bool, Any}}, handle::Int, handler::Function, indices)
     return (value) -> begin
         svalues[handle] = (true, value)
-        println([(v[1], v[2][1]) for v in svalues])
         if reduce((x,y) -> x && y, true, map(tup -> tup[1], values(svalues)))
             handler(map(tup -> tup[2], map(i->svalues[i], indices))...)
             for kv in svalues

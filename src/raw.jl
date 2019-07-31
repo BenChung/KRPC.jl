@@ -23,7 +23,7 @@ function RecvRawProto(inp::IO)
         res |= (convert(Int64, byte & MASK7) << (7*n))
         n += 1
     end
-    write(iob, read(inp, UInt8, res))
+    write(iob, read(inp, res))
     return iob
 end
 

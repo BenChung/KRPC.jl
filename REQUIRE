@@ -2,3 +2,4 @@ julia 0.6
 ProtoBuf 0.5
 Compat 1.1
 Nullables 0.0.1-0.1.0
+Base64

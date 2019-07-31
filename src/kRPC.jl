@@ -4,6 +4,7 @@ include("protobuf/krpc.jl")
 using ProtoBuf
 using Sockets
 using Nullables
+using Base64
 
 mutable struct kRPCConnection
     conn::TCPSocket

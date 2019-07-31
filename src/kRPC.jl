@@ -62,8 +62,8 @@ export kRPCConnect, close
 export add_stream, add_multiple_streams, clear_streams
 
 macro checkbuilt() 
-    if isfile("../dep/gen.jl")
-        return :(include("../dep/gen.jl"))
+    if isfile("../deps/gen.jl")
+        return :(include("../deps/gen.jl"))
     elseif !@isdefined kRPCBuild
         error("kRPC not properly built; run Pkg.build(\"kRPC\") and follow prompts.")
     end

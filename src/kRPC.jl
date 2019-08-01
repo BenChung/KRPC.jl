@@ -61,14 +61,12 @@ export kRPCConnection, kEvent, kPC, kStream, DelayCalls, kStreamValue
 export kRPCConnect, close
 export add_stream, add_multiple_streams, clear_streams
 
-macro checkbuilt() 
-    if isfile("../deps/gen.jl")
-        return :(include("../deps/gen.jl"))
+macro checkbuilt()
+    if isfile(normpath(joinpath(@__DIR__, "../deps/gen.jl")))
+        return :(include(normpath(joinpath(@__DIR__, "../deps/gen.jl"))))
     elseif !@isdefined kRPCBuild
         error("kRPC not properly built; run Pkg.build(\"kRPC\") and follow prompts.")
     end
 end
-#@checkbuilt()
-
 
 end

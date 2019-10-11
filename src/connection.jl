@@ -1,7 +1,3 @@
-function kRPCConnect(client_name::String)
-    return kRPCConnect("localhost", 50000, 50001, client_name)
-end
-
 function kRPCConnect(port::Int64, client_name::String)
     return kRPCConnect("localhost", port, port+1, client_name)
 end

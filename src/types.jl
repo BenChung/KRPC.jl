@@ -94,59 +94,59 @@ function getWireValue(arg::kRPCTypes.kStream)
     return readavailable(opb)
 end
 
-function getJuliaValue(value::krpc.schema.Response, rtype::Type)
+function getJuliaValue(conn, value::krpc.schema.Response, rtype::Type)
     return getJuliaValue(value.return_value, rtype)
 end
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{T}) where {T<:kRPCTypes.Class}
-    return rtype(ProtoBuf.read_varint(PipeBuffer(value), Int64))
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{T}) where {T<:kRPCTypes.Class}
+    return rtype(conn, ProtoBuf.read_varint(PipeBuffer(value), Int64))
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Nothing)
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Nothing)
     return Nothing()
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{AbstractString})
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{AbstractString})
     return ProtoBuf.read_string(PipeBuffer(value))
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{kRPCTypes.kStream})
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{kRPCTypes.kStream})
     backing = readproto(PipeBuffer(value), krpc.schema.Stream())
     return kRPCTypes.kStream(backing.id)
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Union{Type{UInt32},Type{Int32},Type{UInt64},Type{Int64},Type{Float32},Type{Float64}})
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Union{Type{UInt32},Type{Int32},Type{UInt64},Type{Int64},Type{Float32},Type{Float64}})
     return ProtoBuf.read_fixed(PipeBuffer(value), rtype)
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{Bool})
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{Bool})
     return ProtoBuf.read_bool(PipeBuffer(value))
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{Array{UInt8,1}})
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{Array{UInt8,1}})
     return ProtoBuf.read_bytes(PipeBuffer(value))
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{Array{T,1}}) where T
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{Array{T,1}}) where T
     res = readproto(PipeBuffer(value), krpc.schema.List())
     return T[getJuliaValue(item,T) for item in res.items]
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{T}) where T <: (Tuple{Vararg{T,N} where T where N})
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{T}) where T <: (Tuple{Vararg{T,N} where T where N})
     res = readproto(PipeBuffer(value), krpc.schema.Tuple())
-    return ([getJuliaValue(param[1],param[2]) for param in zip(res.items, rtype.parameters)]...,)
+    return ([getJuliaValue(conn,param[1],param[2]) for param in zip(res.items, rtype.parameters)]...,)
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{Dict{K,V}}) where {K,V}
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{Dict{K,V}}) where {K,V}
     res = readproto(PipeBuffer(value), krpc.schema.Dictionary())
-    return Dict{K,V}(getJuliaValue(v.key,K) => getJuliaValue(v.value,V) for v in res.entries)
+    return Dict{K,V}(getJuliaValue(conn,v.key,K) => getJuliaValue(conn,v.value,V) for v in res.entries)
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{Set{T}}) where {T}
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{Set{T}}) where {T}
     res = readproto(PipeBuffer(value), krpc.schema.Set())
-    return Set{T}(getJuliaValue(item,T) for item in res.items)
+    return Set{T}(getJuliaValue(conn,item,T) for item in res.items)
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{Union{T, Nothing}}) where {T<:kRPCTypes.Class}
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{Union{T, Nothing}}) where {T<:kRPCTypes.Class}
     res = ProtoBuf.read_varint(PipeBuffer(value), Int64)
     if res == 0
         return Nothing()
@@ -155,12 +155,12 @@ function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{Union{T, Nothing}}) w
     end
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{kRPCTypes.Service})
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{kRPCTypes.Service})
     res = readproto(PipeBuffer(value), krpc.schema.Service())
     return kRPCTypes.Service(res)
 end
 
-function getJuliaValue(value::Array{UInt8, 1}, rtype::Type{kRPCTypes.Services})
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{kRPCTypes.Services})
     res = readproto(PipeBuffer(value), krpc.schema.Services())
     return kRPCTypes.Services(res)
 end

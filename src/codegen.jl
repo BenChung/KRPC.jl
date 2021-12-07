@@ -238,7 +238,7 @@ function generate_wrapper_method(g::Union{StaticMember,Standard}, proc, procname
         push!(args, make_param(argname, param, ctx))
         push!(argnames, argname)
     end
-    return mname, :($mname(conn::kRPCConnection, $(args...)) = kerbal(conn, $procname($(argnames...))))
+    return mname, :($mname(conn::KRPCConnection, $(args...)) = kerbal(conn, $procname($(argnames...))))
 end
 function generate_wrapper_method(g::ServiceGetter, proc, procname, ctx::SymbolContext)
     name = Symbol(g.name)
@@ -275,7 +275,7 @@ function generateHelpers(info::krpc.schema.Services, status::krpc.schema.Status)
         classnames = []
         for clazz in service.classes
             classname = kerbal_name(clazz.name)
-            push!(classes_ast,:(struct $classname <: kRPCTypes.Class conn::kRPCConnection; id::Int end))
+            push!(classes_ast,:(struct $classname <: kRPCTypes.Class conn::KRPCConnection; id::Int end))
             push!(classnames, classname)
         end
 
@@ -334,8 +334,8 @@ function generateHelpers(info::krpc.schema.Services, status::krpc.schema.Status)
         for req in ctx.needed 
             push!(body.args, :(import ..($(Symbol(req)))))
         end
-        push!(classes_ast, :(struct $service_module_name conn::kRPCConnection end))
-        push!(body.args, :(module RemoteTypes import ....kRPCTypes; import ....kRPCConnection; $(classes_ast...); $(Expr(:export, classnames...)); export $service_module_name; end))
+        push!(classes_ast, :(struct $service_module_name conn::KRPCConnection end))
+        push!(body.args, :(module RemoteTypes import ....kRPCTypes; import ....KRPCConnection; $(classes_ast...); $(Expr(:export, classnames...)); export $service_module_name; end))
         append!(body.args, enumerations_ast)
         if length(enumeration_names) > 0
             push!(body.args, Expr(:export, enumeration_names...))
@@ -346,7 +346,7 @@ function generateHelpers(info::krpc.schema.Services, status::krpc.schema.Status)
         end
         push!(body.args, :(module Helpers 
             import ....kerbal;
-            import ....kRPCConnection;
+            import ....KRPCConnection;
             import ....Request;
             import ..RemoteTypes; 
             $((:(import ...($(Symbol(req)))) for req in ctx.needed)...);

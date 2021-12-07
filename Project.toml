@@ -1,5 +1,5 @@
-name = "kRPC"
-uuid = "1c1c9389-3631-468f-a056-497e06f4ffdb"
+name = "KRPC"
+uuid = "7a052949-c101-4ca3-9a7e-43a2532b2fa8"
 authors = ["Ben Chung <ckfinite@gmail.com> and contributors"]
 version = "0.3.0"
 
@@ -11,6 +11,9 @@ Sockets = "6462fe0b-24de-5631-8697-dd941f90decc"
 
 [compat]
 julia = "1.6"
+LightXML = "^0.9"
+MacroTools = "^0.5"
+ProtoBuf = "^0.11"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

@@ -12,7 +12,7 @@ function connect_or_error(conn, cr::krpc.schema.ConnectionRequest)
 end
 
 """
-    generate_stubs(conn::kRPCConnection; save_file::Bool=false)
+    generate_stubs(conn::KRPCConnection; save_file::Bool=false)
 
 Generate (and `eval`) the stubs offered by the server at `conn`. If `save_file` is `true`,
 then the stubs will be saved into the package's directory and will be imported
@@ -32,17 +32,6 @@ julia> generate_stubs(conn)
 ```
 """
 function generate_stubs(conn; save_file=false)
-    #=
-	cachepath = joinpath(@__DIR__, "..", "deps")
-	genpath = joinpath(cachepath, "gen.jl")
-	if isfile(genpath)
-		kRPC.eval(:(include($genpath)))
-	else
-		mkpath(cachepath)
-	    info = GetServices(conn)
-        println(info)
-	end
-    =#
     serviceInfo = GetServices(conn)
     status = kerbal(conn, GetStatus_Phantom())
     ast = generateHelpers(serviceInfo, status.status)
@@ -89,15 +78,15 @@ function kerbal_connect(client_name::String, host::String="localhost", port::Int
     connect_or_error(str_conn, krpc.schema.ConnectionRequest(client_identifier=resp.client_identifier,_type=krpc.schema.ConnectionRequest_Type.STREAM))
 
     active = Channel(0)
-    conn = kRPCConnection(conn, str_conn, resp.client_identifier, Nothing(), Dict{UInt8, Listener}(), active)
+    conn = KRPCConnection(conn, str_conn, resp.client_identifier, Nothing(), Dict{UInt8, Listener}(), active)
     conn.str_listener = @async stream_listener(conn)
     bind(active, conn.str_listener)
 
-    if isdefined(kRPC, :Interface)
+    if isdefined(KRPC, :Interface)
         server_version = kerbal(conn, GetStatus_Phantom()).status.version
         if Interface.version != server_version
             println("Warning: current stubs version $(Interface.version) is not equal to server's version $server_version")
-            println("some functions may not work correctly (or produce an error). Run kRPC.generateStubs(conn) to generate a new (one-time) copy of the stubs.")
+            println("some functions may not work correctly (or produce an error). Run KRPC.generateStubs(conn) to generate a new (one-time) copy of the stubs.")
         end
     end
     
@@ -129,7 +118,7 @@ function kerbal_connect(f::Function, client_name::String, host::String="localhos
     end
 end
 
-function Base.close(conn::kRPCConnection)
+function Base.close(conn::KRPCConnection)
     try put!(conn.active, false) catch e end
     Base.close(conn.conn)
 end

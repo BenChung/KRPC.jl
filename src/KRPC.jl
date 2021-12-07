@@ -1,4 +1,4 @@
-module kRPC
+module KRPC
 using Sockets
 using ProtoBuf
 using LightXML
@@ -21,7 +21,7 @@ end
 """
 A connection to Kerbal Space Program.
 """
-mutable struct kRPCConnection
+mutable struct KRPCConnection
     conn::TCPSocket
     stream_conn::TCPSocket
     identifier::Array{UInt8, 1}
@@ -31,7 +31,7 @@ mutable struct kRPCConnection
     active::Channel
 end
 
-function Base.show(io::IO, conn::kRPCConnection) 
+function Base.show(io::IO, conn::KRPCConnection) 
 	print(io, "KRPC Connection(main fd: $(conn.conn), stream fd: $(conn.stream_conn))")
 end
 
@@ -46,7 +46,7 @@ if isfile("generated.jl")
 end
 
 struct AddStream_Phantom <: Request{:KRPC, :AddStream, kRPCTypes.kStream}
-    call::kRPC.Request
+    call::KRPC.Request
     start::Bool
 end
 struct RemoveStream_Phantom <: Request{:KRPC, :RemoveStream, Nothing}

@@ -1,8 +1,4 @@
-function kerbal_connect(port::Int64, client_name::String)
-    return kerbal_connect("localhost", port, port+1, client_name)
-end
-
-function connect_or_error(conn, cr :: krpc.schema.ConnectionRequest)
+function connect_or_error(conn, cr::krpc.schema.ConnectionRequest)
     SendRawProto(conn, cr)
     resp = readproto(RecvRawProto(conn), krpc.schema.ConnectionResponse())
     if resp.status == krpc.schema.ConnectionResponse_Status.MALFORMED_MESSAGE
@@ -15,7 +11,27 @@ function connect_or_error(conn, cr :: krpc.schema.ConnectionRequest)
     return resp
 end
 
-function generateStubs(conn)
+"""
+    generate_stubs(conn::kRPCConnection; save_file::Bool=false)
+
+Generate (and `eval`) the stubs offered by the server at `conn`. If `save_file` is `true`,
+then the stubs will be saved into the package's directory and will be imported
+the next time the wrapper is loaded.
+
+Note that world-age restricts the use of the generated and eval'ed stubs until after the
+latest age can be accessed, either by returning to the REPL, using Base.invokelatest, or
+through another call to `eval`. Keep this in mind if writing a monolithic script - a function
+that calls generate_stubs won't be able to immediately access the new definitions.
+
+For more information on world age, see the documentation at https://docs.julialang.org/en/v1/manual/methods/#Redefining-Methods-1
+or the paper on the topic at https://arxiv.org/abs/2010.07516.
+
+# Examples
+```julia-repl
+julia> generate_stubs(conn)
+```
+"""
+function generate_stubs(conn; save_file=false)
     #=
 	cachepath = joinpath(@__DIR__, "..", "deps")
 	genpath = joinpath(cachepath, "gen.jl")
@@ -28,10 +44,39 @@ function generateStubs(conn)
 	end
     =#
     serviceInfo = GetServices(conn)
-    ast = generateHelpers(serviceInfo)
+    status = kerbal(conn, GetStatus_Phantom())
+    ast = generateHelpers(serviceInfo, status.status)
     eval(ast)
+    if save_file 
+        open(joinpath(@__DIR__, "generated.jl"), "w") do io; 
+            println(io, MacroTools.striplines(ast))
+        end
+    end
 end
 
+"""
+    kerbal_connect(client_name::String, host::String="localhost", port::Int64=50000, stream_port::Int64=50001)
+
+Connect to `host` at port `port` (with stream port `stream_port`) and with the displayed name `client_name`.
+Default values are set up for the default localhost configuration. 
+
+# Examples
+
+Connect to localhost as "test" and using the default ports:
+```julia-repl
+julia> conn = kerbal_connect("test")
+```
+
+Connect to localhost using ports 9001/9002:
+```julia-repl
+julia> conn = kerbal_connect("test", "localhost", 9001, 9002)
+```
+
+Connect to a server at the IP address 192.168.1.1, and ports 9001/9002:
+```julia-repl
+julia> conn = kerbal_connect("test", "192.168.1.1", 9001, 9002)
+```
+"""
 function kerbal_connect(client_name::String, host::String="localhost", port::Int64=50000, stream_port::Int64=50001)
     if lastindex(client_name) > 31
         throw(ArgumentError("client name too long"))
@@ -47,11 +92,34 @@ function kerbal_connect(client_name::String, host::String="localhost", port::Int
     conn = kRPCConnection(conn, str_conn, resp.client_identifier, Nothing(), Dict{UInt8, Listener}(), active)
     conn.str_listener = @async stream_listener(conn)
     bind(active, conn.str_listener)
+
+    if isdefined(kRPC, :Interface)
+        server_version = kerbal(conn, GetStatus_Phantom()).status.version
+        if Interface.version != server_version
+            println("Warning: current stubs version $(Interface.version) is not equal to server's version $server_version")
+            println("some functions may not work correctly (or produce an error). Run kRPC.generateStubs(conn) to generate a new (one-time) copy of the stubs.")
+        end
+    end
     
     return conn
 end
 
 
+
+"""
+    kerbal_connect(f::Function, client_name::String, host::String="localhost", port::Int64=50000, stream_port::Int64=50001)
+
+Do-notation version of `kerbal_connect`, automatically closing the connection after termination of the do block.
+
+# Examples
+
+Connect to localhost as "test" and using the default ports:
+```julia-repl
+julia> kerbal_connect("test") do conn
+         println("connected!")
+       end
+```
+"""
 function kerbal_connect(f::Function, client_name::String, host::String="localhost", port::Int64=50000, stream_port::Int64=50001)
     kc = kerbal_connect(client_name, host, port, stream_port)
     try
@@ -61,7 +129,7 @@ function kerbal_connect(f::Function, client_name::String, host::String="localhos
     end
 end
 
-function close(conn::kRPCConnection)
+function Base.close(conn::kRPCConnection)
     try put!(conn.active, false) catch e end
     Base.close(conn.conn)
 end
@@ -75,3 +143,4 @@ end
 function make_error(err::krpc.schema.Error)
     return "A remote RPC error occured.\nThe error occured in $(err.service).$(err.name):\n$(err.description)\n$(err.stack_trace)"
 end
+

@@ -11,7 +11,7 @@ struct kStream
 end
 struct kEvent end
 struct Service 
-    service::krpc.schema.Service
+    status::krpc.schema.Status
 end
 struct Services
     services::krpc.schema.Services
@@ -156,7 +156,7 @@ function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{Union{T, Nothin
 end
 
 function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{kRPCTypes.Service})
-    res = readproto(PipeBuffer(value), krpc.schema.Service())
+    res = readproto(PipeBuffer(value), krpc.schema.Status())
     return kRPCTypes.Service(res)
 end
 

@@ -36,8 +36,16 @@ function sanitizeName(kName::Symbol)
         return :kString
     elseif kName == :Bool
         return :kBool
+    elseif kName == :function
+        return :kFunction
+    elseif kName == :end
+        return :kEnd
     end
     return kName
+end
+
+function kerbal_name(name::String)
+    return sanitizeName(Symbol(name))
 end
 
 function kRPCToJuliaType(kType::krpc.schema._Type, ctx::SymbolContext)
@@ -56,7 +64,7 @@ function kRPCToJuliaType(kType::krpc.schema._Type, ctx::SymbolContext)
     elseif kcode == krpc.schema.Type_TypeCode.BYTES return :(Array{UInt8, 1})
     elseif kcode == krpc.schema.Type_TypeCode.CLASS
         sname = Symbol(kType.service)
-        cname = sanitizeName(Symbol(kType.name))
+        cname = kerbal_name(kType.name)
         if sname == ctx.current
             return :(RemoteTypes.$cname)
         end
@@ -145,6 +153,53 @@ end
 struct GetActiveVessel <: Request{:SpaceCenter, :get_ActiveVessel, Vessel} end
 =#
 
+function generate_documentation(fnname, raw_argnames, argtypes, docstring)
+    if isempty(docstring) return "" end
+    doc = parse_string(docstring)
+    root = LightXML.root(doc)
+    example_args = join(map((n,t)->"$n::$t", kerbal_name.(raw_argnames), MacroTools.striplines.(argtypes)), ", ")
+    example_call = "    $(fnname)($example_args)"
+    summary = content(find_element(root, "summary"))
+
+    remarks = nothing
+    for rmk in root["remarks"]
+        remarks = replace(content(rmk), "\n"=>" ")
+    end
+
+    arg_typing = Dict(Pair.(raw_argnames, argtypes))
+    arg_descs = String[]
+    for param in root["param"]
+        param_name = attribute(param, "name")
+        param_typing = MacroTools.striplines(arg_typing[param_name])
+        displayed_param_name = kerbal_name(param_name)
+        push!(arg_descs, "- `$displayed_param_name::$param_typing`: $(replace(content(param), "\n"=>" "))")
+    end
+
+    return_desc = nothing
+    for return_el in root["returns"]
+        return_desc = replace(content(return_el), "\n"=>" ")
+    end
+
+    body = example_call * "\n"
+    body *= summary * "\n"
+    if length(arg_descs) > 0
+        body *= "# Arguments\n"
+        body *= join(arg_descs, "\n")
+        body *= "\n"
+    end
+
+    if !isnothing(return_desc)
+        body *= "# Returns\n"
+        body *= return_desc * "\n"
+    end
+
+    if !isnothing(remarks)
+        body *= "# Remarks\n"
+        body *= remarks * "\n"
+    end
+    return body
+end
+
 function generate_wrapper_method(g::ClassGetter, proc, procname, ctx::SymbolContext)
     getter_name = Symbol(g.name)
     return getter_name, :($getter_name(this::$(kRPCToJuliaType(proc.parameters[1]._type, ctx))) = kerbal(this.conn, $procname(this)))
@@ -168,18 +223,18 @@ function generate_wrapper_method(g::Member, proc, procname, ctx::SymbolContext)
     push!(args, :(this::$(kRPCToJuliaType(proc.parameters[1]._type, ctx))))
     push!(argnames, :this)
     for param in proc.parameters[2:end]
-        argname = Symbol(param.name)
+        argname = kerbal_name(param.name)
         push!(args, make_param(argname, param, ctx))
         push!(argnames, argname)
     end
     return name, :($name($(args...)) = kerbal(this.conn, $procname($(argnames...))))
 end
-function generate_wrapper_method(g::StaticMember, proc, procname, ctx::SymbolContext)
+function generate_wrapper_method(g::Union{StaticMember,Standard}, proc, procname, ctx::SymbolContext)
     mname = Symbol(g.name)
     args = []
     argnames = []
     for param in proc.parameters
-        argname = Symbol(param.name)
+        argname = kerbal_name(param.name)
         push!(args, make_param(argname, param, ctx))
         push!(argnames, argname)
     end
@@ -190,7 +245,7 @@ function generate_wrapper_method(g::ServiceGetter, proc, procname, ctx::SymbolCo
     args = []
     argnames = []
     for param in proc.parameters
-        argname = Symbol(param.name)
+        argname = kerbal_name(param.name)
         push!(args, make_param(argname, param, ctx))
         push!(argnames, argname)
     end
@@ -201,7 +256,7 @@ function generate_wrapper_method(g::ServiceSetter, proc, procname, ctx::SymbolCo
     args = []
     argnames = []
     for param in proc.parameters
-        argname = Symbol(param.name)
+        argname = kerbal_name(param.name)
         push!(args, make_param(argname, param, ctx))
         push!(argnames, argname)
     end
@@ -209,7 +264,7 @@ function generate_wrapper_method(g::ServiceSetter, proc, procname, ctx::SymbolCo
 end
 generate_wrapper_method(g, proc, procname, ctx) = nothing, :()
 
-function generateHelpers(info::krpc.schema.Services)
+function generateHelpers(info::krpc.schema.Services, status::krpc.schema.Status)
     services = Dict{String, Any}()
     req = Dict{String, Set{String}}()
     for service in info.services
@@ -219,7 +274,7 @@ function generateHelpers(info::krpc.schema.Services)
         classes_ast = []
         classnames = []
         for clazz in service.classes
-            classname = sanitizeName(Symbol(clazz.name))
+            classname = kerbal_name(clazz.name)
             push!(classes_ast,:(struct $classname <: kRPCTypes.Class conn::kRPCConnection; id::Int end))
             push!(classnames, classname)
         end
@@ -242,37 +297,38 @@ function generateHelpers(info::krpc.schema.Services)
         setindex!.((helper_type_map,), classnames, [gensym() for i=1:length(classnames)])
         for proc in service.procedures
             kind = parseKind(proc.name)
-            procname = sanitizeName(Symbol(proc.name))
+            procname = kerbal_name(proc.name)
 
             service_name = QuoteNode(Symbol(service.name))
             procedure_name = QuoteNode(Symbol(proc.name))
             return_type = if hasproperty(proc, :return_type) kRPCToJuliaType(proc.return_type, ctx) else Nothing end
-            params = [:($(Symbol(param.name))::$(kRPCToJuliaType(param._type, ctx))) for param in proc.parameters]
+            params = [:($(kerbal_name(param.name))::$(kRPCToJuliaType(param._type, ctx))) for param in proc.parameters]
 
             cstr_params = [
                 if !isnothing(param.default_value) && length(param.default_value) > 0
-                    :($(Symbol(param.name))::$(kRPCToJuliaType(param._type, ctx)) = getJuliaValue(Nothing(), $(param.default_value), $(kRPCToJuliaType(param._type, ctx))))
+                    :($(kerbal_name(param.name))::$(kRPCToJuliaType(param._type, ctx)) = getJuliaValue(Nothing(), $(param.default_value), $(kRPCToJuliaType(param._type, ctx))))
                 else 
-                    :($(Symbol(param.name))::$(kRPCToJuliaType(param._type, ctx)))
+                    :($(kerbal_name(param.name))::$(kRPCToJuliaType(param._type, ctx)))
                 end
                 for param in proc.parameters]
-            cstr_new_args = [Symbol(param.name) for param in proc.parameters]
+            cstr_new_args = [kerbal_name(param.name) for param in proc.parameters]
             cstr = :($procname($(params...)) = new($(cstr_new_args...)))
             proc_ast = :(struct $procname <: Request{$service_name, $procedure_name, $return_type}
                 $cstr
                 $(params...) end)
-
-            expname, helper = generate_wrapper_method(kind, proc, procname, ctx)
+            gen_procname = gensym()
+            expname, helper = generate_wrapper_method(kind, proc, gen_procname, ctx)
             if !isnothing(expname)
-                push!(helpers_ast, :(import ..($procname)))
+                push!(helpers_ast, :(import ..($procname) as $gen_procname))
                 push!(helpers_ast, helper)
+                push!(helpers_ast, :(@doc $(generate_documentation(expname, getproperty.(proc.parameters, :name), kRPCToJuliaType.(getproperty.(proc.parameters, :_type), (ctx,)), proc.documentation)) $expname))
                 push!(helpers_ast, :(export $expname))
             end
             push!(procedures_ast, proc_ast)
             push!(procedure_names, procname)
         end
 
-        body = Expr(:toplevel)
+        body = Expr(:block)
         push!(body.args, :(import ...kRPCTypes))
         push!(body.args, :(import ...Request))
         for req in ctx.needed 
@@ -281,9 +337,13 @@ function generateHelpers(info::krpc.schema.Services)
         push!(classes_ast, :(struct $service_module_name conn::kRPCConnection end))
         push!(body.args, :(module RemoteTypes import ....kRPCTypes; import ....kRPCConnection; $(classes_ast...); $(Expr(:export, classnames...)); export $service_module_name; end))
         append!(body.args, enumerations_ast)
-        push!(body.args, Expr(:export, enumeration_names...))
+        if length(enumeration_names) > 0
+            push!(body.args, Expr(:export, enumeration_names...))
+        end
         append!(body.args, procedures_ast)
-        push!(body.args, Expr(:export, procedure_names...))
+        if length(procedure_names) > 0
+            push!(body.args, Expr(:export, procedure_names...))
+        end
         push!(body.args, :(module Helpers 
             import ....kerbal;
             import ....kRPCConnection;
@@ -292,12 +352,13 @@ function generateHelpers(info::krpc.schema.Services)
             $((:(import ...($(Symbol(req)))) for req in ctx.needed)...);
             $((:(import ...($(enum[1])).($(enum[2]))) for enum in ctx.neededEnums)...); 
             $(helpers_ast...) end))
-        ast = :(module $service_module_name $body end)
+        ast = :(module $service_module_name end)
+        ast.args[3] = body
         services[service.name] = ast
         req[service.name] = Set(String.(ctx.needed))
     end
 
-    services_ast_body = Expr(:toplevel)
+    services_ast_body = Expr(:block)
 
     added = Set{String}()
     working = collect(services)
@@ -312,5 +373,8 @@ function generateHelpers(info::krpc.schema.Services)
             break
         end
     end
-    return :(module Interface $services_ast_body end)
+    push!(services_ast_body.args, :(version = $(status.version)))
+    outmod = :(module Interface end)
+    outmod.args[3] = services_ast_body
+    return outmod
 end

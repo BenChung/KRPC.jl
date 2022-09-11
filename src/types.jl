@@ -105,7 +105,7 @@ function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Nothing)
     return Nothing()
 end
 
-function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{AbstractString})
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Union{Type{AbstractString}, Type{String}})
     return ProtoBuf.read_string(PipeBuffer(value))
 end
 
@@ -128,7 +128,7 @@ end
 
 function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{Array{T,1}}) where T
     res = readproto(PipeBuffer(value), krpc.schema.List())
-    return T[getJuliaValue(item,T) for item in res.items]
+    return T[getJuliaValue(conn,item,T) for item in res.items]
 end
 
 function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{T}) where T <: (Tuple{Vararg{T,N} where T where N})

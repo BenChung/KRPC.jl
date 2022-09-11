@@ -151,7 +151,7 @@ function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{Union{T, Nothin
     if res == 0
         return Nothing()
     else
-        return T(res)
+        return T(conn, res)
     end
 end
 

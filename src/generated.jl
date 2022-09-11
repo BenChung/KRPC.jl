@@ -646,490 +646,490 @@ import ....kerbal
 import ....KRPCConnection
 import ....Request
 import ..RemoteTypes
+import ...UI.EMessagePosition
 import ...UI.ETextAnchor
 import ...UI.EFontStyle
-import ...UI.EMessagePosition
-import ..AddCanvas as var"##1580"
+import ..AddCanvas as var"##1637"
 AddCanvas(conn::KRPCConnection) = begin
-        kerbal(conn, var"##1580"())
+        kerbal(conn, var"##1637"())
     end
 @doc "    AddCanvas()\n\nAdd a new canvas.\n\n# Remarks\n If you want to add UI elements to KSPs stock UI canvas, use . \n" AddCanvas
 export AddCanvas
-import ..Message as var"##1581"
+import ..Message as var"##1638"
 Message(conn::KRPCConnection, content::String, duration::Float32 = getJuliaValue(this.conn, UInt8[0x00, 0x00, 0x80, 0x3f], Float32), position::EMessagePosition = getJuliaValue(this.conn, UInt8[0x02], EMessagePosition), color::begin
                     Tuple{Float64, Float64, Float64}
                 end = getJuliaValue(this.conn, UInt8[0x0a, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf0, 0x3f, 0x0a, 0x08, 0x71, 0x3d, 0x0a, 0xd7, 0xa3, 0x70, 0xed, 0x3f, 0x0a, 0x08, 0xfc, 0xa9, 0xf1, 0xd2, 0x4d, 0x62, 0x90, 0x3f], begin
                     Tuple{Float64, Float64, Float64}
                 end), size::Float32 = getJuliaValue(this.conn, UInt8[0x00, 0x00, 0xa0, 0x41], Float32)) = begin
-        kerbal(conn, var"##1581"(content, duration, position, color, size))
+        kerbal(conn, var"##1638"(content, duration, position, color, size))
     end
 @doc "    Message(content::String, duration::Float32, position::EMessagePosition, color::begin\n    Tuple{Float64, Float64, Float64}\nend, size::Float32)\n\nDisplay a message on the screen.\n\n# Arguments\n- `content::String`: Message content.\n- `duration::Float32`: Duration before the message disappears, in seconds.\n- `position::EMessagePosition`: Position to display the message.\n- `size::Float32`: Size of the message, differs per position.\n- `color::begin\n    Tuple{Float64, Float64, Float64}\nend`: The color of the message.\n# Remarks\n The message appears just like a stock message, for example quicksave or quickload messages. \n" Message
 export Message
-import ..Clear as var"##1582"
+import ..Clear as var"##1639"
 Clear(conn::KRPCConnection, clientOnly::Bool = getJuliaValue(this.conn, UInt8[0x00], Bool)) = begin
-        kerbal(conn, var"##1582"(clientOnly))
+        kerbal(conn, var"##1639"(clientOnly))
     end
 @doc "    Clear(clientOnly::Bool)\n\nRemove all user interface elements.\n\n# Arguments\n- `clientOnly::Bool`: If true, only remove objects created by the calling client.\n" Clear
 export Clear
-import ..get_StockCanvas as var"##1583"
+import ..get_StockCanvas as var"##1640"
 StockCanvas(this::RemoteTypes.UI) = begin
-        kerbal(this.conn, var"##1583"())
+        kerbal(this.conn, var"##1640"())
     end
 @doc "    StockCanvas()\n\nThe stock UI canvas.\n\n" StockCanvas
 export StockCanvas
-import ..Button_Remove as var"##1584"
+import ..Button_Remove as var"##1641"
 Remove(this::RemoteTypes.Button) = begin
-        kerbal(this.conn, var"##1584"(this))
+        kerbal(this.conn, var"##1641"(this))
     end
 @doc "    Remove(this::RemoteTypes.Button)\n\nRemove the UI object.\n\n" Remove
 export Remove
-import ..Button_get_RectTransform as var"##1585"
+import ..Button_get_RectTransform as var"##1642"
 RectTransform(this::RemoteTypes.Button) = begin
-        kerbal(this.conn, var"##1585"(this))
+        kerbal(this.conn, var"##1642"(this))
     end
 @doc "    RectTransform(this::RemoteTypes.Button)\n\nThe rect transform for the text.\n\n" RectTransform
 export RectTransform
-import ..Button_get_Text as var"##1586"
+import ..Button_get_Text as var"##1643"
 Text(this::RemoteTypes.Button) = begin
-        kerbal(this.conn, var"##1586"(this))
+        kerbal(this.conn, var"##1643"(this))
     end
 @doc "    Text(this::RemoteTypes.Button)\n\nThe text for the button.\n\n" Text
 export Text
-import ..Button_get_Clicked as var"##1587"
+import ..Button_get_Clicked as var"##1644"
 Clicked(this::RemoteTypes.Button) = begin
-        kerbal(this.conn, var"##1587"(this))
+        kerbal(this.conn, var"##1644"(this))
     end
 @doc "    Clicked(this::RemoteTypes.Button)\n\nWhether the button has been clicked.\n\n# Remarks\n This property is set to true when the user clicks the button. A client script should reset the property to false in order to detect subsequent button presses. \n" Clicked
 export Clicked
-import ..Button_set_Clicked as var"##1588"
+import ..Button_set_Clicked as var"##1645"
 Clicked!(this::RemoteTypes.Button, value::Bool) = begin
-        kerbal(this.conn, var"##1588"(this, value))
+        kerbal(this.conn, var"##1645"(this, value))
     end
 @doc "    Clicked!(this::RemoteTypes.Button, value::Bool)\n\nWhether the button has been clicked.\n\n# Remarks\n This property is set to true when the user clicks the button. A client script should reset the property to false in order to detect subsequent button presses. \n" Clicked!
 export Clicked!
-import ..Button_get_Visible as var"##1589"
+import ..Button_get_Visible as var"##1646"
 Visible(this::RemoteTypes.Button) = begin
-        kerbal(this.conn, var"##1589"(this))
+        kerbal(this.conn, var"##1646"(this))
     end
 @doc "    Visible(this::RemoteTypes.Button)\n\nWhether the UI object is visible.\n\n" Visible
 export Visible
-import ..Button_set_Visible as var"##1590"
+import ..Button_set_Visible as var"##1647"
 Visible!(this::RemoteTypes.Button, value::Bool) = begin
-        kerbal(this.conn, var"##1590"(this, value))
+        kerbal(this.conn, var"##1647"(this, value))
     end
 @doc "    Visible!(this::RemoteTypes.Button, value::Bool)\n\nWhether the UI object is visible.\n\n" Visible!
 export Visible!
-import ..Canvas_AddPanel as var"##1591"
+import ..Canvas_AddPanel as var"##1648"
 AddPanel(this::RemoteTypes.Canvas, visible::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(this.conn, var"##1591"(this, visible))
+        kerbal(this.conn, var"##1648"(this, visible))
     end
 @doc "    AddPanel(this::RemoteTypes.Canvas, visible::Bool)\n\nCreate a new container for user interface elements.\n\n# Arguments\n- `visible::Bool`: Whether the panel is visible.\n" AddPanel
 export AddPanel
-import ..Canvas_AddText as var"##1592"
+import ..Canvas_AddText as var"##1649"
 AddText(this::RemoteTypes.Canvas, content::String, visible::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(this.conn, var"##1592"(this, content, visible))
+        kerbal(this.conn, var"##1649"(this, content, visible))
     end
 @doc "    AddText(this::RemoteTypes.Canvas, content::String, visible::Bool)\n\nAdd text to the canvas.\n\n# Arguments\n- `content::String`: The text.\n- `visible::Bool`: Whether the text is visible.\n" AddText
 export AddText
-import ..Canvas_AddInputField as var"##1593"
+import ..Canvas_AddInputField as var"##1650"
 AddInputField(this::RemoteTypes.Canvas, visible::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(this.conn, var"##1593"(this, visible))
+        kerbal(this.conn, var"##1650"(this, visible))
     end
 @doc "    AddInputField(this::RemoteTypes.Canvas, visible::Bool)\n\nAdd an input field to the canvas.\n\n# Arguments\n- `visible::Bool`: Whether the input field is visible.\n" AddInputField
 export AddInputField
-import ..Canvas_AddButton as var"##1594"
+import ..Canvas_AddButton as var"##1651"
 AddButton(this::RemoteTypes.Canvas, content::String, visible::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(this.conn, var"##1594"(this, content, visible))
+        kerbal(this.conn, var"##1651"(this, content, visible))
     end
 @doc "    AddButton(this::RemoteTypes.Canvas, content::String, visible::Bool)\n\nAdd a button to the canvas.\n\n# Arguments\n- `content::String`: The label for the button.\n- `visible::Bool`: Whether the button is visible.\n" AddButton
 export AddButton
-import ..Canvas_Remove as var"##1595"
+import ..Canvas_Remove as var"##1652"
 Remove(this::RemoteTypes.Canvas) = begin
-        kerbal(this.conn, var"##1595"(this))
+        kerbal(this.conn, var"##1652"(this))
     end
 @doc "    Remove(this::RemoteTypes.Canvas)\n\nRemove the UI object.\n\n" Remove
 export Remove
-import ..Canvas_get_RectTransform as var"##1596"
+import ..Canvas_get_RectTransform as var"##1653"
 RectTransform(this::RemoteTypes.Canvas) = begin
-        kerbal(this.conn, var"##1596"(this))
+        kerbal(this.conn, var"##1653"(this))
     end
 @doc "    RectTransform(this::RemoteTypes.Canvas)\n\nThe rect transform for the canvas.\n\n" RectTransform
 export RectTransform
-import ..Canvas_get_Visible as var"##1597"
+import ..Canvas_get_Visible as var"##1654"
 Visible(this::RemoteTypes.Canvas) = begin
-        kerbal(this.conn, var"##1597"(this))
+        kerbal(this.conn, var"##1654"(this))
     end
 @doc "    Visible(this::RemoteTypes.Canvas)\n\nWhether the UI object is visible.\n\n" Visible
 export Visible
-import ..Canvas_set_Visible as var"##1598"
+import ..Canvas_set_Visible as var"##1655"
 Visible!(this::RemoteTypes.Canvas, value::Bool) = begin
-        kerbal(this.conn, var"##1598"(this, value))
+        kerbal(this.conn, var"##1655"(this, value))
     end
 @doc "    Visible!(this::RemoteTypes.Canvas, value::Bool)\n\nWhether the UI object is visible.\n\n" Visible!
 export Visible!
-import ..InputField_Remove as var"##1599"
+import ..InputField_Remove as var"##1656"
 Remove(this::RemoteTypes.InputField) = begin
-        kerbal(this.conn, var"##1599"(this))
+        kerbal(this.conn, var"##1656"(this))
     end
 @doc "    Remove(this::RemoteTypes.InputField)\n\nRemove the UI object.\n\n" Remove
 export Remove
-import ..InputField_get_RectTransform as var"##1600"
+import ..InputField_get_RectTransform as var"##1657"
 RectTransform(this::RemoteTypes.InputField) = begin
-        kerbal(this.conn, var"##1600"(this))
+        kerbal(this.conn, var"##1657"(this))
     end
 @doc "    RectTransform(this::RemoteTypes.InputField)\n\nThe rect transform for the input field.\n\n" RectTransform
 export RectTransform
-import ..InputField_get_Value as var"##1601"
+import ..InputField_get_Value as var"##1658"
 Value(this::RemoteTypes.InputField) = begin
-        kerbal(this.conn, var"##1601"(this))
+        kerbal(this.conn, var"##1658"(this))
     end
 @doc "    Value(this::RemoteTypes.InputField)\n\nThe value of the input field.\n\n" Value
 export Value
-import ..InputField_set_Value as var"##1602"
+import ..InputField_set_Value as var"##1659"
 Value!(this::RemoteTypes.InputField, value::String) = begin
-        kerbal(this.conn, var"##1602"(this, value))
+        kerbal(this.conn, var"##1659"(this, value))
     end
 @doc "    Value!(this::RemoteTypes.InputField, value::String)\n\nThe value of the input field.\n\n" Value!
 export Value!
-import ..InputField_get_Text as var"##1603"
+import ..InputField_get_Text as var"##1660"
 Text(this::RemoteTypes.InputField) = begin
-        kerbal(this.conn, var"##1603"(this))
+        kerbal(this.conn, var"##1660"(this))
     end
 @doc "    Text(this::RemoteTypes.InputField)\n\nThe text component of the input field.\n\n# Remarks\n Use  to get and set the value in the field. This object can be used to alter the style of the input field's text. \n" Text
 export Text
-import ..InputField_get_Changed as var"##1604"
+import ..InputField_get_Changed as var"##1661"
 Changed(this::RemoteTypes.InputField) = begin
-        kerbal(this.conn, var"##1604"(this))
+        kerbal(this.conn, var"##1661"(this))
     end
 @doc "    Changed(this::RemoteTypes.InputField)\n\nWhether the input field has been changed.\n\n# Remarks\n This property is set to true when the user modifies the value of the input field. A client script should reset the property to false in order to detect subsequent changes. \n" Changed
 export Changed
-import ..InputField_set_Changed as var"##1605"
+import ..InputField_set_Changed as var"##1662"
 Changed!(this::RemoteTypes.InputField, value::Bool) = begin
-        kerbal(this.conn, var"##1605"(this, value))
+        kerbal(this.conn, var"##1662"(this, value))
     end
 @doc "    Changed!(this::RemoteTypes.InputField, value::Bool)\n\nWhether the input field has been changed.\n\n# Remarks\n This property is set to true when the user modifies the value of the input field. A client script should reset the property to false in order to detect subsequent changes. \n" Changed!
 export Changed!
-import ..InputField_get_Visible as var"##1606"
+import ..InputField_get_Visible as var"##1663"
 Visible(this::RemoteTypes.InputField) = begin
-        kerbal(this.conn, var"##1606"(this))
+        kerbal(this.conn, var"##1663"(this))
     end
 @doc "    Visible(this::RemoteTypes.InputField)\n\nWhether the UI object is visible.\n\n" Visible
 export Visible
-import ..InputField_set_Visible as var"##1607"
+import ..InputField_set_Visible as var"##1664"
 Visible!(this::RemoteTypes.InputField, value::Bool) = begin
-        kerbal(this.conn, var"##1607"(this, value))
+        kerbal(this.conn, var"##1664"(this, value))
     end
 @doc "    Visible!(this::RemoteTypes.InputField, value::Bool)\n\nWhether the UI object is visible.\n\n" Visible!
 export Visible!
-import ..Panel_AddPanel as var"##1608"
+import ..Panel_AddPanel as var"##1665"
 AddPanel(this::RemoteTypes.Panel, visible::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(this.conn, var"##1608"(this, visible))
+        kerbal(this.conn, var"##1665"(this, visible))
     end
 @doc "    AddPanel(this::RemoteTypes.Panel, visible::Bool)\n\nCreate a panel within this panel.\n\n# Arguments\n- `visible::Bool`: Whether the new panel is visible.\n" AddPanel
 export AddPanel
-import ..Panel_AddText as var"##1609"
+import ..Panel_AddText as var"##1666"
 AddText(this::RemoteTypes.Panel, content::String, visible::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(this.conn, var"##1609"(this, content, visible))
+        kerbal(this.conn, var"##1666"(this, content, visible))
     end
 @doc "    AddText(this::RemoteTypes.Panel, content::String, visible::Bool)\n\nAdd text to the panel.\n\n# Arguments\n- `content::String`: The text.\n- `visible::Bool`: Whether the text is visible.\n" AddText
 export AddText
-import ..Panel_AddInputField as var"##1610"
+import ..Panel_AddInputField as var"##1667"
 AddInputField(this::RemoteTypes.Panel, visible::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(this.conn, var"##1610"(this, visible))
+        kerbal(this.conn, var"##1667"(this, visible))
     end
 @doc "    AddInputField(this::RemoteTypes.Panel, visible::Bool)\n\nAdd an input field to the panel.\n\n# Arguments\n- `visible::Bool`: Whether the input field is visible.\n" AddInputField
 export AddInputField
-import ..Panel_AddButton as var"##1611"
+import ..Panel_AddButton as var"##1668"
 AddButton(this::RemoteTypes.Panel, content::String, visible::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(this.conn, var"##1611"(this, content, visible))
+        kerbal(this.conn, var"##1668"(this, content, visible))
     end
 @doc "    AddButton(this::RemoteTypes.Panel, content::String, visible::Bool)\n\nAdd a button to the panel.\n\n# Arguments\n- `content::String`: The label for the button.\n- `visible::Bool`: Whether the button is visible.\n" AddButton
 export AddButton
-import ..Panel_Remove as var"##1612"
+import ..Panel_Remove as var"##1669"
 Remove(this::RemoteTypes.Panel) = begin
-        kerbal(this.conn, var"##1612"(this))
+        kerbal(this.conn, var"##1669"(this))
     end
 @doc "    Remove(this::RemoteTypes.Panel)\n\nRemove the UI object.\n\n" Remove
 export Remove
-import ..Panel_get_RectTransform as var"##1613"
+import ..Panel_get_RectTransform as var"##1670"
 RectTransform(this::RemoteTypes.Panel) = begin
-        kerbal(this.conn, var"##1613"(this))
+        kerbal(this.conn, var"##1670"(this))
     end
 @doc "    RectTransform(this::RemoteTypes.Panel)\n\nThe rect transform for the panel.\n\n" RectTransform
 export RectTransform
-import ..Panel_get_Visible as var"##1614"
+import ..Panel_get_Visible as var"##1671"
 Visible(this::RemoteTypes.Panel) = begin
-        kerbal(this.conn, var"##1614"(this))
+        kerbal(this.conn, var"##1671"(this))
     end
 @doc "    Visible(this::RemoteTypes.Panel)\n\nWhether the UI object is visible.\n\n" Visible
 export Visible
-import ..Panel_set_Visible as var"##1615"
+import ..Panel_set_Visible as var"##1672"
 Visible!(this::RemoteTypes.Panel, value::Bool) = begin
-        kerbal(this.conn, var"##1615"(this, value))
+        kerbal(this.conn, var"##1672"(this, value))
     end
 @doc "    Visible!(this::RemoteTypes.Panel, value::Bool)\n\nWhether the UI object is visible.\n\n" Visible!
 export Visible!
-import ..RectTransform_get_Position as var"##1616"
+import ..RectTransform_get_Position as var"##1673"
 Position(this::RemoteTypes.RectTransform) = begin
-        kerbal(this.conn, var"##1616"(this))
+        kerbal(this.conn, var"##1673"(this))
     end
 @doc "    Position(this::RemoteTypes.RectTransform)\n\nPosition of the rectangles pivot point relative to the anchors.\n\n" Position
 export Position
-import ..RectTransform_set_Position as var"##1617"
+import ..RectTransform_set_Position as var"##1674"
 Position!(this::RemoteTypes.RectTransform, value::begin
                 Tuple{Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##1617"(this, value))
+        kerbal(this.conn, var"##1674"(this, value))
     end
 @doc "    Position!(this::RemoteTypes.RectTransform, value::begin\n    Tuple{Float64, Float64}\nend)\n\nPosition of the rectangles pivot point relative to the anchors.\n\n" Position!
 export Position!
-import ..RectTransform_get_LocalPosition as var"##1618"
+import ..RectTransform_get_LocalPosition as var"##1675"
 LocalPosition(this::RemoteTypes.RectTransform) = begin
-        kerbal(this.conn, var"##1618"(this))
+        kerbal(this.conn, var"##1675"(this))
     end
 @doc "    LocalPosition(this::RemoteTypes.RectTransform)\n\nPosition of the rectangles pivot point relative to the anchors.\n\n" LocalPosition
 export LocalPosition
-import ..RectTransform_set_LocalPosition as var"##1619"
+import ..RectTransform_set_LocalPosition as var"##1676"
 LocalPosition!(this::RemoteTypes.RectTransform, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##1619"(this, value))
+        kerbal(this.conn, var"##1676"(this, value))
     end
 @doc "    LocalPosition!(this::RemoteTypes.RectTransform, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nPosition of the rectangles pivot point relative to the anchors.\n\n" LocalPosition!
 export LocalPosition!
-import ..RectTransform_get_Size as var"##1620"
+import ..RectTransform_get_Size as var"##1677"
 Size(this::RemoteTypes.RectTransform) = begin
-        kerbal(this.conn, var"##1620"(this))
+        kerbal(this.conn, var"##1677"(this))
     end
 @doc "    Size(this::RemoteTypes.RectTransform)\n\nWidth and height of the rectangle.\n\n" Size
 export Size
-import ..RectTransform_set_Size as var"##1621"
+import ..RectTransform_set_Size as var"##1678"
 Size!(this::RemoteTypes.RectTransform, value::begin
                 Tuple{Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##1621"(this, value))
+        kerbal(this.conn, var"##1678"(this, value))
     end
 @doc "    Size!(this::RemoteTypes.RectTransform, value::begin\n    Tuple{Float64, Float64}\nend)\n\nWidth and height of the rectangle.\n\n" Size!
 export Size!
-import ..RectTransform_get_UpperRight as var"##1622"
+import ..RectTransform_get_UpperRight as var"##1679"
 UpperRight(this::RemoteTypes.RectTransform) = begin
-        kerbal(this.conn, var"##1622"(this))
+        kerbal(this.conn, var"##1679"(this))
     end
 @doc "    UpperRight(this::RemoteTypes.RectTransform)\n\nPosition of the rectangles upper right corner relative to the anchors.\n\n" UpperRight
 export UpperRight
-import ..RectTransform_set_UpperRight as var"##1623"
+import ..RectTransform_set_UpperRight as var"##1680"
 UpperRight!(this::RemoteTypes.RectTransform, value::begin
                 Tuple{Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##1623"(this, value))
+        kerbal(this.conn, var"##1680"(this, value))
     end
 @doc "    UpperRight!(this::RemoteTypes.RectTransform, value::begin\n    Tuple{Float64, Float64}\nend)\n\nPosition of the rectangles upper right corner relative to the anchors.\n\n" UpperRight!
 export UpperRight!
-import ..RectTransform_get_LowerLeft as var"##1624"
+import ..RectTransform_get_LowerLeft as var"##1681"
 LowerLeft(this::RemoteTypes.RectTransform) = begin
-        kerbal(this.conn, var"##1624"(this))
+        kerbal(this.conn, var"##1681"(this))
     end
 @doc "    LowerLeft(this::RemoteTypes.RectTransform)\n\nPosition of the rectangles lower left corner relative to the anchors.\n\n" LowerLeft
 export LowerLeft
-import ..RectTransform_set_LowerLeft as var"##1625"
+import ..RectTransform_set_LowerLeft as var"##1682"
 LowerLeft!(this::RemoteTypes.RectTransform, value::begin
                 Tuple{Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##1625"(this, value))
+        kerbal(this.conn, var"##1682"(this, value))
     end
 @doc "    LowerLeft!(this::RemoteTypes.RectTransform, value::begin\n    Tuple{Float64, Float64}\nend)\n\nPosition of the rectangles lower left corner relative to the anchors.\n\n" LowerLeft!
 export LowerLeft!
-import ..RectTransform_set_Anchor as var"##1626"
+import ..RectTransform_set_Anchor as var"##1683"
 Anchor!(this::RemoteTypes.RectTransform, value::begin
                 Tuple{Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##1626"(this, value))
+        kerbal(this.conn, var"##1683"(this, value))
     end
 @doc "    Anchor!(this::RemoteTypes.RectTransform, value::begin\n    Tuple{Float64, Float64}\nend)\n\nSet the minimum and maximum anchor points as a fraction of the size of the parent rectangle.\n\n" Anchor!
 export Anchor!
-import ..RectTransform_get_AnchorMax as var"##1627"
+import ..RectTransform_get_AnchorMax as var"##1684"
 AnchorMax(this::RemoteTypes.RectTransform) = begin
-        kerbal(this.conn, var"##1627"(this))
+        kerbal(this.conn, var"##1684"(this))
     end
 @doc "    AnchorMax(this::RemoteTypes.RectTransform)\n\nThe anchor point for the lower left corner of the rectangle defined as a fraction of the size of the parent rectangle.\n\n" AnchorMax
 export AnchorMax
-import ..RectTransform_set_AnchorMax as var"##1628"
+import ..RectTransform_set_AnchorMax as var"##1685"
 AnchorMax!(this::RemoteTypes.RectTransform, value::begin
                 Tuple{Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##1628"(this, value))
+        kerbal(this.conn, var"##1685"(this, value))
     end
 @doc "    AnchorMax!(this::RemoteTypes.RectTransform, value::begin\n    Tuple{Float64, Float64}\nend)\n\nThe anchor point for the lower left corner of the rectangle defined as a fraction of the size of the parent rectangle.\n\n" AnchorMax!
 export AnchorMax!
-import ..RectTransform_get_AnchorMin as var"##1629"
+import ..RectTransform_get_AnchorMin as var"##1686"
 AnchorMin(this::RemoteTypes.RectTransform) = begin
-        kerbal(this.conn, var"##1629"(this))
+        kerbal(this.conn, var"##1686"(this))
     end
 @doc "    AnchorMin(this::RemoteTypes.RectTransform)\n\nThe anchor point for the upper right corner of the rectangle defined as a fraction of the size of the parent rectangle.\n\n" AnchorMin
 export AnchorMin
-import ..RectTransform_set_AnchorMin as var"##1630"
+import ..RectTransform_set_AnchorMin as var"##1687"
 AnchorMin!(this::RemoteTypes.RectTransform, value::begin
                 Tuple{Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##1630"(this, value))
+        kerbal(this.conn, var"##1687"(this, value))
     end
 @doc "    AnchorMin!(this::RemoteTypes.RectTransform, value::begin\n    Tuple{Float64, Float64}\nend)\n\nThe anchor point for the upper right corner of the rectangle defined as a fraction of the size of the parent rectangle.\n\n" AnchorMin!
 export AnchorMin!
-import ..RectTransform_get_Pivot as var"##1631"
+import ..RectTransform_get_Pivot as var"##1688"
 Pivot(this::RemoteTypes.RectTransform) = begin
-        kerbal(this.conn, var"##1631"(this))
+        kerbal(this.conn, var"##1688"(this))
     end
 @doc "    Pivot(this::RemoteTypes.RectTransform)\n\nLocation of the pivot point around which the rectangle rotates, defined as a fraction of the size of the rectangle itself.\n\n" Pivot
 export Pivot
-import ..RectTransform_set_Pivot as var"##1632"
+import ..RectTransform_set_Pivot as var"##1689"
 Pivot!(this::RemoteTypes.RectTransform, value::begin
                 Tuple{Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##1632"(this, value))
+        kerbal(this.conn, var"##1689"(this, value))
     end
 @doc "    Pivot!(this::RemoteTypes.RectTransform, value::begin\n    Tuple{Float64, Float64}\nend)\n\nLocation of the pivot point around which the rectangle rotates, defined as a fraction of the size of the rectangle itself.\n\n" Pivot!
 export Pivot!
-import ..RectTransform_get_Rotation as var"##1633"
+import ..RectTransform_get_Rotation as var"##1690"
 Rotation(this::RemoteTypes.RectTransform) = begin
-        kerbal(this.conn, var"##1633"(this))
+        kerbal(this.conn, var"##1690"(this))
     end
 @doc "    Rotation(this::RemoteTypes.RectTransform)\n\nRotation, as a quaternion, of the object around its pivot point.\n\n" Rotation
 export Rotation
-import ..RectTransform_set_Rotation as var"##1634"
+import ..RectTransform_set_Rotation as var"##1691"
 Rotation!(this::RemoteTypes.RectTransform, value::begin
                 Tuple{Float64, Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##1634"(this, value))
+        kerbal(this.conn, var"##1691"(this, value))
     end
 @doc "    Rotation!(this::RemoteTypes.RectTransform, value::begin\n    Tuple{Float64, Float64, Float64, Float64}\nend)\n\nRotation, as a quaternion, of the object around its pivot point.\n\n" Rotation!
 export Rotation!
-import ..RectTransform_get_Scale as var"##1635"
+import ..RectTransform_get_Scale as var"##1692"
 Scale(this::RemoteTypes.RectTransform) = begin
-        kerbal(this.conn, var"##1635"(this))
+        kerbal(this.conn, var"##1692"(this))
     end
 @doc "    Scale(this::RemoteTypes.RectTransform)\n\nScale factor applied to the object in the x, y and z dimensions.\n\n" Scale
 export Scale
-import ..RectTransform_set_Scale as var"##1636"
+import ..RectTransform_set_Scale as var"##1693"
 Scale!(this::RemoteTypes.RectTransform, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##1636"(this, value))
+        kerbal(this.conn, var"##1693"(this, value))
     end
 @doc "    Scale!(this::RemoteTypes.RectTransform, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nScale factor applied to the object in the x, y and z dimensions.\n\n" Scale!
 export Scale!
-import ..Text_Remove as var"##1637"
+import ..Text_Remove as var"##1694"
 Remove(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##1637"(this))
+        kerbal(this.conn, var"##1694"(this))
     end
 @doc "    Remove(this::RemoteTypes.Text)\n\nRemove the UI object.\n\n" Remove
 export Remove
-import ..Text_get_RectTransform as var"##1638"
+import ..Text_get_RectTransform as var"##1695"
 RectTransform(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##1638"(this))
+        kerbal(this.conn, var"##1695"(this))
     end
 @doc "    RectTransform(this::RemoteTypes.Text)\n\nThe rect transform for the text.\n\n" RectTransform
 export RectTransform
-import ..Text_get_AvailableFonts as var"##1639"
+import ..Text_get_AvailableFonts as var"##1696"
 AvailableFonts(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##1639"(this))
+        kerbal(this.conn, var"##1696"(this))
     end
 @doc "    AvailableFonts(this::RemoteTypes.Text)\n\nA list of all available fonts.\n\n" AvailableFonts
 export AvailableFonts
-import ..Text_get_Content as var"##1640"
+import ..Text_get_Content as var"##1697"
 Content(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##1640"(this))
+        kerbal(this.conn, var"##1697"(this))
     end
 @doc "    Content(this::RemoteTypes.Text)\n\nThe text string\n\n" Content
 export Content
-import ..Text_set_Content as var"##1641"
+import ..Text_set_Content as var"##1698"
 Content!(this::RemoteTypes.Text, value::String) = begin
-        kerbal(this.conn, var"##1641"(this, value))
+        kerbal(this.conn, var"##1698"(this, value))
     end
 @doc "    Content!(this::RemoteTypes.Text, value::String)\n\nThe text string\n\n" Content!
 export Content!
-import ..Text_get_Font as var"##1642"
+import ..Text_get_Font as var"##1699"
 Font(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##1642"(this))
+        kerbal(this.conn, var"##1699"(this))
     end
 @doc "    Font(this::RemoteTypes.Text)\n\nName of the font\n\n" Font
 export Font
-import ..Text_set_Font as var"##1643"
+import ..Text_set_Font as var"##1700"
 Font!(this::RemoteTypes.Text, value::String) = begin
-        kerbal(this.conn, var"##1643"(this, value))
+        kerbal(this.conn, var"##1700"(this, value))
     end
 @doc "    Font!(this::RemoteTypes.Text, value::String)\n\nName of the font\n\n" Font!
 export Font!
-import ..Text_get_Size as var"##1644"
+import ..Text_get_Size as var"##1701"
 Size(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##1644"(this))
+        kerbal(this.conn, var"##1701"(this))
     end
 @doc "    Size(this::RemoteTypes.Text)\n\nFont size.\n\n" Size
 export Size
-import ..Text_set_Size as var"##1645"
+import ..Text_set_Size as var"##1702"
 Size!(this::RemoteTypes.Text, value::Int32) = begin
-        kerbal(this.conn, var"##1645"(this, value))
+        kerbal(this.conn, var"##1702"(this, value))
     end
 @doc "    Size!(this::RemoteTypes.Text, value::Int32)\n\nFont size.\n\n" Size!
 export Size!
-import ..Text_get_Style as var"##1646"
+import ..Text_get_Style as var"##1703"
 Style(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##1646"(this))
+        kerbal(this.conn, var"##1703"(this))
     end
 @doc "    Style(this::RemoteTypes.Text)\n\nFont style.\n\n" Style
 export Style
-import ..Text_set_Style as var"##1647"
+import ..Text_set_Style as var"##1704"
 Style!(this::RemoteTypes.Text, value::EFontStyle) = begin
-        kerbal(this.conn, var"##1647"(this, value))
+        kerbal(this.conn, var"##1704"(this, value))
     end
 @doc "    Style!(this::RemoteTypes.Text, value::EFontStyle)\n\nFont style.\n\n" Style!
 export Style!
-import ..Text_get_Alignment as var"##1648"
+import ..Text_get_Alignment as var"##1705"
 Alignment(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##1648"(this))
+        kerbal(this.conn, var"##1705"(this))
     end
 @doc "    Alignment(this::RemoteTypes.Text)\n\nAlignment.\n\n" Alignment
 export Alignment
-import ..Text_set_Alignment as var"##1649"
+import ..Text_set_Alignment as var"##1706"
 Alignment!(this::RemoteTypes.Text, value::ETextAnchor) = begin
-        kerbal(this.conn, var"##1649"(this, value))
+        kerbal(this.conn, var"##1706"(this, value))
     end
 @doc "    Alignment!(this::RemoteTypes.Text, value::ETextAnchor)\n\nAlignment.\n\n" Alignment!
 export Alignment!
-import ..Text_get_LineSpacing as var"##1650"
+import ..Text_get_LineSpacing as var"##1707"
 LineSpacing(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##1650"(this))
+        kerbal(this.conn, var"##1707"(this))
     end
 @doc "    LineSpacing(this::RemoteTypes.Text)\n\nLine spacing.\n\n" LineSpacing
 export LineSpacing
-import ..Text_set_LineSpacing as var"##1651"
+import ..Text_set_LineSpacing as var"##1708"
 LineSpacing!(this::RemoteTypes.Text, value::Float32) = begin
-        kerbal(this.conn, var"##1651"(this, value))
+        kerbal(this.conn, var"##1708"(this, value))
     end
 @doc "    LineSpacing!(this::RemoteTypes.Text, value::Float32)\n\nLine spacing.\n\n" LineSpacing!
 export LineSpacing!
-import ..Text_get_Color as var"##1652"
+import ..Text_get_Color as var"##1709"
 Color(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##1652"(this))
+        kerbal(this.conn, var"##1709"(this))
     end
 @doc "    Color(this::RemoteTypes.Text)\n\nSet the color\n\n" Color
 export Color
-import ..Text_set_Color as var"##1653"
+import ..Text_set_Color as var"##1710"
 Color!(this::RemoteTypes.Text, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##1653"(this, value))
+        kerbal(this.conn, var"##1710"(this, value))
     end
 @doc "    Color!(this::RemoteTypes.Text, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nSet the color\n\n" Color!
 export Color!
-import ..Text_get_Visible as var"##1654"
+import ..Text_get_Visible as var"##1711"
 Visible(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##1654"(this))
+        kerbal(this.conn, var"##1711"(this))
     end
 @doc "    Visible(this::RemoteTypes.Text)\n\nWhether the UI object is visible.\n\n" Visible
 export Visible
-import ..Text_set_Visible as var"##1655"
+import ..Text_set_Visible as var"##1712"
 Visible!(this::RemoteTypes.Text, value::Bool) = begin
-        kerbal(this.conn, var"##1655"(this, value))
+        kerbal(this.conn, var"##1712"(this, value))
     end
 @doc "    Visible!(this::RemoteTypes.Text, value::Bool)\n\nWhether the UI object is visible.\n\n" Visible!
 export Visible!
@@ -1628,419 +1628,419 @@ import ....KRPCConnection
 import ....Request
 import ..RemoteTypes
 import ...KRPC.EGameScene
-import ..GetClientID as var"##259"
+import ..GetClientID as var"##314"
 GetClientID(conn::KRPCConnection) = begin
-        kerbal(conn, var"##259"())
+        kerbal(conn, var"##314"())
     end
 @doc "    GetClientID()\n\nReturns the identifier for the current client.\n\n" GetClientID
 export GetClientID
-import ..GetClientName as var"##260"
+import ..GetClientName as var"##315"
 GetClientName(conn::KRPCConnection) = begin
-        kerbal(conn, var"##260"())
+        kerbal(conn, var"##315"())
     end
 @doc "    GetClientName()\n\nReturns the name of the current client.\nThis is an empty string if the client has no name.\n\n" GetClientName
 export GetClientName
-import ..GetStatus as var"##261"
+import ..GetStatus as var"##316"
 GetStatus(conn::KRPCConnection) = begin
-        kerbal(conn, var"##261"())
+        kerbal(conn, var"##316"())
     end
 @doc "    GetStatus()\n\nReturns some information about the server, such as the version.\n\n" GetStatus
 export GetStatus
-import ..GetServices as var"##262"
+import ..GetServices as var"##317"
 GetServices(conn::KRPCConnection) = begin
-        kerbal(conn, var"##262"())
+        kerbal(conn, var"##317"())
     end
 @doc "    GetServices()\n\nReturns information on all services, procedures, classes, properties etc. provided by the server.\nCan be used by client libraries to automatically create functionality such as stubs.\n\n" GetServices
 export GetServices
-import ..AddStream as var"##263"
+import ..AddStream as var"##318"
 AddStream(conn::KRPCConnection, call::Request, start::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(conn, var"##263"(call, start))
+        kerbal(conn, var"##318"(call, start))
     end
 @doc "    AddStream(call::Request, start::Bool)\n\nAdd a streaming request and return its identifier.\n\n" AddStream
 export AddStream
-import ..StartStream as var"##264"
+import ..StartStream as var"##319"
 StartStream(conn::KRPCConnection, id::UInt64) = begin
-        kerbal(conn, var"##264"(id))
+        kerbal(conn, var"##319"(id))
     end
 @doc "    StartStream(id::UInt64)\n\nStart a previously added streaming request.\n\n" StartStream
 export StartStream
-import ..SetStreamRate as var"##265"
+import ..SetStreamRate as var"##320"
 SetStreamRate(conn::KRPCConnection, id::UInt64, rate::Float32) = begin
-        kerbal(conn, var"##265"(id, rate))
+        kerbal(conn, var"##320"(id, rate))
     end
 @doc "    SetStreamRate(id::UInt64, rate::Float32)\n\nSet the update rate for a stream in Hz.\n\n" SetStreamRate
 export SetStreamRate
-import ..RemoveStream as var"##266"
+import ..RemoveStream as var"##321"
 RemoveStream(conn::KRPCConnection, id::UInt64) = begin
-        kerbal(conn, var"##266"(id))
+        kerbal(conn, var"##321"(id))
     end
 @doc "    RemoveStream(id::UInt64)\n\nRemove a streaming request.\n\n" RemoveStream
 export RemoveStream
-import ..AddEvent as var"##267"
+import ..AddEvent as var"##322"
 AddEvent(conn::KRPCConnection, expression::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##267"(expression))
+        kerbal(conn, var"##322"(expression))
     end
 @doc "    AddEvent(expression::RemoteTypes.Expression)\n\nCreate an event from a server side expression.\n\n" AddEvent
 export AddEvent
-import ..get_Clients as var"##268"
+import ..get_Clients as var"##323"
 Clients(this::RemoteTypes.KRPC) = begin
-        kerbal(this.conn, var"##268"())
+        kerbal(this.conn, var"##323"())
     end
 @doc "    Clients()\n\nA list of RPC clients that are currently connected to the server.\nEach entry in the list is a clients identifier, name and address.\n\n" Clients
 export Clients
-import ..get_CurrentGameScene as var"##269"
+import ..get_CurrentGameScene as var"##324"
 CurrentGameScene(this::RemoteTypes.KRPC) = begin
-        kerbal(this.conn, var"##269"())
+        kerbal(this.conn, var"##324"())
     end
 @doc "    CurrentGameScene()\n\nGet the current game scene.\n\n" CurrentGameScene
 export CurrentGameScene
-import ..get_Paused as var"##270"
+import ..get_Paused as var"##325"
 Paused(this::RemoteTypes.KRPC) = begin
-        kerbal(this.conn, var"##270"())
+        kerbal(this.conn, var"##325"())
     end
 @doc "    Paused()\n\nWhether the game is paused.\n\n" Paused
 export Paused
-import ..set_Paused as var"##271"
+import ..set_Paused as var"##326"
 Paused!(this::RemoteTypes.KRPC, value::Bool) = begin
-        kerbal(this.conn, var"##271"(value))
+        kerbal(this.conn, var"##326"(value))
     end
 @doc "    Paused!(value::Bool)\n\nWhether the game is paused.\n\n" Paused!
 export Paused!
-import ..Expression_static_ConstantDouble as var"##272"
+import ..Expression_static_ConstantDouble as var"##327"
 ConstantDouble(conn::KRPCConnection, value::Float64) = begin
-        kerbal(conn, var"##272"(value))
+        kerbal(conn, var"##327"(value))
     end
 @doc "    ConstantDouble(value::Float64)\n\nA constant value of double precision floating point type.\n\n# Arguments\n- `value::Float64`: \n" ConstantDouble
 export ConstantDouble
-import ..Expression_static_ConstantFloat as var"##273"
+import ..Expression_static_ConstantFloat as var"##328"
 ConstantFloat(conn::KRPCConnection, value::Float32) = begin
-        kerbal(conn, var"##273"(value))
+        kerbal(conn, var"##328"(value))
     end
 @doc "    ConstantFloat(value::Float32)\n\nA constant value of single precision floating point type.\n\n# Arguments\n- `value::Float32`: \n" ConstantFloat
 export ConstantFloat
-import ..Expression_static_ConstantInt as var"##274"
+import ..Expression_static_ConstantInt as var"##329"
 ConstantInt(conn::KRPCConnection, value::Int32) = begin
-        kerbal(conn, var"##274"(value))
+        kerbal(conn, var"##329"(value))
     end
 @doc "    ConstantInt(value::Int32)\n\nA constant value of integer type.\n\n# Arguments\n- `value::Int32`: \n" ConstantInt
 export ConstantInt
-import ..Expression_static_ConstantBool as var"##275"
+import ..Expression_static_ConstantBool as var"##330"
 ConstantBool(conn::KRPCConnection, value::Bool) = begin
-        kerbal(conn, var"##275"(value))
+        kerbal(conn, var"##330"(value))
     end
 @doc "    ConstantBool(value::Bool)\n\nA constant value of boolean type.\n\n# Arguments\n- `value::Bool`: \n" ConstantBool
 export ConstantBool
-import ..Expression_static_ConstantString as var"##276"
+import ..Expression_static_ConstantString as var"##331"
 ConstantString(conn::KRPCConnection, value::String) = begin
-        kerbal(conn, var"##276"(value))
+        kerbal(conn, var"##331"(value))
     end
 @doc "    ConstantString(value::String)\n\nA constant value of string type.\n\n# Arguments\n- `value::String`: \n" ConstantString
 export ConstantString
-import ..Expression_static_Call as var"##277"
+import ..Expression_static_Call as var"##332"
 Call(conn::KRPCConnection, call::Request) = begin
-        kerbal(conn, var"##277"(call))
+        kerbal(conn, var"##332"(call))
     end
 @doc "    Call(call::Request)\n\nAn RPC call.\n\n# Arguments\n- `call::Request`: \n" Call
 export Call
-import ..Expression_static_Equal as var"##278"
+import ..Expression_static_Equal as var"##333"
 Equal(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##278"(arg0, arg1))
+        kerbal(conn, var"##333"(arg0, arg1))
     end
 @doc "    Equal(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nEquality comparison.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" Equal
 export Equal
-import ..Expression_static_NotEqual as var"##279"
+import ..Expression_static_NotEqual as var"##334"
 NotEqual(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##279"(arg0, arg1))
+        kerbal(conn, var"##334"(arg0, arg1))
     end
 @doc "    NotEqual(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nInequality comparison.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" NotEqual
 export NotEqual
-import ..Expression_static_GreaterThan as var"##280"
+import ..Expression_static_GreaterThan as var"##335"
 GreaterThan(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##280"(arg0, arg1))
+        kerbal(conn, var"##335"(arg0, arg1))
     end
 @doc "    GreaterThan(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nGreater than numerical comparison.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" GreaterThan
 export GreaterThan
-import ..Expression_static_GreaterThanOrEqual as var"##281"
+import ..Expression_static_GreaterThanOrEqual as var"##336"
 GreaterThanOrEqual(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##281"(arg0, arg1))
+        kerbal(conn, var"##336"(arg0, arg1))
     end
 @doc "    GreaterThanOrEqual(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nGreater than or equal numerical comparison.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" GreaterThanOrEqual
 export GreaterThanOrEqual
-import ..Expression_static_LessThan as var"##282"
+import ..Expression_static_LessThan as var"##337"
 LessThan(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##282"(arg0, arg1))
+        kerbal(conn, var"##337"(arg0, arg1))
     end
 @doc "    LessThan(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nLess than numerical comparison.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" LessThan
 export LessThan
-import ..Expression_static_LessThanOrEqual as var"##283"
+import ..Expression_static_LessThanOrEqual as var"##338"
 LessThanOrEqual(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##283"(arg0, arg1))
+        kerbal(conn, var"##338"(arg0, arg1))
     end
 @doc "    LessThanOrEqual(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nLess than or equal numerical comparison.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" LessThanOrEqual
 export LessThanOrEqual
-import ..Expression_static_And as var"##284"
+import ..Expression_static_And as var"##339"
 And(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##284"(arg0, arg1))
+        kerbal(conn, var"##339"(arg0, arg1))
     end
 @doc "    And(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nBoolean and operator.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" And
 export And
-import ..Expression_static_Or as var"##285"
+import ..Expression_static_Or as var"##340"
 Or(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##285"(arg0, arg1))
+        kerbal(conn, var"##340"(arg0, arg1))
     end
 @doc "    Or(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nBoolean or operator.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" Or
 export Or
-import ..Expression_static_ExclusiveOr as var"##286"
+import ..Expression_static_ExclusiveOr as var"##341"
 ExclusiveOr(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##286"(arg0, arg1))
+        kerbal(conn, var"##341"(arg0, arg1))
     end
 @doc "    ExclusiveOr(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nBoolean exclusive-or operator.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" ExclusiveOr
 export ExclusiveOr
-import ..Expression_static_Not as var"##287"
+import ..Expression_static_Not as var"##342"
 Not(conn::KRPCConnection, arg::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##287"(arg))
+        kerbal(conn, var"##342"(arg))
     end
 @doc "    Not(arg::RemoteTypes.Expression)\n\nBoolean negation operator.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: \n" Not
 export Not
-import ..Expression_static_Add as var"##288"
+import ..Expression_static_Add as var"##343"
 Add(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##288"(arg0, arg1))
+        kerbal(conn, var"##343"(arg0, arg1))
     end
 @doc "    Add(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nNumerical addition.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" Add
 export Add
-import ..Expression_static_Subtract as var"##289"
+import ..Expression_static_Subtract as var"##344"
 Subtract(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##289"(arg0, arg1))
+        kerbal(conn, var"##344"(arg0, arg1))
     end
 @doc "    Subtract(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nNumerical subtraction.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" Subtract
 export Subtract
-import ..Expression_static_Multiply as var"##290"
+import ..Expression_static_Multiply as var"##345"
 Multiply(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##290"(arg0, arg1))
+        kerbal(conn, var"##345"(arg0, arg1))
     end
 @doc "    Multiply(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nNumerical multiplication.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" Multiply
 export Multiply
-import ..Expression_static_Divide as var"##291"
+import ..Expression_static_Divide as var"##346"
 Divide(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##291"(arg0, arg1))
+        kerbal(conn, var"##346"(arg0, arg1))
     end
 @doc "    Divide(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nNumerical division.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" Divide
 export Divide
-import ..Expression_static_Modulo as var"##292"
+import ..Expression_static_Modulo as var"##347"
 Modulo(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##292"(arg0, arg1))
+        kerbal(conn, var"##347"(arg0, arg1))
     end
 @doc "    Modulo(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nNumerical modulo operator.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n# Returns\nThe remainder of arg0 divided by arg1\n" Modulo
 export Modulo
-import ..Expression_static_Power as var"##293"
+import ..Expression_static_Power as var"##348"
 Power(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##293"(arg0, arg1))
+        kerbal(conn, var"##348"(arg0, arg1))
     end
 @doc "    Power(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nNumerical power operator.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n# Returns\narg0 raised to the power of arg1, with type of arg0\n" Power
 export Power
-import ..Expression_static_LeftShift as var"##294"
+import ..Expression_static_LeftShift as var"##349"
 LeftShift(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##294"(arg0, arg1))
+        kerbal(conn, var"##349"(arg0, arg1))
     end
 @doc "    LeftShift(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nBitwise left shift.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" LeftShift
 export LeftShift
-import ..Expression_static_RightShift as var"##295"
+import ..Expression_static_RightShift as var"##350"
 RightShift(conn::KRPCConnection, arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##295"(arg0, arg1))
+        kerbal(conn, var"##350"(arg0, arg1))
     end
 @doc "    RightShift(arg0::RemoteTypes.Expression, arg1::RemoteTypes.Expression)\n\nBitwise right shift.\n\n# Arguments\n- `arg0::RemoteTypes.Expression`: \n- `arg1::RemoteTypes.Expression`: \n" RightShift
 export RightShift
-import ..Expression_static_Cast as var"##296"
+import ..Expression_static_Cast as var"##351"
 Cast(conn::KRPCConnection, arg::RemoteTypes.Expression, type::RemoteTypes.Type) = begin
-        kerbal(conn, var"##296"(arg, type))
+        kerbal(conn, var"##351"(arg, type))
     end
 @doc "    Cast(arg::RemoteTypes.Expression, type::RemoteTypes.Type)\n\nPerform a cast to the given type.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: \n- `type::RemoteTypes.Type`: Type to cast the argument to.\n" Cast
 export Cast
-import ..Expression_static_Parameter as var"##297"
+import ..Expression_static_Parameter as var"##352"
 Parameter(conn::KRPCConnection, name::String, type::RemoteTypes.Type) = begin
-        kerbal(conn, var"##297"(name, type))
+        kerbal(conn, var"##352"(name, type))
     end
 @doc "    Parameter(name::String, type::RemoteTypes.Type)\n\nA named parameter of type double.\n\n# Arguments\n- `name::String`: The name of the parameter.\n- `type::RemoteTypes.Type`: The type of the parameter.\n# Returns\nA named parameter.\n" Parameter
 export Parameter
-import ..Expression_static_Function as var"##298"
+import ..Expression_static_Function as var"##353"
 Function(conn::KRPCConnection, parameters::begin
                 Array{RemoteTypes.Expression, 1}
             end, body::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##298"(parameters, body))
+        kerbal(conn, var"##353"(parameters, body))
     end
 @doc "    Function(parameters::begin\n    Array{RemoteTypes.Expression, 1}\nend, body::RemoteTypes.Expression)\n\nA function.\n\n# Arguments\n- `parameters::begin\n    Array{RemoteTypes.Expression, 1}\nend`: The parameters of the function.\n- `body::RemoteTypes.Expression`: The body of the function.\n# Returns\nA function.\n" Function
 export Function
-import ..Expression_static_Invoke as var"##299"
+import ..Expression_static_Invoke as var"##354"
 Invoke(conn::KRPCConnection, kFunction::RemoteTypes.Expression, args::begin
                 Dict{String, RemoteTypes.Expression}
             end) = begin
-        kerbal(conn, var"##299"(kFunction, args))
+        kerbal(conn, var"##354"(kFunction, args))
     end
 @doc "    Invoke(kFunction::RemoteTypes.Expression, args::begin\n    Dict{String, RemoteTypes.Expression}\nend)\n\nA function call.\n\n# Arguments\n- `kFunction::RemoteTypes.Expression`: The function to call.\n- `args::begin\n    Dict{String, RemoteTypes.Expression}\nend`: The arguments to call the function with.\n# Returns\nA function call.\n" Invoke
 export Invoke
-import ..Expression_static_CreateTuple as var"##300"
+import ..Expression_static_CreateTuple as var"##355"
 CreateTuple(conn::KRPCConnection, elements::begin
                 Array{RemoteTypes.Expression, 1}
             end) = begin
-        kerbal(conn, var"##300"(elements))
+        kerbal(conn, var"##355"(elements))
     end
 @doc "    CreateTuple(elements::begin\n    Array{RemoteTypes.Expression, 1}\nend)\n\nConstruct a tuple.\n\n# Arguments\n- `elements::begin\n    Array{RemoteTypes.Expression, 1}\nend`: The elements.\n# Returns\nThe tuple.\n" CreateTuple
 export CreateTuple
-import ..Expression_static_CreateList as var"##301"
+import ..Expression_static_CreateList as var"##356"
 CreateList(conn::KRPCConnection, values::begin
                 Array{RemoteTypes.Expression, 1}
             end) = begin
-        kerbal(conn, var"##301"(values))
+        kerbal(conn, var"##356"(values))
     end
 @doc "    CreateList(values::begin\n    Array{RemoteTypes.Expression, 1}\nend)\n\nConstruct a list.\n\n# Arguments\n- `values::begin\n    Array{RemoteTypes.Expression, 1}\nend`: The value. Should all be of the same type.\n# Returns\nThe list.\n" CreateList
 export CreateList
-import ..Expression_static_CreateSet as var"##302"
+import ..Expression_static_CreateSet as var"##357"
 CreateSet(conn::KRPCConnection, values::begin
                 Base.Set{RemoteTypes.Expression}
             end) = begin
-        kerbal(conn, var"##302"(values))
+        kerbal(conn, var"##357"(values))
     end
 @doc "    CreateSet(values::begin\n    Base.Set{RemoteTypes.Expression}\nend)\n\nConstruct a set.\n\n# Arguments\n- `values::begin\n    Base.Set{RemoteTypes.Expression}\nend`: The values. Should all be of the same type.\n# Returns\nThe set.\n" CreateSet
 export CreateSet
-import ..Expression_static_CreateDictionary as var"##303"
+import ..Expression_static_CreateDictionary as var"##358"
 CreateDictionary(conn::KRPCConnection, keys::begin
                 Array{RemoteTypes.Expression, 1}
             end, values::begin
                 Array{RemoteTypes.Expression, 1}
             end) = begin
-        kerbal(conn, var"##303"(keys, values))
+        kerbal(conn, var"##358"(keys, values))
     end
 @doc "    CreateDictionary(keys::begin\n    Array{RemoteTypes.Expression, 1}\nend, values::begin\n    Array{RemoteTypes.Expression, 1}\nend)\n\nConstruct a dictionary, from a list of corresponding keys and values.\n\n# Arguments\n- `keys::begin\n    Array{RemoteTypes.Expression, 1}\nend`: The keys. Should all be of the same type.\n- `values::begin\n    Array{RemoteTypes.Expression, 1}\nend`: The values. Should all be of the same type.\n# Returns\nThe dictionary.\n" CreateDictionary
 export CreateDictionary
-import ..Expression_static_ToList as var"##304"
+import ..Expression_static_ToList as var"##359"
 ToList(conn::KRPCConnection, arg::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##304"(arg))
+        kerbal(conn, var"##359"(arg))
     end
 @doc "    ToList(arg::RemoteTypes.Expression)\n\nConvert a collection to a list.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The collection.\n# Returns\nThe collection as a list.\n" ToList
 export ToList
-import ..Expression_static_ToSet as var"##305"
+import ..Expression_static_ToSet as var"##360"
 ToSet(conn::KRPCConnection, arg::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##305"(arg))
+        kerbal(conn, var"##360"(arg))
     end
 @doc "    ToSet(arg::RemoteTypes.Expression)\n\nConvert a collection to a set.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The collection.\n# Returns\nThe collection as a set.\n" ToSet
 export ToSet
-import ..Expression_static_Get as var"##306"
+import ..Expression_static_Get as var"##361"
 Get(conn::KRPCConnection, arg::RemoteTypes.Expression, index::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##306"(arg, index))
+        kerbal(conn, var"##361"(arg, index))
     end
 @doc "    Get(arg::RemoteTypes.Expression, index::RemoteTypes.Expression)\n\nAccess an element in a tuple, list or dictionary.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The tuple, list or dictionary.\n- `index::RemoteTypes.Expression`: The index of the element to access. A zero indexed integer for a tuple or list, or a key for a dictionary.\n# Returns\nThe element.\n" Get
 export Get
-import ..Expression_static_Count as var"##307"
+import ..Expression_static_Count as var"##362"
 Count(conn::KRPCConnection, arg::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##307"(arg))
+        kerbal(conn, var"##362"(arg))
     end
 @doc "    Count(arg::RemoteTypes.Expression)\n\nNumber of elements in a collection.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The list, set or dictionary.\n# Returns\nThe number of elements in the collection.\n" Count
 export Count
-import ..Expression_static_Sum as var"##308"
+import ..Expression_static_Sum as var"##363"
 Sum(conn::KRPCConnection, arg::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##308"(arg))
+        kerbal(conn, var"##363"(arg))
     end
 @doc "    Sum(arg::RemoteTypes.Expression)\n\nSum all elements of a collection.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The list or set.\n# Returns\nThe sum of the elements in the collection.\n" Sum
 export Sum
-import ..Expression_static_Max as var"##309"
+import ..Expression_static_Max as var"##364"
 Max(conn::KRPCConnection, arg::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##309"(arg))
+        kerbal(conn, var"##364"(arg))
     end
 @doc "    Max(arg::RemoteTypes.Expression)\n\nMaximum of all elements in a collection.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The list or set.\n# Returns\nThe maximum elements in the collection.\n" Max
 export Max
-import ..Expression_static_Min as var"##310"
+import ..Expression_static_Min as var"##365"
 Min(conn::KRPCConnection, arg::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##310"(arg))
+        kerbal(conn, var"##365"(arg))
     end
 @doc "    Min(arg::RemoteTypes.Expression)\n\nMinimum of all elements in a collection.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The list or set.\n# Returns\nThe minimum elements in the collection.\n" Min
 export Min
-import ..Expression_static_Average as var"##311"
+import ..Expression_static_Average as var"##366"
 Average(conn::KRPCConnection, arg::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##311"(arg))
+        kerbal(conn, var"##366"(arg))
     end
 @doc "    Average(arg::RemoteTypes.Expression)\n\nMinimum of all elements in a collection.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The list or set.\n# Returns\nThe minimum elements in the collection.\n" Average
 export Average
-import ..Expression_static_Select as var"##312"
+import ..Expression_static_Select as var"##367"
 Select(conn::KRPCConnection, arg::RemoteTypes.Expression, func::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##312"(arg, func))
+        kerbal(conn, var"##367"(arg, func))
     end
 @doc "    Select(arg::RemoteTypes.Expression, func::RemoteTypes.Expression)\n\nRun a function on every element in the collection.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The list or set.\n- `func::RemoteTypes.Expression`: The function.\n# Returns\nThe modified collection.\n" Select
 export Select
-import ..Expression_static_Where as var"##313"
+import ..Expression_static_Where as var"##368"
 Where(conn::KRPCConnection, arg::RemoteTypes.Expression, func::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##313"(arg, func))
+        kerbal(conn, var"##368"(arg, func))
     end
 @doc "    Where(arg::RemoteTypes.Expression, func::RemoteTypes.Expression)\n\nRun a function on every element in the collection.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The list or set.\n- `func::RemoteTypes.Expression`: The function.\n# Returns\nThe modified collection.\n" Where
 export Where
-import ..Expression_static_Contains as var"##314"
+import ..Expression_static_Contains as var"##369"
 Contains(conn::KRPCConnection, arg::RemoteTypes.Expression, value::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##314"(arg, value))
+        kerbal(conn, var"##369"(arg, value))
     end
 @doc "    Contains(arg::RemoteTypes.Expression, value::RemoteTypes.Expression)\n\nDetermine if a collection contains a value.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The collection.\n- `value::RemoteTypes.Expression`: The value to look for.\n# Returns\nWhether the collection contains a value.\n" Contains
 export Contains
-import ..Expression_static_Aggregate as var"##315"
+import ..Expression_static_Aggregate as var"##370"
 Aggregate(conn::KRPCConnection, arg::RemoteTypes.Expression, func::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##315"(arg, func))
+        kerbal(conn, var"##370"(arg, func))
     end
 @doc "    Aggregate(arg::RemoteTypes.Expression, func::RemoteTypes.Expression)\n\nApplies an accumulator function over a sequence.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The collection.\n- `func::RemoteTypes.Expression`: The accumulator function.\n# Returns\nThe accumulated value.\n" Aggregate
 export Aggregate
-import ..Expression_static_AggregateWithSeed as var"##316"
+import ..Expression_static_AggregateWithSeed as var"##371"
 AggregateWithSeed(conn::KRPCConnection, arg::RemoteTypes.Expression, seed::RemoteTypes.Expression, func::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##316"(arg, seed, func))
+        kerbal(conn, var"##371"(arg, seed, func))
     end
 @doc "    AggregateWithSeed(arg::RemoteTypes.Expression, seed::RemoteTypes.Expression, func::RemoteTypes.Expression)\n\nApplies an accumulator function over a sequence, with a given seed.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The collection.\n- `seed::RemoteTypes.Expression`: The seed value.\n- `func::RemoteTypes.Expression`: The accumulator function.\n# Returns\nThe accumulated value.\n" AggregateWithSeed
 export AggregateWithSeed
-import ..Expression_static_Concat as var"##317"
+import ..Expression_static_Concat as var"##372"
 Concat(conn::KRPCConnection, arg1::RemoteTypes.Expression, arg2::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##317"(arg1, arg2))
+        kerbal(conn, var"##372"(arg1, arg2))
     end
 @doc "    Concat(arg1::RemoteTypes.Expression, arg2::RemoteTypes.Expression)\n\nConcatenate two sequences.\n\n# Arguments\n- `arg1::RemoteTypes.Expression`: The first sequence.\n- `arg2::RemoteTypes.Expression`: The second sequence.\n# Returns\nThe first sequence followed by the second sequence.\n" Concat
 export Concat
-import ..Expression_static_OrderBy as var"##318"
+import ..Expression_static_OrderBy as var"##373"
 OrderBy(conn::KRPCConnection, arg::RemoteTypes.Expression, key::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##318"(arg, key))
+        kerbal(conn, var"##373"(arg, key))
     end
 @doc "    OrderBy(arg::RemoteTypes.Expression, key::RemoteTypes.Expression)\n\nOrder a collection using a key function.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The collection to order.\n- `key::RemoteTypes.Expression`: A function that takes a value from the collection and generates a key to sort on.\n# Returns\nThe ordered collection.\n" OrderBy
 export OrderBy
-import ..Expression_static_All as var"##319"
+import ..Expression_static_All as var"##374"
 All(conn::KRPCConnection, arg::RemoteTypes.Expression, predicate::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##319"(arg, predicate))
+        kerbal(conn, var"##374"(arg, predicate))
     end
 @doc "    All(arg::RemoteTypes.Expression, predicate::RemoteTypes.Expression)\n\nDetermine whether all items in a collection satisfy a boolean predicate.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The collection.\n- `predicate::RemoteTypes.Expression`: The predicate function.\n# Returns\nWhether all items satisfy the predicate.\n" All
 export All
-import ..Expression_static_Any as var"##320"
+import ..Expression_static_Any as var"##375"
 Any(conn::KRPCConnection, arg::RemoteTypes.Expression, predicate::RemoteTypes.Expression) = begin
-        kerbal(conn, var"##320"(arg, predicate))
+        kerbal(conn, var"##375"(arg, predicate))
     end
 @doc "    Any(arg::RemoteTypes.Expression, predicate::RemoteTypes.Expression)\n\nDetermine whether any item in a collection satisfies a boolean predicate.\n\n# Arguments\n- `arg::RemoteTypes.Expression`: The collection.\n- `predicate::RemoteTypes.Expression`: The predicate function.\n# Returns\nWhether any item satisfies the predicate.\n" Any
 export Any
-import ..Type_static_Double as var"##321"
+import ..Type_static_Double as var"##376"
 Double(conn::KRPCConnection) = begin
-        kerbal(conn, var"##321"())
+        kerbal(conn, var"##376"())
     end
 @doc "    Double()\n\nDouble type.\n\n" Double
 export Double
-import ..Type_static_Float as var"##322"
+import ..Type_static_Float as var"##377"
 Float(conn::KRPCConnection) = begin
-        kerbal(conn, var"##322"())
+        kerbal(conn, var"##377"())
     end
 @doc "    Float()\n\nFloat type.\n\n" Float
 export Float
-import ..Type_static_Int as var"##323"
+import ..Type_static_Int as var"##378"
 Int(conn::KRPCConnection) = begin
-        kerbal(conn, var"##323"())
+        kerbal(conn, var"##378"())
     end
 @doc "    Int()\n\nInt type.\n\n" Int
 export Int
-import ..Type_static_Bool as var"##324"
+import ..Type_static_Bool as var"##379"
 Bool(conn::KRPCConnection) = begin
-        kerbal(conn, var"##324"())
+        kerbal(conn, var"##379"())
     end
 @doc "    Bool()\n\nBool type.\n\n" Bool
 export Bool
-import ..Type_static_String as var"##325"
+import ..Type_static_String as var"##380"
 String(conn::KRPCConnection) = begin
-        kerbal(conn, var"##325"())
+        kerbal(conn, var"##380"())
     end
 @doc "    String()\n\nString type.\n\n" String
 export String
@@ -2113,34 +2113,6 @@ struct Node <: kRPCTypes.Class
     id::Int
 end
 struct Orbit <: kRPCTypes.Class
-    conn::KRPCConnection
-    id::Int
-end
-struct ReferenceFrame <: kRPCTypes.Class
-    conn::KRPCConnection
-    id::Int
-end
-struct Resource <: kRPCTypes.Class
-    conn::KRPCConnection
-    id::Int
-end
-struct ResourceTransfer <: kRPCTypes.Class
-    conn::KRPCConnection
-    id::Int
-end
-struct Resources <: kRPCTypes.Class
-    conn::KRPCConnection
-    id::Int
-end
-struct Vessel <: kRPCTypes.Class
-    conn::KRPCConnection
-    id::Int
-end
-struct Waypoint <: kRPCTypes.Class
-    conn::KRPCConnection
-    id::Int
-end
-struct WaypointManager <: kRPCTypes.Class
     conn::KRPCConnection
     id::Int
 end
@@ -2240,6 +2212,10 @@ struct ResourceHarvester <: kRPCTypes.Class
     conn::KRPCConnection
     id::Int
 end
+struct RoboticController <: kRPCTypes.Class
+    conn::KRPCConnection
+    id::Int
+end
 struct RoboticHinge <: kRPCTypes.Class
     conn::KRPCConnection
     id::Int
@@ -2280,29 +2256,40 @@ struct Wheel <: kRPCTypes.Class
     conn::KRPCConnection
     id::Int
 end
+struct ReferenceFrame <: kRPCTypes.Class
+    conn::KRPCConnection
+    id::Int
+end
+struct Resource <: kRPCTypes.Class
+    conn::KRPCConnection
+    id::Int
+end
+struct ResourceTransfer <: kRPCTypes.Class
+    conn::KRPCConnection
+    id::Int
+end
+struct Resources <: kRPCTypes.Class
+    conn::KRPCConnection
+    id::Int
+end
+struct Vessel <: kRPCTypes.Class
+    conn::KRPCConnection
+    id::Int
+end
+struct Waypoint <: kRPCTypes.Class
+    conn::KRPCConnection
+    id::Int
+end
+struct WaypointManager <: kRPCTypes.Class
+    conn::KRPCConnection
+    id::Int
+end
 struct SpaceCenter
     conn::KRPCConnection
 end
-export Alarm, AlarmClock, AutoPilot, Camera, CelestialBody, CommLink, CommNode, Comms, Contract, ContractManager, ContractParameter, Control, CrewMember, Flight, Node, Orbit, ReferenceFrame, Resource, ResourceTransfer, Resources, Vessel, Waypoint, WaypointManager, Antenna, CargoBay, ControlSurface, Decoupler, DockingPort, Engine, Experiment, Fairing, Force, Intake, LaunchClamp, Leg, Light, Module, Parachute, Part, Parts, Propellant, RCS, Radiator, ReactionWheel, ResourceConverter, ResourceDrain, ResourceHarvester, RoboticHinge, RoboticPiston, RoboticRotation, RoboticRotor, ScienceData, ScienceSubject, Sensor, SolarPanel, Thruster, Wheel
+export Alarm, AlarmClock, AutoPilot, Camera, CelestialBody, CommLink, CommNode, Comms, Contract, ContractManager, ContractParameter, Control, CrewMember, Flight, Node, Orbit, Antenna, CargoBay, ControlSurface, Decoupler, DockingPort, Engine, Experiment, Fairing, Force, Intake, LaunchClamp, Leg, Light, Module, Parachute, Part, Parts, Propellant, RCS, Radiator, ReactionWheel, ResourceConverter, ResourceDrain, ResourceHarvester, RoboticController, RoboticHinge, RoboticPiston, RoboticRotation, RoboticRotor, ScienceData, ScienceSubject, Sensor, SolarPanel, Thruster, Wheel, ReferenceFrame, Resource, ResourceTransfer, Resources, Vessel, Waypoint, WaypointManager
 export SpaceCenter
 end
-struct EGameMode <: kRPCTypes.Enum
-    value::Int32
-end
-const EGameMode_Sandbox = EGameMode(0)
-const EGameMode_Career = EGameMode(1)
-const EGameMode_Science = EGameMode(2)
-const EGameMode_ScienceSandbox = EGameMode(3)
-const EGameMode_Mission = EGameMode(4)
-const EGameMode_MissionBuilder = EGameMode(5)
-const EGameMode_Scenario = EGameMode(6)
-const EGameMode_ScenarioNonResumable = EGameMode(7)
-struct EWarpMode <: kRPCTypes.Enum
-    value::Int32
-end
-const EWarpMode_Rails = EWarpMode(0)
-const EWarpMode_Physics = EWarpMode(1)
-const EWarpMode_None = EWarpMode(2)
 struct ECameraMode <: kRPCTypes.Enum
     value::Int32
 end
@@ -2356,55 +2343,17 @@ const ECrewMemberType_Applicant = ECrewMemberType(0)
 const ECrewMemberType_Crew = ECrewMemberType(1)
 const ECrewMemberType_Tourist = ECrewMemberType(2)
 const ECrewMemberType_Unowned = ECrewMemberType(3)
-struct EResourceFlowMode <: kRPCTypes.Enum
+struct EGameMode <: kRPCTypes.Enum
     value::Int32
 end
-const EResourceFlowMode_Vessel = EResourceFlowMode(0)
-const EResourceFlowMode_Stage = EResourceFlowMode(1)
-const EResourceFlowMode_Adjacent = EResourceFlowMode(2)
-const EResourceFlowMode_None = EResourceFlowMode(3)
-struct ESASMode <: kRPCTypes.Enum
-    value::Int32
-end
-const ESASMode_StabilityAssist = ESASMode(0)
-const ESASMode_Maneuver = ESASMode(1)
-const ESASMode_Prograde = ESASMode(2)
-const ESASMode_Retrograde = ESASMode(3)
-const ESASMode_Normal = ESASMode(4)
-const ESASMode_AntiNormal = ESASMode(5)
-const ESASMode_Radial = ESASMode(6)
-const ESASMode_AntiRadial = ESASMode(7)
-const ESASMode_Target = ESASMode(8)
-const ESASMode_AntiTarget = ESASMode(9)
-struct ESpeedMode <: kRPCTypes.Enum
-    value::Int32
-end
-const ESpeedMode_Orbit = ESpeedMode(0)
-const ESpeedMode_Surface = ESpeedMode(1)
-const ESpeedMode_Target = ESpeedMode(2)
-struct EVesselSituation <: kRPCTypes.Enum
-    value::Int32
-end
-const EVesselSituation_PreLaunch = EVesselSituation(0)
-const EVesselSituation_Orbiting = EVesselSituation(1)
-const EVesselSituation_SubOrbital = EVesselSituation(2)
-const EVesselSituation_Escaping = EVesselSituation(3)
-const EVesselSituation_Flying = EVesselSituation(4)
-const EVesselSituation_Landed = EVesselSituation(5)
-const EVesselSituation_Splashed = EVesselSituation(6)
-const EVesselSituation_Docked = EVesselSituation(7)
-struct EVesselType <: kRPCTypes.Enum
-    value::Int32
-end
-const EVesselType_Base = EVesselType(0)
-const EVesselType_Debris = EVesselType(1)
-const EVesselType_Lander = EVesselType(2)
-const EVesselType_Plane = EVesselType(3)
-const EVesselType_Probe = EVesselType(4)
-const EVesselType_Relay = EVesselType(5)
-const EVesselType_Rover = EVesselType(6)
-const EVesselType_Ship = EVesselType(7)
-const EVesselType_Station = EVesselType(8)
+const EGameMode_Sandbox = EGameMode(0)
+const EGameMode_Career = EGameMode(1)
+const EGameMode_Science = EGameMode(2)
+const EGameMode_ScienceSandbox = EGameMode(3)
+const EGameMode_Mission = EGameMode(4)
+const EGameMode_MissionBuilder = EGameMode(5)
+const EGameMode_Scenario = EGameMode(6)
+const EGameMode_ScenarioNonResumable = EGameMode(7)
 struct EAntennaState <: kRPCTypes.Enum
     value::Int32
 end
@@ -2481,6 +2430,11 @@ const EResourceConverterState_MissingResource = EResourceConverterState(2)
 const EResourceConverterState_StorageFull = EResourceConverterState(3)
 const EResourceConverterState_Capacity = EResourceConverterState(4)
 const EResourceConverterState_Unknown = EResourceConverterState(5)
+struct EDrainModes <: kRPCTypes.Enum
+    value::Int32
+end
+const EDrainModes_part = EDrainModes(0)
+const EDrainModes_vessel = EDrainModes(1)
 struct EResourceHarvesterState <: kRPCTypes.Enum
     value::Int32
 end
@@ -2505,12 +2459,62 @@ const EWheelState_Retracted = EWheelState(1)
 const EWheelState_Deploying = EWheelState(2)
 const EWheelState_Retracting = EWheelState(3)
 const EWheelState_Broken = EWheelState(4)
-struct EDrainModes <: kRPCTypes.Enum
+struct EResourceFlowMode <: kRPCTypes.Enum
     value::Int32
 end
-const EDrainModes_part = EDrainModes(0)
-const EDrainModes_vessel = EDrainModes(1)
-export EGameMode, EWarpMode, ECameraMode, ECommLinkType, EContractState, EControlInputMode, EControlSource, EControlState, ECrewMemberType, EResourceFlowMode, ESASMode, ESpeedMode, EVesselSituation, EVesselType, EAntennaState, EAutostrutState, ECargoBayState, EDockingPortState, ELegState, EMotorState, EParachuteState, ERadiatorState, EResourceConverterState, EResourceHarvesterState, ESolarPanelState, EWheelState, EDrainModes
+const EResourceFlowMode_Vessel = EResourceFlowMode(0)
+const EResourceFlowMode_Stage = EResourceFlowMode(1)
+const EResourceFlowMode_Adjacent = EResourceFlowMode(2)
+const EResourceFlowMode_None = EResourceFlowMode(3)
+struct ESASMode <: kRPCTypes.Enum
+    value::Int32
+end
+const ESASMode_StabilityAssist = ESASMode(0)
+const ESASMode_Maneuver = ESASMode(1)
+const ESASMode_Prograde = ESASMode(2)
+const ESASMode_Retrograde = ESASMode(3)
+const ESASMode_Normal = ESASMode(4)
+const ESASMode_AntiNormal = ESASMode(5)
+const ESASMode_Radial = ESASMode(6)
+const ESASMode_AntiRadial = ESASMode(7)
+const ESASMode_Target = ESASMode(8)
+const ESASMode_AntiTarget = ESASMode(9)
+struct ESpeedMode <: kRPCTypes.Enum
+    value::Int32
+end
+const ESpeedMode_Orbit = ESpeedMode(0)
+const ESpeedMode_Surface = ESpeedMode(1)
+const ESpeedMode_Target = ESpeedMode(2)
+struct EVesselSituation <: kRPCTypes.Enum
+    value::Int32
+end
+const EVesselSituation_PreLaunch = EVesselSituation(0)
+const EVesselSituation_Orbiting = EVesselSituation(1)
+const EVesselSituation_SubOrbital = EVesselSituation(2)
+const EVesselSituation_Escaping = EVesselSituation(3)
+const EVesselSituation_Flying = EVesselSituation(4)
+const EVesselSituation_Landed = EVesselSituation(5)
+const EVesselSituation_Splashed = EVesselSituation(6)
+const EVesselSituation_Docked = EVesselSituation(7)
+struct EVesselType <: kRPCTypes.Enum
+    value::Int32
+end
+const EVesselType_Base = EVesselType(0)
+const EVesselType_Debris = EVesselType(1)
+const EVesselType_Lander = EVesselType(2)
+const EVesselType_Plane = EVesselType(3)
+const EVesselType_Probe = EVesselType(4)
+const EVesselType_Relay = EVesselType(5)
+const EVesselType_Rover = EVesselType(6)
+const EVesselType_Ship = EVesselType(7)
+const EVesselType_Station = EVesselType(8)
+struct EWarpMode <: kRPCTypes.Enum
+    value::Int32
+end
+const EWarpMode_Rails = EWarpMode(0)
+const EWarpMode_Physics = EWarpMode(1)
+const EWarpMode_None = EWarpMode(2)
+export ECameraMode, ECommLinkType, EContractState, EControlInputMode, EControlSource, EControlState, ECrewMemberType, EGameMode, EAntennaState, EAutostrutState, ECargoBayState, EDockingPortState, ELegState, EMotorState, EParachuteState, ERadiatorState, EResourceConverterState, EDrainModes, EResourceHarvesterState, ESolarPanelState, EWheelState, EResourceFlowMode, ESASMode, ESpeedMode, EVesselSituation, EVesselType, EWarpMode
 struct ClearTarget <: Request{:SpaceCenter, :ClearTarget, Nothing}
     ClearTarget() = begin
             new()
@@ -5367,737 +5371,6 @@ struct Orbit_get_OrbitalSpeed <: Request{:SpaceCenter, :Orbit_get_OrbitalSpeed, 
         end
     this::RemoteTypes.Orbit
 end
-struct ReferenceFrame_static_CreateRelative <: Request{:SpaceCenter, :ReferenceFrame_static_CreateRelative, RemoteTypes.ReferenceFrame}
-    ReferenceFrame_static_CreateRelative(referenceFrame::RemoteTypes.ReferenceFrame, position::begin
-                    Tuple{Float64, Float64, Float64}
-                end, rotation::begin
-                    Tuple{Float64, Float64, Float64, Float64}
-                end, velocity::begin
-                    Tuple{Float64, Float64, Float64}
-                end, angularVelocity::begin
-                    Tuple{Float64, Float64, Float64}
-                end) = begin
-            new(referenceFrame, position, rotation, velocity, angularVelocity)
-        end
-    referenceFrame::RemoteTypes.ReferenceFrame
-    position::begin
-            Tuple{Float64, Float64, Float64}
-        end
-    rotation::begin
-            Tuple{Float64, Float64, Float64, Float64}
-        end
-    velocity::begin
-            Tuple{Float64, Float64, Float64}
-        end
-    angularVelocity::begin
-            Tuple{Float64, Float64, Float64}
-        end
-end
-struct ReferenceFrame_static_CreateHybrid <: Request{:SpaceCenter, :ReferenceFrame_static_CreateHybrid, RemoteTypes.ReferenceFrame}
-    ReferenceFrame_static_CreateHybrid(position::RemoteTypes.ReferenceFrame, rotation::RemoteTypes.ReferenceFrame, velocity::RemoteTypes.ReferenceFrame, angularVelocity::RemoteTypes.ReferenceFrame) = begin
-            new(position, rotation, velocity, angularVelocity)
-        end
-    position::RemoteTypes.ReferenceFrame
-    rotation::RemoteTypes.ReferenceFrame
-    velocity::RemoteTypes.ReferenceFrame
-    angularVelocity::RemoteTypes.ReferenceFrame
-end
-struct Resource_get_Name <: Request{:SpaceCenter, :Resource_get_Name, String}
-    Resource_get_Name(this::RemoteTypes.Resource) = begin
-            new(this)
-        end
-    this::RemoteTypes.Resource
-end
-struct Resource_get_Part <: Request{:SpaceCenter, :Resource_get_Part, RemoteTypes.Part}
-    Resource_get_Part(this::RemoteTypes.Resource) = begin
-            new(this)
-        end
-    this::RemoteTypes.Resource
-end
-struct Resource_get_Max <: Request{:SpaceCenter, :Resource_get_Max, Float32}
-    Resource_get_Max(this::RemoteTypes.Resource) = begin
-            new(this)
-        end
-    this::RemoteTypes.Resource
-end
-struct Resource_get_Amount <: Request{:SpaceCenter, :Resource_get_Amount, Float32}
-    Resource_get_Amount(this::RemoteTypes.Resource) = begin
-            new(this)
-        end
-    this::RemoteTypes.Resource
-end
-struct Resource_get_Density <: Request{:SpaceCenter, :Resource_get_Density, Float32}
-    Resource_get_Density(this::RemoteTypes.Resource) = begin
-            new(this)
-        end
-    this::RemoteTypes.Resource
-end
-struct Resource_get_FlowMode <: Request{:SpaceCenter, :Resource_get_FlowMode, EResourceFlowMode}
-    Resource_get_FlowMode(this::RemoteTypes.Resource) = begin
-            new(this)
-        end
-    this::RemoteTypes.Resource
-end
-struct Resource_get_Enabled <: Request{:SpaceCenter, :Resource_get_Enabled, Bool}
-    Resource_get_Enabled(this::RemoteTypes.Resource) = begin
-            new(this)
-        end
-    this::RemoteTypes.Resource
-end
-struct Resource_set_Enabled <: Request{:SpaceCenter, :Resource_set_Enabled, Nothing}
-    Resource_set_Enabled(this::RemoteTypes.Resource, value::Bool) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Resource
-    value::Bool
-end
-struct ResourceTransfer_static_Start <: Request{:SpaceCenter, :ResourceTransfer_static_Start, RemoteTypes.ResourceTransfer}
-    ResourceTransfer_static_Start(fromPart::RemoteTypes.Part, toPart::RemoteTypes.Part, resource::String, maxAmount::Float32) = begin
-            new(fromPart, toPart, resource, maxAmount)
-        end
-    fromPart::RemoteTypes.Part
-    toPart::RemoteTypes.Part
-    resource::String
-    maxAmount::Float32
-end
-struct ResourceTransfer_get_Complete <: Request{:SpaceCenter, :ResourceTransfer_get_Complete, Bool}
-    ResourceTransfer_get_Complete(this::RemoteTypes.ResourceTransfer) = begin
-            new(this)
-        end
-    this::RemoteTypes.ResourceTransfer
-end
-struct ResourceTransfer_get_Amount <: Request{:SpaceCenter, :ResourceTransfer_get_Amount, Float32}
-    ResourceTransfer_get_Amount(this::RemoteTypes.ResourceTransfer) = begin
-            new(this)
-        end
-    this::RemoteTypes.ResourceTransfer
-end
-struct Resources_WithResource <: Request{:SpaceCenter, :Resources_WithResource, begin
-                Array{RemoteTypes.Resource, 1}
-            end}
-    Resources_WithResource(this::RemoteTypes.Resources, name::String) = begin
-            new(this, name)
-        end
-    this::RemoteTypes.Resources
-    name::String
-end
-struct Resources_HasResource <: Request{:SpaceCenter, :Resources_HasResource, Bool}
-    Resources_HasResource(this::RemoteTypes.Resources, name::String) = begin
-            new(this, name)
-        end
-    this::RemoteTypes.Resources
-    name::String
-end
-struct Resources_Max <: Request{:SpaceCenter, :Resources_Max, Float32}
-    Resources_Max(this::RemoteTypes.Resources, name::String) = begin
-            new(this, name)
-        end
-    this::RemoteTypes.Resources
-    name::String
-end
-struct Resources_Amount <: Request{:SpaceCenter, :Resources_Amount, Float32}
-    Resources_Amount(this::RemoteTypes.Resources, name::String) = begin
-            new(this, name)
-        end
-    this::RemoteTypes.Resources
-    name::String
-end
-struct Resources_static_Density <: Request{:SpaceCenter, :Resources_static_Density, Float32}
-    Resources_static_Density(name::String) = begin
-            new(name)
-        end
-    name::String
-end
-struct Resources_static_FlowMode <: Request{:SpaceCenter, :Resources_static_FlowMode, EResourceFlowMode}
-    Resources_static_FlowMode(name::String) = begin
-            new(name)
-        end
-    name::String
-end
-struct Resources_get_All <: Request{:SpaceCenter, :Resources_get_All, begin
-                Array{RemoteTypes.Resource, 1}
-            end}
-    Resources_get_All(this::RemoteTypes.Resources) = begin
-            new(this)
-        end
-    this::RemoteTypes.Resources
-end
-struct Resources_get_Names <: Request{:SpaceCenter, :Resources_get_Names, begin
-                Array{String, 1}
-            end}
-    Resources_get_Names(this::RemoteTypes.Resources) = begin
-            new(this)
-        end
-    this::RemoteTypes.Resources
-end
-struct Resources_get_Enabled <: Request{:SpaceCenter, :Resources_get_Enabled, Bool}
-    Resources_get_Enabled(this::RemoteTypes.Resources) = begin
-            new(this)
-        end
-    this::RemoteTypes.Resources
-end
-struct Resources_set_Enabled <: Request{:SpaceCenter, :Resources_set_Enabled, Nothing}
-    Resources_set_Enabled(this::RemoteTypes.Resources, value::Bool) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Resources
-    value::Bool
-end
-struct Vessel_Recover <: Request{:SpaceCenter, :Vessel_Recover, Nothing}
-    Vessel_Recover(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_Flight <: Request{:SpaceCenter, :Vessel_Flight, RemoteTypes.Flight}
-    Vessel_Flight(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-            new(this, referenceFrame)
-        end
-    this::RemoteTypes.Vessel
-    referenceFrame::RemoteTypes.ReferenceFrame
-end
-struct Vessel_ResourcesInDecoupleStage <: Request{:SpaceCenter, :Vessel_ResourcesInDecoupleStage, RemoteTypes.Resources}
-    Vessel_ResourcesInDecoupleStage(this::RemoteTypes.Vessel, stage::Int32, cumulative::Bool) = begin
-            new(this, stage, cumulative)
-        end
-    this::RemoteTypes.Vessel
-    stage::Int32
-    cumulative::Bool
-end
-struct Vessel_Position <: Request{:SpaceCenter, :Vessel_Position, begin
-                Tuple{Float64, Float64, Float64}
-            end}
-    Vessel_Position(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-            new(this, referenceFrame)
-        end
-    this::RemoteTypes.Vessel
-    referenceFrame::RemoteTypes.ReferenceFrame
-end
-struct Vessel_BoundingBox <: Request{:SpaceCenter, :Vessel_BoundingBox, begin
-                Tuple{begin
-                        Tuple{Float64, Float64, Float64}
-                    end, begin
-                        Tuple{Float64, Float64, Float64}
-                    end}
-            end}
-    Vessel_BoundingBox(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-            new(this, referenceFrame)
-        end
-    this::RemoteTypes.Vessel
-    referenceFrame::RemoteTypes.ReferenceFrame
-end
-struct Vessel_Velocity <: Request{:SpaceCenter, :Vessel_Velocity, begin
-                Tuple{Float64, Float64, Float64}
-            end}
-    Vessel_Velocity(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-            new(this, referenceFrame)
-        end
-    this::RemoteTypes.Vessel
-    referenceFrame::RemoteTypes.ReferenceFrame
-end
-struct Vessel_Rotation <: Request{:SpaceCenter, :Vessel_Rotation, begin
-                Tuple{Float64, Float64, Float64, Float64}
-            end}
-    Vessel_Rotation(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-            new(this, referenceFrame)
-        end
-    this::RemoteTypes.Vessel
-    referenceFrame::RemoteTypes.ReferenceFrame
-end
-struct Vessel_Direction <: Request{:SpaceCenter, :Vessel_Direction, begin
-                Tuple{Float64, Float64, Float64}
-            end}
-    Vessel_Direction(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-            new(this, referenceFrame)
-        end
-    this::RemoteTypes.Vessel
-    referenceFrame::RemoteTypes.ReferenceFrame
-end
-struct Vessel_AngularVelocity <: Request{:SpaceCenter, :Vessel_AngularVelocity, begin
-                Tuple{Float64, Float64, Float64}
-            end}
-    Vessel_AngularVelocity(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-            new(this, referenceFrame)
-        end
-    this::RemoteTypes.Vessel
-    referenceFrame::RemoteTypes.ReferenceFrame
-end
-struct Vessel_get_Name <: Request{:SpaceCenter, :Vessel_get_Name, String}
-    Vessel_get_Name(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_set_Name <: Request{:SpaceCenter, :Vessel_set_Name, Nothing}
-    Vessel_set_Name(this::RemoteTypes.Vessel, value::String) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Vessel
-    value::String
-end
-struct Vessel_get_Type <: Request{:SpaceCenter, :Vessel_get_Type, EVesselType}
-    Vessel_get_Type(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_set_Type <: Request{:SpaceCenter, :Vessel_set_Type, Nothing}
-    Vessel_set_Type(this::RemoteTypes.Vessel, value::EVesselType) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Vessel
-    value::EVesselType
-end
-struct Vessel_get_Situation <: Request{:SpaceCenter, :Vessel_get_Situation, EVesselSituation}
-    Vessel_get_Situation(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_Recoverable <: Request{:SpaceCenter, :Vessel_get_Recoverable, Bool}
-    Vessel_get_Recoverable(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_MET <: Request{:SpaceCenter, :Vessel_get_MET, Float64}
-    Vessel_get_MET(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_Biome <: Request{:SpaceCenter, :Vessel_get_Biome, String}
-    Vessel_get_Biome(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_Orbit <: Request{:SpaceCenter, :Vessel_get_Orbit, RemoteTypes.Orbit}
-    Vessel_get_Orbit(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_Control <: Request{:SpaceCenter, :Vessel_get_Control, RemoteTypes.Control}
-    Vessel_get_Control(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_Comms <: Request{:SpaceCenter, :Vessel_get_Comms, RemoteTypes.Comms}
-    Vessel_get_Comms(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_AutoPilot <: Request{:SpaceCenter, :Vessel_get_AutoPilot, RemoteTypes.AutoPilot}
-    Vessel_get_AutoPilot(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_CrewCapacity <: Request{:SpaceCenter, :Vessel_get_CrewCapacity, Int32}
-    Vessel_get_CrewCapacity(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_CrewCount <: Request{:SpaceCenter, :Vessel_get_CrewCount, Int32}
-    Vessel_get_CrewCount(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_Crew <: Request{:SpaceCenter, :Vessel_get_Crew, begin
-                Array{RemoteTypes.CrewMember, 1}
-            end}
-    Vessel_get_Crew(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_Resources <: Request{:SpaceCenter, :Vessel_get_Resources, RemoteTypes.Resources}
-    Vessel_get_Resources(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_Parts <: Request{:SpaceCenter, :Vessel_get_Parts, RemoteTypes.Parts}
-    Vessel_get_Parts(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_Mass <: Request{:SpaceCenter, :Vessel_get_Mass, Float32}
-    Vessel_get_Mass(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_DryMass <: Request{:SpaceCenter, :Vessel_get_DryMass, Float32}
-    Vessel_get_DryMass(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_Thrust <: Request{:SpaceCenter, :Vessel_get_Thrust, Float32}
-    Vessel_get_Thrust(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_AvailableThrust <: Request{:SpaceCenter, :Vessel_get_AvailableThrust, Float32}
-    Vessel_get_AvailableThrust(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_MaxThrust <: Request{:SpaceCenter, :Vessel_get_MaxThrust, Float32}
-    Vessel_get_MaxThrust(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_MaxVacuumThrust <: Request{:SpaceCenter, :Vessel_get_MaxVacuumThrust, Float32}
-    Vessel_get_MaxVacuumThrust(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_SpecificImpulse <: Request{:SpaceCenter, :Vessel_get_SpecificImpulse, Float32}
-    Vessel_get_SpecificImpulse(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_VacuumSpecificImpulse <: Request{:SpaceCenter, :Vessel_get_VacuumSpecificImpulse, Float32}
-    Vessel_get_VacuumSpecificImpulse(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_KerbinSeaLevelSpecificImpulse <: Request{:SpaceCenter, :Vessel_get_KerbinSeaLevelSpecificImpulse, Float32}
-    Vessel_get_KerbinSeaLevelSpecificImpulse(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_MomentOfInertia <: Request{:SpaceCenter, :Vessel_get_MomentOfInertia, begin
-                Tuple{Float64, Float64, Float64}
-            end}
-    Vessel_get_MomentOfInertia(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_InertiaTensor <: Request{:SpaceCenter, :Vessel_get_InertiaTensor, begin
-                Array{Float64, 1}
-            end}
-    Vessel_get_InertiaTensor(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_AvailableTorque <: Request{:SpaceCenter, :Vessel_get_AvailableTorque, begin
-                Tuple{begin
-                        Tuple{Float64, Float64, Float64}
-                    end, begin
-                        Tuple{Float64, Float64, Float64}
-                    end}
-            end}
-    Vessel_get_AvailableTorque(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_AvailableReactionWheelTorque <: Request{:SpaceCenter, :Vessel_get_AvailableReactionWheelTorque, begin
-                Tuple{begin
-                        Tuple{Float64, Float64, Float64}
-                    end, begin
-                        Tuple{Float64, Float64, Float64}
-                    end}
-            end}
-    Vessel_get_AvailableReactionWheelTorque(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_AvailableRCSTorque <: Request{:SpaceCenter, :Vessel_get_AvailableRCSTorque, begin
-                Tuple{begin
-                        Tuple{Float64, Float64, Float64}
-                    end, begin
-                        Tuple{Float64, Float64, Float64}
-                    end}
-            end}
-    Vessel_get_AvailableRCSTorque(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_AvailableEngineTorque <: Request{:SpaceCenter, :Vessel_get_AvailableEngineTorque, begin
-                Tuple{begin
-                        Tuple{Float64, Float64, Float64}
-                    end, begin
-                        Tuple{Float64, Float64, Float64}
-                    end}
-            end}
-    Vessel_get_AvailableEngineTorque(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_AvailableControlSurfaceTorque <: Request{:SpaceCenter, :Vessel_get_AvailableControlSurfaceTorque, begin
-                Tuple{begin
-                        Tuple{Float64, Float64, Float64}
-                    end, begin
-                        Tuple{Float64, Float64, Float64}
-                    end}
-            end}
-    Vessel_get_AvailableControlSurfaceTorque(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_AvailableOtherTorque <: Request{:SpaceCenter, :Vessel_get_AvailableOtherTorque, begin
-                Tuple{begin
-                        Tuple{Float64, Float64, Float64}
-                    end, begin
-                        Tuple{Float64, Float64, Float64}
-                    end}
-            end}
-    Vessel_get_AvailableOtherTorque(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_ReferenceFrame <: Request{:SpaceCenter, :Vessel_get_ReferenceFrame, RemoteTypes.ReferenceFrame}
-    Vessel_get_ReferenceFrame(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_OrbitalReferenceFrame <: Request{:SpaceCenter, :Vessel_get_OrbitalReferenceFrame, RemoteTypes.ReferenceFrame}
-    Vessel_get_OrbitalReferenceFrame(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_SurfaceReferenceFrame <: Request{:SpaceCenter, :Vessel_get_SurfaceReferenceFrame, RemoteTypes.ReferenceFrame}
-    Vessel_get_SurfaceReferenceFrame(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Vessel_get_SurfaceVelocityReferenceFrame <: Request{:SpaceCenter, :Vessel_get_SurfaceVelocityReferenceFrame, RemoteTypes.ReferenceFrame}
-    Vessel_get_SurfaceVelocityReferenceFrame(this::RemoteTypes.Vessel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Vessel
-end
-struct Waypoint_Remove <: Request{:SpaceCenter, :Waypoint_Remove, Nothing}
-    Waypoint_Remove(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_get_Body <: Request{:SpaceCenter, :Waypoint_get_Body, RemoteTypes.CelestialBody}
-    Waypoint_get_Body(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_set_Body <: Request{:SpaceCenter, :Waypoint_set_Body, Nothing}
-    Waypoint_set_Body(this::RemoteTypes.Waypoint, value::RemoteTypes.CelestialBody) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Waypoint
-    value::RemoteTypes.CelestialBody
-end
-struct Waypoint_get_Name <: Request{:SpaceCenter, :Waypoint_get_Name, String}
-    Waypoint_get_Name(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_set_Name <: Request{:SpaceCenter, :Waypoint_set_Name, Nothing}
-    Waypoint_set_Name(this::RemoteTypes.Waypoint, value::String) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Waypoint
-    value::String
-end
-struct Waypoint_get_Color <: Request{:SpaceCenter, :Waypoint_get_Color, Int32}
-    Waypoint_get_Color(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_set_Color <: Request{:SpaceCenter, :Waypoint_set_Color, Nothing}
-    Waypoint_set_Color(this::RemoteTypes.Waypoint, value::Int32) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Waypoint
-    value::Int32
-end
-struct Waypoint_get_Icon <: Request{:SpaceCenter, :Waypoint_get_Icon, String}
-    Waypoint_get_Icon(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_set_Icon <: Request{:SpaceCenter, :Waypoint_set_Icon, Nothing}
-    Waypoint_set_Icon(this::RemoteTypes.Waypoint, value::String) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Waypoint
-    value::String
-end
-struct Waypoint_get_Latitude <: Request{:SpaceCenter, :Waypoint_get_Latitude, Float64}
-    Waypoint_get_Latitude(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_set_Latitude <: Request{:SpaceCenter, :Waypoint_set_Latitude, Nothing}
-    Waypoint_set_Latitude(this::RemoteTypes.Waypoint, value::Float64) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Waypoint
-    value::Float64
-end
-struct Waypoint_get_Longitude <: Request{:SpaceCenter, :Waypoint_get_Longitude, Float64}
-    Waypoint_get_Longitude(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_set_Longitude <: Request{:SpaceCenter, :Waypoint_set_Longitude, Nothing}
-    Waypoint_set_Longitude(this::RemoteTypes.Waypoint, value::Float64) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Waypoint
-    value::Float64
-end
-struct Waypoint_get_MeanAltitude <: Request{:SpaceCenter, :Waypoint_get_MeanAltitude, Float64}
-    Waypoint_get_MeanAltitude(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_set_MeanAltitude <: Request{:SpaceCenter, :Waypoint_set_MeanAltitude, Nothing}
-    Waypoint_set_MeanAltitude(this::RemoteTypes.Waypoint, value::Float64) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Waypoint
-    value::Float64
-end
-struct Waypoint_get_SurfaceAltitude <: Request{:SpaceCenter, :Waypoint_get_SurfaceAltitude, Float64}
-    Waypoint_get_SurfaceAltitude(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_set_SurfaceAltitude <: Request{:SpaceCenter, :Waypoint_set_SurfaceAltitude, Nothing}
-    Waypoint_set_SurfaceAltitude(this::RemoteTypes.Waypoint, value::Float64) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Waypoint
-    value::Float64
-end
-struct Waypoint_get_BedrockAltitude <: Request{:SpaceCenter, :Waypoint_get_BedrockAltitude, Float64}
-    Waypoint_get_BedrockAltitude(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_set_BedrockAltitude <: Request{:SpaceCenter, :Waypoint_set_BedrockAltitude, Nothing}
-    Waypoint_set_BedrockAltitude(this::RemoteTypes.Waypoint, value::Float64) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Waypoint
-    value::Float64
-end
-struct Waypoint_get_NearSurface <: Request{:SpaceCenter, :Waypoint_get_NearSurface, Bool}
-    Waypoint_get_NearSurface(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_get_Grounded <: Request{:SpaceCenter, :Waypoint_get_Grounded, Bool}
-    Waypoint_get_Grounded(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_get_Index <: Request{:SpaceCenter, :Waypoint_get_Index, Int32}
-    Waypoint_get_Index(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_get_Clustered <: Request{:SpaceCenter, :Waypoint_get_Clustered, Bool}
-    Waypoint_get_Clustered(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_get_HasContract <: Request{:SpaceCenter, :Waypoint_get_HasContract, Bool}
-    Waypoint_get_HasContract(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct Waypoint_get_Contract <: Request{:SpaceCenter, :Waypoint_get_Contract, RemoteTypes.Contract}
-    Waypoint_get_Contract(this::RemoteTypes.Waypoint) = begin
-            new(this)
-        end
-    this::RemoteTypes.Waypoint
-end
-struct WaypointManager_AddWaypoint <: Request{:SpaceCenter, :WaypointManager_AddWaypoint, RemoteTypes.Waypoint}
-    WaypointManager_AddWaypoint(this::RemoteTypes.WaypointManager, latitude::Float64, longitude::Float64, body::RemoteTypes.CelestialBody, name::String) = begin
-            new(this, latitude, longitude, body, name)
-        end
-    this::RemoteTypes.WaypointManager
-    latitude::Float64
-    longitude::Float64
-    body::RemoteTypes.CelestialBody
-    name::String
-end
-struct WaypointManager_AddWaypointAtAltitude <: Request{:SpaceCenter, :WaypointManager_AddWaypointAtAltitude, RemoteTypes.Waypoint}
-    WaypointManager_AddWaypointAtAltitude(this::RemoteTypes.WaypointManager, latitude::Float64, longitude::Float64, altitude::Float64, body::RemoteTypes.CelestialBody, name::String) = begin
-            new(this, latitude, longitude, altitude, body, name)
-        end
-    this::RemoteTypes.WaypointManager
-    latitude::Float64
-    longitude::Float64
-    altitude::Float64
-    body::RemoteTypes.CelestialBody
-    name::String
-end
-struct WaypointManager_get_Waypoints <: Request{:SpaceCenter, :WaypointManager_get_Waypoints, begin
-                Array{RemoteTypes.Waypoint, 1}
-            end}
-    WaypointManager_get_Waypoints(this::RemoteTypes.WaypointManager) = begin
-            new(this)
-        end
-    this::RemoteTypes.WaypointManager
-end
-struct WaypointManager_get_Icons <: Request{:SpaceCenter, :WaypointManager_get_Icons, begin
-                Array{String, 1}
-            end}
-    WaypointManager_get_Icons(this::RemoteTypes.WaypointManager) = begin
-            new(this)
-        end
-    this::RemoteTypes.WaypointManager
-end
-struct WaypointManager_get_Colors <: Request{:SpaceCenter, :WaypointManager_get_Colors, begin
-                Dict{String, Int32}
-            end}
-    WaypointManager_get_Colors(this::RemoteTypes.WaypointManager) = begin
-            new(this)
-        end
-    this::RemoteTypes.WaypointManager
-end
 struct Antenna_Transmit <: Request{:SpaceCenter, :Antenna_Transmit, Nothing}
     Antenna_Transmit(this::RemoteTypes.Antenna) = begin
             new(this)
@@ -6424,50 +5697,6 @@ struct DockingPort_get_Shielded <: Request{:SpaceCenter, :DockingPort_get_Shield
 end
 struct DockingPort_set_Shielded <: Request{:SpaceCenter, :DockingPort_set_Shielded, Nothing}
     DockingPort_set_Shielded(this::RemoteTypes.DockingPort, value::Bool) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.DockingPort
-    value::Bool
-end
-struct DockingPort_get_CanRotate <: Request{:SpaceCenter, :DockingPort_get_CanRotate, Bool}
-    DockingPort_get_CanRotate(this::RemoteTypes.DockingPort) = begin
-            new(this)
-        end
-    this::RemoteTypes.DockingPort
-end
-struct DockingPort_get_MaximumRotation <: Request{:SpaceCenter, :DockingPort_get_MaximumRotation, Float32}
-    DockingPort_get_MaximumRotation(this::RemoteTypes.DockingPort) = begin
-            new(this)
-        end
-    this::RemoteTypes.DockingPort
-end
-struct DockingPort_get_MinimumRotation <: Request{:SpaceCenter, :DockingPort_get_MinimumRotation, Float32}
-    DockingPort_get_MinimumRotation(this::RemoteTypes.DockingPort) = begin
-            new(this)
-        end
-    this::RemoteTypes.DockingPort
-end
-struct DockingPort_get_RotationTarget <: Request{:SpaceCenter, :DockingPort_get_RotationTarget, Float32}
-    DockingPort_get_RotationTarget(this::RemoteTypes.DockingPort) = begin
-            new(this)
-        end
-    this::RemoteTypes.DockingPort
-end
-struct DockingPort_set_RotationTarget <: Request{:SpaceCenter, :DockingPort_set_RotationTarget, Nothing}
-    DockingPort_set_RotationTarget(this::RemoteTypes.DockingPort, value::Float32) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.DockingPort
-    value::Float32
-end
-struct DockingPort_get_RotationLocked <: Request{:SpaceCenter, :DockingPort_get_RotationLocked, Bool}
-    DockingPort_get_RotationLocked(this::RemoteTypes.DockingPort) = begin
-            new(this)
-        end
-    this::RemoteTypes.DockingPort
-end
-struct DockingPort_set_RotationLocked <: Request{:SpaceCenter, :DockingPort_set_RotationLocked, Nothing}
-    DockingPort_set_RotationLocked(this::RemoteTypes.DockingPort, value::Bool) = begin
             new(this, value)
         end
     this::RemoteTypes.DockingPort
@@ -6970,18 +6199,6 @@ struct Leg_get_IsGrounded <: Request{:SpaceCenter, :Leg_get_IsGrounded, Bool}
         end
     this::RemoteTypes.Leg
 end
-struct Light_BlinkStart <: Request{:SpaceCenter, :Light_BlinkStart, Nothing}
-    Light_BlinkStart(this::RemoteTypes.Light) = begin
-            new(this)
-        end
-    this::RemoteTypes.Light
-end
-struct Light_BlinkStop <: Request{:SpaceCenter, :Light_BlinkStop, Nothing}
-    Light_BlinkStop(this::RemoteTypes.Light) = begin
-            new(this)
-        end
-    this::RemoteTypes.Light
-end
 struct Light_get_Part <: Request{:SpaceCenter, :Light_get_Part, RemoteTypes.Part}
     Light_get_Part(this::RemoteTypes.Light) = begin
             new(this)
@@ -7019,19 +6236,6 @@ struct Light_set_Color <: Request{:SpaceCenter, :Light_set_Color, Nothing}
     value::begin
             Tuple{Float32, Float32, Float32}
         end
-end
-struct Light_get_BlinkRate <: Request{:SpaceCenter, :Light_get_BlinkRate, Float32}
-    Light_get_BlinkRate(this::RemoteTypes.Light) = begin
-            new(this)
-        end
-    this::RemoteTypes.Light
-end
-struct Light_set_BlinkRate <: Request{:SpaceCenter, :Light_set_BlinkRate, Nothing}
-    Light_set_BlinkRate(this::RemoteTypes.Light, value::Float32) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Light
-    value::Float32
 end
 struct Light_get_PowerUsage <: Request{:SpaceCenter, :Light_get_PowerUsage, Float32}
     Light_get_PowerUsage(this::RemoteTypes.Light) = begin
@@ -7682,6 +6886,12 @@ struct Part_get_ResourceHarvester <: Request{:SpaceCenter, :Part_get_ResourceHar
         end
     this::RemoteTypes.Part
 end
+struct Part_get_RoboticController <: Request{:SpaceCenter, :Part_get_RoboticController, RemoteTypes.RoboticController}
+    Part_get_RoboticController(this::RemoteTypes.Part) = begin
+            new(this)
+        end
+    this::RemoteTypes.Part
+end
 struct Part_get_Sensor <: Request{:SpaceCenter, :Part_get_Sensor, RemoteTypes.Sensor}
     Part_get_Sensor(this::RemoteTypes.Part) = begin
             new(this)
@@ -7752,18 +6962,12 @@ struct Part_get_CenterOfMassReferenceFrame <: Request{:SpaceCenter, :Part_get_Ce
         end
     this::RemoteTypes.Part
 end
-struct Part_get_AutoStrutMode <: Request{:SpaceCenter, :Part_get_AutoStrutMode, EAutostrutState}
-    Part_get_AutoStrutMode(this::RemoteTypes.Part) = begin
-            new(this)
-        end
-    this::RemoteTypes.Part
-end
-struct Part_set_AutoStrutMode <: Request{:SpaceCenter, :Part_set_AutoStrutMode, Nothing}
-    Part_set_AutoStrutMode(this::RemoteTypes.Part, value::EAutostrutState) = begin
+struct Part_set_Glow <: Request{:SpaceCenter, :Part_set_Glow, Nothing}
+    Part_set_Glow(this::RemoteTypes.Part, value::Bool) = begin
             new(this, value)
         end
     this::RemoteTypes.Part
-    value::EAutostrutState
+    value::Bool
 end
 struct Parts_WithName <: Request{:SpaceCenter, :Parts_WithName, begin
                 Array{RemoteTypes.Part, 1}
@@ -8628,6 +7832,55 @@ struct ResourceHarvester_get_OptimumCoreTemperature <: Request{:SpaceCenter, :Re
         end
     this::RemoteTypes.ResourceHarvester
 end
+struct RoboticController_HasPart <: Request{:SpaceCenter, :RoboticController_HasPart, Bool}
+    RoboticController_HasPart(this::RemoteTypes.RoboticController, part::RemoteTypes.Part) = begin
+            new(this, part)
+        end
+    this::RemoteTypes.RoboticController
+    part::RemoteTypes.Part
+end
+struct RoboticController_ListAxes <: Request{:SpaceCenter, :RoboticController_ListAxes, begin
+                Array{begin
+                        Array{String, 1}
+                    end, 1}
+            end}
+    RoboticController_ListAxes(this::RemoteTypes.RoboticController) = begin
+            new(this)
+        end
+    this::RemoteTypes.RoboticController
+end
+struct RoboticController_AddAxis <: Request{:SpaceCenter, :RoboticController_AddAxis, Bool}
+    RoboticController_AddAxis(this::RemoteTypes.RoboticController, kModule::RemoteTypes.Module, fieldName::String) = begin
+            new(this, kModule, fieldName)
+        end
+    this::RemoteTypes.RoboticController
+    kModule::RemoteTypes.Module
+    fieldName::String
+end
+struct RoboticController_AddKey <: Request{:SpaceCenter, :RoboticController_AddKey, Bool}
+    RoboticController_AddKey(this::RemoteTypes.RoboticController, kModule::RemoteTypes.Module, fieldName::String, time::Float32, value::Float32) = begin
+            new(this, kModule, fieldName, time, value)
+        end
+    this::RemoteTypes.RoboticController
+    kModule::RemoteTypes.Module
+    fieldName::String
+    time::Float32
+    value::Float32
+end
+struct RoboticController_ClearAxis <: Request{:SpaceCenter, :RoboticController_ClearAxis, Bool}
+    RoboticController_ClearAxis(this::RemoteTypes.RoboticController, kModule::RemoteTypes.Module, fieldName::String) = begin
+            new(this, kModule, fieldName)
+        end
+    this::RemoteTypes.RoboticController
+    kModule::RemoteTypes.Module
+    fieldName::String
+end
+struct RoboticController_get_Part <: Request{:SpaceCenter, :RoboticController_get_Part, RemoteTypes.Part}
+    RoboticController_get_Part(this::RemoteTypes.RoboticController) = begin
+            new(this)
+        end
+    this::RemoteTypes.RoboticController
+end
 struct RoboticHinge_Home <: Request{:SpaceCenter, :RoboticHinge_Home, Nothing}
     RoboticHinge_Home(this::RemoteTypes.RoboticHinge) = begin
             new(this)
@@ -9356,32 +8609,6 @@ struct Wheel_set_SteeringInverted <: Request{:SpaceCenter, :Wheel_set_SteeringIn
     this::RemoteTypes.Wheel
     value::Bool
 end
-struct Wheel_get_SteeringAngleLimiter <: Request{:SpaceCenter, :Wheel_get_SteeringAngleLimiter, Float32}
-    Wheel_get_SteeringAngleLimiter(this::RemoteTypes.Wheel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Wheel
-end
-struct Wheel_set_SteeringAngleLimiter <: Request{:SpaceCenter, :Wheel_set_SteeringAngleLimiter, Nothing}
-    Wheel_set_SteeringAngleLimiter(this::RemoteTypes.Wheel, value::Float32) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Wheel
-    value::Float32
-end
-struct Wheel_get_SteeringAngleResponse <: Request{:SpaceCenter, :Wheel_get_SteeringAngleResponse, Float32}
-    Wheel_get_SteeringAngleResponse(this::RemoteTypes.Wheel) = begin
-            new(this)
-        end
-    this::RemoteTypes.Wheel
-end
-struct Wheel_set_SteeringAngleResponse <: Request{:SpaceCenter, :Wheel_set_SteeringAngleResponse, Nothing}
-    Wheel_set_SteeringAngleResponse(this::RemoteTypes.Wheel, value::Float32) = begin
-            new(this, value)
-        end
-    this::RemoteTypes.Wheel
-    value::Float32
-end
 struct Wheel_get_HasSuspension <: Request{:SpaceCenter, :Wheel_get_HasSuspension, Bool}
     Wheel_get_HasSuspension(this::RemoteTypes.Wheel) = begin
             new(this)
@@ -9442,2568 +8669,6254 @@ struct Wheel_get_Slip <: Request{:SpaceCenter, :Wheel_get_Slip, Float32}
         end
     this::RemoteTypes.Wheel
 end
-export ClearTarget, LaunchableVessels, LaunchVessel, LaunchVesselFromVAB, LaunchVesselFromSPH, Save, Load, Quicksave, Quickload, CanRailsWarpAt, WarpTo, TransformPosition, TransformDirection, TransformRotation, TransformVelocity, RaycastDistance, RaycastPart, get_GameMode, get_Science, get_Funds, get_Reputation, get_ActiveVessel, set_ActiveVessel, get_Vessels, get_Bodies, get_TargetBody, set_TargetBody, get_TargetVessel, set_TargetVessel, get_TargetDockingPort, set_TargetDockingPort, get_WaypointManager, get_ContractManager, get_AlarmClock, get_Camera, get_UIVisible, set_UIVisible, get_Navball, set_Navball, get_UT, get_G, get_WarpMode, get_WarpRate, get_WarpFactor, get_RailsWarpFactor, set_RailsWarpFactor, get_PhysicsWarpFactor, set_PhysicsWarpFactor, get_MaximumRailsWarpFactor, get_FARAvailable, Alarm_get_Type, Alarm_get_Title, Alarm_get_Description, Alarm_get_UT, Alarm_get_TimeTill, Alarm_get_EventOffset, Alarm_get_Vessel, Alarm_get_ID, AlarmClock_MakeRawAlarm, AlarmClock_MakeRawAlarmVessel, AlarmClock_MakeApaAlarm, AlarmClock_MakePeaAlarm, AlarmClock_MakeManeuverAlarm, AlarmClock_MakeSOIAlarm, AlarmClock_GetAlarms, AutoPilot_Engage, AutoPilot_Disengage, AutoPilot_Wait, AutoPilot_TargetPitchAndHeading, AutoPilot_get_Error, AutoPilot_get_PitchError, AutoPilot_get_HeadingError, AutoPilot_get_RollError, AutoPilot_get_ReferenceFrame, AutoPilot_set_ReferenceFrame, AutoPilot_get_TargetPitch, AutoPilot_set_TargetPitch, AutoPilot_get_TargetHeading, AutoPilot_set_TargetHeading, AutoPilot_get_TargetRoll, AutoPilot_set_TargetRoll, AutoPilot_get_TargetDirection, AutoPilot_set_TargetDirection, AutoPilot_get_SAS, AutoPilot_set_SAS, AutoPilot_get_SASMode, AutoPilot_set_SASMode, AutoPilot_get_RollThreshold, AutoPilot_set_RollThreshold, AutoPilot_get_StoppingTime, AutoPilot_set_StoppingTime, AutoPilot_get_DecelerationTime, AutoPilot_set_DecelerationTime, AutoPilot_get_AttenuationAngle, AutoPilot_set_AttenuationAngle, AutoPilot_get_AutoTune, AutoPilot_set_AutoTune, AutoPilot_get_TimeToPeak, AutoPilot_set_TimeToPeak, AutoPilot_get_Overshoot, AutoPilot_set_Overshoot, AutoPilot_get_PitchPIDGains, AutoPilot_set_PitchPIDGains, AutoPilot_get_RollPIDGains, AutoPilot_set_RollPIDGains, AutoPilot_get_YawPIDGains, AutoPilot_set_YawPIDGains, Camera_get_Mode, Camera_set_Mode, Camera_get_Pitch, Camera_set_Pitch, Camera_get_Heading, Camera_set_Heading, Camera_get_Distance, Camera_set_Distance, Camera_get_MinPitch, Camera_get_MaxPitch, Camera_get_MinDistance, Camera_get_MaxDistance, Camera_get_DefaultDistance, Camera_get_FocussedBody, Camera_set_FocussedBody, Camera_get_FocussedVessel, Camera_set_FocussedVessel, Camera_get_FocussedNode, Camera_set_FocussedNode, CelestialBody_SurfaceHeight, CelestialBody_BedrockHeight, CelestialBody_MSLPosition, CelestialBody_SurfacePosition, CelestialBody_BedrockPosition, CelestialBody_PositionAtAltitude, CelestialBody_LatitudeAtPosition, CelestialBody_LongitudeAtPosition, CelestialBody_AltitudeAtPosition, CelestialBody_AtmosphericDensityAtPosition, CelestialBody_TemperatureAt, CelestialBody_DensityAt, CelestialBody_PressureAt, CelestialBody_BiomeAt, CelestialBody_Position, CelestialBody_Velocity, CelestialBody_Rotation, CelestialBody_Direction, CelestialBody_AngularVelocity, CelestialBody_get_Name, CelestialBody_get_Satellites, CelestialBody_get_Mass, CelestialBody_get_GravitationalParameter, CelestialBody_get_SurfaceGravity, CelestialBody_get_RotationalPeriod, CelestialBody_get_RotationalSpeed, CelestialBody_get_RotationAngle, CelestialBody_get_InitialRotation, CelestialBody_get_EquatorialRadius, CelestialBody_get_SphereOfInfluence, CelestialBody_get_Orbit, CelestialBody_get_HasAtmosphere, CelestialBody_get_AtmosphereDepth, CelestialBody_get_HasAtmosphericOxygen, CelestialBody_get_Biomes, CelestialBody_get_FlyingHighAltitudeThreshold, CelestialBody_get_SpaceHighAltitudeThreshold, CelestialBody_get_ReferenceFrame, CelestialBody_get_NonRotatingReferenceFrame, CelestialBody_get_OrbitalReferenceFrame, CommLink_get_Type, CommLink_get_SignalStrength, CommLink_get_Start, CommLink_get_End, CommNode_get_Name, CommNode_get_IsHome, CommNode_get_IsControlPoint, CommNode_get_IsVessel, CommNode_get_Vessel, Comms_get_CanCommunicate, Comms_get_CanTransmitScience, Comms_get_SignalStrength, Comms_get_SignalDelay, Comms_get_Power, Comms_get_ControlPath, Contract_Cancel, Contract_Accept, Contract_Decline, Contract_get_Type, Contract_get_Title, Contract_get_Description, Contract_get_Notes, Contract_get_Synopsis, Contract_get_Keywords, Contract_get_State, Contract_get_Active, Contract_get_Failed, Contract_get_Seen, Contract_get_Read, Contract_get_CanBeCanceled, Contract_get_CanBeDeclined, Contract_get_CanBeFailed, Contract_get_FundsAdvance, Contract_get_FundsCompletion, Contract_get_FundsFailure, Contract_get_ReputationCompletion, Contract_get_ReputationFailure, Contract_get_ScienceCompletion, Contract_get_Parameters, ContractManager_get_Types, ContractManager_get_AllContracts, ContractManager_get_ActiveContracts, ContractManager_get_OfferedContracts, ContractManager_get_CompletedContracts, ContractManager_get_FailedContracts, ContractParameter_get_Title, ContractParameter_get_Notes, ContractParameter_get_Children, ContractParameter_get_Completed, ContractParameter_get_Failed, ContractParameter_get_Optional, ContractParameter_get_FundsCompletion, ContractParameter_get_FundsFailure, ContractParameter_get_ReputationCompletion, ContractParameter_get_ReputationFailure, ContractParameter_get_ScienceCompletion, Control_ActivateNextStage, Control_GetActionGroup, Control_SetActionGroup, Control_ToggleActionGroup, Control_AddNode, Control_RemoveNodes, Control_get_State, Control_get_Source, Control_get_SAS, Control_set_SAS, Control_get_SASMode, Control_set_SASMode, Control_get_SpeedMode, Control_set_SpeedMode, Control_get_RCS, Control_set_RCS, Control_get_ReactionWheels, Control_set_ReactionWheels, Control_get_Gear, Control_set_Gear, Control_get_Legs, Control_set_Legs, Control_get_Wheels, Control_set_Wheels, Control_get_Lights, Control_set_Lights, Control_get_Brakes, Control_set_Brakes, Control_get_Antennas, Control_set_Antennas, Control_get_CargoBays, Control_set_CargoBays, Control_get_Intakes, Control_set_Intakes, Control_get_Parachutes, Control_set_Parachutes, Control_get_Radiators, Control_set_Radiators, Control_get_ResourceHarvesters, Control_set_ResourceHarvesters, Control_get_ResourceHarvestersActive, Control_set_ResourceHarvestersActive, Control_get_SolarPanels, Control_set_SolarPanels, Control_get_Abort, Control_set_Abort, Control_get_Throttle, Control_set_Throttle, Control_get_InputMode, Control_set_InputMode, Control_get_Pitch, Control_set_Pitch, Control_get_Yaw, Control_set_Yaw, Control_get_Roll, Control_set_Roll, Control_get_Forward, Control_set_Forward, Control_get_Up, Control_set_Up, Control_get_Right, Control_set_Right, Control_get_WheelThrottle, Control_set_WheelThrottle, Control_get_WheelSteering, Control_set_WheelSteering, Control_get_CurrentStage, Control_get_StageLock, Control_set_StageLock, Control_get_Nodes, CrewMember_get_Name, CrewMember_set_Name, CrewMember_get_Type, CrewMember_get_OnMission, CrewMember_get_Courage, CrewMember_set_Courage, CrewMember_get_Stupidity, CrewMember_set_Stupidity, CrewMember_get_Experience, CrewMember_set_Experience, CrewMember_get_Badass, CrewMember_set_Badass, CrewMember_get_Veteran, CrewMember_set_Veteran, Flight_SimulateAerodynamicForceAt, Flight_get_GForce, Flight_get_MeanAltitude, Flight_get_SurfaceAltitude, Flight_get_BedrockAltitude, Flight_get_Elevation, Flight_get_Latitude, Flight_get_Longitude, Flight_get_Velocity, Flight_get_Speed, Flight_get_HorizontalSpeed, Flight_get_VerticalSpeed, Flight_get_CenterOfMass, Flight_get_Rotation, Flight_get_Direction, Flight_get_Pitch, Flight_get_Heading, Flight_get_Roll, Flight_get_Prograde, Flight_get_Retrograde, Flight_get_Normal, Flight_get_AntiNormal, Flight_get_Radial, Flight_get_AntiRadial, Flight_get_AtmosphereDensity, Flight_get_DynamicPressure, Flight_get_StaticPressureAtMSL, Flight_get_StaticPressure, Flight_get_AerodynamicForce, Flight_get_Lift, Flight_get_Drag, Flight_get_SpeedOfSound, Flight_get_Mach, Flight_get_ReynoldsNumber, Flight_get_TrueAirSpeed, Flight_get_EquivalentAirSpeed, Flight_get_TerminalVelocity, Flight_get_AngleOfAttack, Flight_get_SideslipAngle, Flight_get_TotalAirTemperature, Flight_get_StaticAirTemperature, Flight_get_StallFraction, Flight_get_DragCoefficient, Flight_get_LiftCoefficient, Flight_get_BallisticCoefficient, Flight_get_ThrustSpecificFuelConsumption, Node_BurnVector, Node_RemainingBurnVector, Node_Remove, Node_Position, Node_Direction, Node_get_Prograde, Node_set_Prograde, Node_get_Normal, Node_set_Normal, Node_get_Radial, Node_set_Radial, Node_get_DeltaV, Node_set_DeltaV, Node_get_RemainingDeltaV, Node_get_UT, Node_set_UT, Node_get_TimeTo, Node_get_Orbit, Node_get_ReferenceFrame, Node_get_OrbitalReferenceFrame, Orbit_static_ReferencePlaneNormal, Orbit_static_ReferencePlaneDirection, Orbit_MeanAnomalyAtUT, Orbit_RadiusAtTrueAnomaly, Orbit_TrueAnomalyAtRadius, Orbit_TrueAnomalyAtUT, Orbit_UTAtTrueAnomaly, Orbit_EccentricAnomalyAtUT, Orbit_OrbitalSpeedAt, Orbit_RadiusAt, Orbit_PositionAt, Orbit_TimeOfClosestApproach, Orbit_DistanceAtClosestApproach, Orbit_ListClosestApproaches, Orbit_TrueAnomalyAtAN, Orbit_TrueAnomalyAtDN, Orbit_RelativeInclination, Orbit_get_Body, Orbit_get_Apoapsis, Orbit_get_Periapsis, Orbit_get_ApoapsisAltitude, Orbit_get_PeriapsisAltitude, Orbit_get_SemiMajorAxis, Orbit_get_SemiMinorAxis, Orbit_get_Radius, Orbit_get_Speed, Orbit_get_Period, Orbit_get_TimeToApoapsis, Orbit_get_TimeToPeriapsis, Orbit_get_Eccentricity, Orbit_get_Inclination, Orbit_get_LongitudeOfAscendingNode, Orbit_get_ArgumentOfPeriapsis, Orbit_get_MeanAnomalyAtEpoch, Orbit_get_Epoch, Orbit_get_MeanAnomaly, Orbit_get_EccentricAnomaly, Orbit_get_TrueAnomaly, Orbit_get_NextOrbit, Orbit_get_TimeToSOIChange, Orbit_get_OrbitalSpeed, ReferenceFrame_static_CreateRelative, ReferenceFrame_static_CreateHybrid, Resource_get_Name, Resource_get_Part, Resource_get_Max, Resource_get_Amount, Resource_get_Density, Resource_get_FlowMode, Resource_get_Enabled, Resource_set_Enabled, ResourceTransfer_static_Start, ResourceTransfer_get_Complete, ResourceTransfer_get_Amount, Resources_WithResource, Resources_HasResource, Resources_Max, Resources_Amount, Resources_static_Density, Resources_static_FlowMode, Resources_get_All, Resources_get_Names, Resources_get_Enabled, Resources_set_Enabled, Vessel_Recover, Vessel_Flight, Vessel_ResourcesInDecoupleStage, Vessel_Position, Vessel_BoundingBox, Vessel_Velocity, Vessel_Rotation, Vessel_Direction, Vessel_AngularVelocity, Vessel_get_Name, Vessel_set_Name, Vessel_get_Type, Vessel_set_Type, Vessel_get_Situation, Vessel_get_Recoverable, Vessel_get_MET, Vessel_get_Biome, Vessel_get_Orbit, Vessel_get_Control, Vessel_get_Comms, Vessel_get_AutoPilot, Vessel_get_CrewCapacity, Vessel_get_CrewCount, Vessel_get_Crew, Vessel_get_Resources, Vessel_get_Parts, Vessel_get_Mass, Vessel_get_DryMass, Vessel_get_Thrust, Vessel_get_AvailableThrust, Vessel_get_MaxThrust, Vessel_get_MaxVacuumThrust, Vessel_get_SpecificImpulse, Vessel_get_VacuumSpecificImpulse, Vessel_get_KerbinSeaLevelSpecificImpulse, Vessel_get_MomentOfInertia, Vessel_get_InertiaTensor, Vessel_get_AvailableTorque, Vessel_get_AvailableReactionWheelTorque, Vessel_get_AvailableRCSTorque, Vessel_get_AvailableEngineTorque, Vessel_get_AvailableControlSurfaceTorque, Vessel_get_AvailableOtherTorque, Vessel_get_ReferenceFrame, Vessel_get_OrbitalReferenceFrame, Vessel_get_SurfaceReferenceFrame, Vessel_get_SurfaceVelocityReferenceFrame, Waypoint_Remove, Waypoint_get_Body, Waypoint_set_Body, Waypoint_get_Name, Waypoint_set_Name, Waypoint_get_Color, Waypoint_set_Color, Waypoint_get_Icon, Waypoint_set_Icon, Waypoint_get_Latitude, Waypoint_set_Latitude, Waypoint_get_Longitude, Waypoint_set_Longitude, Waypoint_get_MeanAltitude, Waypoint_set_MeanAltitude, Waypoint_get_SurfaceAltitude, Waypoint_set_SurfaceAltitude, Waypoint_get_BedrockAltitude, Waypoint_set_BedrockAltitude, Waypoint_get_NearSurface, Waypoint_get_Grounded, Waypoint_get_Index, Waypoint_get_Clustered, Waypoint_get_HasContract, Waypoint_get_Contract, WaypointManager_AddWaypoint, WaypointManager_AddWaypointAtAltitude, WaypointManager_get_Waypoints, WaypointManager_get_Icons, WaypointManager_get_Colors, Antenna_Transmit, Antenna_Cancel, Antenna_get_Part, Antenna_get_State, Antenna_get_Deployable, Antenna_get_Deployed, Antenna_set_Deployed, Antenna_get_CanTransmit, Antenna_get_AllowPartial, Antenna_set_AllowPartial, Antenna_get_Power, Antenna_get_Combinable, Antenna_get_CombinableExponent, Antenna_get_PacketInterval, Antenna_get_PacketSize, Antenna_get_PacketResourceCost, CargoBay_get_Part, CargoBay_get_State, CargoBay_get_Open, CargoBay_set_Open, ControlSurface_get_Part, ControlSurface_get_PitchEnabled, ControlSurface_set_PitchEnabled, ControlSurface_get_YawEnabled, ControlSurface_set_YawEnabled, ControlSurface_get_RollEnabled, ControlSurface_set_RollEnabled, ControlSurface_get_AuthorityLimiter, ControlSurface_set_AuthorityLimiter, ControlSurface_get_Inverted, ControlSurface_set_Inverted, ControlSurface_get_Deployed, ControlSurface_set_Deployed, ControlSurface_get_SurfaceArea, ControlSurface_get_AvailableTorque, Decoupler_Decouple, Decoupler_get_Part, Decoupler_get_Decoupled, Decoupler_get_Staged, Decoupler_get_Impulse, DockingPort_Undock, DockingPort_Position, DockingPort_Direction, DockingPort_Rotation, DockingPort_get_Part, DockingPort_get_State, DockingPort_get_DockedPart, DockingPort_get_ReengageDistance, DockingPort_get_HasShield, DockingPort_get_Shielded, DockingPort_set_Shielded, DockingPort_get_CanRotate, DockingPort_get_MaximumRotation, DockingPort_get_MinimumRotation, DockingPort_get_RotationTarget, DockingPort_set_RotationTarget, DockingPort_get_RotationLocked, DockingPort_set_RotationLocked, DockingPort_get_ReferenceFrame, Engine_ToggleMode, Engine_get_Part, Engine_get_Active, Engine_set_Active, Engine_get_Thrust, Engine_get_AvailableThrust, Engine_get_MaxThrust, Engine_get_MaxVacuumThrust, Engine_get_ThrustLimit, Engine_set_ThrustLimit, Engine_get_Thrusters, Engine_get_SpecificImpulse, Engine_get_VacuumSpecificImpulse, Engine_get_KerbinSeaLevelSpecificImpulse, Engine_get_PropellantNames, Engine_get_Propellants, Engine_get_PropellantRatios, Engine_get_HasFuel, Engine_get_Throttle, Engine_get_ThrottleLocked, Engine_get_CanRestart, Engine_get_CanShutdown, Engine_get_HasModes, Engine_get_Mode, Engine_set_Mode, Engine_get_Modes, Engine_get_AutoModeSwitch, Engine_set_AutoModeSwitch, Engine_get_Gimballed, Engine_get_GimbalRange, Engine_get_GimbalLocked, Engine_set_GimbalLocked, Engine_get_GimbalLimit, Engine_set_GimbalLimit, Engine_get_AvailableTorque, Experiment_Run, Experiment_Transmit, Experiment_Dump, Experiment_Reset, Experiment_get_Part, Experiment_get_Name, Experiment_get_Title, Experiment_get_Inoperable, Experiment_get_Deployed, Experiment_get_Rerunnable, Experiment_get_HasData, Experiment_get_Data, Experiment_get_Available, Experiment_get_Biome, Experiment_get_ScienceSubject, Fairing_Jettison, Fairing_get_Part, Fairing_get_Jettisoned, Force_Remove, Force_get_Part, Force_get_ForceVector, Force_set_ForceVector, Force_get_Position, Force_set_Position, Force_get_ReferenceFrame, Force_set_ReferenceFrame, Intake_get_Part, Intake_get_Open, Intake_set_Open, Intake_get_Speed, Intake_get_Flow, Intake_get_Area, LaunchClamp_Release, LaunchClamp_get_Part, Leg_get_Part, Leg_get_State, Leg_get_Deployable, Leg_get_Deployed, Leg_set_Deployed, Leg_get_IsGrounded, Light_BlinkStart, Light_BlinkStop, Light_get_Part, Light_get_Active, Light_set_Active, Light_get_Color, Light_set_Color, Light_get_BlinkRate, Light_set_BlinkRate, Light_get_PowerUsage, Module_HasField, Module_GetField, Module_SetFieldInt, Module_SetFieldFloat, Module_SetFieldString, Module_ResetField, Module_HasEvent, Module_TriggerEvent, Module_HasAction, Module_SetAction, Module_get_Name, Module_get_Part, Module_get_Fields, Module_get_Events, Module_get_Actions, Parachute_Deploy, Parachute_Arm, Parachute_get_Part, Parachute_get_Deployed, Parachute_get_Armed, Parachute_get_State, Parachute_get_DeployAltitude, Parachute_set_DeployAltitude, Parachute_get_DeployMinPressure, Parachute_set_DeployMinPressure, Part_Position, Part_CenterOfMass, Part_BoundingBox, Part_Direction, Part_Velocity, Part_Rotation, Part_AddForce, Part_InstantaneousForce, Part_get_Name, Part_get_Title, Part_get_Tag, Part_set_Tag, Part_get_Highlighted, Part_set_Highlighted, Part_get_HighlightColor, Part_set_HighlightColor, Part_get_Cost, Part_get_Vessel, Part_get_Parent, Part_get_Children, Part_get_AxiallyAttached, Part_get_RadiallyAttached, Part_get_Stage, Part_get_DecoupleStage, Part_get_Massless, Part_get_Mass, Part_get_DryMass, Part_get_Shielded, Part_get_DynamicPressure, Part_get_ImpactTolerance, Part_get_Temperature, Part_get_SkinTemperature, Part_get_MaxTemperature, Part_get_MaxSkinTemperature, Part_get_ThermalMass, Part_get_ThermalSkinMass, Part_get_ThermalResourceMass, Part_get_ThermalInternalFlux, Part_get_ThermalConductionFlux, Part_get_ThermalConvectionFlux, Part_get_ThermalRadiationFlux, Part_get_ThermalSkinToInternalFlux, Part_get_Resources, Part_get_Crossfeed, Part_get_IsFuelLine, Part_get_FuelLinesFrom, Part_get_FuelLinesTo, Part_get_Modules, Part_get_Antenna, Part_get_CargoBay, Part_get_ControlSurface, Part_get_Decoupler, Part_get_DockingPort, Part_get_ResourceDrain, Part_get_Engine, Part_get_Experiment, Part_get_Experiments, Part_get_Fairing, Part_get_Intake, Part_get_Leg, Part_get_LaunchClamp, Part_get_Light, Part_get_Parachute, Part_get_Radiator, Part_get_RCS, Part_get_ReactionWheel, Part_get_ResourceConverter, Part_get_ResourceHarvester, Part_get_Sensor, Part_get_SolarPanel, Part_get_Wheel, Part_get_RoboticHinge, Part_get_RoboticPiston, Part_get_RoboticRotation, Part_get_RoboticRotor, Part_get_MomentOfInertia, Part_get_InertiaTensor, Part_get_ReferenceFrame, Part_get_CenterOfMassReferenceFrame, Part_get_AutoStrutMode, Part_set_AutoStrutMode, Parts_WithName, Parts_WithTitle, Parts_WithTag, Parts_WithModule, Parts_InStage, Parts_InDecoupleStage, Parts_ModulesWithName, Parts_get_All, Parts_get_Root, Parts_get_Controlling, Parts_set_Controlling, Parts_get_Antennas, Parts_get_ControlSurfaces, Parts_get_CargoBays, Parts_get_Decouplers, Parts_get_DockingPorts, Parts_get_Engines, Parts_get_Experiments, Parts_get_Fairings, Parts_get_Intakes, Parts_get_Legs, Parts_get_LaunchClamps, Parts_get_Lights, Parts_get_Parachutes, Parts_get_Radiators, Parts_get_RCS, Parts_get_ReactionWheels, Parts_get_ResourceConverters, Parts_get_ResourceHarvesters, Parts_get_Sensors, Parts_get_SolarPanels, Parts_get_Wheels, Parts_get_RoboticHinges, Parts_get_RoboticPistons, Parts_get_RoboticRotations, Parts_get_RoboticRotors, Parts_get_ResourceDrains, Propellant_get_Name, Propellant_get_CurrentAmount, Propellant_get_CurrentRequirement, Propellant_get_TotalResourceAvailable, Propellant_get_TotalResourceCapacity, Propellant_get_IgnoreForIsp, Propellant_get_IgnoreForThrustCurve, Propellant_get_DrawStackGauge, Propellant_get_IsDeprived, Propellant_get_Ratio, RCS_get_Part, RCS_get_Active, RCS_get_Enabled, RCS_set_Enabled, RCS_get_PitchEnabled, RCS_set_PitchEnabled, RCS_get_YawEnabled, RCS_set_YawEnabled, RCS_get_RollEnabled, RCS_set_RollEnabled, RCS_get_ForwardEnabled, RCS_set_ForwardEnabled, RCS_get_UpEnabled, RCS_set_UpEnabled, RCS_get_RightEnabled, RCS_set_RightEnabled, RCS_get_AvailableTorque, RCS_get_AvailableThrust, RCS_get_MaxThrust, RCS_get_MaxVacuumThrust, RCS_get_ThrustLimit, RCS_set_ThrustLimit, RCS_get_Thrusters, RCS_get_SpecificImpulse, RCS_get_VacuumSpecificImpulse, RCS_get_KerbinSeaLevelSpecificImpulse, RCS_get_Propellants, RCS_get_PropellantRatios, RCS_get_HasFuel, Radiator_get_Part, Radiator_get_Deployable, Radiator_get_Deployed, Radiator_set_Deployed, Radiator_get_State, ReactionWheel_get_Part, ReactionWheel_get_Active, ReactionWheel_set_Active, ReactionWheel_get_Broken, ReactionWheel_get_AvailableTorque, ReactionWheel_get_MaxTorque, ResourceConverter_Active, ResourceConverter_Name, ResourceConverter_Start, ResourceConverter_Stop, ResourceConverter_State, ResourceConverter_StatusInfo, ResourceConverter_Inputs, ResourceConverter_Outputs, ResourceConverter_get_Part, ResourceConverter_get_Count, ResourceConverter_get_ThermalEfficiency, ResourceConverter_get_CoreTemperature, ResourceConverter_get_OptimumCoreTemperature, ResourceDrain_SetResourceDrain, ResourceDrain_CheckResourceDrain, ResourceDrain_Start, ResourceDrain_Stop, ResourceDrain_get_Part, ResourceDrain_get_AvailableResources, ResourceDrain_get_DrainMode, ResourceDrain_set_DrainMode, ResourceDrain_get_MaxDrainRate, ResourceDrain_get_MinDrainRate, ResourceDrain_get_DrainRate, ResourceDrain_set_DrainRate, ResourceHarvester_get_Part, ResourceHarvester_get_State, ResourceHarvester_get_Deployed, ResourceHarvester_set_Deployed, ResourceHarvester_get_Active, ResourceHarvester_set_Active, ResourceHarvester_get_ExtractionRate, ResourceHarvester_get_ThermalEfficiency, ResourceHarvester_get_CoreTemperature, ResourceHarvester_get_OptimumCoreTemperature, RoboticHinge_Home, RoboticHinge_get_Part, RoboticHinge_get_TargetAngle, RoboticHinge_set_TargetAngle, RoboticHinge_get_CurrentAngle, RoboticHinge_get_Rate, RoboticHinge_set_Rate, RoboticHinge_get_Damping, RoboticHinge_set_Damping, RoboticHinge_get_HingeLocked, RoboticHinge_set_HingeLocked, RoboticHinge_get_MotorEngaged, RoboticHinge_set_MotorEngaged, RoboticPiston_Home, RoboticPiston_get_Part, RoboticPiston_get_TargetPosition, RoboticPiston_set_TargetPosition, RoboticPiston_get_CurrentPosition, RoboticPiston_get_Rate, RoboticPiston_set_Rate, RoboticPiston_get_Damping, RoboticPiston_set_Damping, RoboticPiston_get_PistonLocked, RoboticPiston_set_PistonLocked, RoboticPiston_get_MotorEngaged, RoboticPiston_set_MotorEngaged, RoboticRotation_Home, RoboticRotation_get_Part, RoboticRotation_get_TargetPosition, RoboticRotation_set_TargetPosition, RoboticRotation_get_CurrentPosition, RoboticRotation_get_Rate, RoboticRotation_set_Rate, RoboticRotation_get_Damping, RoboticRotation_set_Damping, RoboticRotation_get_RotationLocked, RoboticRotation_set_RotationLocked, RoboticRotation_get_MotorEngaged, RoboticRotation_set_MotorEngaged, RoboticRotor_get_Part, RoboticRotor_get_TargetRPM, RoboticRotor_set_TargetRPM, RoboticRotor_get_CurrentRPM, RoboticRotor_get_Inverted, RoboticRotor_set_Inverted, RoboticRotor_get_RotationLocked, RoboticRotor_set_RotationLocked, RoboticRotor_get_MotorEngaged, RoboticRotor_set_MotorEngaged, RoboticRotor_get_TorqueLimit, RoboticRotor_set_TorqueLimit, ScienceData_get_DataAmount, ScienceData_get_ScienceValue, ScienceData_get_TransmitValue, ScienceSubject_get_Science, ScienceSubject_get_ScienceCap, ScienceSubject_get_IsComplete, ScienceSubject_get_DataScale, ScienceSubject_get_ScientificValue, ScienceSubject_get_SubjectValue, ScienceSubject_get_Title, Sensor_get_Part, Sensor_get_Active, Sensor_set_Active, Sensor_get_Value, SolarPanel_get_Part, SolarPanel_get_Deployable, SolarPanel_get_Deployed, SolarPanel_set_Deployed, SolarPanel_get_State, SolarPanel_get_EnergyFlow, SolarPanel_get_SunExposure, Thruster_ThrustPosition, Thruster_ThrustDirection, Thruster_InitialThrustPosition, Thruster_InitialThrustDirection, Thruster_GimbalPosition, Thruster_get_Part, Thruster_get_ThrustReferenceFrame, Thruster_get_Gimballed, Thruster_get_GimbalAngle, Wheel_get_Part, Wheel_get_State, Wheel_get_Radius, Wheel_get_Grounded, Wheel_get_HasBrakes, Wheel_get_Brakes, Wheel_set_Brakes, Wheel_get_AutoFrictionControl, Wheel_set_AutoFrictionControl, Wheel_get_ManualFrictionControl, Wheel_set_ManualFrictionControl, Wheel_get_Deployable, Wheel_get_Deployed, Wheel_set_Deployed, Wheel_get_Powered, Wheel_get_MotorEnabled, Wheel_set_MotorEnabled, Wheel_get_MotorInverted, Wheel_set_MotorInverted, Wheel_get_MotorState, Wheel_get_MotorOutput, Wheel_get_TractionControlEnabled, Wheel_set_TractionControlEnabled, Wheel_get_TractionControl, Wheel_set_TractionControl, Wheel_get_DriveLimiter, Wheel_set_DriveLimiter, Wheel_get_Steerable, Wheel_get_SteeringEnabled, Wheel_set_SteeringEnabled, Wheel_get_SteeringInverted, Wheel_set_SteeringInverted, Wheel_get_SteeringAngleLimiter, Wheel_set_SteeringAngleLimiter, Wheel_get_SteeringAngleResponse, Wheel_set_SteeringAngleResponse, Wheel_get_HasSuspension, Wheel_get_SuspensionSpringStrength, Wheel_get_SuspensionDamperStrength, Wheel_get_Broken, Wheel_get_Repairable, Wheel_get_Stress, Wheel_get_StressTolerance, Wheel_get_StressPercentage, Wheel_get_Deflection, Wheel_get_Slip
+struct ReferenceFrame_static_CreateRelative <: Request{:SpaceCenter, :ReferenceFrame_static_CreateRelative, RemoteTypes.ReferenceFrame}
+    ReferenceFrame_static_CreateRelative(referenceFrame::RemoteTypes.ReferenceFrame, position::begin
+                    Tuple{Float64, Float64, Float64}
+                end, rotation::begin
+                    Tuple{Float64, Float64, Float64, Float64}
+                end, velocity::begin
+                    Tuple{Float64, Float64, Float64}
+                end, angularVelocity::begin
+                    Tuple{Float64, Float64, Float64}
+                end) = begin
+            new(referenceFrame, position, rotation, velocity, angularVelocity)
+        end
+    referenceFrame::RemoteTypes.ReferenceFrame
+    position::begin
+            Tuple{Float64, Float64, Float64}
+        end
+    rotation::begin
+            Tuple{Float64, Float64, Float64, Float64}
+        end
+    velocity::begin
+            Tuple{Float64, Float64, Float64}
+        end
+    angularVelocity::begin
+            Tuple{Float64, Float64, Float64}
+        end
+end
+struct ReferenceFrame_static_CreateHybrid <: Request{:SpaceCenter, :ReferenceFrame_static_CreateHybrid, RemoteTypes.ReferenceFrame}
+    ReferenceFrame_static_CreateHybrid(position::RemoteTypes.ReferenceFrame, rotation::RemoteTypes.ReferenceFrame, velocity::RemoteTypes.ReferenceFrame, angularVelocity::RemoteTypes.ReferenceFrame) = begin
+            new(position, rotation, velocity, angularVelocity)
+        end
+    position::RemoteTypes.ReferenceFrame
+    rotation::RemoteTypes.ReferenceFrame
+    velocity::RemoteTypes.ReferenceFrame
+    angularVelocity::RemoteTypes.ReferenceFrame
+end
+struct Resource_get_Name <: Request{:SpaceCenter, :Resource_get_Name, String}
+    Resource_get_Name(this::RemoteTypes.Resource) = begin
+            new(this)
+        end
+    this::RemoteTypes.Resource
+end
+struct Resource_get_Part <: Request{:SpaceCenter, :Resource_get_Part, RemoteTypes.Part}
+    Resource_get_Part(this::RemoteTypes.Resource) = begin
+            new(this)
+        end
+    this::RemoteTypes.Resource
+end
+struct Resource_get_Max <: Request{:SpaceCenter, :Resource_get_Max, Float32}
+    Resource_get_Max(this::RemoteTypes.Resource) = begin
+            new(this)
+        end
+    this::RemoteTypes.Resource
+end
+struct Resource_get_Amount <: Request{:SpaceCenter, :Resource_get_Amount, Float32}
+    Resource_get_Amount(this::RemoteTypes.Resource) = begin
+            new(this)
+        end
+    this::RemoteTypes.Resource
+end
+struct Resource_get_Density <: Request{:SpaceCenter, :Resource_get_Density, Float32}
+    Resource_get_Density(this::RemoteTypes.Resource) = begin
+            new(this)
+        end
+    this::RemoteTypes.Resource
+end
+struct Resource_get_FlowMode <: Request{:SpaceCenter, :Resource_get_FlowMode, EResourceFlowMode}
+    Resource_get_FlowMode(this::RemoteTypes.Resource) = begin
+            new(this)
+        end
+    this::RemoteTypes.Resource
+end
+struct Resource_get_Enabled <: Request{:SpaceCenter, :Resource_get_Enabled, Bool}
+    Resource_get_Enabled(this::RemoteTypes.Resource) = begin
+            new(this)
+        end
+    this::RemoteTypes.Resource
+end
+struct Resource_set_Enabled <: Request{:SpaceCenter, :Resource_set_Enabled, Nothing}
+    Resource_set_Enabled(this::RemoteTypes.Resource, value::Bool) = begin
+            new(this, value)
+        end
+    this::RemoteTypes.Resource
+    value::Bool
+end
+struct ResourceTransfer_static_Start <: Request{:SpaceCenter, :ResourceTransfer_static_Start, RemoteTypes.ResourceTransfer}
+    ResourceTransfer_static_Start(fromPart::RemoteTypes.Part, toPart::RemoteTypes.Part, resource::String, maxAmount::Float32) = begin
+            new(fromPart, toPart, resource, maxAmount)
+        end
+    fromPart::RemoteTypes.Part
+    toPart::RemoteTypes.Part
+    resource::String
+    maxAmount::Float32
+end
+struct ResourceTransfer_get_Complete <: Request{:SpaceCenter, :ResourceTransfer_get_Complete, Bool}
+    ResourceTransfer_get_Complete(this::RemoteTypes.ResourceTransfer) = begin
+            new(this)
+        end
+    this::RemoteTypes.ResourceTransfer
+end
+struct ResourceTransfer_get_Amount <: Request{:SpaceCenter, :ResourceTransfer_get_Amount, Float32}
+    ResourceTransfer_get_Amount(this::RemoteTypes.ResourceTransfer) = begin
+            new(this)
+        end
+    this::RemoteTypes.ResourceTransfer
+end
+struct Resources_WithResource <: Request{:SpaceCenter, :Resources_WithResource, begin
+                Array{RemoteTypes.Resource, 1}
+            end}
+    Resources_WithResource(this::RemoteTypes.Resources, name::String) = begin
+            new(this, name)
+        end
+    this::RemoteTypes.Resources
+    name::String
+end
+struct Resources_HasResource <: Request{:SpaceCenter, :Resources_HasResource, Bool}
+    Resources_HasResource(this::RemoteTypes.Resources, name::String) = begin
+            new(this, name)
+        end
+    this::RemoteTypes.Resources
+    name::String
+end
+struct Resources_Max <: Request{:SpaceCenter, :Resources_Max, Float32}
+    Resources_Max(this::RemoteTypes.Resources, name::String) = begin
+            new(this, name)
+        end
+    this::RemoteTypes.Resources
+    name::String
+end
+struct Resources_Amount <: Request{:SpaceCenter, :Resources_Amount, Float32}
+    Resources_Amount(this::RemoteTypes.Resources, name::String) = begin
+            new(this, name)
+        end
+    this::RemoteTypes.Resources
+    name::String
+end
+struct Resources_static_Density <: Request{:SpaceCenter, :Resources_static_Density, Float32}
+    Resources_static_Density(name::String) = begin
+            new(name)
+        end
+    name::String
+end
+struct Resources_static_FlowMode <: Request{:SpaceCenter, :Resources_static_FlowMode, EResourceFlowMode}
+    Resources_static_FlowMode(name::String) = begin
+            new(name)
+        end
+    name::String
+end
+struct Resources_get_All <: Request{:SpaceCenter, :Resources_get_All, begin
+                Array{RemoteTypes.Resource, 1}
+            end}
+    Resources_get_All(this::RemoteTypes.Resources) = begin
+            new(this)
+        end
+    this::RemoteTypes.Resources
+end
+struct Resources_get_Names <: Request{:SpaceCenter, :Resources_get_Names, begin
+                Array{String, 1}
+            end}
+    Resources_get_Names(this::RemoteTypes.Resources) = begin
+            new(this)
+        end
+    this::RemoteTypes.Resources
+end
+struct Resources_get_Enabled <: Request{:SpaceCenter, :Resources_get_Enabled, Bool}
+    Resources_get_Enabled(this::RemoteTypes.Resources) = begin
+            new(this)
+        end
+    this::RemoteTypes.Resources
+end
+struct Resources_set_Enabled <: Request{:SpaceCenter, :Resources_set_Enabled, Nothing}
+    Resources_set_Enabled(this::RemoteTypes.Resources, value::Bool) = begin
+            new(this, value)
+        end
+    this::RemoteTypes.Resources
+    value::Bool
+end
+struct Vessel_Recover <: Request{:SpaceCenter, :Vessel_Recover, Nothing}
+    Vessel_Recover(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_Flight <: Request{:SpaceCenter, :Vessel_Flight, RemoteTypes.Flight}
+    Vessel_Flight(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+            new(this, referenceFrame)
+        end
+    this::RemoteTypes.Vessel
+    referenceFrame::RemoteTypes.ReferenceFrame
+end
+struct Vessel_ResourcesInDecoupleStage <: Request{:SpaceCenter, :Vessel_ResourcesInDecoupleStage, RemoteTypes.Resources}
+    Vessel_ResourcesInDecoupleStage(this::RemoteTypes.Vessel, stage::Int32, cumulative::Bool) = begin
+            new(this, stage, cumulative)
+        end
+    this::RemoteTypes.Vessel
+    stage::Int32
+    cumulative::Bool
+end
+struct Vessel_Position <: Request{:SpaceCenter, :Vessel_Position, begin
+                Tuple{Float64, Float64, Float64}
+            end}
+    Vessel_Position(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+            new(this, referenceFrame)
+        end
+    this::RemoteTypes.Vessel
+    referenceFrame::RemoteTypes.ReferenceFrame
+end
+struct Vessel_BoundingBox <: Request{:SpaceCenter, :Vessel_BoundingBox, begin
+                Tuple{begin
+                        Tuple{Float64, Float64, Float64}
+                    end, begin
+                        Tuple{Float64, Float64, Float64}
+                    end}
+            end}
+    Vessel_BoundingBox(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+            new(this, referenceFrame)
+        end
+    this::RemoteTypes.Vessel
+    referenceFrame::RemoteTypes.ReferenceFrame
+end
+struct Vessel_Velocity <: Request{:SpaceCenter, :Vessel_Velocity, begin
+                Tuple{Float64, Float64, Float64}
+            end}
+    Vessel_Velocity(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+            new(this, referenceFrame)
+        end
+    this::RemoteTypes.Vessel
+    referenceFrame::RemoteTypes.ReferenceFrame
+end
+struct Vessel_Rotation <: Request{:SpaceCenter, :Vessel_Rotation, begin
+                Tuple{Float64, Float64, Float64, Float64}
+            end}
+    Vessel_Rotation(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+            new(this, referenceFrame)
+        end
+    this::RemoteTypes.Vessel
+    referenceFrame::RemoteTypes.ReferenceFrame
+end
+struct Vessel_Direction <: Request{:SpaceCenter, :Vessel_Direction, begin
+                Tuple{Float64, Float64, Float64}
+            end}
+    Vessel_Direction(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+            new(this, referenceFrame)
+        end
+    this::RemoteTypes.Vessel
+    referenceFrame::RemoteTypes.ReferenceFrame
+end
+struct Vessel_AngularVelocity <: Request{:SpaceCenter, :Vessel_AngularVelocity, begin
+                Tuple{Float64, Float64, Float64}
+            end}
+    Vessel_AngularVelocity(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+            new(this, referenceFrame)
+        end
+    this::RemoteTypes.Vessel
+    referenceFrame::RemoteTypes.ReferenceFrame
+end
+struct Vessel_get_Name <: Request{:SpaceCenter, :Vessel_get_Name, String}
+    Vessel_get_Name(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_set_Name <: Request{:SpaceCenter, :Vessel_set_Name, Nothing}
+    Vessel_set_Name(this::RemoteTypes.Vessel, value::String) = begin
+            new(this, value)
+        end
+    this::RemoteTypes.Vessel
+    value::String
+end
+struct Vessel_get_Type <: Request{:SpaceCenter, :Vessel_get_Type, EVesselType}
+    Vessel_get_Type(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_set_Type <: Request{:SpaceCenter, :Vessel_set_Type, Nothing}
+    Vessel_set_Type(this::RemoteTypes.Vessel, value::EVesselType) = begin
+            new(this, value)
+        end
+    this::RemoteTypes.Vessel
+    value::EVesselType
+end
+struct Vessel_get_Situation <: Request{:SpaceCenter, :Vessel_get_Situation, EVesselSituation}
+    Vessel_get_Situation(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_Recoverable <: Request{:SpaceCenter, :Vessel_get_Recoverable, Bool}
+    Vessel_get_Recoverable(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_MET <: Request{:SpaceCenter, :Vessel_get_MET, Float64}
+    Vessel_get_MET(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_Biome <: Request{:SpaceCenter, :Vessel_get_Biome, String}
+    Vessel_get_Biome(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_Orbit <: Request{:SpaceCenter, :Vessel_get_Orbit, RemoteTypes.Orbit}
+    Vessel_get_Orbit(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_Control <: Request{:SpaceCenter, :Vessel_get_Control, RemoteTypes.Control}
+    Vessel_get_Control(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_Comms <: Request{:SpaceCenter, :Vessel_get_Comms, RemoteTypes.Comms}
+    Vessel_get_Comms(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_AutoPilot <: Request{:SpaceCenter, :Vessel_get_AutoPilot, RemoteTypes.AutoPilot}
+    Vessel_get_AutoPilot(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_CrewCapacity <: Request{:SpaceCenter, :Vessel_get_CrewCapacity, Int32}
+    Vessel_get_CrewCapacity(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_CrewCount <: Request{:SpaceCenter, :Vessel_get_CrewCount, Int32}
+    Vessel_get_CrewCount(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_Crew <: Request{:SpaceCenter, :Vessel_get_Crew, begin
+                Array{RemoteTypes.CrewMember, 1}
+            end}
+    Vessel_get_Crew(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_Resources <: Request{:SpaceCenter, :Vessel_get_Resources, RemoteTypes.Resources}
+    Vessel_get_Resources(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_Parts <: Request{:SpaceCenter, :Vessel_get_Parts, RemoteTypes.Parts}
+    Vessel_get_Parts(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_Mass <: Request{:SpaceCenter, :Vessel_get_Mass, Float32}
+    Vessel_get_Mass(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_DryMass <: Request{:SpaceCenter, :Vessel_get_DryMass, Float32}
+    Vessel_get_DryMass(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_Thrust <: Request{:SpaceCenter, :Vessel_get_Thrust, Float32}
+    Vessel_get_Thrust(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_AvailableThrust <: Request{:SpaceCenter, :Vessel_get_AvailableThrust, Float32}
+    Vessel_get_AvailableThrust(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_MaxThrust <: Request{:SpaceCenter, :Vessel_get_MaxThrust, Float32}
+    Vessel_get_MaxThrust(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_MaxVacuumThrust <: Request{:SpaceCenter, :Vessel_get_MaxVacuumThrust, Float32}
+    Vessel_get_MaxVacuumThrust(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_SpecificImpulse <: Request{:SpaceCenter, :Vessel_get_SpecificImpulse, Float32}
+    Vessel_get_SpecificImpulse(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_VacuumSpecificImpulse <: Request{:SpaceCenter, :Vessel_get_VacuumSpecificImpulse, Float32}
+    Vessel_get_VacuumSpecificImpulse(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_KerbinSeaLevelSpecificImpulse <: Request{:SpaceCenter, :Vessel_get_KerbinSeaLevelSpecificImpulse, Float32}
+    Vessel_get_KerbinSeaLevelSpecificImpulse(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_MomentOfInertia <: Request{:SpaceCenter, :Vessel_get_MomentOfInertia, begin
+                Tuple{Float64, Float64, Float64}
+            end}
+    Vessel_get_MomentOfInertia(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_InertiaTensor <: Request{:SpaceCenter, :Vessel_get_InertiaTensor, begin
+                Array{Float64, 1}
+            end}
+    Vessel_get_InertiaTensor(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_AvailableTorque <: Request{:SpaceCenter, :Vessel_get_AvailableTorque, begin
+                Tuple{begin
+                        Tuple{Float64, Float64, Float64}
+                    end, begin
+                        Tuple{Float64, Float64, Float64}
+                    end}
+            end}
+    Vessel_get_AvailableTorque(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_AvailableReactionWheelTorque <: Request{:SpaceCenter, :Vessel_get_AvailableReactionWheelTorque, begin
+                Tuple{begin
+                        Tuple{Float64, Float64, Float64}
+                    end, begin
+                        Tuple{Float64, Float64, Float64}
+                    end}
+            end}
+    Vessel_get_AvailableReactionWheelTorque(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_AvailableRCSTorque <: Request{:SpaceCenter, :Vessel_get_AvailableRCSTorque, begin
+                Tuple{begin
+                        Tuple{Float64, Float64, Float64}
+                    end, begin
+                        Tuple{Float64, Float64, Float64}
+                    end}
+            end}
+    Vessel_get_AvailableRCSTorque(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_AvailableEngineTorque <: Request{:SpaceCenter, :Vessel_get_AvailableEngineTorque, begin
+                Tuple{begin
+                        Tuple{Float64, Float64, Float64}
+                    end, begin
+                        Tuple{Float64, Float64, Float64}
+                    end}
+            end}
+    Vessel_get_AvailableEngineTorque(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_AvailableControlSurfaceTorque <: Request{:SpaceCenter, :Vessel_get_AvailableControlSurfaceTorque, begin
+                Tuple{begin
+                        Tuple{Float64, Float64, Float64}
+                    end, begin
+                        Tuple{Float64, Float64, Float64}
+                    end}
+            end}
+    Vessel_get_AvailableControlSurfaceTorque(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_AvailableOtherTorque <: Request{:SpaceCenter, :Vessel_get_AvailableOtherTorque, begin
+                Tuple{begin
+                        Tuple{Float64, Float64, Float64}
+                    end, begin
+                        Tuple{Float64, Float64, Float64}
+                    end}
+            end}
+    Vessel_get_AvailableOtherTorque(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_ReferenceFrame <: Request{:SpaceCenter, :Vessel_get_ReferenceFrame, RemoteTypes.ReferenceFrame}
+    Vessel_get_ReferenceFrame(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_OrbitalReferenceFrame <: Request{:SpaceCenter, :Vessel_get_OrbitalReferenceFrame, RemoteTypes.ReferenceFrame}
+    Vessel_get_OrbitalReferenceFrame(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_SurfaceReferenceFrame <: Request{:SpaceCenter, :Vessel_get_SurfaceReferenceFrame, RemoteTypes.ReferenceFrame}
+    Vessel_get_SurfaceReferenceFrame(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Vessel_get_SurfaceVelocityReferenceFrame <: Request{:SpaceCenter, :Vessel_get_SurfaceVelocityReferenceFrame, RemoteTypes.ReferenceFrame}
+    Vessel_get_SurfaceVelocityReferenceFrame(this::RemoteTypes.Vessel) = begin
+            new(this)
+        end
+    this::RemoteTypes.Vessel
+end
+struct Waypoint_Remove <: Request{:SpaceCenter, :Waypoint_Remove, Nothing}
+    Waypoint_Remove(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_get_Body <: Request{:SpaceCenter, :Waypoint_get_Body, RemoteTypes.CelestialBody}
+    Waypoint_get_Body(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_set_Body <: Request{:SpaceCenter, :Waypoint_set_Body, Nothing}
+    Waypoint_set_Body(this::RemoteTypes.Waypoint, value::RemoteTypes.CelestialBody) = begin
+            new(this, value)
+        end
+    this::RemoteTypes.Waypoint
+    value::RemoteTypes.CelestialBody
+end
+struct Waypoint_get_Name <: Request{:SpaceCenter, :Waypoint_get_Name, String}
+    Waypoint_get_Name(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_set_Name <: Request{:SpaceCenter, :Waypoint_set_Name, Nothing}
+    Waypoint_set_Name(this::RemoteTypes.Waypoint, value::String) = begin
+            new(this, value)
+        end
+    this::RemoteTypes.Waypoint
+    value::String
+end
+struct Waypoint_get_Color <: Request{:SpaceCenter, :Waypoint_get_Color, Int32}
+    Waypoint_get_Color(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_set_Color <: Request{:SpaceCenter, :Waypoint_set_Color, Nothing}
+    Waypoint_set_Color(this::RemoteTypes.Waypoint, value::Int32) = begin
+            new(this, value)
+        end
+    this::RemoteTypes.Waypoint
+    value::Int32
+end
+struct Waypoint_get_Icon <: Request{:SpaceCenter, :Waypoint_get_Icon, String}
+    Waypoint_get_Icon(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_set_Icon <: Request{:SpaceCenter, :Waypoint_set_Icon, Nothing}
+    Waypoint_set_Icon(this::RemoteTypes.Waypoint, value::String) = begin
+            new(this, value)
+        end
+    this::RemoteTypes.Waypoint
+    value::String
+end
+struct Waypoint_get_Latitude <: Request{:SpaceCenter, :Waypoint_get_Latitude, Float64}
+    Waypoint_get_Latitude(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_set_Latitude <: Request{:SpaceCenter, :Waypoint_set_Latitude, Nothing}
+    Waypoint_set_Latitude(this::RemoteTypes.Waypoint, value::Float64) = begin
+            new(this, value)
+        end
+    this::RemoteTypes.Waypoint
+    value::Float64
+end
+struct Waypoint_get_Longitude <: Request{:SpaceCenter, :Waypoint_get_Longitude, Float64}
+    Waypoint_get_Longitude(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_set_Longitude <: Request{:SpaceCenter, :Waypoint_set_Longitude, Nothing}
+    Waypoint_set_Longitude(this::RemoteTypes.Waypoint, value::Float64) = begin
+            new(this, value)
+        end
+    this::RemoteTypes.Waypoint
+    value::Float64
+end
+struct Waypoint_get_MeanAltitude <: Request{:SpaceCenter, :Waypoint_get_MeanAltitude, Float64}
+    Waypoint_get_MeanAltitude(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_set_MeanAltitude <: Request{:SpaceCenter, :Waypoint_set_MeanAltitude, Nothing}
+    Waypoint_set_MeanAltitude(this::RemoteTypes.Waypoint, value::Float64) = begin
+            new(this, value)
+        end
+    this::RemoteTypes.Waypoint
+    value::Float64
+end
+struct Waypoint_get_SurfaceAltitude <: Request{:SpaceCenter, :Waypoint_get_SurfaceAltitude, Float64}
+    Waypoint_get_SurfaceAltitude(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_set_SurfaceAltitude <: Request{:SpaceCenter, :Waypoint_set_SurfaceAltitude, Nothing}
+    Waypoint_set_SurfaceAltitude(this::RemoteTypes.Waypoint, value::Float64) = begin
+            new(this, value)
+        end
+    this::RemoteTypes.Waypoint
+    value::Float64
+end
+struct Waypoint_get_BedrockAltitude <: Request{:SpaceCenter, :Waypoint_get_BedrockAltitude, Float64}
+    Waypoint_get_BedrockAltitude(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_set_BedrockAltitude <: Request{:SpaceCenter, :Waypoint_set_BedrockAltitude, Nothing}
+    Waypoint_set_BedrockAltitude(this::RemoteTypes.Waypoint, value::Float64) = begin
+            new(this, value)
+        end
+    this::RemoteTypes.Waypoint
+    value::Float64
+end
+struct Waypoint_get_NearSurface <: Request{:SpaceCenter, :Waypoint_get_NearSurface, Bool}
+    Waypoint_get_NearSurface(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_get_Grounded <: Request{:SpaceCenter, :Waypoint_get_Grounded, Bool}
+    Waypoint_get_Grounded(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_get_Index <: Request{:SpaceCenter, :Waypoint_get_Index, Int32}
+    Waypoint_get_Index(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_get_Clustered <: Request{:SpaceCenter, :Waypoint_get_Clustered, Bool}
+    Waypoint_get_Clustered(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_get_HasContract <: Request{:SpaceCenter, :Waypoint_get_HasContract, Bool}
+    Waypoint_get_HasContract(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct Waypoint_get_Contract <: Request{:SpaceCenter, :Waypoint_get_Contract, RemoteTypes.Contract}
+    Waypoint_get_Contract(this::RemoteTypes.Waypoint) = begin
+            new(this)
+        end
+    this::RemoteTypes.Waypoint
+end
+struct WaypointManager_AddWaypoint <: Request{:SpaceCenter, :WaypointManager_AddWaypoint, RemoteTypes.Waypoint}
+    WaypointManager_AddWaypoint(this::RemoteTypes.WaypointManager, latitude::Float64, longitude::Float64, body::RemoteTypes.CelestialBody, name::String) = begin
+            new(this, latitude, longitude, body, name)
+        end
+    this::RemoteTypes.WaypointManager
+    latitude::Float64
+    longitude::Float64
+    body::RemoteTypes.CelestialBody
+    name::String
+end
+struct WaypointManager_AddWaypointAtAltitude <: Request{:SpaceCenter, :WaypointManager_AddWaypointAtAltitude, RemoteTypes.Waypoint}
+    WaypointManager_AddWaypointAtAltitude(this::RemoteTypes.WaypointManager, latitude::Float64, longitude::Float64, altitude::Float64, body::RemoteTypes.CelestialBody, name::String) = begin
+            new(this, latitude, longitude, altitude, body, name)
+        end
+    this::RemoteTypes.WaypointManager
+    latitude::Float64
+    longitude::Float64
+    altitude::Float64
+    body::RemoteTypes.CelestialBody
+    name::String
+end
+struct WaypointManager_get_Waypoints <: Request{:SpaceCenter, :WaypointManager_get_Waypoints, begin
+                Array{RemoteTypes.Waypoint, 1}
+            end}
+    WaypointManager_get_Waypoints(this::RemoteTypes.WaypointManager) = begin
+            new(this)
+        end
+    this::RemoteTypes.WaypointManager
+end
+struct WaypointManager_get_Icons <: Request{:SpaceCenter, :WaypointManager_get_Icons, begin
+                Array{String, 1}
+            end}
+    WaypointManager_get_Icons(this::RemoteTypes.WaypointManager) = begin
+            new(this)
+        end
+    this::RemoteTypes.WaypointManager
+end
+struct WaypointManager_get_Colors <: Request{:SpaceCenter, :WaypointManager_get_Colors, begin
+                Dict{String, Int32}
+            end}
+    WaypointManager_get_Colors(this::RemoteTypes.WaypointManager) = begin
+            new(this)
+        end
+    this::RemoteTypes.WaypointManager
+end
+export ClearTarget, LaunchableVessels, LaunchVessel, LaunchVesselFromVAB, LaunchVesselFromSPH, Save, Load, Quicksave, Quickload, CanRailsWarpAt, WarpTo, TransformPosition, TransformDirection, TransformRotation, TransformVelocity, RaycastDistance, RaycastPart, get_GameMode, get_Science, get_Funds, get_Reputation, get_ActiveVessel, set_ActiveVessel, get_Vessels, get_Bodies, get_TargetBody, set_TargetBody, get_TargetVessel, set_TargetVessel, get_TargetDockingPort, set_TargetDockingPort, get_WaypointManager, get_ContractManager, get_AlarmClock, get_Camera, get_UIVisible, set_UIVisible, get_Navball, set_Navball, get_UT, get_G, get_WarpMode, get_WarpRate, get_WarpFactor, get_RailsWarpFactor, set_RailsWarpFactor, get_PhysicsWarpFactor, set_PhysicsWarpFactor, get_MaximumRailsWarpFactor, get_FARAvailable, Alarm_get_Type, Alarm_get_Title, Alarm_get_Description, Alarm_get_UT, Alarm_get_TimeTill, Alarm_get_EventOffset, Alarm_get_Vessel, Alarm_get_ID, AlarmClock_MakeRawAlarm, AlarmClock_MakeRawAlarmVessel, AlarmClock_MakeApaAlarm, AlarmClock_MakePeaAlarm, AlarmClock_MakeManeuverAlarm, AlarmClock_MakeSOIAlarm, AlarmClock_GetAlarms, AutoPilot_Engage, AutoPilot_Disengage, AutoPilot_Wait, AutoPilot_TargetPitchAndHeading, AutoPilot_get_Error, AutoPilot_get_PitchError, AutoPilot_get_HeadingError, AutoPilot_get_RollError, AutoPilot_get_ReferenceFrame, AutoPilot_set_ReferenceFrame, AutoPilot_get_TargetPitch, AutoPilot_set_TargetPitch, AutoPilot_get_TargetHeading, AutoPilot_set_TargetHeading, AutoPilot_get_TargetRoll, AutoPilot_set_TargetRoll, AutoPilot_get_TargetDirection, AutoPilot_set_TargetDirection, AutoPilot_get_SAS, AutoPilot_set_SAS, AutoPilot_get_SASMode, AutoPilot_set_SASMode, AutoPilot_get_RollThreshold, AutoPilot_set_RollThreshold, AutoPilot_get_StoppingTime, AutoPilot_set_StoppingTime, AutoPilot_get_DecelerationTime, AutoPilot_set_DecelerationTime, AutoPilot_get_AttenuationAngle, AutoPilot_set_AttenuationAngle, AutoPilot_get_AutoTune, AutoPilot_set_AutoTune, AutoPilot_get_TimeToPeak, AutoPilot_set_TimeToPeak, AutoPilot_get_Overshoot, AutoPilot_set_Overshoot, AutoPilot_get_PitchPIDGains, AutoPilot_set_PitchPIDGains, AutoPilot_get_RollPIDGains, AutoPilot_set_RollPIDGains, AutoPilot_get_YawPIDGains, AutoPilot_set_YawPIDGains, Camera_get_Mode, Camera_set_Mode, Camera_get_Pitch, Camera_set_Pitch, Camera_get_Heading, Camera_set_Heading, Camera_get_Distance, Camera_set_Distance, Camera_get_MinPitch, Camera_get_MaxPitch, Camera_get_MinDistance, Camera_get_MaxDistance, Camera_get_DefaultDistance, Camera_get_FocussedBody, Camera_set_FocussedBody, Camera_get_FocussedVessel, Camera_set_FocussedVessel, Camera_get_FocussedNode, Camera_set_FocussedNode, CelestialBody_SurfaceHeight, CelestialBody_BedrockHeight, CelestialBody_MSLPosition, CelestialBody_SurfacePosition, CelestialBody_BedrockPosition, CelestialBody_PositionAtAltitude, CelestialBody_LatitudeAtPosition, CelestialBody_LongitudeAtPosition, CelestialBody_AltitudeAtPosition, CelestialBody_AtmosphericDensityAtPosition, CelestialBody_TemperatureAt, CelestialBody_DensityAt, CelestialBody_PressureAt, CelestialBody_BiomeAt, CelestialBody_Position, CelestialBody_Velocity, CelestialBody_Rotation, CelestialBody_Direction, CelestialBody_AngularVelocity, CelestialBody_get_Name, CelestialBody_get_Satellites, CelestialBody_get_Mass, CelestialBody_get_GravitationalParameter, CelestialBody_get_SurfaceGravity, CelestialBody_get_RotationalPeriod, CelestialBody_get_RotationalSpeed, CelestialBody_get_RotationAngle, CelestialBody_get_InitialRotation, CelestialBody_get_EquatorialRadius, CelestialBody_get_SphereOfInfluence, CelestialBody_get_Orbit, CelestialBody_get_HasAtmosphere, CelestialBody_get_AtmosphereDepth, CelestialBody_get_HasAtmosphericOxygen, CelestialBody_get_Biomes, CelestialBody_get_FlyingHighAltitudeThreshold, CelestialBody_get_SpaceHighAltitudeThreshold, CelestialBody_get_ReferenceFrame, CelestialBody_get_NonRotatingReferenceFrame, CelestialBody_get_OrbitalReferenceFrame, CommLink_get_Type, CommLink_get_SignalStrength, CommLink_get_Start, CommLink_get_End, CommNode_get_Name, CommNode_get_IsHome, CommNode_get_IsControlPoint, CommNode_get_IsVessel, CommNode_get_Vessel, Comms_get_CanCommunicate, Comms_get_CanTransmitScience, Comms_get_SignalStrength, Comms_get_SignalDelay, Comms_get_Power, Comms_get_ControlPath, Contract_Cancel, Contract_Accept, Contract_Decline, Contract_get_Type, Contract_get_Title, Contract_get_Description, Contract_get_Notes, Contract_get_Synopsis, Contract_get_Keywords, Contract_get_State, Contract_get_Active, Contract_get_Failed, Contract_get_Seen, Contract_get_Read, Contract_get_CanBeCanceled, Contract_get_CanBeDeclined, Contract_get_CanBeFailed, Contract_get_FundsAdvance, Contract_get_FundsCompletion, Contract_get_FundsFailure, Contract_get_ReputationCompletion, Contract_get_ReputationFailure, Contract_get_ScienceCompletion, Contract_get_Parameters, ContractManager_get_Types, ContractManager_get_AllContracts, ContractManager_get_ActiveContracts, ContractManager_get_OfferedContracts, ContractManager_get_CompletedContracts, ContractManager_get_FailedContracts, ContractParameter_get_Title, ContractParameter_get_Notes, ContractParameter_get_Children, ContractParameter_get_Completed, ContractParameter_get_Failed, ContractParameter_get_Optional, ContractParameter_get_FundsCompletion, ContractParameter_get_FundsFailure, ContractParameter_get_ReputationCompletion, ContractParameter_get_ReputationFailure, ContractParameter_get_ScienceCompletion, Control_ActivateNextStage, Control_GetActionGroup, Control_SetActionGroup, Control_ToggleActionGroup, Control_AddNode, Control_RemoveNodes, Control_get_State, Control_get_Source, Control_get_SAS, Control_set_SAS, Control_get_SASMode, Control_set_SASMode, Control_get_SpeedMode, Control_set_SpeedMode, Control_get_RCS, Control_set_RCS, Control_get_ReactionWheels, Control_set_ReactionWheels, Control_get_Gear, Control_set_Gear, Control_get_Legs, Control_set_Legs, Control_get_Wheels, Control_set_Wheels, Control_get_Lights, Control_set_Lights, Control_get_Brakes, Control_set_Brakes, Control_get_Antennas, Control_set_Antennas, Control_get_CargoBays, Control_set_CargoBays, Control_get_Intakes, Control_set_Intakes, Control_get_Parachutes, Control_set_Parachutes, Control_get_Radiators, Control_set_Radiators, Control_get_ResourceHarvesters, Control_set_ResourceHarvesters, Control_get_ResourceHarvestersActive, Control_set_ResourceHarvestersActive, Control_get_SolarPanels, Control_set_SolarPanels, Control_get_Abort, Control_set_Abort, Control_get_Throttle, Control_set_Throttle, Control_get_InputMode, Control_set_InputMode, Control_get_Pitch, Control_set_Pitch, Control_get_Yaw, Control_set_Yaw, Control_get_Roll, Control_set_Roll, Control_get_Forward, Control_set_Forward, Control_get_Up, Control_set_Up, Control_get_Right, Control_set_Right, Control_get_WheelThrottle, Control_set_WheelThrottle, Control_get_WheelSteering, Control_set_WheelSteering, Control_get_CurrentStage, Control_get_StageLock, Control_set_StageLock, Control_get_Nodes, CrewMember_get_Name, CrewMember_set_Name, CrewMember_get_Type, CrewMember_get_OnMission, CrewMember_get_Courage, CrewMember_set_Courage, CrewMember_get_Stupidity, CrewMember_set_Stupidity, CrewMember_get_Experience, CrewMember_set_Experience, CrewMember_get_Badass, CrewMember_set_Badass, CrewMember_get_Veteran, CrewMember_set_Veteran, Flight_SimulateAerodynamicForceAt, Flight_get_GForce, Flight_get_MeanAltitude, Flight_get_SurfaceAltitude, Flight_get_BedrockAltitude, Flight_get_Elevation, Flight_get_Latitude, Flight_get_Longitude, Flight_get_Velocity, Flight_get_Speed, Flight_get_HorizontalSpeed, Flight_get_VerticalSpeed, Flight_get_CenterOfMass, Flight_get_Rotation, Flight_get_Direction, Flight_get_Pitch, Flight_get_Heading, Flight_get_Roll, Flight_get_Prograde, Flight_get_Retrograde, Flight_get_Normal, Flight_get_AntiNormal, Flight_get_Radial, Flight_get_AntiRadial, Flight_get_AtmosphereDensity, Flight_get_DynamicPressure, Flight_get_StaticPressureAtMSL, Flight_get_StaticPressure, Flight_get_AerodynamicForce, Flight_get_Lift, Flight_get_Drag, Flight_get_SpeedOfSound, Flight_get_Mach, Flight_get_ReynoldsNumber, Flight_get_TrueAirSpeed, Flight_get_EquivalentAirSpeed, Flight_get_TerminalVelocity, Flight_get_AngleOfAttack, Flight_get_SideslipAngle, Flight_get_TotalAirTemperature, Flight_get_StaticAirTemperature, Flight_get_StallFraction, Flight_get_DragCoefficient, Flight_get_LiftCoefficient, Flight_get_BallisticCoefficient, Flight_get_ThrustSpecificFuelConsumption, Node_BurnVector, Node_RemainingBurnVector, Node_Remove, Node_Position, Node_Direction, Node_get_Prograde, Node_set_Prograde, Node_get_Normal, Node_set_Normal, Node_get_Radial, Node_set_Radial, Node_get_DeltaV, Node_set_DeltaV, Node_get_RemainingDeltaV, Node_get_UT, Node_set_UT, Node_get_TimeTo, Node_get_Orbit, Node_get_ReferenceFrame, Node_get_OrbitalReferenceFrame, Orbit_static_ReferencePlaneNormal, Orbit_static_ReferencePlaneDirection, Orbit_MeanAnomalyAtUT, Orbit_RadiusAtTrueAnomaly, Orbit_TrueAnomalyAtRadius, Orbit_TrueAnomalyAtUT, Orbit_UTAtTrueAnomaly, Orbit_EccentricAnomalyAtUT, Orbit_OrbitalSpeedAt, Orbit_RadiusAt, Orbit_PositionAt, Orbit_TimeOfClosestApproach, Orbit_DistanceAtClosestApproach, Orbit_ListClosestApproaches, Orbit_TrueAnomalyAtAN, Orbit_TrueAnomalyAtDN, Orbit_RelativeInclination, Orbit_get_Body, Orbit_get_Apoapsis, Orbit_get_Periapsis, Orbit_get_ApoapsisAltitude, Orbit_get_PeriapsisAltitude, Orbit_get_SemiMajorAxis, Orbit_get_SemiMinorAxis, Orbit_get_Radius, Orbit_get_Speed, Orbit_get_Period, Orbit_get_TimeToApoapsis, Orbit_get_TimeToPeriapsis, Orbit_get_Eccentricity, Orbit_get_Inclination, Orbit_get_LongitudeOfAscendingNode, Orbit_get_ArgumentOfPeriapsis, Orbit_get_MeanAnomalyAtEpoch, Orbit_get_Epoch, Orbit_get_MeanAnomaly, Orbit_get_EccentricAnomaly, Orbit_get_TrueAnomaly, Orbit_get_NextOrbit, Orbit_get_TimeToSOIChange, Orbit_get_OrbitalSpeed, Antenna_Transmit, Antenna_Cancel, Antenna_get_Part, Antenna_get_State, Antenna_get_Deployable, Antenna_get_Deployed, Antenna_set_Deployed, Antenna_get_CanTransmit, Antenna_get_AllowPartial, Antenna_set_AllowPartial, Antenna_get_Power, Antenna_get_Combinable, Antenna_get_CombinableExponent, Antenna_get_PacketInterval, Antenna_get_PacketSize, Antenna_get_PacketResourceCost, CargoBay_get_Part, CargoBay_get_State, CargoBay_get_Open, CargoBay_set_Open, ControlSurface_get_Part, ControlSurface_get_PitchEnabled, ControlSurface_set_PitchEnabled, ControlSurface_get_YawEnabled, ControlSurface_set_YawEnabled, ControlSurface_get_RollEnabled, ControlSurface_set_RollEnabled, ControlSurface_get_AuthorityLimiter, ControlSurface_set_AuthorityLimiter, ControlSurface_get_Inverted, ControlSurface_set_Inverted, ControlSurface_get_Deployed, ControlSurface_set_Deployed, ControlSurface_get_SurfaceArea, ControlSurface_get_AvailableTorque, Decoupler_Decouple, Decoupler_get_Part, Decoupler_get_Decoupled, Decoupler_get_Staged, Decoupler_get_Impulse, DockingPort_Undock, DockingPort_Position, DockingPort_Direction, DockingPort_Rotation, DockingPort_get_Part, DockingPort_get_State, DockingPort_get_DockedPart, DockingPort_get_ReengageDistance, DockingPort_get_HasShield, DockingPort_get_Shielded, DockingPort_set_Shielded, DockingPort_get_ReferenceFrame, Engine_ToggleMode, Engine_get_Part, Engine_get_Active, Engine_set_Active, Engine_get_Thrust, Engine_get_AvailableThrust, Engine_get_MaxThrust, Engine_get_MaxVacuumThrust, Engine_get_ThrustLimit, Engine_set_ThrustLimit, Engine_get_Thrusters, Engine_get_SpecificImpulse, Engine_get_VacuumSpecificImpulse, Engine_get_KerbinSeaLevelSpecificImpulse, Engine_get_PropellantNames, Engine_get_Propellants, Engine_get_PropellantRatios, Engine_get_HasFuel, Engine_get_Throttle, Engine_get_ThrottleLocked, Engine_get_CanRestart, Engine_get_CanShutdown, Engine_get_HasModes, Engine_get_Mode, Engine_set_Mode, Engine_get_Modes, Engine_get_AutoModeSwitch, Engine_set_AutoModeSwitch, Engine_get_Gimballed, Engine_get_GimbalRange, Engine_get_GimbalLocked, Engine_set_GimbalLocked, Engine_get_GimbalLimit, Engine_set_GimbalLimit, Engine_get_AvailableTorque, Experiment_Run, Experiment_Transmit, Experiment_Dump, Experiment_Reset, Experiment_get_Part, Experiment_get_Name, Experiment_get_Title, Experiment_get_Inoperable, Experiment_get_Deployed, Experiment_get_Rerunnable, Experiment_get_HasData, Experiment_get_Data, Experiment_get_Available, Experiment_get_Biome, Experiment_get_ScienceSubject, Fairing_Jettison, Fairing_get_Part, Fairing_get_Jettisoned, Force_Remove, Force_get_Part, Force_get_ForceVector, Force_set_ForceVector, Force_get_Position, Force_set_Position, Force_get_ReferenceFrame, Force_set_ReferenceFrame, Intake_get_Part, Intake_get_Open, Intake_set_Open, Intake_get_Speed, Intake_get_Flow, Intake_get_Area, LaunchClamp_Release, LaunchClamp_get_Part, Leg_get_Part, Leg_get_State, Leg_get_Deployable, Leg_get_Deployed, Leg_set_Deployed, Leg_get_IsGrounded, Light_get_Part, Light_get_Active, Light_set_Active, Light_get_Color, Light_set_Color, Light_get_PowerUsage, Module_HasField, Module_GetField, Module_SetFieldInt, Module_SetFieldFloat, Module_SetFieldString, Module_ResetField, Module_HasEvent, Module_TriggerEvent, Module_HasAction, Module_SetAction, Module_get_Name, Module_get_Part, Module_get_Fields, Module_get_Events, Module_get_Actions, Parachute_Deploy, Parachute_Arm, Parachute_get_Part, Parachute_get_Deployed, Parachute_get_Armed, Parachute_get_State, Parachute_get_DeployAltitude, Parachute_set_DeployAltitude, Parachute_get_DeployMinPressure, Parachute_set_DeployMinPressure, Part_Position, Part_CenterOfMass, Part_BoundingBox, Part_Direction, Part_Velocity, Part_Rotation, Part_AddForce, Part_InstantaneousForce, Part_get_Name, Part_get_Title, Part_get_Tag, Part_set_Tag, Part_get_Highlighted, Part_set_Highlighted, Part_get_HighlightColor, Part_set_HighlightColor, Part_get_Cost, Part_get_Vessel, Part_get_Parent, Part_get_Children, Part_get_AxiallyAttached, Part_get_RadiallyAttached, Part_get_Stage, Part_get_DecoupleStage, Part_get_Massless, Part_get_Mass, Part_get_DryMass, Part_get_Shielded, Part_get_DynamicPressure, Part_get_ImpactTolerance, Part_get_Temperature, Part_get_SkinTemperature, Part_get_MaxTemperature, Part_get_MaxSkinTemperature, Part_get_ThermalMass, Part_get_ThermalSkinMass, Part_get_ThermalResourceMass, Part_get_ThermalInternalFlux, Part_get_ThermalConductionFlux, Part_get_ThermalConvectionFlux, Part_get_ThermalRadiationFlux, Part_get_ThermalSkinToInternalFlux, Part_get_Resources, Part_get_Crossfeed, Part_get_IsFuelLine, Part_get_FuelLinesFrom, Part_get_FuelLinesTo, Part_get_Modules, Part_get_Antenna, Part_get_CargoBay, Part_get_ControlSurface, Part_get_Decoupler, Part_get_DockingPort, Part_get_ResourceDrain, Part_get_Engine, Part_get_Experiment, Part_get_Experiments, Part_get_Fairing, Part_get_Intake, Part_get_Leg, Part_get_LaunchClamp, Part_get_Light, Part_get_Parachute, Part_get_Radiator, Part_get_RCS, Part_get_ReactionWheel, Part_get_ResourceConverter, Part_get_ResourceHarvester, Part_get_RoboticController, Part_get_Sensor, Part_get_SolarPanel, Part_get_Wheel, Part_get_RoboticHinge, Part_get_RoboticPiston, Part_get_RoboticRotation, Part_get_RoboticRotor, Part_get_MomentOfInertia, Part_get_InertiaTensor, Part_get_ReferenceFrame, Part_get_CenterOfMassReferenceFrame, Part_set_Glow, Parts_WithName, Parts_WithTitle, Parts_WithTag, Parts_WithModule, Parts_InStage, Parts_InDecoupleStage, Parts_ModulesWithName, Parts_get_All, Parts_get_Root, Parts_get_Controlling, Parts_set_Controlling, Parts_get_Antennas, Parts_get_ControlSurfaces, Parts_get_CargoBays, Parts_get_Decouplers, Parts_get_DockingPorts, Parts_get_Engines, Parts_get_Experiments, Parts_get_Fairings, Parts_get_Intakes, Parts_get_Legs, Parts_get_LaunchClamps, Parts_get_Lights, Parts_get_Parachutes, Parts_get_Radiators, Parts_get_RCS, Parts_get_ReactionWheels, Parts_get_ResourceConverters, Parts_get_ResourceHarvesters, Parts_get_Sensors, Parts_get_SolarPanels, Parts_get_Wheels, Parts_get_RoboticHinges, Parts_get_RoboticPistons, Parts_get_RoboticRotations, Parts_get_RoboticRotors, Parts_get_ResourceDrains, Propellant_get_Name, Propellant_get_CurrentAmount, Propellant_get_CurrentRequirement, Propellant_get_TotalResourceAvailable, Propellant_get_TotalResourceCapacity, Propellant_get_IgnoreForIsp, Propellant_get_IgnoreForThrustCurve, Propellant_get_DrawStackGauge, Propellant_get_IsDeprived, Propellant_get_Ratio, RCS_get_Part, RCS_get_Active, RCS_get_Enabled, RCS_set_Enabled, RCS_get_PitchEnabled, RCS_set_PitchEnabled, RCS_get_YawEnabled, RCS_set_YawEnabled, RCS_get_RollEnabled, RCS_set_RollEnabled, RCS_get_ForwardEnabled, RCS_set_ForwardEnabled, RCS_get_UpEnabled, RCS_set_UpEnabled, RCS_get_RightEnabled, RCS_set_RightEnabled, RCS_get_AvailableTorque, RCS_get_AvailableThrust, RCS_get_MaxThrust, RCS_get_MaxVacuumThrust, RCS_get_ThrustLimit, RCS_set_ThrustLimit, RCS_get_Thrusters, RCS_get_SpecificImpulse, RCS_get_VacuumSpecificImpulse, RCS_get_KerbinSeaLevelSpecificImpulse, RCS_get_Propellants, RCS_get_PropellantRatios, RCS_get_HasFuel, Radiator_get_Part, Radiator_get_Deployable, Radiator_get_Deployed, Radiator_set_Deployed, Radiator_get_State, ReactionWheel_get_Part, ReactionWheel_get_Active, ReactionWheel_set_Active, ReactionWheel_get_Broken, ReactionWheel_get_AvailableTorque, ReactionWheel_get_MaxTorque, ResourceConverter_Active, ResourceConverter_Name, ResourceConverter_Start, ResourceConverter_Stop, ResourceConverter_State, ResourceConverter_StatusInfo, ResourceConverter_Inputs, ResourceConverter_Outputs, ResourceConverter_get_Part, ResourceConverter_get_Count, ResourceConverter_get_ThermalEfficiency, ResourceConverter_get_CoreTemperature, ResourceConverter_get_OptimumCoreTemperature, ResourceDrain_SetResourceDrain, ResourceDrain_CheckResourceDrain, ResourceDrain_Start, ResourceDrain_Stop, ResourceDrain_get_Part, ResourceDrain_get_AvailableResources, ResourceDrain_get_DrainMode, ResourceDrain_set_DrainMode, ResourceDrain_get_MaxDrainRate, ResourceDrain_get_MinDrainRate, ResourceDrain_get_DrainRate, ResourceDrain_set_DrainRate, ResourceHarvester_get_Part, ResourceHarvester_get_State, ResourceHarvester_get_Deployed, ResourceHarvester_set_Deployed, ResourceHarvester_get_Active, ResourceHarvester_set_Active, ResourceHarvester_get_ExtractionRate, ResourceHarvester_get_ThermalEfficiency, ResourceHarvester_get_CoreTemperature, ResourceHarvester_get_OptimumCoreTemperature, RoboticController_HasPart, RoboticController_ListAxes, RoboticController_AddAxis, RoboticController_AddKey, RoboticController_ClearAxis, RoboticController_get_Part, RoboticHinge_Home, RoboticHinge_get_Part, RoboticHinge_get_TargetAngle, RoboticHinge_set_TargetAngle, RoboticHinge_get_CurrentAngle, RoboticHinge_get_Rate, RoboticHinge_set_Rate, RoboticHinge_get_Damping, RoboticHinge_set_Damping, RoboticHinge_get_HingeLocked, RoboticHinge_set_HingeLocked, RoboticHinge_get_MotorEngaged, RoboticHinge_set_MotorEngaged, RoboticPiston_Home, RoboticPiston_get_Part, RoboticPiston_get_TargetPosition, RoboticPiston_set_TargetPosition, RoboticPiston_get_CurrentPosition, RoboticPiston_get_Rate, RoboticPiston_set_Rate, RoboticPiston_get_Damping, RoboticPiston_set_Damping, RoboticPiston_get_PistonLocked, RoboticPiston_set_PistonLocked, RoboticPiston_get_MotorEngaged, RoboticPiston_set_MotorEngaged, RoboticRotation_Home, RoboticRotation_get_Part, RoboticRotation_get_TargetPosition, RoboticRotation_set_TargetPosition, RoboticRotation_get_CurrentPosition, RoboticRotation_get_Rate, RoboticRotation_set_Rate, RoboticRotation_get_Damping, RoboticRotation_set_Damping, RoboticRotation_get_RotationLocked, RoboticRotation_set_RotationLocked, RoboticRotation_get_MotorEngaged, RoboticRotation_set_MotorEngaged, RoboticRotor_get_Part, RoboticRotor_get_TargetRPM, RoboticRotor_set_TargetRPM, RoboticRotor_get_CurrentRPM, RoboticRotor_get_Inverted, RoboticRotor_set_Inverted, RoboticRotor_get_RotationLocked, RoboticRotor_set_RotationLocked, RoboticRotor_get_MotorEngaged, RoboticRotor_set_MotorEngaged, RoboticRotor_get_TorqueLimit, RoboticRotor_set_TorqueLimit, ScienceData_get_DataAmount, ScienceData_get_ScienceValue, ScienceData_get_TransmitValue, ScienceSubject_get_Science, ScienceSubject_get_ScienceCap, ScienceSubject_get_IsComplete, ScienceSubject_get_DataScale, ScienceSubject_get_ScientificValue, ScienceSubject_get_SubjectValue, ScienceSubject_get_Title, Sensor_get_Part, Sensor_get_Active, Sensor_set_Active, Sensor_get_Value, SolarPanel_get_Part, SolarPanel_get_Deployable, SolarPanel_get_Deployed, SolarPanel_set_Deployed, SolarPanel_get_State, SolarPanel_get_EnergyFlow, SolarPanel_get_SunExposure, Thruster_ThrustPosition, Thruster_ThrustDirection, Thruster_InitialThrustPosition, Thruster_InitialThrustDirection, Thruster_GimbalPosition, Thruster_get_Part, Thruster_get_ThrustReferenceFrame, Thruster_get_Gimballed, Thruster_get_GimbalAngle, Wheel_get_Part, Wheel_get_State, Wheel_get_Radius, Wheel_get_Grounded, Wheel_get_HasBrakes, Wheel_get_Brakes, Wheel_set_Brakes, Wheel_get_AutoFrictionControl, Wheel_set_AutoFrictionControl, Wheel_get_ManualFrictionControl, Wheel_set_ManualFrictionControl, Wheel_get_Deployable, Wheel_get_Deployed, Wheel_set_Deployed, Wheel_get_Powered, Wheel_get_MotorEnabled, Wheel_set_MotorEnabled, Wheel_get_MotorInverted, Wheel_set_MotorInverted, Wheel_get_MotorState, Wheel_get_MotorOutput, Wheel_get_TractionControlEnabled, Wheel_set_TractionControlEnabled, Wheel_get_TractionControl, Wheel_set_TractionControl, Wheel_get_DriveLimiter, Wheel_set_DriveLimiter, Wheel_get_Steerable, Wheel_get_SteeringEnabled, Wheel_set_SteeringEnabled, Wheel_get_SteeringInverted, Wheel_set_SteeringInverted, Wheel_get_HasSuspension, Wheel_get_SuspensionSpringStrength, Wheel_get_SuspensionDamperStrength, Wheel_get_Broken, Wheel_get_Repairable, Wheel_get_Stress, Wheel_get_StressTolerance, Wheel_get_StressPercentage, Wheel_get_Deflection, Wheel_get_Slip, ReferenceFrame_static_CreateRelative, ReferenceFrame_static_CreateHybrid, Resource_get_Name, Resource_get_Part, Resource_get_Max, Resource_get_Amount, Resource_get_Density, Resource_get_FlowMode, Resource_get_Enabled, Resource_set_Enabled, ResourceTransfer_static_Start, ResourceTransfer_get_Complete, ResourceTransfer_get_Amount, Resources_WithResource, Resources_HasResource, Resources_Max, Resources_Amount, Resources_static_Density, Resources_static_FlowMode, Resources_get_All, Resources_get_Names, Resources_get_Enabled, Resources_set_Enabled, Vessel_Recover, Vessel_Flight, Vessel_ResourcesInDecoupleStage, Vessel_Position, Vessel_BoundingBox, Vessel_Velocity, Vessel_Rotation, Vessel_Direction, Vessel_AngularVelocity, Vessel_get_Name, Vessel_set_Name, Vessel_get_Type, Vessel_set_Type, Vessel_get_Situation, Vessel_get_Recoverable, Vessel_get_MET, Vessel_get_Biome, Vessel_get_Orbit, Vessel_get_Control, Vessel_get_Comms, Vessel_get_AutoPilot, Vessel_get_CrewCapacity, Vessel_get_CrewCount, Vessel_get_Crew, Vessel_get_Resources, Vessel_get_Parts, Vessel_get_Mass, Vessel_get_DryMass, Vessel_get_Thrust, Vessel_get_AvailableThrust, Vessel_get_MaxThrust, Vessel_get_MaxVacuumThrust, Vessel_get_SpecificImpulse, Vessel_get_VacuumSpecificImpulse, Vessel_get_KerbinSeaLevelSpecificImpulse, Vessel_get_MomentOfInertia, Vessel_get_InertiaTensor, Vessel_get_AvailableTorque, Vessel_get_AvailableReactionWheelTorque, Vessel_get_AvailableRCSTorque, Vessel_get_AvailableEngineTorque, Vessel_get_AvailableControlSurfaceTorque, Vessel_get_AvailableOtherTorque, Vessel_get_ReferenceFrame, Vessel_get_OrbitalReferenceFrame, Vessel_get_SurfaceReferenceFrame, Vessel_get_SurfaceVelocityReferenceFrame, Waypoint_Remove, Waypoint_get_Body, Waypoint_set_Body, Waypoint_get_Name, Waypoint_set_Name, Waypoint_get_Color, Waypoint_set_Color, Waypoint_get_Icon, Waypoint_set_Icon, Waypoint_get_Latitude, Waypoint_set_Latitude, Waypoint_get_Longitude, Waypoint_set_Longitude, Waypoint_get_MeanAltitude, Waypoint_set_MeanAltitude, Waypoint_get_SurfaceAltitude, Waypoint_set_SurfaceAltitude, Waypoint_get_BedrockAltitude, Waypoint_set_BedrockAltitude, Waypoint_get_NearSurface, Waypoint_get_Grounded, Waypoint_get_Index, Waypoint_get_Clustered, Waypoint_get_HasContract, Waypoint_get_Contract, WaypointManager_AddWaypoint, WaypointManager_AddWaypointAtAltitude, WaypointManager_get_Waypoints, WaypointManager_get_Icons, WaypointManager_get_Colors
 module Helpers
 import ....kerbal
 import ....KRPCConnection
 import ....Request
 import ..RemoteTypes
-import ...SpaceCenter.EWheelState
-import ...SpaceCenter.ESolarPanelState
-import ...SpaceCenter.EControlState
-import ...SpaceCenter.EAutostrutState
-import ...SpaceCenter.EResourceHarvesterState
-import ...SpaceCenter.ESASMode
-import ...SpaceCenter.EDrainModes
-import ...SpaceCenter.EVesselType
-import ...SpaceCenter.EMotorState
-import ...SpaceCenter.ECargoBayState
-import ...SpaceCenter.ELegState
-import ...SpaceCenter.ESpeedMode
-import ...SpaceCenter.EAntennaState
-import ...SpaceCenter.ECrewMemberType
-import ...SpaceCenter.ECameraMode
-import ...SpaceCenter.EContractState
-import ...SpaceCenter.EWarpMode
-import ...SpaceCenter.EControlInputMode
-import ...SpaceCenter.EDockingPortState
+import ...SpaceCenter.EParachuteState
 import ...SpaceCenter.EControlSource
 import ...SpaceCenter.EVesselSituation
-import ...SpaceCenter.EGameMode
+import ...SpaceCenter.ECameraMode
+import ...SpaceCenter.EResourceConverterState
+import ...SpaceCenter.EControlInputMode
+import ...SpaceCenter.EAntennaState
 import ...SpaceCenter.ERadiatorState
 import ...SpaceCenter.ECommLinkType
-import ...SpaceCenter.EParachuteState
+import ...SpaceCenter.EDrainModes
 import ...SpaceCenter.EResourceFlowMode
-import ...SpaceCenter.EResourceConverterState
-import ..ClearTarget as var"##562"
+import ...SpaceCenter.EResourceHarvesterState
+import ...SpaceCenter.ECrewMemberType
+import ...SpaceCenter.EMotorState
+import ...SpaceCenter.EContractState
+import ...SpaceCenter.ELegState
+import ...SpaceCenter.EWarpMode
+import ...SpaceCenter.EGameMode
+import ...SpaceCenter.ECargoBayState
+import ...SpaceCenter.EControlState
+import ...SpaceCenter.ESpeedMode
+import ...SpaceCenter.EDockingPortState
+import ...SpaceCenter.EVesselType
+import ...SpaceCenter.ESASMode
+import ...SpaceCenter.ESolarPanelState
+import ...SpaceCenter.EWheelState
+import ..ClearTarget as var"##628"
 ClearTarget(conn::KRPCConnection) = begin
-        kerbal(conn, var"##562"())
+        kerbal(conn, var"##628"())
     end
 @doc "    ClearTarget()\n\nClears the current target.\n\n" ClearTarget
 export ClearTarget
-import ..LaunchableVessels as var"##563"
+import ..LaunchableVessels as var"##629"
 LaunchableVessels(conn::KRPCConnection, craftDirectory::String) = begin
-        kerbal(conn, var"##563"(craftDirectory))
+        kerbal(conn, var"##629"(craftDirectory))
     end
 @doc "    LaunchableVessels(craftDirectory::String)\n\nReturns a list of vessels from the given \nthat can be launched.\n\n# Arguments\n- `craftDirectory::String`: Name of the directory in the current saves \"Ships\" directory. For example \"VAB\" or \"SPH\".\n" LaunchableVessels
 export LaunchableVessels
-import ..LaunchVessel as var"##564"
+import ..LaunchVessel as var"##630"
 LaunchVessel(conn::KRPCConnection, craftDirectory::String, name::String, launchSite::String, recover::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(conn, var"##564"(craftDirectory, name, launchSite, recover))
+        kerbal(conn, var"##630"(craftDirectory, name, launchSite, recover))
     end
 @doc "    LaunchVessel(craftDirectory::String, name::String, launchSite::String, recover::Bool)\n\nLaunch a vessel.\n\n# Arguments\n- `craftDirectory::String`: Name of the directory in the current saves \"Ships\" directory, that contains the craft file. For example \"VAB\" or \"SPH\".\n- `name::String`: Name of the vessel to launch. This is the name of the \".craft\" file in the save directory, without the \".craft\" file extension.\n- `launchSite::String`: Name of the launch site. For example \"LaunchPad\" or \"Runway\".\n- `recover::Bool`: If true and there is a vessel on the launch site, recover it before launching.\n# Remarks\n Throws an exception if any of the games pre-flight checks fail. \n" LaunchVessel
 export LaunchVessel
-import ..LaunchVesselFromVAB as var"##565"
+import ..LaunchVesselFromVAB as var"##631"
 LaunchVesselFromVAB(conn::KRPCConnection, name::String, recover::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(conn, var"##565"(name, recover))
+        kerbal(conn, var"##631"(name, recover))
     end
 @doc "    LaunchVesselFromVAB(name::String, recover::Bool)\n\nLaunch a new vessel from the VAB onto the launchpad.\n\n# Arguments\n- `name::String`: Name of the vessel to launch.\n- `recover::Bool`: If true and there is a vessel on the launch pad, recover it before launching.\n# Remarks\n This is equivalent to calling  with the craft directory set to \"VAB\" and the launch site set to \"LaunchPad\". Throws an exception if any of the games pre-flight checks fail. \n" LaunchVesselFromVAB
 export LaunchVesselFromVAB
-import ..LaunchVesselFromSPH as var"##566"
+import ..LaunchVesselFromSPH as var"##632"
 LaunchVesselFromSPH(conn::KRPCConnection, name::String, recover::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(conn, var"##566"(name, recover))
+        kerbal(conn, var"##632"(name, recover))
     end
 @doc "    LaunchVesselFromSPH(name::String, recover::Bool)\n\nLaunch a new vessel from the SPH onto the runway.\n\n# Arguments\n- `name::String`: Name of the vessel to launch.\n- `recover::Bool`: If true and there is a vessel on the runway, recover it before launching.\n# Remarks\n This is equivalent to calling  with the craft directory set to \"SPH\" and the launch site set to \"Runway\". Throws an exception if any of the games pre-flight checks fail. \n" LaunchVesselFromSPH
 export LaunchVesselFromSPH
-import ..Save as var"##567"
+import ..Save as var"##633"
 Save(conn::KRPCConnection, name::String) = begin
-        kerbal(conn, var"##567"(name))
+        kerbal(conn, var"##633"(name))
     end
 @doc "    Save(name::String)\n\nSave the game with a given name.\nThis will create a save file called name.sfs in the folder of the\ncurrent save game.\n\n" Save
 export Save
-import ..Load as var"##568"
+import ..Load as var"##634"
 Load(conn::KRPCConnection, name::String) = begin
-        kerbal(conn, var"##568"(name))
+        kerbal(conn, var"##634"(name))
     end
 @doc "    Load(name::String)\n\nLoad the game with the given name.\nThis will create a load a save file called name.sfs from the folder of the\ncurrent save game.\n\n" Load
 export Load
-import ..Quicksave as var"##569"
+import ..Quicksave as var"##635"
 Quicksave(conn::KRPCConnection) = begin
-        kerbal(conn, var"##569"())
+        kerbal(conn, var"##635"())
     end
 @doc "    Quicksave()\n\nSave a quicksave.\n\n# Remarks\n This is the same as calling  with the name \"quicksave\". \n" Quicksave
 export Quicksave
-import ..Quickload as var"##570"
+import ..Quickload as var"##636"
 Quickload(conn::KRPCConnection) = begin
-        kerbal(conn, var"##570"())
+        kerbal(conn, var"##636"())
     end
 @doc "    Quickload()\n\nLoad a quicksave.\n\n# Remarks\n This is the same as calling  with the name \"quicksave\". \n" Quickload
 export Quickload
-import ..CanRailsWarpAt as var"##571"
+import ..CanRailsWarpAt as var"##637"
 CanRailsWarpAt(conn::KRPCConnection, factor::Int32 = getJuliaValue(this.conn, UInt8[0x02], Int32)) = begin
-        kerbal(conn, var"##571"(factor))
+        kerbal(conn, var"##637"(factor))
     end
 @doc "    CanRailsWarpAt(factor::Int32)\n\nReturns true if regular \"on-rails\" time warp can be used, at the specified warp\n. The maximum time warp rate is limited by various things,\nincluding how close the active vessel is to a planet. See\nthe KSP wiki\nfor details.\n\n# Arguments\n- `factor::Int32`: The warp factor to check.\n" CanRailsWarpAt
 export CanRailsWarpAt
-import ..WarpTo as var"##572"
+import ..WarpTo as var"##638"
 WarpTo(conn::KRPCConnection, ut::Float64, maxRailsRate::Float32 = getJuliaValue(this.conn, UInt8[0x00, 0x50, 0xc3, 0x47], Float32), maxPhysicsRate::Float32 = getJuliaValue(this.conn, UInt8[0x00, 0x00, 0x00, 0x40], Float32)) = begin
-        kerbal(conn, var"##572"(ut, maxRailsRate, maxPhysicsRate))
+        kerbal(conn, var"##638"(ut, maxRailsRate, maxPhysicsRate))
     end
 @doc "    WarpTo(ut::Float64, maxRailsRate::Float32, maxPhysicsRate::Float32)\n\nUses time acceleration to warp forward to a time in the future, specified\nby universal time . This call blocks until the desired\ntime is reached. Uses regular \"on-rails\" or physical time warp as appropriate.\nFor example, physical time warp is used when the active vessel is traveling\nthrough an atmosphere. When using regular \"on-rails\" time warp, the warp\nrate is limited by , and when using physical\ntime warp, the warp rate is limited by .\n\n# Arguments\n- `ut::Float64`: The universal time to warp to, in seconds.\n- `maxRailsRate::Float32`: The maximum warp rate in regular \"on-rails\" time warp. \n- `maxPhysicsRate::Float32`: The maximum warp rate in physical time warp.\n# Returns\nWhen the time warp is complete.\n" WarpTo
 export WarpTo
-import ..TransformPosition as var"##573"
+import ..TransformPosition as var"##639"
 TransformPosition(conn::KRPCConnection, position::begin
                 Tuple{Float64, Float64, Float64}
             end, from::RemoteTypes.ReferenceFrame, to::RemoteTypes.ReferenceFrame) = begin
-        kerbal(conn, var"##573"(position, from, to))
+        kerbal(conn, var"##639"(position, from, to))
     end
 @doc "    TransformPosition(position::begin\n    Tuple{Float64, Float64, Float64}\nend, from::RemoteTypes.ReferenceFrame, to::RemoteTypes.ReferenceFrame)\n\nConverts a position from one reference frame to another.\n\n# Arguments\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: Position, as a vector, in reference frame .\n- `from::RemoteTypes.ReferenceFrame`: The reference frame that the position is in.\n- `to::RemoteTypes.ReferenceFrame`: The reference frame to covert the position to.\n# Returns\nThe corresponding position, as a vector, in reference frame .\n" TransformPosition
 export TransformPosition
-import ..TransformDirection as var"##574"
+import ..TransformDirection as var"##640"
 TransformDirection(conn::KRPCConnection, direction::begin
                 Tuple{Float64, Float64, Float64}
             end, from::RemoteTypes.ReferenceFrame, to::RemoteTypes.ReferenceFrame) = begin
-        kerbal(conn, var"##574"(direction, from, to))
+        kerbal(conn, var"##640"(direction, from, to))
     end
 @doc "    TransformDirection(direction::begin\n    Tuple{Float64, Float64, Float64}\nend, from::RemoteTypes.ReferenceFrame, to::RemoteTypes.ReferenceFrame)\n\nConverts a direction from one reference frame to another.\n\n# Arguments\n- `direction::begin\n    Tuple{Float64, Float64, Float64}\nend`: Direction, as a vector, in reference frame . \n- `from::RemoteTypes.ReferenceFrame`: The reference frame that the direction is in.\n- `to::RemoteTypes.ReferenceFrame`: The reference frame to covert the direction to.\n# Returns\nThe corresponding direction, as a vector, in reference frame .\n" TransformDirection
 export TransformDirection
-import ..TransformRotation as var"##575"
+import ..TransformRotation as var"##641"
 TransformRotation(conn::KRPCConnection, rotation::begin
                 Tuple{Float64, Float64, Float64, Float64}
             end, from::RemoteTypes.ReferenceFrame, to::RemoteTypes.ReferenceFrame) = begin
-        kerbal(conn, var"##575"(rotation, from, to))
+        kerbal(conn, var"##641"(rotation, from, to))
     end
 @doc "    TransformRotation(rotation::begin\n    Tuple{Float64, Float64, Float64, Float64}\nend, from::RemoteTypes.ReferenceFrame, to::RemoteTypes.ReferenceFrame)\n\nConverts a rotation from one reference frame to another.\n\n# Arguments\n- `rotation::begin\n    Tuple{Float64, Float64, Float64, Float64}\nend`: Rotation, as a quaternion of the form (x, y, z, w), in reference frame .\n- `from::RemoteTypes.ReferenceFrame`: The reference frame that the rotation is in.\n- `to::RemoteTypes.ReferenceFrame`: The reference frame to covert the rotation to.\n# Returns\nThe corresponding rotation, as a quaternion of the form (x, y, z, w), in reference frame .\n" TransformRotation
 export TransformRotation
-import ..TransformVelocity as var"##576"
+import ..TransformVelocity as var"##642"
 TransformVelocity(conn::KRPCConnection, position::begin
                 Tuple{Float64, Float64, Float64}
             end, velocity::begin
                 Tuple{Float64, Float64, Float64}
             end, from::RemoteTypes.ReferenceFrame, to::RemoteTypes.ReferenceFrame) = begin
-        kerbal(conn, var"##576"(position, velocity, from, to))
+        kerbal(conn, var"##642"(position, velocity, from, to))
     end
 @doc "    TransformVelocity(position::begin\n    Tuple{Float64, Float64, Float64}\nend, velocity::begin\n    Tuple{Float64, Float64, Float64}\nend, from::RemoteTypes.ReferenceFrame, to::RemoteTypes.ReferenceFrame)\n\nConverts a velocity (acting at the specified position) from one reference frame\nto another. The position is required to take the relative angular velocity of the\nreference frames into account.\n\n# Arguments\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: Position, as a vector, in reference frame .\n- `velocity::begin\n    Tuple{Float64, Float64, Float64}\nend`: Velocity, as a vector that points in the direction of travel and whose magnitude is the speed in meters per second, in reference frame .\n- `from::RemoteTypes.ReferenceFrame`: The reference frame that the position and velocity are in.\n- `to::RemoteTypes.ReferenceFrame`: The reference frame to covert the velocity to.\n# Returns\nThe corresponding velocity, as a vector, in reference frame .\n" TransformVelocity
 export TransformVelocity
-import ..RaycastDistance as var"##577"
+import ..RaycastDistance as var"##643"
 RaycastDistance(conn::KRPCConnection, position::begin
                 Tuple{Float64, Float64, Float64}
             end, direction::begin
                 Tuple{Float64, Float64, Float64}
             end, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(conn, var"##577"(position, direction, referenceFrame))
+        kerbal(conn, var"##643"(position, direction, referenceFrame))
     end
 @doc "    RaycastDistance(position::begin\n    Tuple{Float64, Float64, Float64}\nend, direction::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::RemoteTypes.ReferenceFrame)\n\nCast a ray from a given position in a given direction, and return the distance to the hit point.\nIf no hit occurs, returns infinity.\n\n# Arguments\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: Position, as a vector, of the origin of the ray.\n- `direction::begin\n    Tuple{Float64, Float64, Float64}\nend`: Direction of the ray, as a unit vector.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the position and direction are in.\n# Returns\nThe distance to the hit, in meters, or infinity if there was no hit.\n" RaycastDistance
 export RaycastDistance
-import ..RaycastPart as var"##578"
+import ..RaycastPart as var"##644"
 RaycastPart(conn::KRPCConnection, position::begin
                 Tuple{Float64, Float64, Float64}
             end, direction::begin
                 Tuple{Float64, Float64, Float64}
             end, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(conn, var"##578"(position, direction, referenceFrame))
+        kerbal(conn, var"##644"(position, direction, referenceFrame))
     end
 @doc "    RaycastPart(position::begin\n    Tuple{Float64, Float64, Float64}\nend, direction::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::RemoteTypes.ReferenceFrame)\n\nCast a ray from a given position in a given direction, and return the part that it hits.\nIf no hit occurs, returns null.\n\n# Arguments\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: Position, as a vector, of the origin of the ray.\n- `direction::begin\n    Tuple{Float64, Float64, Float64}\nend`: Direction of the ray, as a unit vector.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the position and direction are in.\n# Returns\nThe part that was hit or null if there was no hit.\n" RaycastPart
 export RaycastPart
-import ..get_GameMode as var"##579"
+import ..get_GameMode as var"##645"
 GameMode(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##579"())
+        kerbal(this.conn, var"##645"())
     end
 @doc "    GameMode()\n\nThe current mode the game is in.\n\n" GameMode
 export GameMode
-import ..get_Science as var"##580"
+import ..get_Science as var"##646"
 Science(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##580"())
+        kerbal(this.conn, var"##646"())
     end
 @doc "    Science()\n\nThe current amount of science.\n\n" Science
 export Science
-import ..get_Funds as var"##581"
+import ..get_Funds as var"##647"
 Funds(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##581"())
+        kerbal(this.conn, var"##647"())
     end
 @doc "    Funds()\n\nThe current amount of funds.\n\n" Funds
 export Funds
-import ..get_Reputation as var"##582"
+import ..get_Reputation as var"##648"
 Reputation(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##582"())
+        kerbal(this.conn, var"##648"())
     end
 @doc "    Reputation()\n\nThe current amount of reputation.\n\n" Reputation
 export Reputation
-import ..get_ActiveVessel as var"##583"
+import ..get_ActiveVessel as var"##649"
 ActiveVessel(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##583"())
+        kerbal(this.conn, var"##649"())
     end
 @doc "    ActiveVessel()\n\nThe currently active vessel.\n\n" ActiveVessel
 export ActiveVessel
-import ..set_ActiveVessel as var"##584"
+import ..set_ActiveVessel as var"##650"
 ActiveVessel!(this::RemoteTypes.SpaceCenter, value::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##584"(value))
+        kerbal(this.conn, var"##650"(value))
     end
 @doc "    ActiveVessel!(value::RemoteTypes.Vessel)\n\nThe currently active vessel.\n\n" ActiveVessel!
 export ActiveVessel!
-import ..get_Vessels as var"##585"
+import ..get_Vessels as var"##651"
 Vessels(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##585"())
+        kerbal(this.conn, var"##651"())
     end
 @doc "    Vessels()\n\nA list of all the vessels in the game.\n\n" Vessels
 export Vessels
-import ..get_Bodies as var"##586"
+import ..get_Bodies as var"##652"
 Bodies(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##586"())
+        kerbal(this.conn, var"##652"())
     end
 @doc "    Bodies()\n\nA dictionary of all celestial bodies (planets, moons, etc.) in the game,\nkeyed by the name of the body.\n\n" Bodies
 export Bodies
-import ..get_TargetBody as var"##587"
+import ..get_TargetBody as var"##653"
 TargetBody(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##587"())
+        kerbal(this.conn, var"##653"())
     end
 @doc "    TargetBody()\n\nThe currently targeted celestial body.\n\n" TargetBody
 export TargetBody
-import ..set_TargetBody as var"##588"
+import ..set_TargetBody as var"##654"
 TargetBody!(this::RemoteTypes.SpaceCenter, value::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##588"(value))
+        kerbal(this.conn, var"##654"(value))
     end
 @doc "    TargetBody!(value::RemoteTypes.CelestialBody)\n\nThe currently targeted celestial body.\n\n" TargetBody!
 export TargetBody!
-import ..get_TargetVessel as var"##589"
+import ..get_TargetVessel as var"##655"
 TargetVessel(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##589"())
+        kerbal(this.conn, var"##655"())
     end
 @doc "    TargetVessel()\n\nThe currently targeted vessel.\n\n" TargetVessel
 export TargetVessel
-import ..set_TargetVessel as var"##590"
+import ..set_TargetVessel as var"##656"
 TargetVessel!(this::RemoteTypes.SpaceCenter, value::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##590"(value))
+        kerbal(this.conn, var"##656"(value))
     end
 @doc "    TargetVessel!(value::RemoteTypes.Vessel)\n\nThe currently targeted vessel.\n\n" TargetVessel!
 export TargetVessel!
-import ..get_TargetDockingPort as var"##591"
+import ..get_TargetDockingPort as var"##657"
 TargetDockingPort(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##591"())
+        kerbal(this.conn, var"##657"())
     end
 @doc "    TargetDockingPort()\n\nThe currently targeted docking port.\n\n" TargetDockingPort
 export TargetDockingPort
-import ..set_TargetDockingPort as var"##592"
+import ..set_TargetDockingPort as var"##658"
 TargetDockingPort!(this::RemoteTypes.SpaceCenter, value::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##592"(value))
+        kerbal(this.conn, var"##658"(value))
     end
 @doc "    TargetDockingPort!(value::RemoteTypes.DockingPort)\n\nThe currently targeted docking port.\n\n" TargetDockingPort!
 export TargetDockingPort!
-import ..get_WaypointManager as var"##593"
+import ..get_WaypointManager as var"##659"
 WaypointManager(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##593"())
+        kerbal(this.conn, var"##659"())
     end
 @doc "    WaypointManager()\n\nThe waypoint manager.\n\n" WaypointManager
 export WaypointManager
-import ..get_ContractManager as var"##594"
+import ..get_ContractManager as var"##660"
 ContractManager(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##594"())
+        kerbal(this.conn, var"##660"())
     end
 @doc "    ContractManager()\n\nThe contract manager.\n\n" ContractManager
 export ContractManager
-import ..get_AlarmClock as var"##595"
+import ..get_AlarmClock as var"##661"
 AlarmClock(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##595"())
+        kerbal(this.conn, var"##661"())
     end
 @doc "    AlarmClock()\n\nThe Alarm Clock Module.\n\n" AlarmClock
 export AlarmClock
-import ..get_Camera as var"##596"
+import ..get_Camera as var"##662"
 Camera(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##596"())
+        kerbal(this.conn, var"##662"())
     end
 @doc "    Camera()\n\nAn object that can be used to control the camera.\n\n" Camera
 export Camera
-import ..get_UIVisible as var"##597"
+import ..get_UIVisible as var"##663"
 UIVisible(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##597"())
+        kerbal(this.conn, var"##663"())
     end
 @doc "    UIVisible()\n\nWhether the UI is visible.\n\n" UIVisible
 export UIVisible
-import ..set_UIVisible as var"##598"
+import ..set_UIVisible as var"##664"
 UIVisible!(this::RemoteTypes.SpaceCenter, value::Bool) = begin
-        kerbal(this.conn, var"##598"(value))
+        kerbal(this.conn, var"##664"(value))
     end
 @doc "    UIVisible!(value::Bool)\n\nWhether the UI is visible.\n\n" UIVisible!
 export UIVisible!
-import ..get_Navball as var"##599"
+import ..get_Navball as var"##665"
 Navball(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##599"())
+        kerbal(this.conn, var"##665"())
     end
 @doc "    Navball()\n\nWhether the navball is visible.\n\n" Navball
 export Navball
-import ..set_Navball as var"##600"
+import ..set_Navball as var"##666"
 Navball!(this::RemoteTypes.SpaceCenter, value::Bool) = begin
-        kerbal(this.conn, var"##600"(value))
+        kerbal(this.conn, var"##666"(value))
     end
 @doc "    Navball!(value::Bool)\n\nWhether the navball is visible.\n\n" Navball!
 export Navball!
-import ..get_UT as var"##601"
+import ..get_UT as var"##667"
 UT(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##601"())
+        kerbal(this.conn, var"##667"())
     end
 @doc "    UT()\n\nThe current universal time in seconds.\n\n" UT
 export UT
-import ..get_G as var"##602"
+import ..get_G as var"##668"
 G(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##602"())
+        kerbal(this.conn, var"##668"())
     end
 @doc "    G()\n\nThe value of the \ngravitational constant G in N(m/kg)^2.\n\n" G
 export G
-import ..get_WarpMode as var"##603"
+import ..get_WarpMode as var"##669"
 WarpMode(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##603"())
+        kerbal(this.conn, var"##669"())
     end
 @doc "    WarpMode()\n\nThe current time warp mode. Returns  if time\nwarp is not active,  if regular \"on-rails\" time warp\nis active, or  if physical time warp is active.\n\n" WarpMode
 export WarpMode
-import ..get_WarpRate as var"##604"
+import ..get_WarpRate as var"##670"
 WarpRate(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##604"())
+        kerbal(this.conn, var"##670"())
     end
 @doc "    WarpRate()\n\nThe current warp rate. This is the rate at which time is passing for\neither on-rails or physical time warp. For example, a value of 10 means\ntime is passing 10x faster than normal. Returns 1 if time warp is not\nactive.\n\n" WarpRate
 export WarpRate
-import ..get_WarpFactor as var"##605"
+import ..get_WarpFactor as var"##671"
 WarpFactor(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##605"())
+        kerbal(this.conn, var"##671"())
     end
 @doc "    WarpFactor()\n\nThe current warp factor. This is the index of the rate at which time\nis passing for either regular \"on-rails\" or physical time warp. Returns 0\nif time warp is not active. When in on-rails time warp, this is equal to\n, and in physics time warp, this is equal to\n.\n\n" WarpFactor
 export WarpFactor
-import ..get_RailsWarpFactor as var"##606"
+import ..get_RailsWarpFactor as var"##672"
 RailsWarpFactor(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##606"())
+        kerbal(this.conn, var"##672"())
     end
 @doc "    RailsWarpFactor()\n\nThe time warp rate, using regular \"on-rails\" time warp. A value between\n0 and 7 inclusive. 0 means no time warp. Returns 0 if physical time warp\nis active.\n\nIf requested time warp factor cannot be set, it will be set to the next\nlowest possible value. For example, if the vessel is too close to a\nplanet. See \nthe KSP wiki for details.\n\n" RailsWarpFactor
 export RailsWarpFactor
-import ..set_RailsWarpFactor as var"##607"
+import ..set_RailsWarpFactor as var"##673"
 RailsWarpFactor!(this::RemoteTypes.SpaceCenter, value::Int32) = begin
-        kerbal(this.conn, var"##607"(value))
+        kerbal(this.conn, var"##673"(value))
     end
 @doc "    RailsWarpFactor!(value::Int32)\n\nThe time warp rate, using regular \"on-rails\" time warp. A value between\n0 and 7 inclusive. 0 means no time warp. Returns 0 if physical time warp\nis active.\n\nIf requested time warp factor cannot be set, it will be set to the next\nlowest possible value. For example, if the vessel is too close to a\nplanet. See \nthe KSP wiki for details.\n\n" RailsWarpFactor!
 export RailsWarpFactor!
-import ..get_PhysicsWarpFactor as var"##608"
+import ..get_PhysicsWarpFactor as var"##674"
 PhysicsWarpFactor(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##608"())
+        kerbal(this.conn, var"##674"())
     end
 @doc "    PhysicsWarpFactor()\n\nThe physical time warp rate. A value between 0 and 3 inclusive. 0 means\nno time warp. Returns 0 if regular \"on-rails\" time warp is active.\n\n" PhysicsWarpFactor
 export PhysicsWarpFactor
-import ..set_PhysicsWarpFactor as var"##609"
+import ..set_PhysicsWarpFactor as var"##675"
 PhysicsWarpFactor!(this::RemoteTypes.SpaceCenter, value::Int32) = begin
-        kerbal(this.conn, var"##609"(value))
+        kerbal(this.conn, var"##675"(value))
     end
 @doc "    PhysicsWarpFactor!(value::Int32)\n\nThe physical time warp rate. A value between 0 and 3 inclusive. 0 means\nno time warp. Returns 0 if regular \"on-rails\" time warp is active.\n\n" PhysicsWarpFactor!
 export PhysicsWarpFactor!
-import ..get_MaximumRailsWarpFactor as var"##610"
+import ..get_MaximumRailsWarpFactor as var"##676"
 MaximumRailsWarpFactor(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##610"())
+        kerbal(this.conn, var"##676"())
     end
 @doc "    MaximumRailsWarpFactor()\n\nThe current maximum regular \"on-rails\" warp factor that can be set.\nA value between 0 and 7 inclusive. See\nthe KSP wiki\nfor details.\n\n" MaximumRailsWarpFactor
 export MaximumRailsWarpFactor
-import ..get_FARAvailable as var"##611"
+import ..get_FARAvailable as var"##677"
 FARAvailable(this::RemoteTypes.SpaceCenter) = begin
-        kerbal(this.conn, var"##611"())
+        kerbal(this.conn, var"##677"())
     end
 @doc "    FARAvailable()\n\nWhether Ferram Aerospace Research is installed.\n\n" FARAvailable
 export FARAvailable
-import ..Alarm_get_Type as var"##612"
+import ..Alarm_get_Type as var"##678"
 Type(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##612"(this))
+        kerbal(this.conn, var"##678"(this))
     end
 @doc "    Type(this::RemoteTypes.Alarm)\n\nType of Alarm\n\n" Type
 export Type
-import ..Alarm_get_Title as var"##613"
+import ..Alarm_get_Title as var"##679"
 Title(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##613"(this))
+        kerbal(this.conn, var"##679"(this))
     end
 @doc "    Title(this::RemoteTypes.Alarm)\n\nTitle of the Alarm\n\n" Title
 export Title
-import ..Alarm_get_Description as var"##614"
+import ..Alarm_get_Description as var"##680"
 Description(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##614"(this))
+        kerbal(this.conn, var"##680"(this))
     end
 @doc "    Description(this::RemoteTypes.Alarm)\n\nDescription of the contract.\n\n" Description
 export Description
-import ..Alarm_get_UT as var"##615"
+import ..Alarm_get_UT as var"##681"
 UT(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##615"(this))
+        kerbal(this.conn, var"##681"(this))
     end
 @doc "    UT(this::RemoteTypes.Alarm)\n\nTime the Alarm will trigger\n\n" UT
 export UT
-import ..Alarm_get_TimeTill as var"##616"
+import ..Alarm_get_TimeTill as var"##682"
 TimeTill(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##616"(this))
+        kerbal(this.conn, var"##682"(this))
     end
-@doc "    TimeTill(this::RemoteTypes.Alarm)\n\n" TimeTill
+@doc "    TimeTill(this::RemoteTypes.Alarm)\n\nTime until the alarm triggers\n\n" TimeTill
 export TimeTill
-import ..Alarm_get_EventOffset as var"##617"
+import ..Alarm_get_EventOffset as var"##683"
 EventOffset(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##617"(this))
+        kerbal(this.conn, var"##683"(this))
     end
-@doc "    EventOffset(this::RemoteTypes.Alarm)\n\n" EventOffset
+@doc "    EventOffset(this::RemoteTypes.Alarm)\n\nSeconds betwen the alarm going off and the event it references \n\n" EventOffset
 export EventOffset
-import ..Alarm_get_Vessel as var"##618"
+import ..Alarm_get_Vessel as var"##684"
 Vessel(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##618"(this))
+        kerbal(this.conn, var"##684"(this))
     end
-@doc "    Vessel(this::RemoteTypes.Alarm)\n\n" Vessel
+@doc "    Vessel(this::RemoteTypes.Alarm)\n\nVessel the alarm references\n\n" Vessel
 export Vessel
-import ..Alarm_get_ID as var"##619"
+import ..Alarm_get_ID as var"##685"
 ID(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##619"(this))
+        kerbal(this.conn, var"##685"(this))
     end
-@doc "    ID(this::RemoteTypes.Alarm)\n\n" ID
+@doc "    ID(this::RemoteTypes.Alarm)\n\nUnique ID of alarm\nKSP destroys an old alarm and creates a new one each time an alarm is edited.\nThis ID will remain constant between the old and new alarms though, so this is the value\nyou want to store and each time you want to access an alarm, get the current alarm with the \ncorrect ID value.\n\n" ID
 export ID
-import ..AlarmClock_MakeRawAlarm as var"##620"
+import ..AlarmClock_MakeRawAlarm as var"##686"
 MakeRawAlarm(this::RemoteTypes.AlarmClock, time::Float64, title::String = getJuliaValue(this.conn, UInt8[0x09, 0x52, 0x61, 0x77, 0x20, 0x41, 0x6c, 0x61, 0x72, 0x6d], String), description::String = getJuliaValue(this.conn, UInt8[0x00], String)) = begin
-        kerbal(this.conn, var"##620"(this, time, title, description))
+        kerbal(this.conn, var"##686"(this, time, title, description))
     end
 @doc "    MakeRawAlarm(this::RemoteTypes.AlarmClock, time::Float64, title::String, description::String)\n\nMake a Simple Alarm\nParameter 'time' is the number of seconds from now that the alarm should trigger.\n\n" MakeRawAlarm
 export MakeRawAlarm
-import ..AlarmClock_MakeRawAlarmVessel as var"##621"
+import ..AlarmClock_MakeRawAlarmVessel as var"##687"
 MakeRawAlarmVessel(this::RemoteTypes.AlarmClock, time::Float64, V::RemoteTypes.Vessel, title::String = getJuliaValue(this.conn, UInt8[0x09, 0x52, 0x61, 0x77, 0x20, 0x41, 0x6c, 0x61, 0x72, 0x6d], String), description::String = getJuliaValue(this.conn, UInt8[0x00], String)) = begin
-        kerbal(this.conn, var"##621"(this, time, V, title, description))
+        kerbal(this.conn, var"##687"(this, time, V, title, description))
     end
 @doc "    MakeRawAlarmVessel(this::RemoteTypes.AlarmClock, time::Float64, V::RemoteTypes.Vessel, title::String, description::String)\n\nMake a Simple Alarm linked to a Vessel\nParameter 'time' is the number of seconds from now that the alarm should trigger.\n\n" MakeRawAlarmVessel
 export MakeRawAlarmVessel
-import ..AlarmClock_MakeApaAlarm as var"##622"
+import ..AlarmClock_MakeApaAlarm as var"##688"
 MakeApaAlarm(this::RemoteTypes.AlarmClock, V::RemoteTypes.Vessel, offset::Float64 = getJuliaValue(this.conn, UInt8[0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x4e, 0x40], Float64), title::String = getJuliaValue(this.conn, UInt8[0x09, 0x41, 0x50, 0x41, 0x20, 0x41, 0x6c, 0x61, 0x72, 0x6d], String), description::String = getJuliaValue(this.conn, UInt8[0x00], String)) = begin
-        kerbal(this.conn, var"##622"(this, V, offset, title, description))
+        kerbal(this.conn, var"##688"(this, V, offset, title, description))
     end
-@doc "" MakeApaAlarm
+@doc "    MakeApaAlarm(this::RemoteTypes.AlarmClock, V::RemoteTypes.Vessel, offset::Float64, title::String, description::String)\n\nCreate an alarm for the given vessel's next Apoapsis\n\n" MakeApaAlarm
 export MakeApaAlarm
-import ..AlarmClock_MakePeaAlarm as var"##623"
+import ..AlarmClock_MakePeaAlarm as var"##689"
 MakePeaAlarm(this::RemoteTypes.AlarmClock, V::RemoteTypes.Vessel, offset::Float64 = getJuliaValue(this.conn, UInt8[0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x4e, 0x40], Float64), title::String = getJuliaValue(this.conn, UInt8[0x09, 0x50, 0x45, 0x41, 0x20, 0x41, 0x6c, 0x61, 0x72, 0x6d], String), description::String = getJuliaValue(this.conn, UInt8[0x00], String)) = begin
-        kerbal(this.conn, var"##623"(this, V, offset, title, description))
+        kerbal(this.conn, var"##689"(this, V, offset, title, description))
     end
 @doc "    MakePeaAlarm(this::RemoteTypes.AlarmClock, V::RemoteTypes.Vessel, offset::Float64, title::String, description::String)\n\nCreate an alarm for the given vessel's next Periapsis\n\n" MakePeaAlarm
 export MakePeaAlarm
-import ..AlarmClock_MakeManeuverAlarm as var"##624"
+import ..AlarmClock_MakeManeuverAlarm as var"##690"
 MakeManeuverAlarm(this::RemoteTypes.AlarmClock, V::RemoteTypes.Vessel, Man::RemoteTypes.Node, offset::Float64 = getJuliaValue(this.conn, UInt8[0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x4e, 0x40], Float64), AddBurnTime::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool), title::String = getJuliaValue(this.conn, UInt8[0x0e, 0x4d, 0x61, 0x6e, 0x65, 0x75, 0x76, 0x65, 0x72, 0x20, 0x41, 0x6c, 0x61, 0x72, 0x6d], String), description::String = getJuliaValue(this.conn, UInt8[0x00], String)) = begin
-        kerbal(this.conn, var"##624"(this, V, Man, offset, AddBurnTime, title, description))
+        kerbal(this.conn, var"##690"(this, V, Man, offset, AddBurnTime, title, description))
     end
 @doc "    MakeManeuverAlarm(this::RemoteTypes.AlarmClock, V::RemoteTypes.Vessel, Man::RemoteTypes.Node, offset::Float64, AddBurnTime::Bool, title::String, description::String)\n\nCreate an alarm for the given vessel and maneuver node\n\n" MakeManeuverAlarm
 export MakeManeuverAlarm
-import ..AlarmClock_MakeSOIAlarm as var"##625"
+import ..AlarmClock_MakeSOIAlarm as var"##691"
 MakeSOIAlarm(this::RemoteTypes.AlarmClock, V::RemoteTypes.Vessel, offset::Float64 = getJuliaValue(this.conn, UInt8[0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x4e, 0x40], Float64), title::String = getJuliaValue(this.conn, UInt8[0x0a, 0x53, 0x4f, 0x49, 0x20, 0x43, 0x68, 0x61, 0x6e, 0x67, 0x65], String), description::String = getJuliaValue(this.conn, UInt8[0x00], String)) = begin
-        kerbal(this.conn, var"##625"(this, V, offset, title, description))
+        kerbal(this.conn, var"##691"(this, V, offset, title, description))
     end
 @doc "    MakeSOIAlarm(this::RemoteTypes.AlarmClock, V::RemoteTypes.Vessel, offset::Float64, title::String, description::String)\n\nCreate an alarm for the given vessel's next SOI change\n\n" MakeSOIAlarm
 export MakeSOIAlarm
-import ..AlarmClock_GetAlarms as var"##626"
+import ..AlarmClock_GetAlarms as var"##692"
 GetAlarms(this::RemoteTypes.AlarmClock) = begin
-        kerbal(this.conn, var"##626"(this))
+        kerbal(this.conn, var"##692"(this))
     end
 @doc "    GetAlarms(this::RemoteTypes.AlarmClock)\n\nReturns a list of all alarms\n\n" GetAlarms
 export GetAlarms
-import ..AutoPilot_Engage as var"##627"
+import ..AutoPilot_Engage as var"##693"
 Engage(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##627"(this))
+        kerbal(this.conn, var"##693"(this))
     end
 @doc "    Engage(this::RemoteTypes.AutoPilot)\n\nEngage the auto-pilot.\n\n" Engage
 export Engage
-import ..AutoPilot_Disengage as var"##628"
+import ..AutoPilot_Disengage as var"##694"
 Disengage(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##628"(this))
+        kerbal(this.conn, var"##694"(this))
     end
 @doc "    Disengage(this::RemoteTypes.AutoPilot)\n\nDisengage the auto-pilot.\n\n" Disengage
 export Disengage
-import ..AutoPilot_Wait as var"##629"
+import ..AutoPilot_Wait as var"##695"
 Wait(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##629"(this))
+        kerbal(this.conn, var"##695"(this))
     end
 @doc "    Wait(this::RemoteTypes.AutoPilot)\n\nBlocks until the vessel is pointing in the target direction and has\nthe target roll (if set). Throws an exception if the auto-pilot has not been engaged.\n\n" Wait
 export Wait
-import ..AutoPilot_TargetPitchAndHeading as var"##630"
+import ..AutoPilot_TargetPitchAndHeading as var"##696"
 TargetPitchAndHeading(this::RemoteTypes.AutoPilot, pitch::Float32, heading::Float32) = begin
-        kerbal(this.conn, var"##630"(this, pitch, heading))
+        kerbal(this.conn, var"##696"(this, pitch, heading))
     end
 @doc "    TargetPitchAndHeading(this::RemoteTypes.AutoPilot, pitch::Float32, heading::Float32)\n\nSet target pitch and heading angles.\n\n# Arguments\n- `pitch::Float32`: Target pitch angle, in degrees between -90° and +90°.\n- `heading::Float32`: Target heading angle, in degrees between 0° and 360°.\n" TargetPitchAndHeading
 export TargetPitchAndHeading
-import ..AutoPilot_get_Error as var"##631"
+import ..AutoPilot_get_Error as var"##697"
 Error(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##631"(this))
+        kerbal(this.conn, var"##697"(this))
     end
 @doc "    Error(this::RemoteTypes.AutoPilot)\n\nThe error, in degrees, between the direction the ship has been asked\nto point in and the direction it is pointing in. Throws an exception if the auto-pilot\nhas not been engaged and SAS is not enabled or is in stability assist mode.\n\n" Error
 export Error
-import ..AutoPilot_get_PitchError as var"##632"
+import ..AutoPilot_get_PitchError as var"##698"
 PitchError(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##632"(this))
+        kerbal(this.conn, var"##698"(this))
     end
 @doc "    PitchError(this::RemoteTypes.AutoPilot)\n\nThe error, in degrees, between the vessels current and target pitch.\nThrows an exception if the auto-pilot has not been engaged.\n\n" PitchError
 export PitchError
-import ..AutoPilot_get_HeadingError as var"##633"
+import ..AutoPilot_get_HeadingError as var"##699"
 HeadingError(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##633"(this))
+        kerbal(this.conn, var"##699"(this))
     end
 @doc "    HeadingError(this::RemoteTypes.AutoPilot)\n\nThe error, in degrees, between the vessels current and target heading.\nThrows an exception if the auto-pilot has not been engaged.\n\n" HeadingError
 export HeadingError
-import ..AutoPilot_get_RollError as var"##634"
+import ..AutoPilot_get_RollError as var"##700"
 RollError(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##634"(this))
+        kerbal(this.conn, var"##700"(this))
     end
 @doc "    RollError(this::RemoteTypes.AutoPilot)\n\nThe error, in degrees, between the vessels current and target roll.\nThrows an exception if the auto-pilot has not been engaged or no target roll is set.\n\n" RollError
 export RollError
-import ..AutoPilot_get_ReferenceFrame as var"##635"
+import ..AutoPilot_get_ReferenceFrame as var"##701"
 ReferenceFrame(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##635"(this))
+        kerbal(this.conn, var"##701"(this))
     end
 @doc "    ReferenceFrame(this::RemoteTypes.AutoPilot)\n\nThe reference frame for the target direction ().\n\n# Remarks\n An error will be thrown if this property is set to a reference frame that rotates with the vessel being controlled, as it is impossible to rotate the vessel in such a reference frame. \n" ReferenceFrame
 export ReferenceFrame
-import ..AutoPilot_set_ReferenceFrame as var"##636"
+import ..AutoPilot_set_ReferenceFrame as var"##702"
 ReferenceFrame!(this::RemoteTypes.AutoPilot, value::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##636"(this, value))
+        kerbal(this.conn, var"##702"(this, value))
     end
 @doc "    ReferenceFrame!(this::RemoteTypes.AutoPilot, value::RemoteTypes.ReferenceFrame)\n\nThe reference frame for the target direction ().\n\n# Remarks\n An error will be thrown if this property is set to a reference frame that rotates with the vessel being controlled, as it is impossible to rotate the vessel in such a reference frame. \n" ReferenceFrame!
 export ReferenceFrame!
-import ..AutoPilot_get_TargetPitch as var"##637"
+import ..AutoPilot_get_TargetPitch as var"##703"
 TargetPitch(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##637"(this))
+        kerbal(this.conn, var"##703"(this))
     end
 @doc "    TargetPitch(this::RemoteTypes.AutoPilot)\n\nThe target pitch, in degrees, between -90° and +90°.\n\n" TargetPitch
 export TargetPitch
-import ..AutoPilot_set_TargetPitch as var"##638"
+import ..AutoPilot_set_TargetPitch as var"##704"
 TargetPitch!(this::RemoteTypes.AutoPilot, value::Float32) = begin
-        kerbal(this.conn, var"##638"(this, value))
+        kerbal(this.conn, var"##704"(this, value))
     end
 @doc "    TargetPitch!(this::RemoteTypes.AutoPilot, value::Float32)\n\nThe target pitch, in degrees, between -90° and +90°.\n\n" TargetPitch!
 export TargetPitch!
-import ..AutoPilot_get_TargetHeading as var"##639"
+import ..AutoPilot_get_TargetHeading as var"##705"
 TargetHeading(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##639"(this))
+        kerbal(this.conn, var"##705"(this))
     end
 @doc "    TargetHeading(this::RemoteTypes.AutoPilot)\n\nThe target heading, in degrees, between 0° and 360°.\n\n" TargetHeading
 export TargetHeading
-import ..AutoPilot_set_TargetHeading as var"##640"
+import ..AutoPilot_set_TargetHeading as var"##706"
 TargetHeading!(this::RemoteTypes.AutoPilot, value::Float32) = begin
-        kerbal(this.conn, var"##640"(this, value))
+        kerbal(this.conn, var"##706"(this, value))
     end
 @doc "    TargetHeading!(this::RemoteTypes.AutoPilot, value::Float32)\n\nThe target heading, in degrees, between 0° and 360°.\n\n" TargetHeading!
 export TargetHeading!
-import ..AutoPilot_get_TargetRoll as var"##641"
+import ..AutoPilot_get_TargetRoll as var"##707"
 TargetRoll(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##641"(this))
+        kerbal(this.conn, var"##707"(this))
     end
 @doc "    TargetRoll(this::RemoteTypes.AutoPilot)\n\nThe target roll, in degrees. NaN if no target roll is set.\n\n" TargetRoll
 export TargetRoll
-import ..AutoPilot_set_TargetRoll as var"##642"
+import ..AutoPilot_set_TargetRoll as var"##708"
 TargetRoll!(this::RemoteTypes.AutoPilot, value::Float32) = begin
-        kerbal(this.conn, var"##642"(this, value))
+        kerbal(this.conn, var"##708"(this, value))
     end
 @doc "    TargetRoll!(this::RemoteTypes.AutoPilot, value::Float32)\n\nThe target roll, in degrees. NaN if no target roll is set.\n\n" TargetRoll!
 export TargetRoll!
-import ..AutoPilot_get_TargetDirection as var"##643"
+import ..AutoPilot_get_TargetDirection as var"##709"
 TargetDirection(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##643"(this))
+        kerbal(this.conn, var"##709"(this))
     end
 @doc "    TargetDirection(this::RemoteTypes.AutoPilot)\n\nDirection vector corresponding to the target pitch and heading.\nThis is in the reference frame specified by .\n\n" TargetDirection
 export TargetDirection
-import ..AutoPilot_set_TargetDirection as var"##644"
+import ..AutoPilot_set_TargetDirection as var"##710"
 TargetDirection!(this::RemoteTypes.AutoPilot, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##644"(this, value))
+        kerbal(this.conn, var"##710"(this, value))
     end
 @doc "    TargetDirection!(this::RemoteTypes.AutoPilot, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nDirection vector corresponding to the target pitch and heading.\nThis is in the reference frame specified by .\n\n" TargetDirection!
 export TargetDirection!
-import ..AutoPilot_get_SAS as var"##645"
+import ..AutoPilot_get_SAS as var"##711"
 SAS(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##645"(this))
+        kerbal(this.conn, var"##711"(this))
     end
 @doc "    SAS(this::RemoteTypes.AutoPilot)\n\nThe state of SAS.\n\n# Remarks\nEquivalent to \n" SAS
 export SAS
-import ..AutoPilot_set_SAS as var"##646"
+import ..AutoPilot_set_SAS as var"##712"
 SAS!(this::RemoteTypes.AutoPilot, value::Bool) = begin
-        kerbal(this.conn, var"##646"(this, value))
+        kerbal(this.conn, var"##712"(this, value))
     end
 @doc "    SAS!(this::RemoteTypes.AutoPilot, value::Bool)\n\nThe state of SAS.\n\n# Remarks\nEquivalent to \n" SAS!
 export SAS!
-import ..AutoPilot_get_SASMode as var"##647"
+import ..AutoPilot_get_SASMode as var"##713"
 SASMode(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##647"(this))
+        kerbal(this.conn, var"##713"(this))
     end
 @doc "    SASMode(this::RemoteTypes.AutoPilot)\n\nThe current .\nThese modes are equivalent to the mode buttons to the left of the navball that appear\nwhen SAS is enabled.\n\n# Remarks\nEquivalent to \n" SASMode
 export SASMode
-import ..AutoPilot_set_SASMode as var"##648"
+import ..AutoPilot_set_SASMode as var"##714"
 SASMode!(this::RemoteTypes.AutoPilot, value::ESASMode) = begin
-        kerbal(this.conn, var"##648"(this, value))
+        kerbal(this.conn, var"##714"(this, value))
     end
 @doc "    SASMode!(this::RemoteTypes.AutoPilot, value::ESASMode)\n\nThe current .\nThese modes are equivalent to the mode buttons to the left of the navball that appear\nwhen SAS is enabled.\n\n# Remarks\nEquivalent to \n" SASMode!
 export SASMode!
-import ..AutoPilot_get_RollThreshold as var"##649"
+import ..AutoPilot_get_RollThreshold as var"##715"
 RollThreshold(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##649"(this))
+        kerbal(this.conn, var"##715"(this))
     end
 @doc "    RollThreshold(this::RemoteTypes.AutoPilot)\n\nThe threshold at which the autopilot will try to match the target roll angle, if any.\nDefaults to 5 degrees.\n\n" RollThreshold
 export RollThreshold
-import ..AutoPilot_set_RollThreshold as var"##650"
+import ..AutoPilot_set_RollThreshold as var"##716"
 RollThreshold!(this::RemoteTypes.AutoPilot, value::Float64) = begin
-        kerbal(this.conn, var"##650"(this, value))
+        kerbal(this.conn, var"##716"(this, value))
     end
 @doc "    RollThreshold!(this::RemoteTypes.AutoPilot, value::Float64)\n\nThe threshold at which the autopilot will try to match the target roll angle, if any.\nDefaults to 5 degrees.\n\n" RollThreshold!
 export RollThreshold!
-import ..AutoPilot_get_StoppingTime as var"##651"
+import ..AutoPilot_get_StoppingTime as var"##717"
 StoppingTime(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##651"(this))
+        kerbal(this.conn, var"##717"(this))
     end
 @doc "    StoppingTime(this::RemoteTypes.AutoPilot)\n\nThe maximum amount of time that the vessel should need to come to a complete stop.\nThis determines the maximum angular velocity of the vessel.\nA vector of three stopping times, in seconds, one for each of the pitch, roll\nand yaw axes. Defaults to 0.5 seconds for each axis.\n\n" StoppingTime
 export StoppingTime
-import ..AutoPilot_set_StoppingTime as var"##652"
+import ..AutoPilot_set_StoppingTime as var"##718"
 StoppingTime!(this::RemoteTypes.AutoPilot, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##652"(this, value))
+        kerbal(this.conn, var"##718"(this, value))
     end
 @doc "    StoppingTime!(this::RemoteTypes.AutoPilot, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nThe maximum amount of time that the vessel should need to come to a complete stop.\nThis determines the maximum angular velocity of the vessel.\nA vector of three stopping times, in seconds, one for each of the pitch, roll\nand yaw axes. Defaults to 0.5 seconds for each axis.\n\n" StoppingTime!
 export StoppingTime!
-import ..AutoPilot_get_DecelerationTime as var"##653"
+import ..AutoPilot_get_DecelerationTime as var"##719"
 DecelerationTime(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##653"(this))
+        kerbal(this.conn, var"##719"(this))
     end
 @doc "    DecelerationTime(this::RemoteTypes.AutoPilot)\n\nThe time the vessel should take to come to a stop pointing in the target direction.\nThis determines the angular acceleration used to decelerate the vessel.\nA vector of three times, in seconds, one for each of the pitch, roll and yaw axes.\nDefaults to 5 seconds for each axis.\n\n" DecelerationTime
 export DecelerationTime
-import ..AutoPilot_set_DecelerationTime as var"##654"
+import ..AutoPilot_set_DecelerationTime as var"##720"
 DecelerationTime!(this::RemoteTypes.AutoPilot, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##654"(this, value))
+        kerbal(this.conn, var"##720"(this, value))
     end
 @doc "    DecelerationTime!(this::RemoteTypes.AutoPilot, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nThe time the vessel should take to come to a stop pointing in the target direction.\nThis determines the angular acceleration used to decelerate the vessel.\nA vector of three times, in seconds, one for each of the pitch, roll and yaw axes.\nDefaults to 5 seconds for each axis.\n\n" DecelerationTime!
 export DecelerationTime!
-import ..AutoPilot_get_AttenuationAngle as var"##655"
+import ..AutoPilot_get_AttenuationAngle as var"##721"
 AttenuationAngle(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##655"(this))
+        kerbal(this.conn, var"##721"(this))
     end
 @doc "    AttenuationAngle(this::RemoteTypes.AutoPilot)\n\nThe angle at which the autopilot considers the vessel to be pointing\nclose to the target.\nThis determines the midpoint of the target velocity attenuation function.\nA vector of three angles, in degrees, one for each of the pitch, roll and yaw axes.\nDefaults to 1° for each axis.\n\n" AttenuationAngle
 export AttenuationAngle
-import ..AutoPilot_set_AttenuationAngle as var"##656"
+import ..AutoPilot_set_AttenuationAngle as var"##722"
 AttenuationAngle!(this::RemoteTypes.AutoPilot, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##656"(this, value))
+        kerbal(this.conn, var"##722"(this, value))
     end
 @doc "    AttenuationAngle!(this::RemoteTypes.AutoPilot, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nThe angle at which the autopilot considers the vessel to be pointing\nclose to the target.\nThis determines the midpoint of the target velocity attenuation function.\nA vector of three angles, in degrees, one for each of the pitch, roll and yaw axes.\nDefaults to 1° for each axis.\n\n" AttenuationAngle!
 export AttenuationAngle!
-import ..AutoPilot_get_AutoTune as var"##657"
+import ..AutoPilot_get_AutoTune as var"##723"
 AutoTune(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##657"(this))
+        kerbal(this.conn, var"##723"(this))
     end
 @doc "    AutoTune(this::RemoteTypes.AutoPilot)\n\nWhether the rotation rate controllers PID parameters should be automatically tuned\nusing the vessels moment of inertia and available torque. Defaults to true.\nSee  and .\n\n" AutoTune
 export AutoTune
-import ..AutoPilot_set_AutoTune as var"##658"
+import ..AutoPilot_set_AutoTune as var"##724"
 AutoTune!(this::RemoteTypes.AutoPilot, value::Bool) = begin
-        kerbal(this.conn, var"##658"(this, value))
+        kerbal(this.conn, var"##724"(this, value))
     end
 @doc "    AutoTune!(this::RemoteTypes.AutoPilot, value::Bool)\n\nWhether the rotation rate controllers PID parameters should be automatically tuned\nusing the vessels moment of inertia and available torque. Defaults to true.\nSee  and .\n\n" AutoTune!
 export AutoTune!
-import ..AutoPilot_get_TimeToPeak as var"##659"
+import ..AutoPilot_get_TimeToPeak as var"##725"
 TimeToPeak(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##659"(this))
+        kerbal(this.conn, var"##725"(this))
     end
 @doc "    TimeToPeak(this::RemoteTypes.AutoPilot)\n\nThe target time to peak used to autotune the PID controllers.\nA vector of three times, in seconds, for each of the pitch, roll and yaw axes.\nDefaults to 3 seconds for each axis.\n\n" TimeToPeak
 export TimeToPeak
-import ..AutoPilot_set_TimeToPeak as var"##660"
+import ..AutoPilot_set_TimeToPeak as var"##726"
 TimeToPeak!(this::RemoteTypes.AutoPilot, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##660"(this, value))
+        kerbal(this.conn, var"##726"(this, value))
     end
 @doc "    TimeToPeak!(this::RemoteTypes.AutoPilot, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nThe target time to peak used to autotune the PID controllers.\nA vector of three times, in seconds, for each of the pitch, roll and yaw axes.\nDefaults to 3 seconds for each axis.\n\n" TimeToPeak!
 export TimeToPeak!
-import ..AutoPilot_get_Overshoot as var"##661"
+import ..AutoPilot_get_Overshoot as var"##727"
 Overshoot(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##661"(this))
+        kerbal(this.conn, var"##727"(this))
     end
 @doc "    Overshoot(this::RemoteTypes.AutoPilot)\n\nThe target overshoot percentage used to autotune the PID controllers.\nA vector of three values, between 0 and 1, for each of the pitch, roll and yaw axes.\nDefaults to 0.01 for each axis.\n\n" Overshoot
 export Overshoot
-import ..AutoPilot_set_Overshoot as var"##662"
+import ..AutoPilot_set_Overshoot as var"##728"
 Overshoot!(this::RemoteTypes.AutoPilot, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##662"(this, value))
+        kerbal(this.conn, var"##728"(this, value))
     end
 @doc "    Overshoot!(this::RemoteTypes.AutoPilot, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nThe target overshoot percentage used to autotune the PID controllers.\nA vector of three values, between 0 and 1, for each of the pitch, roll and yaw axes.\nDefaults to 0.01 for each axis.\n\n" Overshoot!
 export Overshoot!
-import ..AutoPilot_get_PitchPIDGains as var"##663"
+import ..AutoPilot_get_PitchPIDGains as var"##729"
 PitchPIDGains(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##663"(this))
+        kerbal(this.conn, var"##729"(this))
     end
 @doc "    PitchPIDGains(this::RemoteTypes.AutoPilot)\n\nGains for the pitch PID controller.\n\n# Remarks\n When  is true, these values are updated automatically, which will overwrite any manual changes. \n" PitchPIDGains
 export PitchPIDGains
-import ..AutoPilot_set_PitchPIDGains as var"##664"
+import ..AutoPilot_set_PitchPIDGains as var"##730"
 PitchPIDGains!(this::RemoteTypes.AutoPilot, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##664"(this, value))
+        kerbal(this.conn, var"##730"(this, value))
     end
 @doc "    PitchPIDGains!(this::RemoteTypes.AutoPilot, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nGains for the pitch PID controller.\n\n# Remarks\n When  is true, these values are updated automatically, which will overwrite any manual changes. \n" PitchPIDGains!
 export PitchPIDGains!
-import ..AutoPilot_get_RollPIDGains as var"##665"
+import ..AutoPilot_get_RollPIDGains as var"##731"
 RollPIDGains(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##665"(this))
+        kerbal(this.conn, var"##731"(this))
     end
 @doc "    RollPIDGains(this::RemoteTypes.AutoPilot)\n\nGains for the roll PID controller.\n\n# Remarks\n When  is true, these values are updated automatically, which will overwrite any manual changes. \n" RollPIDGains
 export RollPIDGains
-import ..AutoPilot_set_RollPIDGains as var"##666"
+import ..AutoPilot_set_RollPIDGains as var"##732"
 RollPIDGains!(this::RemoteTypes.AutoPilot, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##666"(this, value))
+        kerbal(this.conn, var"##732"(this, value))
     end
 @doc "    RollPIDGains!(this::RemoteTypes.AutoPilot, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nGains for the roll PID controller.\n\n# Remarks\n When  is true, these values are updated automatically, which will overwrite any manual changes. \n" RollPIDGains!
 export RollPIDGains!
-import ..AutoPilot_get_YawPIDGains as var"##667"
+import ..AutoPilot_get_YawPIDGains as var"##733"
 YawPIDGains(this::RemoteTypes.AutoPilot) = begin
-        kerbal(this.conn, var"##667"(this))
+        kerbal(this.conn, var"##733"(this))
     end
 @doc "    YawPIDGains(this::RemoteTypes.AutoPilot)\n\nGains for the yaw PID controller.\n\n# Remarks\n When  is true, these values are updated automatically, which will overwrite any manual changes. \n" YawPIDGains
 export YawPIDGains
-import ..AutoPilot_set_YawPIDGains as var"##668"
+import ..AutoPilot_set_YawPIDGains as var"##734"
 YawPIDGains!(this::RemoteTypes.AutoPilot, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##668"(this, value))
+        kerbal(this.conn, var"##734"(this, value))
     end
 @doc "    YawPIDGains!(this::RemoteTypes.AutoPilot, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nGains for the yaw PID controller.\n\n# Remarks\n When  is true, these values are updated automatically, which will overwrite any manual changes. \n" YawPIDGains!
 export YawPIDGains!
-import ..Camera_get_Mode as var"##669"
+import ..Camera_get_Mode as var"##735"
 Mode(this::RemoteTypes.Camera) = begin
-        kerbal(this.conn, var"##669"(this))
+        kerbal(this.conn, var"##735"(this))
     end
 @doc "    Mode(this::RemoteTypes.Camera)\n\nThe current mode of the camera.\n\n" Mode
 export Mode
-import ..Camera_set_Mode as var"##670"
+import ..Camera_set_Mode as var"##736"
 Mode!(this::RemoteTypes.Camera, value::ECameraMode) = begin
-        kerbal(this.conn, var"##670"(this, value))
+        kerbal(this.conn, var"##736"(this, value))
     end
 @doc "    Mode!(this::RemoteTypes.Camera, value::ECameraMode)\n\nThe current mode of the camera.\n\n" Mode!
 export Mode!
-import ..Camera_get_Pitch as var"##671"
+import ..Camera_get_Pitch as var"##737"
 Pitch(this::RemoteTypes.Camera) = begin
-        kerbal(this.conn, var"##671"(this))
+        kerbal(this.conn, var"##737"(this))
     end
 @doc "    Pitch(this::RemoteTypes.Camera)\n\nThe pitch of the camera, in degrees.\nA value between  and \n" Pitch
 export Pitch
-import ..Camera_set_Pitch as var"##672"
+import ..Camera_set_Pitch as var"##738"
 Pitch!(this::RemoteTypes.Camera, value::Float32) = begin
-        kerbal(this.conn, var"##672"(this, value))
+        kerbal(this.conn, var"##738"(this, value))
     end
 @doc "    Pitch!(this::RemoteTypes.Camera, value::Float32)\n\nThe pitch of the camera, in degrees.\nA value between  and \n" Pitch!
 export Pitch!
-import ..Camera_get_Heading as var"##673"
+import ..Camera_get_Heading as var"##739"
 Heading(this::RemoteTypes.Camera) = begin
-        kerbal(this.conn, var"##673"(this))
+        kerbal(this.conn, var"##739"(this))
     end
 @doc "    Heading(this::RemoteTypes.Camera)\n\nThe heading of the camera, in degrees.\n\n" Heading
 export Heading
-import ..Camera_set_Heading as var"##674"
+import ..Camera_set_Heading as var"##740"
 Heading!(this::RemoteTypes.Camera, value::Float32) = begin
-        kerbal(this.conn, var"##674"(this, value))
+        kerbal(this.conn, var"##740"(this, value))
     end
 @doc "    Heading!(this::RemoteTypes.Camera, value::Float32)\n\nThe heading of the camera, in degrees.\n\n" Heading!
 export Heading!
-import ..Camera_get_Distance as var"##675"
+import ..Camera_get_Distance as var"##741"
 Distance(this::RemoteTypes.Camera) = begin
-        kerbal(this.conn, var"##675"(this))
+        kerbal(this.conn, var"##741"(this))
     end
 @doc "    Distance(this::RemoteTypes.Camera)\n\nThe distance from the camera to the subject, in meters.\nA value between  and .\n\n" Distance
 export Distance
-import ..Camera_set_Distance as var"##676"
+import ..Camera_set_Distance as var"##742"
 Distance!(this::RemoteTypes.Camera, value::Float32) = begin
-        kerbal(this.conn, var"##676"(this, value))
+        kerbal(this.conn, var"##742"(this, value))
     end
 @doc "    Distance!(this::RemoteTypes.Camera, value::Float32)\n\nThe distance from the camera to the subject, in meters.\nA value between  and .\n\n" Distance!
 export Distance!
-import ..Camera_get_MinPitch as var"##677"
+import ..Camera_get_MinPitch as var"##743"
 MinPitch(this::RemoteTypes.Camera) = begin
-        kerbal(this.conn, var"##677"(this))
+        kerbal(this.conn, var"##743"(this))
     end
 @doc "    MinPitch(this::RemoteTypes.Camera)\n\nThe minimum pitch of the camera.\n\n" MinPitch
 export MinPitch
-import ..Camera_get_MaxPitch as var"##678"
+import ..Camera_get_MaxPitch as var"##744"
 MaxPitch(this::RemoteTypes.Camera) = begin
-        kerbal(this.conn, var"##678"(this))
+        kerbal(this.conn, var"##744"(this))
     end
 @doc "    MaxPitch(this::RemoteTypes.Camera)\n\nThe maximum pitch of the camera.\n\n" MaxPitch
 export MaxPitch
-import ..Camera_get_MinDistance as var"##679"
+import ..Camera_get_MinDistance as var"##745"
 MinDistance(this::RemoteTypes.Camera) = begin
-        kerbal(this.conn, var"##679"(this))
+        kerbal(this.conn, var"##745"(this))
     end
 @doc "    MinDistance(this::RemoteTypes.Camera)\n\nMinimum distance from the camera to the subject, in meters.\n\n" MinDistance
 export MinDistance
-import ..Camera_get_MaxDistance as var"##680"
+import ..Camera_get_MaxDistance as var"##746"
 MaxDistance(this::RemoteTypes.Camera) = begin
-        kerbal(this.conn, var"##680"(this))
+        kerbal(this.conn, var"##746"(this))
     end
 @doc "    MaxDistance(this::RemoteTypes.Camera)\n\nMaximum distance from the camera to the subject, in meters.\n\n" MaxDistance
 export MaxDistance
-import ..Camera_get_DefaultDistance as var"##681"
+import ..Camera_get_DefaultDistance as var"##747"
 DefaultDistance(this::RemoteTypes.Camera) = begin
-        kerbal(this.conn, var"##681"(this))
+        kerbal(this.conn, var"##747"(this))
     end
 @doc "    DefaultDistance(this::RemoteTypes.Camera)\n\nDefault distance from the camera to the subject, in meters.\n\n" DefaultDistance
 export DefaultDistance
-import ..Camera_get_FocussedBody as var"##682"
+import ..Camera_get_FocussedBody as var"##748"
 FocussedBody(this::RemoteTypes.Camera) = begin
-        kerbal(this.conn, var"##682"(this))
+        kerbal(this.conn, var"##748"(this))
     end
 @doc "    FocussedBody(this::RemoteTypes.Camera)\n\nIn map mode, the celestial body that the camera is focussed on.\nReturns null if the camera is not focussed on a celestial body.\nReturns an error is the camera is not in map mode.\n\n" FocussedBody
 export FocussedBody
-import ..Camera_set_FocussedBody as var"##683"
+import ..Camera_set_FocussedBody as var"##749"
 FocussedBody!(this::RemoteTypes.Camera, value::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##683"(this, value))
+        kerbal(this.conn, var"##749"(this, value))
     end
 @doc "    FocussedBody!(this::RemoteTypes.Camera, value::RemoteTypes.CelestialBody)\n\nIn map mode, the celestial body that the camera is focussed on.\nReturns null if the camera is not focussed on a celestial body.\nReturns an error is the camera is not in map mode.\n\n" FocussedBody!
 export FocussedBody!
-import ..Camera_get_FocussedVessel as var"##684"
+import ..Camera_get_FocussedVessel as var"##750"
 FocussedVessel(this::RemoteTypes.Camera) = begin
-        kerbal(this.conn, var"##684"(this))
+        kerbal(this.conn, var"##750"(this))
     end
 @doc "    FocussedVessel(this::RemoteTypes.Camera)\n\nIn map mode, the vessel that the camera is focussed on.\nReturns null if the camera is not focussed on a vessel.\nReturns an error is the camera is not in map mode.\n\n" FocussedVessel
 export FocussedVessel
-import ..Camera_set_FocussedVessel as var"##685"
+import ..Camera_set_FocussedVessel as var"##751"
 FocussedVessel!(this::RemoteTypes.Camera, value::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##685"(this, value))
+        kerbal(this.conn, var"##751"(this, value))
     end
 @doc "    FocussedVessel!(this::RemoteTypes.Camera, value::RemoteTypes.Vessel)\n\nIn map mode, the vessel that the camera is focussed on.\nReturns null if the camera is not focussed on a vessel.\nReturns an error is the camera is not in map mode.\n\n" FocussedVessel!
 export FocussedVessel!
-import ..Camera_get_FocussedNode as var"##686"
+import ..Camera_get_FocussedNode as var"##752"
 FocussedNode(this::RemoteTypes.Camera) = begin
-        kerbal(this.conn, var"##686"(this))
+        kerbal(this.conn, var"##752"(this))
     end
 @doc "    FocussedNode(this::RemoteTypes.Camera)\n\nIn map mode, the maneuver node that the camera is focussed on.\nReturns null if the camera is not focussed on a maneuver node.\nReturns an error is the camera is not in map mode.\n\n" FocussedNode
 export FocussedNode
-import ..Camera_set_FocussedNode as var"##687"
+import ..Camera_set_FocussedNode as var"##753"
 FocussedNode!(this::RemoteTypes.Camera, value::RemoteTypes.Node) = begin
-        kerbal(this.conn, var"##687"(this, value))
+        kerbal(this.conn, var"##753"(this, value))
     end
 @doc "    FocussedNode!(this::RemoteTypes.Camera, value::RemoteTypes.Node)\n\nIn map mode, the maneuver node that the camera is focussed on.\nReturns null if the camera is not focussed on a maneuver node.\nReturns an error is the camera is not in map mode.\n\n" FocussedNode!
 export FocussedNode!
-import ..CelestialBody_SurfaceHeight as var"##688"
+import ..CelestialBody_SurfaceHeight as var"##754"
 SurfaceHeight(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64) = begin
-        kerbal(this.conn, var"##688"(this, latitude, longitude))
+        kerbal(this.conn, var"##754"(this, latitude, longitude))
     end
 @doc "    SurfaceHeight(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64)\n\nThe height of the surface relative to mean sea level, in meters,\nat the given position. When over water this is equal to 0.\n\n# Arguments\n- `latitude::Float64`: Latitude in degrees.\n- `longitude::Float64`: Longitude in degrees.\n" SurfaceHeight
 export SurfaceHeight
-import ..CelestialBody_BedrockHeight as var"##689"
+import ..CelestialBody_BedrockHeight as var"##755"
 BedrockHeight(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64) = begin
-        kerbal(this.conn, var"##689"(this, latitude, longitude))
+        kerbal(this.conn, var"##755"(this, latitude, longitude))
     end
 @doc "    BedrockHeight(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64)\n\nThe height of the surface relative to mean sea level, in meters,\nat the given position. When over water, this is the height\nof the sea-bed and is therefore  negative value.\n\n# Arguments\n- `latitude::Float64`: Latitude in degrees.\n- `longitude::Float64`: Longitude in degrees.\n" BedrockHeight
 export BedrockHeight
-import ..CelestialBody_MSLPosition as var"##690"
+import ..CelestialBody_MSLPosition as var"##756"
 MSLPosition(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##690"(this, latitude, longitude, referenceFrame))
+        kerbal(this.conn, var"##756"(this, latitude, longitude, referenceFrame))
     end
 @doc "    MSLPosition(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position at mean sea level at the given latitude and longitude,\nin the given reference frame.\n\n# Arguments\n- `latitude::Float64`: Latitude in degrees.\n- `longitude::Float64`: Longitude in degrees.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: Reference frame for the returned position vector.\n# Returns\nPosition as a vector.\n" MSLPosition
 export MSLPosition
-import ..CelestialBody_SurfacePosition as var"##691"
+import ..CelestialBody_SurfacePosition as var"##757"
 SurfacePosition(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##691"(this, latitude, longitude, referenceFrame))
+        kerbal(this.conn, var"##757"(this, latitude, longitude, referenceFrame))
     end
 @doc "    SurfacePosition(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position of the surface at the given latitude and longitude, in the given\nreference frame. When over water, this is the position of the surface of the water.\n\n# Arguments\n- `latitude::Float64`: Latitude in degrees.\n- `longitude::Float64`: Longitude in degrees.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: Reference frame for the returned position vector.\n# Returns\nPosition as a vector.\n" SurfacePosition
 export SurfacePosition
-import ..CelestialBody_BedrockPosition as var"##692"
+import ..CelestialBody_BedrockPosition as var"##758"
 BedrockPosition(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##692"(this, latitude, longitude, referenceFrame))
+        kerbal(this.conn, var"##758"(this, latitude, longitude, referenceFrame))
     end
 @doc "    BedrockPosition(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position of the surface at the given latitude and longitude, in the given\nreference frame. When over water, this is the position at the bottom of the sea-bed.\n\n# Arguments\n- `latitude::Float64`: Latitude in degrees.\n- `longitude::Float64`: Longitude in degrees.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: Reference frame for the returned position vector.\n# Returns\nPosition as a vector.\n" BedrockPosition
 export BedrockPosition
-import ..CelestialBody_PositionAtAltitude as var"##693"
+import ..CelestialBody_PositionAtAltitude as var"##759"
 PositionAtAltitude(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64, altitude::Float64, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##693"(this, latitude, longitude, altitude, referenceFrame))
+        kerbal(this.conn, var"##759"(this, latitude, longitude, altitude, referenceFrame))
     end
 @doc "    PositionAtAltitude(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64, altitude::Float64, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position at the given latitude, longitude and altitude, in the given reference frame.\n\n# Arguments\n- `latitude::Float64`: Latitude in degrees.\n- `longitude::Float64`: Longitude in degrees.\n- `altitude::Float64`: Altitude in meters above sea level.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: Reference frame for the returned position vector.\n# Returns\nPosition as a vector.\n" PositionAtAltitude
 export PositionAtAltitude
-import ..CelestialBody_LatitudeAtPosition as var"##694"
+import ..CelestialBody_LatitudeAtPosition as var"##760"
 LatitudeAtPosition(this::RemoteTypes.CelestialBody, position::begin
                 Tuple{Float64, Float64, Float64}
             end, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##694"(this, position, referenceFrame))
+        kerbal(this.conn, var"##760"(this, position, referenceFrame))
     end
 @doc "    LatitudeAtPosition(this::RemoteTypes.CelestialBody, position::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe latitude of the given position, in the given reference frame.\n\n# Arguments\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: Position as a vector.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: Reference frame for the position vector.\n" LatitudeAtPosition
 export LatitudeAtPosition
-import ..CelestialBody_LongitudeAtPosition as var"##695"
+import ..CelestialBody_LongitudeAtPosition as var"##761"
 LongitudeAtPosition(this::RemoteTypes.CelestialBody, position::begin
                 Tuple{Float64, Float64, Float64}
             end, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##695"(this, position, referenceFrame))
+        kerbal(this.conn, var"##761"(this, position, referenceFrame))
     end
 @doc "    LongitudeAtPosition(this::RemoteTypes.CelestialBody, position::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe longitude of the given position, in the given reference frame.\n\n# Arguments\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: Position as a vector.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: Reference frame for the position vector.\n" LongitudeAtPosition
 export LongitudeAtPosition
-import ..CelestialBody_AltitudeAtPosition as var"##696"
+import ..CelestialBody_AltitudeAtPosition as var"##762"
 AltitudeAtPosition(this::RemoteTypes.CelestialBody, position::begin
                 Tuple{Float64, Float64, Float64}
             end, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##696"(this, position, referenceFrame))
+        kerbal(this.conn, var"##762"(this, position, referenceFrame))
     end
 @doc "    AltitudeAtPosition(this::RemoteTypes.CelestialBody, position::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe altitude, in meters, of the given position in the given reference frame.\n\n# Arguments\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: Position as a vector.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: Reference frame for the position vector.\n" AltitudeAtPosition
 export AltitudeAtPosition
-import ..CelestialBody_AtmosphericDensityAtPosition as var"##697"
+import ..CelestialBody_AtmosphericDensityAtPosition as var"##763"
 AtmosphericDensityAtPosition(this::RemoteTypes.CelestialBody, position::begin
                 Tuple{Float64, Float64, Float64}
             end, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##697"(this, position, referenceFrame))
+        kerbal(this.conn, var"##763"(this, position, referenceFrame))
     end
 @doc "    AtmosphericDensityAtPosition(this::RemoteTypes.CelestialBody, position::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe atmospheric density at the given position, in kg/m^3,\nin the given reference frame.\n\n# Arguments\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: The position vector at which to measure the density.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: Reference frame that the position vector is in.\n" AtmosphericDensityAtPosition
 export AtmosphericDensityAtPosition
-import ..CelestialBody_TemperatureAt as var"##698"
+import ..CelestialBody_TemperatureAt as var"##764"
 TemperatureAt(this::RemoteTypes.CelestialBody, position::begin
                 Tuple{Float64, Float64, Float64}
             end, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##698"(this, position, referenceFrame))
+        kerbal(this.conn, var"##764"(this, position, referenceFrame))
     end
 @doc "    TemperatureAt(this::RemoteTypes.CelestialBody, position::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe temperature on the body at the given position, in the given reference frame.\n\n# Arguments\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: Position as a vector.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the position is in.\n# Remarks\n This calculation is performed using the bodies current position, which means that the value could be wrong if you want to know the temperature in the far future. \n" TemperatureAt
 export TemperatureAt
-import ..CelestialBody_DensityAt as var"##699"
+import ..CelestialBody_DensityAt as var"##765"
 DensityAt(this::RemoteTypes.CelestialBody, altitude::Float64) = begin
-        kerbal(this.conn, var"##699"(this, altitude))
+        kerbal(this.conn, var"##765"(this, altitude))
     end
 @doc "    DensityAt(this::RemoteTypes.CelestialBody, altitude::Float64)\n\nGets the air density, in kg/m^3, for the specified\naltitude above sea level, in meters.\n\n# Remarks\n This is an approximation, because actual calculations, taking sun exposure into account to compute air temperature, require us to know the exact point on the body where the density is to be computed (knowing the altitude is not enough). However, the difference is small for high altitudes, so it makes very little difference for trajectory prediction. \n" DensityAt
 export DensityAt
-import ..CelestialBody_PressureAt as var"##700"
+import ..CelestialBody_PressureAt as var"##766"
 PressureAt(this::RemoteTypes.CelestialBody, altitude::Float64) = begin
-        kerbal(this.conn, var"##700"(this, altitude))
+        kerbal(this.conn, var"##766"(this, altitude))
     end
 @doc "    PressureAt(this::RemoteTypes.CelestialBody, altitude::Float64)\n\nGets the air pressure, in Pascals, for the specified\naltitude above sea level, in meters.\n\n" PressureAt
 export PressureAt
-import ..CelestialBody_BiomeAt as var"##701"
+import ..CelestialBody_BiomeAt as var"##767"
 BiomeAt(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64) = begin
-        kerbal(this.conn, var"##701"(this, latitude, longitude))
+        kerbal(this.conn, var"##767"(this, latitude, longitude))
     end
 @doc "    BiomeAt(this::RemoteTypes.CelestialBody, latitude::Float64, longitude::Float64)\n\nThe biome at the given latitude and longitude, in degrees.\n\n" BiomeAt
 export BiomeAt
-import ..CelestialBody_Position as var"##702"
+import ..CelestialBody_Position as var"##768"
 Position(this::RemoteTypes.CelestialBody, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##702"(this, referenceFrame))
+        kerbal(this.conn, var"##768"(this, referenceFrame))
     end
 @doc "    Position(this::RemoteTypes.CelestialBody, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position of the center of the body, in the specified reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n" Position
 export Position
-import ..CelestialBody_Velocity as var"##703"
+import ..CelestialBody_Velocity as var"##769"
 Velocity(this::RemoteTypes.CelestialBody, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##703"(this, referenceFrame))
+        kerbal(this.conn, var"##769"(this, referenceFrame))
     end
 @doc "    Velocity(this::RemoteTypes.CelestialBody, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe linear velocity of the body, in the specified reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned velocity vector is in.\n# Returns\nThe velocity as a vector. The vector points in the direction of travel, and its magnitude is the speed of the body in meters per second.\n" Velocity
 export Velocity
-import ..CelestialBody_Rotation as var"##704"
+import ..CelestialBody_Rotation as var"##770"
 Rotation(this::RemoteTypes.CelestialBody, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##704"(this, referenceFrame))
+        kerbal(this.conn, var"##770"(this, referenceFrame))
     end
 @doc "    Rotation(this::RemoteTypes.CelestialBody, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe rotation of the body, in the specified reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned rotation is in.\n# Returns\nThe rotation as a quaternion of the form (x, y, z, w).\n" Rotation
 export Rotation
-import ..CelestialBody_Direction as var"##705"
+import ..CelestialBody_Direction as var"##771"
 Direction(this::RemoteTypes.CelestialBody, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##705"(this, referenceFrame))
+        kerbal(this.conn, var"##771"(this, referenceFrame))
     end
 @doc "    Direction(this::RemoteTypes.CelestialBody, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe direction in which the north pole of the celestial body is pointing,\nin the specified reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned direction is in.\n# Returns\nThe direction as a unit vector.\n" Direction
 export Direction
-import ..CelestialBody_AngularVelocity as var"##706"
+import ..CelestialBody_AngularVelocity as var"##772"
 AngularVelocity(this::RemoteTypes.CelestialBody, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##706"(this, referenceFrame))
+        kerbal(this.conn, var"##772"(this, referenceFrame))
     end
 @doc "    AngularVelocity(this::RemoteTypes.CelestialBody, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe angular velocity of the body in the specified reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame the returned angular velocity is in.\n# Returns\nThe angular velocity as a vector. The magnitude of the vector is the rotational speed of the body, in radians per second. The direction of the vector indicates the axis of rotation, using the right-hand rule.\n" AngularVelocity
 export AngularVelocity
-import ..CelestialBody_get_Name as var"##707"
+import ..CelestialBody_get_Name as var"##773"
 Name(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##707"(this))
+        kerbal(this.conn, var"##773"(this))
     end
 @doc "    Name(this::RemoteTypes.CelestialBody)\n\nThe name of the body.\n\n" Name
 export Name
-import ..CelestialBody_get_Satellites as var"##708"
+import ..CelestialBody_get_Satellites as var"##774"
 Satellites(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##708"(this))
+        kerbal(this.conn, var"##774"(this))
     end
 @doc "    Satellites(this::RemoteTypes.CelestialBody)\n\nA list of celestial bodies that are in orbit around this celestial body.\n\n" Satellites
 export Satellites
-import ..CelestialBody_get_Mass as var"##709"
+import ..CelestialBody_get_Mass as var"##775"
 Mass(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##709"(this))
+        kerbal(this.conn, var"##775"(this))
     end
 @doc "    Mass(this::RemoteTypes.CelestialBody)\n\nThe mass of the body, in kilograms.\n\n" Mass
 export Mass
-import ..CelestialBody_get_GravitationalParameter as var"##710"
+import ..CelestialBody_get_GravitationalParameter as var"##776"
 GravitationalParameter(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##710"(this))
+        kerbal(this.conn, var"##776"(this))
     end
 @doc "    GravitationalParameter(this::RemoteTypes.CelestialBody)\n\nThe standard\ngravitational parameter of the body in m^3s^{-2}.\n\n" GravitationalParameter
 export GravitationalParameter
-import ..CelestialBody_get_SurfaceGravity as var"##711"
+import ..CelestialBody_get_SurfaceGravity as var"##777"
 SurfaceGravity(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##711"(this))
+        kerbal(this.conn, var"##777"(this))
     end
 @doc "    SurfaceGravity(this::RemoteTypes.CelestialBody)\n\nThe acceleration due to gravity at sea level (mean altitude) on the body,\nin m/s^2.\n\n" SurfaceGravity
 export SurfaceGravity
-import ..CelestialBody_get_RotationalPeriod as var"##712"
+import ..CelestialBody_get_RotationalPeriod as var"##778"
 RotationalPeriod(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##712"(this))
+        kerbal(this.conn, var"##778"(this))
     end
 @doc "    RotationalPeriod(this::RemoteTypes.CelestialBody)\n\nThe sidereal rotational period of the body, in seconds.\n\n" RotationalPeriod
 export RotationalPeriod
-import ..CelestialBody_get_RotationalSpeed as var"##713"
+import ..CelestialBody_get_RotationalSpeed as var"##779"
 RotationalSpeed(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##713"(this))
+        kerbal(this.conn, var"##779"(this))
     end
 @doc "    RotationalSpeed(this::RemoteTypes.CelestialBody)\n\nThe rotational speed of the body, in radians per second.\n\n" RotationalSpeed
 export RotationalSpeed
-import ..CelestialBody_get_RotationAngle as var"##714"
+import ..CelestialBody_get_RotationAngle as var"##780"
 RotationAngle(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##714"(this))
+        kerbal(this.conn, var"##780"(this))
     end
 @doc "    RotationAngle(this::RemoteTypes.CelestialBody)\n\nThe current rotation angle of the body, in radians.\nA value between 0 and 2\\pi\n" RotationAngle
 export RotationAngle
-import ..CelestialBody_get_InitialRotation as var"##715"
+import ..CelestialBody_get_InitialRotation as var"##781"
 InitialRotation(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##715"(this))
+        kerbal(this.conn, var"##781"(this))
     end
 @doc "    InitialRotation(this::RemoteTypes.CelestialBody)\n\nThe initial rotation angle of the body (at UT 0), in radians.\nA value between 0 and 2\\pi\n" InitialRotation
 export InitialRotation
-import ..CelestialBody_get_EquatorialRadius as var"##716"
+import ..CelestialBody_get_EquatorialRadius as var"##782"
 EquatorialRadius(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##716"(this))
+        kerbal(this.conn, var"##782"(this))
     end
 @doc "    EquatorialRadius(this::RemoteTypes.CelestialBody)\n\nThe equatorial radius of the body, in meters.\n\n" EquatorialRadius
 export EquatorialRadius
-import ..CelestialBody_get_SphereOfInfluence as var"##717"
+import ..CelestialBody_get_SphereOfInfluence as var"##783"
 SphereOfInfluence(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##717"(this))
+        kerbal(this.conn, var"##783"(this))
     end
 @doc "    SphereOfInfluence(this::RemoteTypes.CelestialBody)\n\nThe radius of the sphere of influence of the body, in meters.\n\n" SphereOfInfluence
 export SphereOfInfluence
-import ..CelestialBody_get_Orbit as var"##718"
+import ..CelestialBody_get_Orbit as var"##784"
 Orbit(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##718"(this))
+        kerbal(this.conn, var"##784"(this))
     end
 @doc "    Orbit(this::RemoteTypes.CelestialBody)\n\nThe orbit of the body.\n\n" Orbit
 export Orbit
-import ..CelestialBody_get_HasAtmosphere as var"##719"
+import ..CelestialBody_get_HasAtmosphere as var"##785"
 HasAtmosphere(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##719"(this))
+        kerbal(this.conn, var"##785"(this))
     end
 @doc "    HasAtmosphere(this::RemoteTypes.CelestialBody)\ntrue if the body has an atmosphere.\n\n" HasAtmosphere
 export HasAtmosphere
-import ..CelestialBody_get_AtmosphereDepth as var"##720"
+import ..CelestialBody_get_AtmosphereDepth as var"##786"
 AtmosphereDepth(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##720"(this))
+        kerbal(this.conn, var"##786"(this))
     end
 @doc "    AtmosphereDepth(this::RemoteTypes.CelestialBody)\n\nThe depth of the atmosphere, in meters.\n\n" AtmosphereDepth
 export AtmosphereDepth
-import ..CelestialBody_get_HasAtmosphericOxygen as var"##721"
+import ..CelestialBody_get_HasAtmosphericOxygen as var"##787"
 HasAtmosphericOxygen(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##721"(this))
+        kerbal(this.conn, var"##787"(this))
     end
 @doc "    HasAtmosphericOxygen(this::RemoteTypes.CelestialBody)\ntrue if there is oxygen in the atmosphere, required for air-breathing engines.\n\n" HasAtmosphericOxygen
 export HasAtmosphericOxygen
-import ..CelestialBody_get_Biomes as var"##722"
+import ..CelestialBody_get_Biomes as var"##788"
 Biomes(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##722"(this))
+        kerbal(this.conn, var"##788"(this))
     end
 @doc "    Biomes(this::RemoteTypes.CelestialBody)\n\nThe biomes present on this body.\n\n" Biomes
 export Biomes
-import ..CelestialBody_get_FlyingHighAltitudeThreshold as var"##723"
+import ..CelestialBody_get_FlyingHighAltitudeThreshold as var"##789"
 FlyingHighAltitudeThreshold(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##723"(this))
+        kerbal(this.conn, var"##789"(this))
     end
 @doc "    FlyingHighAltitudeThreshold(this::RemoteTypes.CelestialBody)\n\nThe altitude, in meters, above which a vessel is considered to be\nflying \"high\" when doing science.\n\n" FlyingHighAltitudeThreshold
 export FlyingHighAltitudeThreshold
-import ..CelestialBody_get_SpaceHighAltitudeThreshold as var"##724"
+import ..CelestialBody_get_SpaceHighAltitudeThreshold as var"##790"
 SpaceHighAltitudeThreshold(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##724"(this))
+        kerbal(this.conn, var"##790"(this))
     end
 @doc "    SpaceHighAltitudeThreshold(this::RemoteTypes.CelestialBody)\n\nThe altitude, in meters, above which a vessel is considered to be\nin \"high\" space when doing science.\n\n" SpaceHighAltitudeThreshold
 export SpaceHighAltitudeThreshold
-import ..CelestialBody_get_ReferenceFrame as var"##725"
+import ..CelestialBody_get_ReferenceFrame as var"##791"
 ReferenceFrame(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##725"(this))
+        kerbal(this.conn, var"##791"(this))
     end
 @doc "    ReferenceFrame(this::RemoteTypes.CelestialBody)\n\nThe reference frame that is fixed relative to the celestial body.\nThe origin is at the center of the body.\nThe axes rotate with the body.The x-axis points from the center of the body\ntowards the intersection of the prime meridian and equator (the\nposition at 0° longitude, 0° latitude).The y-axis points from the center of the body\ntowards the north pole.The z-axis points from the center of the body\ntowards the equator at 90°E longitude.\n" ReferenceFrame
 export ReferenceFrame
-import ..CelestialBody_get_NonRotatingReferenceFrame as var"##726"
+import ..CelestialBody_get_NonRotatingReferenceFrame as var"##792"
 NonRotatingReferenceFrame(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##726"(this))
+        kerbal(this.conn, var"##792"(this))
     end
 @doc "    NonRotatingReferenceFrame(this::RemoteTypes.CelestialBody)\n\nThe reference frame that is fixed relative to this celestial body, and\norientated in a fixed direction (it does not rotate with the body).\nThe origin is at the center of the body.The axes do not rotate.The x-axis points in an arbitrary direction through the\nequator.The y-axis points from the center of the body towards\nthe north pole.The z-axis points in an arbitrary direction through the\nequator.\n" NonRotatingReferenceFrame
 export NonRotatingReferenceFrame
-import ..CelestialBody_get_OrbitalReferenceFrame as var"##727"
+import ..CelestialBody_get_OrbitalReferenceFrame as var"##793"
 OrbitalReferenceFrame(this::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##727"(this))
+        kerbal(this.conn, var"##793"(this))
     end
 @doc "    OrbitalReferenceFrame(this::RemoteTypes.CelestialBody)\n\nThe reference frame that is fixed relative to this celestial body, but\norientated with the body's orbital prograde/normal/radial directions.\nThe origin is at the center of the body.\nThe axes rotate with the orbital prograde/normal/radial\ndirections.The x-axis points in the orbital anti-radial direction.\nThe y-axis points in the orbital prograde direction.\nThe z-axis points in the orbital normal direction.\n\n" OrbitalReferenceFrame
 export OrbitalReferenceFrame
-import ..CommLink_get_Type as var"##728"
+import ..CommLink_get_Type as var"##794"
 Type(this::RemoteTypes.CommLink) = begin
-        kerbal(this.conn, var"##728"(this))
+        kerbal(this.conn, var"##794"(this))
     end
 @doc "    Type(this::RemoteTypes.CommLink)\n\nThe type of link.\n\n" Type
 export Type
-import ..CommLink_get_SignalStrength as var"##729"
+import ..CommLink_get_SignalStrength as var"##795"
 SignalStrength(this::RemoteTypes.CommLink) = begin
-        kerbal(this.conn, var"##729"(this))
+        kerbal(this.conn, var"##795"(this))
     end
 @doc "    SignalStrength(this::RemoteTypes.CommLink)\n\nSignal strength of the link.\n\n" SignalStrength
 export SignalStrength
-import ..CommLink_get_Start as var"##730"
+import ..CommLink_get_Start as var"##796"
 Start(this::RemoteTypes.CommLink) = begin
-        kerbal(this.conn, var"##730"(this))
+        kerbal(this.conn, var"##796"(this))
     end
 @doc "    Start(this::RemoteTypes.CommLink)\n\nStart point of the link.\n\n" Start
 export Start
-import ..CommLink_get_End as var"##731"
+import ..CommLink_get_End as var"##797"
 End(this::RemoteTypes.CommLink) = begin
-        kerbal(this.conn, var"##731"(this))
+        kerbal(this.conn, var"##797"(this))
     end
 @doc "    End(this::RemoteTypes.CommLink)\n\nStart point of the link.\n\n" End
 export End
-import ..CommNode_get_Name as var"##732"
+import ..CommNode_get_Name as var"##798"
 Name(this::RemoteTypes.CommNode) = begin
-        kerbal(this.conn, var"##732"(this))
+        kerbal(this.conn, var"##798"(this))
     end
 @doc "    Name(this::RemoteTypes.CommNode)\n\nName of the communication node.\n\n" Name
 export Name
-import ..CommNode_get_IsHome as var"##733"
+import ..CommNode_get_IsHome as var"##799"
 IsHome(this::RemoteTypes.CommNode) = begin
-        kerbal(this.conn, var"##733"(this))
+        kerbal(this.conn, var"##799"(this))
     end
 @doc "    IsHome(this::RemoteTypes.CommNode)\n\nWhether the communication node is on Kerbin.\n\n" IsHome
 export IsHome
-import ..CommNode_get_IsControlPoint as var"##734"
+import ..CommNode_get_IsControlPoint as var"##800"
 IsControlPoint(this::RemoteTypes.CommNode) = begin
-        kerbal(this.conn, var"##734"(this))
+        kerbal(this.conn, var"##800"(this))
     end
 @doc "    IsControlPoint(this::RemoteTypes.CommNode)\n\nWhether the communication node is a control point, for example a manned vessel.\n\n" IsControlPoint
 export IsControlPoint
-import ..CommNode_get_IsVessel as var"##735"
+import ..CommNode_get_IsVessel as var"##801"
 IsVessel(this::RemoteTypes.CommNode) = begin
-        kerbal(this.conn, var"##735"(this))
+        kerbal(this.conn, var"##801"(this))
     end
 @doc "    IsVessel(this::RemoteTypes.CommNode)\n\nWhether the communication node is a vessel.\n\n" IsVessel
 export IsVessel
-import ..CommNode_get_Vessel as var"##736"
+import ..CommNode_get_Vessel as var"##802"
 Vessel(this::RemoteTypes.CommNode) = begin
-        kerbal(this.conn, var"##736"(this))
+        kerbal(this.conn, var"##802"(this))
     end
 @doc "    Vessel(this::RemoteTypes.CommNode)\n\nThe vessel for this communication node.\n\n" Vessel
 export Vessel
-import ..Comms_get_CanCommunicate as var"##737"
+import ..Comms_get_CanCommunicate as var"##803"
 CanCommunicate(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##737"(this))
+        kerbal(this.conn, var"##803"(this))
     end
 @doc "    CanCommunicate(this::RemoteTypes.Comms)\n\nWhether the vessel can communicate with KSC.\n\n" CanCommunicate
 export CanCommunicate
-import ..Comms_get_CanTransmitScience as var"##738"
+import ..Comms_get_CanTransmitScience as var"##804"
 CanTransmitScience(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##738"(this))
+        kerbal(this.conn, var"##804"(this))
     end
 @doc "    CanTransmitScience(this::RemoteTypes.Comms)\n\nWhether the vessel can transmit science data to KSC.\n\n" CanTransmitScience
 export CanTransmitScience
-import ..Comms_get_SignalStrength as var"##739"
+import ..Comms_get_SignalStrength as var"##805"
 SignalStrength(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##739"(this))
+        kerbal(this.conn, var"##805"(this))
     end
 @doc "    SignalStrength(this::RemoteTypes.Comms)\n\nSignal strength to KSC.\n\n" SignalStrength
 export SignalStrength
-import ..Comms_get_SignalDelay as var"##740"
+import ..Comms_get_SignalDelay as var"##806"
 SignalDelay(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##740"(this))
+        kerbal(this.conn, var"##806"(this))
     end
 @doc "    SignalDelay(this::RemoteTypes.Comms)\n\nSignal delay to KSC in seconds.\n\n" SignalDelay
 export SignalDelay
-import ..Comms_get_Power as var"##741"
+import ..Comms_get_Power as var"##807"
 Power(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##741"(this))
+        kerbal(this.conn, var"##807"(this))
     end
 @doc "    Power(this::RemoteTypes.Comms)\n\nThe combined power of all active antennae on the vessel.\n\n" Power
 export Power
-import ..Comms_get_ControlPath as var"##742"
+import ..Comms_get_ControlPath as var"##808"
 ControlPath(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##742"(this))
+        kerbal(this.conn, var"##808"(this))
     end
 @doc "    ControlPath(this::RemoteTypes.Comms)\n\nThe communication path used to control the vessel.\n\n" ControlPath
 export ControlPath
-import ..Contract_Cancel as var"##743"
+import ..Contract_Cancel as var"##809"
 Cancel(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##743"(this))
+        kerbal(this.conn, var"##809"(this))
     end
 @doc "    Cancel(this::RemoteTypes.Contract)\n\nCancel an active contract.\n\n" Cancel
 export Cancel
-import ..Contract_Accept as var"##744"
+import ..Contract_Accept as var"##810"
 Accept(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##744"(this))
+        kerbal(this.conn, var"##810"(this))
     end
 @doc "    Accept(this::RemoteTypes.Contract)\n\nAccept an offered contract.\n\n" Accept
 export Accept
-import ..Contract_Decline as var"##745"
+import ..Contract_Decline as var"##811"
 Decline(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##745"(this))
+        kerbal(this.conn, var"##811"(this))
     end
 @doc "    Decline(this::RemoteTypes.Contract)\n\nDecline an offered contract.\n\n" Decline
 export Decline
-import ..Contract_get_Type as var"##746"
+import ..Contract_get_Type as var"##812"
 Type(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##746"(this))
+        kerbal(this.conn, var"##812"(this))
     end
 @doc "    Type(this::RemoteTypes.Contract)\n\nType of the contract.\n\n" Type
 export Type
-import ..Contract_get_Title as var"##747"
+import ..Contract_get_Title as var"##813"
 Title(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##747"(this))
+        kerbal(this.conn, var"##813"(this))
     end
 @doc "    Title(this::RemoteTypes.Contract)\n\nTitle of the contract.\n\n" Title
 export Title
-import ..Contract_get_Description as var"##748"
+import ..Contract_get_Description as var"##814"
 Description(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##748"(this))
+        kerbal(this.conn, var"##814"(this))
     end
 @doc "    Description(this::RemoteTypes.Contract)\n\nDescription of the contract.\n\n" Description
 export Description
-import ..Contract_get_Notes as var"##749"
+import ..Contract_get_Notes as var"##815"
 Notes(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##749"(this))
+        kerbal(this.conn, var"##815"(this))
     end
 @doc "    Notes(this::RemoteTypes.Contract)\n\nNotes for the contract.\n\n" Notes
 export Notes
-import ..Contract_get_Synopsis as var"##750"
+import ..Contract_get_Synopsis as var"##816"
 Synopsis(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##750"(this))
+        kerbal(this.conn, var"##816"(this))
     end
 @doc "    Synopsis(this::RemoteTypes.Contract)\n\nSynopsis for the contract.\n\n" Synopsis
 export Synopsis
-import ..Contract_get_Keywords as var"##751"
+import ..Contract_get_Keywords as var"##817"
 Keywords(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##751"(this))
+        kerbal(this.conn, var"##817"(this))
     end
 @doc "    Keywords(this::RemoteTypes.Contract)\n\nKeywords for the contract.\n\n" Keywords
 export Keywords
-import ..Contract_get_State as var"##752"
+import ..Contract_get_State as var"##818"
 State(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##752"(this))
+        kerbal(this.conn, var"##818"(this))
     end
 @doc "    State(this::RemoteTypes.Contract)\n\nState of the contract.\n\n" State
 export State
-import ..Contract_get_Active as var"##753"
+import ..Contract_get_Active as var"##819"
 Active(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##753"(this))
+        kerbal(this.conn, var"##819"(this))
     end
 @doc "    Active(this::RemoteTypes.Contract)\n\nWhether the contract is active.\n\n" Active
 export Active
-import ..Contract_get_Failed as var"##754"
+import ..Contract_get_Failed as var"##820"
 Failed(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##754"(this))
+        kerbal(this.conn, var"##820"(this))
     end
 @doc "    Failed(this::RemoteTypes.Contract)\n\nWhether the contract has been failed.\n\n" Failed
 export Failed
-import ..Contract_get_Seen as var"##755"
+import ..Contract_get_Seen as var"##821"
 Seen(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##755"(this))
+        kerbal(this.conn, var"##821"(this))
     end
 @doc "    Seen(this::RemoteTypes.Contract)\n\nWhether the contract has been seen.\n\n" Seen
 export Seen
-import ..Contract_get_Read as var"##756"
+import ..Contract_get_Read as var"##822"
 Read(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##756"(this))
+        kerbal(this.conn, var"##822"(this))
     end
 @doc "    Read(this::RemoteTypes.Contract)\n\nWhether the contract has been read.\n\n" Read
 export Read
-import ..Contract_get_CanBeCanceled as var"##757"
+import ..Contract_get_CanBeCanceled as var"##823"
 CanBeCanceled(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##757"(this))
+        kerbal(this.conn, var"##823"(this))
     end
 @doc "    CanBeCanceled(this::RemoteTypes.Contract)\n\nWhether the contract can be canceled.\n\n" CanBeCanceled
 export CanBeCanceled
-import ..Contract_get_CanBeDeclined as var"##758"
+import ..Contract_get_CanBeDeclined as var"##824"
 CanBeDeclined(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##758"(this))
+        kerbal(this.conn, var"##824"(this))
     end
 @doc "    CanBeDeclined(this::RemoteTypes.Contract)\n\nWhether the contract can be declined.\n\n" CanBeDeclined
 export CanBeDeclined
-import ..Contract_get_CanBeFailed as var"##759"
+import ..Contract_get_CanBeFailed as var"##825"
 CanBeFailed(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##759"(this))
+        kerbal(this.conn, var"##825"(this))
     end
 @doc "    CanBeFailed(this::RemoteTypes.Contract)\n\nWhether the contract can be failed.\n\n" CanBeFailed
 export CanBeFailed
-import ..Contract_get_FundsAdvance as var"##760"
+import ..Contract_get_FundsAdvance as var"##826"
 FundsAdvance(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##760"(this))
+        kerbal(this.conn, var"##826"(this))
     end
 @doc "    FundsAdvance(this::RemoteTypes.Contract)\n\nFunds received when accepting the contract.\n\n" FundsAdvance
 export FundsAdvance
-import ..Contract_get_FundsCompletion as var"##761"
+import ..Contract_get_FundsCompletion as var"##827"
 FundsCompletion(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##761"(this))
+        kerbal(this.conn, var"##827"(this))
     end
 @doc "    FundsCompletion(this::RemoteTypes.Contract)\n\nFunds received on completion of the contract.\n\n" FundsCompletion
 export FundsCompletion
-import ..Contract_get_FundsFailure as var"##762"
+import ..Contract_get_FundsFailure as var"##828"
 FundsFailure(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##762"(this))
+        kerbal(this.conn, var"##828"(this))
     end
 @doc "    FundsFailure(this::RemoteTypes.Contract)\n\nFunds lost if the contract is failed.\n\n" FundsFailure
 export FundsFailure
-import ..Contract_get_ReputationCompletion as var"##763"
+import ..Contract_get_ReputationCompletion as var"##829"
 ReputationCompletion(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##763"(this))
+        kerbal(this.conn, var"##829"(this))
     end
 @doc "    ReputationCompletion(this::RemoteTypes.Contract)\n\nReputation gained on completion of the contract.\n\n" ReputationCompletion
 export ReputationCompletion
-import ..Contract_get_ReputationFailure as var"##764"
+import ..Contract_get_ReputationFailure as var"##830"
 ReputationFailure(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##764"(this))
+        kerbal(this.conn, var"##830"(this))
     end
 @doc "    ReputationFailure(this::RemoteTypes.Contract)\n\nReputation lost if the contract is failed.\n\n" ReputationFailure
 export ReputationFailure
-import ..Contract_get_ScienceCompletion as var"##765"
+import ..Contract_get_ScienceCompletion as var"##831"
 ScienceCompletion(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##765"(this))
+        kerbal(this.conn, var"##831"(this))
     end
 @doc "    ScienceCompletion(this::RemoteTypes.Contract)\n\nScience gained on completion of the contract.\n\n" ScienceCompletion
 export ScienceCompletion
-import ..Contract_get_Parameters as var"##766"
+import ..Contract_get_Parameters as var"##832"
 Parameters(this::RemoteTypes.Contract) = begin
-        kerbal(this.conn, var"##766"(this))
+        kerbal(this.conn, var"##832"(this))
     end
 @doc "    Parameters(this::RemoteTypes.Contract)\n\nParameters for the contract.\n\n" Parameters
 export Parameters
-import ..ContractManager_get_Types as var"##767"
+import ..ContractManager_get_Types as var"##833"
 Types(this::RemoteTypes.ContractManager) = begin
-        kerbal(this.conn, var"##767"(this))
+        kerbal(this.conn, var"##833"(this))
     end
 @doc "    Types(this::RemoteTypes.ContractManager)\n\nA list of all contract types.\n\n" Types
 export Types
-import ..ContractManager_get_AllContracts as var"##768"
+import ..ContractManager_get_AllContracts as var"##834"
 AllContracts(this::RemoteTypes.ContractManager) = begin
-        kerbal(this.conn, var"##768"(this))
+        kerbal(this.conn, var"##834"(this))
     end
 @doc "    AllContracts(this::RemoteTypes.ContractManager)\n\nA list of all contracts.\n\n" AllContracts
 export AllContracts
-import ..ContractManager_get_ActiveContracts as var"##769"
+import ..ContractManager_get_ActiveContracts as var"##835"
 ActiveContracts(this::RemoteTypes.ContractManager) = begin
-        kerbal(this.conn, var"##769"(this))
+        kerbal(this.conn, var"##835"(this))
     end
 @doc "    ActiveContracts(this::RemoteTypes.ContractManager)\n\nA list of all active contracts.\n\n" ActiveContracts
 export ActiveContracts
-import ..ContractManager_get_OfferedContracts as var"##770"
+import ..ContractManager_get_OfferedContracts as var"##836"
 OfferedContracts(this::RemoteTypes.ContractManager) = begin
-        kerbal(this.conn, var"##770"(this))
+        kerbal(this.conn, var"##836"(this))
     end
 @doc "    OfferedContracts(this::RemoteTypes.ContractManager)\n\nA list of all offered, but unaccepted, contracts.\n\n" OfferedContracts
 export OfferedContracts
-import ..ContractManager_get_CompletedContracts as var"##771"
+import ..ContractManager_get_CompletedContracts as var"##837"
 CompletedContracts(this::RemoteTypes.ContractManager) = begin
-        kerbal(this.conn, var"##771"(this))
+        kerbal(this.conn, var"##837"(this))
     end
 @doc "    CompletedContracts(this::RemoteTypes.ContractManager)\n\nA list of all completed contracts.\n\n" CompletedContracts
 export CompletedContracts
-import ..ContractManager_get_FailedContracts as var"##772"
+import ..ContractManager_get_FailedContracts as var"##838"
 FailedContracts(this::RemoteTypes.ContractManager) = begin
-        kerbal(this.conn, var"##772"(this))
+        kerbal(this.conn, var"##838"(this))
     end
 @doc "    FailedContracts(this::RemoteTypes.ContractManager)\n\nA list of all failed contracts.\n\n" FailedContracts
 export FailedContracts
-import ..ContractParameter_get_Title as var"##773"
+import ..ContractParameter_get_Title as var"##839"
 Title(this::RemoteTypes.ContractParameter) = begin
-        kerbal(this.conn, var"##773"(this))
+        kerbal(this.conn, var"##839"(this))
     end
 @doc "    Title(this::RemoteTypes.ContractParameter)\n\nTitle of the parameter.\n\n" Title
 export Title
-import ..ContractParameter_get_Notes as var"##774"
+import ..ContractParameter_get_Notes as var"##840"
 Notes(this::RemoteTypes.ContractParameter) = begin
-        kerbal(this.conn, var"##774"(this))
+        kerbal(this.conn, var"##840"(this))
     end
 @doc "    Notes(this::RemoteTypes.ContractParameter)\n\nNotes for the parameter.\n\n" Notes
 export Notes
-import ..ContractParameter_get_Children as var"##775"
+import ..ContractParameter_get_Children as var"##841"
 Children(this::RemoteTypes.ContractParameter) = begin
-        kerbal(this.conn, var"##775"(this))
+        kerbal(this.conn, var"##841"(this))
     end
 @doc "    Children(this::RemoteTypes.ContractParameter)\n\nChild contract parameters.\n\n" Children
 export Children
-import ..ContractParameter_get_Completed as var"##776"
+import ..ContractParameter_get_Completed as var"##842"
 Completed(this::RemoteTypes.ContractParameter) = begin
-        kerbal(this.conn, var"##776"(this))
+        kerbal(this.conn, var"##842"(this))
     end
 @doc "    Completed(this::RemoteTypes.ContractParameter)\n\nWhether the parameter has been completed.\n\n" Completed
 export Completed
-import ..ContractParameter_get_Failed as var"##777"
+import ..ContractParameter_get_Failed as var"##843"
 Failed(this::RemoteTypes.ContractParameter) = begin
-        kerbal(this.conn, var"##777"(this))
+        kerbal(this.conn, var"##843"(this))
     end
 @doc "    Failed(this::RemoteTypes.ContractParameter)\n\nWhether the parameter has been failed.\n\n" Failed
 export Failed
-import ..ContractParameter_get_Optional as var"##778"
+import ..ContractParameter_get_Optional as var"##844"
 Optional(this::RemoteTypes.ContractParameter) = begin
-        kerbal(this.conn, var"##778"(this))
+        kerbal(this.conn, var"##844"(this))
     end
 @doc "    Optional(this::RemoteTypes.ContractParameter)\n\nWhether the contract parameter is optional.\n\n" Optional
 export Optional
-import ..ContractParameter_get_FundsCompletion as var"##779"
+import ..ContractParameter_get_FundsCompletion as var"##845"
 FundsCompletion(this::RemoteTypes.ContractParameter) = begin
-        kerbal(this.conn, var"##779"(this))
+        kerbal(this.conn, var"##845"(this))
     end
 @doc "    FundsCompletion(this::RemoteTypes.ContractParameter)\n\nFunds received on completion of the contract parameter.\n\n" FundsCompletion
 export FundsCompletion
-import ..ContractParameter_get_FundsFailure as var"##780"
+import ..ContractParameter_get_FundsFailure as var"##846"
 FundsFailure(this::RemoteTypes.ContractParameter) = begin
-        kerbal(this.conn, var"##780"(this))
+        kerbal(this.conn, var"##846"(this))
     end
 @doc "    FundsFailure(this::RemoteTypes.ContractParameter)\n\nFunds lost if the contract parameter is failed.\n\n" FundsFailure
 export FundsFailure
-import ..ContractParameter_get_ReputationCompletion as var"##781"
+import ..ContractParameter_get_ReputationCompletion as var"##847"
 ReputationCompletion(this::RemoteTypes.ContractParameter) = begin
-        kerbal(this.conn, var"##781"(this))
+        kerbal(this.conn, var"##847"(this))
     end
 @doc "    ReputationCompletion(this::RemoteTypes.ContractParameter)\n\nReputation gained on completion of the contract parameter.\n\n" ReputationCompletion
 export ReputationCompletion
-import ..ContractParameter_get_ReputationFailure as var"##782"
+import ..ContractParameter_get_ReputationFailure as var"##848"
 ReputationFailure(this::RemoteTypes.ContractParameter) = begin
-        kerbal(this.conn, var"##782"(this))
+        kerbal(this.conn, var"##848"(this))
     end
 @doc "    ReputationFailure(this::RemoteTypes.ContractParameter)\n\nReputation lost if the contract parameter is failed.\n\n" ReputationFailure
 export ReputationFailure
-import ..ContractParameter_get_ScienceCompletion as var"##783"
+import ..ContractParameter_get_ScienceCompletion as var"##849"
 ScienceCompletion(this::RemoteTypes.ContractParameter) = begin
-        kerbal(this.conn, var"##783"(this))
+        kerbal(this.conn, var"##849"(this))
     end
 @doc "    ScienceCompletion(this::RemoteTypes.ContractParameter)\n\nScience gained on completion of the contract parameter.\n\n" ScienceCompletion
 export ScienceCompletion
-import ..Control_ActivateNextStage as var"##784"
+import ..Control_ActivateNextStage as var"##850"
 ActivateNextStage(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##784"(this))
+        kerbal(this.conn, var"##850"(this))
     end
 @doc "    ActivateNextStage(this::RemoteTypes.Control)\n\nActivates the next stage. Equivalent to pressing the space bar in-game.\n\n# Returns\nA list of vessel objects that are jettisoned from the active vessel.\n# Remarks\n When called, the active vessel may change. It is therefore possible that, after calling this function, the object(s) returned by previous call(s) to  no longer refer to the active vessel. Throws an exception if staging is locked. \n" ActivateNextStage
 export ActivateNextStage
-import ..Control_GetActionGroup as var"##785"
+import ..Control_GetActionGroup as var"##851"
 GetActionGroup(this::RemoteTypes.Control, group::UInt32) = begin
-        kerbal(this.conn, var"##785"(this, group))
+        kerbal(this.conn, var"##851"(this, group))
     end
 @doc "    GetActionGroup(this::RemoteTypes.Control, group::UInt32)\n\nReturns true if the given action group is enabled.\n\n# Arguments\n- `group::UInt32`:  A number between 0 and 9 inclusive, or between 0 and 250 inclusive when the Extended Action Groups mod is installed. \n" GetActionGroup
 export GetActionGroup
-import ..Control_SetActionGroup as var"##786"
+import ..Control_SetActionGroup as var"##852"
 SetActionGroup(this::RemoteTypes.Control, group::UInt32, state::Bool) = begin
-        kerbal(this.conn, var"##786"(this, group, state))
+        kerbal(this.conn, var"##852"(this, group, state))
     end
 @doc "    SetActionGroup(this::RemoteTypes.Control, group::UInt32, state::Bool)\n\nSets the state of the given action group.\n\n# Arguments\n- `group::UInt32`:  A number between 0 and 9 inclusive, or between 0 and 250 inclusive when the Extended Action Groups mod is installed. \n- `state::Bool`: \n" SetActionGroup
 export SetActionGroup
-import ..Control_ToggleActionGroup as var"##787"
+import ..Control_ToggleActionGroup as var"##853"
 ToggleActionGroup(this::RemoteTypes.Control, group::UInt32) = begin
-        kerbal(this.conn, var"##787"(this, group))
+        kerbal(this.conn, var"##853"(this, group))
     end
 @doc "    ToggleActionGroup(this::RemoteTypes.Control, group::UInt32)\n\nToggles the state of the given action group.\n\n# Arguments\n- `group::UInt32`:  A number between 0 and 9 inclusive, or between 0 and 250 inclusive when the Extended Action Groups mod is installed. \n" ToggleActionGroup
 export ToggleActionGroup
-import ..Control_AddNode as var"##788"
+import ..Control_AddNode as var"##854"
 AddNode(this::RemoteTypes.Control, ut::Float64, prograde::Float32 = getJuliaValue(this.conn, UInt8[0x00, 0x00, 0x00, 0x00], Float32), normal::Float32 = getJuliaValue(this.conn, UInt8[0x00, 0x00, 0x00, 0x00], Float32), radial::Float32 = getJuliaValue(this.conn, UInt8[0x00, 0x00, 0x00, 0x00], Float32)) = begin
-        kerbal(this.conn, var"##788"(this, ut, prograde, normal, radial))
+        kerbal(this.conn, var"##854"(this, ut, prograde, normal, radial))
     end
 @doc "    AddNode(this::RemoteTypes.Control, ut::Float64, prograde::Float32, normal::Float32, radial::Float32)\n\nCreates a maneuver node at the given universal time, and returns a\n object that can be used to modify it.\nOptionally sets the magnitude of the delta-v for the maneuver node\nin the prograde, normal and radial directions.\n\n# Arguments\n- `ut::Float64`: Universal time of the maneuver node.\n- `prograde::Float32`: Delta-v in the prograde direction.\n- `normal::Float32`: Delta-v in the normal direction.\n- `radial::Float32`: Delta-v in the radial direction.\n" AddNode
 export AddNode
-import ..Control_RemoveNodes as var"##789"
+import ..Control_RemoveNodes as var"##855"
 RemoveNodes(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##789"(this))
+        kerbal(this.conn, var"##855"(this))
     end
 @doc "    RemoveNodes(this::RemoteTypes.Control)\n\nRemove all maneuver nodes.\n\n" RemoveNodes
 export RemoveNodes
-import ..Control_get_State as var"##790"
+import ..Control_get_State as var"##856"
 State(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##790"(this))
+        kerbal(this.conn, var"##856"(this))
     end
 @doc "    State(this::RemoteTypes.Control)\n\nThe control state of the vessel.\n\n" State
 export State
-import ..Control_get_Source as var"##791"
+import ..Control_get_Source as var"##857"
 Source(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##791"(this))
+        kerbal(this.conn, var"##857"(this))
     end
 @doc "    Source(this::RemoteTypes.Control)\n\nThe source of the vessels control, for example by a kerbal or a probe core.\n\n" Source
 export Source
-import ..Control_get_SAS as var"##792"
+import ..Control_get_SAS as var"##858"
 SAS(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##792"(this))
+        kerbal(this.conn, var"##858"(this))
     end
 @doc "    SAS(this::RemoteTypes.Control)\n\nThe state of SAS.\n\n# Remarks\nEquivalent to \n" SAS
 export SAS
-import ..Control_set_SAS as var"##793"
+import ..Control_set_SAS as var"##859"
 SAS!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##793"(this, value))
+        kerbal(this.conn, var"##859"(this, value))
     end
 @doc "    SAS!(this::RemoteTypes.Control, value::Bool)\n\nThe state of SAS.\n\n# Remarks\nEquivalent to \n" SAS!
 export SAS!
-import ..Control_get_SASMode as var"##794"
+import ..Control_get_SASMode as var"##860"
 SASMode(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##794"(this))
+        kerbal(this.conn, var"##860"(this))
     end
 @doc "    SASMode(this::RemoteTypes.Control)\n\nThe current .\nThese modes are equivalent to the mode buttons to\nthe left of the navball that appear when SAS is enabled.\n\n# Remarks\nEquivalent to \n" SASMode
 export SASMode
-import ..Control_set_SASMode as var"##795"
+import ..Control_set_SASMode as var"##861"
 SASMode!(this::RemoteTypes.Control, value::ESASMode) = begin
-        kerbal(this.conn, var"##795"(this, value))
+        kerbal(this.conn, var"##861"(this, value))
     end
 @doc "    SASMode!(this::RemoteTypes.Control, value::ESASMode)\n\nThe current .\nThese modes are equivalent to the mode buttons to\nthe left of the navball that appear when SAS is enabled.\n\n# Remarks\nEquivalent to \n" SASMode!
 export SASMode!
-import ..Control_get_SpeedMode as var"##796"
+import ..Control_get_SpeedMode as var"##862"
 SpeedMode(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##796"(this))
+        kerbal(this.conn, var"##862"(this))
     end
 @doc "    SpeedMode(this::RemoteTypes.Control)\n\nThe current  of the navball.\nThis is the mode displayed next to the speed at the top of the navball.\n\n" SpeedMode
 export SpeedMode
-import ..Control_set_SpeedMode as var"##797"
+import ..Control_set_SpeedMode as var"##863"
 SpeedMode!(this::RemoteTypes.Control, value::ESpeedMode) = begin
-        kerbal(this.conn, var"##797"(this, value))
+        kerbal(this.conn, var"##863"(this, value))
     end
 @doc "    SpeedMode!(this::RemoteTypes.Control, value::ESpeedMode)\n\nThe current  of the navball.\nThis is the mode displayed next to the speed at the top of the navball.\n\n" SpeedMode!
 export SpeedMode!
-import ..Control_get_RCS as var"##798"
+import ..Control_get_RCS as var"##864"
 RCS(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##798"(this))
+        kerbal(this.conn, var"##864"(this))
     end
 @doc "    RCS(this::RemoteTypes.Control)\n\nThe state of RCS.\n\n" RCS
 export RCS
-import ..Control_set_RCS as var"##799"
+import ..Control_set_RCS as var"##865"
 RCS!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##799"(this, value))
+        kerbal(this.conn, var"##865"(this, value))
     end
 @doc "    RCS!(this::RemoteTypes.Control, value::Bool)\n\nThe state of RCS.\n\n" RCS!
 export RCS!
-import ..Control_get_ReactionWheels as var"##800"
+import ..Control_get_ReactionWheels as var"##866"
 ReactionWheels(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##800"(this))
+        kerbal(this.conn, var"##866"(this))
     end
 @doc "    ReactionWheels(this::RemoteTypes.Control)\n\nReturns whether all reactive wheels on the vessel are active,\nand sets the active state of all reaction wheels.\nSee .\n\n" ReactionWheels
 export ReactionWheels
-import ..Control_set_ReactionWheels as var"##801"
+import ..Control_set_ReactionWheels as var"##867"
 ReactionWheels!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##801"(this, value))
+        kerbal(this.conn, var"##867"(this, value))
     end
 @doc "    ReactionWheels!(this::RemoteTypes.Control, value::Bool)\n\nReturns whether all reactive wheels on the vessel are active,\nand sets the active state of all reaction wheels.\nSee .\n\n" ReactionWheels!
 export ReactionWheels!
-import ..Control_get_Gear as var"##802"
+import ..Control_get_Gear as var"##868"
 Gear(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##802"(this))
+        kerbal(this.conn, var"##868"(this))
     end
 @doc "    Gear(this::RemoteTypes.Control)\n\nThe state of the landing gear/legs.\n\n" Gear
 export Gear
-import ..Control_set_Gear as var"##803"
+import ..Control_set_Gear as var"##869"
 Gear!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##803"(this, value))
+        kerbal(this.conn, var"##869"(this, value))
     end
 @doc "    Gear!(this::RemoteTypes.Control, value::Bool)\n\nThe state of the landing gear/legs.\n\n" Gear!
 export Gear!
-import ..Control_get_Legs as var"##804"
+import ..Control_get_Legs as var"##870"
 Legs(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##804"(this))
+        kerbal(this.conn, var"##870"(this))
     end
 @doc "    Legs(this::RemoteTypes.Control)\n\nReturns whether all landing legs on the vessel are deployed,\nand sets the deployment state of all landing legs.\nDoes not include wheels (for example landing gear).\nSee .\n\n" Legs
 export Legs
-import ..Control_set_Legs as var"##805"
+import ..Control_set_Legs as var"##871"
 Legs!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##805"(this, value))
+        kerbal(this.conn, var"##871"(this, value))
     end
 @doc "    Legs!(this::RemoteTypes.Control, value::Bool)\n\nReturns whether all landing legs on the vessel are deployed,\nand sets the deployment state of all landing legs.\nDoes not include wheels (for example landing gear).\nSee .\n\n" Legs!
 export Legs!
-import ..Control_get_Wheels as var"##806"
+import ..Control_get_Wheels as var"##872"
 Wheels(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##806"(this))
+        kerbal(this.conn, var"##872"(this))
     end
 @doc "    Wheels(this::RemoteTypes.Control)\n\nReturns whether all wheels on the vessel are deployed,\nand sets the deployment state of all wheels.\nDoes not include landing legs.\nSee .\n\n" Wheels
 export Wheels
-import ..Control_set_Wheels as var"##807"
+import ..Control_set_Wheels as var"##873"
 Wheels!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##807"(this, value))
+        kerbal(this.conn, var"##873"(this, value))
     end
 @doc "    Wheels!(this::RemoteTypes.Control, value::Bool)\n\nReturns whether all wheels on the vessel are deployed,\nand sets the deployment state of all wheels.\nDoes not include landing legs.\nSee .\n\n" Wheels!
 export Wheels!
-import ..Control_get_Lights as var"##808"
+import ..Control_get_Lights as var"##874"
 Lights(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##808"(this))
+        kerbal(this.conn, var"##874"(this))
     end
 @doc "    Lights(this::RemoteTypes.Control)\n\nThe state of the lights.\n\n" Lights
 export Lights
-import ..Control_set_Lights as var"##809"
+import ..Control_set_Lights as var"##875"
 Lights!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##809"(this, value))
+        kerbal(this.conn, var"##875"(this, value))
     end
 @doc "    Lights!(this::RemoteTypes.Control, value::Bool)\n\nThe state of the lights.\n\n" Lights!
 export Lights!
-import ..Control_get_Brakes as var"##810"
+import ..Control_get_Brakes as var"##876"
 Brakes(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##810"(this))
+        kerbal(this.conn, var"##876"(this))
     end
 @doc "    Brakes(this::RemoteTypes.Control)\n\nThe state of the wheel brakes.\n\n" Brakes
 export Brakes
-import ..Control_set_Brakes as var"##811"
+import ..Control_set_Brakes as var"##877"
 Brakes!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##811"(this, value))
+        kerbal(this.conn, var"##877"(this, value))
     end
 @doc "    Brakes!(this::RemoteTypes.Control, value::Bool)\n\nThe state of the wheel brakes.\n\n" Brakes!
 export Brakes!
-import ..Control_get_Antennas as var"##812"
+import ..Control_get_Antennas as var"##878"
 Antennas(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##812"(this))
+        kerbal(this.conn, var"##878"(this))
     end
 @doc "    Antennas(this::RemoteTypes.Control)\n\nReturns whether all antennas on the vessel are deployed,\nand sets the deployment state of all antennas.\nSee .\n\n" Antennas
 export Antennas
-import ..Control_set_Antennas as var"##813"
+import ..Control_set_Antennas as var"##879"
 Antennas!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##813"(this, value))
+        kerbal(this.conn, var"##879"(this, value))
     end
 @doc "    Antennas!(this::RemoteTypes.Control, value::Bool)\n\nReturns whether all antennas on the vessel are deployed,\nand sets the deployment state of all antennas.\nSee .\n\n" Antennas!
 export Antennas!
-import ..Control_get_CargoBays as var"##814"
+import ..Control_get_CargoBays as var"##880"
 CargoBays(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##814"(this))
+        kerbal(this.conn, var"##880"(this))
     end
 @doc "    CargoBays(this::RemoteTypes.Control)\n\nReturns whether any of the cargo bays on the vessel are open,\nand sets the open state of all cargo bays.\nSee .\n\n" CargoBays
 export CargoBays
-import ..Control_set_CargoBays as var"##815"
+import ..Control_set_CargoBays as var"##881"
 CargoBays!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##815"(this, value))
+        kerbal(this.conn, var"##881"(this, value))
     end
 @doc "    CargoBays!(this::RemoteTypes.Control, value::Bool)\n\nReturns whether any of the cargo bays on the vessel are open,\nand sets the open state of all cargo bays.\nSee .\n\n" CargoBays!
 export CargoBays!
-import ..Control_get_Intakes as var"##816"
+import ..Control_get_Intakes as var"##882"
 Intakes(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##816"(this))
+        kerbal(this.conn, var"##882"(this))
     end
 @doc "    Intakes(this::RemoteTypes.Control)\n\nReturns whether all of the air intakes on the vessel are open,\nand sets the open state of all air intakes.\nSee .\n\n" Intakes
 export Intakes
-import ..Control_set_Intakes as var"##817"
+import ..Control_set_Intakes as var"##883"
 Intakes!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##817"(this, value))
+        kerbal(this.conn, var"##883"(this, value))
     end
 @doc "    Intakes!(this::RemoteTypes.Control, value::Bool)\n\nReturns whether all of the air intakes on the vessel are open,\nand sets the open state of all air intakes.\nSee .\n\n" Intakes!
 export Intakes!
-import ..Control_get_Parachutes as var"##818"
+import ..Control_get_Parachutes as var"##884"
 Parachutes(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##818"(this))
+        kerbal(this.conn, var"##884"(this))
     end
 @doc "    Parachutes(this::RemoteTypes.Control)\n\nReturns whether all parachutes on the vessel are deployed,\nand sets the deployment state of all parachutes.\nCannot be set to false.\nSee .\n\n" Parachutes
 export Parachutes
-import ..Control_set_Parachutes as var"##819"
+import ..Control_set_Parachutes as var"##885"
 Parachutes!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##819"(this, value))
+        kerbal(this.conn, var"##885"(this, value))
     end
 @doc "    Parachutes!(this::RemoteTypes.Control, value::Bool)\n\nReturns whether all parachutes on the vessel are deployed,\nand sets the deployment state of all parachutes.\nCannot be set to false.\nSee .\n\n" Parachutes!
 export Parachutes!
-import ..Control_get_Radiators as var"##820"
+import ..Control_get_Radiators as var"##886"
 Radiators(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##820"(this))
+        kerbal(this.conn, var"##886"(this))
     end
 @doc "    Radiators(this::RemoteTypes.Control)\n\nReturns whether all radiators on the vessel are deployed,\nand sets the deployment state of all radiators.\nSee .\n\n" Radiators
 export Radiators
-import ..Control_set_Radiators as var"##821"
+import ..Control_set_Radiators as var"##887"
 Radiators!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##821"(this, value))
+        kerbal(this.conn, var"##887"(this, value))
     end
 @doc "    Radiators!(this::RemoteTypes.Control, value::Bool)\n\nReturns whether all radiators on the vessel are deployed,\nand sets the deployment state of all radiators.\nSee .\n\n" Radiators!
 export Radiators!
-import ..Control_get_ResourceHarvesters as var"##822"
+import ..Control_get_ResourceHarvesters as var"##888"
 ResourceHarvesters(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##822"(this))
+        kerbal(this.conn, var"##888"(this))
     end
 @doc "    ResourceHarvesters(this::RemoteTypes.Control)\n\nReturns whether all of the resource harvesters on the vessel are deployed,\nand sets the deployment state of all resource harvesters.\nSee .\n\n" ResourceHarvesters
 export ResourceHarvesters
-import ..Control_set_ResourceHarvesters as var"##823"
+import ..Control_set_ResourceHarvesters as var"##889"
 ResourceHarvesters!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##823"(this, value))
+        kerbal(this.conn, var"##889"(this, value))
     end
 @doc "    ResourceHarvesters!(this::RemoteTypes.Control, value::Bool)\n\nReturns whether all of the resource harvesters on the vessel are deployed,\nand sets the deployment state of all resource harvesters.\nSee .\n\n" ResourceHarvesters!
 export ResourceHarvesters!
-import ..Control_get_ResourceHarvestersActive as var"##824"
+import ..Control_get_ResourceHarvestersActive as var"##890"
 ResourceHarvestersActive(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##824"(this))
+        kerbal(this.conn, var"##890"(this))
     end
 @doc "    ResourceHarvestersActive(this::RemoteTypes.Control)\n\nReturns whether any of the resource harvesters on the vessel are active,\nand sets the active state of all resource harvesters.\nSee .\n\n" ResourceHarvestersActive
 export ResourceHarvestersActive
-import ..Control_set_ResourceHarvestersActive as var"##825"
+import ..Control_set_ResourceHarvestersActive as var"##891"
 ResourceHarvestersActive!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##825"(this, value))
+        kerbal(this.conn, var"##891"(this, value))
     end
 @doc "    ResourceHarvestersActive!(this::RemoteTypes.Control, value::Bool)\n\nReturns whether any of the resource harvesters on the vessel are active,\nand sets the active state of all resource harvesters.\nSee .\n\n" ResourceHarvestersActive!
 export ResourceHarvestersActive!
-import ..Control_get_SolarPanels as var"##826"
+import ..Control_get_SolarPanels as var"##892"
 SolarPanels(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##826"(this))
+        kerbal(this.conn, var"##892"(this))
     end
 @doc "    SolarPanels(this::RemoteTypes.Control)\n\nReturns whether all solar panels on the vessel are deployed,\nand sets the deployment state of all solar panels.\nSee .\n\n" SolarPanels
 export SolarPanels
-import ..Control_set_SolarPanels as var"##827"
+import ..Control_set_SolarPanels as var"##893"
 SolarPanels!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##827"(this, value))
+        kerbal(this.conn, var"##893"(this, value))
     end
 @doc "    SolarPanels!(this::RemoteTypes.Control, value::Bool)\n\nReturns whether all solar panels on the vessel are deployed,\nand sets the deployment state of all solar panels.\nSee .\n\n" SolarPanels!
 export SolarPanels!
-import ..Control_get_Abort as var"##828"
+import ..Control_get_Abort as var"##894"
 Abort(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##828"(this))
+        kerbal(this.conn, var"##894"(this))
     end
 @doc "    Abort(this::RemoteTypes.Control)\n\nThe state of the abort action group.\n\n" Abort
 export Abort
-import ..Control_set_Abort as var"##829"
+import ..Control_set_Abort as var"##895"
 Abort!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##829"(this, value))
+        kerbal(this.conn, var"##895"(this, value))
     end
 @doc "    Abort!(this::RemoteTypes.Control, value::Bool)\n\nThe state of the abort action group.\n\n" Abort!
 export Abort!
-import ..Control_get_Throttle as var"##830"
+import ..Control_get_Throttle as var"##896"
 Throttle(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##830"(this))
+        kerbal(this.conn, var"##896"(this))
     end
 @doc "    Throttle(this::RemoteTypes.Control)\n\nThe state of the throttle. A value between 0 and 1.\n\n" Throttle
 export Throttle
-import ..Control_set_Throttle as var"##831"
+import ..Control_set_Throttle as var"##897"
 Throttle!(this::RemoteTypes.Control, value::Float32) = begin
-        kerbal(this.conn, var"##831"(this, value))
+        kerbal(this.conn, var"##897"(this, value))
     end
 @doc "    Throttle!(this::RemoteTypes.Control, value::Float32)\n\nThe state of the throttle. A value between 0 and 1.\n\n" Throttle!
 export Throttle!
-import ..Control_get_InputMode as var"##832"
+import ..Control_get_InputMode as var"##898"
 InputMode(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##832"(this))
+        kerbal(this.conn, var"##898"(this))
     end
 @doc "    InputMode(this::RemoteTypes.Control)\n\nSets the behavior of the pitch, yaw, roll and translation control inputs.\nWhen set to additive, these inputs are added to the vessels current inputs.\nThis mode is the default.\nWhen set to override, these inputs (if non-zero) override the vessels inputs.\nThis mode prevents keyboard control, or SAS, from interfering with the controls when\nthey are set.\n\n" InputMode
 export InputMode
-import ..Control_set_InputMode as var"##833"
+import ..Control_set_InputMode as var"##899"
 InputMode!(this::RemoteTypes.Control, value::EControlInputMode) = begin
-        kerbal(this.conn, var"##833"(this, value))
+        kerbal(this.conn, var"##899"(this, value))
     end
 @doc "    InputMode!(this::RemoteTypes.Control, value::EControlInputMode)\n\nSets the behavior of the pitch, yaw, roll and translation control inputs.\nWhen set to additive, these inputs are added to the vessels current inputs.\nThis mode is the default.\nWhen set to override, these inputs (if non-zero) override the vessels inputs.\nThis mode prevents keyboard control, or SAS, from interfering with the controls when\nthey are set.\n\n" InputMode!
 export InputMode!
-import ..Control_get_Pitch as var"##834"
+import ..Control_get_Pitch as var"##900"
 Pitch(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##834"(this))
+        kerbal(this.conn, var"##900"(this))
     end
 @doc "    Pitch(this::RemoteTypes.Control)\n\nThe state of the pitch control.\nA value between -1 and 1.\nEquivalent to the w and s keys.\n\n" Pitch
 export Pitch
-import ..Control_set_Pitch as var"##835"
+import ..Control_set_Pitch as var"##901"
 Pitch!(this::RemoteTypes.Control, value::Float32) = begin
-        kerbal(this.conn, var"##835"(this, value))
+        kerbal(this.conn, var"##901"(this, value))
     end
 @doc "    Pitch!(this::RemoteTypes.Control, value::Float32)\n\nThe state of the pitch control.\nA value between -1 and 1.\nEquivalent to the w and s keys.\n\n" Pitch!
 export Pitch!
-import ..Control_get_Yaw as var"##836"
+import ..Control_get_Yaw as var"##902"
 Yaw(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##836"(this))
+        kerbal(this.conn, var"##902"(this))
     end
 @doc "    Yaw(this::RemoteTypes.Control)\n\nThe state of the yaw control.\nA value between -1 and 1.\nEquivalent to the a and d keys.\n\n" Yaw
 export Yaw
-import ..Control_set_Yaw as var"##837"
+import ..Control_set_Yaw as var"##903"
 Yaw!(this::RemoteTypes.Control, value::Float32) = begin
-        kerbal(this.conn, var"##837"(this, value))
+        kerbal(this.conn, var"##903"(this, value))
     end
 @doc "    Yaw!(this::RemoteTypes.Control, value::Float32)\n\nThe state of the yaw control.\nA value between -1 and 1.\nEquivalent to the a and d keys.\n\n" Yaw!
 export Yaw!
-import ..Control_get_Roll as var"##838"
+import ..Control_get_Roll as var"##904"
 Roll(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##838"(this))
+        kerbal(this.conn, var"##904"(this))
     end
 @doc "    Roll(this::RemoteTypes.Control)\n\nThe state of the roll control.\nA value between -1 and 1.\nEquivalent to the q and e keys.\n\n" Roll
 export Roll
-import ..Control_set_Roll as var"##839"
+import ..Control_set_Roll as var"##905"
 Roll!(this::RemoteTypes.Control, value::Float32) = begin
-        kerbal(this.conn, var"##839"(this, value))
+        kerbal(this.conn, var"##905"(this, value))
     end
 @doc "    Roll!(this::RemoteTypes.Control, value::Float32)\n\nThe state of the roll control.\nA value between -1 and 1.\nEquivalent to the q and e keys.\n\n" Roll!
 export Roll!
-import ..Control_get_Forward as var"##840"
+import ..Control_get_Forward as var"##906"
 Forward(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##840"(this))
+        kerbal(this.conn, var"##906"(this))
     end
 @doc "    Forward(this::RemoteTypes.Control)\n\nThe state of the forward translational control.\nA value between -1 and 1.\nEquivalent to the h and n keys.\n\n" Forward
 export Forward
-import ..Control_set_Forward as var"##841"
+import ..Control_set_Forward as var"##907"
 Forward!(this::RemoteTypes.Control, value::Float32) = begin
-        kerbal(this.conn, var"##841"(this, value))
+        kerbal(this.conn, var"##907"(this, value))
     end
 @doc "    Forward!(this::RemoteTypes.Control, value::Float32)\n\nThe state of the forward translational control.\nA value between -1 and 1.\nEquivalent to the h and n keys.\n\n" Forward!
 export Forward!
-import ..Control_get_Up as var"##842"
+import ..Control_get_Up as var"##908"
 Up(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##842"(this))
+        kerbal(this.conn, var"##908"(this))
     end
 @doc "    Up(this::RemoteTypes.Control)\n\nThe state of the up translational control.\nA value between -1 and 1.\nEquivalent to the i and k keys.\n\n" Up
 export Up
-import ..Control_set_Up as var"##843"
+import ..Control_set_Up as var"##909"
 Up!(this::RemoteTypes.Control, value::Float32) = begin
-        kerbal(this.conn, var"##843"(this, value))
+        kerbal(this.conn, var"##909"(this, value))
     end
 @doc "    Up!(this::RemoteTypes.Control, value::Float32)\n\nThe state of the up translational control.\nA value between -1 and 1.\nEquivalent to the i and k keys.\n\n" Up!
 export Up!
-import ..Control_get_Right as var"##844"
+import ..Control_get_Right as var"##910"
 Right(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##844"(this))
+        kerbal(this.conn, var"##910"(this))
     end
 @doc "    Right(this::RemoteTypes.Control)\n\nThe state of the right translational control.\nA value between -1 and 1.\nEquivalent to the j and l keys.\n\n" Right
 export Right
-import ..Control_set_Right as var"##845"
+import ..Control_set_Right as var"##911"
 Right!(this::RemoteTypes.Control, value::Float32) = begin
-        kerbal(this.conn, var"##845"(this, value))
+        kerbal(this.conn, var"##911"(this, value))
     end
 @doc "    Right!(this::RemoteTypes.Control, value::Float32)\n\nThe state of the right translational control.\nA value between -1 and 1.\nEquivalent to the j and l keys.\n\n" Right!
 export Right!
-import ..Control_get_WheelThrottle as var"##846"
+import ..Control_get_WheelThrottle as var"##912"
 WheelThrottle(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##846"(this))
+        kerbal(this.conn, var"##912"(this))
     end
 @doc "    WheelThrottle(this::RemoteTypes.Control)\n\nThe state of the wheel throttle.\nA value between -1 and 1.\nA value of 1 rotates the wheels forwards, a value of -1 rotates\nthe wheels backwards.\n\n" WheelThrottle
 export WheelThrottle
-import ..Control_set_WheelThrottle as var"##847"
+import ..Control_set_WheelThrottle as var"##913"
 WheelThrottle!(this::RemoteTypes.Control, value::Float32) = begin
-        kerbal(this.conn, var"##847"(this, value))
+        kerbal(this.conn, var"##913"(this, value))
     end
 @doc "    WheelThrottle!(this::RemoteTypes.Control, value::Float32)\n\nThe state of the wheel throttle.\nA value between -1 and 1.\nA value of 1 rotates the wheels forwards, a value of -1 rotates\nthe wheels backwards.\n\n" WheelThrottle!
 export WheelThrottle!
-import ..Control_get_WheelSteering as var"##848"
+import ..Control_get_WheelSteering as var"##914"
 WheelSteering(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##848"(this))
+        kerbal(this.conn, var"##914"(this))
     end
 @doc "    WheelSteering(this::RemoteTypes.Control)\n\nThe state of the wheel steering.\nA value between -1 and 1.\nA value of 1 steers to the left, and a value of -1 steers to the right.\n\n" WheelSteering
 export WheelSteering
-import ..Control_set_WheelSteering as var"##849"
+import ..Control_set_WheelSteering as var"##915"
 WheelSteering!(this::RemoteTypes.Control, value::Float32) = begin
-        kerbal(this.conn, var"##849"(this, value))
+        kerbal(this.conn, var"##915"(this, value))
     end
 @doc "    WheelSteering!(this::RemoteTypes.Control, value::Float32)\n\nThe state of the wheel steering.\nA value between -1 and 1.\nA value of 1 steers to the left, and a value of -1 steers to the right.\n\n" WheelSteering!
 export WheelSteering!
-import ..Control_get_CurrentStage as var"##850"
+import ..Control_get_CurrentStage as var"##916"
 CurrentStage(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##850"(this))
+        kerbal(this.conn, var"##916"(this))
     end
 @doc "    CurrentStage(this::RemoteTypes.Control)\n\nThe current stage of the vessel. Corresponds to the stage number in\nthe in-game UI.\n\n" CurrentStage
 export CurrentStage
-import ..Control_get_StageLock as var"##851"
+import ..Control_get_StageLock as var"##917"
 StageLock(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##851"(this))
+        kerbal(this.conn, var"##917"(this))
     end
 @doc "    StageLock(this::RemoteTypes.Control)\n\nWhether staging is locked on the vessel.\n\n# Remarks\n This is equivalent to locking the staging using Alt+L \n" StageLock
 export StageLock
-import ..Control_set_StageLock as var"##852"
+import ..Control_set_StageLock as var"##918"
 StageLock!(this::RemoteTypes.Control, value::Bool) = begin
-        kerbal(this.conn, var"##852"(this, value))
+        kerbal(this.conn, var"##918"(this, value))
     end
 @doc "    StageLock!(this::RemoteTypes.Control, value::Bool)\n\nWhether staging is locked on the vessel.\n\n# Remarks\n This is equivalent to locking the staging using Alt+L \n" StageLock!
 export StageLock!
-import ..Control_get_Nodes as var"##853"
+import ..Control_get_Nodes as var"##919"
 Nodes(this::RemoteTypes.Control) = begin
-        kerbal(this.conn, var"##853"(this))
+        kerbal(this.conn, var"##919"(this))
     end
 @doc "    Nodes(this::RemoteTypes.Control)\n\nReturns a list of all existing maneuver nodes, ordered by time from first to last.\n\n" Nodes
 export Nodes
-import ..CrewMember_get_Name as var"##854"
+import ..CrewMember_get_Name as var"##920"
 Name(this::RemoteTypes.CrewMember) = begin
-        kerbal(this.conn, var"##854"(this))
+        kerbal(this.conn, var"##920"(this))
     end
 @doc "    Name(this::RemoteTypes.CrewMember)\n\nThe crew members name.\n\n" Name
 export Name
-import ..CrewMember_set_Name as var"##855"
+import ..CrewMember_set_Name as var"##921"
 Name!(this::RemoteTypes.CrewMember, value::String) = begin
-        kerbal(this.conn, var"##855"(this, value))
+        kerbal(this.conn, var"##921"(this, value))
     end
 @doc "    Name!(this::RemoteTypes.CrewMember, value::String)\n\nThe crew members name.\n\n" Name!
 export Name!
-import ..CrewMember_get_Type as var"##856"
+import ..CrewMember_get_Type as var"##922"
 Type(this::RemoteTypes.CrewMember) = begin
-        kerbal(this.conn, var"##856"(this))
+        kerbal(this.conn, var"##922"(this))
     end
 @doc "    Type(this::RemoteTypes.CrewMember)\n\nThe type of crew member.\n\n" Type
 export Type
-import ..CrewMember_get_OnMission as var"##857"
+import ..CrewMember_get_OnMission as var"##923"
 OnMission(this::RemoteTypes.CrewMember) = begin
-        kerbal(this.conn, var"##857"(this))
+        kerbal(this.conn, var"##923"(this))
     end
 @doc "    OnMission(this::RemoteTypes.CrewMember)\n\nWhether the crew member is on a mission.\n\n" OnMission
 export OnMission
-import ..CrewMember_get_Courage as var"##858"
+import ..CrewMember_get_Courage as var"##924"
 Courage(this::RemoteTypes.CrewMember) = begin
-        kerbal(this.conn, var"##858"(this))
+        kerbal(this.conn, var"##924"(this))
     end
 @doc "    Courage(this::RemoteTypes.CrewMember)\n\nThe crew members courage.\n\n" Courage
 export Courage
-import ..CrewMember_set_Courage as var"##859"
+import ..CrewMember_set_Courage as var"##925"
 Courage!(this::RemoteTypes.CrewMember, value::Float32) = begin
-        kerbal(this.conn, var"##859"(this, value))
+        kerbal(this.conn, var"##925"(this, value))
     end
 @doc "    Courage!(this::RemoteTypes.CrewMember, value::Float32)\n\nThe crew members courage.\n\n" Courage!
 export Courage!
-import ..CrewMember_get_Stupidity as var"##860"
+import ..CrewMember_get_Stupidity as var"##926"
 Stupidity(this::RemoteTypes.CrewMember) = begin
-        kerbal(this.conn, var"##860"(this))
+        kerbal(this.conn, var"##926"(this))
     end
 @doc "    Stupidity(this::RemoteTypes.CrewMember)\n\nThe crew members stupidity.\n\n" Stupidity
 export Stupidity
-import ..CrewMember_set_Stupidity as var"##861"
+import ..CrewMember_set_Stupidity as var"##927"
 Stupidity!(this::RemoteTypes.CrewMember, value::Float32) = begin
-        kerbal(this.conn, var"##861"(this, value))
+        kerbal(this.conn, var"##927"(this, value))
     end
 @doc "    Stupidity!(this::RemoteTypes.CrewMember, value::Float32)\n\nThe crew members stupidity.\n\n" Stupidity!
 export Stupidity!
-import ..CrewMember_get_Experience as var"##862"
+import ..CrewMember_get_Experience as var"##928"
 Experience(this::RemoteTypes.CrewMember) = begin
-        kerbal(this.conn, var"##862"(this))
+        kerbal(this.conn, var"##928"(this))
     end
 @doc "    Experience(this::RemoteTypes.CrewMember)\n\nThe crew members experience.\n\n" Experience
 export Experience
-import ..CrewMember_set_Experience as var"##863"
+import ..CrewMember_set_Experience as var"##929"
 Experience!(this::RemoteTypes.CrewMember, value::Float32) = begin
-        kerbal(this.conn, var"##863"(this, value))
+        kerbal(this.conn, var"##929"(this, value))
     end
 @doc "    Experience!(this::RemoteTypes.CrewMember, value::Float32)\n\nThe crew members experience.\n\n" Experience!
 export Experience!
-import ..CrewMember_get_Badass as var"##864"
+import ..CrewMember_get_Badass as var"##930"
 Badass(this::RemoteTypes.CrewMember) = begin
-        kerbal(this.conn, var"##864"(this))
+        kerbal(this.conn, var"##930"(this))
     end
 @doc "    Badass(this::RemoteTypes.CrewMember)\n\nWhether the crew member is a badass.\n\n" Badass
 export Badass
-import ..CrewMember_set_Badass as var"##865"
+import ..CrewMember_set_Badass as var"##931"
 Badass!(this::RemoteTypes.CrewMember, value::Bool) = begin
-        kerbal(this.conn, var"##865"(this, value))
+        kerbal(this.conn, var"##931"(this, value))
     end
 @doc "    Badass!(this::RemoteTypes.CrewMember, value::Bool)\n\nWhether the crew member is a badass.\n\n" Badass!
 export Badass!
-import ..CrewMember_get_Veteran as var"##866"
+import ..CrewMember_get_Veteran as var"##932"
 Veteran(this::RemoteTypes.CrewMember) = begin
-        kerbal(this.conn, var"##866"(this))
+        kerbal(this.conn, var"##932"(this))
     end
 @doc "    Veteran(this::RemoteTypes.CrewMember)\n\nWhether the crew member is a veteran.\n\n" Veteran
 export Veteran
-import ..CrewMember_set_Veteran as var"##867"
+import ..CrewMember_set_Veteran as var"##933"
 Veteran!(this::RemoteTypes.CrewMember, value::Bool) = begin
-        kerbal(this.conn, var"##867"(this, value))
+        kerbal(this.conn, var"##933"(this, value))
     end
 @doc "    Veteran!(this::RemoteTypes.CrewMember, value::Bool)\n\nWhether the crew member is a veteran.\n\n" Veteran!
 export Veteran!
-import ..Flight_SimulateAerodynamicForceAt as var"##868"
+import ..Flight_SimulateAerodynamicForceAt as var"##934"
 SimulateAerodynamicForceAt(this::RemoteTypes.Flight, body::RemoteTypes.CelestialBody, position::begin
                 Tuple{Float64, Float64, Float64}
             end, velocity::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##868"(this, body, position, velocity))
+        kerbal(this.conn, var"##934"(this, body, position, velocity))
     end
 @doc "    SimulateAerodynamicForceAt(this::RemoteTypes.Flight, body::RemoteTypes.CelestialBody, position::begin\n    Tuple{Float64, Float64, Float64}\nend, velocity::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nSimulate and return the total aerodynamic forces acting on the vessel,\nif it where to be traveling with the given velocity at the given position in the\natmosphere of the given celestial body.\n\n# Returns\nA vector pointing in the direction that the force acts, with its magnitude equal to the strength of the force in Newtons.\n" SimulateAerodynamicForceAt
 export SimulateAerodynamicForceAt
-import ..Flight_get_GForce as var"##869"
+import ..Flight_get_GForce as var"##935"
 GForce(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##869"(this))
+        kerbal(this.conn, var"##935"(this))
     end
 @doc "    GForce(this::RemoteTypes.Flight)\n\nThe current G force acting on the vessel in g.\n\n" GForce
 export GForce
-import ..Flight_get_MeanAltitude as var"##870"
+import ..Flight_get_MeanAltitude as var"##936"
 MeanAltitude(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##870"(this))
+        kerbal(this.conn, var"##936"(this))
     end
 @doc "    MeanAltitude(this::RemoteTypes.Flight)\n\nThe altitude above sea level, in meters.\nMeasured from the center of mass of the vessel.\n\n" MeanAltitude
 export MeanAltitude
-import ..Flight_get_SurfaceAltitude as var"##871"
+import ..Flight_get_SurfaceAltitude as var"##937"
 SurfaceAltitude(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##871"(this))
+        kerbal(this.conn, var"##937"(this))
     end
 @doc "    SurfaceAltitude(this::RemoteTypes.Flight)\n\nThe altitude above the surface of the body or sea level, whichever is closer, in meters.\nMeasured from the center of mass of the vessel.\n\n" SurfaceAltitude
 export SurfaceAltitude
-import ..Flight_get_BedrockAltitude as var"##872"
+import ..Flight_get_BedrockAltitude as var"##938"
 BedrockAltitude(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##872"(this))
+        kerbal(this.conn, var"##938"(this))
     end
 @doc "    BedrockAltitude(this::RemoteTypes.Flight)\n\nThe altitude above the surface of the body, in meters. When over water, this is the altitude above the sea floor.\nMeasured from the center of mass of the vessel.\n\n" BedrockAltitude
 export BedrockAltitude
-import ..Flight_get_Elevation as var"##873"
+import ..Flight_get_Elevation as var"##939"
 Elevation(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##873"(this))
+        kerbal(this.conn, var"##939"(this))
     end
 @doc "    Elevation(this::RemoteTypes.Flight)\n\nThe elevation of the terrain under the vessel, in meters. This is the height of the terrain above sea level,\nand is negative when the vessel is over the sea.\n\n" Elevation
 export Elevation
-import ..Flight_get_Latitude as var"##874"
+import ..Flight_get_Latitude as var"##940"
 Latitude(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##874"(this))
+        kerbal(this.conn, var"##940"(this))
     end
 @doc "    Latitude(this::RemoteTypes.Flight)\n\nThe latitude of the vessel for the body being orbited, in degrees.\n\n" Latitude
 export Latitude
-import ..Flight_get_Longitude as var"##875"
+import ..Flight_get_Longitude as var"##941"
 Longitude(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##875"(this))
+        kerbal(this.conn, var"##941"(this))
     end
 @doc "    Longitude(this::RemoteTypes.Flight)\n\nThe longitude of the vessel for the body being orbited, in degrees.\n\n" Longitude
 export Longitude
-import ..Flight_get_Velocity as var"##876"
+import ..Flight_get_Velocity as var"##942"
 Velocity(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##876"(this))
+        kerbal(this.conn, var"##942"(this))
     end
 @doc "    Velocity(this::RemoteTypes.Flight)\n\nThe velocity of the vessel, in the reference frame .\n\n# Returns\nThe velocity as a vector. The vector points in the direction of travel, and its magnitude is the speed of the vessel in meters per second.\n" Velocity
 export Velocity
-import ..Flight_get_Speed as var"##877"
+import ..Flight_get_Speed as var"##943"
 Speed(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##877"(this))
+        kerbal(this.conn, var"##943"(this))
     end
 @doc "    Speed(this::RemoteTypes.Flight)\n\nThe speed of the vessel in meters per second,\nin the reference frame .\n\n" Speed
 export Speed
-import ..Flight_get_HorizontalSpeed as var"##878"
+import ..Flight_get_HorizontalSpeed as var"##944"
 HorizontalSpeed(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##878"(this))
+        kerbal(this.conn, var"##944"(this))
     end
 @doc "    HorizontalSpeed(this::RemoteTypes.Flight)\n\nThe horizontal speed of the vessel in meters per second,\nin the reference frame .\n\n" HorizontalSpeed
 export HorizontalSpeed
-import ..Flight_get_VerticalSpeed as var"##879"
+import ..Flight_get_VerticalSpeed as var"##945"
 VerticalSpeed(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##879"(this))
+        kerbal(this.conn, var"##945"(this))
     end
 @doc "    VerticalSpeed(this::RemoteTypes.Flight)\n\nThe vertical speed of the vessel in meters per second,\nin the reference frame .\n\n" VerticalSpeed
 export VerticalSpeed
-import ..Flight_get_CenterOfMass as var"##880"
+import ..Flight_get_CenterOfMass as var"##946"
 CenterOfMass(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##880"(this))
+        kerbal(this.conn, var"##946"(this))
     end
 @doc "    CenterOfMass(this::RemoteTypes.Flight)\n\nThe position of the center of mass of the vessel,\nin the reference frame \n# Returns\nThe position as a vector.\n" CenterOfMass
 export CenterOfMass
-import ..Flight_get_Rotation as var"##881"
+import ..Flight_get_Rotation as var"##947"
 Rotation(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##881"(this))
+        kerbal(this.conn, var"##947"(this))
     end
 @doc "    Rotation(this::RemoteTypes.Flight)\n\nThe rotation of the vessel, in the reference frame \n# Returns\nThe rotation as a quaternion of the form (x, y, z, w).\n" Rotation
 export Rotation
-import ..Flight_get_Direction as var"##882"
+import ..Flight_get_Direction as var"##948"
 Direction(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##882"(this))
+        kerbal(this.conn, var"##948"(this))
     end
 @doc "    Direction(this::RemoteTypes.Flight)\n\nThe direction that the vessel is pointing in,\nin the reference frame .\n\n# Returns\nThe direction as a unit vector.\n" Direction
 export Direction
-import ..Flight_get_Pitch as var"##883"
+import ..Flight_get_Pitch as var"##949"
 Pitch(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##883"(this))
+        kerbal(this.conn, var"##949"(this))
     end
 @doc "    Pitch(this::RemoteTypes.Flight)\n\nThe pitch of the vessel relative to the horizon, in degrees.\nA value between -90° and +90°.\n\n" Pitch
 export Pitch
-import ..Flight_get_Heading as var"##884"
+import ..Flight_get_Heading as var"##950"
 Heading(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##884"(this))
+        kerbal(this.conn, var"##950"(this))
     end
 @doc "    Heading(this::RemoteTypes.Flight)\n\nThe heading of the vessel (its angle relative to north), in degrees.\nA value between 0° and 360°.\n\n" Heading
 export Heading
-import ..Flight_get_Roll as var"##885"
+import ..Flight_get_Roll as var"##951"
 Roll(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##885"(this))
+        kerbal(this.conn, var"##951"(this))
     end
 @doc "    Roll(this::RemoteTypes.Flight)\n\nThe roll of the vessel relative to the horizon, in degrees.\nA value between -180° and +180°.\n\n" Roll
 export Roll
-import ..Flight_get_Prograde as var"##886"
+import ..Flight_get_Prograde as var"##952"
 Prograde(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##886"(this))
+        kerbal(this.conn, var"##952"(this))
     end
 @doc "    Prograde(this::RemoteTypes.Flight)\n\nThe prograde direction of the vessels orbit,\nin the reference frame .\n\n# Returns\nThe direction as a unit vector.\n" Prograde
 export Prograde
-import ..Flight_get_Retrograde as var"##887"
+import ..Flight_get_Retrograde as var"##953"
 Retrograde(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##887"(this))
+        kerbal(this.conn, var"##953"(this))
     end
 @doc "    Retrograde(this::RemoteTypes.Flight)\n\nThe retrograde direction of the vessels orbit,\nin the reference frame .\n\n# Returns\nThe direction as a unit vector.\n" Retrograde
 export Retrograde
-import ..Flight_get_Normal as var"##888"
+import ..Flight_get_Normal as var"##954"
 Normal(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##888"(this))
+        kerbal(this.conn, var"##954"(this))
     end
 @doc "    Normal(this::RemoteTypes.Flight)\n\nThe direction normal to the vessels orbit,\nin the reference frame .\n\n# Returns\nThe direction as a unit vector.\n" Normal
 export Normal
-import ..Flight_get_AntiNormal as var"##889"
+import ..Flight_get_AntiNormal as var"##955"
 AntiNormal(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##889"(this))
+        kerbal(this.conn, var"##955"(this))
     end
 @doc "    AntiNormal(this::RemoteTypes.Flight)\n\nThe direction opposite to the normal of the vessels orbit,\nin the reference frame .\n\n# Returns\nThe direction as a unit vector.\n" AntiNormal
 export AntiNormal
-import ..Flight_get_Radial as var"##890"
+import ..Flight_get_Radial as var"##956"
 Radial(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##890"(this))
+        kerbal(this.conn, var"##956"(this))
     end
 @doc "    Radial(this::RemoteTypes.Flight)\n\nThe radial direction of the vessels orbit,\nin the reference frame .\n\n# Returns\nThe direction as a unit vector.\n" Radial
 export Radial
-import ..Flight_get_AntiRadial as var"##891"
+import ..Flight_get_AntiRadial as var"##957"
 AntiRadial(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##891"(this))
+        kerbal(this.conn, var"##957"(this))
     end
 @doc "    AntiRadial(this::RemoteTypes.Flight)\n\nThe direction opposite to the radial direction of the vessels orbit,\nin the reference frame .\n\n# Returns\nThe direction as a unit vector.\n" AntiRadial
 export AntiRadial
-import ..Flight_get_AtmosphereDensity as var"##892"
+import ..Flight_get_AtmosphereDensity as var"##958"
 AtmosphereDensity(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##892"(this))
+        kerbal(this.conn, var"##958"(this))
     end
 @doc "    AtmosphereDensity(this::RemoteTypes.Flight)\n\nThe current density of the atmosphere around the vessel, in kg/m^3.\n\n" AtmosphereDensity
 export AtmosphereDensity
-import ..Flight_get_DynamicPressure as var"##893"
+import ..Flight_get_DynamicPressure as var"##959"
 DynamicPressure(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##893"(this))
+        kerbal(this.conn, var"##959"(this))
     end
 @doc "    DynamicPressure(this::RemoteTypes.Flight)\n\nThe dynamic pressure acting on the vessel, in Pascals. This is a measure of the\nstrength of the aerodynamic forces. It is equal to\n\\frac{1}{2} . \\mbox{air density} . \\mbox{velocity}^2.\nIt is commonly denoted Q.\n\n" DynamicPressure
 export DynamicPressure
-import ..Flight_get_StaticPressureAtMSL as var"##894"
+import ..Flight_get_StaticPressureAtMSL as var"##960"
 StaticPressureAtMSL(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##894"(this))
+        kerbal(this.conn, var"##960"(this))
     end
 @doc "    StaticPressureAtMSL(this::RemoteTypes.Flight)\n\nThe static atmospheric pressure at mean sea level, in Pascals.\n\n" StaticPressureAtMSL
 export StaticPressureAtMSL
-import ..Flight_get_StaticPressure as var"##895"
+import ..Flight_get_StaticPressure as var"##961"
 StaticPressure(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##895"(this))
+        kerbal(this.conn, var"##961"(this))
     end
 @doc "    StaticPressure(this::RemoteTypes.Flight)\n\nThe static atmospheric pressure acting on the vessel, in Pascals.\n\n" StaticPressure
 export StaticPressure
-import ..Flight_get_AerodynamicForce as var"##896"
+import ..Flight_get_AerodynamicForce as var"##962"
 AerodynamicForce(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##896"(this))
+        kerbal(this.conn, var"##962"(this))
     end
 @doc "    AerodynamicForce(this::RemoteTypes.Flight)\n\nThe total aerodynamic forces acting on the vessel,\nin reference frame .\n\n# Returns\nA vector pointing in the direction that the force acts, with its magnitude equal to the strength of the force in Newtons.\n" AerodynamicForce
 export AerodynamicForce
-import ..Flight_get_Lift as var"##897"
+import ..Flight_get_Lift as var"##963"
 Lift(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##897"(this))
+        kerbal(this.conn, var"##963"(this))
     end
 @doc "    Lift(this::RemoteTypes.Flight)\n\nThe aerodynamic lift\ncurrently acting on the vessel.\n\n# Returns\nA vector pointing in the direction that the force acts, with its magnitude equal to the strength of the force in Newtons.\n" Lift
 export Lift
-import ..Flight_get_Drag as var"##898"
+import ..Flight_get_Drag as var"##964"
 Drag(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##898"(this))
+        kerbal(this.conn, var"##964"(this))
     end
 @doc "    Drag(this::RemoteTypes.Flight)\n\nThe aerodynamic drag currently acting on the vessel.\n\n# Returns\nA vector pointing in the direction of the force, with its magnitude equal to the strength of the force in Newtons.\n" Drag
 export Drag
-import ..Flight_get_SpeedOfSound as var"##899"
+import ..Flight_get_SpeedOfSound as var"##965"
 SpeedOfSound(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##899"(this))
+        kerbal(this.conn, var"##965"(this))
     end
 @doc "    SpeedOfSound(this::RemoteTypes.Flight)\n\nThe speed of sound, in the atmosphere around the vessel, in m/s.\n\n" SpeedOfSound
 export SpeedOfSound
-import ..Flight_get_Mach as var"##900"
+import ..Flight_get_Mach as var"##966"
 Mach(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##900"(this))
+        kerbal(this.conn, var"##966"(this))
     end
 @doc "    Mach(this::RemoteTypes.Flight)\n\nThe speed of the vessel, in multiples of the speed of sound.\n\n" Mach
 export Mach
-import ..Flight_get_ReynoldsNumber as var"##901"
+import ..Flight_get_ReynoldsNumber as var"##967"
 ReynoldsNumber(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##901"(this))
+        kerbal(this.conn, var"##967"(this))
     end
 @doc "    ReynoldsNumber(this::RemoteTypes.Flight)\n\nThe vessels Reynolds number.\n\n# Remarks\n Requires Ferram Aerospace Research. \n" ReynoldsNumber
 export ReynoldsNumber
-import ..Flight_get_TrueAirSpeed as var"##902"
+import ..Flight_get_TrueAirSpeed as var"##968"
 TrueAirSpeed(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##902"(this))
+        kerbal(this.conn, var"##968"(this))
     end
 @doc "    TrueAirSpeed(this::RemoteTypes.Flight)\n\nThe true air speed\nof the vessel, in meters per second.\n\n" TrueAirSpeed
 export TrueAirSpeed
-import ..Flight_get_EquivalentAirSpeed as var"##903"
+import ..Flight_get_EquivalentAirSpeed as var"##969"
 EquivalentAirSpeed(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##903"(this))
+        kerbal(this.conn, var"##969"(this))
     end
 @doc "    EquivalentAirSpeed(this::RemoteTypes.Flight)\n\nThe equivalent air speed\nof the vessel, in meters per second.\n\n" EquivalentAirSpeed
 export EquivalentAirSpeed
-import ..Flight_get_TerminalVelocity as var"##904"
+import ..Flight_get_TerminalVelocity as var"##970"
 TerminalVelocity(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##904"(this))
+        kerbal(this.conn, var"##970"(this))
     end
 @doc "    TerminalVelocity(this::RemoteTypes.Flight)\n\nAn estimate of the current terminal velocity of the vessel, in meters per second.\nThis is the speed at which the drag forces cancel out the force of gravity.\n\n" TerminalVelocity
 export TerminalVelocity
-import ..Flight_get_AngleOfAttack as var"##905"
+import ..Flight_get_AngleOfAttack as var"##971"
 AngleOfAttack(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##905"(this))
+        kerbal(this.conn, var"##971"(this))
     end
 @doc "    AngleOfAttack(this::RemoteTypes.Flight)\n\nThe pitch angle between the orientation of the vessel and its velocity vector,\nin degrees.\n\n" AngleOfAttack
 export AngleOfAttack
-import ..Flight_get_SideslipAngle as var"##906"
+import ..Flight_get_SideslipAngle as var"##972"
 SideslipAngle(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##906"(this))
+        kerbal(this.conn, var"##972"(this))
     end
 @doc "    SideslipAngle(this::RemoteTypes.Flight)\n\nThe yaw angle between the orientation of the vessel and its velocity vector, in degrees.\n\n" SideslipAngle
 export SideslipAngle
-import ..Flight_get_TotalAirTemperature as var"##907"
+import ..Flight_get_TotalAirTemperature as var"##973"
 TotalAirTemperature(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##907"(this))
+        kerbal(this.conn, var"##973"(this))
     end
 @doc "    TotalAirTemperature(this::RemoteTypes.Flight)\n\nThe total air temperature\nof the atmosphere around the vessel, in Kelvin.\nThis includes the  and the vessel's kinetic energy.\n\n" TotalAirTemperature
 export TotalAirTemperature
-import ..Flight_get_StaticAirTemperature as var"##908"
+import ..Flight_get_StaticAirTemperature as var"##974"
 StaticAirTemperature(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##908"(this))
+        kerbal(this.conn, var"##974"(this))
     end
 @doc "    StaticAirTemperature(this::RemoteTypes.Flight)\n\nThe static (ambient)\ntemperature of the atmosphere around the vessel, in Kelvin.\n\n" StaticAirTemperature
 export StaticAirTemperature
-import ..Flight_get_StallFraction as var"##909"
+import ..Flight_get_StallFraction as var"##975"
 StallFraction(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##909"(this))
+        kerbal(this.conn, var"##975"(this))
     end
 @doc "    StallFraction(this::RemoteTypes.Flight)\n\nThe current amount of stall, between 0 and 1. A value greater than 0.005 indicates\na minor stall and a value greater than 0.5 indicates a large-scale stall.\n\n# Remarks\n Requires Ferram Aerospace Research. \n" StallFraction
 export StallFraction
-import ..Flight_get_DragCoefficient as var"##910"
+import ..Flight_get_DragCoefficient as var"##976"
 DragCoefficient(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##910"(this))
+        kerbal(this.conn, var"##976"(this))
     end
 @doc "    DragCoefficient(this::RemoteTypes.Flight)\n\nThe coefficient of drag. This is the amount of drag produced by the vessel.\nIt depends on air speed, air density and wing area.\n\n# Remarks\n Requires Ferram Aerospace Research. \n" DragCoefficient
 export DragCoefficient
-import ..Flight_get_LiftCoefficient as var"##911"
+import ..Flight_get_LiftCoefficient as var"##977"
 LiftCoefficient(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##911"(this))
+        kerbal(this.conn, var"##977"(this))
     end
 @doc "    LiftCoefficient(this::RemoteTypes.Flight)\n\nThe coefficient of lift. This is the amount of lift produced by the vessel, and\ndepends on air speed, air density and wing area.\n\n# Remarks\n Requires Ferram Aerospace Research. \n" LiftCoefficient
 export LiftCoefficient
-import ..Flight_get_BallisticCoefficient as var"##912"
+import ..Flight_get_BallisticCoefficient as var"##978"
 BallisticCoefficient(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##912"(this))
+        kerbal(this.conn, var"##978"(this))
     end
 @doc "    BallisticCoefficient(this::RemoteTypes.Flight)\n\nThe ballistic coefficient.\n\n# Remarks\n Requires Ferram Aerospace Research. \n" BallisticCoefficient
 export BallisticCoefficient
-import ..Flight_get_ThrustSpecificFuelConsumption as var"##913"
+import ..Flight_get_ThrustSpecificFuelConsumption as var"##979"
 ThrustSpecificFuelConsumption(this::RemoteTypes.Flight) = begin
-        kerbal(this.conn, var"##913"(this))
+        kerbal(this.conn, var"##979"(this))
     end
 @doc "    ThrustSpecificFuelConsumption(this::RemoteTypes.Flight)\n\nThe thrust specific fuel consumption for the jet engines on the vessel. This is a\nmeasure of the efficiency of the engines, with a lower value indicating a more\nefficient vessel. This value is the number of Newtons of fuel that are burned,\nper hour, to produce one newton of thrust.\n\n# Remarks\n Requires Ferram Aerospace Research. \n" ThrustSpecificFuelConsumption
 export ThrustSpecificFuelConsumption
-import ..Node_BurnVector as var"##914"
+import ..Node_BurnVector as var"##980"
 BurnVector(this::RemoteTypes.Node, referenceFrame::RemoteTypes.ReferenceFrame = getJuliaValue(this.conn, UInt8[0x00], RemoteTypes.ReferenceFrame)) = begin
-        kerbal(this.conn, var"##914"(this, referenceFrame))
+        kerbal(this.conn, var"##980"(this, referenceFrame))
     end
 @doc "    BurnVector(this::RemoteTypes.Node, referenceFrame::RemoteTypes.ReferenceFrame)\n\nReturns the burn vector for the maneuver node.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned vector is in. Defaults to .\n# Returns\nA vector whose direction is the direction of the maneuver node burn, and magnitude is the delta-v of the burn in meters per second. \n# Remarks\n Does not change when executing the maneuver node. See . \n" BurnVector
 export BurnVector
-import ..Node_RemainingBurnVector as var"##915"
+import ..Node_RemainingBurnVector as var"##981"
 RemainingBurnVector(this::RemoteTypes.Node, referenceFrame::RemoteTypes.ReferenceFrame = getJuliaValue(this.conn, UInt8[0x00], RemoteTypes.ReferenceFrame)) = begin
-        kerbal(this.conn, var"##915"(this, referenceFrame))
+        kerbal(this.conn, var"##981"(this, referenceFrame))
     end
 @doc "    RemainingBurnVector(this::RemoteTypes.Node, referenceFrame::RemoteTypes.ReferenceFrame)\n\nReturns the remaining burn vector for the maneuver node.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned vector is in. Defaults to .\n# Returns\nA vector whose direction is the direction of the maneuver node burn, and magnitude is the delta-v of the burn in meters per second. \n# Remarks\n Changes as the maneuver node is executed. See . \n" RemainingBurnVector
 export RemainingBurnVector
-import ..Node_Remove as var"##916"
+import ..Node_Remove as var"##982"
 Remove(this::RemoteTypes.Node) = begin
-        kerbal(this.conn, var"##916"(this))
+        kerbal(this.conn, var"##982"(this))
     end
 @doc "    Remove(this::RemoteTypes.Node)\n\nRemoves the maneuver node.\n\n" Remove
 export Remove
-import ..Node_Position as var"##917"
+import ..Node_Position as var"##983"
 Position(this::RemoteTypes.Node, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##917"(this, referenceFrame))
+        kerbal(this.conn, var"##983"(this, referenceFrame))
     end
 @doc "    Position(this::RemoteTypes.Node, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position vector of the maneuver node in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n" Position
 export Position
-import ..Node_Direction as var"##918"
+import ..Node_Direction as var"##984"
 Direction(this::RemoteTypes.Node, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##918"(this, referenceFrame))
+        kerbal(this.conn, var"##984"(this, referenceFrame))
     end
 @doc "    Direction(this::RemoteTypes.Node, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe direction of the maneuver nodes burn.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned direction is in.\n# Returns\nThe direction as a unit vector.\n" Direction
 export Direction
-import ..Node_get_Prograde as var"##919"
+import ..Node_get_Prograde as var"##985"
 Prograde(this::RemoteTypes.Node) = begin
-        kerbal(this.conn, var"##919"(this))
+        kerbal(this.conn, var"##985"(this))
     end
 @doc "    Prograde(this::RemoteTypes.Node)\n\nThe magnitude of the maneuver nodes delta-v in the prograde direction,\nin meters per second.\n\n" Prograde
 export Prograde
-import ..Node_set_Prograde as var"##920"
+import ..Node_set_Prograde as var"##986"
 Prograde!(this::RemoteTypes.Node, value::Float64) = begin
-        kerbal(this.conn, var"##920"(this, value))
+        kerbal(this.conn, var"##986"(this, value))
     end
 @doc "    Prograde!(this::RemoteTypes.Node, value::Float64)\n\nThe magnitude of the maneuver nodes delta-v in the prograde direction,\nin meters per second.\n\n" Prograde!
 export Prograde!
-import ..Node_get_Normal as var"##921"
+import ..Node_get_Normal as var"##987"
 Normal(this::RemoteTypes.Node) = begin
-        kerbal(this.conn, var"##921"(this))
+        kerbal(this.conn, var"##987"(this))
     end
 @doc "    Normal(this::RemoteTypes.Node)\n\nThe magnitude of the maneuver nodes delta-v in the normal direction,\nin meters per second.\n\n" Normal
 export Normal
-import ..Node_set_Normal as var"##922"
+import ..Node_set_Normal as var"##988"
 Normal!(this::RemoteTypes.Node, value::Float64) = begin
-        kerbal(this.conn, var"##922"(this, value))
+        kerbal(this.conn, var"##988"(this, value))
     end
 @doc "    Normal!(this::RemoteTypes.Node, value::Float64)\n\nThe magnitude of the maneuver nodes delta-v in the normal direction,\nin meters per second.\n\n" Normal!
 export Normal!
-import ..Node_get_Radial as var"##923"
+import ..Node_get_Radial as var"##989"
 Radial(this::RemoteTypes.Node) = begin
-        kerbal(this.conn, var"##923"(this))
+        kerbal(this.conn, var"##989"(this))
     end
 @doc "    Radial(this::RemoteTypes.Node)\n\nThe magnitude of the maneuver nodes delta-v in the radial direction,\nin meters per second.\n\n" Radial
 export Radial
-import ..Node_set_Radial as var"##924"
+import ..Node_set_Radial as var"##990"
 Radial!(this::RemoteTypes.Node, value::Float64) = begin
-        kerbal(this.conn, var"##924"(this, value))
+        kerbal(this.conn, var"##990"(this, value))
     end
 @doc "    Radial!(this::RemoteTypes.Node, value::Float64)\n\nThe magnitude of the maneuver nodes delta-v in the radial direction,\nin meters per second.\n\n" Radial!
 export Radial!
-import ..Node_get_DeltaV as var"##925"
+import ..Node_get_DeltaV as var"##991"
 DeltaV(this::RemoteTypes.Node) = begin
-        kerbal(this.conn, var"##925"(this))
+        kerbal(this.conn, var"##991"(this))
     end
 @doc "    DeltaV(this::RemoteTypes.Node)\n\nThe delta-v of the maneuver node, in meters per second.\n\n# Remarks\n Does not change when executing the maneuver node. See . \n" DeltaV
 export DeltaV
-import ..Node_set_DeltaV as var"##926"
+import ..Node_set_DeltaV as var"##992"
 DeltaV!(this::RemoteTypes.Node, value::Float64) = begin
-        kerbal(this.conn, var"##926"(this, value))
+        kerbal(this.conn, var"##992"(this, value))
     end
 @doc "    DeltaV!(this::RemoteTypes.Node, value::Float64)\n\nThe delta-v of the maneuver node, in meters per second.\n\n# Remarks\n Does not change when executing the maneuver node. See . \n" DeltaV!
 export DeltaV!
-import ..Node_get_RemainingDeltaV as var"##927"
+import ..Node_get_RemainingDeltaV as var"##993"
 RemainingDeltaV(this::RemoteTypes.Node) = begin
-        kerbal(this.conn, var"##927"(this))
+        kerbal(this.conn, var"##993"(this))
     end
 @doc "    RemainingDeltaV(this::RemoteTypes.Node)\n\nGets the remaining delta-v of the maneuver node, in meters per second. Changes as the\nnode is executed. This is equivalent to the delta-v reported in-game.\n\n" RemainingDeltaV
 export RemainingDeltaV
-import ..Node_get_UT as var"##928"
+import ..Node_get_UT as var"##994"
 UT(this::RemoteTypes.Node) = begin
-        kerbal(this.conn, var"##928"(this))
+        kerbal(this.conn, var"##994"(this))
     end
 @doc "    UT(this::RemoteTypes.Node)\n\nThe universal time at which the maneuver will occur, in seconds.\n\n" UT
 export UT
-import ..Node_set_UT as var"##929"
+import ..Node_set_UT as var"##995"
 UT!(this::RemoteTypes.Node, value::Float64) = begin
-        kerbal(this.conn, var"##929"(this, value))
+        kerbal(this.conn, var"##995"(this, value))
     end
 @doc "    UT!(this::RemoteTypes.Node, value::Float64)\n\nThe universal time at which the maneuver will occur, in seconds.\n\n" UT!
 export UT!
-import ..Node_get_TimeTo as var"##930"
+import ..Node_get_TimeTo as var"##996"
 TimeTo(this::RemoteTypes.Node) = begin
-        kerbal(this.conn, var"##930"(this))
+        kerbal(this.conn, var"##996"(this))
     end
 @doc "    TimeTo(this::RemoteTypes.Node)\n\nThe time until the maneuver node will be encountered, in seconds.\n\n" TimeTo
 export TimeTo
-import ..Node_get_Orbit as var"##931"
+import ..Node_get_Orbit as var"##997"
 Orbit(this::RemoteTypes.Node) = begin
-        kerbal(this.conn, var"##931"(this))
+        kerbal(this.conn, var"##997"(this))
     end
 @doc "    Orbit(this::RemoteTypes.Node)\n\nThe orbit that results from executing the maneuver node.\n\n" Orbit
 export Orbit
-import ..Node_get_ReferenceFrame as var"##932"
+import ..Node_get_ReferenceFrame as var"##998"
 ReferenceFrame(this::RemoteTypes.Node) = begin
-        kerbal(this.conn, var"##932"(this))
+        kerbal(this.conn, var"##998"(this))
     end
 @doc "    ReferenceFrame(this::RemoteTypes.Node)\n\nThe reference frame that is fixed relative to the maneuver node's burn.\nThe origin is at the position of the maneuver node.The y-axis points in the direction of the burn.The x-axis and z-axis point in arbitrary but fixed directions.\n" ReferenceFrame
 export ReferenceFrame
-import ..Node_get_OrbitalReferenceFrame as var"##933"
+import ..Node_get_OrbitalReferenceFrame as var"##999"
 OrbitalReferenceFrame(this::RemoteTypes.Node) = begin
-        kerbal(this.conn, var"##933"(this))
+        kerbal(this.conn, var"##999"(this))
     end
 @doc "    OrbitalReferenceFrame(this::RemoteTypes.Node)\n\nThe reference frame that is fixed relative to the maneuver node, and\norientated with the orbital prograde/normal/radial directions of the\noriginal orbit at the maneuver node's position.\nThe origin is at the position of the maneuver node.The x-axis points in the orbital anti-radial direction of the original\norbit, at the position of the maneuver node.The y-axis points in the orbital prograde direction of the original\norbit, at the position of the maneuver node.The z-axis points in the orbital normal direction of the original orbit,\nat the position of the maneuver node.\n" OrbitalReferenceFrame
 export OrbitalReferenceFrame
-import ..Orbit_static_ReferencePlaneNormal as var"##934"
+import ..Orbit_static_ReferencePlaneNormal as var"##1000"
 ReferencePlaneNormal(conn::KRPCConnection, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(conn, var"##934"(referenceFrame))
+        kerbal(conn, var"##1000"(referenceFrame))
     end
 @doc "    ReferencePlaneNormal(referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe direction that is normal to the orbits reference plane,\nin the given reference frame.\nThe reference plane is the plane from which the orbits inclination is measured.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned direction is in.\n# Returns\nThe direction as a unit vector.\n" ReferencePlaneNormal
 export ReferencePlaneNormal
-import ..Orbit_static_ReferencePlaneDirection as var"##935"
+import ..Orbit_static_ReferencePlaneDirection as var"##1001"
 ReferencePlaneDirection(conn::KRPCConnection, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(conn, var"##935"(referenceFrame))
+        kerbal(conn, var"##1001"(referenceFrame))
     end
 @doc "    ReferencePlaneDirection(referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe direction from which the orbits longitude of ascending node is measured,\nin the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned direction is in.\n# Returns\nThe direction as a unit vector.\n" ReferencePlaneDirection
 export ReferencePlaneDirection
-import ..Orbit_MeanAnomalyAtUT as var"##936"
+import ..Orbit_MeanAnomalyAtUT as var"##1002"
 MeanAnomalyAtUT(this::RemoteTypes.Orbit, ut::Float64) = begin
-        kerbal(this.conn, var"##936"(this, ut))
+        kerbal(this.conn, var"##1002"(this, ut))
     end
 @doc "    MeanAnomalyAtUT(this::RemoteTypes.Orbit, ut::Float64)\n\nThe mean anomaly at the given time.\n\n# Arguments\n- `ut::Float64`: The universal time in seconds.\n" MeanAnomalyAtUT
 export MeanAnomalyAtUT
-import ..Orbit_RadiusAtTrueAnomaly as var"##937"
+import ..Orbit_RadiusAtTrueAnomaly as var"##1003"
 RadiusAtTrueAnomaly(this::RemoteTypes.Orbit, trueAnomaly::Float64) = begin
-        kerbal(this.conn, var"##937"(this, trueAnomaly))
+        kerbal(this.conn, var"##1003"(this, trueAnomaly))
     end
 @doc "    RadiusAtTrueAnomaly(this::RemoteTypes.Orbit, trueAnomaly::Float64)\n\nThe orbital radius at the point in the orbit given by the true anomaly.\n\n# Arguments\n- `trueAnomaly::Float64`: The true anomaly.\n" RadiusAtTrueAnomaly
 export RadiusAtTrueAnomaly
-import ..Orbit_TrueAnomalyAtRadius as var"##938"
+import ..Orbit_TrueAnomalyAtRadius as var"##1004"
 TrueAnomalyAtRadius(this::RemoteTypes.Orbit, radius::Float64) = begin
-        kerbal(this.conn, var"##938"(this, radius))
+        kerbal(this.conn, var"##1004"(this, radius))
     end
 @doc "    TrueAnomalyAtRadius(this::RemoteTypes.Orbit, radius::Float64)\n\nThe true anomaly at the given orbital radius.\n\n# Arguments\n- `radius::Float64`: The orbital radius in meters.\n" TrueAnomalyAtRadius
 export TrueAnomalyAtRadius
-import ..Orbit_TrueAnomalyAtUT as var"##939"
+import ..Orbit_TrueAnomalyAtUT as var"##1005"
 TrueAnomalyAtUT(this::RemoteTypes.Orbit, ut::Float64) = begin
-        kerbal(this.conn, var"##939"(this, ut))
+        kerbal(this.conn, var"##1005"(this, ut))
     end
 @doc "    TrueAnomalyAtUT(this::RemoteTypes.Orbit, ut::Float64)\n\nThe true anomaly at the given time.\n\n# Arguments\n- `ut::Float64`: The universal time in seconds.\n" TrueAnomalyAtUT
 export TrueAnomalyAtUT
-import ..Orbit_UTAtTrueAnomaly as var"##940"
+import ..Orbit_UTAtTrueAnomaly as var"##1006"
 UTAtTrueAnomaly(this::RemoteTypes.Orbit, trueAnomaly::Float64) = begin
-        kerbal(this.conn, var"##940"(this, trueAnomaly))
+        kerbal(this.conn, var"##1006"(this, trueAnomaly))
     end
 @doc "    UTAtTrueAnomaly(this::RemoteTypes.Orbit, trueAnomaly::Float64)\n\nThe universal time, in seconds, corresponding to the given true anomaly.\n\n# Arguments\n- `trueAnomaly::Float64`: True anomaly.\n" UTAtTrueAnomaly
 export UTAtTrueAnomaly
-import ..Orbit_EccentricAnomalyAtUT as var"##941"
+import ..Orbit_EccentricAnomalyAtUT as var"##1007"
 EccentricAnomalyAtUT(this::RemoteTypes.Orbit, ut::Float64) = begin
-        kerbal(this.conn, var"##941"(this, ut))
+        kerbal(this.conn, var"##1007"(this, ut))
     end
 @doc "    EccentricAnomalyAtUT(this::RemoteTypes.Orbit, ut::Float64)\n\nThe eccentric anomaly at the given universal time.\n\n# Arguments\n- `ut::Float64`: The universal time, in seconds.\n" EccentricAnomalyAtUT
 export EccentricAnomalyAtUT
-import ..Orbit_OrbitalSpeedAt as var"##942"
+import ..Orbit_OrbitalSpeedAt as var"##1008"
 OrbitalSpeedAt(this::RemoteTypes.Orbit, time::Float64) = begin
-        kerbal(this.conn, var"##942"(this, time))
+        kerbal(this.conn, var"##1008"(this, time))
     end
 @doc "    OrbitalSpeedAt(this::RemoteTypes.Orbit, time::Float64)\n\nThe orbital speed at the given time, in meters per second.\n\n# Arguments\n- `time::Float64`: Time from now, in seconds.\n" OrbitalSpeedAt
 export OrbitalSpeedAt
-import ..Orbit_RadiusAt as var"##943"
+import ..Orbit_RadiusAt as var"##1009"
 RadiusAt(this::RemoteTypes.Orbit, ut::Float64) = begin
-        kerbal(this.conn, var"##943"(this, ut))
+        kerbal(this.conn, var"##1009"(this, ut))
     end
 @doc "    RadiusAt(this::RemoteTypes.Orbit, ut::Float64)\n\nThe orbital radius at the given time, in meters.\n\n# Arguments\n- `ut::Float64`: The universal time to measure the radius at.\n" RadiusAt
 export RadiusAt
-import ..Orbit_PositionAt as var"##944"
+import ..Orbit_PositionAt as var"##1010"
 PositionAt(this::RemoteTypes.Orbit, ut::Float64, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##944"(this, ut, referenceFrame))
+        kerbal(this.conn, var"##1010"(this, ut, referenceFrame))
     end
 @doc "    PositionAt(this::RemoteTypes.Orbit, ut::Float64, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position at a given time, in the specified reference frame.\n\n# Arguments\n- `ut::Float64`: The universal time to measure the position at.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n" PositionAt
 export PositionAt
-import ..Orbit_TimeOfClosestApproach as var"##945"
+import ..Orbit_TimeOfClosestApproach as var"##1011"
 TimeOfClosestApproach(this::RemoteTypes.Orbit, target::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##945"(this, target))
+        kerbal(this.conn, var"##1011"(this, target))
     end
 @doc "    TimeOfClosestApproach(this::RemoteTypes.Orbit, target::RemoteTypes.Orbit)\n\nEstimates and returns the time at closest approach to a target orbit.\n\n# Arguments\n- `target::RemoteTypes.Orbit`: Target orbit.\n# Returns\nThe universal time at closest approach, in seconds.\n" TimeOfClosestApproach
 export TimeOfClosestApproach
-import ..Orbit_DistanceAtClosestApproach as var"##946"
+import ..Orbit_DistanceAtClosestApproach as var"##1012"
 DistanceAtClosestApproach(this::RemoteTypes.Orbit, target::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##946"(this, target))
+        kerbal(this.conn, var"##1012"(this, target))
     end
 @doc "    DistanceAtClosestApproach(this::RemoteTypes.Orbit, target::RemoteTypes.Orbit)\n\nEstimates and returns the distance at closest approach to a target orbit, in meters.\n\n# Arguments\n- `target::RemoteTypes.Orbit`: Target orbit.\n" DistanceAtClosestApproach
 export DistanceAtClosestApproach
-import ..Orbit_ListClosestApproaches as var"##947"
+import ..Orbit_ListClosestApproaches as var"##1013"
 ListClosestApproaches(this::RemoteTypes.Orbit, target::RemoteTypes.Orbit, orbits::Int32) = begin
-        kerbal(this.conn, var"##947"(this, target, orbits))
+        kerbal(this.conn, var"##1013"(this, target, orbits))
     end
 @doc "    ListClosestApproaches(this::RemoteTypes.Orbit, target::RemoteTypes.Orbit, orbits::Int32)\n\nReturns the times at closest approach and corresponding distances, to a target orbit.\n\n# Arguments\n- `target::RemoteTypes.Orbit`: Target orbit.\n- `orbits::Int32`: The number of future orbits to search.\n# Returns\n A list of two lists. The first is a list of times at closest approach, as universal times in seconds. The second is a list of corresponding distances at closest approach, in meters. \n" ListClosestApproaches
 export ListClosestApproaches
-import ..Orbit_TrueAnomalyAtAN as var"##948"
+import ..Orbit_TrueAnomalyAtAN as var"##1014"
 TrueAnomalyAtAN(this::RemoteTypes.Orbit, target::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##948"(this, target))
+        kerbal(this.conn, var"##1014"(this, target))
     end
 @doc "    TrueAnomalyAtAN(this::RemoteTypes.Orbit, target::RemoteTypes.Orbit)\n\nThe true anomaly of the ascending node with the given target orbit.\n\n# Arguments\n- `target::RemoteTypes.Orbit`: Target orbit.\n" TrueAnomalyAtAN
 export TrueAnomalyAtAN
-import ..Orbit_TrueAnomalyAtDN as var"##949"
+import ..Orbit_TrueAnomalyAtDN as var"##1015"
 TrueAnomalyAtDN(this::RemoteTypes.Orbit, target::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##949"(this, target))
+        kerbal(this.conn, var"##1015"(this, target))
     end
 @doc "    TrueAnomalyAtDN(this::RemoteTypes.Orbit, target::RemoteTypes.Orbit)\n\nThe true anomaly of the descending node with the given target orbit.\n\n# Arguments\n- `target::RemoteTypes.Orbit`: Target orbit.\n" TrueAnomalyAtDN
 export TrueAnomalyAtDN
-import ..Orbit_RelativeInclination as var"##950"
+import ..Orbit_RelativeInclination as var"##1016"
 RelativeInclination(this::RemoteTypes.Orbit, target::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##950"(this, target))
+        kerbal(this.conn, var"##1016"(this, target))
     end
 @doc "    RelativeInclination(this::RemoteTypes.Orbit, target::RemoteTypes.Orbit)\n\nRelative inclination of this orbit and the target orbit, in radians.\n\n# Arguments\n- `target::RemoteTypes.Orbit`: Target orbit.\n" RelativeInclination
 export RelativeInclination
-import ..Orbit_get_Body as var"##951"
+import ..Orbit_get_Body as var"##1017"
 Body(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##951"(this))
+        kerbal(this.conn, var"##1017"(this))
     end
 @doc "    Body(this::RemoteTypes.Orbit)\n\nThe celestial body (e.g. planet or moon) around which the object is orbiting.\n\n" Body
 export Body
-import ..Orbit_get_Apoapsis as var"##952"
+import ..Orbit_get_Apoapsis as var"##1018"
 Apoapsis(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##952"(this))
+        kerbal(this.conn, var"##1018"(this))
     end
 @doc "    Apoapsis(this::RemoteTypes.Orbit)\n\nGets the apoapsis of the orbit, in meters, from the center of mass\nof the body being orbited.\n\n# Remarks\n For the apoapsis altitude reported on the in-game map view, use . \n" Apoapsis
 export Apoapsis
-import ..Orbit_get_Periapsis as var"##953"
+import ..Orbit_get_Periapsis as var"##1019"
 Periapsis(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##953"(this))
+        kerbal(this.conn, var"##1019"(this))
     end
 @doc "    Periapsis(this::RemoteTypes.Orbit)\n\nThe periapsis of the orbit, in meters, from the center of mass\nof the body being orbited.\n\n# Remarks\n For the periapsis altitude reported on the in-game map view, use . \n" Periapsis
 export Periapsis
-import ..Orbit_get_ApoapsisAltitude as var"##954"
+import ..Orbit_get_ApoapsisAltitude as var"##1020"
 ApoapsisAltitude(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##954"(this))
+        kerbal(this.conn, var"##1020"(this))
     end
 @doc "    ApoapsisAltitude(this::RemoteTypes.Orbit)\n\nThe apoapsis of the orbit, in meters, above the sea level of the body being orbited.\n\n# Remarks\n This is equal to  minus the equatorial radius of the body. \n" ApoapsisAltitude
 export ApoapsisAltitude
-import ..Orbit_get_PeriapsisAltitude as var"##955"
+import ..Orbit_get_PeriapsisAltitude as var"##1021"
 PeriapsisAltitude(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##955"(this))
+        kerbal(this.conn, var"##1021"(this))
     end
 @doc "    PeriapsisAltitude(this::RemoteTypes.Orbit)\n\nThe periapsis of the orbit, in meters, above the sea level of the body being orbited.\n\n# Remarks\n This is equal to  minus the equatorial radius of the body. \n" PeriapsisAltitude
 export PeriapsisAltitude
-import ..Orbit_get_SemiMajorAxis as var"##956"
+import ..Orbit_get_SemiMajorAxis as var"##1022"
 SemiMajorAxis(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##956"(this))
+        kerbal(this.conn, var"##1022"(this))
     end
 @doc "    SemiMajorAxis(this::RemoteTypes.Orbit)\n\nThe semi-major axis of the orbit, in meters.\n\n" SemiMajorAxis
 export SemiMajorAxis
-import ..Orbit_get_SemiMinorAxis as var"##957"
+import ..Orbit_get_SemiMinorAxis as var"##1023"
 SemiMinorAxis(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##957"(this))
+        kerbal(this.conn, var"##1023"(this))
     end
 @doc "    SemiMinorAxis(this::RemoteTypes.Orbit)\n\nThe semi-minor axis of the orbit, in meters.\n\n" SemiMinorAxis
 export SemiMinorAxis
-import ..Orbit_get_Radius as var"##958"
+import ..Orbit_get_Radius as var"##1024"
 Radius(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##958"(this))
+        kerbal(this.conn, var"##1024"(this))
     end
 @doc "    Radius(this::RemoteTypes.Orbit)\n\nThe current radius of the orbit, in meters. This is the distance between the center\nof mass of the object in orbit, and the center of mass of the body around which it\nis orbiting.\n\n# Remarks\n This value will change over time if the orbit is elliptical. \n" Radius
 export Radius
-import ..Orbit_get_Speed as var"##959"
+import ..Orbit_get_Speed as var"##1025"
 Speed(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##959"(this))
+        kerbal(this.conn, var"##1025"(this))
     end
 @doc "    Speed(this::RemoteTypes.Orbit)\n\nThe current orbital speed of the object in meters per second.\n\n# Remarks\n This value will change over time if the orbit is elliptical. \n" Speed
 export Speed
-import ..Orbit_get_Period as var"##960"
+import ..Orbit_get_Period as var"##1026"
 Period(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##960"(this))
+        kerbal(this.conn, var"##1026"(this))
     end
 @doc "    Period(this::RemoteTypes.Orbit)\n\nThe orbital period, in seconds.\n\n" Period
 export Period
-import ..Orbit_get_TimeToApoapsis as var"##961"
+import ..Orbit_get_TimeToApoapsis as var"##1027"
 TimeToApoapsis(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##961"(this))
+        kerbal(this.conn, var"##1027"(this))
     end
 @doc "    TimeToApoapsis(this::RemoteTypes.Orbit)\n\nThe time until the object reaches apoapsis, in seconds.\n\n" TimeToApoapsis
 export TimeToApoapsis
-import ..Orbit_get_TimeToPeriapsis as var"##962"
+import ..Orbit_get_TimeToPeriapsis as var"##1028"
 TimeToPeriapsis(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##962"(this))
+        kerbal(this.conn, var"##1028"(this))
     end
 @doc "    TimeToPeriapsis(this::RemoteTypes.Orbit)\n\nThe time until the object reaches periapsis, in seconds.\n\n" TimeToPeriapsis
 export TimeToPeriapsis
-import ..Orbit_get_Eccentricity as var"##963"
+import ..Orbit_get_Eccentricity as var"##1029"
 Eccentricity(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##963"(this))
+        kerbal(this.conn, var"##1029"(this))
     end
 @doc "    Eccentricity(this::RemoteTypes.Orbit)\n\nThe eccentricity\nof the orbit.\n\n" Eccentricity
 export Eccentricity
-import ..Orbit_get_Inclination as var"##964"
+import ..Orbit_get_Inclination as var"##1030"
 Inclination(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##964"(this))
+        kerbal(this.conn, var"##1030"(this))
     end
 @doc "    Inclination(this::RemoteTypes.Orbit)\n\nThe inclination\nof the orbit,\nin radians.\n\n" Inclination
 export Inclination
-import ..Orbit_get_LongitudeOfAscendingNode as var"##965"
+import ..Orbit_get_LongitudeOfAscendingNode as var"##1031"
 LongitudeOfAscendingNode(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##965"(this))
+        kerbal(this.conn, var"##1031"(this))
     end
 @doc "    LongitudeOfAscendingNode(this::RemoteTypes.Orbit)\n\nThe longitude of\nthe ascending node, in radians.\n\n" LongitudeOfAscendingNode
 export LongitudeOfAscendingNode
-import ..Orbit_get_ArgumentOfPeriapsis as var"##966"
+import ..Orbit_get_ArgumentOfPeriapsis as var"##1032"
 ArgumentOfPeriapsis(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##966"(this))
+        kerbal(this.conn, var"##1032"(this))
     end
 @doc "    ArgumentOfPeriapsis(this::RemoteTypes.Orbit)\n\nThe argument of\nperiapsis, in radians.\n\n" ArgumentOfPeriapsis
 export ArgumentOfPeriapsis
-import ..Orbit_get_MeanAnomalyAtEpoch as var"##967"
+import ..Orbit_get_MeanAnomalyAtEpoch as var"##1033"
 MeanAnomalyAtEpoch(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##967"(this))
+        kerbal(this.conn, var"##1033"(this))
     end
 @doc "    MeanAnomalyAtEpoch(this::RemoteTypes.Orbit)\n\nThe mean anomaly at epoch.\n\n" MeanAnomalyAtEpoch
 export MeanAnomalyAtEpoch
-import ..Orbit_get_Epoch as var"##968"
+import ..Orbit_get_Epoch as var"##1034"
 Epoch(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##968"(this))
+        kerbal(this.conn, var"##1034"(this))
     end
 @doc "    Epoch(this::RemoteTypes.Orbit)\n\nThe time since the epoch (the point at which the\nmean anomaly at epoch\nwas measured, in seconds.\n\n" Epoch
 export Epoch
-import ..Orbit_get_MeanAnomaly as var"##969"
+import ..Orbit_get_MeanAnomaly as var"##1035"
 MeanAnomaly(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##969"(this))
+        kerbal(this.conn, var"##1035"(this))
     end
 @doc "    MeanAnomaly(this::RemoteTypes.Orbit)\n\nThe mean anomaly.\n\n" MeanAnomaly
 export MeanAnomaly
-import ..Orbit_get_EccentricAnomaly as var"##970"
+import ..Orbit_get_EccentricAnomaly as var"##1036"
 EccentricAnomaly(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##970"(this))
+        kerbal(this.conn, var"##1036"(this))
     end
 @doc "    EccentricAnomaly(this::RemoteTypes.Orbit)\n\nThe eccentric anomaly.\n\n" EccentricAnomaly
 export EccentricAnomaly
-import ..Orbit_get_TrueAnomaly as var"##971"
+import ..Orbit_get_TrueAnomaly as var"##1037"
 TrueAnomaly(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##971"(this))
+        kerbal(this.conn, var"##1037"(this))
     end
 @doc "    TrueAnomaly(this::RemoteTypes.Orbit)\n\nThe true anomaly.\n\n" TrueAnomaly
 export TrueAnomaly
-import ..Orbit_get_NextOrbit as var"##972"
+import ..Orbit_get_NextOrbit as var"##1038"
 NextOrbit(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##972"(this))
+        kerbal(this.conn, var"##1038"(this))
     end
 @doc "    NextOrbit(this::RemoteTypes.Orbit)\n\nIf the object is going to change sphere of influence in the future, returns the new\norbit after the change. Otherwise returns null.\n\n" NextOrbit
 export NextOrbit
-import ..Orbit_get_TimeToSOIChange as var"##973"
+import ..Orbit_get_TimeToSOIChange as var"##1039"
 TimeToSOIChange(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##973"(this))
+        kerbal(this.conn, var"##1039"(this))
     end
 @doc "    TimeToSOIChange(this::RemoteTypes.Orbit)\n\nThe time until the object changes sphere of influence, in seconds. Returns NaN\nif the object is not going to change sphere of influence.\n\n" TimeToSOIChange
 export TimeToSOIChange
-import ..Orbit_get_OrbitalSpeed as var"##974"
+import ..Orbit_get_OrbitalSpeed as var"##1040"
 OrbitalSpeed(this::RemoteTypes.Orbit) = begin
-        kerbal(this.conn, var"##974"(this))
+        kerbal(this.conn, var"##1040"(this))
     end
 @doc "    OrbitalSpeed(this::RemoteTypes.Orbit)\n\nThe current orbital speed in meters per second.\n\n" OrbitalSpeed
 export OrbitalSpeed
-import ..ReferenceFrame_static_CreateRelative as var"##975"
+import ..Antenna_Transmit as var"##1041"
+Transmit(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1041"(this))
+    end
+@doc "    Transmit(this::RemoteTypes.Antenna)\n\nTransmit data.\n\n" Transmit
+export Transmit
+import ..Antenna_Cancel as var"##1042"
+Cancel(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1042"(this))
+    end
+@doc "    Cancel(this::RemoteTypes.Antenna)\n\nCancel current transmission of data.\n\n" Cancel
+export Cancel
+import ..Antenna_get_Part as var"##1043"
+Part(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1043"(this))
+    end
+@doc "    Part(this::RemoteTypes.Antenna)\n\nThe part object for this antenna.\n\n" Part
+export Part
+import ..Antenna_get_State as var"##1044"
+State(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1044"(this))
+    end
+@doc "    State(this::RemoteTypes.Antenna)\n\nThe current state of the antenna.\n\n" State
+export State
+import ..Antenna_get_Deployable as var"##1045"
+Deployable(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1045"(this))
+    end
+@doc "    Deployable(this::RemoteTypes.Antenna)\n\nWhether the antenna is deployable.\n\n" Deployable
+export Deployable
+import ..Antenna_get_Deployed as var"##1046"
+Deployed(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1046"(this))
+    end
+@doc "    Deployed(this::RemoteTypes.Antenna)\n\nWhether the antenna is deployed.\n\n# Remarks\n Fixed antennas are always deployed. Returns an error if you try to deploy a fixed antenna. \n" Deployed
+export Deployed
+import ..Antenna_set_Deployed as var"##1047"
+Deployed!(this::RemoteTypes.Antenna, value::Bool) = begin
+        kerbal(this.conn, var"##1047"(this, value))
+    end
+@doc "    Deployed!(this::RemoteTypes.Antenna, value::Bool)\n\nWhether the antenna is deployed.\n\n# Remarks\n Fixed antennas are always deployed. Returns an error if you try to deploy a fixed antenna. \n" Deployed!
+export Deployed!
+import ..Antenna_get_CanTransmit as var"##1048"
+CanTransmit(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1048"(this))
+    end
+@doc "    CanTransmit(this::RemoteTypes.Antenna)\n\nWhether data can be transmitted by this antenna.\n\n" CanTransmit
+export CanTransmit
+import ..Antenna_get_AllowPartial as var"##1049"
+AllowPartial(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1049"(this))
+    end
+@doc "    AllowPartial(this::RemoteTypes.Antenna)\n\nWhether partial data transmission is permitted.\n\n" AllowPartial
+export AllowPartial
+import ..Antenna_set_AllowPartial as var"##1050"
+AllowPartial!(this::RemoteTypes.Antenna, value::Bool) = begin
+        kerbal(this.conn, var"##1050"(this, value))
+    end
+@doc "    AllowPartial!(this::RemoteTypes.Antenna, value::Bool)\n\nWhether partial data transmission is permitted.\n\n" AllowPartial!
+export AllowPartial!
+import ..Antenna_get_Power as var"##1051"
+Power(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1051"(this))
+    end
+@doc "    Power(this::RemoteTypes.Antenna)\n\nThe power of the antenna.\n\n" Power
+export Power
+import ..Antenna_get_Combinable as var"##1052"
+Combinable(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1052"(this))
+    end
+@doc "    Combinable(this::RemoteTypes.Antenna)\n\nWhether the antenna can be combined with other antennae on the vessel\nto boost the power.\n\n" Combinable
+export Combinable
+import ..Antenna_get_CombinableExponent as var"##1053"
+CombinableExponent(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1053"(this))
+    end
+@doc "    CombinableExponent(this::RemoteTypes.Antenna)\n\nExponent used to calculate the combined power of multiple antennae on a vessel.\n\n" CombinableExponent
+export CombinableExponent
+import ..Antenna_get_PacketInterval as var"##1054"
+PacketInterval(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1054"(this))
+    end
+@doc "    PacketInterval(this::RemoteTypes.Antenna)\n\nInterval between sending packets in seconds.\n\n" PacketInterval
+export PacketInterval
+import ..Antenna_get_PacketSize as var"##1055"
+PacketSize(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1055"(this))
+    end
+@doc "    PacketSize(this::RemoteTypes.Antenna)\n\nAmount of data sent per packet in Mits.\n\n" PacketSize
+export PacketSize
+import ..Antenna_get_PacketResourceCost as var"##1056"
+PacketResourceCost(this::RemoteTypes.Antenna) = begin
+        kerbal(this.conn, var"##1056"(this))
+    end
+@doc "    PacketResourceCost(this::RemoteTypes.Antenna)\n\nUnits of electric charge consumed per packet sent.\n\n" PacketResourceCost
+export PacketResourceCost
+import ..CargoBay_get_Part as var"##1057"
+Part(this::RemoteTypes.CargoBay) = begin
+        kerbal(this.conn, var"##1057"(this))
+    end
+@doc "    Part(this::RemoteTypes.CargoBay)\n\nThe part object for this cargo bay.\n\n" Part
+export Part
+import ..CargoBay_get_State as var"##1058"
+State(this::RemoteTypes.CargoBay) = begin
+        kerbal(this.conn, var"##1058"(this))
+    end
+@doc "    State(this::RemoteTypes.CargoBay)\n\nThe state of the cargo bay.\n\n" State
+export State
+import ..CargoBay_get_Open as var"##1059"
+Open(this::RemoteTypes.CargoBay) = begin
+        kerbal(this.conn, var"##1059"(this))
+    end
+@doc "    Open(this::RemoteTypes.CargoBay)\n\nWhether the cargo bay is open.\n\n" Open
+export Open
+import ..CargoBay_set_Open as var"##1060"
+Open!(this::RemoteTypes.CargoBay, value::Bool) = begin
+        kerbal(this.conn, var"##1060"(this, value))
+    end
+@doc "    Open!(this::RemoteTypes.CargoBay, value::Bool)\n\nWhether the cargo bay is open.\n\n" Open!
+export Open!
+import ..ControlSurface_get_Part as var"##1061"
+Part(this::RemoteTypes.ControlSurface) = begin
+        kerbal(this.conn, var"##1061"(this))
+    end
+@doc "    Part(this::RemoteTypes.ControlSurface)\n\nThe part object for this control surface.\n\n" Part
+export Part
+import ..ControlSurface_get_PitchEnabled as var"##1062"
+PitchEnabled(this::RemoteTypes.ControlSurface) = begin
+        kerbal(this.conn, var"##1062"(this))
+    end
+@doc "    PitchEnabled(this::RemoteTypes.ControlSurface)\n\nWhether the control surface has pitch control enabled.\n\n" PitchEnabled
+export PitchEnabled
+import ..ControlSurface_set_PitchEnabled as var"##1063"
+PitchEnabled!(this::RemoteTypes.ControlSurface, value::Bool) = begin
+        kerbal(this.conn, var"##1063"(this, value))
+    end
+@doc "    PitchEnabled!(this::RemoteTypes.ControlSurface, value::Bool)\n\nWhether the control surface has pitch control enabled.\n\n" PitchEnabled!
+export PitchEnabled!
+import ..ControlSurface_get_YawEnabled as var"##1064"
+YawEnabled(this::RemoteTypes.ControlSurface) = begin
+        kerbal(this.conn, var"##1064"(this))
+    end
+@doc "    YawEnabled(this::RemoteTypes.ControlSurface)\n\nWhether the control surface has yaw control enabled.\n\n" YawEnabled
+export YawEnabled
+import ..ControlSurface_set_YawEnabled as var"##1065"
+YawEnabled!(this::RemoteTypes.ControlSurface, value::Bool) = begin
+        kerbal(this.conn, var"##1065"(this, value))
+    end
+@doc "    YawEnabled!(this::RemoteTypes.ControlSurface, value::Bool)\n\nWhether the control surface has yaw control enabled.\n\n" YawEnabled!
+export YawEnabled!
+import ..ControlSurface_get_RollEnabled as var"##1066"
+RollEnabled(this::RemoteTypes.ControlSurface) = begin
+        kerbal(this.conn, var"##1066"(this))
+    end
+@doc "    RollEnabled(this::RemoteTypes.ControlSurface)\n\nWhether the control surface has roll control enabled.\n\n" RollEnabled
+export RollEnabled
+import ..ControlSurface_set_RollEnabled as var"##1067"
+RollEnabled!(this::RemoteTypes.ControlSurface, value::Bool) = begin
+        kerbal(this.conn, var"##1067"(this, value))
+    end
+@doc "    RollEnabled!(this::RemoteTypes.ControlSurface, value::Bool)\n\nWhether the control surface has roll control enabled.\n\n" RollEnabled!
+export RollEnabled!
+import ..ControlSurface_get_AuthorityLimiter as var"##1068"
+AuthorityLimiter(this::RemoteTypes.ControlSurface) = begin
+        kerbal(this.conn, var"##1068"(this))
+    end
+@doc "    AuthorityLimiter(this::RemoteTypes.ControlSurface)\n\nThe authority limiter for the control surface, which controls how far the\ncontrol surface will move.\n\n" AuthorityLimiter
+export AuthorityLimiter
+import ..ControlSurface_set_AuthorityLimiter as var"##1069"
+AuthorityLimiter!(this::RemoteTypes.ControlSurface, value::Float32) = begin
+        kerbal(this.conn, var"##1069"(this, value))
+    end
+@doc "    AuthorityLimiter!(this::RemoteTypes.ControlSurface, value::Float32)\n\nThe authority limiter for the control surface, which controls how far the\ncontrol surface will move.\n\n" AuthorityLimiter!
+export AuthorityLimiter!
+import ..ControlSurface_get_Inverted as var"##1070"
+Inverted(this::RemoteTypes.ControlSurface) = begin
+        kerbal(this.conn, var"##1070"(this))
+    end
+@doc "    Inverted(this::RemoteTypes.ControlSurface)\n\nWhether the control surface movement is inverted.\n\n" Inverted
+export Inverted
+import ..ControlSurface_set_Inverted as var"##1071"
+Inverted!(this::RemoteTypes.ControlSurface, value::Bool) = begin
+        kerbal(this.conn, var"##1071"(this, value))
+    end
+@doc "    Inverted!(this::RemoteTypes.ControlSurface, value::Bool)\n\nWhether the control surface movement is inverted.\n\n" Inverted!
+export Inverted!
+import ..ControlSurface_get_Deployed as var"##1072"
+Deployed(this::RemoteTypes.ControlSurface) = begin
+        kerbal(this.conn, var"##1072"(this))
+    end
+@doc "    Deployed(this::RemoteTypes.ControlSurface)\n\nWhether the control surface has been fully deployed.\n\n" Deployed
+export Deployed
+import ..ControlSurface_set_Deployed as var"##1073"
+Deployed!(this::RemoteTypes.ControlSurface, value::Bool) = begin
+        kerbal(this.conn, var"##1073"(this, value))
+    end
+@doc "    Deployed!(this::RemoteTypes.ControlSurface, value::Bool)\n\nWhether the control surface has been fully deployed.\n\n" Deployed!
+export Deployed!
+import ..ControlSurface_get_SurfaceArea as var"##1074"
+SurfaceArea(this::RemoteTypes.ControlSurface) = begin
+        kerbal(this.conn, var"##1074"(this))
+    end
+@doc "    SurfaceArea(this::RemoteTypes.ControlSurface)\n\nSurface area of the control surface in m^2.\n\n" SurfaceArea
+export SurfaceArea
+import ..ControlSurface_get_AvailableTorque as var"##1075"
+AvailableTorque(this::RemoteTypes.ControlSurface) = begin
+        kerbal(this.conn, var"##1075"(this))
+    end
+@doc "    AvailableTorque(this::RemoteTypes.ControlSurface)\n\nThe available torque, in Newton meters, that can be produced by this control surface,\nin the positive and negative pitch, roll and yaw axes of the vessel. These axes\ncorrespond to the coordinate axes of the .\n\n" AvailableTorque
+export AvailableTorque
+import ..Decoupler_Decouple as var"##1076"
+Decouple(this::RemoteTypes.Decoupler) = begin
+        kerbal(this.conn, var"##1076"(this))
+    end
+@doc "    Decouple(this::RemoteTypes.Decoupler)\n\nFires the decoupler. Returns the new vessel created when the decoupler fires.\nThrows an exception if the decoupler has already fired.\n\n# Remarks\n When called, the active vessel may change. It is therefore possible that, after calling this function, the object(s) returned by previous call(s) to  no longer refer to the active vessel. \n" Decouple
+export Decouple
+import ..Decoupler_get_Part as var"##1077"
+Part(this::RemoteTypes.Decoupler) = begin
+        kerbal(this.conn, var"##1077"(this))
+    end
+@doc "    Part(this::RemoteTypes.Decoupler)\n\nThe part object for this decoupler.\n\n" Part
+export Part
+import ..Decoupler_get_Decoupled as var"##1078"
+Decoupled(this::RemoteTypes.Decoupler) = begin
+        kerbal(this.conn, var"##1078"(this))
+    end
+@doc "    Decoupled(this::RemoteTypes.Decoupler)\n\nWhether the decoupler has fired.\n\n" Decoupled
+export Decoupled
+import ..Decoupler_get_Staged as var"##1079"
+Staged(this::RemoteTypes.Decoupler) = begin
+        kerbal(this.conn, var"##1079"(this))
+    end
+@doc "    Staged(this::RemoteTypes.Decoupler)\n\nWhether the decoupler is enabled in the staging sequence.\n\n" Staged
+export Staged
+import ..Decoupler_get_Impulse as var"##1080"
+Impulse(this::RemoteTypes.Decoupler) = begin
+        kerbal(this.conn, var"##1080"(this))
+    end
+@doc "    Impulse(this::RemoteTypes.Decoupler)\n\nThe impulse that the decoupler imparts when it is fired, in Newton seconds.\n\n" Impulse
+export Impulse
+import ..DockingPort_Undock as var"##1081"
+Undock(this::RemoteTypes.DockingPort) = begin
+        kerbal(this.conn, var"##1081"(this))
+    end
+@doc "    Undock(this::RemoteTypes.DockingPort)\n\nUndocks the docking port and returns the new  that is created.\nThis method can be called for either docking port in a docked pair.\nThrows an exception if the docking port is not docked to anything.\n\n# Remarks\n When called, the active vessel may change. It is therefore possible that, after calling this function, the object(s) returned by previous call(s) to  no longer refer to the active vessel. \n" Undock
+export Undock
+import ..DockingPort_Position as var"##1082"
+Position(this::RemoteTypes.DockingPort, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1082"(this, referenceFrame))
+    end
+@doc "    Position(this::RemoteTypes.DockingPort, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position of the docking port, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n" Position
+export Position
+import ..DockingPort_Direction as var"##1083"
+Direction(this::RemoteTypes.DockingPort, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1083"(this, referenceFrame))
+    end
+@doc "    Direction(this::RemoteTypes.DockingPort, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe direction that docking port points in, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned direction is in.\n# Returns\nThe direction as a unit vector.\n" Direction
+export Direction
+import ..DockingPort_Rotation as var"##1084"
+Rotation(this::RemoteTypes.DockingPort, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1084"(this, referenceFrame))
+    end
+@doc "    Rotation(this::RemoteTypes.DockingPort, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe rotation of the docking port, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned rotation is in.\n# Returns\nThe rotation as a quaternion of the form (x, y, z, w).\n" Rotation
+export Rotation
+import ..DockingPort_get_Part as var"##1085"
+Part(this::RemoteTypes.DockingPort) = begin
+        kerbal(this.conn, var"##1085"(this))
+    end
+@doc "    Part(this::RemoteTypes.DockingPort)\n\nThe part object for this docking port.\n\n" Part
+export Part
+import ..DockingPort_get_State as var"##1086"
+State(this::RemoteTypes.DockingPort) = begin
+        kerbal(this.conn, var"##1086"(this))
+    end
+@doc "    State(this::RemoteTypes.DockingPort)\n\nThe current state of the docking port.\n\n" State
+export State
+import ..DockingPort_get_DockedPart as var"##1087"
+DockedPart(this::RemoteTypes.DockingPort) = begin
+        kerbal(this.conn, var"##1087"(this))
+    end
+@doc "    DockedPart(this::RemoteTypes.DockingPort)\n\nThe part that this docking port is docked to. Returns null if this\ndocking port is not docked to anything.\n\n" DockedPart
+export DockedPart
+import ..DockingPort_get_ReengageDistance as var"##1088"
+ReengageDistance(this::RemoteTypes.DockingPort) = begin
+        kerbal(this.conn, var"##1088"(this))
+    end
+@doc "    ReengageDistance(this::RemoteTypes.DockingPort)\n\nThe distance a docking port must move away when it undocks before it\nbecomes ready to dock with another port, in meters.\n\n" ReengageDistance
+export ReengageDistance
+import ..DockingPort_get_HasShield as var"##1089"
+HasShield(this::RemoteTypes.DockingPort) = begin
+        kerbal(this.conn, var"##1089"(this))
+    end
+@doc "    HasShield(this::RemoteTypes.DockingPort)\n\nWhether the docking port has a shield.\n\n" HasShield
+export HasShield
+import ..DockingPort_get_Shielded as var"##1090"
+Shielded(this::RemoteTypes.DockingPort) = begin
+        kerbal(this.conn, var"##1090"(this))
+    end
+@doc "    Shielded(this::RemoteTypes.DockingPort)\n\nThe state of the docking ports shield, if it has one.\n\nReturns true if the docking port has a shield, and the shield is\nclosed. Otherwise returns false. When set to true, the shield is\nclosed, and when set to false the shield is opened. If the docking\nport does not have a shield, setting this attribute has no effect.\n\n" Shielded
+export Shielded
+import ..DockingPort_set_Shielded as var"##1091"
+Shielded!(this::RemoteTypes.DockingPort, value::Bool) = begin
+        kerbal(this.conn, var"##1091"(this, value))
+    end
+@doc "    Shielded!(this::RemoteTypes.DockingPort, value::Bool)\n\nThe state of the docking ports shield, if it has one.\n\nReturns true if the docking port has a shield, and the shield is\nclosed. Otherwise returns false. When set to true, the shield is\nclosed, and when set to false the shield is opened. If the docking\nport does not have a shield, setting this attribute has no effect.\n\n" Shielded!
+export Shielded!
+import ..DockingPort_get_ReferenceFrame as var"##1092"
+ReferenceFrame(this::RemoteTypes.DockingPort) = begin
+        kerbal(this.conn, var"##1092"(this))
+    end
+@doc "    ReferenceFrame(this::RemoteTypes.DockingPort)\n\nThe reference frame that is fixed relative to this docking port, and\noriented with the port.\nThe origin is at the position of the docking port.\nThe axes rotate with the docking port.The x-axis points out to the right side of the docking port.\nThe y-axis points in the direction the docking port is facing.\nThe z-axis points out of the bottom off the docking port.\n\n# Remarks\n This reference frame is not necessarily equivalent to the reference frame for the part, returned by . \n" ReferenceFrame
+export ReferenceFrame
+import ..Engine_ToggleMode as var"##1093"
+ToggleMode(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1093"(this))
+    end
+@doc "    ToggleMode(this::RemoteTypes.Engine)\n\nToggle the current engine mode.\n\n" ToggleMode
+export ToggleMode
+import ..Engine_get_Part as var"##1094"
+Part(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1094"(this))
+    end
+@doc "    Part(this::RemoteTypes.Engine)\n\nThe part object for this engine.\n\n" Part
+export Part
+import ..Engine_get_Active as var"##1095"
+Active(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1095"(this))
+    end
+@doc "    Active(this::RemoteTypes.Engine)\n\nWhether the engine is active. Setting this attribute may have no effect,\ndepending on  and .\n\n" Active
+export Active
+import ..Engine_set_Active as var"##1096"
+Active!(this::RemoteTypes.Engine, value::Bool) = begin
+        kerbal(this.conn, var"##1096"(this, value))
+    end
+@doc "    Active!(this::RemoteTypes.Engine, value::Bool)\n\nWhether the engine is active. Setting this attribute may have no effect,\ndepending on  and .\n\n" Active!
+export Active!
+import ..Engine_get_Thrust as var"##1097"
+Thrust(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1097"(this))
+    end
+@doc "    Thrust(this::RemoteTypes.Engine)\n\nThe current amount of thrust being produced by the engine, in Newtons.\n\n" Thrust
+export Thrust
+import ..Engine_get_AvailableThrust as var"##1098"
+AvailableThrust(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1098"(this))
+    end
+@doc "    AvailableThrust(this::RemoteTypes.Engine)\n\nThe amount of thrust, in Newtons, that would be produced by the engine\nwhen activated and with its throttle set to 100%.\nReturns zero if the engine does not have any fuel.\nTakes the engine's current  and atmospheric conditions\ninto account.\n\n" AvailableThrust
+export AvailableThrust
+import ..Engine_get_MaxThrust as var"##1099"
+MaxThrust(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1099"(this))
+    end
+@doc "    MaxThrust(this::RemoteTypes.Engine)\n\nThe amount of thrust, in Newtons, that would be produced by the engine\nwhen activated and fueled, with its throttle and throttle limiter set to 100%.\n\n" MaxThrust
+export MaxThrust
+import ..Engine_get_MaxVacuumThrust as var"##1100"
+MaxVacuumThrust(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1100"(this))
+    end
+@doc "    MaxVacuumThrust(this::RemoteTypes.Engine)\n\nThe maximum amount of thrust that can be produced by the engine in a\nvacuum, in Newtons. This is the amount of thrust produced by the engine\nwhen activated,  is set to 100%, the main\nvessel's throttle is set to 100% and the engine is in a vacuum.\n\n" MaxVacuumThrust
+export MaxVacuumThrust
+import ..Engine_get_ThrustLimit as var"##1101"
+ThrustLimit(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1101"(this))
+    end
+@doc "    ThrustLimit(this::RemoteTypes.Engine)\n\nThe thrust limiter of the engine. A value between 0 and 1. Setting this\nattribute may have no effect, for example the thrust limit for a solid\nrocket booster cannot be changed in flight.\n\n" ThrustLimit
+export ThrustLimit
+import ..Engine_set_ThrustLimit as var"##1102"
+ThrustLimit!(this::RemoteTypes.Engine, value::Float32) = begin
+        kerbal(this.conn, var"##1102"(this, value))
+    end
+@doc "    ThrustLimit!(this::RemoteTypes.Engine, value::Float32)\n\nThe thrust limiter of the engine. A value between 0 and 1. Setting this\nattribute may have no effect, for example the thrust limit for a solid\nrocket booster cannot be changed in flight.\n\n" ThrustLimit!
+export ThrustLimit!
+import ..Engine_get_Thrusters as var"##1103"
+Thrusters(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1103"(this))
+    end
+@doc "    Thrusters(this::RemoteTypes.Engine)\n\nThe components of the engine that generate thrust.\n\n# Remarks\n For example, this corresponds to the rocket nozzel on a solid rocket booster, or the individual nozzels on a RAPIER engine. The overall thrust produced by the engine, as reported by ,  and others, is the sum of the thrust generated by each thruster. \n" Thrusters
+export Thrusters
+import ..Engine_get_SpecificImpulse as var"##1104"
+SpecificImpulse(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1104"(this))
+    end
+@doc "    SpecificImpulse(this::RemoteTypes.Engine)\n\nThe current specific impulse of the engine, in seconds. Returns zero\nif the engine is not active.\n\n" SpecificImpulse
+export SpecificImpulse
+import ..Engine_get_VacuumSpecificImpulse as var"##1105"
+VacuumSpecificImpulse(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1105"(this))
+    end
+@doc "    VacuumSpecificImpulse(this::RemoteTypes.Engine)\n\nThe vacuum specific impulse of the engine, in seconds.\n\n" VacuumSpecificImpulse
+export VacuumSpecificImpulse
+import ..Engine_get_KerbinSeaLevelSpecificImpulse as var"##1106"
+KerbinSeaLevelSpecificImpulse(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1106"(this))
+    end
+@doc "    KerbinSeaLevelSpecificImpulse(this::RemoteTypes.Engine)\n\nThe specific impulse of the engine at sea level on Kerbin, in seconds.\n\n" KerbinSeaLevelSpecificImpulse
+export KerbinSeaLevelSpecificImpulse
+import ..Engine_get_PropellantNames as var"##1107"
+PropellantNames(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1107"(this))
+    end
+@doc "    PropellantNames(this::RemoteTypes.Engine)\n\nThe names of the propellants that the engine consumes.\n\n" PropellantNames
+export PropellantNames
+import ..Engine_get_Propellants as var"##1108"
+Propellants(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1108"(this))
+    end
+@doc "    Propellants(this::RemoteTypes.Engine)\n\nThe propellants that the engine consumes.\n\n" Propellants
+export Propellants
+import ..Engine_get_PropellantRatios as var"##1109"
+PropellantRatios(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1109"(this))
+    end
+@doc "    PropellantRatios(this::RemoteTypes.Engine)\n\nThe ratio of resources that the engine consumes. A dictionary mapping resource names\nto the ratio at which they are consumed by the engine.\n\n# Remarks\n For example, if the ratios are 0.6 for LiquidFuel and 0.4 for Oxidizer, then for every 0.6 units of LiquidFuel that the engine burns, it will burn 0.4 units of Oxidizer. \n" PropellantRatios
+export PropellantRatios
+import ..Engine_get_HasFuel as var"##1110"
+HasFuel(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1110"(this))
+    end
+@doc "    HasFuel(this::RemoteTypes.Engine)\n\nWhether the engine has any fuel available.\n\n" HasFuel
+export HasFuel
+import ..Engine_get_Throttle as var"##1111"
+Throttle(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1111"(this))
+    end
+@doc "    Throttle(this::RemoteTypes.Engine)\n\nThe current throttle setting for the engine. A value between 0 and 1.\nThis is not necessarily the same as the vessel's main throttle\nsetting, as some engines take time to adjust their throttle\n(such as jet engines).\n\n" Throttle
+export Throttle
+import ..Engine_get_ThrottleLocked as var"##1112"
+ThrottleLocked(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1112"(this))
+    end
+@doc "    ThrottleLocked(this::RemoteTypes.Engine)\n\nWhether the  affects the engine. For example,\nthis is true for liquid fueled rockets, and false for solid rocket\nboosters.\n\n" ThrottleLocked
+export ThrottleLocked
+import ..Engine_get_CanRestart as var"##1113"
+CanRestart(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1113"(this))
+    end
+@doc "    CanRestart(this::RemoteTypes.Engine)\n\nWhether the engine can be restarted once shutdown. If the engine cannot be shutdown,\nreturns false. For example, this is true for liquid fueled rockets\nand false for solid rocket boosters.\n\n" CanRestart
+export CanRestart
+import ..Engine_get_CanShutdown as var"##1114"
+CanShutdown(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1114"(this))
+    end
+@doc "    CanShutdown(this::RemoteTypes.Engine)\n\nWhether the engine can be shutdown once activated. For example, this is\ntrue for liquid fueled rockets and false for solid rocket boosters.\n\n" CanShutdown
+export CanShutdown
+import ..Engine_get_HasModes as var"##1115"
+HasModes(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1115"(this))
+    end
+@doc "    HasModes(this::RemoteTypes.Engine)\n\nWhether the engine has multiple modes of operation.\n\n" HasModes
+export HasModes
+import ..Engine_get_Mode as var"##1116"
+Mode(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1116"(this))
+    end
+@doc "    Mode(this::RemoteTypes.Engine)\n\nThe name of the current engine mode.\n\n" Mode
+export Mode
+import ..Engine_set_Mode as var"##1117"
+Mode!(this::RemoteTypes.Engine, value::String) = begin
+        kerbal(this.conn, var"##1117"(this, value))
+    end
+@doc "    Mode!(this::RemoteTypes.Engine, value::String)\n\nThe name of the current engine mode.\n\n" Mode!
+export Mode!
+import ..Engine_get_Modes as var"##1118"
+Modes(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1118"(this))
+    end
+@doc "    Modes(this::RemoteTypes.Engine)\n\nThe available modes for the engine.\nA dictionary mapping mode names to  objects.\n\n" Modes
+export Modes
+import ..Engine_get_AutoModeSwitch as var"##1119"
+AutoModeSwitch(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1119"(this))
+    end
+@doc "    AutoModeSwitch(this::RemoteTypes.Engine)\n\nWhether the engine will automatically switch modes.\n\n" AutoModeSwitch
+export AutoModeSwitch
+import ..Engine_set_AutoModeSwitch as var"##1120"
+AutoModeSwitch!(this::RemoteTypes.Engine, value::Bool) = begin
+        kerbal(this.conn, var"##1120"(this, value))
+    end
+@doc "    AutoModeSwitch!(this::RemoteTypes.Engine, value::Bool)\n\nWhether the engine will automatically switch modes.\n\n" AutoModeSwitch!
+export AutoModeSwitch!
+import ..Engine_get_Gimballed as var"##1121"
+Gimballed(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1121"(this))
+    end
+@doc "    Gimballed(this::RemoteTypes.Engine)\n\nWhether the engine is gimballed.\n\n" Gimballed
+export Gimballed
+import ..Engine_get_GimbalRange as var"##1122"
+GimbalRange(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1122"(this))
+    end
+@doc "    GimbalRange(this::RemoteTypes.Engine)\n\nThe range over which the gimbal can move, in degrees.\nReturns 0 if the engine is not gimballed.\n\n" GimbalRange
+export GimbalRange
+import ..Engine_get_GimbalLocked as var"##1123"
+GimbalLocked(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1123"(this))
+    end
+@doc "    GimbalLocked(this::RemoteTypes.Engine)\n\nWhether the engines gimbal is locked in place. Setting this attribute has\nno effect if the engine is not gimballed.\n\n" GimbalLocked
+export GimbalLocked
+import ..Engine_set_GimbalLocked as var"##1124"
+GimbalLocked!(this::RemoteTypes.Engine, value::Bool) = begin
+        kerbal(this.conn, var"##1124"(this, value))
+    end
+@doc "    GimbalLocked!(this::RemoteTypes.Engine, value::Bool)\n\nWhether the engines gimbal is locked in place. Setting this attribute has\nno effect if the engine is not gimballed.\n\n" GimbalLocked!
+export GimbalLocked!
+import ..Engine_get_GimbalLimit as var"##1125"
+GimbalLimit(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1125"(this))
+    end
+@doc "    GimbalLimit(this::RemoteTypes.Engine)\n\nThe gimbal limiter of the engine. A value between 0 and 1.\nReturns 0 if the gimbal is locked.\n\n" GimbalLimit
+export GimbalLimit
+import ..Engine_set_GimbalLimit as var"##1126"
+GimbalLimit!(this::RemoteTypes.Engine, value::Float32) = begin
+        kerbal(this.conn, var"##1126"(this, value))
+    end
+@doc "    GimbalLimit!(this::RemoteTypes.Engine, value::Float32)\n\nThe gimbal limiter of the engine. A value between 0 and 1.\nReturns 0 if the gimbal is locked.\n\n" GimbalLimit!
+export GimbalLimit!
+import ..Engine_get_AvailableTorque as var"##1127"
+AvailableTorque(this::RemoteTypes.Engine) = begin
+        kerbal(this.conn, var"##1127"(this))
+    end
+@doc "    AvailableTorque(this::RemoteTypes.Engine)\n\nThe available torque, in Newton meters, that can be produced by this engine,\nin the positive and negative pitch, roll and yaw axes of the vessel. These axes\ncorrespond to the coordinate axes of the .\nReturns zero if the engine is inactive, or not gimballed.\n\n" AvailableTorque
+export AvailableTorque
+import ..Experiment_Run as var"##1128"
+Run(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1128"(this))
+    end
+@doc "    Run(this::RemoteTypes.Experiment)\n\nRun the experiment.\n\n" Run
+export Run
+import ..Experiment_Transmit as var"##1129"
+Transmit(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1129"(this))
+    end
+@doc "    Transmit(this::RemoteTypes.Experiment)\n\nTransmit all experimental data contained by this part.\n\n" Transmit
+export Transmit
+import ..Experiment_Dump as var"##1130"
+Dump(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1130"(this))
+    end
+@doc "    Dump(this::RemoteTypes.Experiment)\n\nDump the experimental data contained by the experiment.\n\n" Dump
+export Dump
+import ..Experiment_Reset as var"##1131"
+Reset(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1131"(this))
+    end
+@doc "    Reset(this::RemoteTypes.Experiment)\n\nReset the experiment.\n\n" Reset
+export Reset
+import ..Experiment_get_Part as var"##1132"
+Part(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1132"(this))
+    end
+@doc "    Part(this::RemoteTypes.Experiment)\n\nThe part object for this experiment.\n\n" Part
+export Part
+import ..Experiment_get_Name as var"##1133"
+Name(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1133"(this))
+    end
+@doc "    Name(this::RemoteTypes.Experiment)\n\nInternal name of the experiment, as used in\npart cfg files.\n\n" Name
+export Name
+import ..Experiment_get_Title as var"##1134"
+Title(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1134"(this))
+    end
+@doc "    Title(this::RemoteTypes.Experiment)\n\nTitle of the experiment, as shown on the in-game UI.\n\n" Title
+export Title
+import ..Experiment_get_Inoperable as var"##1135"
+Inoperable(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1135"(this))
+    end
+@doc "    Inoperable(this::RemoteTypes.Experiment)\n\nWhether the experiment is inoperable.\n\n" Inoperable
+export Inoperable
+import ..Experiment_get_Deployed as var"##1136"
+Deployed(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1136"(this))
+    end
+@doc "    Deployed(this::RemoteTypes.Experiment)\n\nWhether the experiment has been deployed.\n\n" Deployed
+export Deployed
+import ..Experiment_get_Rerunnable as var"##1137"
+Rerunnable(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1137"(this))
+    end
+@doc "    Rerunnable(this::RemoteTypes.Experiment)\n\nWhether the experiment can be re-run.\n\n" Rerunnable
+export Rerunnable
+import ..Experiment_get_HasData as var"##1138"
+HasData(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1138"(this))
+    end
+@doc "    HasData(this::RemoteTypes.Experiment)\n\nWhether the experiment contains data.\n\n" HasData
+export HasData
+import ..Experiment_get_Data as var"##1139"
+Data(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1139"(this))
+    end
+@doc "    Data(this::RemoteTypes.Experiment)\n\nThe data contained in this experiment.\n\n" Data
+export Data
+import ..Experiment_get_Available as var"##1140"
+Available(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1140"(this))
+    end
+@doc "    Available(this::RemoteTypes.Experiment)\n\nDetermines if the experiment is available given the current conditions.\n\n" Available
+export Available
+import ..Experiment_get_Biome as var"##1141"
+Biome(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1141"(this))
+    end
+@doc "    Biome(this::RemoteTypes.Experiment)\n\nThe name of the biome the experiment is currently in.\n\n" Biome
+export Biome
+import ..Experiment_get_ScienceSubject as var"##1142"
+ScienceSubject(this::RemoteTypes.Experiment) = begin
+        kerbal(this.conn, var"##1142"(this))
+    end
+@doc "    ScienceSubject(this::RemoteTypes.Experiment)\n\nContaining information on the corresponding specific science result for the current\nconditions. Returns null if the experiment is unavailable.\n\n" ScienceSubject
+export ScienceSubject
+import ..Fairing_Jettison as var"##1143"
+Jettison(this::RemoteTypes.Fairing) = begin
+        kerbal(this.conn, var"##1143"(this))
+    end
+@doc "    Jettison(this::RemoteTypes.Fairing)\n\nJettison the fairing. Has no effect if it has already been jettisoned.\n\n" Jettison
+export Jettison
+import ..Fairing_get_Part as var"##1144"
+Part(this::RemoteTypes.Fairing) = begin
+        kerbal(this.conn, var"##1144"(this))
+    end
+@doc "    Part(this::RemoteTypes.Fairing)\n\nThe part object for this fairing.\n\n" Part
+export Part
+import ..Fairing_get_Jettisoned as var"##1145"
+Jettisoned(this::RemoteTypes.Fairing) = begin
+        kerbal(this.conn, var"##1145"(this))
+    end
+@doc "    Jettisoned(this::RemoteTypes.Fairing)\n\nWhether the fairing has been jettisoned.\n\n" Jettisoned
+export Jettisoned
+import ..Force_Remove as var"##1146"
+Remove(this::RemoteTypes.Force) = begin
+        kerbal(this.conn, var"##1146"(this))
+    end
+@doc "    Remove(this::RemoteTypes.Force)\n\nRemove the force.\n\n" Remove
+export Remove
+import ..Force_get_Part as var"##1147"
+Part(this::RemoteTypes.Force) = begin
+        kerbal(this.conn, var"##1147"(this))
+    end
+@doc "    Part(this::RemoteTypes.Force)\n\nThe part that this force is applied to.\n\n" Part
+export Part
+import ..Force_get_ForceVector as var"##1148"
+ForceVector(this::RemoteTypes.Force) = begin
+        kerbal(this.conn, var"##1148"(this))
+    end
+@doc "    ForceVector(this::RemoteTypes.Force)\n\nThe force vector, in Newtons.\n\n# Returns\nA vector pointing in the direction that the force acts, with its magnitude equal to the strength of the force in Newtons.\n" ForceVector
+export ForceVector
+import ..Force_set_ForceVector as var"##1149"
+ForceVector!(this::RemoteTypes.Force, value::begin
+                Tuple{Float64, Float64, Float64}
+            end) = begin
+        kerbal(this.conn, var"##1149"(this, value))
+    end
+@doc "    ForceVector!(this::RemoteTypes.Force, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nThe force vector, in Newtons.\n\n# Returns\nA vector pointing in the direction that the force acts, with its magnitude equal to the strength of the force in Newtons.\n" ForceVector!
+export ForceVector!
+import ..Force_get_Position as var"##1150"
+Position(this::RemoteTypes.Force) = begin
+        kerbal(this.conn, var"##1150"(this))
+    end
+@doc "    Position(this::RemoteTypes.Force)\n\nThe position at which the force acts, in reference frame .\n\n# Returns\nThe position as a vector.\n" Position
+export Position
+import ..Force_set_Position as var"##1151"
+Position!(this::RemoteTypes.Force, value::begin
+                Tuple{Float64, Float64, Float64}
+            end) = begin
+        kerbal(this.conn, var"##1151"(this, value))
+    end
+@doc "    Position!(this::RemoteTypes.Force, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nThe position at which the force acts, in reference frame .\n\n# Returns\nThe position as a vector.\n" Position!
+export Position!
+import ..Force_get_ReferenceFrame as var"##1152"
+ReferenceFrame(this::RemoteTypes.Force) = begin
+        kerbal(this.conn, var"##1152"(this))
+    end
+@doc "    ReferenceFrame(this::RemoteTypes.Force)\n\nThe reference frame of the force vector and position.\n\n" ReferenceFrame
+export ReferenceFrame
+import ..Force_set_ReferenceFrame as var"##1153"
+ReferenceFrame!(this::RemoteTypes.Force, value::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1153"(this, value))
+    end
+@doc "    ReferenceFrame!(this::RemoteTypes.Force, value::RemoteTypes.ReferenceFrame)\n\nThe reference frame of the force vector and position.\n\n" ReferenceFrame!
+export ReferenceFrame!
+import ..Intake_get_Part as var"##1154"
+Part(this::RemoteTypes.Intake) = begin
+        kerbal(this.conn, var"##1154"(this))
+    end
+@doc "    Part(this::RemoteTypes.Intake)\n\nThe part object for this intake.\n\n" Part
+export Part
+import ..Intake_get_Open as var"##1155"
+Open(this::RemoteTypes.Intake) = begin
+        kerbal(this.conn, var"##1155"(this))
+    end
+@doc "    Open(this::RemoteTypes.Intake)\n\nWhether the intake is open.\n\n" Open
+export Open
+import ..Intake_set_Open as var"##1156"
+Open!(this::RemoteTypes.Intake, value::Bool) = begin
+        kerbal(this.conn, var"##1156"(this, value))
+    end
+@doc "    Open!(this::RemoteTypes.Intake, value::Bool)\n\nWhether the intake is open.\n\n" Open!
+export Open!
+import ..Intake_get_Speed as var"##1157"
+Speed(this::RemoteTypes.Intake) = begin
+        kerbal(this.conn, var"##1157"(this))
+    end
+@doc "    Speed(this::RemoteTypes.Intake)\n\nSpeed of the flow into the intake, in m/s.\n\n" Speed
+export Speed
+import ..Intake_get_Flow as var"##1158"
+Flow(this::RemoteTypes.Intake) = begin
+        kerbal(this.conn, var"##1158"(this))
+    end
+@doc "    Flow(this::RemoteTypes.Intake)\n\nThe rate of flow into the intake, in units of resource per second.\n\n" Flow
+export Flow
+import ..Intake_get_Area as var"##1159"
+Area(this::RemoteTypes.Intake) = begin
+        kerbal(this.conn, var"##1159"(this))
+    end
+@doc "    Area(this::RemoteTypes.Intake)\n\nThe area of the intake's opening, in square meters.\n\n" Area
+export Area
+import ..LaunchClamp_Release as var"##1160"
+Release(this::RemoteTypes.LaunchClamp) = begin
+        kerbal(this.conn, var"##1160"(this))
+    end
+@doc "    Release(this::RemoteTypes.LaunchClamp)\n\nReleases the docking clamp. Has no effect if the clamp has already been released.\n\n" Release
+export Release
+import ..LaunchClamp_get_Part as var"##1161"
+Part(this::RemoteTypes.LaunchClamp) = begin
+        kerbal(this.conn, var"##1161"(this))
+    end
+@doc "    Part(this::RemoteTypes.LaunchClamp)\n\nThe part object for this launch clamp.\n\n" Part
+export Part
+import ..Leg_get_Part as var"##1162"
+Part(this::RemoteTypes.Leg) = begin
+        kerbal(this.conn, var"##1162"(this))
+    end
+@doc "    Part(this::RemoteTypes.Leg)\n\nThe part object for this landing leg.\n\n" Part
+export Part
+import ..Leg_get_State as var"##1163"
+State(this::RemoteTypes.Leg) = begin
+        kerbal(this.conn, var"##1163"(this))
+    end
+@doc "    State(this::RemoteTypes.Leg)\n\nThe current state of the landing leg.\n\n" State
+export State
+import ..Leg_get_Deployable as var"##1164"
+Deployable(this::RemoteTypes.Leg) = begin
+        kerbal(this.conn, var"##1164"(this))
+    end
+@doc "    Deployable(this::RemoteTypes.Leg)\n\nWhether the leg is deployable.\n\n" Deployable
+export Deployable
+import ..Leg_get_Deployed as var"##1165"
+Deployed(this::RemoteTypes.Leg) = begin
+        kerbal(this.conn, var"##1165"(this))
+    end
+@doc "    Deployed(this::RemoteTypes.Leg)\n\nWhether the landing leg is deployed.\n\n# Remarks\n Fixed landing legs are always deployed. Returns an error if you try to deploy fixed landing gear. \n" Deployed
+export Deployed
+import ..Leg_set_Deployed as var"##1166"
+Deployed!(this::RemoteTypes.Leg, value::Bool) = begin
+        kerbal(this.conn, var"##1166"(this, value))
+    end
+@doc "    Deployed!(this::RemoteTypes.Leg, value::Bool)\n\nWhether the landing leg is deployed.\n\n# Remarks\n Fixed landing legs are always deployed. Returns an error if you try to deploy fixed landing gear. \n" Deployed!
+export Deployed!
+import ..Leg_get_IsGrounded as var"##1167"
+IsGrounded(this::RemoteTypes.Leg) = begin
+        kerbal(this.conn, var"##1167"(this))
+    end
+@doc "    IsGrounded(this::RemoteTypes.Leg)\n\nReturns whether the leg is touching the ground.\n\n" IsGrounded
+export IsGrounded
+import ..Light_get_Part as var"##1168"
+Part(this::RemoteTypes.Light) = begin
+        kerbal(this.conn, var"##1168"(this))
+    end
+@doc "    Part(this::RemoteTypes.Light)\n\nThe part object for this light.\n\n" Part
+export Part
+import ..Light_get_Active as var"##1169"
+Active(this::RemoteTypes.Light) = begin
+        kerbal(this.conn, var"##1169"(this))
+    end
+@doc "    Active(this::RemoteTypes.Light)\n\nWhether the light is switched on.\n\n" Active
+export Active
+import ..Light_set_Active as var"##1170"
+Active!(this::RemoteTypes.Light, value::Bool) = begin
+        kerbal(this.conn, var"##1170"(this, value))
+    end
+@doc "    Active!(this::RemoteTypes.Light, value::Bool)\n\nWhether the light is switched on.\n\n" Active!
+export Active!
+import ..Light_get_Color as var"##1171"
+Color(this::RemoteTypes.Light) = begin
+        kerbal(this.conn, var"##1171"(this))
+    end
+@doc "    Color(this::RemoteTypes.Light)\n\nThe color of the light, as an RGB triple.\n\n" Color
+export Color
+import ..Light_set_Color as var"##1172"
+Color!(this::RemoteTypes.Light, value::begin
+                Tuple{Float32, Float32, Float32}
+            end) = begin
+        kerbal(this.conn, var"##1172"(this, value))
+    end
+@doc "    Color!(this::RemoteTypes.Light, value::begin\n    Tuple{Float32, Float32, Float32}\nend)\n\nThe color of the light, as an RGB triple.\n\n" Color!
+export Color!
+import ..Light_get_PowerUsage as var"##1173"
+PowerUsage(this::RemoteTypes.Light) = begin
+        kerbal(this.conn, var"##1173"(this))
+    end
+@doc "    PowerUsage(this::RemoteTypes.Light)\n\nThe current power usage, in units of charge per second.\n\n" PowerUsage
+export PowerUsage
+import ..Module_HasField as var"##1174"
+HasField(this::RemoteTypes.Module, name::String) = begin
+        kerbal(this.conn, var"##1174"(this, name))
+    end
+@doc "    HasField(this::RemoteTypes.Module, name::String)\n\nReturns true if the module has a field with the given name.\n\n# Arguments\n- `name::String`: Name of the field.\n" HasField
+export HasField
+import ..Module_GetField as var"##1175"
+GetField(this::RemoteTypes.Module, name::String) = begin
+        kerbal(this.conn, var"##1175"(this, name))
+    end
+@doc "    GetField(this::RemoteTypes.Module, name::String)\n\nReturns the value of a field.\n\n# Arguments\n- `name::String`: Name of the field.\n" GetField
+export GetField
+import ..Module_SetFieldInt as var"##1176"
+SetFieldInt(this::RemoteTypes.Module, name::String, value::Int32) = begin
+        kerbal(this.conn, var"##1176"(this, name, value))
+    end
+@doc "    SetFieldInt(this::RemoteTypes.Module, name::String, value::Int32)\n\nSet the value of a field to the given integer number.\n\n# Arguments\n- `name::String`: Name of the field.\n- `value::Int32`: Value to set.\n" SetFieldInt
+export SetFieldInt
+import ..Module_SetFieldFloat as var"##1177"
+SetFieldFloat(this::RemoteTypes.Module, name::String, value::Float32) = begin
+        kerbal(this.conn, var"##1177"(this, name, value))
+    end
+@doc "    SetFieldFloat(this::RemoteTypes.Module, name::String, value::Float32)\n\nSet the value of a field to the given floating point number.\n\n# Arguments\n- `name::String`: Name of the field.\n- `value::Float32`: Value to set.\n" SetFieldFloat
+export SetFieldFloat
+import ..Module_SetFieldString as var"##1178"
+SetFieldString(this::RemoteTypes.Module, name::String, value::String) = begin
+        kerbal(this.conn, var"##1178"(this, name, value))
+    end
+@doc "    SetFieldString(this::RemoteTypes.Module, name::String, value::String)\n\nSet the value of a field to the given string.\n\n# Arguments\n- `name::String`: Name of the field.\n- `value::String`: Value to set.\n" SetFieldString
+export SetFieldString
+import ..Module_ResetField as var"##1179"
+ResetField(this::RemoteTypes.Module, name::String) = begin
+        kerbal(this.conn, var"##1179"(this, name))
+    end
+@doc "    ResetField(this::RemoteTypes.Module, name::String)\n\nSet the value of a field to its original value.\n\n# Arguments\n- `name::String`: Name of the field.\n" ResetField
+export ResetField
+import ..Module_HasEvent as var"##1180"
+HasEvent(this::RemoteTypes.Module, name::String) = begin
+        kerbal(this.conn, var"##1180"(this, name))
+    end
+@doc "    HasEvent(this::RemoteTypes.Module, name::String)\ntrue if the module has an event with the given name.\n\n# Arguments\n- `name::String`: \n" HasEvent
+export HasEvent
+import ..Module_TriggerEvent as var"##1181"
+TriggerEvent(this::RemoteTypes.Module, name::String) = begin
+        kerbal(this.conn, var"##1181"(this, name))
+    end
+@doc "    TriggerEvent(this::RemoteTypes.Module, name::String)\n\nTrigger the named event. Equivalent to clicking the button in the right-click menu\nof the part.\n\n# Arguments\n- `name::String`: \n" TriggerEvent
+export TriggerEvent
+import ..Module_HasAction as var"##1182"
+HasAction(this::RemoteTypes.Module, name::String) = begin
+        kerbal(this.conn, var"##1182"(this, name))
+    end
+@doc "    HasAction(this::RemoteTypes.Module, name::String)\ntrue if the part has an action with the given name.\n\n# Arguments\n- `name::String`: \n" HasAction
+export HasAction
+import ..Module_SetAction as var"##1183"
+SetAction(this::RemoteTypes.Module, name::String, value::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
+        kerbal(this.conn, var"##1183"(this, name, value))
+    end
+@doc "    SetAction(this::RemoteTypes.Module, name::String, value::Bool)\n\nSet the value of an action with the given name.\n\n# Arguments\n- `name::String`: \n- `value::Bool`: \n" SetAction
+export SetAction
+import ..Module_get_Name as var"##1184"
+Name(this::RemoteTypes.Module) = begin
+        kerbal(this.conn, var"##1184"(this))
+    end
+@doc "    Name(this::RemoteTypes.Module)\n\nName of the PartModule. For example, \"ModuleEngines\".\n\n" Name
+export Name
+import ..Module_get_Part as var"##1185"
+Part(this::RemoteTypes.Module) = begin
+        kerbal(this.conn, var"##1185"(this))
+    end
+@doc "    Part(this::RemoteTypes.Module)\n\nThe part that contains this module.\n\n" Part
+export Part
+import ..Module_get_Fields as var"##1186"
+Fields(this::RemoteTypes.Module) = begin
+        kerbal(this.conn, var"##1186"(this))
+    end
+@doc "    Fields(this::RemoteTypes.Module)\n\nThe modules field names and their associated values, as a dictionary.\nThese are the values visible in the right-click menu of the part.\n\n" Fields
+export Fields
+import ..Module_get_Events as var"##1187"
+Events(this::RemoteTypes.Module) = begin
+        kerbal(this.conn, var"##1187"(this))
+    end
+@doc "    Events(this::RemoteTypes.Module)\n\nA list of the names of all of the modules events. Events are the clickable buttons\nvisible in the right-click menu of the part.\n\n" Events
+export Events
+import ..Module_get_Actions as var"##1188"
+Actions(this::RemoteTypes.Module) = begin
+        kerbal(this.conn, var"##1188"(this))
+    end
+@doc "    Actions(this::RemoteTypes.Module)\n\nA list of all the names of the modules actions. These are the parts actions that can\nbe assigned to action groups in the in-game editor.\n\n" Actions
+export Actions
+import ..Parachute_Deploy as var"##1189"
+Deploy(this::RemoteTypes.Parachute) = begin
+        kerbal(this.conn, var"##1189"(this))
+    end
+@doc "    Deploy(this::RemoteTypes.Parachute)\n\nDeploys the parachute. This has no effect if the parachute has already\nbeen deployed.\n\n" Deploy
+export Deploy
+import ..Parachute_Arm as var"##1190"
+Arm(this::RemoteTypes.Parachute) = begin
+        kerbal(this.conn, var"##1190"(this))
+    end
+@doc "    Arm(this::RemoteTypes.Parachute)\n\nDeploys the parachute. This has no effect if the parachute has already\nbeen armed or deployed. Only applicable to RealChutes parachutes.\n\n" Arm
+export Arm
+import ..Parachute_get_Part as var"##1191"
+Part(this::RemoteTypes.Parachute) = begin
+        kerbal(this.conn, var"##1191"(this))
+    end
+@doc "    Part(this::RemoteTypes.Parachute)\n\nThe part object for this parachute.\n\n" Part
+export Part
+import ..Parachute_get_Deployed as var"##1192"
+Deployed(this::RemoteTypes.Parachute) = begin
+        kerbal(this.conn, var"##1192"(this))
+    end
+@doc "    Deployed(this::RemoteTypes.Parachute)\n\nWhether the parachute has been deployed.\n\n" Deployed
+export Deployed
+import ..Parachute_get_Armed as var"##1193"
+Armed(this::RemoteTypes.Parachute) = begin
+        kerbal(this.conn, var"##1193"(this))
+    end
+@doc "    Armed(this::RemoteTypes.Parachute)\n\nWhether the parachute has been armed or deployed. Only applicable to\nRealChutes parachutes.\n\n" Armed
+export Armed
+import ..Parachute_get_State as var"##1194"
+State(this::RemoteTypes.Parachute) = begin
+        kerbal(this.conn, var"##1194"(this))
+    end
+@doc "    State(this::RemoteTypes.Parachute)\n\nThe current state of the parachute.\n\n" State
+export State
+import ..Parachute_get_DeployAltitude as var"##1195"
+DeployAltitude(this::RemoteTypes.Parachute) = begin
+        kerbal(this.conn, var"##1195"(this))
+    end
+@doc "    DeployAltitude(this::RemoteTypes.Parachute)\n\nThe altitude at which the parachute will full deploy, in meters.\nOnly applicable to stock parachutes.\n\n" DeployAltitude
+export DeployAltitude
+import ..Parachute_set_DeployAltitude as var"##1196"
+DeployAltitude!(this::RemoteTypes.Parachute, value::Float32) = begin
+        kerbal(this.conn, var"##1196"(this, value))
+    end
+@doc "    DeployAltitude!(this::RemoteTypes.Parachute, value::Float32)\n\nThe altitude at which the parachute will full deploy, in meters.\nOnly applicable to stock parachutes.\n\n" DeployAltitude!
+export DeployAltitude!
+import ..Parachute_get_DeployMinPressure as var"##1197"
+DeployMinPressure(this::RemoteTypes.Parachute) = begin
+        kerbal(this.conn, var"##1197"(this))
+    end
+@doc "    DeployMinPressure(this::RemoteTypes.Parachute)\n\nThe minimum pressure at which the parachute will semi-deploy, in atmospheres.\nOnly applicable to stock parachutes.\n\n" DeployMinPressure
+export DeployMinPressure
+import ..Parachute_set_DeployMinPressure as var"##1198"
+DeployMinPressure!(this::RemoteTypes.Parachute, value::Float32) = begin
+        kerbal(this.conn, var"##1198"(this, value))
+    end
+@doc "    DeployMinPressure!(this::RemoteTypes.Parachute, value::Float32)\n\nThe minimum pressure at which the parachute will semi-deploy, in atmospheres.\nOnly applicable to stock parachutes.\n\n" DeployMinPressure!
+export DeployMinPressure!
+import ..Part_Position as var"##1199"
+Position(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1199"(this, referenceFrame))
+    end
+@doc "    Position(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position of the part in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n# Remarks\n This is a fixed position in the part, defined by the parts model. It s not necessarily the same as the parts center of mass. Use  to get the parts center of mass. \n" Position
+export Position
+import ..Part_CenterOfMass as var"##1200"
+CenterOfMass(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1200"(this, referenceFrame))
+    end
+@doc "    CenterOfMass(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position of the parts center of mass in the given reference frame.\nIf the part is physicsless, this is equivalent to .\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n" CenterOfMass
+export CenterOfMass
+import ..Part_BoundingBox as var"##1201"
+BoundingBox(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1201"(this, referenceFrame))
+    end
+@doc "    BoundingBox(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe axis-aligned bounding box of the part in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vectors are in.\n# Returns\nThe positions of the minimum and maximum vertices of the box, as position vectors.\n# Remarks\n This is computed from the collision mesh of the part. If the part is not collidable, the box has zero volume and is centered on the  of the part. \n" BoundingBox
+export BoundingBox
+import ..Part_Direction as var"##1202"
+Direction(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1202"(this, referenceFrame))
+    end
+@doc "    Direction(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe direction the part points in, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned direction is in.\n# Returns\nThe direction as a unit vector.\n" Direction
+export Direction
+import ..Part_Velocity as var"##1203"
+Velocity(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1203"(this, referenceFrame))
+    end
+@doc "    Velocity(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe linear velocity of the part in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned velocity vector is in.\n# Returns\nThe velocity as a vector. The vector points in the direction of travel, and its magnitude is the speed of the body in meters per second.\n" Velocity
+export Velocity
+import ..Part_Rotation as var"##1204"
+Rotation(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1204"(this, referenceFrame))
+    end
+@doc "    Rotation(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe rotation of the part, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned rotation is in.\n# Returns\nThe rotation as a quaternion of the form (x, y, z, w).\n" Rotation
+export Rotation
+import ..Part_AddForce as var"##1205"
+AddForce(this::RemoteTypes.Part, force::begin
+                Tuple{Float64, Float64, Float64}
+            end, position::begin
+                Tuple{Float64, Float64, Float64}
+            end, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1205"(this, force, position, referenceFrame))
+    end
+@doc "    AddForce(this::RemoteTypes.Part, force::begin\n    Tuple{Float64, Float64, Float64}\nend, position::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::RemoteTypes.ReferenceFrame)\n\nExert a constant force on the part, acting at the given position.\n\n# Arguments\n- `force::begin\n    Tuple{Float64, Float64, Float64}\nend`: A vector pointing in the direction that the force acts, with its magnitude equal to the strength of the force in Newtons.\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: The position at which the force acts, as a vector.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the force and position are in.\n# Returns\nAn object that can be used to remove or modify the force.\n" AddForce
+export AddForce
+import ..Part_InstantaneousForce as var"##1206"
+InstantaneousForce(this::RemoteTypes.Part, force::begin
+                Tuple{Float64, Float64, Float64}
+            end, position::begin
+                Tuple{Float64, Float64, Float64}
+            end, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1206"(this, force, position, referenceFrame))
+    end
+@doc "    InstantaneousForce(this::RemoteTypes.Part, force::begin\n    Tuple{Float64, Float64, Float64}\nend, position::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::RemoteTypes.ReferenceFrame)\n\nExert an instantaneous force on the part, acting at the given position.\n\n# Arguments\n- `force::begin\n    Tuple{Float64, Float64, Float64}\nend`: A vector pointing in the direction that the force acts, with its magnitude equal to the strength of the force in Newtons.\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: The position at which the force acts, as a vector.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the force and position are in.\n# Remarks\nThe force is applied instantaneously in a single physics update.\n" InstantaneousForce
+export InstantaneousForce
+import ..Part_get_Name as var"##1207"
+Name(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1207"(this))
+    end
+@doc "    Name(this::RemoteTypes.Part)\n\nInternal name of the part, as used in\npart cfg files.\nFor example \"Mark1-2Pod\".\n\n" Name
+export Name
+import ..Part_get_Title as var"##1208"
+Title(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1208"(this))
+    end
+@doc "    Title(this::RemoteTypes.Part)\n\nTitle of the part, as shown when the part is right clicked in-game. For example \"Mk1-2 Command Pod\".\n\n" Title
+export Title
+import ..Part_get_Tag as var"##1209"
+Tag(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1209"(this))
+    end
+@doc "    Tag(this::RemoteTypes.Part)\n\nThe name tag for the part. Can be set to a custom string using the\nin-game user interface.\n\n# Remarks\n This string is shared with kOS if it is installed. \n" Tag
+export Tag
+import ..Part_set_Tag as var"##1210"
+Tag!(this::RemoteTypes.Part, value::String) = begin
+        kerbal(this.conn, var"##1210"(this, value))
+    end
+@doc "    Tag!(this::RemoteTypes.Part, value::String)\n\nThe name tag for the part. Can be set to a custom string using the\nin-game user interface.\n\n# Remarks\n This string is shared with kOS if it is installed. \n" Tag!
+export Tag!
+import ..Part_get_Highlighted as var"##1211"
+Highlighted(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1211"(this))
+    end
+@doc "    Highlighted(this::RemoteTypes.Part)\n\nWhether the part is highlighted.\n\n" Highlighted
+export Highlighted
+import ..Part_set_Highlighted as var"##1212"
+Highlighted!(this::RemoteTypes.Part, value::Bool) = begin
+        kerbal(this.conn, var"##1212"(this, value))
+    end
+@doc "    Highlighted!(this::RemoteTypes.Part, value::Bool)\n\nWhether the part is highlighted.\n\n" Highlighted!
+export Highlighted!
+import ..Part_get_HighlightColor as var"##1213"
+HighlightColor(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1213"(this))
+    end
+@doc "    HighlightColor(this::RemoteTypes.Part)\n\nThe color used to highlight the part, as an RGB triple.\n\n" HighlightColor
+export HighlightColor
+import ..Part_set_HighlightColor as var"##1214"
+HighlightColor!(this::RemoteTypes.Part, value::begin
+                Tuple{Float64, Float64, Float64}
+            end) = begin
+        kerbal(this.conn, var"##1214"(this, value))
+    end
+@doc "    HighlightColor!(this::RemoteTypes.Part, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nThe color used to highlight the part, as an RGB triple.\n\n" HighlightColor!
+export HighlightColor!
+import ..Part_get_Cost as var"##1215"
+Cost(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1215"(this))
+    end
+@doc "    Cost(this::RemoteTypes.Part)\n\nThe cost of the part, in units of funds.\n\n" Cost
+export Cost
+import ..Part_get_Vessel as var"##1216"
+Vessel(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1216"(this))
+    end
+@doc "    Vessel(this::RemoteTypes.Part)\n\nThe vessel that contains this part.\n\n" Vessel
+export Vessel
+import ..Part_get_Parent as var"##1217"
+Parent(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1217"(this))
+    end
+@doc "    Parent(this::RemoteTypes.Part)\n\nThe parts parent. Returns null if the part does not have a parent.\nThis, in combination with , can be used to traverse the vessels\nparts tree.\n\n" Parent
+export Parent
+import ..Part_get_Children as var"##1218"
+Children(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1218"(this))
+    end
+@doc "    Children(this::RemoteTypes.Part)\n\nThe parts children. Returns an empty list if the part has no children.\nThis, in combination with , can be used to traverse the vessels\nparts tree.\n\n" Children
+export Children
+import ..Part_get_AxiallyAttached as var"##1219"
+AxiallyAttached(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1219"(this))
+    end
+@doc "    AxiallyAttached(this::RemoteTypes.Part)\n\nWhether the part is axially attached to its parent, i.e. on the top\nor bottom of its parent. If the part has no parent, returns false.\n\n" AxiallyAttached
+export AxiallyAttached
+import ..Part_get_RadiallyAttached as var"##1220"
+RadiallyAttached(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1220"(this))
+    end
+@doc "    RadiallyAttached(this::RemoteTypes.Part)\n\nWhether the part is radially attached to its parent, i.e. on the side of its parent.\nIf the part has no parent, returns false.\n\n" RadiallyAttached
+export RadiallyAttached
+import ..Part_get_Stage as var"##1221"
+Stage(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1221"(this))
+    end
+@doc "    Stage(this::RemoteTypes.Part)\n\nThe stage in which this part will be activated. Returns -1 if the part is not\nactivated by staging.\n\n" Stage
+export Stage
+import ..Part_get_DecoupleStage as var"##1222"
+DecoupleStage(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1222"(this))
+    end
+@doc "    DecoupleStage(this::RemoteTypes.Part)\n\nThe stage in which this part will be decoupled. Returns -1 if the part is never\ndecoupled from the vessel.\n\n" DecoupleStage
+export DecoupleStage
+import ..Part_get_Massless as var"##1223"
+Massless(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1223"(this))
+    end
+@doc "    Massless(this::RemoteTypes.Part)\n\nWhether the part is\nmassless.\n\n" Massless
+export Massless
+import ..Part_get_Mass as var"##1224"
+Mass(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1224"(this))
+    end
+@doc "    Mass(this::RemoteTypes.Part)\n\nThe current mass of the part, including resources it contains, in kilograms.\nReturns zero if the part is massless.\n\n" Mass
+export Mass
+import ..Part_get_DryMass as var"##1225"
+DryMass(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1225"(this))
+    end
+@doc "    DryMass(this::RemoteTypes.Part)\n\nThe mass of the part, not including any resources it contains, in kilograms.\nReturns zero if the part is massless.\n\n" DryMass
+export DryMass
+import ..Part_get_Shielded as var"##1226"
+Shielded(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1226"(this))
+    end
+@doc "    Shielded(this::RemoteTypes.Part)\n\nWhether the part is shielded from the exterior of the vessel, for example by a fairing.\n\n" Shielded
+export Shielded
+import ..Part_get_DynamicPressure as var"##1227"
+DynamicPressure(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1227"(this))
+    end
+@doc "    DynamicPressure(this::RemoteTypes.Part)\n\nThe dynamic pressure acting on the part, in Pascals.\n\n" DynamicPressure
+export DynamicPressure
+import ..Part_get_ImpactTolerance as var"##1228"
+ImpactTolerance(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1228"(this))
+    end
+@doc "    ImpactTolerance(this::RemoteTypes.Part)\n\nThe impact tolerance of the part, in meters per second.\n\n" ImpactTolerance
+export ImpactTolerance
+import ..Part_get_Temperature as var"##1229"
+Temperature(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1229"(this))
+    end
+@doc "    Temperature(this::RemoteTypes.Part)\n\nTemperature of the part, in Kelvin.\n\n" Temperature
+export Temperature
+import ..Part_get_SkinTemperature as var"##1230"
+SkinTemperature(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1230"(this))
+    end
+@doc "    SkinTemperature(this::RemoteTypes.Part)\n\nTemperature of the skin of the part, in Kelvin.\n\n" SkinTemperature
+export SkinTemperature
+import ..Part_get_MaxTemperature as var"##1231"
+MaxTemperature(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1231"(this))
+    end
+@doc "    MaxTemperature(this::RemoteTypes.Part)\n\nMaximum temperature that the part can survive, in Kelvin.\n\n" MaxTemperature
+export MaxTemperature
+import ..Part_get_MaxSkinTemperature as var"##1232"
+MaxSkinTemperature(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1232"(this))
+    end
+@doc "    MaxSkinTemperature(this::RemoteTypes.Part)\n\nMaximum temperature that the skin of the part can survive, in Kelvin.\n\n" MaxSkinTemperature
+export MaxSkinTemperature
+import ..Part_get_ThermalMass as var"##1233"
+ThermalMass(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1233"(this))
+    end
+@doc "    ThermalMass(this::RemoteTypes.Part)\n\nA measure of how much energy it takes to increase the internal temperature of the part,\nin Joules per Kelvin.\n\n" ThermalMass
+export ThermalMass
+import ..Part_get_ThermalSkinMass as var"##1234"
+ThermalSkinMass(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1234"(this))
+    end
+@doc "    ThermalSkinMass(this::RemoteTypes.Part)\n\nA measure of how much energy it takes to increase the skin temperature of the part,\nin Joules per Kelvin.\n\n" ThermalSkinMass
+export ThermalSkinMass
+import ..Part_get_ThermalResourceMass as var"##1235"
+ThermalResourceMass(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1235"(this))
+    end
+@doc "    ThermalResourceMass(this::RemoteTypes.Part)\n\nA measure of how much energy it takes to increase the temperature of the resources\ncontained in the part, in Joules per Kelvin.\n\n" ThermalResourceMass
+export ThermalResourceMass
+import ..Part_get_ThermalInternalFlux as var"##1236"
+ThermalInternalFlux(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1236"(this))
+    end
+@doc "    ThermalInternalFlux(this::RemoteTypes.Part)\n\nThe rate at which heat energy is begin generated by the part.\nFor example, some engines generate heat by combusting fuel.\nMeasured in energy per unit time, or power, in Watts.\nA positive value means the part is gaining heat energy, and negative means it is losing\nheat energy.\n\n" ThermalInternalFlux
+export ThermalInternalFlux
+import ..Part_get_ThermalConductionFlux as var"##1237"
+ThermalConductionFlux(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1237"(this))
+    end
+@doc "    ThermalConductionFlux(this::RemoteTypes.Part)\n\nThe rate at which heat energy is conducting into or out of the part via contact with\nother parts. Measured in energy per unit time, or power, in Watts.\nA positive value means the part is gaining heat energy, and negative means it is\nlosing heat energy.\n\n" ThermalConductionFlux
+export ThermalConductionFlux
+import ..Part_get_ThermalConvectionFlux as var"##1238"
+ThermalConvectionFlux(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1238"(this))
+    end
+@doc "    ThermalConvectionFlux(this::RemoteTypes.Part)\n\nThe rate at which heat energy is convecting into or out of the part from the\nsurrounding atmosphere. Measured in energy per unit time, or power, in Watts.\nA positive value means the part is gaining heat energy, and negative means it is\nlosing heat energy.\n\n" ThermalConvectionFlux
+export ThermalConvectionFlux
+import ..Part_get_ThermalRadiationFlux as var"##1239"
+ThermalRadiationFlux(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1239"(this))
+    end
+@doc "    ThermalRadiationFlux(this::RemoteTypes.Part)\n\nThe rate at which heat energy is radiating into or out of the part from the surrounding\nenvironment. Measured in energy per unit time, or power, in Watts.\nA positive value means the part is gaining heat energy, and negative means it is\nlosing heat energy.\n\n" ThermalRadiationFlux
+export ThermalRadiationFlux
+import ..Part_get_ThermalSkinToInternalFlux as var"##1240"
+ThermalSkinToInternalFlux(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1240"(this))
+    end
+@doc "    ThermalSkinToInternalFlux(this::RemoteTypes.Part)\n\nThe rate at which heat energy is transferring between the part's skin and its internals.\nMeasured in energy per unit time, or power, in Watts.\nA positive value means the part's internals are gaining heat energy,\nand negative means its skin is gaining heat energy.\n\n" ThermalSkinToInternalFlux
+export ThermalSkinToInternalFlux
+import ..Part_get_Resources as var"##1241"
+Resources(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1241"(this))
+    end
+@doc "    Resources(this::RemoteTypes.Part)\n\nA  object for the part.\n\n" Resources
+export Resources
+import ..Part_get_Crossfeed as var"##1242"
+Crossfeed(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1242"(this))
+    end
+@doc "    Crossfeed(this::RemoteTypes.Part)\n\nWhether this part is crossfeed capable.\n\n" Crossfeed
+export Crossfeed
+import ..Part_get_IsFuelLine as var"##1243"
+IsFuelLine(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1243"(this))
+    end
+@doc "    IsFuelLine(this::RemoteTypes.Part)\n\nWhether this part is a fuel line.\n\n" IsFuelLine
+export IsFuelLine
+import ..Part_get_FuelLinesFrom as var"##1244"
+FuelLinesFrom(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1244"(this))
+    end
+@doc "    FuelLinesFrom(this::RemoteTypes.Part)\n\nThe parts that are connected to this part via fuel lines, where the direction of the\nfuel line is into this part.\n\n" FuelLinesFrom
+export FuelLinesFrom
+import ..Part_get_FuelLinesTo as var"##1245"
+FuelLinesTo(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1245"(this))
+    end
+@doc "    FuelLinesTo(this::RemoteTypes.Part)\n\nThe parts that are connected to this part via fuel lines, where the direction of the\nfuel line is out of this part.\n\n" FuelLinesTo
+export FuelLinesTo
+import ..Part_get_Modules as var"##1246"
+Modules(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1246"(this))
+    end
+@doc "    Modules(this::RemoteTypes.Part)\n\nThe modules for this part.\n\n" Modules
+export Modules
+import ..Part_get_Antenna as var"##1247"
+Antenna(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1247"(this))
+    end
+@doc "    Antenna(this::RemoteTypes.Part)\n\nA  if the part is an antenna, otherwise null.\n\n" Antenna
+export Antenna
+import ..Part_get_CargoBay as var"##1248"
+CargoBay(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1248"(this))
+    end
+@doc "    CargoBay(this::RemoteTypes.Part)\n\nA  if the part is a cargo bay, otherwise null.\n\n" CargoBay
+export CargoBay
+import ..Part_get_ControlSurface as var"##1249"
+ControlSurface(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1249"(this))
+    end
+@doc "    ControlSurface(this::RemoteTypes.Part)\n\nA  if the part is an aerodynamic control surface,\notherwise null.\n\n" ControlSurface
+export ControlSurface
+import ..Part_get_Decoupler as var"##1250"
+Decoupler(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1250"(this))
+    end
+@doc "    Decoupler(this::RemoteTypes.Part)\n\nA  if the part is a decoupler, otherwise null.\n\n" Decoupler
+export Decoupler
+import ..Part_get_DockingPort as var"##1251"
+DockingPort(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1251"(this))
+    end
+@doc "    DockingPort(this::RemoteTypes.Part)\n\nA  if the part is a docking port, otherwise null.\n\n" DockingPort
+export DockingPort
+import ..Part_get_ResourceDrain as var"##1252"
+ResourceDrain(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1252"(this))
+    end
+@doc "    ResourceDrain(this::RemoteTypes.Part)\n        /// A  if the part is a resource drain, otherwise null.\n\n" ResourceDrain
+export ResourceDrain
+import ..Part_get_Engine as var"##1253"
+Engine(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1253"(this))
+    end
+@doc "    Engine(this::RemoteTypes.Part)\n\nAn  if the part is an engine, otherwise null.\n\n" Engine
+export Engine
+import ..Part_get_Experiment as var"##1254"
+Experiment(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1254"(this))
+    end
+@doc "    Experiment(this::RemoteTypes.Part)\n\nAn  if the part contains a\nsingle science experiment, otherwise null.\n\n# Remarks\n Throws an exception if the part contains more than one experiment. In that case, use  to get the list of experiments in the part. \n" Experiment
+export Experiment
+import ..Part_get_Experiments as var"##1255"
+Experiments(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1255"(this))
+    end
+@doc "    Experiments(this::RemoteTypes.Part)\n\nA list of  objects that the part contains.\n\n" Experiments
+export Experiments
+import ..Part_get_Fairing as var"##1256"
+Fairing(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1256"(this))
+    end
+@doc "    Fairing(this::RemoteTypes.Part)\n\nA  if the part is a fairing, otherwise null.\n\n" Fairing
+export Fairing
+import ..Part_get_Intake as var"##1257"
+Intake(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1257"(this))
+    end
+@doc "    Intake(this::RemoteTypes.Part)\n\nAn  if the part is an intake, otherwise null.\n\n# Remarks\n This includes any part that generates thrust. This covers many different types of engine, including liquid fuel rockets, solid rocket boosters and jet engines. For RCS thrusters see . \n" Intake
+export Intake
+import ..Part_get_Leg as var"##1258"
+Leg(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1258"(this))
+    end
+@doc "    Leg(this::RemoteTypes.Part)\n\nA  if the part is a landing leg, otherwise null.\n\n" Leg
+export Leg
+import ..Part_get_LaunchClamp as var"##1259"
+LaunchClamp(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1259"(this))
+    end
+@doc "    LaunchClamp(this::RemoteTypes.Part)\n\nA  if the part is a launch clamp, otherwise null.\n\n" LaunchClamp
+export LaunchClamp
+import ..Part_get_Light as var"##1260"
+Light(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1260"(this))
+    end
+@doc "    Light(this::RemoteTypes.Part)\n\nA  if the part is a light, otherwise null.\n\n" Light
+export Light
+import ..Part_get_Parachute as var"##1261"
+Parachute(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1261"(this))
+    end
+@doc "    Parachute(this::RemoteTypes.Part)\n\nA  if the part is a parachute, otherwise null.\n\n" Parachute
+export Parachute
+import ..Part_get_Radiator as var"##1262"
+Radiator(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1262"(this))
+    end
+@doc "    Radiator(this::RemoteTypes.Part)\n\nA  if the part is a radiator, otherwise null.\n\n" Radiator
+export Radiator
+import ..Part_get_RCS as var"##1263"
+RCS(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1263"(this))
+    end
+@doc "    RCS(this::RemoteTypes.Part)\n\nA  if the part is an RCS block/thruster, otherwise null.\n\n" RCS
+export RCS
+import ..Part_get_ReactionWheel as var"##1264"
+ReactionWheel(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1264"(this))
+    end
+@doc "    ReactionWheel(this::RemoteTypes.Part)\n\nA  if the part is a reaction wheel, otherwise null.\n\n" ReactionWheel
+export ReactionWheel
+import ..Part_get_ResourceConverter as var"##1265"
+ResourceConverter(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1265"(this))
+    end
+@doc "    ResourceConverter(this::RemoteTypes.Part)\n\nA  if the part is a resource converter,\notherwise null.\n\n" ResourceConverter
+export ResourceConverter
+import ..Part_get_ResourceHarvester as var"##1266"
+ResourceHarvester(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1266"(this))
+    end
+@doc "    ResourceHarvester(this::RemoteTypes.Part)\n\nA  if the part is a resource harvester,\notherwise null.\n\n" ResourceHarvester
+export ResourceHarvester
+import ..Part_get_RoboticController as var"##1267"
+RoboticController(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1267"(this))
+    end
+@doc "    RoboticController(this::RemoteTypes.Part)\n\nA  if the part is a robotic controller,\notherwise null.\n\n" RoboticController
+export RoboticController
+import ..Part_get_Sensor as var"##1268"
+Sensor(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1268"(this))
+    end
+@doc "    Sensor(this::RemoteTypes.Part)\n\nA  if the part is a sensor, otherwise null.\n\n" Sensor
+export Sensor
+import ..Part_get_SolarPanel as var"##1269"
+SolarPanel(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1269"(this))
+    end
+@doc "    SolarPanel(this::RemoteTypes.Part)\n\nA  if the part is a solar panel, otherwise null.\n\n" SolarPanel
+export SolarPanel
+import ..Part_get_Wheel as var"##1270"
+Wheel(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1270"(this))
+    end
+@doc "    Wheel(this::RemoteTypes.Part)\n\nA  if the part is a wheel, otherwise null.\n\n" Wheel
+export Wheel
+import ..Part_get_RoboticHinge as var"##1271"
+RoboticHinge(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1271"(this))
+    end
+@doc "    RoboticHinge(this::RemoteTypes.Part)\n\nA  if the part is a robotic hinge, otherwise null.\n\n" RoboticHinge
+export RoboticHinge
+import ..Part_get_RoboticPiston as var"##1272"
+RoboticPiston(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1272"(this))
+    end
+@doc "    RoboticPiston(this::RemoteTypes.Part)\n\nA  if the part is a robotic hinge, otherwise null.\n\n" RoboticPiston
+export RoboticPiston
+import ..Part_get_RoboticRotation as var"##1273"
+RoboticRotation(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1273"(this))
+    end
+@doc "    RoboticRotation(this::RemoteTypes.Part)\n\nA  if the part is a robotic rotation servo, otherwise null.\n\n" RoboticRotation
+export RoboticRotation
+import ..Part_get_RoboticRotor as var"##1274"
+RoboticRotor(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1274"(this))
+    end
+@doc "    RoboticRotor(this::RemoteTypes.Part)\n\nA  if the part is a robotic rotation servo, otherwise null.\n\n" RoboticRotor
+export RoboticRotor
+import ..Part_get_MomentOfInertia as var"##1275"
+MomentOfInertia(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1275"(this))
+    end
+@doc "    MomentOfInertia(this::RemoteTypes.Part)\n\nThe moment of inertia of the part in kg.m^2 around its center of mass\nin the parts reference frame ().\n\n" MomentOfInertia
+export MomentOfInertia
+import ..Part_get_InertiaTensor as var"##1276"
+InertiaTensor(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1276"(this))
+    end
+@doc "    InertiaTensor(this::RemoteTypes.Part)\n\nThe inertia tensor of the part in the parts reference frame\n().\nReturns the 3x3 matrix as a list of elements, in row-major order.\n\n" InertiaTensor
+export InertiaTensor
+import ..Part_get_ReferenceFrame as var"##1277"
+ReferenceFrame(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1277"(this))
+    end
+@doc "    ReferenceFrame(this::RemoteTypes.Part)\n\nThe reference frame that is fixed relative to this part, and centered on a fixed\nposition within the part, defined by the parts model.\nThe origin is at the position of the part, as returned by\n.The axes rotate with the part.The x, y and z axis directions depend on the design of the part.\n\n# Remarks\n For docking port parts, this reference frame is not necessarily equivalent to the reference frame for the docking port, returned by . \n" ReferenceFrame
+export ReferenceFrame
+import ..Part_get_CenterOfMassReferenceFrame as var"##1278"
+CenterOfMassReferenceFrame(this::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1278"(this))
+    end
+@doc "    CenterOfMassReferenceFrame(this::RemoteTypes.Part)\n\nThe reference frame that is fixed relative to this part, and centered on its\ncenter of mass.\nThe origin is at the center of mass of the part, as returned by\n.The axes rotate with the part.The x, y and z axis directions depend on the design of the part.\n\n# Remarks\n For docking port parts, this reference frame is not necessarily equivalent to the reference frame for the docking port, returned by . \n" CenterOfMassReferenceFrame
+export CenterOfMassReferenceFrame
+import ..Part_set_Glow as var"##1279"
+Glow!(this::RemoteTypes.Part, value::Bool) = begin
+        kerbal(this.conn, var"##1279"(this, value))
+    end
+@doc "    Glow!(this::RemoteTypes.Part, value::Bool)\n\nGlow\n\n" Glow!
+export Glow!
+import ..Parts_WithName as var"##1280"
+WithName(this::RemoteTypes.Parts, name::String) = begin
+        kerbal(this.conn, var"##1280"(this, name))
+    end
+@doc "    WithName(this::RemoteTypes.Parts, name::String)\n\nA list of parts whose  is .\n\n# Arguments\n- `name::String`: \n" WithName
+export WithName
+import ..Parts_WithTitle as var"##1281"
+WithTitle(this::RemoteTypes.Parts, title::String) = begin
+        kerbal(this.conn, var"##1281"(this, title))
+    end
+@doc "    WithTitle(this::RemoteTypes.Parts, title::String)\n\nA list of all parts whose  is .\n\n# Arguments\n- `title::String`: \n" WithTitle
+export WithTitle
+import ..Parts_WithTag as var"##1282"
+WithTag(this::RemoteTypes.Parts, tag::String) = begin
+        kerbal(this.conn, var"##1282"(this, tag))
+    end
+@doc "    WithTag(this::RemoteTypes.Parts, tag::String)\n\nA list of all parts whose  is .\n\n# Arguments\n- `tag::String`: \n" WithTag
+export WithTag
+import ..Parts_WithModule as var"##1283"
+WithModule(this::RemoteTypes.Parts, moduleName::String) = begin
+        kerbal(this.conn, var"##1283"(this, moduleName))
+    end
+@doc "    WithModule(this::RemoteTypes.Parts, moduleName::String)\n\nA list of all parts that contain a  whose\n is .\n\n# Arguments\n- `moduleName::String`: \n" WithModule
+export WithModule
+import ..Parts_InStage as var"##1284"
+InStage(this::RemoteTypes.Parts, stage::Int32) = begin
+        kerbal(this.conn, var"##1284"(this, stage))
+    end
+@doc "    InStage(this::RemoteTypes.Parts, stage::Int32)\n\nA list of all parts that are activated in the given .\n\n# Arguments\n- `stage::Int32`: \n" InStage
+export InStage
+import ..Parts_InDecoupleStage as var"##1285"
+InDecoupleStage(this::RemoteTypes.Parts, stage::Int32) = begin
+        kerbal(this.conn, var"##1285"(this, stage))
+    end
+@doc "    InDecoupleStage(this::RemoteTypes.Parts, stage::Int32)\n\nA list of all parts that are decoupled in the given .\n\n# Arguments\n- `stage::Int32`: \n" InDecoupleStage
+export InDecoupleStage
+import ..Parts_ModulesWithName as var"##1286"
+ModulesWithName(this::RemoteTypes.Parts, moduleName::String) = begin
+        kerbal(this.conn, var"##1286"(this, moduleName))
+    end
+@doc "    ModulesWithName(this::RemoteTypes.Parts, moduleName::String)\n\nA list of modules (combined across all parts in the vessel) whose\n is .\n\n# Arguments\n- `moduleName::String`: \n" ModulesWithName
+export ModulesWithName
+import ..Parts_get_All as var"##1287"
+All(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1287"(this))
+    end
+@doc "    All(this::RemoteTypes.Parts)\n\nA list of all of the vessels parts.\n\n" All
+export All
+import ..Parts_get_Root as var"##1288"
+Root(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1288"(this))
+    end
+@doc "    Root(this::RemoteTypes.Parts)\n\nThe vessels root part.\n\n" Root
+export Root
+import ..Parts_get_Controlling as var"##1289"
+Controlling(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1289"(this))
+    end
+@doc "    Controlling(this::RemoteTypes.Parts)\n\nThe part from which the vessel is controlled.\n\n" Controlling
+export Controlling
+import ..Parts_set_Controlling as var"##1290"
+Controlling!(this::RemoteTypes.Parts, value::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1290"(this, value))
+    end
+@doc "    Controlling!(this::RemoteTypes.Parts, value::RemoteTypes.Part)\n\nThe part from which the vessel is controlled.\n\n" Controlling!
+export Controlling!
+import ..Parts_get_Antennas as var"##1291"
+Antennas(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1291"(this))
+    end
+@doc "    Antennas(this::RemoteTypes.Parts)\n\nA list of all antennas in the vessel.\n\n" Antennas
+export Antennas
+import ..Parts_get_ControlSurfaces as var"##1292"
+ControlSurfaces(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1292"(this))
+    end
+@doc "    ControlSurfaces(this::RemoteTypes.Parts)\n\nA list of all control surfaces in the vessel.\n\n" ControlSurfaces
+export ControlSurfaces
+import ..Parts_get_CargoBays as var"##1293"
+CargoBays(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1293"(this))
+    end
+@doc "    CargoBays(this::RemoteTypes.Parts)\n\nA list of all cargo bays in the vessel.\n\n" CargoBays
+export CargoBays
+import ..Parts_get_Decouplers as var"##1294"
+Decouplers(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1294"(this))
+    end
+@doc "    Decouplers(this::RemoteTypes.Parts)\n\nA list of all decouplers in the vessel.\n\n" Decouplers
+export Decouplers
+import ..Parts_get_DockingPorts as var"##1295"
+DockingPorts(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1295"(this))
+    end
+@doc "    DockingPorts(this::RemoteTypes.Parts)\n\nA list of all docking ports in the vessel.\n\n" DockingPorts
+export DockingPorts
+import ..Parts_get_Engines as var"##1296"
+Engines(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1296"(this))
+    end
+@doc "    Engines(this::RemoteTypes.Parts)\n\nA list of all engines in the vessel.\n\n# Remarks\n This includes any part that generates thrust. This covers many different types of engine, including liquid fuel rockets, solid rocket boosters, jet engines and RCS thrusters. \n" Engines
+export Engines
+import ..Parts_get_Experiments as var"##1297"
+Experiments(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1297"(this))
+    end
+@doc "    Experiments(this::RemoteTypes.Parts)\n\nA list of all science experiments in the vessel.\n\n" Experiments
+export Experiments
+import ..Parts_get_Fairings as var"##1298"
+Fairings(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1298"(this))
+    end
+@doc "    Fairings(this::RemoteTypes.Parts)\n\nA list of all fairings in the vessel.\n\n" Fairings
+export Fairings
+import ..Parts_get_Intakes as var"##1299"
+Intakes(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1299"(this))
+    end
+@doc "    Intakes(this::RemoteTypes.Parts)\n\nA list of all intakes in the vessel.\n\n" Intakes
+export Intakes
+import ..Parts_get_Legs as var"##1300"
+Legs(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1300"(this))
+    end
+@doc "    Legs(this::RemoteTypes.Parts)\n\nA list of all landing legs attached to the vessel.\n\n" Legs
+export Legs
+import ..Parts_get_LaunchClamps as var"##1301"
+LaunchClamps(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1301"(this))
+    end
+@doc "    LaunchClamps(this::RemoteTypes.Parts)\n\nA list of all launch clamps attached to the vessel.\n\n" LaunchClamps
+export LaunchClamps
+import ..Parts_get_Lights as var"##1302"
+Lights(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1302"(this))
+    end
+@doc "    Lights(this::RemoteTypes.Parts)\n\nA list of all lights in the vessel.\n\n" Lights
+export Lights
+import ..Parts_get_Parachutes as var"##1303"
+Parachutes(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1303"(this))
+    end
+@doc "    Parachutes(this::RemoteTypes.Parts)\n\nA list of all parachutes in the vessel.\n\n" Parachutes
+export Parachutes
+import ..Parts_get_Radiators as var"##1304"
+Radiators(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1304"(this))
+    end
+@doc "    Radiators(this::RemoteTypes.Parts)\n\nA list of all radiators in the vessel.\n\n" Radiators
+export Radiators
+import ..Parts_get_RCS as var"##1305"
+RCS(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1305"(this))
+    end
+@doc "    RCS(this::RemoteTypes.Parts)\n\nA list of all RCS blocks/thrusters in the vessel.\n\n" RCS
+export RCS
+import ..Parts_get_ReactionWheels as var"##1306"
+ReactionWheels(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1306"(this))
+    end
+@doc "    ReactionWheels(this::RemoteTypes.Parts)\n\nA list of all reaction wheels in the vessel.\n\n" ReactionWheels
+export ReactionWheels
+import ..Parts_get_ResourceConverters as var"##1307"
+ResourceConverters(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1307"(this))
+    end
+@doc "    ResourceConverters(this::RemoteTypes.Parts)\n\nA list of all resource converters in the vessel.\n\n" ResourceConverters
+export ResourceConverters
+import ..Parts_get_ResourceHarvesters as var"##1308"
+ResourceHarvesters(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1308"(this))
+    end
+@doc "    ResourceHarvesters(this::RemoteTypes.Parts)\n\nA list of all resource harvesters in the vessel.\n\n" ResourceHarvesters
+export ResourceHarvesters
+import ..Parts_get_Sensors as var"##1309"
+Sensors(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1309"(this))
+    end
+@doc "    Sensors(this::RemoteTypes.Parts)\n\nA list of all sensors in the vessel.\n\n" Sensors
+export Sensors
+import ..Parts_get_SolarPanels as var"##1310"
+SolarPanels(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1310"(this))
+    end
+@doc "    SolarPanels(this::RemoteTypes.Parts)\n\nA list of all solar panels in the vessel.\n\n" SolarPanels
+export SolarPanels
+import ..Parts_get_Wheels as var"##1311"
+Wheels(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1311"(this))
+    end
+@doc "    Wheels(this::RemoteTypes.Parts)\n\nA list of all wheels in the vessel.\n\n" Wheels
+export Wheels
+import ..Parts_get_RoboticHinges as var"##1312"
+RoboticHinges(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1312"(this))
+    end
+@doc "    RoboticHinges(this::RemoteTypes.Parts)\n        \nA list of all robotic hinges in the vessel.\n\n" RoboticHinges
+export RoboticHinges
+import ..Parts_get_RoboticPistons as var"##1313"
+RoboticPistons(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1313"(this))
+    end
+@doc "    RoboticPistons(this::RemoteTypes.Parts)\n\nA list of all robotic pistons in the vessel.\n\n" RoboticPistons
+export RoboticPistons
+import ..Parts_get_RoboticRotations as var"##1314"
+RoboticRotations(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1314"(this))
+    end
+@doc "    RoboticRotations(this::RemoteTypes.Parts)\n\nA list of all robotic pistons in the vessel.\n\n" RoboticRotations
+export RoboticRotations
+import ..Parts_get_RoboticRotors as var"##1315"
+RoboticRotors(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1315"(this))
+    end
+@doc "    RoboticRotors(this::RemoteTypes.Parts)\n\nA list of all robotic rotors in the vessel.\n\n" RoboticRotors
+export RoboticRotors
+import ..Parts_get_ResourceDrains as var"##1316"
+ResourceDrains(this::RemoteTypes.Parts) = begin
+        kerbal(this.conn, var"##1316"(this))
+    end
+@doc "    ResourceDrains(this::RemoteTypes.Parts)\n\nA list of all resource drains in the vessel.\n\n" ResourceDrains
+export ResourceDrains
+import ..Propellant_get_Name as var"##1317"
+Name(this::RemoteTypes.Propellant) = begin
+        kerbal(this.conn, var"##1317"(this))
+    end
+@doc "    Name(this::RemoteTypes.Propellant)\n\nThe name of the propellant.\n\n" Name
+export Name
+import ..Propellant_get_CurrentAmount as var"##1318"
+CurrentAmount(this::RemoteTypes.Propellant) = begin
+        kerbal(this.conn, var"##1318"(this))
+    end
+@doc "    CurrentAmount(this::RemoteTypes.Propellant)\n\nThe current amount of propellant.\n\n" CurrentAmount
+export CurrentAmount
+import ..Propellant_get_CurrentRequirement as var"##1319"
+CurrentRequirement(this::RemoteTypes.Propellant) = begin
+        kerbal(this.conn, var"##1319"(this))
+    end
+@doc "    CurrentRequirement(this::RemoteTypes.Propellant)\n\nThe required amount of propellant.\n\n" CurrentRequirement
+export CurrentRequirement
+import ..Propellant_get_TotalResourceAvailable as var"##1320"
+TotalResourceAvailable(this::RemoteTypes.Propellant) = begin
+        kerbal(this.conn, var"##1320"(this))
+    end
+@doc "    TotalResourceAvailable(this::RemoteTypes.Propellant)\n\nThe total amount of the underlying resource currently reachable given\nresource flow rules.\n\n" TotalResourceAvailable
+export TotalResourceAvailable
+import ..Propellant_get_TotalResourceCapacity as var"##1321"
+TotalResourceCapacity(this::RemoteTypes.Propellant) = begin
+        kerbal(this.conn, var"##1321"(this))
+    end
+@doc "    TotalResourceCapacity(this::RemoteTypes.Propellant)\n\nThe total vehicle capacity for the underlying propellant resource,\nrestricted by resource flow rules.\n\n" TotalResourceCapacity
+export TotalResourceCapacity
+import ..Propellant_get_IgnoreForIsp as var"##1322"
+IgnoreForIsp(this::RemoteTypes.Propellant) = begin
+        kerbal(this.conn, var"##1322"(this))
+    end
+@doc "    IgnoreForIsp(this::RemoteTypes.Propellant)\n\nIf this propellant should be ignored when calculating required mass flow\ngiven specific impulse.\n\n" IgnoreForIsp
+export IgnoreForIsp
+import ..Propellant_get_IgnoreForThrustCurve as var"##1323"
+IgnoreForThrustCurve(this::RemoteTypes.Propellant) = begin
+        kerbal(this.conn, var"##1323"(this))
+    end
+@doc "    IgnoreForThrustCurve(this::RemoteTypes.Propellant)\n\nIf this propellant should be ignored for thrust curve calculations.\n\n" IgnoreForThrustCurve
+export IgnoreForThrustCurve
+import ..Propellant_get_DrawStackGauge as var"##1324"
+DrawStackGauge(this::RemoteTypes.Propellant) = begin
+        kerbal(this.conn, var"##1324"(this))
+    end
+@doc "    DrawStackGauge(this::RemoteTypes.Propellant)\n\nIf this propellant has a stack gauge or not.\n\n" DrawStackGauge
+export DrawStackGauge
+import ..Propellant_get_IsDeprived as var"##1325"
+IsDeprived(this::RemoteTypes.Propellant) = begin
+        kerbal(this.conn, var"##1325"(this))
+    end
+@doc "    IsDeprived(this::RemoteTypes.Propellant)\n\nIf this propellant is deprived.\n\n" IsDeprived
+export IsDeprived
+import ..Propellant_get_Ratio as var"##1326"
+Ratio(this::RemoteTypes.Propellant) = begin
+        kerbal(this.conn, var"##1326"(this))
+    end
+@doc "    Ratio(this::RemoteTypes.Propellant)\n\nThe propellant ratio.\n\n" Ratio
+export Ratio
+import ..RCS_get_Part as var"##1327"
+Part(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1327"(this))
+    end
+@doc "    Part(this::RemoteTypes.RCS)\n\nThe part object for this RCS.\n\n" Part
+export Part
+import ..RCS_get_Active as var"##1328"
+Active(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1328"(this))
+    end
+@doc "    Active(this::RemoteTypes.RCS)\n\nWhether the RCS thrusters are active.\nAn RCS thruster is inactive if the RCS action group is disabled\n(), the RCS thruster itself is not enabled\n() or it is covered by a fairing ().\n\n" Active
+export Active
+import ..RCS_get_Enabled as var"##1329"
+Enabled(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1329"(this))
+    end
+@doc "    Enabled(this::RemoteTypes.RCS)\n\nWhether the RCS thrusters are enabled.\n\n" Enabled
+export Enabled
+import ..RCS_set_Enabled as var"##1330"
+Enabled!(this::RemoteTypes.RCS, value::Bool) = begin
+        kerbal(this.conn, var"##1330"(this, value))
+    end
+@doc "    Enabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thrusters are enabled.\n\n" Enabled!
+export Enabled!
+import ..RCS_get_PitchEnabled as var"##1331"
+PitchEnabled(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1331"(this))
+    end
+@doc "    PitchEnabled(this::RemoteTypes.RCS)\n\nWhether the RCS thruster will fire when pitch control input is given.\n\n" PitchEnabled
+export PitchEnabled
+import ..RCS_set_PitchEnabled as var"##1332"
+PitchEnabled!(this::RemoteTypes.RCS, value::Bool) = begin
+        kerbal(this.conn, var"##1332"(this, value))
+    end
+@doc "    PitchEnabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thruster will fire when pitch control input is given.\n\n" PitchEnabled!
+export PitchEnabled!
+import ..RCS_get_YawEnabled as var"##1333"
+YawEnabled(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1333"(this))
+    end
+@doc "    YawEnabled(this::RemoteTypes.RCS)\n\nWhether the RCS thruster will fire when yaw control input is given.\n\n" YawEnabled
+export YawEnabled
+import ..RCS_set_YawEnabled as var"##1334"
+YawEnabled!(this::RemoteTypes.RCS, value::Bool) = begin
+        kerbal(this.conn, var"##1334"(this, value))
+    end
+@doc "    YawEnabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thruster will fire when yaw control input is given.\n\n" YawEnabled!
+export YawEnabled!
+import ..RCS_get_RollEnabled as var"##1335"
+RollEnabled(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1335"(this))
+    end
+@doc "    RollEnabled(this::RemoteTypes.RCS)\n\nWhether the RCS thruster will fire when roll control input is given.\n\n" RollEnabled
+export RollEnabled
+import ..RCS_set_RollEnabled as var"##1336"
+RollEnabled!(this::RemoteTypes.RCS, value::Bool) = begin
+        kerbal(this.conn, var"##1336"(this, value))
+    end
+@doc "    RollEnabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thruster will fire when roll control input is given.\n\n" RollEnabled!
+export RollEnabled!
+import ..RCS_get_ForwardEnabled as var"##1337"
+ForwardEnabled(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1337"(this))
+    end
+@doc "    ForwardEnabled(this::RemoteTypes.RCS)\n\nWhether the RCS thruster will fire when pitch control input is given.\n\n" ForwardEnabled
+export ForwardEnabled
+import ..RCS_set_ForwardEnabled as var"##1338"
+ForwardEnabled!(this::RemoteTypes.RCS, value::Bool) = begin
+        kerbal(this.conn, var"##1338"(this, value))
+    end
+@doc "    ForwardEnabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thruster will fire when pitch control input is given.\n\n" ForwardEnabled!
+export ForwardEnabled!
+import ..RCS_get_UpEnabled as var"##1339"
+UpEnabled(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1339"(this))
+    end
+@doc "    UpEnabled(this::RemoteTypes.RCS)\n\nWhether the RCS thruster will fire when yaw control input is given.\n\n" UpEnabled
+export UpEnabled
+import ..RCS_set_UpEnabled as var"##1340"
+UpEnabled!(this::RemoteTypes.RCS, value::Bool) = begin
+        kerbal(this.conn, var"##1340"(this, value))
+    end
+@doc "    UpEnabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thruster will fire when yaw control input is given.\n\n" UpEnabled!
+export UpEnabled!
+import ..RCS_get_RightEnabled as var"##1341"
+RightEnabled(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1341"(this))
+    end
+@doc "    RightEnabled(this::RemoteTypes.RCS)\n\nWhether the RCS thruster will fire when roll control input is given.\n\n" RightEnabled
+export RightEnabled
+import ..RCS_set_RightEnabled as var"##1342"
+RightEnabled!(this::RemoteTypes.RCS, value::Bool) = begin
+        kerbal(this.conn, var"##1342"(this, value))
+    end
+@doc "    RightEnabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thruster will fire when roll control input is given.\n\n" RightEnabled!
+export RightEnabled!
+import ..RCS_get_AvailableTorque as var"##1343"
+AvailableTorque(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1343"(this))
+    end
+@doc "    AvailableTorque(this::RemoteTypes.RCS)\n\nThe available torque, in Newton meters, that can be produced by this RCS,\nin the positive and negative pitch, roll and yaw axes of the vessel. These axes\ncorrespond to the coordinate axes of the .\nReturns zero if RCS is disable.\n\n" AvailableTorque
+export AvailableTorque
+import ..RCS_get_AvailableThrust as var"##1344"
+AvailableThrust(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1344"(this))
+    end
+@doc "    AvailableThrust(this::RemoteTypes.RCS)\n\nThe amount of thrust, in Newtons, that would be produced by the thruster when activated.\nReturns zero if the thruster does not have any fuel.\nTakes the thrusters current  and atmospheric conditions\ninto account.\n\n" AvailableThrust
+export AvailableThrust
+import ..RCS_get_MaxThrust as var"##1345"
+MaxThrust(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1345"(this))
+    end
+@doc "    MaxThrust(this::RemoteTypes.RCS)\n\nThe maximum amount of thrust that can be produced by the RCS thrusters when active,\nin Newtons.\nTakes the thrusters current  and atmospheric conditions\ninto account.\n\n" MaxThrust
+export MaxThrust
+import ..RCS_get_MaxVacuumThrust as var"##1346"
+MaxVacuumThrust(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1346"(this))
+    end
+@doc "    MaxVacuumThrust(this::RemoteTypes.RCS)\n\nThe maximum amount of thrust that can be produced by the RCS thrusters when active\nin a vacuum, in Newtons.\n\n" MaxVacuumThrust
+export MaxVacuumThrust
+import ..RCS_get_ThrustLimit as var"##1347"
+ThrustLimit(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1347"(this))
+    end
+@doc "    ThrustLimit(this::RemoteTypes.RCS)\n\nThe thrust limiter of the thruster. A value between 0 and 1.\n\n" ThrustLimit
+export ThrustLimit
+import ..RCS_set_ThrustLimit as var"##1348"
+ThrustLimit!(this::RemoteTypes.RCS, value::Float32) = begin
+        kerbal(this.conn, var"##1348"(this, value))
+    end
+@doc "    ThrustLimit!(this::RemoteTypes.RCS, value::Float32)\n\nThe thrust limiter of the thruster. A value between 0 and 1.\n\n" ThrustLimit!
+export ThrustLimit!
+import ..RCS_get_Thrusters as var"##1349"
+Thrusters(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1349"(this))
+    end
+@doc "    Thrusters(this::RemoteTypes.RCS)\n\nA list of thrusters, one of each nozzel in the RCS part.\n\n" Thrusters
+export Thrusters
+import ..RCS_get_SpecificImpulse as var"##1350"
+SpecificImpulse(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1350"(this))
+    end
+@doc "    SpecificImpulse(this::RemoteTypes.RCS)\n\nThe current specific impulse of the RCS, in seconds. Returns zero\nif the RCS is not active.\n\n" SpecificImpulse
+export SpecificImpulse
+import ..RCS_get_VacuumSpecificImpulse as var"##1351"
+VacuumSpecificImpulse(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1351"(this))
+    end
+@doc "    VacuumSpecificImpulse(this::RemoteTypes.RCS)\n\nThe vacuum specific impulse of the RCS, in seconds.\n\n" VacuumSpecificImpulse
+export VacuumSpecificImpulse
+import ..RCS_get_KerbinSeaLevelSpecificImpulse as var"##1352"
+KerbinSeaLevelSpecificImpulse(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1352"(this))
+    end
+@doc "    KerbinSeaLevelSpecificImpulse(this::RemoteTypes.RCS)\n\nThe specific impulse of the RCS at sea level on Kerbin, in seconds.\n\n" KerbinSeaLevelSpecificImpulse
+export KerbinSeaLevelSpecificImpulse
+import ..RCS_get_Propellants as var"##1353"
+Propellants(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1353"(this))
+    end
+@doc "    Propellants(this::RemoteTypes.RCS)\n\nThe names of resources that the RCS consumes.\n\n" Propellants
+export Propellants
+import ..RCS_get_PropellantRatios as var"##1354"
+PropellantRatios(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1354"(this))
+    end
+@doc "    PropellantRatios(this::RemoteTypes.RCS)\n\nThe ratios of resources that the RCS consumes. A dictionary mapping resource names\nto the ratios at which they are consumed by the RCS.\n\n" PropellantRatios
+export PropellantRatios
+import ..RCS_get_HasFuel as var"##1355"
+HasFuel(this::RemoteTypes.RCS) = begin
+        kerbal(this.conn, var"##1355"(this))
+    end
+@doc "    HasFuel(this::RemoteTypes.RCS)\n\nWhether the RCS has fuel available.\n\n" HasFuel
+export HasFuel
+import ..Radiator_get_Part as var"##1356"
+Part(this::RemoteTypes.Radiator) = begin
+        kerbal(this.conn, var"##1356"(this))
+    end
+@doc "    Part(this::RemoteTypes.Radiator)\n\nThe part object for this radiator.\n\n" Part
+export Part
+import ..Radiator_get_Deployable as var"##1357"
+Deployable(this::RemoteTypes.Radiator) = begin
+        kerbal(this.conn, var"##1357"(this))
+    end
+@doc "    Deployable(this::RemoteTypes.Radiator)\n\nWhether the radiator is deployable.\n\n" Deployable
+export Deployable
+import ..Radiator_get_Deployed as var"##1358"
+Deployed(this::RemoteTypes.Radiator) = begin
+        kerbal(this.conn, var"##1358"(this))
+    end
+@doc "    Deployed(this::RemoteTypes.Radiator)\n\nFor a deployable radiator, true if the radiator is extended.\nIf the radiator is not deployable, this is always true.\n\n" Deployed
+export Deployed
+import ..Radiator_set_Deployed as var"##1359"
+Deployed!(this::RemoteTypes.Radiator, value::Bool) = begin
+        kerbal(this.conn, var"##1359"(this, value))
+    end
+@doc "    Deployed!(this::RemoteTypes.Radiator, value::Bool)\n\nFor a deployable radiator, true if the radiator is extended.\nIf the radiator is not deployable, this is always true.\n\n" Deployed!
+export Deployed!
+import ..Radiator_get_State as var"##1360"
+State(this::RemoteTypes.Radiator) = begin
+        kerbal(this.conn, var"##1360"(this))
+    end
+@doc "    State(this::RemoteTypes.Radiator)\n\nThe current state of the radiator.\n\n# Remarks\n A fixed radiator is always . \n" State
+export State
+import ..ReactionWheel_get_Part as var"##1361"
+Part(this::RemoteTypes.ReactionWheel) = begin
+        kerbal(this.conn, var"##1361"(this))
+    end
+@doc "    Part(this::RemoteTypes.ReactionWheel)\n\nThe part object for this reaction wheel.\n\n" Part
+export Part
+import ..ReactionWheel_get_Active as var"##1362"
+Active(this::RemoteTypes.ReactionWheel) = begin
+        kerbal(this.conn, var"##1362"(this))
+    end
+@doc "    Active(this::RemoteTypes.ReactionWheel)\n\nWhether the reaction wheel is active.\n\n" Active
+export Active
+import ..ReactionWheel_set_Active as var"##1363"
+Active!(this::RemoteTypes.ReactionWheel, value::Bool) = begin
+        kerbal(this.conn, var"##1363"(this, value))
+    end
+@doc "    Active!(this::RemoteTypes.ReactionWheel, value::Bool)\n\nWhether the reaction wheel is active.\n\n" Active!
+export Active!
+import ..ReactionWheel_get_Broken as var"##1364"
+Broken(this::RemoteTypes.ReactionWheel) = begin
+        kerbal(this.conn, var"##1364"(this))
+    end
+@doc "    Broken(this::RemoteTypes.ReactionWheel)\n\nWhether the reaction wheel is broken.\n\n" Broken
+export Broken
+import ..ReactionWheel_get_AvailableTorque as var"##1365"
+AvailableTorque(this::RemoteTypes.ReactionWheel) = begin
+        kerbal(this.conn, var"##1365"(this))
+    end
+@doc "    AvailableTorque(this::RemoteTypes.ReactionWheel)\n\nThe available torque, in Newton meters, that can be produced by this reaction wheel,\nin the positive and negative pitch, roll and yaw axes of the vessel. These axes\ncorrespond to the coordinate axes of the .\nReturns zero if the reaction wheel is inactive or broken.\n\n" AvailableTorque
+export AvailableTorque
+import ..ReactionWheel_get_MaxTorque as var"##1366"
+MaxTorque(this::RemoteTypes.ReactionWheel) = begin
+        kerbal(this.conn, var"##1366"(this))
+    end
+@doc "    MaxTorque(this::RemoteTypes.ReactionWheel)\n\nThe maximum torque, in Newton meters, that can be produced by this reaction wheel,\nwhen it is active, in the positive and negative pitch, roll and yaw axes of the vessel.\nThese axes correspond to the coordinate axes of the .\n\n" MaxTorque
+export MaxTorque
+import ..ResourceConverter_Active as var"##1367"
+Active(this::RemoteTypes.ResourceConverter, index::Int32) = begin
+        kerbal(this.conn, var"##1367"(this, index))
+    end
+@doc "    Active(this::RemoteTypes.ResourceConverter, index::Int32)\n\nTrue if the specified converter is active.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" Active
+export Active
+import ..ResourceConverter_Name as var"##1368"
+Name(this::RemoteTypes.ResourceConverter, index::Int32) = begin
+        kerbal(this.conn, var"##1368"(this, index))
+    end
+@doc "    Name(this::RemoteTypes.ResourceConverter, index::Int32)\n\nThe name of the specified converter.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" Name
+export Name
+import ..ResourceConverter_Start as var"##1369"
+Start(this::RemoteTypes.ResourceConverter, index::Int32) = begin
+        kerbal(this.conn, var"##1369"(this, index))
+    end
+@doc "    Start(this::RemoteTypes.ResourceConverter, index::Int32)\n\nStart the specified converter.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" Start
+export Start
+import ..ResourceConverter_Stop as var"##1370"
+Stop(this::RemoteTypes.ResourceConverter, index::Int32) = begin
+        kerbal(this.conn, var"##1370"(this, index))
+    end
+@doc "    Stop(this::RemoteTypes.ResourceConverter, index::Int32)\n\nStop the specified converter.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" Stop
+export Stop
+import ..ResourceConverter_State as var"##1371"
+State(this::RemoteTypes.ResourceConverter, index::Int32) = begin
+        kerbal(this.conn, var"##1371"(this, index))
+    end
+@doc "    State(this::RemoteTypes.ResourceConverter, index::Int32)\n\nThe state of the specified converter.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" State
+export State
+import ..ResourceConverter_StatusInfo as var"##1372"
+StatusInfo(this::RemoteTypes.ResourceConverter, index::Int32) = begin
+        kerbal(this.conn, var"##1372"(this, index))
+    end
+@doc "    StatusInfo(this::RemoteTypes.ResourceConverter, index::Int32)\n\nStatus information for the specified converter.\nThis is the full status message shown in the in-game UI.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" StatusInfo
+export StatusInfo
+import ..ResourceConverter_Inputs as var"##1373"
+Inputs(this::RemoteTypes.ResourceConverter, index::Int32) = begin
+        kerbal(this.conn, var"##1373"(this, index))
+    end
+@doc "    Inputs(this::RemoteTypes.ResourceConverter, index::Int32)\n\nList of the names of resources consumed by the specified converter.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" Inputs
+export Inputs
+import ..ResourceConverter_Outputs as var"##1374"
+Outputs(this::RemoteTypes.ResourceConverter, index::Int32) = begin
+        kerbal(this.conn, var"##1374"(this, index))
+    end
+@doc "    Outputs(this::RemoteTypes.ResourceConverter, index::Int32)\n\nList of the names of resources produced by the specified converter.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" Outputs
+export Outputs
+import ..ResourceConverter_get_Part as var"##1375"
+Part(this::RemoteTypes.ResourceConverter) = begin
+        kerbal(this.conn, var"##1375"(this))
+    end
+@doc "    Part(this::RemoteTypes.ResourceConverter)\n\nThe part object for this converter.\n\n" Part
+export Part
+import ..ResourceConverter_get_Count as var"##1376"
+Count(this::RemoteTypes.ResourceConverter) = begin
+        kerbal(this.conn, var"##1376"(this))
+    end
+@doc "    Count(this::RemoteTypes.ResourceConverter)\n\nThe number of converters in the part.\n\n" Count
+export Count
+import ..ResourceConverter_get_ThermalEfficiency as var"##1377"
+ThermalEfficiency(this::RemoteTypes.ResourceConverter) = begin
+        kerbal(this.conn, var"##1377"(this))
+    end
+@doc "    ThermalEfficiency(this::RemoteTypes.ResourceConverter)\n\nThe thermal efficiency of the converter, as a percentage of its maximum.\n\n" ThermalEfficiency
+export ThermalEfficiency
+import ..ResourceConverter_get_CoreTemperature as var"##1378"
+CoreTemperature(this::RemoteTypes.ResourceConverter) = begin
+        kerbal(this.conn, var"##1378"(this))
+    end
+@doc "    CoreTemperature(this::RemoteTypes.ResourceConverter)\n\nThe core temperature of the converter, in Kelvin.\n\n" CoreTemperature
+export CoreTemperature
+import ..ResourceConverter_get_OptimumCoreTemperature as var"##1379"
+OptimumCoreTemperature(this::RemoteTypes.ResourceConverter) = begin
+        kerbal(this.conn, var"##1379"(this))
+    end
+@doc "    OptimumCoreTemperature(this::RemoteTypes.ResourceConverter)\n\nThe core temperature at which the converter will operate with peak efficiency, in Kelvin.\n\n" OptimumCoreTemperature
+export OptimumCoreTemperature
+import ..ResourceDrain_SetResourceDrain as var"##1380"
+SetResourceDrain(this::RemoteTypes.ResourceDrain, R::RemoteTypes.Resource, b::Bool) = begin
+        kerbal(this.conn, var"##1380"(this, R, b))
+    end
+@doc "    SetResourceDrain(this::RemoteTypes.ResourceDrain, R::RemoteTypes.Resource, b::Bool)\n\nEnable or Disable draining for the provided resource\n\n" SetResourceDrain
+export SetResourceDrain
+import ..ResourceDrain_CheckResourceDrain as var"##1381"
+CheckResourceDrain(this::RemoteTypes.ResourceDrain, R::RemoteTypes.Resource) = begin
+        kerbal(this.conn, var"##1381"(this, R))
+    end
+@doc "    CheckResourceDrain(this::RemoteTypes.ResourceDrain, R::RemoteTypes.Resource)\n\nChecks whether the provided resource is selected for draining\n\n" CheckResourceDrain
+export CheckResourceDrain
+import ..ResourceDrain_Start as var"##1382"
+Start(this::RemoteTypes.ResourceDrain) = begin
+        kerbal(this.conn, var"##1382"(this))
+    end
+@doc "    Start(this::RemoteTypes.ResourceDrain)\n\nActivates resource drain for all enabled parts\n\n" Start
+export Start
+import ..ResourceDrain_Stop as var"##1383"
+Stop(this::RemoteTypes.ResourceDrain) = begin
+        kerbal(this.conn, var"##1383"(this))
+    end
+@doc "    Stop(this::RemoteTypes.ResourceDrain)\n\nTurns off resource drain\n\n" Stop
+export Stop
+import ..ResourceDrain_get_Part as var"##1384"
+Part(this::RemoteTypes.ResourceDrain) = begin
+        kerbal(this.conn, var"##1384"(this))
+    end
+@doc "    Part(this::RemoteTypes.ResourceDrain)\n\nThe part object for this resource drain\n\n" Part
+export Part
+import ..ResourceDrain_get_AvailableResources as var"##1385"
+AvailableResources(this::RemoteTypes.ResourceDrain) = begin
+        kerbal(this.conn, var"##1385"(this))
+    end
+@doc "    AvailableResources(this::RemoteTypes.ResourceDrain)\n\nReturns list of available resources\n\n" AvailableResources
+export AvailableResources
+import ..ResourceDrain_get_DrainMode as var"##1386"
+DrainMode(this::RemoteTypes.ResourceDrain) = begin
+        kerbal(this.conn, var"##1386"(this))
+    end
+@doc "    DrainMode(this::RemoteTypes.ResourceDrain)\n\nSets drain mode to part or vessel-wide\n\n" DrainMode
+export DrainMode
+import ..ResourceDrain_set_DrainMode as var"##1387"
+DrainMode!(this::RemoteTypes.ResourceDrain, value::EDrainModes) = begin
+        kerbal(this.conn, var"##1387"(this, value))
+    end
+@doc "    DrainMode!(this::RemoteTypes.ResourceDrain, value::EDrainModes)\n\nSets drain mode to part or vessel-wide\n\n" DrainMode!
+export DrainMode!
+import ..ResourceDrain_get_MaxDrainRate as var"##1388"
+MaxDrainRate(this::RemoteTypes.ResourceDrain) = begin
+        kerbal(this.conn, var"##1388"(this))
+    end
+@doc "    MaxDrainRate(this::RemoteTypes.ResourceDrain)\n\nMaximum possible rate of draining.\n\n" MaxDrainRate
+export MaxDrainRate
+import ..ResourceDrain_get_MinDrainRate as var"##1389"
+MinDrainRate(this::RemoteTypes.ResourceDrain) = begin
+        kerbal(this.conn, var"##1389"(this))
+    end
+@doc "    MinDrainRate(this::RemoteTypes.ResourceDrain)\n\nMinimum possible rate of draining\n\n" MinDrainRate
+export MinDrainRate
+import ..ResourceDrain_get_DrainRate as var"##1390"
+DrainRate(this::RemoteTypes.ResourceDrain) = begin
+        kerbal(this.conn, var"##1390"(this))
+    end
+@doc "    DrainRate(this::RemoteTypes.ResourceDrain)\n\n Current rate of draining\n\n" DrainRate
+export DrainRate
+import ..ResourceDrain_set_DrainRate as var"##1391"
+DrainRate!(this::RemoteTypes.ResourceDrain, value::Float32) = begin
+        kerbal(this.conn, var"##1391"(this, value))
+    end
+@doc "    DrainRate!(this::RemoteTypes.ResourceDrain, value::Float32)\n\n Current rate of draining\n\n" DrainRate!
+export DrainRate!
+import ..ResourceHarvester_get_Part as var"##1392"
+Part(this::RemoteTypes.ResourceHarvester) = begin
+        kerbal(this.conn, var"##1392"(this))
+    end
+@doc "    Part(this::RemoteTypes.ResourceHarvester)\n\nThe part object for this harvester.\n\n" Part
+export Part
+import ..ResourceHarvester_get_State as var"##1393"
+State(this::RemoteTypes.ResourceHarvester) = begin
+        kerbal(this.conn, var"##1393"(this))
+    end
+@doc "    State(this::RemoteTypes.ResourceHarvester)\n\nThe state of the harvester.\n\n" State
+export State
+import ..ResourceHarvester_get_Deployed as var"##1394"
+Deployed(this::RemoteTypes.ResourceHarvester) = begin
+        kerbal(this.conn, var"##1394"(this))
+    end
+@doc "    Deployed(this::RemoteTypes.ResourceHarvester)\n\nWhether the harvester is deployed.\n\n" Deployed
+export Deployed
+import ..ResourceHarvester_set_Deployed as var"##1395"
+Deployed!(this::RemoteTypes.ResourceHarvester, value::Bool) = begin
+        kerbal(this.conn, var"##1395"(this, value))
+    end
+@doc "    Deployed!(this::RemoteTypes.ResourceHarvester, value::Bool)\n\nWhether the harvester is deployed.\n\n" Deployed!
+export Deployed!
+import ..ResourceHarvester_get_Active as var"##1396"
+Active(this::RemoteTypes.ResourceHarvester) = begin
+        kerbal(this.conn, var"##1396"(this))
+    end
+@doc "    Active(this::RemoteTypes.ResourceHarvester)\n\nWhether the harvester is actively drilling.\n\n" Active
+export Active
+import ..ResourceHarvester_set_Active as var"##1397"
+Active!(this::RemoteTypes.ResourceHarvester, value::Bool) = begin
+        kerbal(this.conn, var"##1397"(this, value))
+    end
+@doc "    Active!(this::RemoteTypes.ResourceHarvester, value::Bool)\n\nWhether the harvester is actively drilling.\n\n" Active!
+export Active!
+import ..ResourceHarvester_get_ExtractionRate as var"##1398"
+ExtractionRate(this::RemoteTypes.ResourceHarvester) = begin
+        kerbal(this.conn, var"##1398"(this))
+    end
+@doc "    ExtractionRate(this::RemoteTypes.ResourceHarvester)\n\nThe rate at which the drill is extracting ore, in units per second.\n\n" ExtractionRate
+export ExtractionRate
+import ..ResourceHarvester_get_ThermalEfficiency as var"##1399"
+ThermalEfficiency(this::RemoteTypes.ResourceHarvester) = begin
+        kerbal(this.conn, var"##1399"(this))
+    end
+@doc "    ThermalEfficiency(this::RemoteTypes.ResourceHarvester)\n\nThe thermal efficiency of the drill, as a percentage of its maximum.\n\n" ThermalEfficiency
+export ThermalEfficiency
+import ..ResourceHarvester_get_CoreTemperature as var"##1400"
+CoreTemperature(this::RemoteTypes.ResourceHarvester) = begin
+        kerbal(this.conn, var"##1400"(this))
+    end
+@doc "    CoreTemperature(this::RemoteTypes.ResourceHarvester)\n\nThe core temperature of the drill, in Kelvin.\n\n" CoreTemperature
+export CoreTemperature
+import ..ResourceHarvester_get_OptimumCoreTemperature as var"##1401"
+OptimumCoreTemperature(this::RemoteTypes.ResourceHarvester) = begin
+        kerbal(this.conn, var"##1401"(this))
+    end
+@doc "    OptimumCoreTemperature(this::RemoteTypes.ResourceHarvester)\n\nThe core temperature at which the drill will operate with peak efficiency, in Kelvin.\n\n" OptimumCoreTemperature
+export OptimumCoreTemperature
+import ..RoboticController_HasPart as var"##1402"
+HasPart(this::RemoteTypes.RoboticController, part::RemoteTypes.Part) = begin
+        kerbal(this.conn, var"##1402"(this, part))
+    end
+@doc "    HasPart(this::RemoteTypes.RoboticController, part::RemoteTypes.Part)\n\nWhether the controller any axisfield from the part\n\n" HasPart
+export HasPart
+import ..RoboticController_ListAxes as var"##1403"
+ListAxes(this::RemoteTypes.RoboticController) = begin
+        kerbal(this.conn, var"##1403"(this))
+    end
+@doc "    ListAxes(this::RemoteTypes.RoboticController)\n\nList the axes for the controller.\n\n" ListAxes
+export ListAxes
+import ..RoboticController_AddAxis as var"##1404"
+AddAxis(this::RemoteTypes.RoboticController, kModule::RemoteTypes.Module, fieldName::String) = begin
+        kerbal(this.conn, var"##1404"(this, kModule, fieldName))
+    end
+@doc "    AddAxis(this::RemoteTypes.RoboticController, kModule::RemoteTypes.Module, fieldName::String)\n\nAdd an axis to the controller\n\n" AddAxis
+export AddAxis
+import ..RoboticController_AddKey as var"##1405"
+AddKey(this::RemoteTypes.RoboticController, kModule::RemoteTypes.Module, fieldName::String, time::Float32, value::Float32) = begin
+        kerbal(this.conn, var"##1405"(this, kModule, fieldName, time, value))
+    end
+@doc "    AddKey(this::RemoteTypes.RoboticController, kModule::RemoteTypes.Module, fieldName::String, time::Float32, value::Float32)\n\nAdd key frame value for controller axis.\n\n" AddKey
+export AddKey
+import ..RoboticController_ClearAxis as var"##1406"
+ClearAxis(this::RemoteTypes.RoboticController, kModule::RemoteTypes.Module, fieldName::String) = begin
+        kerbal(this.conn, var"##1406"(this, kModule, fieldName))
+    end
+@doc "    ClearAxis(this::RemoteTypes.RoboticController, kModule::RemoteTypes.Module, fieldName::String)\n\nClear axis.\n\n" ClearAxis
+export ClearAxis
+import ..RoboticController_get_Part as var"##1407"
+Part(this::RemoteTypes.RoboticController) = begin
+        kerbal(this.conn, var"##1407"(this))
+    end
+@doc "    Part(this::RemoteTypes.RoboticController)\n\nThe part object for this antenna.\n\n" Part
+export Part
+import ..RoboticHinge_Home as var"##1408"
+Home(this::RemoteTypes.RoboticHinge) = begin
+        kerbal(this.conn, var"##1408"(this))
+    end
+@doc "    Home(this::RemoteTypes.RoboticHinge)\n\nReturns Hinge to Build Angle Position\n\n" Home
+export Home
+import ..RoboticHinge_get_Part as var"##1409"
+Part(this::RemoteTypes.RoboticHinge) = begin
+        kerbal(this.conn, var"##1409"(this))
+    end
+@doc "    Part(this::RemoteTypes.RoboticHinge)\n\nThe part object for this robotic hinge.\n\n" Part
+export Part
+import ..RoboticHinge_get_TargetAngle as var"##1410"
+TargetAngle(this::RemoteTypes.RoboticHinge) = begin
+        kerbal(this.conn, var"##1410"(this))
+    end
+@doc "    TargetAngle(this::RemoteTypes.RoboticHinge)\n\nTarget Angle for Robotic Hinge\n \n" TargetAngle
+export TargetAngle
+import ..RoboticHinge_set_TargetAngle as var"##1411"
+TargetAngle!(this::RemoteTypes.RoboticHinge, value::Float32) = begin
+        kerbal(this.conn, var"##1411"(this, value))
+    end
+@doc "    TargetAngle!(this::RemoteTypes.RoboticHinge, value::Float32)\n\nTarget Angle for Robotic Hinge\n \n" TargetAngle!
+export TargetAngle!
+import ..RoboticHinge_get_CurrentAngle as var"##1412"
+CurrentAngle(this::RemoteTypes.RoboticHinge) = begin
+        kerbal(this.conn, var"##1412"(this))
+    end
+@doc "    CurrentAngle(this::RemoteTypes.RoboticHinge)\n\nCurrent Angle for Robotic Hinge\n \n" CurrentAngle
+export CurrentAngle
+import ..RoboticHinge_get_Rate as var"##1413"
+Rate(this::RemoteTypes.RoboticHinge) = begin
+        kerbal(this.conn, var"##1413"(this))
+    end
+@doc "    Rate(this::RemoteTypes.RoboticHinge)\n\nTarget Movement Rate in Degrees/s\n\n" Rate
+export Rate
+import ..RoboticHinge_set_Rate as var"##1414"
+Rate!(this::RemoteTypes.RoboticHinge, value::Float32) = begin
+        kerbal(this.conn, var"##1414"(this, value))
+    end
+@doc "    Rate!(this::RemoteTypes.RoboticHinge, value::Float32)\n\nTarget Movement Rate in Degrees/s\n\n" Rate!
+export Rate!
+import ..RoboticHinge_get_Damping as var"##1415"
+Damping(this::RemoteTypes.RoboticHinge) = begin
+        kerbal(this.conn, var"##1415"(this))
+    end
+@doc "    Damping(this::RemoteTypes.RoboticHinge)\n\nDamping Percentage>\n \n" Damping
+export Damping
+import ..RoboticHinge_set_Damping as var"##1416"
+Damping!(this::RemoteTypes.RoboticHinge, value::Float32) = begin
+        kerbal(this.conn, var"##1416"(this, value))
+    end
+@doc "    Damping!(this::RemoteTypes.RoboticHinge, value::Float32)\n\nDamping Percentage>\n \n" Damping!
+export Damping!
+import ..RoboticHinge_get_HingeLocked as var"##1417"
+HingeLocked(this::RemoteTypes.RoboticHinge) = begin
+        kerbal(this.conn, var"##1417"(this))
+    end
+@doc "    HingeLocked(this::RemoteTypes.RoboticHinge)\n\nLock Movement\n\n" HingeLocked
+export HingeLocked
+import ..RoboticHinge_set_HingeLocked as var"##1418"
+HingeLocked!(this::RemoteTypes.RoboticHinge, value::Bool) = begin
+        kerbal(this.conn, var"##1418"(this, value))
+    end
+@doc "    HingeLocked!(this::RemoteTypes.RoboticHinge, value::Bool)\n\nLock Movement\n\n" HingeLocked!
+export HingeLocked!
+import ..RoboticHinge_get_MotorEngaged as var"##1419"
+MotorEngaged(this::RemoteTypes.RoboticHinge) = begin
+        kerbal(this.conn, var"##1419"(this))
+    end
+@doc "    MotorEngaged(this::RemoteTypes.RoboticHinge)\n\nEngage/Disengage Motor\n\n" MotorEngaged
+export MotorEngaged
+import ..RoboticHinge_set_MotorEngaged as var"##1420"
+MotorEngaged!(this::RemoteTypes.RoboticHinge, value::Bool) = begin
+        kerbal(this.conn, var"##1420"(this, value))
+    end
+@doc "    MotorEngaged!(this::RemoteTypes.RoboticHinge, value::Bool)\n\nEngage/Disengage Motor\n\n" MotorEngaged!
+export MotorEngaged!
+import ..RoboticPiston_Home as var"##1421"
+Home(this::RemoteTypes.RoboticPiston) = begin
+        kerbal(this.conn, var"##1421"(this))
+    end
+@doc "    Home(this::RemoteTypes.RoboticPiston)\n\nReturns Piston to VAB Position\n\n" Home
+export Home
+import ..RoboticPiston_get_Part as var"##1422"
+Part(this::RemoteTypes.RoboticPiston) = begin
+        kerbal(this.conn, var"##1422"(this))
+    end
+@doc "    Part(this::RemoteTypes.RoboticPiston)\n\nThe part object for this robotic piston.\n\n" Part
+export Part
+import ..RoboticPiston_get_TargetPosition as var"##1423"
+TargetPosition(this::RemoteTypes.RoboticPiston) = begin
+        kerbal(this.conn, var"##1423"(this))
+    end
+@doc "    TargetPosition(this::RemoteTypes.RoboticPiston)\n\nTarget Extension for robotic piston.\n \n" TargetPosition
+export TargetPosition
+import ..RoboticPiston_set_TargetPosition as var"##1424"
+TargetPosition!(this::RemoteTypes.RoboticPiston, value::Float32) = begin
+        kerbal(this.conn, var"##1424"(this, value))
+    end
+@doc "    TargetPosition!(this::RemoteTypes.RoboticPiston, value::Float32)\n\nTarget Extension for robotic piston.\n \n" TargetPosition!
+export TargetPosition!
+import ..RoboticPiston_get_CurrentPosition as var"##1425"
+CurrentPosition(this::RemoteTypes.RoboticPiston) = begin
+        kerbal(this.conn, var"##1425"(this))
+    end
+@doc "    CurrentPosition(this::RemoteTypes.RoboticPiston)\n\nCurrent Extension of piston\n \n" CurrentPosition
+export CurrentPosition
+import ..RoboticPiston_get_Rate as var"##1426"
+Rate(this::RemoteTypes.RoboticPiston) = begin
+        kerbal(this.conn, var"##1426"(this))
+    end
+@doc "    Rate(this::RemoteTypes.RoboticPiston)\n\nTarget Movement Rate in Degrees/s\n\n" Rate
+export Rate
+import ..RoboticPiston_set_Rate as var"##1427"
+Rate!(this::RemoteTypes.RoboticPiston, value::Float32) = begin
+        kerbal(this.conn, var"##1427"(this, value))
+    end
+@doc "    Rate!(this::RemoteTypes.RoboticPiston, value::Float32)\n\nTarget Movement Rate in Degrees/s\n\n" Rate!
+export Rate!
+import ..RoboticPiston_get_Damping as var"##1428"
+Damping(this::RemoteTypes.RoboticPiston) = begin
+        kerbal(this.conn, var"##1428"(this))
+    end
+@doc "    Damping(this::RemoteTypes.RoboticPiston)\n\nDamping Percentage>\n \n" Damping
+export Damping
+import ..RoboticPiston_set_Damping as var"##1429"
+Damping!(this::RemoteTypes.RoboticPiston, value::Float32) = begin
+        kerbal(this.conn, var"##1429"(this, value))
+    end
+@doc "    Damping!(this::RemoteTypes.RoboticPiston, value::Float32)\n\nDamping Percentage>\n \n" Damping!
+export Damping!
+import ..RoboticPiston_get_PistonLocked as var"##1430"
+PistonLocked(this::RemoteTypes.RoboticPiston) = begin
+        kerbal(this.conn, var"##1430"(this))
+    end
+@doc "    PistonLocked(this::RemoteTypes.RoboticPiston)\n\nLock Movement\n\n" PistonLocked
+export PistonLocked
+import ..RoboticPiston_set_PistonLocked as var"##1431"
+PistonLocked!(this::RemoteTypes.RoboticPiston, value::Bool) = begin
+        kerbal(this.conn, var"##1431"(this, value))
+    end
+@doc "    PistonLocked!(this::RemoteTypes.RoboticPiston, value::Bool)\n\nLock Movement\n\n" PistonLocked!
+export PistonLocked!
+import ..RoboticPiston_get_MotorEngaged as var"##1432"
+MotorEngaged(this::RemoteTypes.RoboticPiston) = begin
+        kerbal(this.conn, var"##1432"(this))
+    end
+@doc "    MotorEngaged(this::RemoteTypes.RoboticPiston)\n\nEngage/Disengage Motor\n\n" MotorEngaged
+export MotorEngaged
+import ..RoboticPiston_set_MotorEngaged as var"##1433"
+MotorEngaged!(this::RemoteTypes.RoboticPiston, value::Bool) = begin
+        kerbal(this.conn, var"##1433"(this, value))
+    end
+@doc "    MotorEngaged!(this::RemoteTypes.RoboticPiston, value::Bool)\n\nEngage/Disengage Motor\n\n" MotorEngaged!
+export MotorEngaged!
+import ..RoboticRotation_Home as var"##1434"
+Home(this::RemoteTypes.RoboticRotation) = begin
+        kerbal(this.conn, var"##1434"(this))
+    end
+@doc "    Home(this::RemoteTypes.RoboticRotation)\n\nReturns Servo to Build Angle Position\n\n" Home
+export Home
+import ..RoboticRotation_get_Part as var"##1435"
+Part(this::RemoteTypes.RoboticRotation) = begin
+        kerbal(this.conn, var"##1435"(this))
+    end
+@doc "    Part(this::RemoteTypes.RoboticRotation)\n\nThe part object for this robotic servo.\n\n" Part
+export Part
+import ..RoboticRotation_get_TargetPosition as var"##1436"
+TargetPosition(this::RemoteTypes.RoboticRotation) = begin
+        kerbal(this.conn, var"##1436"(this))
+    end
+@doc "    TargetPosition(this::RemoteTypes.RoboticRotation)\n\nTarget Angle for Robotic Servo\n \n" TargetPosition
+export TargetPosition
+import ..RoboticRotation_set_TargetPosition as var"##1437"
+TargetPosition!(this::RemoteTypes.RoboticRotation, value::Float32) = begin
+        kerbal(this.conn, var"##1437"(this, value))
+    end
+@doc "    TargetPosition!(this::RemoteTypes.RoboticRotation, value::Float32)\n\nTarget Angle for Robotic Servo\n \n" TargetPosition!
+export TargetPosition!
+import ..RoboticRotation_get_CurrentPosition as var"##1438"
+CurrentPosition(this::RemoteTypes.RoboticRotation) = begin
+        kerbal(this.conn, var"##1438"(this))
+    end
+@doc "    CurrentPosition(this::RemoteTypes.RoboticRotation)\n\nCurrent Angle for Robotic Hinge\n \n" CurrentPosition
+export CurrentPosition
+import ..RoboticRotation_get_Rate as var"##1439"
+Rate(this::RemoteTypes.RoboticRotation) = begin
+        kerbal(this.conn, var"##1439"(this))
+    end
+@doc "    Rate(this::RemoteTypes.RoboticRotation)\n\nTarget Movement Rate in Degrees/s\n\n" Rate
+export Rate
+import ..RoboticRotation_set_Rate as var"##1440"
+Rate!(this::RemoteTypes.RoboticRotation, value::Float32) = begin
+        kerbal(this.conn, var"##1440"(this, value))
+    end
+@doc "    Rate!(this::RemoteTypes.RoboticRotation, value::Float32)\n\nTarget Movement Rate in Degrees/s\n\n" Rate!
+export Rate!
+import ..RoboticRotation_get_Damping as var"##1441"
+Damping(this::RemoteTypes.RoboticRotation) = begin
+        kerbal(this.conn, var"##1441"(this))
+    end
+@doc "    Damping(this::RemoteTypes.RoboticRotation)\n\nDamping Percentage>\n \n" Damping
+export Damping
+import ..RoboticRotation_set_Damping as var"##1442"
+Damping!(this::RemoteTypes.RoboticRotation, value::Float32) = begin
+        kerbal(this.conn, var"##1442"(this, value))
+    end
+@doc "    Damping!(this::RemoteTypes.RoboticRotation, value::Float32)\n\nDamping Percentage>\n \n" Damping!
+export Damping!
+import ..RoboticRotation_get_RotationLocked as var"##1443"
+RotationLocked(this::RemoteTypes.RoboticRotation) = begin
+        kerbal(this.conn, var"##1443"(this))
+    end
+@doc "    RotationLocked(this::RemoteTypes.RoboticRotation)\n\nLock Movement\n\n" RotationLocked
+export RotationLocked
+import ..RoboticRotation_set_RotationLocked as var"##1444"
+RotationLocked!(this::RemoteTypes.RoboticRotation, value::Bool) = begin
+        kerbal(this.conn, var"##1444"(this, value))
+    end
+@doc "    RotationLocked!(this::RemoteTypes.RoboticRotation, value::Bool)\n\nLock Movement\n\n" RotationLocked!
+export RotationLocked!
+import ..RoboticRotation_get_MotorEngaged as var"##1445"
+MotorEngaged(this::RemoteTypes.RoboticRotation) = begin
+        kerbal(this.conn, var"##1445"(this))
+    end
+@doc "    MotorEngaged(this::RemoteTypes.RoboticRotation)\n\nEngage/Disengage Motor\n\n" MotorEngaged
+export MotorEngaged
+import ..RoboticRotation_set_MotorEngaged as var"##1446"
+MotorEngaged!(this::RemoteTypes.RoboticRotation, value::Bool) = begin
+        kerbal(this.conn, var"##1446"(this, value))
+    end
+@doc "    MotorEngaged!(this::RemoteTypes.RoboticRotation, value::Bool)\n\nEngage/Disengage Motor\n\n" MotorEngaged!
+export MotorEngaged!
+import ..RoboticRotor_get_Part as var"##1447"
+Part(this::RemoteTypes.RoboticRotor) = begin
+        kerbal(this.conn, var"##1447"(this))
+    end
+@doc "    Part(this::RemoteTypes.RoboticRotor)\n\nThe part object for this robotic rotor.\n\n" Part
+export Part
+import ..RoboticRotor_get_TargetRPM as var"##1448"
+TargetRPM(this::RemoteTypes.RoboticRotor) = begin
+        kerbal(this.conn, var"##1448"(this))
+    end
+@doc "    TargetRPM(this::RemoteTypes.RoboticRotor)\n\nTarget RPM for Robotic Rotor\n \n" TargetRPM
+export TargetRPM
+import ..RoboticRotor_set_TargetRPM as var"##1449"
+TargetRPM!(this::RemoteTypes.RoboticRotor, value::Float32) = begin
+        kerbal(this.conn, var"##1449"(this, value))
+    end
+@doc "    TargetRPM!(this::RemoteTypes.RoboticRotor, value::Float32)\n\nTarget RPM for Robotic Rotor\n \n" TargetRPM!
+export TargetRPM!
+import ..RoboticRotor_get_CurrentRPM as var"##1450"
+CurrentRPM(this::RemoteTypes.RoboticRotor) = begin
+        kerbal(this.conn, var"##1450"(this))
+    end
+@doc "    CurrentRPM(this::RemoteTypes.RoboticRotor)\n\nCurrent RPM for Robotic Hinge\n \n" CurrentRPM
+export CurrentRPM
+import ..RoboticRotor_get_Inverted as var"##1451"
+Inverted(this::RemoteTypes.RoboticRotor) = begin
+        kerbal(this.conn, var"##1451"(this))
+    end
+@doc "    Inverted(this::RemoteTypes.RoboticRotor)\n\nInvert Rotor Direction?\n \n" Inverted
+export Inverted
+import ..RoboticRotor_set_Inverted as var"##1452"
+Inverted!(this::RemoteTypes.RoboticRotor, value::Bool) = begin
+        kerbal(this.conn, var"##1452"(this, value))
+    end
+@doc "    Inverted!(this::RemoteTypes.RoboticRotor, value::Bool)\n\nInvert Rotor Direction?\n \n" Inverted!
+export Inverted!
+import ..RoboticRotor_get_RotationLocked as var"##1453"
+RotationLocked(this::RemoteTypes.RoboticRotor) = begin
+        kerbal(this.conn, var"##1453"(this))
+    end
+@doc "    RotationLocked(this::RemoteTypes.RoboticRotor)\n\nLock Movement\n\n" RotationLocked
+export RotationLocked
+import ..RoboticRotor_set_RotationLocked as var"##1454"
+RotationLocked!(this::RemoteTypes.RoboticRotor, value::Bool) = begin
+        kerbal(this.conn, var"##1454"(this, value))
+    end
+@doc "    RotationLocked!(this::RemoteTypes.RoboticRotor, value::Bool)\n\nLock Movement\n\n" RotationLocked!
+export RotationLocked!
+import ..RoboticRotor_get_MotorEngaged as var"##1455"
+MotorEngaged(this::RemoteTypes.RoboticRotor) = begin
+        kerbal(this.conn, var"##1455"(this))
+    end
+@doc "    MotorEngaged(this::RemoteTypes.RoboticRotor)\n\nEngage/Disengage Motor\n\n" MotorEngaged
+export MotorEngaged
+import ..RoboticRotor_set_MotorEngaged as var"##1456"
+MotorEngaged!(this::RemoteTypes.RoboticRotor, value::Bool) = begin
+        kerbal(this.conn, var"##1456"(this, value))
+    end
+@doc "    MotorEngaged!(this::RemoteTypes.RoboticRotor, value::Bool)\n\nEngage/Disengage Motor\n\n" MotorEngaged!
+export MotorEngaged!
+import ..RoboticRotor_get_TorqueLimit as var"##1457"
+TorqueLimit(this::RemoteTypes.RoboticRotor) = begin
+        kerbal(this.conn, var"##1457"(this))
+    end
+@doc "    TorqueLimit(this::RemoteTypes.RoboticRotor)\n\nTorque Limit Percentage\n \n" TorqueLimit
+export TorqueLimit
+import ..RoboticRotor_set_TorqueLimit as var"##1458"
+TorqueLimit!(this::RemoteTypes.RoboticRotor, value::Float32) = begin
+        kerbal(this.conn, var"##1458"(this, value))
+    end
+@doc "    TorqueLimit!(this::RemoteTypes.RoboticRotor, value::Float32)\n\nTorque Limit Percentage\n \n" TorqueLimit!
+export TorqueLimit!
+import ..ScienceData_get_DataAmount as var"##1459"
+DataAmount(this::RemoteTypes.ScienceData) = begin
+        kerbal(this.conn, var"##1459"(this))
+    end
+@doc "    DataAmount(this::RemoteTypes.ScienceData)\n\nData amount.\n\n" DataAmount
+export DataAmount
+import ..ScienceData_get_ScienceValue as var"##1460"
+ScienceValue(this::RemoteTypes.ScienceData) = begin
+        kerbal(this.conn, var"##1460"(this))
+    end
+@doc "    ScienceValue(this::RemoteTypes.ScienceData)\n\nScience value.\n\n" ScienceValue
+export ScienceValue
+import ..ScienceData_get_TransmitValue as var"##1461"
+TransmitValue(this::RemoteTypes.ScienceData) = begin
+        kerbal(this.conn, var"##1461"(this))
+    end
+@doc "    TransmitValue(this::RemoteTypes.ScienceData)\n\nTransmit value.\n\n" TransmitValue
+export TransmitValue
+import ..ScienceSubject_get_Science as var"##1462"
+Science(this::RemoteTypes.ScienceSubject) = begin
+        kerbal(this.conn, var"##1462"(this))
+    end
+@doc "    Science(this::RemoteTypes.ScienceSubject)\n\nAmount of science already earned from this subject, not updated until after\ntransmission/recovery.\n\n" Science
+export Science
+import ..ScienceSubject_get_ScienceCap as var"##1463"
+ScienceCap(this::RemoteTypes.ScienceSubject) = begin
+        kerbal(this.conn, var"##1463"(this))
+    end
+@doc "    ScienceCap(this::RemoteTypes.ScienceSubject)\n\nTotal science allowable for this subject.\n\n" ScienceCap
+export ScienceCap
+import ..ScienceSubject_get_IsComplete as var"##1464"
+IsComplete(this::RemoteTypes.ScienceSubject) = begin
+        kerbal(this.conn, var"##1464"(this))
+    end
+@doc "    IsComplete(this::RemoteTypes.ScienceSubject)\n\nWhether the experiment has been completed.\n\n" IsComplete
+export IsComplete
+import ..ScienceSubject_get_DataScale as var"##1465"
+DataScale(this::RemoteTypes.ScienceSubject) = begin
+        kerbal(this.conn, var"##1465"(this))
+    end
+@doc "    DataScale(this::RemoteTypes.ScienceSubject)\n\nMultiply science value by this to determine data amount in mits.\n\n" DataScale
+export DataScale
+import ..ScienceSubject_get_ScientificValue as var"##1466"
+ScientificValue(this::RemoteTypes.ScienceSubject) = begin
+        kerbal(this.conn, var"##1466"(this))
+    end
+@doc "    ScientificValue(this::RemoteTypes.ScienceSubject)\n\nDiminishing value multiplier for decreasing the science value returned from repeated\nexperiments.\n\n" ScientificValue
+export ScientificValue
+import ..ScienceSubject_get_SubjectValue as var"##1467"
+SubjectValue(this::RemoteTypes.ScienceSubject) = begin
+        kerbal(this.conn, var"##1467"(this))
+    end
+@doc "    SubjectValue(this::RemoteTypes.ScienceSubject)\n\nMultiplier for specific Celestial Body/Experiment Situation combination.\n\n" SubjectValue
+export SubjectValue
+import ..ScienceSubject_get_Title as var"##1468"
+Title(this::RemoteTypes.ScienceSubject) = begin
+        kerbal(this.conn, var"##1468"(this))
+    end
+@doc "    Title(this::RemoteTypes.ScienceSubject)\n\nTitle of science subject, displayed in science archives\n\n" Title
+export Title
+import ..Sensor_get_Part as var"##1469"
+Part(this::RemoteTypes.Sensor) = begin
+        kerbal(this.conn, var"##1469"(this))
+    end
+@doc "    Part(this::RemoteTypes.Sensor)\n\nThe part object for this sensor.\n\n" Part
+export Part
+import ..Sensor_get_Active as var"##1470"
+Active(this::RemoteTypes.Sensor) = begin
+        kerbal(this.conn, var"##1470"(this))
+    end
+@doc "    Active(this::RemoteTypes.Sensor)\n\nWhether the sensor is active.\n\n" Active
+export Active
+import ..Sensor_set_Active as var"##1471"
+Active!(this::RemoteTypes.Sensor, value::Bool) = begin
+        kerbal(this.conn, var"##1471"(this, value))
+    end
+@doc "    Active!(this::RemoteTypes.Sensor, value::Bool)\n\nWhether the sensor is active.\n\n" Active!
+export Active!
+import ..Sensor_get_Value as var"##1472"
+Value(this::RemoteTypes.Sensor) = begin
+        kerbal(this.conn, var"##1472"(this))
+    end
+@doc "    Value(this::RemoteTypes.Sensor)\n\nThe current value of the sensor.\n\n" Value
+export Value
+import ..SolarPanel_get_Part as var"##1473"
+Part(this::RemoteTypes.SolarPanel) = begin
+        kerbal(this.conn, var"##1473"(this))
+    end
+@doc "    Part(this::RemoteTypes.SolarPanel)\n\nThe part object for this solar panel.\n\n" Part
+export Part
+import ..SolarPanel_get_Deployable as var"##1474"
+Deployable(this::RemoteTypes.SolarPanel) = begin
+        kerbal(this.conn, var"##1474"(this))
+    end
+@doc "    Deployable(this::RemoteTypes.SolarPanel)\n\nWhether the solar panel is deployable.\n\n" Deployable
+export Deployable
+import ..SolarPanel_get_Deployed as var"##1475"
+Deployed(this::RemoteTypes.SolarPanel) = begin
+        kerbal(this.conn, var"##1475"(this))
+    end
+@doc "    Deployed(this::RemoteTypes.SolarPanel)\n\nWhether the solar panel is extended.\n\n" Deployed
+export Deployed
+import ..SolarPanel_set_Deployed as var"##1476"
+Deployed!(this::RemoteTypes.SolarPanel, value::Bool) = begin
+        kerbal(this.conn, var"##1476"(this, value))
+    end
+@doc "    Deployed!(this::RemoteTypes.SolarPanel, value::Bool)\n\nWhether the solar panel is extended.\n\n" Deployed!
+export Deployed!
+import ..SolarPanel_get_State as var"##1477"
+State(this::RemoteTypes.SolarPanel) = begin
+        kerbal(this.conn, var"##1477"(this))
+    end
+@doc "    State(this::RemoteTypes.SolarPanel)\n\nThe current state of the solar panel.\n\n" State
+export State
+import ..SolarPanel_get_EnergyFlow as var"##1478"
+EnergyFlow(this::RemoteTypes.SolarPanel) = begin
+        kerbal(this.conn, var"##1478"(this))
+    end
+@doc "    EnergyFlow(this::RemoteTypes.SolarPanel)\n\nThe current amount of energy being generated by the solar panel, in\nunits of charge per second.\n\n" EnergyFlow
+export EnergyFlow
+import ..SolarPanel_get_SunExposure as var"##1479"
+SunExposure(this::RemoteTypes.SolarPanel) = begin
+        kerbal(this.conn, var"##1479"(this))
+    end
+@doc "    SunExposure(this::RemoteTypes.SolarPanel)\n\nThe current amount of sunlight that is incident on the solar panel,\nas a percentage. A value between 0 and 1.\n\n" SunExposure
+export SunExposure
+import ..Thruster_ThrustPosition as var"##1480"
+ThrustPosition(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1480"(this, referenceFrame))
+    end
+@doc "    ThrustPosition(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position at which the thruster generates thrust, in the given reference frame.\nFor gimballed engines, this takes into account the current rotation of the gimbal.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n" ThrustPosition
+export ThrustPosition
+import ..Thruster_ThrustDirection as var"##1481"
+ThrustDirection(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1481"(this, referenceFrame))
+    end
+@doc "    ThrustDirection(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe direction of the force generated by the thruster, in the given reference frame.\nThis is opposite to the direction in which the thruster expels propellant.\nFor gimballed engines, this takes into account the current rotation of the gimbal.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned direction is in.\n# Returns\nThe direction as a unit vector.\n" ThrustDirection
+export ThrustDirection
+import ..Thruster_InitialThrustPosition as var"##1482"
+InitialThrustPosition(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1482"(this, referenceFrame))
+    end
+@doc "    InitialThrustPosition(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position at which the thruster generates thrust, when the engine is in its\ninitial position (no gimballing), in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n# Remarks\n This position can move when the gimbal rotates. This is because the thrust position and gimbal position are not necessarily the same. \n" InitialThrustPosition
+export InitialThrustPosition
+import ..Thruster_InitialThrustDirection as var"##1483"
+InitialThrustDirection(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1483"(this, referenceFrame))
+    end
+@doc "    InitialThrustDirection(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe direction of the force generated by the thruster, when the engine is in its\ninitial position (no gimballing), in the given reference frame.\nThis is opposite to the direction in which the thruster expels propellant.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned direction is in.\n# Returns\nThe direction as a unit vector.\n" InitialThrustDirection
+export InitialThrustDirection
+import ..Thruster_GimbalPosition as var"##1484"
+GimbalPosition(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame) = begin
+        kerbal(this.conn, var"##1484"(this, referenceFrame))
+    end
+@doc "    GimbalPosition(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame)\n\nPosition around which the gimbal pivots.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n" GimbalPosition
+export GimbalPosition
+import ..Thruster_get_Part as var"##1485"
+Part(this::RemoteTypes.Thruster) = begin
+        kerbal(this.conn, var"##1485"(this))
+    end
+@doc "    Part(this::RemoteTypes.Thruster)\n\nThe  that contains this thruster.\n\n" Part
+export Part
+import ..Thruster_get_ThrustReferenceFrame as var"##1486"
+ThrustReferenceFrame(this::RemoteTypes.Thruster) = begin
+        kerbal(this.conn, var"##1486"(this))
+    end
+@doc "    ThrustReferenceFrame(this::RemoteTypes.Thruster)\n\nA reference frame that is fixed relative to the thruster and orientated with\nits thrust direction ().\nFor gimballed engines, this takes into account the current rotation of the gimbal.\n\nThe origin is at the position of thrust for this thruster\n().\nThe axes rotate with the thrust direction.\nThis is the direction in which the thruster expels propellant, including any gimballing.\nThe y-axis points along the thrust direction.The x-axis and z-axis are perpendicular to the thrust direction.\n\n" ThrustReferenceFrame
+export ThrustReferenceFrame
+import ..Thruster_get_Gimballed as var"##1487"
+Gimballed(this::RemoteTypes.Thruster) = begin
+        kerbal(this.conn, var"##1487"(this))
+    end
+@doc "    Gimballed(this::RemoteTypes.Thruster)\n\nWhether the thruster is gimballed.\n\n" Gimballed
+export Gimballed
+import ..Thruster_get_GimbalAngle as var"##1488"
+GimbalAngle(this::RemoteTypes.Thruster) = begin
+        kerbal(this.conn, var"##1488"(this))
+    end
+@doc "    GimbalAngle(this::RemoteTypes.Thruster)\n\nThe current gimbal angle in the pitch, roll and yaw axes, in degrees.\n\n" GimbalAngle
+export GimbalAngle
+import ..Wheel_get_Part as var"##1489"
+Part(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1489"(this))
+    end
+@doc "    Part(this::RemoteTypes.Wheel)\n\nThe part object for this wheel.\n\n" Part
+export Part
+import ..Wheel_get_State as var"##1490"
+State(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1490"(this))
+    end
+@doc "    State(this::RemoteTypes.Wheel)\n\nThe current state of the wheel.\n\n" State
+export State
+import ..Wheel_get_Radius as var"##1491"
+Radius(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1491"(this))
+    end
+@doc "    Radius(this::RemoteTypes.Wheel)\n\nRadius of the wheel, in meters.\n\n" Radius
+export Radius
+import ..Wheel_get_Grounded as var"##1492"
+Grounded(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1492"(this))
+    end
+@doc "    Grounded(this::RemoteTypes.Wheel)\n\nWhether the wheel is touching the ground.\n\n" Grounded
+export Grounded
+import ..Wheel_get_HasBrakes as var"##1493"
+HasBrakes(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1493"(this))
+    end
+@doc "    HasBrakes(this::RemoteTypes.Wheel)\n\nWhether the wheel has brakes.\n\n" HasBrakes
+export HasBrakes
+import ..Wheel_get_Brakes as var"##1494"
+Brakes(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1494"(this))
+    end
+@doc "    Brakes(this::RemoteTypes.Wheel)\n\nThe braking force, as a percentage of maximum, when the brakes are applied.\n\n" Brakes
+export Brakes
+import ..Wheel_set_Brakes as var"##1495"
+Brakes!(this::RemoteTypes.Wheel, value::Float32) = begin
+        kerbal(this.conn, var"##1495"(this, value))
+    end
+@doc "    Brakes!(this::RemoteTypes.Wheel, value::Float32)\n\nThe braking force, as a percentage of maximum, when the brakes are applied.\n\n" Brakes!
+export Brakes!
+import ..Wheel_get_AutoFrictionControl as var"##1496"
+AutoFrictionControl(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1496"(this))
+    end
+@doc "    AutoFrictionControl(this::RemoteTypes.Wheel)\n\nWhether automatic friction control is enabled.\n\n" AutoFrictionControl
+export AutoFrictionControl
+import ..Wheel_set_AutoFrictionControl as var"##1497"
+AutoFrictionControl!(this::RemoteTypes.Wheel, value::Bool) = begin
+        kerbal(this.conn, var"##1497"(this, value))
+    end
+@doc "    AutoFrictionControl!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether automatic friction control is enabled.\n\n" AutoFrictionControl!
+export AutoFrictionControl!
+import ..Wheel_get_ManualFrictionControl as var"##1498"
+ManualFrictionControl(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1498"(this))
+    end
+@doc "    ManualFrictionControl(this::RemoteTypes.Wheel)\n\nManual friction control value. Only has an effect if automatic friction control is disabled.\nA value between 0 and 5 inclusive.\n\n" ManualFrictionControl
+export ManualFrictionControl
+import ..Wheel_set_ManualFrictionControl as var"##1499"
+ManualFrictionControl!(this::RemoteTypes.Wheel, value::Float32) = begin
+        kerbal(this.conn, var"##1499"(this, value))
+    end
+@doc "    ManualFrictionControl!(this::RemoteTypes.Wheel, value::Float32)\n\nManual friction control value. Only has an effect if automatic friction control is disabled.\nA value between 0 and 5 inclusive.\n\n" ManualFrictionControl!
+export ManualFrictionControl!
+import ..Wheel_get_Deployable as var"##1500"
+Deployable(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1500"(this))
+    end
+@doc "    Deployable(this::RemoteTypes.Wheel)\n\nWhether the wheel is deployable.\n\n" Deployable
+export Deployable
+import ..Wheel_get_Deployed as var"##1501"
+Deployed(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1501"(this))
+    end
+@doc "    Deployed(this::RemoteTypes.Wheel)\n\nWhether the wheel is deployed.\n\n" Deployed
+export Deployed
+import ..Wheel_set_Deployed as var"##1502"
+Deployed!(this::RemoteTypes.Wheel, value::Bool) = begin
+        kerbal(this.conn, var"##1502"(this, value))
+    end
+@doc "    Deployed!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether the wheel is deployed.\n\n" Deployed!
+export Deployed!
+import ..Wheel_get_Powered as var"##1503"
+Powered(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1503"(this))
+    end
+@doc "    Powered(this::RemoteTypes.Wheel)\n\nWhether the wheel is powered by a motor.\n\n" Powered
+export Powered
+import ..Wheel_get_MotorEnabled as var"##1504"
+MotorEnabled(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1504"(this))
+    end
+@doc "    MotorEnabled(this::RemoteTypes.Wheel)\n\nWhether the motor is enabled.\n\n" MotorEnabled
+export MotorEnabled
+import ..Wheel_set_MotorEnabled as var"##1505"
+MotorEnabled!(this::RemoteTypes.Wheel, value::Bool) = begin
+        kerbal(this.conn, var"##1505"(this, value))
+    end
+@doc "    MotorEnabled!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether the motor is enabled.\n\n" MotorEnabled!
+export MotorEnabled!
+import ..Wheel_get_MotorInverted as var"##1506"
+MotorInverted(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1506"(this))
+    end
+@doc "    MotorInverted(this::RemoteTypes.Wheel)\n\nWhether the direction of the motor is inverted.\n\n" MotorInverted
+export MotorInverted
+import ..Wheel_set_MotorInverted as var"##1507"
+MotorInverted!(this::RemoteTypes.Wheel, value::Bool) = begin
+        kerbal(this.conn, var"##1507"(this, value))
+    end
+@doc "    MotorInverted!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether the direction of the motor is inverted.\n\n" MotorInverted!
+export MotorInverted!
+import ..Wheel_get_MotorState as var"##1508"
+MotorState(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1508"(this))
+    end
+@doc "    MotorState(this::RemoteTypes.Wheel)\n\nWhether the direction of the motor is inverted.\n\n" MotorState
+export MotorState
+import ..Wheel_get_MotorOutput as var"##1509"
+MotorOutput(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1509"(this))
+    end
+@doc "    MotorOutput(this::RemoteTypes.Wheel)\n\nThe output of the motor. This is the torque currently being generated, in Newton meters.\n\n" MotorOutput
+export MotorOutput
+import ..Wheel_get_TractionControlEnabled as var"##1510"
+TractionControlEnabled(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1510"(this))
+    end
+@doc "    TractionControlEnabled(this::RemoteTypes.Wheel)\n\nWhether automatic traction control is enabled.\nA wheel only has traction control if it is powered.\n\n" TractionControlEnabled
+export TractionControlEnabled
+import ..Wheel_set_TractionControlEnabled as var"##1511"
+TractionControlEnabled!(this::RemoteTypes.Wheel, value::Bool) = begin
+        kerbal(this.conn, var"##1511"(this, value))
+    end
+@doc "    TractionControlEnabled!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether automatic traction control is enabled.\nA wheel only has traction control if it is powered.\n\n" TractionControlEnabled!
+export TractionControlEnabled!
+import ..Wheel_get_TractionControl as var"##1512"
+TractionControl(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1512"(this))
+    end
+@doc "    TractionControl(this::RemoteTypes.Wheel)\n\nSetting for the traction control.\nOnly takes effect if the wheel has automatic traction control enabled.\nA value between 0 and 5 inclusive.\n\n" TractionControl
+export TractionControl
+import ..Wheel_set_TractionControl as var"##1513"
+TractionControl!(this::RemoteTypes.Wheel, value::Float32) = begin
+        kerbal(this.conn, var"##1513"(this, value))
+    end
+@doc "    TractionControl!(this::RemoteTypes.Wheel, value::Float32)\n\nSetting for the traction control.\nOnly takes effect if the wheel has automatic traction control enabled.\nA value between 0 and 5 inclusive.\n\n" TractionControl!
+export TractionControl!
+import ..Wheel_get_DriveLimiter as var"##1514"
+DriveLimiter(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1514"(this))
+    end
+@doc "    DriveLimiter(this::RemoteTypes.Wheel)\n\nManual setting for the motor limiter.\nOnly takes effect if the wheel has automatic traction control disabled.\nA value between 0 and 100 inclusive.\n\n" DriveLimiter
+export DriveLimiter
+import ..Wheel_set_DriveLimiter as var"##1515"
+DriveLimiter!(this::RemoteTypes.Wheel, value::Float32) = begin
+        kerbal(this.conn, var"##1515"(this, value))
+    end
+@doc "    DriveLimiter!(this::RemoteTypes.Wheel, value::Float32)\n\nManual setting for the motor limiter.\nOnly takes effect if the wheel has automatic traction control disabled.\nA value between 0 and 100 inclusive.\n\n" DriveLimiter!
+export DriveLimiter!
+import ..Wheel_get_Steerable as var"##1516"
+Steerable(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1516"(this))
+    end
+@doc "    Steerable(this::RemoteTypes.Wheel)\n\nWhether the wheel has steering.\n\n" Steerable
+export Steerable
+import ..Wheel_get_SteeringEnabled as var"##1517"
+SteeringEnabled(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1517"(this))
+    end
+@doc "    SteeringEnabled(this::RemoteTypes.Wheel)\n\nWhether the wheel steering is enabled.\n\n" SteeringEnabled
+export SteeringEnabled
+import ..Wheel_set_SteeringEnabled as var"##1518"
+SteeringEnabled!(this::RemoteTypes.Wheel, value::Bool) = begin
+        kerbal(this.conn, var"##1518"(this, value))
+    end
+@doc "    SteeringEnabled!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether the wheel steering is enabled.\n\n" SteeringEnabled!
+export SteeringEnabled!
+import ..Wheel_get_SteeringInverted as var"##1519"
+SteeringInverted(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1519"(this))
+    end
+@doc "    SteeringInverted(this::RemoteTypes.Wheel)\n\nWhether the wheel steering is inverted.\n\n" SteeringInverted
+export SteeringInverted
+import ..Wheel_set_SteeringInverted as var"##1520"
+SteeringInverted!(this::RemoteTypes.Wheel, value::Bool) = begin
+        kerbal(this.conn, var"##1520"(this, value))
+    end
+@doc "    SteeringInverted!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether the wheel steering is inverted.\n\n" SteeringInverted!
+export SteeringInverted!
+import ..Wheel_get_HasSuspension as var"##1521"
+HasSuspension(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1521"(this))
+    end
+@doc "    HasSuspension(this::RemoteTypes.Wheel)\n\nWhether the wheel has suspension.\n\n" HasSuspension
+export HasSuspension
+import ..Wheel_get_SuspensionSpringStrength as var"##1522"
+SuspensionSpringStrength(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1522"(this))
+    end
+@doc "    SuspensionSpringStrength(this::RemoteTypes.Wheel)\n\nSuspension spring strength, as set in the editor.\n\n" SuspensionSpringStrength
+export SuspensionSpringStrength
+import ..Wheel_get_SuspensionDamperStrength as var"##1523"
+SuspensionDamperStrength(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1523"(this))
+    end
+@doc "    SuspensionDamperStrength(this::RemoteTypes.Wheel)\n\nSuspension damper strength, as set in the editor.\n\n" SuspensionDamperStrength
+export SuspensionDamperStrength
+import ..Wheel_get_Broken as var"##1524"
+Broken(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1524"(this))
+    end
+@doc "    Broken(this::RemoteTypes.Wheel)\n\nWhether the wheel is broken.\n\n" Broken
+export Broken
+import ..Wheel_get_Repairable as var"##1525"
+Repairable(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1525"(this))
+    end
+@doc "    Repairable(this::RemoteTypes.Wheel)\n\nWhether the wheel is repairable.\n\n" Repairable
+export Repairable
+import ..Wheel_get_Stress as var"##1526"
+Stress(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1526"(this))
+    end
+@doc "    Stress(this::RemoteTypes.Wheel)\n\nCurrent stress on the wheel.\n\n" Stress
+export Stress
+import ..Wheel_get_StressTolerance as var"##1527"
+StressTolerance(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1527"(this))
+    end
+@doc "    StressTolerance(this::RemoteTypes.Wheel)\n\nStress tolerance of the wheel.\n\n" StressTolerance
+export StressTolerance
+import ..Wheel_get_StressPercentage as var"##1528"
+StressPercentage(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1528"(this))
+    end
+@doc "    StressPercentage(this::RemoteTypes.Wheel)\n\nCurrent stress on the wheel as a percentage of its stress tolerance.\n\n" StressPercentage
+export StressPercentage
+import ..Wheel_get_Deflection as var"##1529"
+Deflection(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1529"(this))
+    end
+@doc "    Deflection(this::RemoteTypes.Wheel)\n\nCurrent deflection of the wheel.\n\n" Deflection
+export Deflection
+import ..Wheel_get_Slip as var"##1530"
+Slip(this::RemoteTypes.Wheel) = begin
+        kerbal(this.conn, var"##1530"(this))
+    end
+@doc "    Slip(this::RemoteTypes.Wheel)\n\nCurrent slip of the wheel.\n\n" Slip
+export Slip
+import ..ReferenceFrame_static_CreateRelative as var"##1531"
 CreateRelative(conn::KRPCConnection, referenceFrame::RemoteTypes.ReferenceFrame, position::begin
                     Tuple{Float64, Float64, Float64}
                 end = getJuliaValue(this.conn, UInt8[0x0a, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0a, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0a, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00], begin
@@ -12021,3614 +14934,604 @@ CreateRelative(conn::KRPCConnection, referenceFrame::RemoteTypes.ReferenceFrame,
                 end = getJuliaValue(this.conn, UInt8[0x0a, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0a, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0a, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00], begin
                     Tuple{Float64, Float64, Float64}
                 end)) = begin
-        kerbal(conn, var"##975"(referenceFrame, position, rotation, velocity, angularVelocity))
+        kerbal(conn, var"##1531"(referenceFrame, position, rotation, velocity, angularVelocity))
     end
 @doc "    CreateRelative(referenceFrame::RemoteTypes.ReferenceFrame, position::begin\n    Tuple{Float64, Float64, Float64}\nend, rotation::begin\n    Tuple{Float64, Float64, Float64, Float64}\nend, velocity::begin\n    Tuple{Float64, Float64, Float64}\nend, angularVelocity::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nCreate a relative reference frame. This is a custom reference frame\nwhose components offset the components of a parent reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The parent reference frame on which to base this reference frame.\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: The offset of the position of the origin, as a position vector. Defaults to (0, 0, 0)\n- `rotation::begin\n    Tuple{Float64, Float64, Float64, Float64}\nend`: The rotation to apply to the parent frames rotation, as a quaternion of the form (x, y, z, w). Defaults to (0, 0, 0, 1) (i.e. no rotation)\n- `velocity::begin\n    Tuple{Float64, Float64, Float64}\nend`: The linear velocity to offset the parent frame by, as a vector pointing in the direction of travel, whose magnitude is the speed in meters per second. Defaults to (0, 0, 0).\n- `angularVelocity::begin\n    Tuple{Float64, Float64, Float64}\nend`: The angular velocity to offset the parent frame by, as a vector. This vector points in the direction of the axis of rotation, and its magnitude is the speed of the rotation in radians per second. Defaults to (0, 0, 0).\n" CreateRelative
 export CreateRelative
-import ..ReferenceFrame_static_CreateHybrid as var"##976"
+import ..ReferenceFrame_static_CreateHybrid as var"##1532"
 CreateHybrid(conn::KRPCConnection, position::RemoteTypes.ReferenceFrame, rotation::RemoteTypes.ReferenceFrame = getJuliaValue(this.conn, UInt8[0x00], RemoteTypes.ReferenceFrame), velocity::RemoteTypes.ReferenceFrame = getJuliaValue(this.conn, UInt8[0x00], RemoteTypes.ReferenceFrame), angularVelocity::RemoteTypes.ReferenceFrame = getJuliaValue(this.conn, UInt8[0x00], RemoteTypes.ReferenceFrame)) = begin
-        kerbal(conn, var"##976"(position, rotation, velocity, angularVelocity))
+        kerbal(conn, var"##1532"(position, rotation, velocity, angularVelocity))
     end
 @doc "    CreateHybrid(position::RemoteTypes.ReferenceFrame, rotation::RemoteTypes.ReferenceFrame, velocity::RemoteTypes.ReferenceFrame, angularVelocity::RemoteTypes.ReferenceFrame)\n\nCreate a hybrid reference frame. This is a custom reference frame\nwhose components inherited from other reference frames.\n\n# Arguments\n- `position::RemoteTypes.ReferenceFrame`: The reference frame providing the position of the origin.\n- `rotation::RemoteTypes.ReferenceFrame`: The reference frame providing the rotation of the frame.\n- `velocity::RemoteTypes.ReferenceFrame`: The reference frame providing the linear velocity of the frame. \n- `angularVelocity::RemoteTypes.ReferenceFrame`: The reference frame providing the angular velocity of the frame.\n# Remarks\n The  reference frame is required but all other reference frames are optional. If omitted, they are set to the  reference frame. \n" CreateHybrid
 export CreateHybrid
-import ..Resource_get_Name as var"##977"
+import ..Resource_get_Name as var"##1533"
 Name(this::RemoteTypes.Resource) = begin
-        kerbal(this.conn, var"##977"(this))
+        kerbal(this.conn, var"##1533"(this))
     end
 @doc "    Name(this::RemoteTypes.Resource)\n\nThe name of the resource.\n\n" Name
 export Name
-import ..Resource_get_Part as var"##978"
+import ..Resource_get_Part as var"##1534"
 Part(this::RemoteTypes.Resource) = begin
-        kerbal(this.conn, var"##978"(this))
+        kerbal(this.conn, var"##1534"(this))
     end
 @doc "    Part(this::RemoteTypes.Resource)\n\nThe part containing the resource.\n\n" Part
 export Part
-import ..Resource_get_Max as var"##979"
+import ..Resource_get_Max as var"##1535"
 Max(this::RemoteTypes.Resource) = begin
-        kerbal(this.conn, var"##979"(this))
+        kerbal(this.conn, var"##1535"(this))
     end
 @doc "    Max(this::RemoteTypes.Resource)\n\nThe total amount of the resource that can be stored in the part.\n\n" Max
 export Max
-import ..Resource_get_Amount as var"##980"
+import ..Resource_get_Amount as var"##1536"
 Amount(this::RemoteTypes.Resource) = begin
-        kerbal(this.conn, var"##980"(this))
+        kerbal(this.conn, var"##1536"(this))
     end
 @doc "    Amount(this::RemoteTypes.Resource)\n\nThe amount of the resource that is currently stored in the part.\n\n" Amount
 export Amount
-import ..Resource_get_Density as var"##981"
+import ..Resource_get_Density as var"##1537"
 Density(this::RemoteTypes.Resource) = begin
-        kerbal(this.conn, var"##981"(this))
+        kerbal(this.conn, var"##1537"(this))
     end
 @doc "    Density(this::RemoteTypes.Resource)\n\nThe density of the resource, in kg/l.\n\n" Density
 export Density
-import ..Resource_get_FlowMode as var"##982"
+import ..Resource_get_FlowMode as var"##1538"
 FlowMode(this::RemoteTypes.Resource) = begin
-        kerbal(this.conn, var"##982"(this))
+        kerbal(this.conn, var"##1538"(this))
     end
 @doc "    FlowMode(this::RemoteTypes.Resource)\n\nThe flow mode of the resource.\n\n" FlowMode
 export FlowMode
-import ..Resource_get_Enabled as var"##983"
+import ..Resource_get_Enabled as var"##1539"
 Enabled(this::RemoteTypes.Resource) = begin
-        kerbal(this.conn, var"##983"(this))
+        kerbal(this.conn, var"##1539"(this))
     end
 @doc "    Enabled(this::RemoteTypes.Resource)\n\nWhether use of this resource is enabled.\n\n" Enabled
 export Enabled
-import ..Resource_set_Enabled as var"##984"
+import ..Resource_set_Enabled as var"##1540"
 Enabled!(this::RemoteTypes.Resource, value::Bool) = begin
-        kerbal(this.conn, var"##984"(this, value))
+        kerbal(this.conn, var"##1540"(this, value))
     end
 @doc "    Enabled!(this::RemoteTypes.Resource, value::Bool)\n\nWhether use of this resource is enabled.\n\n" Enabled!
 export Enabled!
-import ..ResourceTransfer_static_Start as var"##985"
+import ..ResourceTransfer_static_Start as var"##1541"
 Start(conn::KRPCConnection, fromPart::RemoteTypes.Part, toPart::RemoteTypes.Part, resource::String, maxAmount::Float32) = begin
-        kerbal(conn, var"##985"(fromPart, toPart, resource, maxAmount))
+        kerbal(conn, var"##1541"(fromPart, toPart, resource, maxAmount))
     end
 @doc "    Start(fromPart::RemoteTypes.Part, toPart::RemoteTypes.Part, resource::String, maxAmount::Float32)\n\nStart transferring a resource transfer between a pair of parts. The transfer will move\nat most  units of the resource, depending on how much of\nthe resource is available in the source part and how much storage is available in the\ndestination part.\nUse  to check if the transfer is complete.\nUse  to see how much of the resource has been transferred.\n\n# Arguments\n- `fromPart::RemoteTypes.Part`: The part to transfer to.\n- `toPart::RemoteTypes.Part`: The part to transfer from.\n- `resource::String`: The name of the resource to transfer.\n- `maxAmount::Float32`: The maximum amount of resource to transfer.\n" Start
 export Start
-import ..ResourceTransfer_get_Complete as var"##986"
+import ..ResourceTransfer_get_Complete as var"##1542"
 Complete(this::RemoteTypes.ResourceTransfer) = begin
-        kerbal(this.conn, var"##986"(this))
+        kerbal(this.conn, var"##1542"(this))
     end
 @doc "    Complete(this::RemoteTypes.ResourceTransfer)\n\nWhether the transfer has completed.\n\n" Complete
 export Complete
-import ..ResourceTransfer_get_Amount as var"##987"
+import ..ResourceTransfer_get_Amount as var"##1543"
 Amount(this::RemoteTypes.ResourceTransfer) = begin
-        kerbal(this.conn, var"##987"(this))
+        kerbal(this.conn, var"##1543"(this))
     end
 @doc "    Amount(this::RemoteTypes.ResourceTransfer)\n\nThe amount of the resource that has been transferred.\n\n" Amount
 export Amount
-import ..Resources_WithResource as var"##988"
+import ..Resources_WithResource as var"##1544"
 WithResource(this::RemoteTypes.Resources, name::String) = begin
-        kerbal(this.conn, var"##988"(this, name))
+        kerbal(this.conn, var"##1544"(this, name))
     end
 @doc "    WithResource(this::RemoteTypes.Resources, name::String)\n\nAll the individual resources with the given name that can be stored.\n\n" WithResource
 export WithResource
-import ..Resources_HasResource as var"##989"
+import ..Resources_HasResource as var"##1545"
 HasResource(this::RemoteTypes.Resources, name::String) = begin
-        kerbal(this.conn, var"##989"(this, name))
+        kerbal(this.conn, var"##1545"(this, name))
     end
 @doc "    HasResource(this::RemoteTypes.Resources, name::String)\n\nCheck whether the named resource can be stored.\n\n# Arguments\n- `name::String`: The name of the resource.\n" HasResource
 export HasResource
-import ..Resources_Max as var"##990"
+import ..Resources_Max as var"##1546"
 Max(this::RemoteTypes.Resources, name::String) = begin
-        kerbal(this.conn, var"##990"(this, name))
+        kerbal(this.conn, var"##1546"(this, name))
     end
 @doc "    Max(this::RemoteTypes.Resources, name::String)\n\nReturns the amount of a resource that can be stored.\n\n# Arguments\n- `name::String`: The name of the resource.\n" Max
 export Max
-import ..Resources_Amount as var"##991"
+import ..Resources_Amount as var"##1547"
 Amount(this::RemoteTypes.Resources, name::String) = begin
-        kerbal(this.conn, var"##991"(this, name))
+        kerbal(this.conn, var"##1547"(this, name))
     end
 @doc "    Amount(this::RemoteTypes.Resources, name::String)\n\nReturns the amount of a resource that is currently stored.\n\n# Arguments\n- `name::String`: The name of the resource.\n" Amount
 export Amount
-import ..Resources_static_Density as var"##992"
+import ..Resources_static_Density as var"##1548"
 Density(conn::KRPCConnection, name::String) = begin
-        kerbal(conn, var"##992"(name))
+        kerbal(conn, var"##1548"(name))
     end
 @doc "    Density(name::String)\n\nReturns the density of a resource, in kg/l.\n\n# Arguments\n- `name::String`: The name of the resource.\n" Density
 export Density
-import ..Resources_static_FlowMode as var"##993"
+import ..Resources_static_FlowMode as var"##1549"
 FlowMode(conn::KRPCConnection, name::String) = begin
-        kerbal(conn, var"##993"(name))
+        kerbal(conn, var"##1549"(name))
     end
 @doc "    FlowMode(name::String)\n\nReturns the flow mode of a resource.\n\n# Arguments\n- `name::String`: The name of the resource.\n" FlowMode
 export FlowMode
-import ..Resources_get_All as var"##994"
+import ..Resources_get_All as var"##1550"
 All(this::RemoteTypes.Resources) = begin
-        kerbal(this.conn, var"##994"(this))
+        kerbal(this.conn, var"##1550"(this))
     end
 @doc "    All(this::RemoteTypes.Resources)\n\nAll the individual resources that can be stored.\n\n" All
 export All
-import ..Resources_get_Names as var"##995"
+import ..Resources_get_Names as var"##1551"
 Names(this::RemoteTypes.Resources) = begin
-        kerbal(this.conn, var"##995"(this))
+        kerbal(this.conn, var"##1551"(this))
     end
 @doc "    Names(this::RemoteTypes.Resources)\n\nA list of resource names that can be stored.\n\n" Names
 export Names
-import ..Resources_get_Enabled as var"##996"
+import ..Resources_get_Enabled as var"##1552"
 Enabled(this::RemoteTypes.Resources) = begin
-        kerbal(this.conn, var"##996"(this))
+        kerbal(this.conn, var"##1552"(this))
     end
 @doc "    Enabled(this::RemoteTypes.Resources)\n\nWhether use of all the resources are enabled.\n\n# Remarks\n This is true if all of the resources are enabled. If any of the resources are not enabled, this is false. \n" Enabled
 export Enabled
-import ..Resources_set_Enabled as var"##997"
+import ..Resources_set_Enabled as var"##1553"
 Enabled!(this::RemoteTypes.Resources, value::Bool) = begin
-        kerbal(this.conn, var"##997"(this, value))
+        kerbal(this.conn, var"##1553"(this, value))
     end
 @doc "    Enabled!(this::RemoteTypes.Resources, value::Bool)\n\nWhether use of all the resources are enabled.\n\n# Remarks\n This is true if all of the resources are enabled. If any of the resources are not enabled, this is false. \n" Enabled!
 export Enabled!
-import ..Vessel_Recover as var"##998"
+import ..Vessel_Recover as var"##1554"
 Recover(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##998"(this))
+        kerbal(this.conn, var"##1554"(this))
     end
 @doc "    Recover(this::RemoteTypes.Vessel)\n\nRecover the vessel.\n\n" Recover
 export Recover
-import ..Vessel_Flight as var"##999"
+import ..Vessel_Flight as var"##1555"
 Flight(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame = getJuliaValue(this.conn, UInt8[0x00], RemoteTypes.ReferenceFrame)) = begin
-        kerbal(this.conn, var"##999"(this, referenceFrame))
+        kerbal(this.conn, var"##1555"(this, referenceFrame))
     end
 @doc "    Flight(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame)\n\nReturns a  object that can be used to get flight\ntelemetry for the vessel, in the specified reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`:  Reference frame. Defaults to the vessel's surface reference frame (). \n" Flight
 export Flight
-import ..Vessel_ResourcesInDecoupleStage as var"##1000"
+import ..Vessel_ResourcesInDecoupleStage as var"##1556"
 ResourcesInDecoupleStage(this::RemoteTypes.Vessel, stage::Int32, cumulative::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(this.conn, var"##1000"(this, stage, cumulative))
+        kerbal(this.conn, var"##1556"(this, stage, cumulative))
     end
 @doc "    ResourcesInDecoupleStage(this::RemoteTypes.Vessel, stage::Int32, cumulative::Bool)\n\nReturns a  object, that can used to get\ninformation about resources stored in a given .\n\n# Arguments\n- `stage::Int32`: Get resources for parts that are decoupled in this stage.\n- `cumulative::Bool`: When false, returns the resources for parts decoupled in just the given stage. When true returns the resources decoupled in the given stage and all subsequent stages combined.\n" ResourcesInDecoupleStage
 export ResourcesInDecoupleStage
-import ..Vessel_Position as var"##1001"
+import ..Vessel_Position as var"##1557"
 Position(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1001"(this, referenceFrame))
+        kerbal(this.conn, var"##1557"(this, referenceFrame))
     end
 @doc "    Position(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position of the center of mass of the vessel, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n" Position
 export Position
-import ..Vessel_BoundingBox as var"##1002"
+import ..Vessel_BoundingBox as var"##1558"
 BoundingBox(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1002"(this, referenceFrame))
+        kerbal(this.conn, var"##1558"(this, referenceFrame))
     end
 @doc "    BoundingBox(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe axis-aligned bounding box of the vessel in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vectors are in.\n# Returns\nThe positions of the minimum and maximum vertices of the box, as position vectors.\n" BoundingBox
 export BoundingBox
-import ..Vessel_Velocity as var"##1003"
+import ..Vessel_Velocity as var"##1559"
 Velocity(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1003"(this, referenceFrame))
+        kerbal(this.conn, var"##1559"(this, referenceFrame))
     end
 @doc "    Velocity(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe velocity of the center of mass of the vessel, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned velocity vector is in.\n# Returns\nThe velocity as a vector. The vector points in the direction of travel, and its magnitude is the speed of the body in meters per second.\n" Velocity
 export Velocity
-import ..Vessel_Rotation as var"##1004"
+import ..Vessel_Rotation as var"##1560"
 Rotation(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1004"(this, referenceFrame))
+        kerbal(this.conn, var"##1560"(this, referenceFrame))
     end
 @doc "    Rotation(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe rotation of the vessel, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned rotation is in.\n# Returns\nThe rotation as a quaternion of the form (x, y, z, w).\n" Rotation
 export Rotation
-import ..Vessel_Direction as var"##1005"
+import ..Vessel_Direction as var"##1561"
 Direction(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1005"(this, referenceFrame))
+        kerbal(this.conn, var"##1561"(this, referenceFrame))
     end
 @doc "    Direction(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe direction in which the vessel is pointing, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned direction is in.\n# Returns\nThe direction as a unit vector.\n" Direction
 export Direction
-import ..Vessel_AngularVelocity as var"##1006"
+import ..Vessel_AngularVelocity as var"##1562"
 AngularVelocity(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1006"(this, referenceFrame))
+        kerbal(this.conn, var"##1562"(this, referenceFrame))
     end
 @doc "    AngularVelocity(this::RemoteTypes.Vessel, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe angular velocity of the vessel, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame the returned angular velocity is in.\n# Returns\nThe angular velocity as a vector. The magnitude of the vector is the rotational speed of the vessel, in radians per second. The direction of the vector indicates the axis of rotation, using the right-hand rule.\n" AngularVelocity
 export AngularVelocity
-import ..Vessel_get_Name as var"##1007"
+import ..Vessel_get_Name as var"##1563"
 Name(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1007"(this))
+        kerbal(this.conn, var"##1563"(this))
     end
 @doc "    Name(this::RemoteTypes.Vessel)\n\nThe name of the vessel.\n\n" Name
 export Name
-import ..Vessel_set_Name as var"##1008"
+import ..Vessel_set_Name as var"##1564"
 Name!(this::RemoteTypes.Vessel, value::String) = begin
-        kerbal(this.conn, var"##1008"(this, value))
+        kerbal(this.conn, var"##1564"(this, value))
     end
 @doc "    Name!(this::RemoteTypes.Vessel, value::String)\n\nThe name of the vessel.\n\n" Name!
 export Name!
-import ..Vessel_get_Type as var"##1009"
+import ..Vessel_get_Type as var"##1565"
 Type(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1009"(this))
+        kerbal(this.conn, var"##1565"(this))
     end
 @doc "    Type(this::RemoteTypes.Vessel)\n\nThe type of the vessel.\n\n" Type
 export Type
-import ..Vessel_set_Type as var"##1010"
+import ..Vessel_set_Type as var"##1566"
 Type!(this::RemoteTypes.Vessel, value::EVesselType) = begin
-        kerbal(this.conn, var"##1010"(this, value))
+        kerbal(this.conn, var"##1566"(this, value))
     end
 @doc "    Type!(this::RemoteTypes.Vessel, value::EVesselType)\n\nThe type of the vessel.\n\n" Type!
 export Type!
-import ..Vessel_get_Situation as var"##1011"
+import ..Vessel_get_Situation as var"##1567"
 Situation(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1011"(this))
+        kerbal(this.conn, var"##1567"(this))
     end
 @doc "    Situation(this::RemoteTypes.Vessel)\n\nThe situation the vessel is in.\n\n" Situation
 export Situation
-import ..Vessel_get_Recoverable as var"##1012"
+import ..Vessel_get_Recoverable as var"##1568"
 Recoverable(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1012"(this))
+        kerbal(this.conn, var"##1568"(this))
     end
 @doc "    Recoverable(this::RemoteTypes.Vessel)\n\nWhether the vessel is recoverable.\n\n" Recoverable
 export Recoverable
-import ..Vessel_get_MET as var"##1013"
+import ..Vessel_get_MET as var"##1569"
 MET(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1013"(this))
+        kerbal(this.conn, var"##1569"(this))
     end
 @doc "    MET(this::RemoteTypes.Vessel)\n\nThe mission elapsed time in seconds.\n\n" MET
 export MET
-import ..Vessel_get_Biome as var"##1014"
+import ..Vessel_get_Biome as var"##1570"
 Biome(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1014"(this))
+        kerbal(this.conn, var"##1570"(this))
     end
 @doc "    Biome(this::RemoteTypes.Vessel)\n\nThe name of the biome the vessel is currently in.\n\n" Biome
 export Biome
-import ..Vessel_get_Orbit as var"##1015"
+import ..Vessel_get_Orbit as var"##1571"
 Orbit(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1015"(this))
+        kerbal(this.conn, var"##1571"(this))
     end
 @doc "    Orbit(this::RemoteTypes.Vessel)\n\nThe current orbit of the vessel.\n\n" Orbit
 export Orbit
-import ..Vessel_get_Control as var"##1016"
+import ..Vessel_get_Control as var"##1572"
 Control(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1016"(this))
+        kerbal(this.conn, var"##1572"(this))
     end
 @doc "    Control(this::RemoteTypes.Vessel)\n\nReturns a  object that can be used to manipulate\nthe vessel's control inputs. For example, its pitch/yaw/roll controls,\nRCS and thrust.\n\n" Control
 export Control
-import ..Vessel_get_Comms as var"##1017"
+import ..Vessel_get_Comms as var"##1573"
 Comms(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1017"(this))
+        kerbal(this.conn, var"##1573"(this))
     end
 @doc "    Comms(this::RemoteTypes.Vessel)\n\nReturns a  object that can be used to interact\nwith CommNet for this vessel.\n\n" Comms
 export Comms
-import ..Vessel_get_AutoPilot as var"##1018"
+import ..Vessel_get_AutoPilot as var"##1574"
 AutoPilot(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1018"(this))
+        kerbal(this.conn, var"##1574"(this))
     end
 @doc "    AutoPilot(this::RemoteTypes.Vessel)\n\nAn  object, that can be used to perform\nsimple auto-piloting of the vessel.\n\n" AutoPilot
 export AutoPilot
-import ..Vessel_get_CrewCapacity as var"##1019"
+import ..Vessel_get_CrewCapacity as var"##1575"
 CrewCapacity(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1019"(this))
+        kerbal(this.conn, var"##1575"(this))
     end
 @doc "    CrewCapacity(this::RemoteTypes.Vessel)\n\nThe number of crew that can occupy the vessel.\n\n" CrewCapacity
 export CrewCapacity
-import ..Vessel_get_CrewCount as var"##1020"
+import ..Vessel_get_CrewCount as var"##1576"
 CrewCount(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1020"(this))
+        kerbal(this.conn, var"##1576"(this))
     end
 @doc "    CrewCount(this::RemoteTypes.Vessel)\n\nThe number of crew that are occupying the vessel.\n\n" CrewCount
 export CrewCount
-import ..Vessel_get_Crew as var"##1021"
+import ..Vessel_get_Crew as var"##1577"
 Crew(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1021"(this))
+        kerbal(this.conn, var"##1577"(this))
     end
 @doc "    Crew(this::RemoteTypes.Vessel)\n\nThe crew in the vessel.\n\n" Crew
 export Crew
-import ..Vessel_get_Resources as var"##1022"
+import ..Vessel_get_Resources as var"##1578"
 Resources(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1022"(this))
+        kerbal(this.conn, var"##1578"(this))
     end
 @doc "    Resources(this::RemoteTypes.Vessel)\n\nA  object, that can used to get information\nabout resources stored in the vessel.\n\n" Resources
 export Resources
-import ..Vessel_get_Parts as var"##1023"
+import ..Vessel_get_Parts as var"##1579"
 Parts(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1023"(this))
+        kerbal(this.conn, var"##1579"(this))
     end
 @doc "    Parts(this::RemoteTypes.Vessel)\n\nA  object, that can used to interact with the parts that make up this vessel.\n\n" Parts
 export Parts
-import ..Vessel_get_Mass as var"##1024"
+import ..Vessel_get_Mass as var"##1580"
 Mass(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1024"(this))
+        kerbal(this.conn, var"##1580"(this))
     end
 @doc "    Mass(this::RemoteTypes.Vessel)\n\nThe total mass of the vessel, including resources, in kg.\n\n" Mass
 export Mass
-import ..Vessel_get_DryMass as var"##1025"
+import ..Vessel_get_DryMass as var"##1581"
 DryMass(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1025"(this))
+        kerbal(this.conn, var"##1581"(this))
     end
 @doc "    DryMass(this::RemoteTypes.Vessel)\n\nThe total mass of the vessel, excluding resources, in kg.\n\n" DryMass
 export DryMass
-import ..Vessel_get_Thrust as var"##1026"
+import ..Vessel_get_Thrust as var"##1582"
 Thrust(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1026"(this))
+        kerbal(this.conn, var"##1582"(this))
     end
 @doc "    Thrust(this::RemoteTypes.Vessel)\n\nThe total thrust currently being produced by the vessel's engines, in\nNewtons. This is computed by summing  for\nevery engine in the vessel.\n\n" Thrust
 export Thrust
-import ..Vessel_get_AvailableThrust as var"##1027"
+import ..Vessel_get_AvailableThrust as var"##1583"
 AvailableThrust(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1027"(this))
+        kerbal(this.conn, var"##1583"(this))
     end
 @doc "    AvailableThrust(this::RemoteTypes.Vessel)\n\nGets the total available thrust that can be produced by the vessel's\nactive engines, in Newtons. This is computed by summing\n for every active engine in the vessel.\n\n" AvailableThrust
 export AvailableThrust
-import ..Vessel_get_MaxThrust as var"##1028"
+import ..Vessel_get_MaxThrust as var"##1584"
 MaxThrust(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1028"(this))
+        kerbal(this.conn, var"##1584"(this))
     end
 @doc "    MaxThrust(this::RemoteTypes.Vessel)\n\nThe total maximum thrust that can be produced by the vessel's active\nengines, in Newtons. This is computed by summing\n for every active engine.\n\n" MaxThrust
 export MaxThrust
-import ..Vessel_get_MaxVacuumThrust as var"##1029"
+import ..Vessel_get_MaxVacuumThrust as var"##1585"
 MaxVacuumThrust(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1029"(this))
+        kerbal(this.conn, var"##1585"(this))
     end
 @doc "    MaxVacuumThrust(this::RemoteTypes.Vessel)\n\nThe total maximum thrust that can be produced by the vessel's active\nengines when the vessel is in a vacuum, in Newtons. This is computed by\nsumming  for every active engine.\n\n" MaxVacuumThrust
 export MaxVacuumThrust
-import ..Vessel_get_SpecificImpulse as var"##1030"
+import ..Vessel_get_SpecificImpulse as var"##1586"
 SpecificImpulse(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1030"(this))
+        kerbal(this.conn, var"##1586"(this))
     end
 @doc "    SpecificImpulse(this::RemoteTypes.Vessel)\n\nThe combined specific impulse of all active engines, in seconds. This is computed using the formula\ndescribed here.\n\n" SpecificImpulse
 export SpecificImpulse
-import ..Vessel_get_VacuumSpecificImpulse as var"##1031"
+import ..Vessel_get_VacuumSpecificImpulse as var"##1587"
 VacuumSpecificImpulse(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1031"(this))
+        kerbal(this.conn, var"##1587"(this))
     end
 @doc "    VacuumSpecificImpulse(this::RemoteTypes.Vessel)\n\nThe combined vacuum specific impulse of all active engines, in seconds. This is computed using the formula\ndescribed here.\n\n" VacuumSpecificImpulse
 export VacuumSpecificImpulse
-import ..Vessel_get_KerbinSeaLevelSpecificImpulse as var"##1032"
+import ..Vessel_get_KerbinSeaLevelSpecificImpulse as var"##1588"
 KerbinSeaLevelSpecificImpulse(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1032"(this))
+        kerbal(this.conn, var"##1588"(this))
     end
 @doc "    KerbinSeaLevelSpecificImpulse(this::RemoteTypes.Vessel)\n\nThe combined specific impulse of all active engines at sea level on Kerbin, in seconds.\nThis is computed using the formula\ndescribed here.\n\n" KerbinSeaLevelSpecificImpulse
 export KerbinSeaLevelSpecificImpulse
-import ..Vessel_get_MomentOfInertia as var"##1033"
+import ..Vessel_get_MomentOfInertia as var"##1589"
 MomentOfInertia(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1033"(this))
+        kerbal(this.conn, var"##1589"(this))
     end
 @doc "    MomentOfInertia(this::RemoteTypes.Vessel)\n\nThe moment of inertia of the vessel around its center of mass in kg.m^2.\nThe inertia values in the returned 3-tuple are around the\npitch, roll and yaw directions respectively.\nThis corresponds to the vessels reference frame ().\n\n" MomentOfInertia
 export MomentOfInertia
-import ..Vessel_get_InertiaTensor as var"##1034"
+import ..Vessel_get_InertiaTensor as var"##1590"
 InertiaTensor(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1034"(this))
+        kerbal(this.conn, var"##1590"(this))
     end
 @doc "    InertiaTensor(this::RemoteTypes.Vessel)\n\nThe inertia tensor of the vessel around its center of mass,\nin the vessels reference frame ().\nReturns the 3x3 matrix as a list of elements, in row-major order.\n\n" InertiaTensor
 export InertiaTensor
-import ..Vessel_get_AvailableTorque as var"##1035"
+import ..Vessel_get_AvailableTorque as var"##1591"
 AvailableTorque(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1035"(this))
+        kerbal(this.conn, var"##1591"(this))
     end
 @doc "    AvailableTorque(this::RemoteTypes.Vessel)\n\nThe maximum torque that the vessel generates. Includes contributions from\nreaction wheels, RCS, gimballed engines and aerodynamic control surfaces.\nReturns the torques in N.m around each of the coordinate axes of the\nvessels reference frame ().\nThese axes are equivalent to the pitch, roll and yaw axes of the vessel.\n\n" AvailableTorque
 export AvailableTorque
-import ..Vessel_get_AvailableReactionWheelTorque as var"##1036"
+import ..Vessel_get_AvailableReactionWheelTorque as var"##1592"
 AvailableReactionWheelTorque(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1036"(this))
+        kerbal(this.conn, var"##1592"(this))
     end
 @doc "    AvailableReactionWheelTorque(this::RemoteTypes.Vessel)\n\nThe maximum torque that the currently active and powered reaction wheels can generate.\nReturns the torques in N.m around each of the coordinate axes of the\nvessels reference frame ().\nThese axes are equivalent to the pitch, roll and yaw axes of the vessel.\n\n" AvailableReactionWheelTorque
 export AvailableReactionWheelTorque
-import ..Vessel_get_AvailableRCSTorque as var"##1037"
+import ..Vessel_get_AvailableRCSTorque as var"##1593"
 AvailableRCSTorque(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1037"(this))
+        kerbal(this.conn, var"##1593"(this))
     end
 @doc "    AvailableRCSTorque(this::RemoteTypes.Vessel)\n\nThe maximum torque that the currently active RCS thrusters can generate.\nReturns the torques in N.m around each of the coordinate axes of the\nvessels reference frame ().\nThese axes are equivalent to the pitch, roll and yaw axes of the vessel.\n\n" AvailableRCSTorque
 export AvailableRCSTorque
-import ..Vessel_get_AvailableEngineTorque as var"##1038"
+import ..Vessel_get_AvailableEngineTorque as var"##1594"
 AvailableEngineTorque(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1038"(this))
+        kerbal(this.conn, var"##1594"(this))
     end
 @doc "    AvailableEngineTorque(this::RemoteTypes.Vessel)\n\nThe maximum torque that the currently active and gimballed engines can generate.\nReturns the torques in N.m around each of the coordinate axes of the\nvessels reference frame ().\nThese axes are equivalent to the pitch, roll and yaw axes of the vessel.\n\n" AvailableEngineTorque
 export AvailableEngineTorque
-import ..Vessel_get_AvailableControlSurfaceTorque as var"##1039"
+import ..Vessel_get_AvailableControlSurfaceTorque as var"##1595"
 AvailableControlSurfaceTorque(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1039"(this))
+        kerbal(this.conn, var"##1595"(this))
     end
 @doc "    AvailableControlSurfaceTorque(this::RemoteTypes.Vessel)\n\nThe maximum torque that the aerodynamic control surfaces can generate.\nReturns the torques in N.m around each of the coordinate axes of the\nvessels reference frame ().\nThese axes are equivalent to the pitch, roll and yaw axes of the vessel.\n\n" AvailableControlSurfaceTorque
 export AvailableControlSurfaceTorque
-import ..Vessel_get_AvailableOtherTorque as var"##1040"
+import ..Vessel_get_AvailableOtherTorque as var"##1596"
 AvailableOtherTorque(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1040"(this))
+        kerbal(this.conn, var"##1596"(this))
     end
 @doc "    AvailableOtherTorque(this::RemoteTypes.Vessel)\n\nThe maximum torque that parts (excluding reaction wheels, gimballed engines,\nRCS and control surfaces) can generate.\nReturns the torques in N.m around each of the coordinate axes of the\nvessels reference frame ().\nThese axes are equivalent to the pitch, roll and yaw axes of the vessel.\n\n" AvailableOtherTorque
 export AvailableOtherTorque
-import ..Vessel_get_ReferenceFrame as var"##1041"
+import ..Vessel_get_ReferenceFrame as var"##1597"
 ReferenceFrame(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1041"(this))
+        kerbal(this.conn, var"##1597"(this))
     end
 @doc "    ReferenceFrame(this::RemoteTypes.Vessel)\n\nThe reference frame that is fixed relative to the vessel,\nand orientated with the vessel.\nThe origin is at the center of mass of the vessel.The axes rotate with the vessel.The x-axis points out to the right of the vessel.The y-axis points in the forward direction of the vessel.The z-axis points out of the bottom off the vessel.\n" ReferenceFrame
 export ReferenceFrame
-import ..Vessel_get_OrbitalReferenceFrame as var"##1042"
+import ..Vessel_get_OrbitalReferenceFrame as var"##1598"
 OrbitalReferenceFrame(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1042"(this))
+        kerbal(this.conn, var"##1598"(this))
     end
 @doc "    OrbitalReferenceFrame(this::RemoteTypes.Vessel)\n\nThe reference frame that is fixed relative to the vessel,\nand orientated with the vessels orbital prograde/normal/radial directions.\nThe origin is at the center of mass of the vessel.The axes rotate with the orbital prograde/normal/radial directions.The x-axis points in the orbital anti-radial direction.The y-axis points in the orbital prograde direction.The z-axis points in the orbital normal direction.\n# Remarks\n Be careful not to confuse this with 'orbit' mode on the navball. \n" OrbitalReferenceFrame
 export OrbitalReferenceFrame
-import ..Vessel_get_SurfaceReferenceFrame as var"##1043"
+import ..Vessel_get_SurfaceReferenceFrame as var"##1599"
 SurfaceReferenceFrame(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1043"(this))
+        kerbal(this.conn, var"##1599"(this))
     end
 @doc "    SurfaceReferenceFrame(this::RemoteTypes.Vessel)\n\nThe reference frame that is fixed relative to the vessel,\nand orientated with the surface of the body being orbited.\nThe origin is at the center of mass of the vessel.The axes rotate with the north and up directions on the surface of the body.The x-axis points in the zenith\ndirection (upwards, normal to the body being orbited, from the center of the body towards the center of\nmass of the vessel).The y-axis points northwards towards the\nastronomical horizon (north, and tangential to the\nsurface of the body -- the direction in which a compass would point when on the surface).The z-axis points eastwards towards the\nastronomical horizon (east, and tangential to the\nsurface of the body -- east on a compass when on the surface).\n# Remarks\n Be careful not to confuse this with 'surface' mode on the navball. \n" SurfaceReferenceFrame
 export SurfaceReferenceFrame
-import ..Vessel_get_SurfaceVelocityReferenceFrame as var"##1044"
+import ..Vessel_get_SurfaceVelocityReferenceFrame as var"##1600"
 SurfaceVelocityReferenceFrame(this::RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##1044"(this))
+        kerbal(this.conn, var"##1600"(this))
     end
 @doc "    SurfaceVelocityReferenceFrame(this::RemoteTypes.Vessel)\n\nThe reference frame that is fixed relative to the vessel,\nand orientated with the velocity vector of the vessel relative\nto the surface of the body being orbited.\nThe origin is at the center of mass of the vessel.The axes rotate with the vessel's velocity vector.The y-axis points in the direction of the vessel's velocity vector,\nrelative to the surface of the body being orbited.The z-axis is in the plane of the\nastronomical horizon.The x-axis is orthogonal to the other two axes.\n" SurfaceVelocityReferenceFrame
 export SurfaceVelocityReferenceFrame
-import ..Waypoint_Remove as var"##1045"
+import ..Waypoint_Remove as var"##1601"
 Remove(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1045"(this))
+        kerbal(this.conn, var"##1601"(this))
     end
 @doc "    Remove(this::RemoteTypes.Waypoint)\n\nRemoves the waypoint.\n\n" Remove
 export Remove
-import ..Waypoint_get_Body as var"##1046"
+import ..Waypoint_get_Body as var"##1602"
 Body(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1046"(this))
+        kerbal(this.conn, var"##1602"(this))
     end
 @doc "    Body(this::RemoteTypes.Waypoint)\n\nThe celestial body the waypoint is attached to.\n\n" Body
 export Body
-import ..Waypoint_set_Body as var"##1047"
+import ..Waypoint_set_Body as var"##1603"
 Body!(this::RemoteTypes.Waypoint, value::RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##1047"(this, value))
+        kerbal(this.conn, var"##1603"(this, value))
     end
 @doc "    Body!(this::RemoteTypes.Waypoint, value::RemoteTypes.CelestialBody)\n\nThe celestial body the waypoint is attached to.\n\n" Body!
 export Body!
-import ..Waypoint_get_Name as var"##1048"
+import ..Waypoint_get_Name as var"##1604"
 Name(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1048"(this))
+        kerbal(this.conn, var"##1604"(this))
     end
 @doc "    Name(this::RemoteTypes.Waypoint)\n\nThe name of the waypoint as it appears on the map and the contract.\n\n" Name
 export Name
-import ..Waypoint_set_Name as var"##1049"
+import ..Waypoint_set_Name as var"##1605"
 Name!(this::RemoteTypes.Waypoint, value::String) = begin
-        kerbal(this.conn, var"##1049"(this, value))
+        kerbal(this.conn, var"##1605"(this, value))
     end
 @doc "    Name!(this::RemoteTypes.Waypoint, value::String)\n\nThe name of the waypoint as it appears on the map and the contract.\n\n" Name!
 export Name!
-import ..Waypoint_get_Color as var"##1050"
+import ..Waypoint_get_Color as var"##1606"
 Color(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1050"(this))
+        kerbal(this.conn, var"##1606"(this))
     end
 @doc "    Color(this::RemoteTypes.Waypoint)\n\nThe seed of the icon color. See  for example colors.\n\n" Color
 export Color
-import ..Waypoint_set_Color as var"##1051"
+import ..Waypoint_set_Color as var"##1607"
 Color!(this::RemoteTypes.Waypoint, value::Int32) = begin
-        kerbal(this.conn, var"##1051"(this, value))
+        kerbal(this.conn, var"##1607"(this, value))
     end
 @doc "    Color!(this::RemoteTypes.Waypoint, value::Int32)\n\nThe seed of the icon color. See  for example colors.\n\n" Color!
 export Color!
-import ..Waypoint_get_Icon as var"##1052"
+import ..Waypoint_get_Icon as var"##1608"
 Icon(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1052"(this))
+        kerbal(this.conn, var"##1608"(this))
     end
 @doc "    Icon(this::RemoteTypes.Waypoint)\n\nThe icon of the waypoint.\n\n" Icon
 export Icon
-import ..Waypoint_set_Icon as var"##1053"
+import ..Waypoint_set_Icon as var"##1609"
 Icon!(this::RemoteTypes.Waypoint, value::String) = begin
-        kerbal(this.conn, var"##1053"(this, value))
+        kerbal(this.conn, var"##1609"(this, value))
     end
 @doc "    Icon!(this::RemoteTypes.Waypoint, value::String)\n\nThe icon of the waypoint.\n\n" Icon!
 export Icon!
-import ..Waypoint_get_Latitude as var"##1054"
+import ..Waypoint_get_Latitude as var"##1610"
 Latitude(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1054"(this))
+        kerbal(this.conn, var"##1610"(this))
     end
 @doc "    Latitude(this::RemoteTypes.Waypoint)\n\nThe latitude of the waypoint.\n\n" Latitude
 export Latitude
-import ..Waypoint_set_Latitude as var"##1055"
+import ..Waypoint_set_Latitude as var"##1611"
 Latitude!(this::RemoteTypes.Waypoint, value::Float64) = begin
-        kerbal(this.conn, var"##1055"(this, value))
+        kerbal(this.conn, var"##1611"(this, value))
     end
 @doc "    Latitude!(this::RemoteTypes.Waypoint, value::Float64)\n\nThe latitude of the waypoint.\n\n" Latitude!
 export Latitude!
-import ..Waypoint_get_Longitude as var"##1056"
+import ..Waypoint_get_Longitude as var"##1612"
 Longitude(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1056"(this))
+        kerbal(this.conn, var"##1612"(this))
     end
 @doc "    Longitude(this::RemoteTypes.Waypoint)\n\nThe longitude of the waypoint.\n\n" Longitude
 export Longitude
-import ..Waypoint_set_Longitude as var"##1057"
+import ..Waypoint_set_Longitude as var"##1613"
 Longitude!(this::RemoteTypes.Waypoint, value::Float64) = begin
-        kerbal(this.conn, var"##1057"(this, value))
+        kerbal(this.conn, var"##1613"(this, value))
     end
 @doc "    Longitude!(this::RemoteTypes.Waypoint, value::Float64)\n\nThe longitude of the waypoint.\n\n" Longitude!
 export Longitude!
-import ..Waypoint_get_MeanAltitude as var"##1058"
+import ..Waypoint_get_MeanAltitude as var"##1614"
 MeanAltitude(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1058"(this))
+        kerbal(this.conn, var"##1614"(this))
     end
 @doc "    MeanAltitude(this::RemoteTypes.Waypoint)\n\nThe altitude of the waypoint above sea level, in meters.\n\n" MeanAltitude
 export MeanAltitude
-import ..Waypoint_set_MeanAltitude as var"##1059"
+import ..Waypoint_set_MeanAltitude as var"##1615"
 MeanAltitude!(this::RemoteTypes.Waypoint, value::Float64) = begin
-        kerbal(this.conn, var"##1059"(this, value))
+        kerbal(this.conn, var"##1615"(this, value))
     end
 @doc "    MeanAltitude!(this::RemoteTypes.Waypoint, value::Float64)\n\nThe altitude of the waypoint above sea level, in meters.\n\n" MeanAltitude!
 export MeanAltitude!
-import ..Waypoint_get_SurfaceAltitude as var"##1060"
+import ..Waypoint_get_SurfaceAltitude as var"##1616"
 SurfaceAltitude(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1060"(this))
+        kerbal(this.conn, var"##1616"(this))
     end
 @doc "    SurfaceAltitude(this::RemoteTypes.Waypoint)\n\nThe altitude of the waypoint above the surface of the body or sea level,\nwhichever is closer, in meters.\n\n" SurfaceAltitude
 export SurfaceAltitude
-import ..Waypoint_set_SurfaceAltitude as var"##1061"
+import ..Waypoint_set_SurfaceAltitude as var"##1617"
 SurfaceAltitude!(this::RemoteTypes.Waypoint, value::Float64) = begin
-        kerbal(this.conn, var"##1061"(this, value))
+        kerbal(this.conn, var"##1617"(this, value))
     end
 @doc "    SurfaceAltitude!(this::RemoteTypes.Waypoint, value::Float64)\n\nThe altitude of the waypoint above the surface of the body or sea level,\nwhichever is closer, in meters.\n\n" SurfaceAltitude!
 export SurfaceAltitude!
-import ..Waypoint_get_BedrockAltitude as var"##1062"
+import ..Waypoint_get_BedrockAltitude as var"##1618"
 BedrockAltitude(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1062"(this))
+        kerbal(this.conn, var"##1618"(this))
     end
 @doc "    BedrockAltitude(this::RemoteTypes.Waypoint)\n\nThe altitude of the waypoint above the surface of the body, in meters.\nWhen over water, this is the altitude above the sea floor.\n\n" BedrockAltitude
 export BedrockAltitude
-import ..Waypoint_set_BedrockAltitude as var"##1063"
+import ..Waypoint_set_BedrockAltitude as var"##1619"
 BedrockAltitude!(this::RemoteTypes.Waypoint, value::Float64) = begin
-        kerbal(this.conn, var"##1063"(this, value))
+        kerbal(this.conn, var"##1619"(this, value))
     end
 @doc "    BedrockAltitude!(this::RemoteTypes.Waypoint, value::Float64)\n\nThe altitude of the waypoint above the surface of the body, in meters.\nWhen over water, this is the altitude above the sea floor.\n\n" BedrockAltitude!
 export BedrockAltitude!
-import ..Waypoint_get_NearSurface as var"##1064"
+import ..Waypoint_get_NearSurface as var"##1620"
 NearSurface(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1064"(this))
+        kerbal(this.conn, var"##1620"(this))
     end
 @doc "    NearSurface(this::RemoteTypes.Waypoint)\ntrue if the waypoint is near to the surface of a body.\n\n" NearSurface
 export NearSurface
-import ..Waypoint_get_Grounded as var"##1065"
+import ..Waypoint_get_Grounded as var"##1621"
 Grounded(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1065"(this))
+        kerbal(this.conn, var"##1621"(this))
     end
 @doc "    Grounded(this::RemoteTypes.Waypoint)\ntrue if the waypoint is attached to the ground.\n\n" Grounded
 export Grounded
-import ..Waypoint_get_Index as var"##1066"
+import ..Waypoint_get_Index as var"##1622"
 Index(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1066"(this))
+        kerbal(this.conn, var"##1622"(this))
     end
 @doc "    Index(this::RemoteTypes.Waypoint)\n\nThe integer index of this waypoint within its cluster of sibling waypoints.\nIn other words, when you have a cluster of waypoints called \"Somewhere Alpha\",\n\"Somewhere Beta\" and \"Somewhere Gamma\", the alpha site has index 0, the beta\nsite has index 1 and the gamma site has index 2.\nWhen  is false, this is zero.\n\n" Index
 export Index
-import ..Waypoint_get_Clustered as var"##1067"
+import ..Waypoint_get_Clustered as var"##1623"
 Clustered(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1067"(this))
+        kerbal(this.conn, var"##1623"(this))
     end
 @doc "    Clustered(this::RemoteTypes.Waypoint)\ntrue if this waypoint is part of a set of clustered waypoints with greek letter\nnames appended (Alpha, Beta, Gamma, etc).\nIf true, there is a one-to-one correspondence with the greek letter name and\nthe .\n\n" Clustered
 export Clustered
-import ..Waypoint_get_HasContract as var"##1068"
+import ..Waypoint_get_HasContract as var"##1624"
 HasContract(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1068"(this))
+        kerbal(this.conn, var"##1624"(this))
     end
 @doc "    HasContract(this::RemoteTypes.Waypoint)\n\nWhether the waypoint belongs to a contract.\n\n" HasContract
 export HasContract
-import ..Waypoint_get_Contract as var"##1069"
+import ..Waypoint_get_Contract as var"##1625"
 Contract(this::RemoteTypes.Waypoint) = begin
-        kerbal(this.conn, var"##1069"(this))
+        kerbal(this.conn, var"##1625"(this))
     end
 @doc "    Contract(this::RemoteTypes.Waypoint)\n\nThe associated contract.\n\n" Contract
 export Contract
-import ..WaypointManager_AddWaypoint as var"##1070"
+import ..WaypointManager_AddWaypoint as var"##1626"
 AddWaypoint(this::RemoteTypes.WaypointManager, latitude::Float64, longitude::Float64, body::RemoteTypes.CelestialBody, name::String) = begin
-        kerbal(this.conn, var"##1070"(this, latitude, longitude, body, name))
+        kerbal(this.conn, var"##1626"(this, latitude, longitude, body, name))
     end
 @doc "    AddWaypoint(this::RemoteTypes.WaypointManager, latitude::Float64, longitude::Float64, body::RemoteTypes.CelestialBody, name::String)\n\nCreates a waypoint at the given position at ground level, and returns a\n object that can be used to modify it.\n\n# Arguments\n- `latitude::Float64`: Latitude of the waypoint.\n- `longitude::Float64`: Longitude of the waypoint.\n- `body::RemoteTypes.CelestialBody`: Celestial body the waypoint is attached to.\n- `name::String`: Name of the waypoint.\n# Returns\n\n" AddWaypoint
 export AddWaypoint
-import ..WaypointManager_AddWaypointAtAltitude as var"##1071"
+import ..WaypointManager_AddWaypointAtAltitude as var"##1627"
 AddWaypointAtAltitude(this::RemoteTypes.WaypointManager, latitude::Float64, longitude::Float64, altitude::Float64, body::RemoteTypes.CelestialBody, name::String) = begin
-        kerbal(this.conn, var"##1071"(this, latitude, longitude, altitude, body, name))
+        kerbal(this.conn, var"##1627"(this, latitude, longitude, altitude, body, name))
     end
 @doc "    AddWaypointAtAltitude(this::RemoteTypes.WaypointManager, latitude::Float64, longitude::Float64, altitude::Float64, body::RemoteTypes.CelestialBody, name::String)\n\nCreates a waypoint at the given position and altitude, and returns a\n object that can be used to modify it.\n\n# Arguments\n- `latitude::Float64`: Latitude of the waypoint.\n- `longitude::Float64`: Longitude of the waypoint.\n- `altitude::Float64`: Altitude (above sea level) of the waypoint.\n- `body::RemoteTypes.CelestialBody`: Celestial body the waypoint is attached to.\n- `name::String`: Name of the waypoint.\n# Returns\n\n" AddWaypointAtAltitude
 export AddWaypointAtAltitude
-import ..WaypointManager_get_Waypoints as var"##1072"
+import ..WaypointManager_get_Waypoints as var"##1628"
 Waypoints(this::RemoteTypes.WaypointManager) = begin
-        kerbal(this.conn, var"##1072"(this))
+        kerbal(this.conn, var"##1628"(this))
     end
 @doc "    Waypoints(this::RemoteTypes.WaypointManager)\n\nA list of all existing waypoints.\n\n" Waypoints
 export Waypoints
-import ..WaypointManager_get_Icons as var"##1073"
+import ..WaypointManager_get_Icons as var"##1629"
 Icons(this::RemoteTypes.WaypointManager) = begin
-        kerbal(this.conn, var"##1073"(this))
+        kerbal(this.conn, var"##1629"(this))
     end
 @doc "    Icons(this::RemoteTypes.WaypointManager)\n\nReturns all available icons (from \"GameData/Squad/Contracts/Icons/\").\n\n" Icons
 export Icons
-import ..WaypointManager_get_Colors as var"##1074"
+import ..WaypointManager_get_Colors as var"##1630"
 Colors(this::RemoteTypes.WaypointManager) = begin
-        kerbal(this.conn, var"##1074"(this))
+        kerbal(this.conn, var"##1630"(this))
     end
 @doc "    Colors(this::RemoteTypes.WaypointManager)\n\nAn example map of known color - seed pairs.\nAny other integers may be used as seed.\n\n" Colors
 export Colors
-import ..Antenna_Transmit as var"##1075"
-Transmit(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1075"(this))
-    end
-@doc "    Transmit(this::RemoteTypes.Antenna)\n\nTransmit data.\n\n" Transmit
-export Transmit
-import ..Antenna_Cancel as var"##1076"
-Cancel(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1076"(this))
-    end
-@doc "    Cancel(this::RemoteTypes.Antenna)\n\nCancel current transmission of data.\n\n" Cancel
-export Cancel
-import ..Antenna_get_Part as var"##1077"
-Part(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1077"(this))
-    end
-@doc "    Part(this::RemoteTypes.Antenna)\n\nThe part object for this antenna.\n\n" Part
-export Part
-import ..Antenna_get_State as var"##1078"
-State(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1078"(this))
-    end
-@doc "    State(this::RemoteTypes.Antenna)\n\nThe current state of the antenna.\n\n" State
-export State
-import ..Antenna_get_Deployable as var"##1079"
-Deployable(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1079"(this))
-    end
-@doc "    Deployable(this::RemoteTypes.Antenna)\n\nWhether the antenna is deployable.\n\n" Deployable
-export Deployable
-import ..Antenna_get_Deployed as var"##1080"
-Deployed(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1080"(this))
-    end
-@doc "    Deployed(this::RemoteTypes.Antenna)\n\nWhether the antenna is deployed.\n\n# Remarks\n Fixed antennas are always deployed. Returns an error if you try to deploy a fixed antenna. \n" Deployed
-export Deployed
-import ..Antenna_set_Deployed as var"##1081"
-Deployed!(this::RemoteTypes.Antenna, value::Bool) = begin
-        kerbal(this.conn, var"##1081"(this, value))
-    end
-@doc "    Deployed!(this::RemoteTypes.Antenna, value::Bool)\n\nWhether the antenna is deployed.\n\n# Remarks\n Fixed antennas are always deployed. Returns an error if you try to deploy a fixed antenna. \n" Deployed!
-export Deployed!
-import ..Antenna_get_CanTransmit as var"##1082"
-CanTransmit(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1082"(this))
-    end
-@doc "    CanTransmit(this::RemoteTypes.Antenna)\n\nWhether data can be transmitted by this antenna.\n\n" CanTransmit
-export CanTransmit
-import ..Antenna_get_AllowPartial as var"##1083"
-AllowPartial(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1083"(this))
-    end
-@doc "    AllowPartial(this::RemoteTypes.Antenna)\n\nWhether partial data transmission is permitted.\n\n" AllowPartial
-export AllowPartial
-import ..Antenna_set_AllowPartial as var"##1084"
-AllowPartial!(this::RemoteTypes.Antenna, value::Bool) = begin
-        kerbal(this.conn, var"##1084"(this, value))
-    end
-@doc "    AllowPartial!(this::RemoteTypes.Antenna, value::Bool)\n\nWhether partial data transmission is permitted.\n\n" AllowPartial!
-export AllowPartial!
-import ..Antenna_get_Power as var"##1085"
-Power(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1085"(this))
-    end
-@doc "    Power(this::RemoteTypes.Antenna)\n\nThe power of the antenna.\n\n" Power
-export Power
-import ..Antenna_get_Combinable as var"##1086"
-Combinable(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1086"(this))
-    end
-@doc "    Combinable(this::RemoteTypes.Antenna)\n\nWhether the antenna can be combined with other antennae on the vessel\nto boost the power.\n\n" Combinable
-export Combinable
-import ..Antenna_get_CombinableExponent as var"##1087"
-CombinableExponent(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1087"(this))
-    end
-@doc "    CombinableExponent(this::RemoteTypes.Antenna)\n\nExponent used to calculate the combined power of multiple antennae on a vessel.\n\n" CombinableExponent
-export CombinableExponent
-import ..Antenna_get_PacketInterval as var"##1088"
-PacketInterval(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1088"(this))
-    end
-@doc "    PacketInterval(this::RemoteTypes.Antenna)\n\nInterval between sending packets in seconds.\n\n" PacketInterval
-export PacketInterval
-import ..Antenna_get_PacketSize as var"##1089"
-PacketSize(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1089"(this))
-    end
-@doc "    PacketSize(this::RemoteTypes.Antenna)\n\nAmount of data sent per packet in Mits.\n\n" PacketSize
-export PacketSize
-import ..Antenna_get_PacketResourceCost as var"##1090"
-PacketResourceCost(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##1090"(this))
-    end
-@doc "    PacketResourceCost(this::RemoteTypes.Antenna)\n\nUnits of electric charge consumed per packet sent.\n\n" PacketResourceCost
-export PacketResourceCost
-import ..CargoBay_get_Part as var"##1091"
-Part(this::RemoteTypes.CargoBay) = begin
-        kerbal(this.conn, var"##1091"(this))
-    end
-@doc "    Part(this::RemoteTypes.CargoBay)\n\nThe part object for this cargo bay.\n\n" Part
-export Part
-import ..CargoBay_get_State as var"##1092"
-State(this::RemoteTypes.CargoBay) = begin
-        kerbal(this.conn, var"##1092"(this))
-    end
-@doc "    State(this::RemoteTypes.CargoBay)\n\nThe state of the cargo bay.\n\n" State
-export State
-import ..CargoBay_get_Open as var"##1093"
-Open(this::RemoteTypes.CargoBay) = begin
-        kerbal(this.conn, var"##1093"(this))
-    end
-@doc "    Open(this::RemoteTypes.CargoBay)\n\nWhether the cargo bay is open.\n\n" Open
-export Open
-import ..CargoBay_set_Open as var"##1094"
-Open!(this::RemoteTypes.CargoBay, value::Bool) = begin
-        kerbal(this.conn, var"##1094"(this, value))
-    end
-@doc "    Open!(this::RemoteTypes.CargoBay, value::Bool)\n\nWhether the cargo bay is open.\n\n" Open!
-export Open!
-import ..ControlSurface_get_Part as var"##1095"
-Part(this::RemoteTypes.ControlSurface) = begin
-        kerbal(this.conn, var"##1095"(this))
-    end
-@doc "    Part(this::RemoteTypes.ControlSurface)\n\nThe part object for this control surface.\n\n" Part
-export Part
-import ..ControlSurface_get_PitchEnabled as var"##1096"
-PitchEnabled(this::RemoteTypes.ControlSurface) = begin
-        kerbal(this.conn, var"##1096"(this))
-    end
-@doc "    PitchEnabled(this::RemoteTypes.ControlSurface)\n\nWhether the control surface has pitch control enabled.\n\n" PitchEnabled
-export PitchEnabled
-import ..ControlSurface_set_PitchEnabled as var"##1097"
-PitchEnabled!(this::RemoteTypes.ControlSurface, value::Bool) = begin
-        kerbal(this.conn, var"##1097"(this, value))
-    end
-@doc "    PitchEnabled!(this::RemoteTypes.ControlSurface, value::Bool)\n\nWhether the control surface has pitch control enabled.\n\n" PitchEnabled!
-export PitchEnabled!
-import ..ControlSurface_get_YawEnabled as var"##1098"
-YawEnabled(this::RemoteTypes.ControlSurface) = begin
-        kerbal(this.conn, var"##1098"(this))
-    end
-@doc "    YawEnabled(this::RemoteTypes.ControlSurface)\n\nWhether the control surface has yaw control enabled.\n\n" YawEnabled
-export YawEnabled
-import ..ControlSurface_set_YawEnabled as var"##1099"
-YawEnabled!(this::RemoteTypes.ControlSurface, value::Bool) = begin
-        kerbal(this.conn, var"##1099"(this, value))
-    end
-@doc "    YawEnabled!(this::RemoteTypes.ControlSurface, value::Bool)\n\nWhether the control surface has yaw control enabled.\n\n" YawEnabled!
-export YawEnabled!
-import ..ControlSurface_get_RollEnabled as var"##1100"
-RollEnabled(this::RemoteTypes.ControlSurface) = begin
-        kerbal(this.conn, var"##1100"(this))
-    end
-@doc "    RollEnabled(this::RemoteTypes.ControlSurface)\n\nWhether the control surface has roll control enabled.\n\n" RollEnabled
-export RollEnabled
-import ..ControlSurface_set_RollEnabled as var"##1101"
-RollEnabled!(this::RemoteTypes.ControlSurface, value::Bool) = begin
-        kerbal(this.conn, var"##1101"(this, value))
-    end
-@doc "    RollEnabled!(this::RemoteTypes.ControlSurface, value::Bool)\n\nWhether the control surface has roll control enabled.\n\n" RollEnabled!
-export RollEnabled!
-import ..ControlSurface_get_AuthorityLimiter as var"##1102"
-AuthorityLimiter(this::RemoteTypes.ControlSurface) = begin
-        kerbal(this.conn, var"##1102"(this))
-    end
-@doc "    AuthorityLimiter(this::RemoteTypes.ControlSurface)\n\nThe authority limiter for the control surface, which controls how far the\ncontrol surface will move.\n\n" AuthorityLimiter
-export AuthorityLimiter
-import ..ControlSurface_set_AuthorityLimiter as var"##1103"
-AuthorityLimiter!(this::RemoteTypes.ControlSurface, value::Float32) = begin
-        kerbal(this.conn, var"##1103"(this, value))
-    end
-@doc "    AuthorityLimiter!(this::RemoteTypes.ControlSurface, value::Float32)\n\nThe authority limiter for the control surface, which controls how far the\ncontrol surface will move.\n\n" AuthorityLimiter!
-export AuthorityLimiter!
-import ..ControlSurface_get_Inverted as var"##1104"
-Inverted(this::RemoteTypes.ControlSurface) = begin
-        kerbal(this.conn, var"##1104"(this))
-    end
-@doc "    Inverted(this::RemoteTypes.ControlSurface)\n\nWhether the control surface movement is inverted.\n\n" Inverted
-export Inverted
-import ..ControlSurface_set_Inverted as var"##1105"
-Inverted!(this::RemoteTypes.ControlSurface, value::Bool) = begin
-        kerbal(this.conn, var"##1105"(this, value))
-    end
-@doc "    Inverted!(this::RemoteTypes.ControlSurface, value::Bool)\n\nWhether the control surface movement is inverted.\n\n" Inverted!
-export Inverted!
-import ..ControlSurface_get_Deployed as var"##1106"
-Deployed(this::RemoteTypes.ControlSurface) = begin
-        kerbal(this.conn, var"##1106"(this))
-    end
-@doc "    Deployed(this::RemoteTypes.ControlSurface)\n\nWhether the control surface has been fully deployed.\n\n" Deployed
-export Deployed
-import ..ControlSurface_set_Deployed as var"##1107"
-Deployed!(this::RemoteTypes.ControlSurface, value::Bool) = begin
-        kerbal(this.conn, var"##1107"(this, value))
-    end
-@doc "    Deployed!(this::RemoteTypes.ControlSurface, value::Bool)\n\nWhether the control surface has been fully deployed.\n\n" Deployed!
-export Deployed!
-import ..ControlSurface_get_SurfaceArea as var"##1108"
-SurfaceArea(this::RemoteTypes.ControlSurface) = begin
-        kerbal(this.conn, var"##1108"(this))
-    end
-@doc "    SurfaceArea(this::RemoteTypes.ControlSurface)\n\nSurface area of the control surface in m^2.\n\n" SurfaceArea
-export SurfaceArea
-import ..ControlSurface_get_AvailableTorque as var"##1109"
-AvailableTorque(this::RemoteTypes.ControlSurface) = begin
-        kerbal(this.conn, var"##1109"(this))
-    end
-@doc "    AvailableTorque(this::RemoteTypes.ControlSurface)\n\nThe available torque, in Newton meters, that can be produced by this control surface,\nin the positive and negative pitch, roll and yaw axes of the vessel. These axes\ncorrespond to the coordinate axes of the .\n\n" AvailableTorque
-export AvailableTorque
-import ..Decoupler_Decouple as var"##1110"
-Decouple(this::RemoteTypes.Decoupler) = begin
-        kerbal(this.conn, var"##1110"(this))
-    end
-@doc "    Decouple(this::RemoteTypes.Decoupler)\n\nFires the decoupler. Returns the new vessel created when the decoupler fires.\nThrows an exception if the decoupler has already fired.\n\n# Remarks\n When called, the active vessel may change. It is therefore possible that, after calling this function, the object(s) returned by previous call(s) to  no longer refer to the active vessel. \n" Decouple
-export Decouple
-import ..Decoupler_get_Part as var"##1111"
-Part(this::RemoteTypes.Decoupler) = begin
-        kerbal(this.conn, var"##1111"(this))
-    end
-@doc "    Part(this::RemoteTypes.Decoupler)\n\nThe part object for this decoupler.\n\n" Part
-export Part
-import ..Decoupler_get_Decoupled as var"##1112"
-Decoupled(this::RemoteTypes.Decoupler) = begin
-        kerbal(this.conn, var"##1112"(this))
-    end
-@doc "    Decoupled(this::RemoteTypes.Decoupler)\n\nWhether the decoupler has fired.\n\n" Decoupled
-export Decoupled
-import ..Decoupler_get_Staged as var"##1113"
-Staged(this::RemoteTypes.Decoupler) = begin
-        kerbal(this.conn, var"##1113"(this))
-    end
-@doc "    Staged(this::RemoteTypes.Decoupler)\n\nWhether the decoupler is enabled in the staging sequence.\n\n" Staged
-export Staged
-import ..Decoupler_get_Impulse as var"##1114"
-Impulse(this::RemoteTypes.Decoupler) = begin
-        kerbal(this.conn, var"##1114"(this))
-    end
-@doc "    Impulse(this::RemoteTypes.Decoupler)\n\nThe impulse that the decoupler imparts when it is fired, in Newton seconds.\n\n" Impulse
-export Impulse
-import ..DockingPort_Undock as var"##1115"
-Undock(this::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##1115"(this))
-    end
-@doc "    Undock(this::RemoteTypes.DockingPort)\n\nUndocks the docking port and returns the new  that is created.\nThis method can be called for either docking port in a docked pair.\nThrows an exception if the docking port is not docked to anything.\n\n# Remarks\n When called, the active vessel may change. It is therefore possible that, after calling this function, the object(s) returned by previous call(s) to  no longer refer to the active vessel. \n" Undock
-export Undock
-import ..DockingPort_Position as var"##1116"
-Position(this::RemoteTypes.DockingPort, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1116"(this, referenceFrame))
-    end
-@doc "    Position(this::RemoteTypes.DockingPort, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position of the docking port, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n" Position
-export Position
-import ..DockingPort_Direction as var"##1117"
-Direction(this::RemoteTypes.DockingPort, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1117"(this, referenceFrame))
-    end
-@doc "    Direction(this::RemoteTypes.DockingPort, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe direction that docking port points in, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned direction is in.\n# Returns\nThe direction as a unit vector.\n" Direction
-export Direction
-import ..DockingPort_Rotation as var"##1118"
-Rotation(this::RemoteTypes.DockingPort, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1118"(this, referenceFrame))
-    end
-@doc "    Rotation(this::RemoteTypes.DockingPort, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe rotation of the docking port, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned rotation is in.\n# Returns\nThe rotation as a quaternion of the form (x, y, z, w).\n" Rotation
-export Rotation
-import ..DockingPort_get_Part as var"##1119"
-Part(this::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##1119"(this))
-    end
-@doc "    Part(this::RemoteTypes.DockingPort)\n\nThe part object for this docking port.\n\n" Part
-export Part
-import ..DockingPort_get_State as var"##1120"
-State(this::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##1120"(this))
-    end
-@doc "    State(this::RemoteTypes.DockingPort)\n\nThe current state of the docking port.\n\n" State
-export State
-import ..DockingPort_get_DockedPart as var"##1121"
-DockedPart(this::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##1121"(this))
-    end
-@doc "    DockedPart(this::RemoteTypes.DockingPort)\n\nThe part that this docking port is docked to. Returns null if this\ndocking port is not docked to anything.\n\n" DockedPart
-export DockedPart
-import ..DockingPort_get_ReengageDistance as var"##1122"
-ReengageDistance(this::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##1122"(this))
-    end
-@doc "    ReengageDistance(this::RemoteTypes.DockingPort)\n\nThe distance a docking port must move away when it undocks before it\nbecomes ready to dock with another port, in meters.\n\n" ReengageDistance
-export ReengageDistance
-import ..DockingPort_get_HasShield as var"##1123"
-HasShield(this::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##1123"(this))
-    end
-@doc "    HasShield(this::RemoteTypes.DockingPort)\n\nWhether the docking port has a shield.\n\n" HasShield
-export HasShield
-import ..DockingPort_get_Shielded as var"##1124"
-Shielded(this::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##1124"(this))
-    end
-@doc "    Shielded(this::RemoteTypes.DockingPort)\n\nThe state of the docking ports shield, if it has one.\n\nReturns true if the docking port has a shield, and the shield is\nclosed. Otherwise returns false. When set to true, the shield is\nclosed, and when set to false the shield is opened. If the docking\nport does not have a shield, setting this attribute has no effect.\n\n" Shielded
-export Shielded
-import ..DockingPort_set_Shielded as var"##1125"
-Shielded!(this::RemoteTypes.DockingPort, value::Bool) = begin
-        kerbal(this.conn, var"##1125"(this, value))
-    end
-@doc "    Shielded!(this::RemoteTypes.DockingPort, value::Bool)\n\nThe state of the docking ports shield, if it has one.\n\nReturns true if the docking port has a shield, and the shield is\nclosed. Otherwise returns false. When set to true, the shield is\nclosed, and when set to false the shield is opened. If the docking\nport does not have a shield, setting this attribute has no effect.\n\n" Shielded!
-export Shielded!
-import ..DockingPort_get_CanRotate as var"##1126"
-CanRotate(this::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##1126"(this))
-    end
-@doc "    CanRotate(this::RemoteTypes.DockingPort)\n\nCan the docking port use the 1.12 version rotation feature\n\nReturns true if the docking port can be commanded to rotate while docked.\n Otherwise returns false. \n\n" CanRotate
-export CanRotate
-import ..DockingPort_get_MaximumRotation as var"##1127"
-MaximumRotation(this::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##1127"(this))
-    end
-@doc "    MaximumRotation(this::RemoteTypes.DockingPort)\n\nMaximum Rotation Angle\n\n" MaximumRotation
-export MaximumRotation
-import ..DockingPort_get_MinimumRotation as var"##1128"
-MinimumRotation(this::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##1128"(this))
-    end
-@doc "    MinimumRotation(this::RemoteTypes.DockingPort)\n\nMinimum Rotation Angle\n\n" MinimumRotation
-export MinimumRotation
-import ..DockingPort_get_RotationTarget as var"##1129"
-RotationTarget(this::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##1129"(this))
-    end
-@doc "    RotationTarget(this::RemoteTypes.DockingPort)\n\nSet the rotation target angle\n\n" RotationTarget
-export RotationTarget
-import ..DockingPort_set_RotationTarget as var"##1130"
-RotationTarget!(this::RemoteTypes.DockingPort, value::Float32) = begin
-        kerbal(this.conn, var"##1130"(this, value))
-    end
-@doc "    RotationTarget!(this::RemoteTypes.DockingPort, value::Float32)\n\nSet the rotation target angle\n\n" RotationTarget!
-export RotationTarget!
-import ..DockingPort_get_RotationLocked as var"##1131"
-RotationLocked(this::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##1131"(this))
-    end
-@doc "    RotationLocked(this::RemoteTypes.DockingPort)\n\nSet the Docking Port Rotation as Locked to allow Autostrut to function across joint\n\n" RotationLocked
-export RotationLocked
-import ..DockingPort_set_RotationLocked as var"##1132"
-RotationLocked!(this::RemoteTypes.DockingPort, value::Bool) = begin
-        kerbal(this.conn, var"##1132"(this, value))
-    end
-@doc "    RotationLocked!(this::RemoteTypes.DockingPort, value::Bool)\n\nSet the Docking Port Rotation as Locked to allow Autostrut to function across joint\n\n" RotationLocked!
-export RotationLocked!
-import ..DockingPort_get_ReferenceFrame as var"##1133"
-ReferenceFrame(this::RemoteTypes.DockingPort) = begin
-        kerbal(this.conn, var"##1133"(this))
-    end
-@doc "    ReferenceFrame(this::RemoteTypes.DockingPort)\n\nThe reference frame that is fixed relative to this docking port, and\noriented with the port.\nThe origin is at the position of the docking port.\nThe axes rotate with the docking port.The x-axis points out to the right side of the docking port.\nThe y-axis points in the direction the docking port is facing.\nThe z-axis points out of the bottom off the docking port.\n\n# Remarks\n This reference frame is not necessarily equivalent to the reference frame for the part, returned by . \n" ReferenceFrame
-export ReferenceFrame
-import ..Engine_ToggleMode as var"##1134"
-ToggleMode(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1134"(this))
-    end
-@doc "    ToggleMode(this::RemoteTypes.Engine)\n\nToggle the current engine mode.\n\n" ToggleMode
-export ToggleMode
-import ..Engine_get_Part as var"##1135"
-Part(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1135"(this))
-    end
-@doc "    Part(this::RemoteTypes.Engine)\n\nThe part object for this engine.\n\n" Part
-export Part
-import ..Engine_get_Active as var"##1136"
-Active(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1136"(this))
-    end
-@doc "    Active(this::RemoteTypes.Engine)\n\nWhether the engine is active. Setting this attribute may have no effect,\ndepending on  and .\n\n" Active
-export Active
-import ..Engine_set_Active as var"##1137"
-Active!(this::RemoteTypes.Engine, value::Bool) = begin
-        kerbal(this.conn, var"##1137"(this, value))
-    end
-@doc "    Active!(this::RemoteTypes.Engine, value::Bool)\n\nWhether the engine is active. Setting this attribute may have no effect,\ndepending on  and .\n\n" Active!
-export Active!
-import ..Engine_get_Thrust as var"##1138"
-Thrust(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1138"(this))
-    end
-@doc "    Thrust(this::RemoteTypes.Engine)\n\nThe current amount of thrust being produced by the engine, in Newtons.\n\n" Thrust
-export Thrust
-import ..Engine_get_AvailableThrust as var"##1139"
-AvailableThrust(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1139"(this))
-    end
-@doc "    AvailableThrust(this::RemoteTypes.Engine)\n\nThe amount of thrust, in Newtons, that would be produced by the engine\nwhen activated and with its throttle set to 100%.\nReturns zero if the engine does not have any fuel.\nTakes the engine's current  and atmospheric conditions\ninto account.\n\n" AvailableThrust
-export AvailableThrust
-import ..Engine_get_MaxThrust as var"##1140"
-MaxThrust(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1140"(this))
-    end
-@doc "    MaxThrust(this::RemoteTypes.Engine)\n\nThe amount of thrust, in Newtons, that would be produced by the engine\nwhen activated and fueled, with its throttle and throttle limiter set to 100%.\n\n" MaxThrust
-export MaxThrust
-import ..Engine_get_MaxVacuumThrust as var"##1141"
-MaxVacuumThrust(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1141"(this))
-    end
-@doc "    MaxVacuumThrust(this::RemoteTypes.Engine)\n\nThe maximum amount of thrust that can be produced by the engine in a\nvacuum, in Newtons. This is the amount of thrust produced by the engine\nwhen activated,  is set to 100%, the main\nvessel's throttle is set to 100% and the engine is in a vacuum.\n\n" MaxVacuumThrust
-export MaxVacuumThrust
-import ..Engine_get_ThrustLimit as var"##1142"
-ThrustLimit(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1142"(this))
-    end
-@doc "    ThrustLimit(this::RemoteTypes.Engine)\n\nThe thrust limiter of the engine. A value between 0 and 1. Setting this\nattribute may have no effect, for example the thrust limit for a solid\nrocket booster cannot be changed in flight.\n\n" ThrustLimit
-export ThrustLimit
-import ..Engine_set_ThrustLimit as var"##1143"
-ThrustLimit!(this::RemoteTypes.Engine, value::Float32) = begin
-        kerbal(this.conn, var"##1143"(this, value))
-    end
-@doc "    ThrustLimit!(this::RemoteTypes.Engine, value::Float32)\n\nThe thrust limiter of the engine. A value between 0 and 1. Setting this\nattribute may have no effect, for example the thrust limit for a solid\nrocket booster cannot be changed in flight.\n\n" ThrustLimit!
-export ThrustLimit!
-import ..Engine_get_Thrusters as var"##1144"
-Thrusters(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1144"(this))
-    end
-@doc "    Thrusters(this::RemoteTypes.Engine)\n\nThe components of the engine that generate thrust.\n\n# Remarks\n For example, this corresponds to the rocket nozzel on a solid rocket booster, or the individual nozzels on a RAPIER engine. The overall thrust produced by the engine, as reported by ,  and others, is the sum of the thrust generated by each thruster. \n" Thrusters
-export Thrusters
-import ..Engine_get_SpecificImpulse as var"##1145"
-SpecificImpulse(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1145"(this))
-    end
-@doc "    SpecificImpulse(this::RemoteTypes.Engine)\n\nThe current specific impulse of the engine, in seconds. Returns zero\nif the engine is not active.\n\n" SpecificImpulse
-export SpecificImpulse
-import ..Engine_get_VacuumSpecificImpulse as var"##1146"
-VacuumSpecificImpulse(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1146"(this))
-    end
-@doc "    VacuumSpecificImpulse(this::RemoteTypes.Engine)\n\nThe vacuum specific impulse of the engine, in seconds.\n\n" VacuumSpecificImpulse
-export VacuumSpecificImpulse
-import ..Engine_get_KerbinSeaLevelSpecificImpulse as var"##1147"
-KerbinSeaLevelSpecificImpulse(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1147"(this))
-    end
-@doc "    KerbinSeaLevelSpecificImpulse(this::RemoteTypes.Engine)\n\nThe specific impulse of the engine at sea level on Kerbin, in seconds.\n\n" KerbinSeaLevelSpecificImpulse
-export KerbinSeaLevelSpecificImpulse
-import ..Engine_get_PropellantNames as var"##1148"
-PropellantNames(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1148"(this))
-    end
-@doc "    PropellantNames(this::RemoteTypes.Engine)\n\nThe names of the propellants that the engine consumes.\n\n" PropellantNames
-export PropellantNames
-import ..Engine_get_Propellants as var"##1149"
-Propellants(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1149"(this))
-    end
-@doc "    Propellants(this::RemoteTypes.Engine)\n\nThe propellants that the engine consumes.\n\n" Propellants
-export Propellants
-import ..Engine_get_PropellantRatios as var"##1150"
-PropellantRatios(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1150"(this))
-    end
-@doc "    PropellantRatios(this::RemoteTypes.Engine)\n\nThe ratio of resources that the engine consumes. A dictionary mapping resource names\nto the ratio at which they are consumed by the engine.\n\n# Remarks\n For example, if the ratios are 0.6 for LiquidFuel and 0.4 for Oxidizer, then for every 0.6 units of LiquidFuel that the engine burns, it will burn 0.4 units of Oxidizer. \n" PropellantRatios
-export PropellantRatios
-import ..Engine_get_HasFuel as var"##1151"
-HasFuel(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1151"(this))
-    end
-@doc "    HasFuel(this::RemoteTypes.Engine)\n\nWhether the engine has any fuel available.\n\n" HasFuel
-export HasFuel
-import ..Engine_get_Throttle as var"##1152"
-Throttle(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1152"(this))
-    end
-@doc "    Throttle(this::RemoteTypes.Engine)\n\nThe current throttle setting for the engine. A value between 0 and 1.\nThis is not necessarily the same as the vessel's main throttle\nsetting, as some engines take time to adjust their throttle\n(such as jet engines).\n\n" Throttle
-export Throttle
-import ..Engine_get_ThrottleLocked as var"##1153"
-ThrottleLocked(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1153"(this))
-    end
-@doc "    ThrottleLocked(this::RemoteTypes.Engine)\n\nWhether the  affects the engine. For example,\nthis is true for liquid fueled rockets, and false for solid rocket\nboosters.\n\n" ThrottleLocked
-export ThrottleLocked
-import ..Engine_get_CanRestart as var"##1154"
-CanRestart(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1154"(this))
-    end
-@doc "    CanRestart(this::RemoteTypes.Engine)\n\nWhether the engine can be restarted once shutdown. If the engine cannot be shutdown,\nreturns false. For example, this is true for liquid fueled rockets\nand false for solid rocket boosters.\n\n" CanRestart
-export CanRestart
-import ..Engine_get_CanShutdown as var"##1155"
-CanShutdown(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1155"(this))
-    end
-@doc "    CanShutdown(this::RemoteTypes.Engine)\n\nWhether the engine can be shutdown once activated. For example, this is\ntrue for liquid fueled rockets and false for solid rocket boosters.\n\n" CanShutdown
-export CanShutdown
-import ..Engine_get_HasModes as var"##1156"
-HasModes(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1156"(this))
-    end
-@doc "    HasModes(this::RemoteTypes.Engine)\n\nWhether the engine has multiple modes of operation.\n\n" HasModes
-export HasModes
-import ..Engine_get_Mode as var"##1157"
-Mode(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1157"(this))
-    end
-@doc "    Mode(this::RemoteTypes.Engine)\n\nThe name of the current engine mode.\n\n" Mode
-export Mode
-import ..Engine_set_Mode as var"##1158"
-Mode!(this::RemoteTypes.Engine, value::String) = begin
-        kerbal(this.conn, var"##1158"(this, value))
-    end
-@doc "    Mode!(this::RemoteTypes.Engine, value::String)\n\nThe name of the current engine mode.\n\n" Mode!
-export Mode!
-import ..Engine_get_Modes as var"##1159"
-Modes(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1159"(this))
-    end
-@doc "    Modes(this::RemoteTypes.Engine)\n\nThe available modes for the engine.\nA dictionary mapping mode names to  objects.\n\n" Modes
-export Modes
-import ..Engine_get_AutoModeSwitch as var"##1160"
-AutoModeSwitch(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1160"(this))
-    end
-@doc "    AutoModeSwitch(this::RemoteTypes.Engine)\n\nWhether the engine will automatically switch modes.\n\n" AutoModeSwitch
-export AutoModeSwitch
-import ..Engine_set_AutoModeSwitch as var"##1161"
-AutoModeSwitch!(this::RemoteTypes.Engine, value::Bool) = begin
-        kerbal(this.conn, var"##1161"(this, value))
-    end
-@doc "    AutoModeSwitch!(this::RemoteTypes.Engine, value::Bool)\n\nWhether the engine will automatically switch modes.\n\n" AutoModeSwitch!
-export AutoModeSwitch!
-import ..Engine_get_Gimballed as var"##1162"
-Gimballed(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1162"(this))
-    end
-@doc "    Gimballed(this::RemoteTypes.Engine)\n\nWhether the engine is gimballed.\n\n" Gimballed
-export Gimballed
-import ..Engine_get_GimbalRange as var"##1163"
-GimbalRange(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1163"(this))
-    end
-@doc "    GimbalRange(this::RemoteTypes.Engine)\n\nThe range over which the gimbal can move, in degrees.\nReturns 0 if the engine is not gimballed.\n\n" GimbalRange
-export GimbalRange
-import ..Engine_get_GimbalLocked as var"##1164"
-GimbalLocked(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1164"(this))
-    end
-@doc "    GimbalLocked(this::RemoteTypes.Engine)\n\nWhether the engines gimbal is locked in place. Setting this attribute has\nno effect if the engine is not gimballed.\n\n" GimbalLocked
-export GimbalLocked
-import ..Engine_set_GimbalLocked as var"##1165"
-GimbalLocked!(this::RemoteTypes.Engine, value::Bool) = begin
-        kerbal(this.conn, var"##1165"(this, value))
-    end
-@doc "    GimbalLocked!(this::RemoteTypes.Engine, value::Bool)\n\nWhether the engines gimbal is locked in place. Setting this attribute has\nno effect if the engine is not gimballed.\n\n" GimbalLocked!
-export GimbalLocked!
-import ..Engine_get_GimbalLimit as var"##1166"
-GimbalLimit(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1166"(this))
-    end
-@doc "    GimbalLimit(this::RemoteTypes.Engine)\n\nThe gimbal limiter of the engine. A value between 0 and 1.\nReturns 0 if the gimbal is locked.\n\n" GimbalLimit
-export GimbalLimit
-import ..Engine_set_GimbalLimit as var"##1167"
-GimbalLimit!(this::RemoteTypes.Engine, value::Float32) = begin
-        kerbal(this.conn, var"##1167"(this, value))
-    end
-@doc "    GimbalLimit!(this::RemoteTypes.Engine, value::Float32)\n\nThe gimbal limiter of the engine. A value between 0 and 1.\nReturns 0 if the gimbal is locked.\n\n" GimbalLimit!
-export GimbalLimit!
-import ..Engine_get_AvailableTorque as var"##1168"
-AvailableTorque(this::RemoteTypes.Engine) = begin
-        kerbal(this.conn, var"##1168"(this))
-    end
-@doc "    AvailableTorque(this::RemoteTypes.Engine)\n\nThe available torque, in Newton meters, that can be produced by this engine,\nin the positive and negative pitch, roll and yaw axes of the vessel. These axes\ncorrespond to the coordinate axes of the .\nReturns zero if the engine is inactive, or not gimballed.\n\n" AvailableTorque
-export AvailableTorque
-import ..Experiment_Run as var"##1169"
-Run(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1169"(this))
-    end
-@doc "    Run(this::RemoteTypes.Experiment)\n\nRun the experiment.\n\n" Run
-export Run
-import ..Experiment_Transmit as var"##1170"
-Transmit(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1170"(this))
-    end
-@doc "    Transmit(this::RemoteTypes.Experiment)\n\nTransmit all experimental data contained by this part.\n\n" Transmit
-export Transmit
-import ..Experiment_Dump as var"##1171"
-Dump(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1171"(this))
-    end
-@doc "    Dump(this::RemoteTypes.Experiment)\n\nDump the experimental data contained by the experiment.\n\n" Dump
-export Dump
-import ..Experiment_Reset as var"##1172"
-Reset(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1172"(this))
-    end
-@doc "    Reset(this::RemoteTypes.Experiment)\n\nReset the experiment.\n\n" Reset
-export Reset
-import ..Experiment_get_Part as var"##1173"
-Part(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1173"(this))
-    end
-@doc "    Part(this::RemoteTypes.Experiment)\n\nThe part object for this experiment.\n\n" Part
-export Part
-import ..Experiment_get_Name as var"##1174"
-Name(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1174"(this))
-    end
-@doc "    Name(this::RemoteTypes.Experiment)\n\nInternal name of the experiment, as used in\npart cfg files.\n\n" Name
-export Name
-import ..Experiment_get_Title as var"##1175"
-Title(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1175"(this))
-    end
-@doc "    Title(this::RemoteTypes.Experiment)\n\nTitle of the experiment, as shown on the in-game UI.\n\n" Title
-export Title
-import ..Experiment_get_Inoperable as var"##1176"
-Inoperable(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1176"(this))
-    end
-@doc "    Inoperable(this::RemoteTypes.Experiment)\n\nWhether the experiment is inoperable.\n\n" Inoperable
-export Inoperable
-import ..Experiment_get_Deployed as var"##1177"
-Deployed(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1177"(this))
-    end
-@doc "    Deployed(this::RemoteTypes.Experiment)\n\nWhether the experiment has been deployed.\n\n" Deployed
-export Deployed
-import ..Experiment_get_Rerunnable as var"##1178"
-Rerunnable(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1178"(this))
-    end
-@doc "    Rerunnable(this::RemoteTypes.Experiment)\n\nWhether the experiment can be re-run.\n\n" Rerunnable
-export Rerunnable
-import ..Experiment_get_HasData as var"##1179"
-HasData(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1179"(this))
-    end
-@doc "    HasData(this::RemoteTypes.Experiment)\n\nWhether the experiment contains data.\n\n" HasData
-export HasData
-import ..Experiment_get_Data as var"##1180"
-Data(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1180"(this))
-    end
-@doc "    Data(this::RemoteTypes.Experiment)\n\nThe data contained in this experiment.\n\n" Data
-export Data
-import ..Experiment_get_Available as var"##1181"
-Available(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1181"(this))
-    end
-@doc "    Available(this::RemoteTypes.Experiment)\n\nDetermines if the experiment is available given the current conditions.\n\n" Available
-export Available
-import ..Experiment_get_Biome as var"##1182"
-Biome(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1182"(this))
-    end
-@doc "    Biome(this::RemoteTypes.Experiment)\n\nThe name of the biome the experiment is currently in.\n\n" Biome
-export Biome
-import ..Experiment_get_ScienceSubject as var"##1183"
-ScienceSubject(this::RemoteTypes.Experiment) = begin
-        kerbal(this.conn, var"##1183"(this))
-    end
-@doc "    ScienceSubject(this::RemoteTypes.Experiment)\n\nContaining information on the corresponding specific science result for the current\nconditions. Returns null if the experiment is unavailable.\n\n" ScienceSubject
-export ScienceSubject
-import ..Fairing_Jettison as var"##1184"
-Jettison(this::RemoteTypes.Fairing) = begin
-        kerbal(this.conn, var"##1184"(this))
-    end
-@doc "    Jettison(this::RemoteTypes.Fairing)\n\nJettison the fairing. Has no effect if it has already been jettisoned.\n\n" Jettison
-export Jettison
-import ..Fairing_get_Part as var"##1185"
-Part(this::RemoteTypes.Fairing) = begin
-        kerbal(this.conn, var"##1185"(this))
-    end
-@doc "    Part(this::RemoteTypes.Fairing)\n\nThe part object for this fairing.\n\n" Part
-export Part
-import ..Fairing_get_Jettisoned as var"##1186"
-Jettisoned(this::RemoteTypes.Fairing) = begin
-        kerbal(this.conn, var"##1186"(this))
-    end
-@doc "    Jettisoned(this::RemoteTypes.Fairing)\n\nWhether the fairing has been jettisoned.\n\n" Jettisoned
-export Jettisoned
-import ..Force_Remove as var"##1187"
-Remove(this::RemoteTypes.Force) = begin
-        kerbal(this.conn, var"##1187"(this))
-    end
-@doc "    Remove(this::RemoteTypes.Force)\n\nRemove the force.\n\n" Remove
-export Remove
-import ..Force_get_Part as var"##1188"
-Part(this::RemoteTypes.Force) = begin
-        kerbal(this.conn, var"##1188"(this))
-    end
-@doc "    Part(this::RemoteTypes.Force)\n\nThe part that this force is applied to.\n\n" Part
-export Part
-import ..Force_get_ForceVector as var"##1189"
-ForceVector(this::RemoteTypes.Force) = begin
-        kerbal(this.conn, var"##1189"(this))
-    end
-@doc "    ForceVector(this::RemoteTypes.Force)\n\nThe force vector, in Newtons.\n\n# Returns\nA vector pointing in the direction that the force acts, with its magnitude equal to the strength of the force in Newtons.\n" ForceVector
-export ForceVector
-import ..Force_set_ForceVector as var"##1190"
-ForceVector!(this::RemoteTypes.Force, value::begin
-                Tuple{Float64, Float64, Float64}
-            end) = begin
-        kerbal(this.conn, var"##1190"(this, value))
-    end
-@doc "    ForceVector!(this::RemoteTypes.Force, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nThe force vector, in Newtons.\n\n# Returns\nA vector pointing in the direction that the force acts, with its magnitude equal to the strength of the force in Newtons.\n" ForceVector!
-export ForceVector!
-import ..Force_get_Position as var"##1191"
-Position(this::RemoteTypes.Force) = begin
-        kerbal(this.conn, var"##1191"(this))
-    end
-@doc "    Position(this::RemoteTypes.Force)\n\nThe position at which the force acts, in reference frame .\n\n# Returns\nThe position as a vector.\n" Position
-export Position
-import ..Force_set_Position as var"##1192"
-Position!(this::RemoteTypes.Force, value::begin
-                Tuple{Float64, Float64, Float64}
-            end) = begin
-        kerbal(this.conn, var"##1192"(this, value))
-    end
-@doc "    Position!(this::RemoteTypes.Force, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nThe position at which the force acts, in reference frame .\n\n# Returns\nThe position as a vector.\n" Position!
-export Position!
-import ..Force_get_ReferenceFrame as var"##1193"
-ReferenceFrame(this::RemoteTypes.Force) = begin
-        kerbal(this.conn, var"##1193"(this))
-    end
-@doc "    ReferenceFrame(this::RemoteTypes.Force)\n\nThe reference frame of the force vector and position.\n\n" ReferenceFrame
-export ReferenceFrame
-import ..Force_set_ReferenceFrame as var"##1194"
-ReferenceFrame!(this::RemoteTypes.Force, value::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1194"(this, value))
-    end
-@doc "    ReferenceFrame!(this::RemoteTypes.Force, value::RemoteTypes.ReferenceFrame)\n\nThe reference frame of the force vector and position.\n\n" ReferenceFrame!
-export ReferenceFrame!
-import ..Intake_get_Part as var"##1195"
-Part(this::RemoteTypes.Intake) = begin
-        kerbal(this.conn, var"##1195"(this))
-    end
-@doc "    Part(this::RemoteTypes.Intake)\n\nThe part object for this intake.\n\n" Part
-export Part
-import ..Intake_get_Open as var"##1196"
-Open(this::RemoteTypes.Intake) = begin
-        kerbal(this.conn, var"##1196"(this))
-    end
-@doc "    Open(this::RemoteTypes.Intake)\n\nWhether the intake is open.\n\n" Open
-export Open
-import ..Intake_set_Open as var"##1197"
-Open!(this::RemoteTypes.Intake, value::Bool) = begin
-        kerbal(this.conn, var"##1197"(this, value))
-    end
-@doc "    Open!(this::RemoteTypes.Intake, value::Bool)\n\nWhether the intake is open.\n\n" Open!
-export Open!
-import ..Intake_get_Speed as var"##1198"
-Speed(this::RemoteTypes.Intake) = begin
-        kerbal(this.conn, var"##1198"(this))
-    end
-@doc "    Speed(this::RemoteTypes.Intake)\n\nSpeed of the flow into the intake, in m/s.\n\n" Speed
-export Speed
-import ..Intake_get_Flow as var"##1199"
-Flow(this::RemoteTypes.Intake) = begin
-        kerbal(this.conn, var"##1199"(this))
-    end
-@doc "    Flow(this::RemoteTypes.Intake)\n\nThe rate of flow into the intake, in units of resource per second.\n\n" Flow
-export Flow
-import ..Intake_get_Area as var"##1200"
-Area(this::RemoteTypes.Intake) = begin
-        kerbal(this.conn, var"##1200"(this))
-    end
-@doc "    Area(this::RemoteTypes.Intake)\n\nThe area of the intake's opening, in square meters.\n\n" Area
-export Area
-import ..LaunchClamp_Release as var"##1201"
-Release(this::RemoteTypes.LaunchClamp) = begin
-        kerbal(this.conn, var"##1201"(this))
-    end
-@doc "    Release(this::RemoteTypes.LaunchClamp)\n\nReleases the docking clamp. Has no effect if the clamp has already been released.\n\n" Release
-export Release
-import ..LaunchClamp_get_Part as var"##1202"
-Part(this::RemoteTypes.LaunchClamp) = begin
-        kerbal(this.conn, var"##1202"(this))
-    end
-@doc "    Part(this::RemoteTypes.LaunchClamp)\n\nThe part object for this launch clamp.\n\n" Part
-export Part
-import ..Leg_get_Part as var"##1203"
-Part(this::RemoteTypes.Leg) = begin
-        kerbal(this.conn, var"##1203"(this))
-    end
-@doc "    Part(this::RemoteTypes.Leg)\n\nThe part object for this landing leg.\n\n" Part
-export Part
-import ..Leg_get_State as var"##1204"
-State(this::RemoteTypes.Leg) = begin
-        kerbal(this.conn, var"##1204"(this))
-    end
-@doc "    State(this::RemoteTypes.Leg)\n\nThe current state of the landing leg.\n\n" State
-export State
-import ..Leg_get_Deployable as var"##1205"
-Deployable(this::RemoteTypes.Leg) = begin
-        kerbal(this.conn, var"##1205"(this))
-    end
-@doc "    Deployable(this::RemoteTypes.Leg)\n\nWhether the leg is deployable.\n\n" Deployable
-export Deployable
-import ..Leg_get_Deployed as var"##1206"
-Deployed(this::RemoteTypes.Leg) = begin
-        kerbal(this.conn, var"##1206"(this))
-    end
-@doc "    Deployed(this::RemoteTypes.Leg)\n\nWhether the landing leg is deployed.\n\n# Remarks\n Fixed landing legs are always deployed. Returns an error if you try to deploy fixed landing gear. \n" Deployed
-export Deployed
-import ..Leg_set_Deployed as var"##1207"
-Deployed!(this::RemoteTypes.Leg, value::Bool) = begin
-        kerbal(this.conn, var"##1207"(this, value))
-    end
-@doc "    Deployed!(this::RemoteTypes.Leg, value::Bool)\n\nWhether the landing leg is deployed.\n\n# Remarks\n Fixed landing legs are always deployed. Returns an error if you try to deploy fixed landing gear. \n" Deployed!
-export Deployed!
-import ..Leg_get_IsGrounded as var"##1208"
-IsGrounded(this::RemoteTypes.Leg) = begin
-        kerbal(this.conn, var"##1208"(this))
-    end
-@doc "    IsGrounded(this::RemoteTypes.Leg)\n\nReturns whether the leg is touching the ground.\n\n" IsGrounded
-export IsGrounded
-import ..Light_BlinkStart as var"##1209"
-BlinkStart(this::RemoteTypes.Light) = begin
-        kerbal(this.conn, var"##1209"(this))
-    end
-@doc "    BlinkStart(this::RemoteTypes.Light)\n\nEnables blinking\n\n" BlinkStart
-export BlinkStart
-import ..Light_BlinkStop as var"##1210"
-BlinkStop(this::RemoteTypes.Light) = begin
-        kerbal(this.conn, var"##1210"(this))
-    end
-@doc "    BlinkStop(this::RemoteTypes.Light)\n\nDisables Blinking blinking\n\n" BlinkStop
-export BlinkStop
-import ..Light_get_Part as var"##1211"
-Part(this::RemoteTypes.Light) = begin
-        kerbal(this.conn, var"##1211"(this))
-    end
-@doc "    Part(this::RemoteTypes.Light)\n\nThe part object for this light.\n\n" Part
-export Part
-import ..Light_get_Active as var"##1212"
-Active(this::RemoteTypes.Light) = begin
-        kerbal(this.conn, var"##1212"(this))
-    end
-@doc "    Active(this::RemoteTypes.Light)\n\nWhether the light is switched on.\n\n" Active
-export Active
-import ..Light_set_Active as var"##1213"
-Active!(this::RemoteTypes.Light, value::Bool) = begin
-        kerbal(this.conn, var"##1213"(this, value))
-    end
-@doc "    Active!(this::RemoteTypes.Light, value::Bool)\n\nWhether the light is switched on.\n\n" Active!
-export Active!
-import ..Light_get_Color as var"##1214"
-Color(this::RemoteTypes.Light) = begin
-        kerbal(this.conn, var"##1214"(this))
-    end
-@doc "    Color(this::RemoteTypes.Light)\n\nThe color of the light, as an RGB triple.\n\n" Color
-export Color
-import ..Light_set_Color as var"##1215"
-Color!(this::RemoteTypes.Light, value::begin
-                Tuple{Float32, Float32, Float32}
-            end) = begin
-        kerbal(this.conn, var"##1215"(this, value))
-    end
-@doc "    Color!(this::RemoteTypes.Light, value::begin\n    Tuple{Float32, Float32, Float32}\nend)\n\nThe color of the light, as an RGB triple.\n\n" Color!
-export Color!
-import ..Light_get_BlinkRate as var"##1216"
-BlinkRate(this::RemoteTypes.Light) = begin
-        kerbal(this.conn, var"##1216"(this))
-    end
-@doc "    BlinkRate(this::RemoteTypes.Light)\n\nThe color of the light, as an RGB triple.\n\n" BlinkRate
-export BlinkRate
-import ..Light_set_BlinkRate as var"##1217"
-BlinkRate!(this::RemoteTypes.Light, value::Float32) = begin
-        kerbal(this.conn, var"##1217"(this, value))
-    end
-@doc "    BlinkRate!(this::RemoteTypes.Light, value::Float32)\n\nThe color of the light, as an RGB triple.\n\n" BlinkRate!
-export BlinkRate!
-import ..Light_get_PowerUsage as var"##1218"
-PowerUsage(this::RemoteTypes.Light) = begin
-        kerbal(this.conn, var"##1218"(this))
-    end
-@doc "    PowerUsage(this::RemoteTypes.Light)\n\nThe current power usage, in units of charge per second.\n\n" PowerUsage
-export PowerUsage
-import ..Module_HasField as var"##1219"
-HasField(this::RemoteTypes.Module, name::String) = begin
-        kerbal(this.conn, var"##1219"(this, name))
-    end
-@doc "    HasField(this::RemoteTypes.Module, name::String)\n\nReturns true if the module has a field with the given name.\n\n# Arguments\n- `name::String`: Name of the field.\n" HasField
-export HasField
-import ..Module_GetField as var"##1220"
-GetField(this::RemoteTypes.Module, name::String) = begin
-        kerbal(this.conn, var"##1220"(this, name))
-    end
-@doc "    GetField(this::RemoteTypes.Module, name::String)\n\nReturns the value of a field.\n\n# Arguments\n- `name::String`: Name of the field.\n" GetField
-export GetField
-import ..Module_SetFieldInt as var"##1221"
-SetFieldInt(this::RemoteTypes.Module, name::String, value::Int32) = begin
-        kerbal(this.conn, var"##1221"(this, name, value))
-    end
-@doc "    SetFieldInt(this::RemoteTypes.Module, name::String, value::Int32)\n\nSet the value of a field to the given integer number.\n\n# Arguments\n- `name::String`: Name of the field.\n- `value::Int32`: Value to set.\n" SetFieldInt
-export SetFieldInt
-import ..Module_SetFieldFloat as var"##1222"
-SetFieldFloat(this::RemoteTypes.Module, name::String, value::Float32) = begin
-        kerbal(this.conn, var"##1222"(this, name, value))
-    end
-@doc "    SetFieldFloat(this::RemoteTypes.Module, name::String, value::Float32)\n\nSet the value of a field to the given floating point number.\n\n# Arguments\n- `name::String`: Name of the field.\n- `value::Float32`: Value to set.\n" SetFieldFloat
-export SetFieldFloat
-import ..Module_SetFieldString as var"##1223"
-SetFieldString(this::RemoteTypes.Module, name::String, value::String) = begin
-        kerbal(this.conn, var"##1223"(this, name, value))
-    end
-@doc "    SetFieldString(this::RemoteTypes.Module, name::String, value::String)\n\nSet the value of a field to the given string.\n\n# Arguments\n- `name::String`: Name of the field.\n- `value::String`: Value to set.\n" SetFieldString
-export SetFieldString
-import ..Module_ResetField as var"##1224"
-ResetField(this::RemoteTypes.Module, name::String) = begin
-        kerbal(this.conn, var"##1224"(this, name))
-    end
-@doc "    ResetField(this::RemoteTypes.Module, name::String)\n\nSet the value of a field to its original value.\n\n# Arguments\n- `name::String`: Name of the field.\n" ResetField
-export ResetField
-import ..Module_HasEvent as var"##1225"
-HasEvent(this::RemoteTypes.Module, name::String) = begin
-        kerbal(this.conn, var"##1225"(this, name))
-    end
-@doc "    HasEvent(this::RemoteTypes.Module, name::String)\ntrue if the module has an event with the given name.\n\n# Arguments\n- `name::String`: \n" HasEvent
-export HasEvent
-import ..Module_TriggerEvent as var"##1226"
-TriggerEvent(this::RemoteTypes.Module, name::String) = begin
-        kerbal(this.conn, var"##1226"(this, name))
-    end
-@doc "    TriggerEvent(this::RemoteTypes.Module, name::String)\n\nTrigger the named event. Equivalent to clicking the button in the right-click menu\nof the part.\n\n# Arguments\n- `name::String`: \n" TriggerEvent
-export TriggerEvent
-import ..Module_HasAction as var"##1227"
-HasAction(this::RemoteTypes.Module, name::String) = begin
-        kerbal(this.conn, var"##1227"(this, name))
-    end
-@doc "    HasAction(this::RemoteTypes.Module, name::String)\ntrue if the part has an action with the given name.\n\n# Arguments\n- `name::String`: \n" HasAction
-export HasAction
-import ..Module_SetAction as var"##1228"
-SetAction(this::RemoteTypes.Module, name::String, value::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(this.conn, var"##1228"(this, name, value))
-    end
-@doc "    SetAction(this::RemoteTypes.Module, name::String, value::Bool)\n\nSet the value of an action with the given name.\n\n# Arguments\n- `name::String`: \n- `value::Bool`: \n" SetAction
-export SetAction
-import ..Module_get_Name as var"##1229"
-Name(this::RemoteTypes.Module) = begin
-        kerbal(this.conn, var"##1229"(this))
-    end
-@doc "    Name(this::RemoteTypes.Module)\n\nName of the PartModule. For example, \"ModuleEngines\".\n\n" Name
-export Name
-import ..Module_get_Part as var"##1230"
-Part(this::RemoteTypes.Module) = begin
-        kerbal(this.conn, var"##1230"(this))
-    end
-@doc "    Part(this::RemoteTypes.Module)\n\nThe part that contains this module.\n\n" Part
-export Part
-import ..Module_get_Fields as var"##1231"
-Fields(this::RemoteTypes.Module) = begin
-        kerbal(this.conn, var"##1231"(this))
-    end
-@doc "    Fields(this::RemoteTypes.Module)\n\nThe modules field names and their associated values, as a dictionary.\nThese are the values visible in the right-click menu of the part.\n\n" Fields
-export Fields
-import ..Module_get_Events as var"##1232"
-Events(this::RemoteTypes.Module) = begin
-        kerbal(this.conn, var"##1232"(this))
-    end
-@doc "    Events(this::RemoteTypes.Module)\n\nA list of the names of all of the modules events. Events are the clickable buttons\nvisible in the right-click menu of the part.\n\n" Events
-export Events
-import ..Module_get_Actions as var"##1233"
-Actions(this::RemoteTypes.Module) = begin
-        kerbal(this.conn, var"##1233"(this))
-    end
-@doc "    Actions(this::RemoteTypes.Module)\n\nA list of all the names of the modules actions. These are the parts actions that can\nbe assigned to action groups in the in-game editor.\n\n" Actions
-export Actions
-import ..Parachute_Deploy as var"##1234"
-Deploy(this::RemoteTypes.Parachute) = begin
-        kerbal(this.conn, var"##1234"(this))
-    end
-@doc "    Deploy(this::RemoteTypes.Parachute)\n\nDeploys the parachute. This has no effect if the parachute has already\nbeen deployed.\n\n" Deploy
-export Deploy
-import ..Parachute_Arm as var"##1235"
-Arm(this::RemoteTypes.Parachute) = begin
-        kerbal(this.conn, var"##1235"(this))
-    end
-@doc "    Arm(this::RemoteTypes.Parachute)\n\nDeploys the parachute. This has no effect if the parachute has already\nbeen armed or deployed. Only applicable to RealChutes parachutes.\n\n" Arm
-export Arm
-import ..Parachute_get_Part as var"##1236"
-Part(this::RemoteTypes.Parachute) = begin
-        kerbal(this.conn, var"##1236"(this))
-    end
-@doc "    Part(this::RemoteTypes.Parachute)\n\nThe part object for this parachute.\n\n" Part
-export Part
-import ..Parachute_get_Deployed as var"##1237"
-Deployed(this::RemoteTypes.Parachute) = begin
-        kerbal(this.conn, var"##1237"(this))
-    end
-@doc "    Deployed(this::RemoteTypes.Parachute)\n\nWhether the parachute has been deployed.\n\n" Deployed
-export Deployed
-import ..Parachute_get_Armed as var"##1238"
-Armed(this::RemoteTypes.Parachute) = begin
-        kerbal(this.conn, var"##1238"(this))
-    end
-@doc "    Armed(this::RemoteTypes.Parachute)\n\nWhether the parachute has been armed or deployed. Only applicable to\nRealChutes parachutes.\n\n" Armed
-export Armed
-import ..Parachute_get_State as var"##1239"
-State(this::RemoteTypes.Parachute) = begin
-        kerbal(this.conn, var"##1239"(this))
-    end
-@doc "    State(this::RemoteTypes.Parachute)\n\nThe current state of the parachute.\n\n" State
-export State
-import ..Parachute_get_DeployAltitude as var"##1240"
-DeployAltitude(this::RemoteTypes.Parachute) = begin
-        kerbal(this.conn, var"##1240"(this))
-    end
-@doc "    DeployAltitude(this::RemoteTypes.Parachute)\n\nThe altitude at which the parachute will full deploy, in meters.\nOnly applicable to stock parachutes.\n\n" DeployAltitude
-export DeployAltitude
-import ..Parachute_set_DeployAltitude as var"##1241"
-DeployAltitude!(this::RemoteTypes.Parachute, value::Float32) = begin
-        kerbal(this.conn, var"##1241"(this, value))
-    end
-@doc "    DeployAltitude!(this::RemoteTypes.Parachute, value::Float32)\n\nThe altitude at which the parachute will full deploy, in meters.\nOnly applicable to stock parachutes.\n\n" DeployAltitude!
-export DeployAltitude!
-import ..Parachute_get_DeployMinPressure as var"##1242"
-DeployMinPressure(this::RemoteTypes.Parachute) = begin
-        kerbal(this.conn, var"##1242"(this))
-    end
-@doc "    DeployMinPressure(this::RemoteTypes.Parachute)\n\nThe minimum pressure at which the parachute will semi-deploy, in atmospheres.\nOnly applicable to stock parachutes.\n\n" DeployMinPressure
-export DeployMinPressure
-import ..Parachute_set_DeployMinPressure as var"##1243"
-DeployMinPressure!(this::RemoteTypes.Parachute, value::Float32) = begin
-        kerbal(this.conn, var"##1243"(this, value))
-    end
-@doc "    DeployMinPressure!(this::RemoteTypes.Parachute, value::Float32)\n\nThe minimum pressure at which the parachute will semi-deploy, in atmospheres.\nOnly applicable to stock parachutes.\n\n" DeployMinPressure!
-export DeployMinPressure!
-import ..Part_Position as var"##1244"
-Position(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1244"(this, referenceFrame))
-    end
-@doc "    Position(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position of the part in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n# Remarks\n This is a fixed position in the part, defined by the parts model. It s not necessarily the same as the parts center of mass. Use  to get the parts center of mass. \n" Position
-export Position
-import ..Part_CenterOfMass as var"##1245"
-CenterOfMass(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1245"(this, referenceFrame))
-    end
-@doc "    CenterOfMass(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position of the parts center of mass in the given reference frame.\nIf the part is physicsless, this is equivalent to .\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n" CenterOfMass
-export CenterOfMass
-import ..Part_BoundingBox as var"##1246"
-BoundingBox(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1246"(this, referenceFrame))
-    end
-@doc "    BoundingBox(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe axis-aligned bounding box of the part in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vectors are in.\n# Returns\nThe positions of the minimum and maximum vertices of the box, as position vectors.\n# Remarks\n This is computed from the collision mesh of the part. If the part is not collidable, the box has zero volume and is centered on the  of the part. \n" BoundingBox
-export BoundingBox
-import ..Part_Direction as var"##1247"
-Direction(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1247"(this, referenceFrame))
-    end
-@doc "    Direction(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe direction the part points in, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned direction is in.\n# Returns\nThe direction as a unit vector.\n" Direction
-export Direction
-import ..Part_Velocity as var"##1248"
-Velocity(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1248"(this, referenceFrame))
-    end
-@doc "    Velocity(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe linear velocity of the part in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned velocity vector is in.\n# Returns\nThe velocity as a vector. The vector points in the direction of travel, and its magnitude is the speed of the body in meters per second.\n" Velocity
-export Velocity
-import ..Part_Rotation as var"##1249"
-Rotation(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1249"(this, referenceFrame))
-    end
-@doc "    Rotation(this::RemoteTypes.Part, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe rotation of the part, in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned rotation is in.\n# Returns\nThe rotation as a quaternion of the form (x, y, z, w).\n" Rotation
-export Rotation
-import ..Part_AddForce as var"##1250"
-AddForce(this::RemoteTypes.Part, force::begin
-                Tuple{Float64, Float64, Float64}
-            end, position::begin
-                Tuple{Float64, Float64, Float64}
-            end, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1250"(this, force, position, referenceFrame))
-    end
-@doc "    AddForce(this::RemoteTypes.Part, force::begin\n    Tuple{Float64, Float64, Float64}\nend, position::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::RemoteTypes.ReferenceFrame)\n\nExert a constant force on the part, acting at the given position.\n\n# Arguments\n- `force::begin\n    Tuple{Float64, Float64, Float64}\nend`: A vector pointing in the direction that the force acts, with its magnitude equal to the strength of the force in Newtons.\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: The position at which the force acts, as a vector.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the force and position are in.\n# Returns\nAn object that can be used to remove or modify the force.\n" AddForce
-export AddForce
-import ..Part_InstantaneousForce as var"##1251"
-InstantaneousForce(this::RemoteTypes.Part, force::begin
-                Tuple{Float64, Float64, Float64}
-            end, position::begin
-                Tuple{Float64, Float64, Float64}
-            end, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1251"(this, force, position, referenceFrame))
-    end
-@doc "    InstantaneousForce(this::RemoteTypes.Part, force::begin\n    Tuple{Float64, Float64, Float64}\nend, position::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::RemoteTypes.ReferenceFrame)\n\nExert an instantaneous force on the part, acting at the given position.\n\n# Arguments\n- `force::begin\n    Tuple{Float64, Float64, Float64}\nend`: A vector pointing in the direction that the force acts, with its magnitude equal to the strength of the force in Newtons.\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: The position at which the force acts, as a vector.\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the force and position are in.\n# Remarks\nThe force is applied instantaneously in a single physics update.\n" InstantaneousForce
-export InstantaneousForce
-import ..Part_get_Name as var"##1252"
-Name(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1252"(this))
-    end
-@doc "    Name(this::RemoteTypes.Part)\n\nInternal name of the part, as used in\npart cfg files.\nFor example \"Mark1-2Pod\".\n\n" Name
-export Name
-import ..Part_get_Title as var"##1253"
-Title(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1253"(this))
-    end
-@doc "    Title(this::RemoteTypes.Part)\n\nTitle of the part, as shown when the part is right clicked in-game. For example \"Mk1-2 Command Pod\".\n\n" Title
-export Title
-import ..Part_get_Tag as var"##1254"
-Tag(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1254"(this))
-    end
-@doc "    Tag(this::RemoteTypes.Part)\n\nThe name tag for the part. Can be set to a custom string using the\nin-game user interface.\n\n# Remarks\n This string is shared with kOS if it is installed. \n" Tag
-export Tag
-import ..Part_set_Tag as var"##1255"
-Tag!(this::RemoteTypes.Part, value::String) = begin
-        kerbal(this.conn, var"##1255"(this, value))
-    end
-@doc "    Tag!(this::RemoteTypes.Part, value::String)\n\nThe name tag for the part. Can be set to a custom string using the\nin-game user interface.\n\n# Remarks\n This string is shared with kOS if it is installed. \n" Tag!
-export Tag!
-import ..Part_get_Highlighted as var"##1256"
-Highlighted(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1256"(this))
-    end
-@doc "    Highlighted(this::RemoteTypes.Part)\n\nWhether the part is highlighted.\n\n" Highlighted
-export Highlighted
-import ..Part_set_Highlighted as var"##1257"
-Highlighted!(this::RemoteTypes.Part, value::Bool) = begin
-        kerbal(this.conn, var"##1257"(this, value))
-    end
-@doc "    Highlighted!(this::RemoteTypes.Part, value::Bool)\n\nWhether the part is highlighted.\n\n" Highlighted!
-export Highlighted!
-import ..Part_get_HighlightColor as var"##1258"
-HighlightColor(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1258"(this))
-    end
-@doc "    HighlightColor(this::RemoteTypes.Part)\n\nThe color used to highlight the part, as an RGB triple.\n\n" HighlightColor
-export HighlightColor
-import ..Part_set_HighlightColor as var"##1259"
-HighlightColor!(this::RemoteTypes.Part, value::begin
-                Tuple{Float64, Float64, Float64}
-            end) = begin
-        kerbal(this.conn, var"##1259"(this, value))
-    end
-@doc "    HighlightColor!(this::RemoteTypes.Part, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nThe color used to highlight the part, as an RGB triple.\n\n" HighlightColor!
-export HighlightColor!
-import ..Part_get_Cost as var"##1260"
-Cost(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1260"(this))
-    end
-@doc "    Cost(this::RemoteTypes.Part)\n\nThe cost of the part, in units of funds.\n\n" Cost
-export Cost
-import ..Part_get_Vessel as var"##1261"
-Vessel(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1261"(this))
-    end
-@doc "    Vessel(this::RemoteTypes.Part)\n\nThe vessel that contains this part.\n\n" Vessel
-export Vessel
-import ..Part_get_Parent as var"##1262"
-Parent(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1262"(this))
-    end
-@doc "    Parent(this::RemoteTypes.Part)\n\nThe parts parent. Returns null if the part does not have a parent.\nThis, in combination with , can be used to traverse the vessels\nparts tree.\n\n" Parent
-export Parent
-import ..Part_get_Children as var"##1263"
-Children(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1263"(this))
-    end
-@doc "    Children(this::RemoteTypes.Part)\n\nThe parts children. Returns an empty list if the part has no children.\nThis, in combination with , can be used to traverse the vessels\nparts tree.\n\n" Children
-export Children
-import ..Part_get_AxiallyAttached as var"##1264"
-AxiallyAttached(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1264"(this))
-    end
-@doc "    AxiallyAttached(this::RemoteTypes.Part)\n\nWhether the part is axially attached to its parent, i.e. on the top\nor bottom of its parent. If the part has no parent, returns false.\n\n" AxiallyAttached
-export AxiallyAttached
-import ..Part_get_RadiallyAttached as var"##1265"
-RadiallyAttached(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1265"(this))
-    end
-@doc "    RadiallyAttached(this::RemoteTypes.Part)\n\nWhether the part is radially attached to its parent, i.e. on the side of its parent.\nIf the part has no parent, returns false.\n\n" RadiallyAttached
-export RadiallyAttached
-import ..Part_get_Stage as var"##1266"
-Stage(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1266"(this))
-    end
-@doc "    Stage(this::RemoteTypes.Part)\n\nThe stage in which this part will be activated. Returns -1 if the part is not\nactivated by staging.\n\n" Stage
-export Stage
-import ..Part_get_DecoupleStage as var"##1267"
-DecoupleStage(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1267"(this))
-    end
-@doc "    DecoupleStage(this::RemoteTypes.Part)\n\nThe stage in which this part will be decoupled. Returns -1 if the part is never\ndecoupled from the vessel.\n\n" DecoupleStage
-export DecoupleStage
-import ..Part_get_Massless as var"##1268"
-Massless(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1268"(this))
-    end
-@doc "    Massless(this::RemoteTypes.Part)\n\nWhether the part is\nmassless.\n\n" Massless
-export Massless
-import ..Part_get_Mass as var"##1269"
-Mass(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1269"(this))
-    end
-@doc "    Mass(this::RemoteTypes.Part)\n\nThe current mass of the part, including resources it contains, in kilograms.\nReturns zero if the part is massless.\n\n" Mass
-export Mass
-import ..Part_get_DryMass as var"##1270"
-DryMass(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1270"(this))
-    end
-@doc "    DryMass(this::RemoteTypes.Part)\n\nThe mass of the part, not including any resources it contains, in kilograms.\nReturns zero if the part is massless.\n\n" DryMass
-export DryMass
-import ..Part_get_Shielded as var"##1271"
-Shielded(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1271"(this))
-    end
-@doc "    Shielded(this::RemoteTypes.Part)\n\nWhether the part is shielded from the exterior of the vessel, for example by a fairing.\n\n" Shielded
-export Shielded
-import ..Part_get_DynamicPressure as var"##1272"
-DynamicPressure(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1272"(this))
-    end
-@doc "    DynamicPressure(this::RemoteTypes.Part)\n\nThe dynamic pressure acting on the part, in Pascals.\n\n" DynamicPressure
-export DynamicPressure
-import ..Part_get_ImpactTolerance as var"##1273"
-ImpactTolerance(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1273"(this))
-    end
-@doc "    ImpactTolerance(this::RemoteTypes.Part)\n\nThe impact tolerance of the part, in meters per second.\n\n" ImpactTolerance
-export ImpactTolerance
-import ..Part_get_Temperature as var"##1274"
-Temperature(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1274"(this))
-    end
-@doc "    Temperature(this::RemoteTypes.Part)\n\nTemperature of the part, in Kelvin.\n\n" Temperature
-export Temperature
-import ..Part_get_SkinTemperature as var"##1275"
-SkinTemperature(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1275"(this))
-    end
-@doc "    SkinTemperature(this::RemoteTypes.Part)\n\nTemperature of the skin of the part, in Kelvin.\n\n" SkinTemperature
-export SkinTemperature
-import ..Part_get_MaxTemperature as var"##1276"
-MaxTemperature(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1276"(this))
-    end
-@doc "    MaxTemperature(this::RemoteTypes.Part)\n\nMaximum temperature that the part can survive, in Kelvin.\n\n" MaxTemperature
-export MaxTemperature
-import ..Part_get_MaxSkinTemperature as var"##1277"
-MaxSkinTemperature(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1277"(this))
-    end
-@doc "    MaxSkinTemperature(this::RemoteTypes.Part)\n\nMaximum temperature that the skin of the part can survive, in Kelvin.\n\n" MaxSkinTemperature
-export MaxSkinTemperature
-import ..Part_get_ThermalMass as var"##1278"
-ThermalMass(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1278"(this))
-    end
-@doc "    ThermalMass(this::RemoteTypes.Part)\n\nA measure of how much energy it takes to increase the internal temperature of the part,\nin Joules per Kelvin.\n\n" ThermalMass
-export ThermalMass
-import ..Part_get_ThermalSkinMass as var"##1279"
-ThermalSkinMass(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1279"(this))
-    end
-@doc "    ThermalSkinMass(this::RemoteTypes.Part)\n\nA measure of how much energy it takes to increase the skin temperature of the part,\nin Joules per Kelvin.\n\n" ThermalSkinMass
-export ThermalSkinMass
-import ..Part_get_ThermalResourceMass as var"##1280"
-ThermalResourceMass(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1280"(this))
-    end
-@doc "    ThermalResourceMass(this::RemoteTypes.Part)\n\nA measure of how much energy it takes to increase the temperature of the resources\ncontained in the part, in Joules per Kelvin.\n\n" ThermalResourceMass
-export ThermalResourceMass
-import ..Part_get_ThermalInternalFlux as var"##1281"
-ThermalInternalFlux(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1281"(this))
-    end
-@doc "    ThermalInternalFlux(this::RemoteTypes.Part)\n\nThe rate at which heat energy is begin generated by the part.\nFor example, some engines generate heat by combusting fuel.\nMeasured in energy per unit time, or power, in Watts.\nA positive value means the part is gaining heat energy, and negative means it is losing\nheat energy.\n\n" ThermalInternalFlux
-export ThermalInternalFlux
-import ..Part_get_ThermalConductionFlux as var"##1282"
-ThermalConductionFlux(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1282"(this))
-    end
-@doc "    ThermalConductionFlux(this::RemoteTypes.Part)\n\nThe rate at which heat energy is conducting into or out of the part via contact with\nother parts. Measured in energy per unit time, or power, in Watts.\nA positive value means the part is gaining heat energy, and negative means it is\nlosing heat energy.\n\n" ThermalConductionFlux
-export ThermalConductionFlux
-import ..Part_get_ThermalConvectionFlux as var"##1283"
-ThermalConvectionFlux(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1283"(this))
-    end
-@doc "    ThermalConvectionFlux(this::RemoteTypes.Part)\n\nThe rate at which heat energy is convecting into or out of the part from the\nsurrounding atmosphere. Measured in energy per unit time, or power, in Watts.\nA positive value means the part is gaining heat energy, and negative means it is\nlosing heat energy.\n\n" ThermalConvectionFlux
-export ThermalConvectionFlux
-import ..Part_get_ThermalRadiationFlux as var"##1284"
-ThermalRadiationFlux(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1284"(this))
-    end
-@doc "    ThermalRadiationFlux(this::RemoteTypes.Part)\n\nThe rate at which heat energy is radiating into or out of the part from the surrounding\nenvironment. Measured in energy per unit time, or power, in Watts.\nA positive value means the part is gaining heat energy, and negative means it is\nlosing heat energy.\n\n" ThermalRadiationFlux
-export ThermalRadiationFlux
-import ..Part_get_ThermalSkinToInternalFlux as var"##1285"
-ThermalSkinToInternalFlux(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1285"(this))
-    end
-@doc "    ThermalSkinToInternalFlux(this::RemoteTypes.Part)\n\nThe rate at which heat energy is transferring between the part's skin and its internals.\nMeasured in energy per unit time, or power, in Watts.\nA positive value means the part's internals are gaining heat energy,\nand negative means its skin is gaining heat energy.\n\n" ThermalSkinToInternalFlux
-export ThermalSkinToInternalFlux
-import ..Part_get_Resources as var"##1286"
-Resources(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1286"(this))
-    end
-@doc "    Resources(this::RemoteTypes.Part)\n\nA  object for the part.\n\n" Resources
-export Resources
-import ..Part_get_Crossfeed as var"##1287"
-Crossfeed(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1287"(this))
-    end
-@doc "    Crossfeed(this::RemoteTypes.Part)\n\nWhether this part is crossfeed capable.\n\n" Crossfeed
-export Crossfeed
-import ..Part_get_IsFuelLine as var"##1288"
-IsFuelLine(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1288"(this))
-    end
-@doc "    IsFuelLine(this::RemoteTypes.Part)\n\nWhether this part is a fuel line.\n\n" IsFuelLine
-export IsFuelLine
-import ..Part_get_FuelLinesFrom as var"##1289"
-FuelLinesFrom(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1289"(this))
-    end
-@doc "    FuelLinesFrom(this::RemoteTypes.Part)\n\nThe parts that are connected to this part via fuel lines, where the direction of the\nfuel line is into this part.\n\n" FuelLinesFrom
-export FuelLinesFrom
-import ..Part_get_FuelLinesTo as var"##1290"
-FuelLinesTo(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1290"(this))
-    end
-@doc "    FuelLinesTo(this::RemoteTypes.Part)\n\nThe parts that are connected to this part via fuel lines, where the direction of the\nfuel line is out of this part.\n\n" FuelLinesTo
-export FuelLinesTo
-import ..Part_get_Modules as var"##1291"
-Modules(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1291"(this))
-    end
-@doc "    Modules(this::RemoteTypes.Part)\n\nThe modules for this part.\n\n" Modules
-export Modules
-import ..Part_get_Antenna as var"##1292"
-Antenna(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1292"(this))
-    end
-@doc "    Antenna(this::RemoteTypes.Part)\n\nA  if the part is an antenna, otherwise null.\n\n" Antenna
-export Antenna
-import ..Part_get_CargoBay as var"##1293"
-CargoBay(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1293"(this))
-    end
-@doc "    CargoBay(this::RemoteTypes.Part)\n\nA  if the part is a cargo bay, otherwise null.\n\n" CargoBay
-export CargoBay
-import ..Part_get_ControlSurface as var"##1294"
-ControlSurface(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1294"(this))
-    end
-@doc "    ControlSurface(this::RemoteTypes.Part)\n\nA  if the part is an aerodynamic control surface,\notherwise null.\n\n" ControlSurface
-export ControlSurface
-import ..Part_get_Decoupler as var"##1295"
-Decoupler(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1295"(this))
-    end
-@doc "    Decoupler(this::RemoteTypes.Part)\n\nA  if the part is a decoupler, otherwise null.\n\n" Decoupler
-export Decoupler
-import ..Part_get_DockingPort as var"##1296"
-DockingPort(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1296"(this))
-    end
-@doc "    DockingPort(this::RemoteTypes.Part)\n\nA  if the part is a docking port, otherwise null.\n\n" DockingPort
-export DockingPort
-import ..Part_get_ResourceDrain as var"##1297"
-ResourceDrain(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1297"(this))
-    end
-@doc "    ResourceDrain(this::RemoteTypes.Part)\n        /// A  if the part is a resource drain, otherwise null.\n\n" ResourceDrain
-export ResourceDrain
-import ..Part_get_Engine as var"##1298"
-Engine(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1298"(this))
-    end
-@doc "    Engine(this::RemoteTypes.Part)\n\nAn  if the part is an engine, otherwise null.\n\n" Engine
-export Engine
-import ..Part_get_Experiment as var"##1299"
-Experiment(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1299"(this))
-    end
-@doc "    Experiment(this::RemoteTypes.Part)\n\nAn  if the part contains a\nsingle science experiment, otherwise null.\n\n# Remarks\n Throws an exception if the part contains more than one experiment. In that case, use  to get the list of experiments in the part. \n" Experiment
-export Experiment
-import ..Part_get_Experiments as var"##1300"
-Experiments(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1300"(this))
-    end
-@doc "    Experiments(this::RemoteTypes.Part)\n\nA list of  objects that the part contains.\n\n" Experiments
-export Experiments
-import ..Part_get_Fairing as var"##1301"
-Fairing(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1301"(this))
-    end
-@doc "    Fairing(this::RemoteTypes.Part)\n\nA  if the part is a fairing, otherwise null.\n\n" Fairing
-export Fairing
-import ..Part_get_Intake as var"##1302"
-Intake(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1302"(this))
-    end
-@doc "    Intake(this::RemoteTypes.Part)\n\nAn  if the part is an intake, otherwise null.\n\n# Remarks\n This includes any part that generates thrust. This covers many different types of engine, including liquid fuel rockets, solid rocket boosters and jet engines. For RCS thrusters see . \n" Intake
-export Intake
-import ..Part_get_Leg as var"##1303"
-Leg(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1303"(this))
-    end
-@doc "    Leg(this::RemoteTypes.Part)\n\nA  if the part is a landing leg, otherwise null.\n\n" Leg
-export Leg
-import ..Part_get_LaunchClamp as var"##1304"
-LaunchClamp(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1304"(this))
-    end
-@doc "    LaunchClamp(this::RemoteTypes.Part)\n\nA  if the part is a launch clamp, otherwise null.\n\n" LaunchClamp
-export LaunchClamp
-import ..Part_get_Light as var"##1305"
-Light(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1305"(this))
-    end
-@doc "    Light(this::RemoteTypes.Part)\n\nA  if the part is a light, otherwise null.\n\n" Light
-export Light
-import ..Part_get_Parachute as var"##1306"
-Parachute(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1306"(this))
-    end
-@doc "    Parachute(this::RemoteTypes.Part)\n\nA  if the part is a parachute, otherwise null.\n\n" Parachute
-export Parachute
-import ..Part_get_Radiator as var"##1307"
-Radiator(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1307"(this))
-    end
-@doc "    Radiator(this::RemoteTypes.Part)\n\nA  if the part is a radiator, otherwise null.\n\n" Radiator
-export Radiator
-import ..Part_get_RCS as var"##1308"
-RCS(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1308"(this))
-    end
-@doc "    RCS(this::RemoteTypes.Part)\n\nA  if the part is an RCS block/thruster, otherwise null.\n\n" RCS
-export RCS
-import ..Part_get_ReactionWheel as var"##1309"
-ReactionWheel(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1309"(this))
-    end
-@doc "    ReactionWheel(this::RemoteTypes.Part)\n\nA  if the part is a reaction wheel, otherwise null.\n\n" ReactionWheel
-export ReactionWheel
-import ..Part_get_ResourceConverter as var"##1310"
-ResourceConverter(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1310"(this))
-    end
-@doc "    ResourceConverter(this::RemoteTypes.Part)\n\nA  if the part is a resource converter,\notherwise null.\n\n" ResourceConverter
-export ResourceConverter
-import ..Part_get_ResourceHarvester as var"##1311"
-ResourceHarvester(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1311"(this))
-    end
-@doc "    ResourceHarvester(this::RemoteTypes.Part)\n\nA  if the part is a resource harvester,\notherwise null.\n\n" ResourceHarvester
-export ResourceHarvester
-import ..Part_get_Sensor as var"##1312"
-Sensor(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1312"(this))
-    end
-@doc "    Sensor(this::RemoteTypes.Part)\n\nA  if the part is a sensor, otherwise null.\n\n" Sensor
-export Sensor
-import ..Part_get_SolarPanel as var"##1313"
-SolarPanel(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1313"(this))
-    end
-@doc "    SolarPanel(this::RemoteTypes.Part)\n\nA  if the part is a solar panel, otherwise null.\n\n" SolarPanel
-export SolarPanel
-import ..Part_get_Wheel as var"##1314"
-Wheel(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1314"(this))
-    end
-@doc "    Wheel(this::RemoteTypes.Part)\n\nA  if the part is a wheel, otherwise null.\n\n" Wheel
-export Wheel
-import ..Part_get_RoboticHinge as var"##1315"
-RoboticHinge(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1315"(this))
-    end
-@doc "    RoboticHinge(this::RemoteTypes.Part)\n\nA  if the part is a robotic hinge, otherwise null.\n\n" RoboticHinge
-export RoboticHinge
-import ..Part_get_RoboticPiston as var"##1316"
-RoboticPiston(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1316"(this))
-    end
-@doc "    RoboticPiston(this::RemoteTypes.Part)\n\nA  if the part is a robotic hinge, otherwise null.\n\n" RoboticPiston
-export RoboticPiston
-import ..Part_get_RoboticRotation as var"##1317"
-RoboticRotation(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1317"(this))
-    end
-@doc "    RoboticRotation(this::RemoteTypes.Part)\n\nA  if the part is a robotic rotation servo, otherwise null.\n\n" RoboticRotation
-export RoboticRotation
-import ..Part_get_RoboticRotor as var"##1318"
-RoboticRotor(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1318"(this))
-    end
-@doc "    RoboticRotor(this::RemoteTypes.Part)\n\nA  if the part is a robotic rotation servo, otherwise null.\n\n" RoboticRotor
-export RoboticRotor
-import ..Part_get_MomentOfInertia as var"##1319"
-MomentOfInertia(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1319"(this))
-    end
-@doc "    MomentOfInertia(this::RemoteTypes.Part)\n\nThe moment of inertia of the part in kg.m^2 around its center of mass\nin the parts reference frame ().\n\n" MomentOfInertia
-export MomentOfInertia
-import ..Part_get_InertiaTensor as var"##1320"
-InertiaTensor(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1320"(this))
-    end
-@doc "    InertiaTensor(this::RemoteTypes.Part)\n\nThe inertia tensor of the part in the parts reference frame\n().\nReturns the 3x3 matrix as a list of elements, in row-major order.\n\n" InertiaTensor
-export InertiaTensor
-import ..Part_get_ReferenceFrame as var"##1321"
-ReferenceFrame(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1321"(this))
-    end
-@doc "    ReferenceFrame(this::RemoteTypes.Part)\n\nThe reference frame that is fixed relative to this part, and centered on a fixed\nposition within the part, defined by the parts model.\nThe origin is at the position of the part, as returned by\n.The axes rotate with the part.The x, y and z axis directions depend on the design of the part.\n\n# Remarks\n For docking port parts, this reference frame is not necessarily equivalent to the reference frame for the docking port, returned by . \n" ReferenceFrame
-export ReferenceFrame
-import ..Part_get_CenterOfMassReferenceFrame as var"##1322"
-CenterOfMassReferenceFrame(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1322"(this))
-    end
-@doc "    CenterOfMassReferenceFrame(this::RemoteTypes.Part)\n\nThe reference frame that is fixed relative to this part, and centered on its\ncenter of mass.\nThe origin is at the center of mass of the part, as returned by\n.The axes rotate with the part.The x, y and z axis directions depend on the design of the part.\n\n# Remarks\n For docking port parts, this reference frame is not necessarily equivalent to the reference frame for the docking port, returned by . \n" CenterOfMassReferenceFrame
-export CenterOfMassReferenceFrame
-import ..Part_get_AutoStrutMode as var"##1323"
-AutoStrutMode(this::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1323"(this))
-    end
-@doc "" AutoStrutMode
-export AutoStrutMode
-import ..Part_set_AutoStrutMode as var"##1324"
-AutoStrutMode!(this::RemoteTypes.Part, value::EAutostrutState) = begin
-        kerbal(this.conn, var"##1324"(this, value))
-    end
-@doc "" AutoStrutMode!
-export AutoStrutMode!
-import ..Parts_WithName as var"##1325"
-WithName(this::RemoteTypes.Parts, name::String) = begin
-        kerbal(this.conn, var"##1325"(this, name))
-    end
-@doc "    WithName(this::RemoteTypes.Parts, name::String)\n\nA list of parts whose  is .\n\n# Arguments\n- `name::String`: \n" WithName
-export WithName
-import ..Parts_WithTitle as var"##1326"
-WithTitle(this::RemoteTypes.Parts, title::String) = begin
-        kerbal(this.conn, var"##1326"(this, title))
-    end
-@doc "    WithTitle(this::RemoteTypes.Parts, title::String)\n\nA list of all parts whose  is .\n\n# Arguments\n- `title::String`: \n" WithTitle
-export WithTitle
-import ..Parts_WithTag as var"##1327"
-WithTag(this::RemoteTypes.Parts, tag::String) = begin
-        kerbal(this.conn, var"##1327"(this, tag))
-    end
-@doc "    WithTag(this::RemoteTypes.Parts, tag::String)\n\nA list of all parts whose  is .\n\n# Arguments\n- `tag::String`: \n" WithTag
-export WithTag
-import ..Parts_WithModule as var"##1328"
-WithModule(this::RemoteTypes.Parts, moduleName::String) = begin
-        kerbal(this.conn, var"##1328"(this, moduleName))
-    end
-@doc "    WithModule(this::RemoteTypes.Parts, moduleName::String)\n\nA list of all parts that contain a  whose\n is .\n\n# Arguments\n- `moduleName::String`: \n" WithModule
-export WithModule
-import ..Parts_InStage as var"##1329"
-InStage(this::RemoteTypes.Parts, stage::Int32) = begin
-        kerbal(this.conn, var"##1329"(this, stage))
-    end
-@doc "    InStage(this::RemoteTypes.Parts, stage::Int32)\n\nA list of all parts that are activated in the given .\n\n# Arguments\n- `stage::Int32`: \n" InStage
-export InStage
-import ..Parts_InDecoupleStage as var"##1330"
-InDecoupleStage(this::RemoteTypes.Parts, stage::Int32) = begin
-        kerbal(this.conn, var"##1330"(this, stage))
-    end
-@doc "    InDecoupleStage(this::RemoteTypes.Parts, stage::Int32)\n\nA list of all parts that are decoupled in the given .\n\n# Arguments\n- `stage::Int32`: \n" InDecoupleStage
-export InDecoupleStage
-import ..Parts_ModulesWithName as var"##1331"
-ModulesWithName(this::RemoteTypes.Parts, moduleName::String) = begin
-        kerbal(this.conn, var"##1331"(this, moduleName))
-    end
-@doc "    ModulesWithName(this::RemoteTypes.Parts, moduleName::String)\n\nA list of modules (combined across all parts in the vessel) whose\n is .\n\n# Arguments\n- `moduleName::String`: \n" ModulesWithName
-export ModulesWithName
-import ..Parts_get_All as var"##1332"
-All(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1332"(this))
-    end
-@doc "    All(this::RemoteTypes.Parts)\n\nA list of all of the vessels parts.\n\n" All
-export All
-import ..Parts_get_Root as var"##1333"
-Root(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1333"(this))
-    end
-@doc "    Root(this::RemoteTypes.Parts)\n\nThe vessels root part.\n\n" Root
-export Root
-import ..Parts_get_Controlling as var"##1334"
-Controlling(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1334"(this))
-    end
-@doc "    Controlling(this::RemoteTypes.Parts)\n\nThe part from which the vessel is controlled.\n\n" Controlling
-export Controlling
-import ..Parts_set_Controlling as var"##1335"
-Controlling!(this::RemoteTypes.Parts, value::RemoteTypes.Part) = begin
-        kerbal(this.conn, var"##1335"(this, value))
-    end
-@doc "    Controlling!(this::RemoteTypes.Parts, value::RemoteTypes.Part)\n\nThe part from which the vessel is controlled.\n\n" Controlling!
-export Controlling!
-import ..Parts_get_Antennas as var"##1336"
-Antennas(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1336"(this))
-    end
-@doc "    Antennas(this::RemoteTypes.Parts)\n\nA list of all antennas in the vessel.\n\n" Antennas
-export Antennas
-import ..Parts_get_ControlSurfaces as var"##1337"
-ControlSurfaces(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1337"(this))
-    end
-@doc "    ControlSurfaces(this::RemoteTypes.Parts)\n\nA list of all control surfaces in the vessel.\n\n" ControlSurfaces
-export ControlSurfaces
-import ..Parts_get_CargoBays as var"##1338"
-CargoBays(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1338"(this))
-    end
-@doc "    CargoBays(this::RemoteTypes.Parts)\n\nA list of all cargo bays in the vessel.\n\n" CargoBays
-export CargoBays
-import ..Parts_get_Decouplers as var"##1339"
-Decouplers(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1339"(this))
-    end
-@doc "    Decouplers(this::RemoteTypes.Parts)\n\nA list of all decouplers in the vessel.\n\n" Decouplers
-export Decouplers
-import ..Parts_get_DockingPorts as var"##1340"
-DockingPorts(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1340"(this))
-    end
-@doc "    DockingPorts(this::RemoteTypes.Parts)\n\nA list of all docking ports in the vessel.\n\n" DockingPorts
-export DockingPorts
-import ..Parts_get_Engines as var"##1341"
-Engines(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1341"(this))
-    end
-@doc "    Engines(this::RemoteTypes.Parts)\n\nA list of all engines in the vessel.\n\n# Remarks\n This includes any part that generates thrust. This covers many different types of engine, including liquid fuel rockets, solid rocket boosters, jet engines and RCS thrusters. \n" Engines
-export Engines
-import ..Parts_get_Experiments as var"##1342"
-Experiments(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1342"(this))
-    end
-@doc "    Experiments(this::RemoteTypes.Parts)\n\nA list of all science experiments in the vessel.\n\n" Experiments
-export Experiments
-import ..Parts_get_Fairings as var"##1343"
-Fairings(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1343"(this))
-    end
-@doc "    Fairings(this::RemoteTypes.Parts)\n\nA list of all fairings in the vessel.\n\n" Fairings
-export Fairings
-import ..Parts_get_Intakes as var"##1344"
-Intakes(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1344"(this))
-    end
-@doc "    Intakes(this::RemoteTypes.Parts)\n\nA list of all intakes in the vessel.\n\n" Intakes
-export Intakes
-import ..Parts_get_Legs as var"##1345"
-Legs(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1345"(this))
-    end
-@doc "    Legs(this::RemoteTypes.Parts)\n\nA list of all landing legs attached to the vessel.\n\n" Legs
-export Legs
-import ..Parts_get_LaunchClamps as var"##1346"
-LaunchClamps(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1346"(this))
-    end
-@doc "    LaunchClamps(this::RemoteTypes.Parts)\n\nA list of all launch clamps attached to the vessel.\n\n" LaunchClamps
-export LaunchClamps
-import ..Parts_get_Lights as var"##1347"
-Lights(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1347"(this))
-    end
-@doc "    Lights(this::RemoteTypes.Parts)\n\nA list of all lights in the vessel.\n\n" Lights
-export Lights
-import ..Parts_get_Parachutes as var"##1348"
-Parachutes(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1348"(this))
-    end
-@doc "    Parachutes(this::RemoteTypes.Parts)\n\nA list of all parachutes in the vessel.\n\n" Parachutes
-export Parachutes
-import ..Parts_get_Radiators as var"##1349"
-Radiators(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1349"(this))
-    end
-@doc "    Radiators(this::RemoteTypes.Parts)\n\nA list of all radiators in the vessel.\n\n" Radiators
-export Radiators
-import ..Parts_get_RCS as var"##1350"
-RCS(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1350"(this))
-    end
-@doc "    RCS(this::RemoteTypes.Parts)\n\nA list of all RCS blocks/thrusters in the vessel.\n\n" RCS
-export RCS
-import ..Parts_get_ReactionWheels as var"##1351"
-ReactionWheels(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1351"(this))
-    end
-@doc "    ReactionWheels(this::RemoteTypes.Parts)\n\nA list of all reaction wheels in the vessel.\n\n" ReactionWheels
-export ReactionWheels
-import ..Parts_get_ResourceConverters as var"##1352"
-ResourceConverters(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1352"(this))
-    end
-@doc "    ResourceConverters(this::RemoteTypes.Parts)\n\nA list of all resource converters in the vessel.\n\n" ResourceConverters
-export ResourceConverters
-import ..Parts_get_ResourceHarvesters as var"##1353"
-ResourceHarvesters(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1353"(this))
-    end
-@doc "    ResourceHarvesters(this::RemoteTypes.Parts)\n\nA list of all resource harvesters in the vessel.\n\n" ResourceHarvesters
-export ResourceHarvesters
-import ..Parts_get_Sensors as var"##1354"
-Sensors(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1354"(this))
-    end
-@doc "    Sensors(this::RemoteTypes.Parts)\n\nA list of all sensors in the vessel.\n\n" Sensors
-export Sensors
-import ..Parts_get_SolarPanels as var"##1355"
-SolarPanels(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1355"(this))
-    end
-@doc "    SolarPanels(this::RemoteTypes.Parts)\n\nA list of all solar panels in the vessel.\n\n" SolarPanels
-export SolarPanels
-import ..Parts_get_Wheels as var"##1356"
-Wheels(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1356"(this))
-    end
-@doc "    Wheels(this::RemoteTypes.Parts)\n\nA list of all wheels in the vessel.\n\n" Wheels
-export Wheels
-import ..Parts_get_RoboticHinges as var"##1357"
-RoboticHinges(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1357"(this))
-    end
-@doc "    RoboticHinges(this::RemoteTypes.Parts)\n        \nA list of all robotic hinges in the vessel.\n\n" RoboticHinges
-export RoboticHinges
-import ..Parts_get_RoboticPistons as var"##1358"
-RoboticPistons(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1358"(this))
-    end
-@doc "    RoboticPistons(this::RemoteTypes.Parts)\n\nA list of all robotic pistons in the vessel.\n\n" RoboticPistons
-export RoboticPistons
-import ..Parts_get_RoboticRotations as var"##1359"
-RoboticRotations(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1359"(this))
-    end
-@doc "    RoboticRotations(this::RemoteTypes.Parts)\n\nA list of all robotic pistons in the vessel.\n\n" RoboticRotations
-export RoboticRotations
-import ..Parts_get_RoboticRotors as var"##1360"
-RoboticRotors(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1360"(this))
-    end
-@doc "    RoboticRotors(this::RemoteTypes.Parts)\n\nA list of all robotic rotors in the vessel.\n\n" RoboticRotors
-export RoboticRotors
-import ..Parts_get_ResourceDrains as var"##1361"
-ResourceDrains(this::RemoteTypes.Parts) = begin
-        kerbal(this.conn, var"##1361"(this))
-    end
-@doc "    ResourceDrains(this::RemoteTypes.Parts)\n\nA list of all resource drains in the vessel.\n\n" ResourceDrains
-export ResourceDrains
-import ..Propellant_get_Name as var"##1362"
-Name(this::RemoteTypes.Propellant) = begin
-        kerbal(this.conn, var"##1362"(this))
-    end
-@doc "    Name(this::RemoteTypes.Propellant)\n\nThe name of the propellant.\n\n" Name
-export Name
-import ..Propellant_get_CurrentAmount as var"##1363"
-CurrentAmount(this::RemoteTypes.Propellant) = begin
-        kerbal(this.conn, var"##1363"(this))
-    end
-@doc "    CurrentAmount(this::RemoteTypes.Propellant)\n\nThe current amount of propellant.\n\n" CurrentAmount
-export CurrentAmount
-import ..Propellant_get_CurrentRequirement as var"##1364"
-CurrentRequirement(this::RemoteTypes.Propellant) = begin
-        kerbal(this.conn, var"##1364"(this))
-    end
-@doc "    CurrentRequirement(this::RemoteTypes.Propellant)\n\nThe required amount of propellant.\n\n" CurrentRequirement
-export CurrentRequirement
-import ..Propellant_get_TotalResourceAvailable as var"##1365"
-TotalResourceAvailable(this::RemoteTypes.Propellant) = begin
-        kerbal(this.conn, var"##1365"(this))
-    end
-@doc "    TotalResourceAvailable(this::RemoteTypes.Propellant)\n\nThe total amount of the underlying resource currently reachable given\nresource flow rules.\n\n" TotalResourceAvailable
-export TotalResourceAvailable
-import ..Propellant_get_TotalResourceCapacity as var"##1366"
-TotalResourceCapacity(this::RemoteTypes.Propellant) = begin
-        kerbal(this.conn, var"##1366"(this))
-    end
-@doc "    TotalResourceCapacity(this::RemoteTypes.Propellant)\n\nThe total vehicle capacity for the underlying propellant resource,\nrestricted by resource flow rules.\n\n" TotalResourceCapacity
-export TotalResourceCapacity
-import ..Propellant_get_IgnoreForIsp as var"##1367"
-IgnoreForIsp(this::RemoteTypes.Propellant) = begin
-        kerbal(this.conn, var"##1367"(this))
-    end
-@doc "    IgnoreForIsp(this::RemoteTypes.Propellant)\n\nIf this propellant should be ignored when calculating required mass flow\ngiven specific impulse.\n\n" IgnoreForIsp
-export IgnoreForIsp
-import ..Propellant_get_IgnoreForThrustCurve as var"##1368"
-IgnoreForThrustCurve(this::RemoteTypes.Propellant) = begin
-        kerbal(this.conn, var"##1368"(this))
-    end
-@doc "    IgnoreForThrustCurve(this::RemoteTypes.Propellant)\n\nIf this propellant should be ignored for thrust curve calculations.\n\n" IgnoreForThrustCurve
-export IgnoreForThrustCurve
-import ..Propellant_get_DrawStackGauge as var"##1369"
-DrawStackGauge(this::RemoteTypes.Propellant) = begin
-        kerbal(this.conn, var"##1369"(this))
-    end
-@doc "    DrawStackGauge(this::RemoteTypes.Propellant)\n\nIf this propellant has a stack gauge or not.\n\n" DrawStackGauge
-export DrawStackGauge
-import ..Propellant_get_IsDeprived as var"##1370"
-IsDeprived(this::RemoteTypes.Propellant) = begin
-        kerbal(this.conn, var"##1370"(this))
-    end
-@doc "    IsDeprived(this::RemoteTypes.Propellant)\n\nIf this propellant is deprived.\n\n" IsDeprived
-export IsDeprived
-import ..Propellant_get_Ratio as var"##1371"
-Ratio(this::RemoteTypes.Propellant) = begin
-        kerbal(this.conn, var"##1371"(this))
-    end
-@doc "    Ratio(this::RemoteTypes.Propellant)\n\nThe propellant ratio.\n\n" Ratio
-export Ratio
-import ..RCS_get_Part as var"##1372"
-Part(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1372"(this))
-    end
-@doc "    Part(this::RemoteTypes.RCS)\n\nThe part object for this RCS.\n\n" Part
-export Part
-import ..RCS_get_Active as var"##1373"
-Active(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1373"(this))
-    end
-@doc "    Active(this::RemoteTypes.RCS)\n\nWhether the RCS thrusters are active.\nAn RCS thruster is inactive if the RCS action group is disabled\n(), the RCS thruster itself is not enabled\n() or it is covered by a fairing ().\n\n" Active
-export Active
-import ..RCS_get_Enabled as var"##1374"
-Enabled(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1374"(this))
-    end
-@doc "    Enabled(this::RemoteTypes.RCS)\n\nWhether the RCS thrusters are enabled.\n\n" Enabled
-export Enabled
-import ..RCS_set_Enabled as var"##1375"
-Enabled!(this::RemoteTypes.RCS, value::Bool) = begin
-        kerbal(this.conn, var"##1375"(this, value))
-    end
-@doc "    Enabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thrusters are enabled.\n\n" Enabled!
-export Enabled!
-import ..RCS_get_PitchEnabled as var"##1376"
-PitchEnabled(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1376"(this))
-    end
-@doc "    PitchEnabled(this::RemoteTypes.RCS)\n\nWhether the RCS thruster will fire when pitch control input is given.\n\n" PitchEnabled
-export PitchEnabled
-import ..RCS_set_PitchEnabled as var"##1377"
-PitchEnabled!(this::RemoteTypes.RCS, value::Bool) = begin
-        kerbal(this.conn, var"##1377"(this, value))
-    end
-@doc "    PitchEnabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thruster will fire when pitch control input is given.\n\n" PitchEnabled!
-export PitchEnabled!
-import ..RCS_get_YawEnabled as var"##1378"
-YawEnabled(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1378"(this))
-    end
-@doc "    YawEnabled(this::RemoteTypes.RCS)\n\nWhether the RCS thruster will fire when yaw control input is given.\n\n" YawEnabled
-export YawEnabled
-import ..RCS_set_YawEnabled as var"##1379"
-YawEnabled!(this::RemoteTypes.RCS, value::Bool) = begin
-        kerbal(this.conn, var"##1379"(this, value))
-    end
-@doc "    YawEnabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thruster will fire when yaw control input is given.\n\n" YawEnabled!
-export YawEnabled!
-import ..RCS_get_RollEnabled as var"##1380"
-RollEnabled(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1380"(this))
-    end
-@doc "    RollEnabled(this::RemoteTypes.RCS)\n\nWhether the RCS thruster will fire when roll control input is given.\n\n" RollEnabled
-export RollEnabled
-import ..RCS_set_RollEnabled as var"##1381"
-RollEnabled!(this::RemoteTypes.RCS, value::Bool) = begin
-        kerbal(this.conn, var"##1381"(this, value))
-    end
-@doc "    RollEnabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thruster will fire when roll control input is given.\n\n" RollEnabled!
-export RollEnabled!
-import ..RCS_get_ForwardEnabled as var"##1382"
-ForwardEnabled(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1382"(this))
-    end
-@doc "    ForwardEnabled(this::RemoteTypes.RCS)\n\nWhether the RCS thruster will fire when pitch control input is given.\n\n" ForwardEnabled
-export ForwardEnabled
-import ..RCS_set_ForwardEnabled as var"##1383"
-ForwardEnabled!(this::RemoteTypes.RCS, value::Bool) = begin
-        kerbal(this.conn, var"##1383"(this, value))
-    end
-@doc "    ForwardEnabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thruster will fire when pitch control input is given.\n\n" ForwardEnabled!
-export ForwardEnabled!
-import ..RCS_get_UpEnabled as var"##1384"
-UpEnabled(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1384"(this))
-    end
-@doc "    UpEnabled(this::RemoteTypes.RCS)\n\nWhether the RCS thruster will fire when yaw control input is given.\n\n" UpEnabled
-export UpEnabled
-import ..RCS_set_UpEnabled as var"##1385"
-UpEnabled!(this::RemoteTypes.RCS, value::Bool) = begin
-        kerbal(this.conn, var"##1385"(this, value))
-    end
-@doc "    UpEnabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thruster will fire when yaw control input is given.\n\n" UpEnabled!
-export UpEnabled!
-import ..RCS_get_RightEnabled as var"##1386"
-RightEnabled(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1386"(this))
-    end
-@doc "    RightEnabled(this::RemoteTypes.RCS)\n\nWhether the RCS thruster will fire when roll control input is given.\n\n" RightEnabled
-export RightEnabled
-import ..RCS_set_RightEnabled as var"##1387"
-RightEnabled!(this::RemoteTypes.RCS, value::Bool) = begin
-        kerbal(this.conn, var"##1387"(this, value))
-    end
-@doc "    RightEnabled!(this::RemoteTypes.RCS, value::Bool)\n\nWhether the RCS thruster will fire when roll control input is given.\n\n" RightEnabled!
-export RightEnabled!
-import ..RCS_get_AvailableTorque as var"##1388"
-AvailableTorque(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1388"(this))
-    end
-@doc "    AvailableTorque(this::RemoteTypes.RCS)\n\nThe available torque, in Newton meters, that can be produced by this RCS,\nin the positive and negative pitch, roll and yaw axes of the vessel. These axes\ncorrespond to the coordinate axes of the .\nReturns zero if RCS is disable.\n\n" AvailableTorque
-export AvailableTorque
-import ..RCS_get_AvailableThrust as var"##1389"
-AvailableThrust(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1389"(this))
-    end
-@doc "    AvailableThrust(this::RemoteTypes.RCS)\n\nThe amount of thrust, in Newtons, that would be produced by the thruster when activated.\nReturns zero if the thruster does not have any fuel.\nTakes the thrusters current  and atmospheric conditions\ninto account.\n\n" AvailableThrust
-export AvailableThrust
-import ..RCS_get_MaxThrust as var"##1390"
-MaxThrust(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1390"(this))
-    end
-@doc "    MaxThrust(this::RemoteTypes.RCS)\n\nThe maximum amount of thrust that can be produced by the RCS thrusters when active,\nin Newtons.\nTakes the thrusters current  and atmospheric conditions\ninto account.\n\n" MaxThrust
-export MaxThrust
-import ..RCS_get_MaxVacuumThrust as var"##1391"
-MaxVacuumThrust(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1391"(this))
-    end
-@doc "    MaxVacuumThrust(this::RemoteTypes.RCS)\n\nThe maximum amount of thrust that can be produced by the RCS thrusters when active\nin a vacuum, in Newtons.\n\n" MaxVacuumThrust
-export MaxVacuumThrust
-import ..RCS_get_ThrustLimit as var"##1392"
-ThrustLimit(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1392"(this))
-    end
-@doc "    ThrustLimit(this::RemoteTypes.RCS)\n\nThe thrust limiter of the thruster. A value between 0 and 1.\n\n" ThrustLimit
-export ThrustLimit
-import ..RCS_set_ThrustLimit as var"##1393"
-ThrustLimit!(this::RemoteTypes.RCS, value::Float32) = begin
-        kerbal(this.conn, var"##1393"(this, value))
-    end
-@doc "    ThrustLimit!(this::RemoteTypes.RCS, value::Float32)\n\nThe thrust limiter of the thruster. A value between 0 and 1.\n\n" ThrustLimit!
-export ThrustLimit!
-import ..RCS_get_Thrusters as var"##1394"
-Thrusters(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1394"(this))
-    end
-@doc "    Thrusters(this::RemoteTypes.RCS)\n\nA list of thrusters, one of each nozzel in the RCS part.\n\n" Thrusters
-export Thrusters
-import ..RCS_get_SpecificImpulse as var"##1395"
-SpecificImpulse(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1395"(this))
-    end
-@doc "    SpecificImpulse(this::RemoteTypes.RCS)\n\nThe current specific impulse of the RCS, in seconds. Returns zero\nif the RCS is not active.\n\n" SpecificImpulse
-export SpecificImpulse
-import ..RCS_get_VacuumSpecificImpulse as var"##1396"
-VacuumSpecificImpulse(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1396"(this))
-    end
-@doc "    VacuumSpecificImpulse(this::RemoteTypes.RCS)\n\nThe vacuum specific impulse of the RCS, in seconds.\n\n" VacuumSpecificImpulse
-export VacuumSpecificImpulse
-import ..RCS_get_KerbinSeaLevelSpecificImpulse as var"##1397"
-KerbinSeaLevelSpecificImpulse(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1397"(this))
-    end
-@doc "    KerbinSeaLevelSpecificImpulse(this::RemoteTypes.RCS)\n\nThe specific impulse of the RCS at sea level on Kerbin, in seconds.\n\n" KerbinSeaLevelSpecificImpulse
-export KerbinSeaLevelSpecificImpulse
-import ..RCS_get_Propellants as var"##1398"
-Propellants(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1398"(this))
-    end
-@doc "    Propellants(this::RemoteTypes.RCS)\n\nThe names of resources that the RCS consumes.\n\n" Propellants
-export Propellants
-import ..RCS_get_PropellantRatios as var"##1399"
-PropellantRatios(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1399"(this))
-    end
-@doc "    PropellantRatios(this::RemoteTypes.RCS)\n\nThe ratios of resources that the RCS consumes. A dictionary mapping resource names\nto the ratios at which they are consumed by the RCS.\n\n" PropellantRatios
-export PropellantRatios
-import ..RCS_get_HasFuel as var"##1400"
-HasFuel(this::RemoteTypes.RCS) = begin
-        kerbal(this.conn, var"##1400"(this))
-    end
-@doc "    HasFuel(this::RemoteTypes.RCS)\n\nWhether the RCS has fuel available.\n\n" HasFuel
-export HasFuel
-import ..Radiator_get_Part as var"##1401"
-Part(this::RemoteTypes.Radiator) = begin
-        kerbal(this.conn, var"##1401"(this))
-    end
-@doc "    Part(this::RemoteTypes.Radiator)\n\nThe part object for this radiator.\n\n" Part
-export Part
-import ..Radiator_get_Deployable as var"##1402"
-Deployable(this::RemoteTypes.Radiator) = begin
-        kerbal(this.conn, var"##1402"(this))
-    end
-@doc "    Deployable(this::RemoteTypes.Radiator)\n\nWhether the radiator is deployable.\n\n" Deployable
-export Deployable
-import ..Radiator_get_Deployed as var"##1403"
-Deployed(this::RemoteTypes.Radiator) = begin
-        kerbal(this.conn, var"##1403"(this))
-    end
-@doc "    Deployed(this::RemoteTypes.Radiator)\n\nFor a deployable radiator, true if the radiator is extended.\nIf the radiator is not deployable, this is always true.\n\n" Deployed
-export Deployed
-import ..Radiator_set_Deployed as var"##1404"
-Deployed!(this::RemoteTypes.Radiator, value::Bool) = begin
-        kerbal(this.conn, var"##1404"(this, value))
-    end
-@doc "    Deployed!(this::RemoteTypes.Radiator, value::Bool)\n\nFor a deployable radiator, true if the radiator is extended.\nIf the radiator is not deployable, this is always true.\n\n" Deployed!
-export Deployed!
-import ..Radiator_get_State as var"##1405"
-State(this::RemoteTypes.Radiator) = begin
-        kerbal(this.conn, var"##1405"(this))
-    end
-@doc "    State(this::RemoteTypes.Radiator)\n\nThe current state of the radiator.\n\n# Remarks\n A fixed radiator is always . \n" State
-export State
-import ..ReactionWheel_get_Part as var"##1406"
-Part(this::RemoteTypes.ReactionWheel) = begin
-        kerbal(this.conn, var"##1406"(this))
-    end
-@doc "    Part(this::RemoteTypes.ReactionWheel)\n\nThe part object for this reaction wheel.\n\n" Part
-export Part
-import ..ReactionWheel_get_Active as var"##1407"
-Active(this::RemoteTypes.ReactionWheel) = begin
-        kerbal(this.conn, var"##1407"(this))
-    end
-@doc "    Active(this::RemoteTypes.ReactionWheel)\n\nWhether the reaction wheel is active.\n\n" Active
-export Active
-import ..ReactionWheel_set_Active as var"##1408"
-Active!(this::RemoteTypes.ReactionWheel, value::Bool) = begin
-        kerbal(this.conn, var"##1408"(this, value))
-    end
-@doc "    Active!(this::RemoteTypes.ReactionWheel, value::Bool)\n\nWhether the reaction wheel is active.\n\n" Active!
-export Active!
-import ..ReactionWheel_get_Broken as var"##1409"
-Broken(this::RemoteTypes.ReactionWheel) = begin
-        kerbal(this.conn, var"##1409"(this))
-    end
-@doc "    Broken(this::RemoteTypes.ReactionWheel)\n\nWhether the reaction wheel is broken.\n\n" Broken
-export Broken
-import ..ReactionWheel_get_AvailableTorque as var"##1410"
-AvailableTorque(this::RemoteTypes.ReactionWheel) = begin
-        kerbal(this.conn, var"##1410"(this))
-    end
-@doc "    AvailableTorque(this::RemoteTypes.ReactionWheel)\n\nThe available torque, in Newton meters, that can be produced by this reaction wheel,\nin the positive and negative pitch, roll and yaw axes of the vessel. These axes\ncorrespond to the coordinate axes of the .\nReturns zero if the reaction wheel is inactive or broken.\n\n" AvailableTorque
-export AvailableTorque
-import ..ReactionWheel_get_MaxTorque as var"##1411"
-MaxTorque(this::RemoteTypes.ReactionWheel) = begin
-        kerbal(this.conn, var"##1411"(this))
-    end
-@doc "    MaxTorque(this::RemoteTypes.ReactionWheel)\n\nThe maximum torque, in Newton meters, that can be produced by this reaction wheel,\nwhen it is active, in the positive and negative pitch, roll and yaw axes of the vessel.\nThese axes correspond to the coordinate axes of the .\n\n" MaxTorque
-export MaxTorque
-import ..ResourceConverter_Active as var"##1412"
-Active(this::RemoteTypes.ResourceConverter, index::Int32) = begin
-        kerbal(this.conn, var"##1412"(this, index))
-    end
-@doc "    Active(this::RemoteTypes.ResourceConverter, index::Int32)\n\nTrue if the specified converter is active.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" Active
-export Active
-import ..ResourceConverter_Name as var"##1413"
-Name(this::RemoteTypes.ResourceConverter, index::Int32) = begin
-        kerbal(this.conn, var"##1413"(this, index))
-    end
-@doc "    Name(this::RemoteTypes.ResourceConverter, index::Int32)\n\nThe name of the specified converter.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" Name
-export Name
-import ..ResourceConverter_Start as var"##1414"
-Start(this::RemoteTypes.ResourceConverter, index::Int32) = begin
-        kerbal(this.conn, var"##1414"(this, index))
-    end
-@doc "    Start(this::RemoteTypes.ResourceConverter, index::Int32)\n\nStart the specified converter.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" Start
-export Start
-import ..ResourceConverter_Stop as var"##1415"
-Stop(this::RemoteTypes.ResourceConverter, index::Int32) = begin
-        kerbal(this.conn, var"##1415"(this, index))
-    end
-@doc "    Stop(this::RemoteTypes.ResourceConverter, index::Int32)\n\nStop the specified converter.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" Stop
-export Stop
-import ..ResourceConverter_State as var"##1416"
-State(this::RemoteTypes.ResourceConverter, index::Int32) = begin
-        kerbal(this.conn, var"##1416"(this, index))
-    end
-@doc "    State(this::RemoteTypes.ResourceConverter, index::Int32)\n\nThe state of the specified converter.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" State
-export State
-import ..ResourceConverter_StatusInfo as var"##1417"
-StatusInfo(this::RemoteTypes.ResourceConverter, index::Int32) = begin
-        kerbal(this.conn, var"##1417"(this, index))
-    end
-@doc "    StatusInfo(this::RemoteTypes.ResourceConverter, index::Int32)\n\nStatus information for the specified converter.\nThis is the full status message shown in the in-game UI.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" StatusInfo
-export StatusInfo
-import ..ResourceConverter_Inputs as var"##1418"
-Inputs(this::RemoteTypes.ResourceConverter, index::Int32) = begin
-        kerbal(this.conn, var"##1418"(this, index))
-    end
-@doc "    Inputs(this::RemoteTypes.ResourceConverter, index::Int32)\n\nList of the names of resources consumed by the specified converter.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" Inputs
-export Inputs
-import ..ResourceConverter_Outputs as var"##1419"
-Outputs(this::RemoteTypes.ResourceConverter, index::Int32) = begin
-        kerbal(this.conn, var"##1419"(this, index))
-    end
-@doc "    Outputs(this::RemoteTypes.ResourceConverter, index::Int32)\n\nList of the names of resources produced by the specified converter.\n\n# Arguments\n- `index::Int32`: Index of the converter.\n" Outputs
-export Outputs
-import ..ResourceConverter_get_Part as var"##1420"
-Part(this::RemoteTypes.ResourceConverter) = begin
-        kerbal(this.conn, var"##1420"(this))
-    end
-@doc "    Part(this::RemoteTypes.ResourceConverter)\n\nThe part object for this converter.\n\n" Part
-export Part
-import ..ResourceConverter_get_Count as var"##1421"
-Count(this::RemoteTypes.ResourceConverter) = begin
-        kerbal(this.conn, var"##1421"(this))
-    end
-@doc "    Count(this::RemoteTypes.ResourceConverter)\n\nThe number of converters in the part.\n\n" Count
-export Count
-import ..ResourceConverter_get_ThermalEfficiency as var"##1422"
-ThermalEfficiency(this::RemoteTypes.ResourceConverter) = begin
-        kerbal(this.conn, var"##1422"(this))
-    end
-@doc "    ThermalEfficiency(this::RemoteTypes.ResourceConverter)\n\nThe thermal efficiency of the converter, as a percentage of its maximum.\n\n" ThermalEfficiency
-export ThermalEfficiency
-import ..ResourceConverter_get_CoreTemperature as var"##1423"
-CoreTemperature(this::RemoteTypes.ResourceConverter) = begin
-        kerbal(this.conn, var"##1423"(this))
-    end
-@doc "    CoreTemperature(this::RemoteTypes.ResourceConverter)\n\nThe core temperature of the converter, in Kelvin.\n\n" CoreTemperature
-export CoreTemperature
-import ..ResourceConverter_get_OptimumCoreTemperature as var"##1424"
-OptimumCoreTemperature(this::RemoteTypes.ResourceConverter) = begin
-        kerbal(this.conn, var"##1424"(this))
-    end
-@doc "    OptimumCoreTemperature(this::RemoteTypes.ResourceConverter)\n\nThe core temperature at which the converter will operate with peak efficiency, in Kelvin.\n\n" OptimumCoreTemperature
-export OptimumCoreTemperature
-import ..ResourceDrain_SetResourceDrain as var"##1425"
-SetResourceDrain(this::RemoteTypes.ResourceDrain, R::RemoteTypes.Resource, b::Bool) = begin
-        kerbal(this.conn, var"##1425"(this, R, b))
-    end
-@doc "    SetResourceDrain(this::RemoteTypes.ResourceDrain, R::RemoteTypes.Resource, b::Bool)\n\nEnable or Disable draining for the provided resource\n\n" SetResourceDrain
-export SetResourceDrain
-import ..ResourceDrain_CheckResourceDrain as var"##1426"
-CheckResourceDrain(this::RemoteTypes.ResourceDrain, R::RemoteTypes.Resource) = begin
-        kerbal(this.conn, var"##1426"(this, R))
-    end
-@doc "    CheckResourceDrain(this::RemoteTypes.ResourceDrain, R::RemoteTypes.Resource)\n\nChecks whether the provided resource is selected for draining\n\n" CheckResourceDrain
-export CheckResourceDrain
-import ..ResourceDrain_Start as var"##1427"
-Start(this::RemoteTypes.ResourceDrain) = begin
-        kerbal(this.conn, var"##1427"(this))
-    end
-@doc "    Start(this::RemoteTypes.ResourceDrain)\n\nActivates resource drain for all enabled parts\n\n" Start
-export Start
-import ..ResourceDrain_Stop as var"##1428"
-Stop(this::RemoteTypes.ResourceDrain) = begin
-        kerbal(this.conn, var"##1428"(this))
-    end
-@doc "    Stop(this::RemoteTypes.ResourceDrain)\n\nTurns off resource drain\n\n" Stop
-export Stop
-import ..ResourceDrain_get_Part as var"##1429"
-Part(this::RemoteTypes.ResourceDrain) = begin
-        kerbal(this.conn, var"##1429"(this))
-    end
-@doc "    Part(this::RemoteTypes.ResourceDrain)\n\nThe part object for this resource drain\n\n" Part
-export Part
-import ..ResourceDrain_get_AvailableResources as var"##1430"
-AvailableResources(this::RemoteTypes.ResourceDrain) = begin
-        kerbal(this.conn, var"##1430"(this))
-    end
-@doc "    AvailableResources(this::RemoteTypes.ResourceDrain)\n\nReturns list of available resources\n\n" AvailableResources
-export AvailableResources
-import ..ResourceDrain_get_DrainMode as var"##1431"
-DrainMode(this::RemoteTypes.ResourceDrain) = begin
-        kerbal(this.conn, var"##1431"(this))
-    end
-@doc "    DrainMode(this::RemoteTypes.ResourceDrain)\n\nSets drain mode to part or vessel-wide\n\n" DrainMode
-export DrainMode
-import ..ResourceDrain_set_DrainMode as var"##1432"
-DrainMode!(this::RemoteTypes.ResourceDrain, value::EDrainModes) = begin
-        kerbal(this.conn, var"##1432"(this, value))
-    end
-@doc "    DrainMode!(this::RemoteTypes.ResourceDrain, value::EDrainModes)\n\nSets drain mode to part or vessel-wide\n\n" DrainMode!
-export DrainMode!
-import ..ResourceDrain_get_MaxDrainRate as var"##1433"
-MaxDrainRate(this::RemoteTypes.ResourceDrain) = begin
-        kerbal(this.conn, var"##1433"(this))
-    end
-@doc "    MaxDrainRate(this::RemoteTypes.ResourceDrain)\n\nMaximum possible rate of draining.\n\n" MaxDrainRate
-export MaxDrainRate
-import ..ResourceDrain_get_MinDrainRate as var"##1434"
-MinDrainRate(this::RemoteTypes.ResourceDrain) = begin
-        kerbal(this.conn, var"##1434"(this))
-    end
-@doc "    MinDrainRate(this::RemoteTypes.ResourceDrain)\n\nMinimum possible rate of draining\n\n" MinDrainRate
-export MinDrainRate
-import ..ResourceDrain_get_DrainRate as var"##1435"
-DrainRate(this::RemoteTypes.ResourceDrain) = begin
-        kerbal(this.conn, var"##1435"(this))
-    end
-@doc "    DrainRate(this::RemoteTypes.ResourceDrain)\n\n Current rate of draining\n\n" DrainRate
-export DrainRate
-import ..ResourceDrain_set_DrainRate as var"##1436"
-DrainRate!(this::RemoteTypes.ResourceDrain, value::Float32) = begin
-        kerbal(this.conn, var"##1436"(this, value))
-    end
-@doc "    DrainRate!(this::RemoteTypes.ResourceDrain, value::Float32)\n\n Current rate of draining\n\n" DrainRate!
-export DrainRate!
-import ..ResourceHarvester_get_Part as var"##1437"
-Part(this::RemoteTypes.ResourceHarvester) = begin
-        kerbal(this.conn, var"##1437"(this))
-    end
-@doc "    Part(this::RemoteTypes.ResourceHarvester)\n\nThe part object for this harvester.\n\n" Part
-export Part
-import ..ResourceHarvester_get_State as var"##1438"
-State(this::RemoteTypes.ResourceHarvester) = begin
-        kerbal(this.conn, var"##1438"(this))
-    end
-@doc "    State(this::RemoteTypes.ResourceHarvester)\n\nThe state of the harvester.\n\n" State
-export State
-import ..ResourceHarvester_get_Deployed as var"##1439"
-Deployed(this::RemoteTypes.ResourceHarvester) = begin
-        kerbal(this.conn, var"##1439"(this))
-    end
-@doc "    Deployed(this::RemoteTypes.ResourceHarvester)\n\nWhether the harvester is deployed.\n\n" Deployed
-export Deployed
-import ..ResourceHarvester_set_Deployed as var"##1440"
-Deployed!(this::RemoteTypes.ResourceHarvester, value::Bool) = begin
-        kerbal(this.conn, var"##1440"(this, value))
-    end
-@doc "    Deployed!(this::RemoteTypes.ResourceHarvester, value::Bool)\n\nWhether the harvester is deployed.\n\n" Deployed!
-export Deployed!
-import ..ResourceHarvester_get_Active as var"##1441"
-Active(this::RemoteTypes.ResourceHarvester) = begin
-        kerbal(this.conn, var"##1441"(this))
-    end
-@doc "    Active(this::RemoteTypes.ResourceHarvester)\n\nWhether the harvester is actively drilling.\n\n" Active
-export Active
-import ..ResourceHarvester_set_Active as var"##1442"
-Active!(this::RemoteTypes.ResourceHarvester, value::Bool) = begin
-        kerbal(this.conn, var"##1442"(this, value))
-    end
-@doc "    Active!(this::RemoteTypes.ResourceHarvester, value::Bool)\n\nWhether the harvester is actively drilling.\n\n" Active!
-export Active!
-import ..ResourceHarvester_get_ExtractionRate as var"##1443"
-ExtractionRate(this::RemoteTypes.ResourceHarvester) = begin
-        kerbal(this.conn, var"##1443"(this))
-    end
-@doc "    ExtractionRate(this::RemoteTypes.ResourceHarvester)\n\nThe rate at which the drill is extracting ore, in units per second.\n\n" ExtractionRate
-export ExtractionRate
-import ..ResourceHarvester_get_ThermalEfficiency as var"##1444"
-ThermalEfficiency(this::RemoteTypes.ResourceHarvester) = begin
-        kerbal(this.conn, var"##1444"(this))
-    end
-@doc "    ThermalEfficiency(this::RemoteTypes.ResourceHarvester)\n\nThe thermal efficiency of the drill, as a percentage of its maximum.\n\n" ThermalEfficiency
-export ThermalEfficiency
-import ..ResourceHarvester_get_CoreTemperature as var"##1445"
-CoreTemperature(this::RemoteTypes.ResourceHarvester) = begin
-        kerbal(this.conn, var"##1445"(this))
-    end
-@doc "    CoreTemperature(this::RemoteTypes.ResourceHarvester)\n\nThe core temperature of the drill, in Kelvin.\n\n" CoreTemperature
-export CoreTemperature
-import ..ResourceHarvester_get_OptimumCoreTemperature as var"##1446"
-OptimumCoreTemperature(this::RemoteTypes.ResourceHarvester) = begin
-        kerbal(this.conn, var"##1446"(this))
-    end
-@doc "    OptimumCoreTemperature(this::RemoteTypes.ResourceHarvester)\n\nThe core temperature at which the drill will operate with peak efficiency, in Kelvin.\n\n" OptimumCoreTemperature
-export OptimumCoreTemperature
-import ..RoboticHinge_Home as var"##1447"
-Home(this::RemoteTypes.RoboticHinge) = begin
-        kerbal(this.conn, var"##1447"(this))
-    end
-@doc "    Home(this::RemoteTypes.RoboticHinge)\n\nReturns Hinge to Build Angle Position\n\n" Home
-export Home
-import ..RoboticHinge_get_Part as var"##1448"
-Part(this::RemoteTypes.RoboticHinge) = begin
-        kerbal(this.conn, var"##1448"(this))
-    end
-@doc "    Part(this::RemoteTypes.RoboticHinge)\n\nThe part object for this robotic hinge.\n\n" Part
-export Part
-import ..RoboticHinge_get_TargetAngle as var"##1449"
-TargetAngle(this::RemoteTypes.RoboticHinge) = begin
-        kerbal(this.conn, var"##1449"(this))
-    end
-@doc "    TargetAngle(this::RemoteTypes.RoboticHinge)\n\nTarget Angle for Robotic Hinge\n \n" TargetAngle
-export TargetAngle
-import ..RoboticHinge_set_TargetAngle as var"##1450"
-TargetAngle!(this::RemoteTypes.RoboticHinge, value::Float32) = begin
-        kerbal(this.conn, var"##1450"(this, value))
-    end
-@doc "    TargetAngle!(this::RemoteTypes.RoboticHinge, value::Float32)\n\nTarget Angle for Robotic Hinge\n \n" TargetAngle!
-export TargetAngle!
-import ..RoboticHinge_get_CurrentAngle as var"##1451"
-CurrentAngle(this::RemoteTypes.RoboticHinge) = begin
-        kerbal(this.conn, var"##1451"(this))
-    end
-@doc "    CurrentAngle(this::RemoteTypes.RoboticHinge)\n\nCurrent Angle for Robotic Hinge\n \n" CurrentAngle
-export CurrentAngle
-import ..RoboticHinge_get_Rate as var"##1452"
-Rate(this::RemoteTypes.RoboticHinge) = begin
-        kerbal(this.conn, var"##1452"(this))
-    end
-@doc "    Rate(this::RemoteTypes.RoboticHinge)\n\nTarget Movement Rate in Degrees/s\n\n" Rate
-export Rate
-import ..RoboticHinge_set_Rate as var"##1453"
-Rate!(this::RemoteTypes.RoboticHinge, value::Float32) = begin
-        kerbal(this.conn, var"##1453"(this, value))
-    end
-@doc "    Rate!(this::RemoteTypes.RoboticHinge, value::Float32)\n\nTarget Movement Rate in Degrees/s\n\n" Rate!
-export Rate!
-import ..RoboticHinge_get_Damping as var"##1454"
-Damping(this::RemoteTypes.RoboticHinge) = begin
-        kerbal(this.conn, var"##1454"(this))
-    end
-@doc "    Damping(this::RemoteTypes.RoboticHinge)\n\nDamping Percentage>\n \n" Damping
-export Damping
-import ..RoboticHinge_set_Damping as var"##1455"
-Damping!(this::RemoteTypes.RoboticHinge, value::Float32) = begin
-        kerbal(this.conn, var"##1455"(this, value))
-    end
-@doc "    Damping!(this::RemoteTypes.RoboticHinge, value::Float32)\n\nDamping Percentage>\n \n" Damping!
-export Damping!
-import ..RoboticHinge_get_HingeLocked as var"##1456"
-HingeLocked(this::RemoteTypes.RoboticHinge) = begin
-        kerbal(this.conn, var"##1456"(this))
-    end
-@doc "    HingeLocked(this::RemoteTypes.RoboticHinge)\n\nLock Movement\n\n" HingeLocked
-export HingeLocked
-import ..RoboticHinge_set_HingeLocked as var"##1457"
-HingeLocked!(this::RemoteTypes.RoboticHinge, value::Bool) = begin
-        kerbal(this.conn, var"##1457"(this, value))
-    end
-@doc "    HingeLocked!(this::RemoteTypes.RoboticHinge, value::Bool)\n\nLock Movement\n\n" HingeLocked!
-export HingeLocked!
-import ..RoboticHinge_get_MotorEngaged as var"##1458"
-MotorEngaged(this::RemoteTypes.RoboticHinge) = begin
-        kerbal(this.conn, var"##1458"(this))
-    end
-@doc "    MotorEngaged(this::RemoteTypes.RoboticHinge)\n\nEngage/Disengage Motor\n\n" MotorEngaged
-export MotorEngaged
-import ..RoboticHinge_set_MotorEngaged as var"##1459"
-MotorEngaged!(this::RemoteTypes.RoboticHinge, value::Bool) = begin
-        kerbal(this.conn, var"##1459"(this, value))
-    end
-@doc "    MotorEngaged!(this::RemoteTypes.RoboticHinge, value::Bool)\n\nEngage/Disengage Motor\n\n" MotorEngaged!
-export MotorEngaged!
-import ..RoboticPiston_Home as var"##1460"
-Home(this::RemoteTypes.RoboticPiston) = begin
-        kerbal(this.conn, var"##1460"(this))
-    end
-@doc "    Home(this::RemoteTypes.RoboticPiston)\n\nReturns Piston to VAB Position\n\n" Home
-export Home
-import ..RoboticPiston_get_Part as var"##1461"
-Part(this::RemoteTypes.RoboticPiston) = begin
-        kerbal(this.conn, var"##1461"(this))
-    end
-@doc "    Part(this::RemoteTypes.RoboticPiston)\n\nThe part object for this robotic piston.\n\n" Part
-export Part
-import ..RoboticPiston_get_TargetPosition as var"##1462"
-TargetPosition(this::RemoteTypes.RoboticPiston) = begin
-        kerbal(this.conn, var"##1462"(this))
-    end
-@doc "    TargetPosition(this::RemoteTypes.RoboticPiston)\n\nTarget Extension for robotic piston.\n \n" TargetPosition
-export TargetPosition
-import ..RoboticPiston_set_TargetPosition as var"##1463"
-TargetPosition!(this::RemoteTypes.RoboticPiston, value::Float32) = begin
-        kerbal(this.conn, var"##1463"(this, value))
-    end
-@doc "    TargetPosition!(this::RemoteTypes.RoboticPiston, value::Float32)\n\nTarget Extension for robotic piston.\n \n" TargetPosition!
-export TargetPosition!
-import ..RoboticPiston_get_CurrentPosition as var"##1464"
-CurrentPosition(this::RemoteTypes.RoboticPiston) = begin
-        kerbal(this.conn, var"##1464"(this))
-    end
-@doc "    CurrentPosition(this::RemoteTypes.RoboticPiston)\n\nCurrent Extension of piston\n \n" CurrentPosition
-export CurrentPosition
-import ..RoboticPiston_get_Rate as var"##1465"
-Rate(this::RemoteTypes.RoboticPiston) = begin
-        kerbal(this.conn, var"##1465"(this))
-    end
-@doc "    Rate(this::RemoteTypes.RoboticPiston)\n\nTarget Movement Rate in Degrees/s\n\n" Rate
-export Rate
-import ..RoboticPiston_set_Rate as var"##1466"
-Rate!(this::RemoteTypes.RoboticPiston, value::Float32) = begin
-        kerbal(this.conn, var"##1466"(this, value))
-    end
-@doc "    Rate!(this::RemoteTypes.RoboticPiston, value::Float32)\n\nTarget Movement Rate in Degrees/s\n\n" Rate!
-export Rate!
-import ..RoboticPiston_get_Damping as var"##1467"
-Damping(this::RemoteTypes.RoboticPiston) = begin
-        kerbal(this.conn, var"##1467"(this))
-    end
-@doc "    Damping(this::RemoteTypes.RoboticPiston)\n\nDamping Percentage>\n \n" Damping
-export Damping
-import ..RoboticPiston_set_Damping as var"##1468"
-Damping!(this::RemoteTypes.RoboticPiston, value::Float32) = begin
-        kerbal(this.conn, var"##1468"(this, value))
-    end
-@doc "    Damping!(this::RemoteTypes.RoboticPiston, value::Float32)\n\nDamping Percentage>\n \n" Damping!
-export Damping!
-import ..RoboticPiston_get_PistonLocked as var"##1469"
-PistonLocked(this::RemoteTypes.RoboticPiston) = begin
-        kerbal(this.conn, var"##1469"(this))
-    end
-@doc "    PistonLocked(this::RemoteTypes.RoboticPiston)\n\nLock Movement\n\n" PistonLocked
-export PistonLocked
-import ..RoboticPiston_set_PistonLocked as var"##1470"
-PistonLocked!(this::RemoteTypes.RoboticPiston, value::Bool) = begin
-        kerbal(this.conn, var"##1470"(this, value))
-    end
-@doc "    PistonLocked!(this::RemoteTypes.RoboticPiston, value::Bool)\n\nLock Movement\n\n" PistonLocked!
-export PistonLocked!
-import ..RoboticPiston_get_MotorEngaged as var"##1471"
-MotorEngaged(this::RemoteTypes.RoboticPiston) = begin
-        kerbal(this.conn, var"##1471"(this))
-    end
-@doc "    MotorEngaged(this::RemoteTypes.RoboticPiston)\n\nEngage/Disengage Motor\n\n" MotorEngaged
-export MotorEngaged
-import ..RoboticPiston_set_MotorEngaged as var"##1472"
-MotorEngaged!(this::RemoteTypes.RoboticPiston, value::Bool) = begin
-        kerbal(this.conn, var"##1472"(this, value))
-    end
-@doc "    MotorEngaged!(this::RemoteTypes.RoboticPiston, value::Bool)\n\nEngage/Disengage Motor\n\n" MotorEngaged!
-export MotorEngaged!
-import ..RoboticRotation_Home as var"##1473"
-Home(this::RemoteTypes.RoboticRotation) = begin
-        kerbal(this.conn, var"##1473"(this))
-    end
-@doc "    Home(this::RemoteTypes.RoboticRotation)\n\nReturns Servo to Build Angle Position\n\n" Home
-export Home
-import ..RoboticRotation_get_Part as var"##1474"
-Part(this::RemoteTypes.RoboticRotation) = begin
-        kerbal(this.conn, var"##1474"(this))
-    end
-@doc "    Part(this::RemoteTypes.RoboticRotation)\n\nThe part object for this robotic servo.\n\n" Part
-export Part
-import ..RoboticRotation_get_TargetPosition as var"##1475"
-TargetPosition(this::RemoteTypes.RoboticRotation) = begin
-        kerbal(this.conn, var"##1475"(this))
-    end
-@doc "    TargetPosition(this::RemoteTypes.RoboticRotation)\n\nTarget Angle for Robotic Servo\n \n" TargetPosition
-export TargetPosition
-import ..RoboticRotation_set_TargetPosition as var"##1476"
-TargetPosition!(this::RemoteTypes.RoboticRotation, value::Float32) = begin
-        kerbal(this.conn, var"##1476"(this, value))
-    end
-@doc "    TargetPosition!(this::RemoteTypes.RoboticRotation, value::Float32)\n\nTarget Angle for Robotic Servo\n \n" TargetPosition!
-export TargetPosition!
-import ..RoboticRotation_get_CurrentPosition as var"##1477"
-CurrentPosition(this::RemoteTypes.RoboticRotation) = begin
-        kerbal(this.conn, var"##1477"(this))
-    end
-@doc "    CurrentPosition(this::RemoteTypes.RoboticRotation)\n\nCurrent Angle for Robotic Hinge\n \n" CurrentPosition
-export CurrentPosition
-import ..RoboticRotation_get_Rate as var"##1478"
-Rate(this::RemoteTypes.RoboticRotation) = begin
-        kerbal(this.conn, var"##1478"(this))
-    end
-@doc "    Rate(this::RemoteTypes.RoboticRotation)\n\nTarget Movement Rate in Degrees/s\n\n" Rate
-export Rate
-import ..RoboticRotation_set_Rate as var"##1479"
-Rate!(this::RemoteTypes.RoboticRotation, value::Float32) = begin
-        kerbal(this.conn, var"##1479"(this, value))
-    end
-@doc "    Rate!(this::RemoteTypes.RoboticRotation, value::Float32)\n\nTarget Movement Rate in Degrees/s\n\n" Rate!
-export Rate!
-import ..RoboticRotation_get_Damping as var"##1480"
-Damping(this::RemoteTypes.RoboticRotation) = begin
-        kerbal(this.conn, var"##1480"(this))
-    end
-@doc "    Damping(this::RemoteTypes.RoboticRotation)\n\nDamping Percentage>\n \n" Damping
-export Damping
-import ..RoboticRotation_set_Damping as var"##1481"
-Damping!(this::RemoteTypes.RoboticRotation, value::Float32) = begin
-        kerbal(this.conn, var"##1481"(this, value))
-    end
-@doc "    Damping!(this::RemoteTypes.RoboticRotation, value::Float32)\n\nDamping Percentage>\n \n" Damping!
-export Damping!
-import ..RoboticRotation_get_RotationLocked as var"##1482"
-RotationLocked(this::RemoteTypes.RoboticRotation) = begin
-        kerbal(this.conn, var"##1482"(this))
-    end
-@doc "    RotationLocked(this::RemoteTypes.RoboticRotation)\n\nLock Movement\n\n" RotationLocked
-export RotationLocked
-import ..RoboticRotation_set_RotationLocked as var"##1483"
-RotationLocked!(this::RemoteTypes.RoboticRotation, value::Bool) = begin
-        kerbal(this.conn, var"##1483"(this, value))
-    end
-@doc "    RotationLocked!(this::RemoteTypes.RoboticRotation, value::Bool)\n\nLock Movement\n\n" RotationLocked!
-export RotationLocked!
-import ..RoboticRotation_get_MotorEngaged as var"##1484"
-MotorEngaged(this::RemoteTypes.RoboticRotation) = begin
-        kerbal(this.conn, var"##1484"(this))
-    end
-@doc "    MotorEngaged(this::RemoteTypes.RoboticRotation)\n\nEngage/Disengage Motor\n\n" MotorEngaged
-export MotorEngaged
-import ..RoboticRotation_set_MotorEngaged as var"##1485"
-MotorEngaged!(this::RemoteTypes.RoboticRotation, value::Bool) = begin
-        kerbal(this.conn, var"##1485"(this, value))
-    end
-@doc "    MotorEngaged!(this::RemoteTypes.RoboticRotation, value::Bool)\n\nEngage/Disengage Motor\n\n" MotorEngaged!
-export MotorEngaged!
-import ..RoboticRotor_get_Part as var"##1486"
-Part(this::RemoteTypes.RoboticRotor) = begin
-        kerbal(this.conn, var"##1486"(this))
-    end
-@doc "    Part(this::RemoteTypes.RoboticRotor)\n\nThe part object for this robotic rotor.\n\n" Part
-export Part
-import ..RoboticRotor_get_TargetRPM as var"##1487"
-TargetRPM(this::RemoteTypes.RoboticRotor) = begin
-        kerbal(this.conn, var"##1487"(this))
-    end
-@doc "    TargetRPM(this::RemoteTypes.RoboticRotor)\n\nTarget RPM for Robotic Rotor\n \n" TargetRPM
-export TargetRPM
-import ..RoboticRotor_set_TargetRPM as var"##1488"
-TargetRPM!(this::RemoteTypes.RoboticRotor, value::Float32) = begin
-        kerbal(this.conn, var"##1488"(this, value))
-    end
-@doc "    TargetRPM!(this::RemoteTypes.RoboticRotor, value::Float32)\n\nTarget RPM for Robotic Rotor\n \n" TargetRPM!
-export TargetRPM!
-import ..RoboticRotor_get_CurrentRPM as var"##1489"
-CurrentRPM(this::RemoteTypes.RoboticRotor) = begin
-        kerbal(this.conn, var"##1489"(this))
-    end
-@doc "    CurrentRPM(this::RemoteTypes.RoboticRotor)\n\nCurrent RPM for Robotic Rotor\n \n" CurrentRPM
-export CurrentRPM
-import ..RoboticRotor_get_Inverted as var"##1490"
-Inverted(this::RemoteTypes.RoboticRotor) = begin
-        kerbal(this.conn, var"##1490"(this))
-    end
-@doc "    Inverted(this::RemoteTypes.RoboticRotor)\n\nInvert Rotor Direction?\n \n" Inverted
-export Inverted
-import ..RoboticRotor_set_Inverted as var"##1491"
-Inverted!(this::RemoteTypes.RoboticRotor, value::Bool) = begin
-        kerbal(this.conn, var"##1491"(this, value))
-    end
-@doc "    Inverted!(this::RemoteTypes.RoboticRotor, value::Bool)\n\nInvert Rotor Direction?\n \n" Inverted!
-export Inverted!
-import ..RoboticRotor_get_RotationLocked as var"##1492"
-RotationLocked(this::RemoteTypes.RoboticRotor) = begin
-        kerbal(this.conn, var"##1492"(this))
-    end
-@doc "    RotationLocked(this::RemoteTypes.RoboticRotor)\n\nLock Movement\n\n" RotationLocked
-export RotationLocked
-import ..RoboticRotor_set_RotationLocked as var"##1493"
-RotationLocked!(this::RemoteTypes.RoboticRotor, value::Bool) = begin
-        kerbal(this.conn, var"##1493"(this, value))
-    end
-@doc "    RotationLocked!(this::RemoteTypes.RoboticRotor, value::Bool)\n\nLock Movement\n\n" RotationLocked!
-export RotationLocked!
-import ..RoboticRotor_get_MotorEngaged as var"##1494"
-MotorEngaged(this::RemoteTypes.RoboticRotor) = begin
-        kerbal(this.conn, var"##1494"(this))
-    end
-@doc "    MotorEngaged(this::RemoteTypes.RoboticRotor)\n\nEngage/Disengage Motor\n\n" MotorEngaged
-export MotorEngaged
-import ..RoboticRotor_set_MotorEngaged as var"##1495"
-MotorEngaged!(this::RemoteTypes.RoboticRotor, value::Bool) = begin
-        kerbal(this.conn, var"##1495"(this, value))
-    end
-@doc "    MotorEngaged!(this::RemoteTypes.RoboticRotor, value::Bool)\n\nEngage/Disengage Motor\n\n" MotorEngaged!
-export MotorEngaged!
-import ..RoboticRotor_get_TorqueLimit as var"##1496"
-TorqueLimit(this::RemoteTypes.RoboticRotor) = begin
-        kerbal(this.conn, var"##1496"(this))
-    end
-@doc "    TorqueLimit(this::RemoteTypes.RoboticRotor)\n\nTorque Limit Percentage\n \n" TorqueLimit
-export TorqueLimit
-import ..RoboticRotor_set_TorqueLimit as var"##1497"
-TorqueLimit!(this::RemoteTypes.RoboticRotor, value::Float32) = begin
-        kerbal(this.conn, var"##1497"(this, value))
-    end
-@doc "    TorqueLimit!(this::RemoteTypes.RoboticRotor, value::Float32)\n\nTorque Limit Percentage\n \n" TorqueLimit!
-export TorqueLimit!
-import ..ScienceData_get_DataAmount as var"##1498"
-DataAmount(this::RemoteTypes.ScienceData) = begin
-        kerbal(this.conn, var"##1498"(this))
-    end
-@doc "    DataAmount(this::RemoteTypes.ScienceData)\n\nData amount.\n\n" DataAmount
-export DataAmount
-import ..ScienceData_get_ScienceValue as var"##1499"
-ScienceValue(this::RemoteTypes.ScienceData) = begin
-        kerbal(this.conn, var"##1499"(this))
-    end
-@doc "    ScienceValue(this::RemoteTypes.ScienceData)\n\nScience value.\n\n" ScienceValue
-export ScienceValue
-import ..ScienceData_get_TransmitValue as var"##1500"
-TransmitValue(this::RemoteTypes.ScienceData) = begin
-        kerbal(this.conn, var"##1500"(this))
-    end
-@doc "    TransmitValue(this::RemoteTypes.ScienceData)\n\nTransmit value.\n\n" TransmitValue
-export TransmitValue
-import ..ScienceSubject_get_Science as var"##1501"
-Science(this::RemoteTypes.ScienceSubject) = begin
-        kerbal(this.conn, var"##1501"(this))
-    end
-@doc "    Science(this::RemoteTypes.ScienceSubject)\n\nAmount of science already earned from this subject, not updated until after\ntransmission/recovery.\n\n" Science
-export Science
-import ..ScienceSubject_get_ScienceCap as var"##1502"
-ScienceCap(this::RemoteTypes.ScienceSubject) = begin
-        kerbal(this.conn, var"##1502"(this))
-    end
-@doc "    ScienceCap(this::RemoteTypes.ScienceSubject)\n\nTotal science allowable for this subject.\n\n" ScienceCap
-export ScienceCap
-import ..ScienceSubject_get_IsComplete as var"##1503"
-IsComplete(this::RemoteTypes.ScienceSubject) = begin
-        kerbal(this.conn, var"##1503"(this))
-    end
-@doc "    IsComplete(this::RemoteTypes.ScienceSubject)\n\nWhether the experiment has been completed.\n\n" IsComplete
-export IsComplete
-import ..ScienceSubject_get_DataScale as var"##1504"
-DataScale(this::RemoteTypes.ScienceSubject) = begin
-        kerbal(this.conn, var"##1504"(this))
-    end
-@doc "    DataScale(this::RemoteTypes.ScienceSubject)\n\nMultiply science value by this to determine data amount in mits.\n\n" DataScale
-export DataScale
-import ..ScienceSubject_get_ScientificValue as var"##1505"
-ScientificValue(this::RemoteTypes.ScienceSubject) = begin
-        kerbal(this.conn, var"##1505"(this))
-    end
-@doc "    ScientificValue(this::RemoteTypes.ScienceSubject)\n\nDiminishing value multiplier for decreasing the science value returned from repeated\nexperiments.\n\n" ScientificValue
-export ScientificValue
-import ..ScienceSubject_get_SubjectValue as var"##1506"
-SubjectValue(this::RemoteTypes.ScienceSubject) = begin
-        kerbal(this.conn, var"##1506"(this))
-    end
-@doc "    SubjectValue(this::RemoteTypes.ScienceSubject)\n\nMultiplier for specific Celestial Body/Experiment Situation combination.\n\n" SubjectValue
-export SubjectValue
-import ..ScienceSubject_get_Title as var"##1507"
-Title(this::RemoteTypes.ScienceSubject) = begin
-        kerbal(this.conn, var"##1507"(this))
-    end
-@doc "    Title(this::RemoteTypes.ScienceSubject)\n\nTitle of science subject, displayed in science archives\n\n" Title
-export Title
-import ..Sensor_get_Part as var"##1508"
-Part(this::RemoteTypes.Sensor) = begin
-        kerbal(this.conn, var"##1508"(this))
-    end
-@doc "    Part(this::RemoteTypes.Sensor)\n\nThe part object for this sensor.\n\n" Part
-export Part
-import ..Sensor_get_Active as var"##1509"
-Active(this::RemoteTypes.Sensor) = begin
-        kerbal(this.conn, var"##1509"(this))
-    end
-@doc "    Active(this::RemoteTypes.Sensor)\n\nWhether the sensor is active.\n\n" Active
-export Active
-import ..Sensor_set_Active as var"##1510"
-Active!(this::RemoteTypes.Sensor, value::Bool) = begin
-        kerbal(this.conn, var"##1510"(this, value))
-    end
-@doc "    Active!(this::RemoteTypes.Sensor, value::Bool)\n\nWhether the sensor is active.\n\n" Active!
-export Active!
-import ..Sensor_get_Value as var"##1511"
-Value(this::RemoteTypes.Sensor) = begin
-        kerbal(this.conn, var"##1511"(this))
-    end
-@doc "    Value(this::RemoteTypes.Sensor)\n\nThe current value of the sensor.\n\n" Value
-export Value
-import ..SolarPanel_get_Part as var"##1512"
-Part(this::RemoteTypes.SolarPanel) = begin
-        kerbal(this.conn, var"##1512"(this))
-    end
-@doc "    Part(this::RemoteTypes.SolarPanel)\n\nThe part object for this solar panel.\n\n" Part
-export Part
-import ..SolarPanel_get_Deployable as var"##1513"
-Deployable(this::RemoteTypes.SolarPanel) = begin
-        kerbal(this.conn, var"##1513"(this))
-    end
-@doc "    Deployable(this::RemoteTypes.SolarPanel)\n\nWhether the solar panel is deployable.\n\n" Deployable
-export Deployable
-import ..SolarPanel_get_Deployed as var"##1514"
-Deployed(this::RemoteTypes.SolarPanel) = begin
-        kerbal(this.conn, var"##1514"(this))
-    end
-@doc "    Deployed(this::RemoteTypes.SolarPanel)\n\nWhether the solar panel is extended.\n\n" Deployed
-export Deployed
-import ..SolarPanel_set_Deployed as var"##1515"
-Deployed!(this::RemoteTypes.SolarPanel, value::Bool) = begin
-        kerbal(this.conn, var"##1515"(this, value))
-    end
-@doc "    Deployed!(this::RemoteTypes.SolarPanel, value::Bool)\n\nWhether the solar panel is extended.\n\n" Deployed!
-export Deployed!
-import ..SolarPanel_get_State as var"##1516"
-State(this::RemoteTypes.SolarPanel) = begin
-        kerbal(this.conn, var"##1516"(this))
-    end
-@doc "    State(this::RemoteTypes.SolarPanel)\n\nThe current state of the solar panel.\n\n" State
-export State
-import ..SolarPanel_get_EnergyFlow as var"##1517"
-EnergyFlow(this::RemoteTypes.SolarPanel) = begin
-        kerbal(this.conn, var"##1517"(this))
-    end
-@doc "    EnergyFlow(this::RemoteTypes.SolarPanel)\n\nThe current amount of energy being generated by the solar panel, in\nunits of charge per second.\n\n" EnergyFlow
-export EnergyFlow
-import ..SolarPanel_get_SunExposure as var"##1518"
-SunExposure(this::RemoteTypes.SolarPanel) = begin
-        kerbal(this.conn, var"##1518"(this))
-    end
-@doc "    SunExposure(this::RemoteTypes.SolarPanel)\n\nThe current amount of sunlight that is incident on the solar panel,\nas a percentage. A value between 0 and 1.\n\n" SunExposure
-export SunExposure
-import ..Thruster_ThrustPosition as var"##1519"
-ThrustPosition(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1519"(this, referenceFrame))
-    end
-@doc "    ThrustPosition(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position at which the thruster generates thrust, in the given reference frame.\nFor gimballed engines, this takes into account the current rotation of the gimbal.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n" ThrustPosition
-export ThrustPosition
-import ..Thruster_ThrustDirection as var"##1520"
-ThrustDirection(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1520"(this, referenceFrame))
-    end
-@doc "    ThrustDirection(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe direction of the force generated by the thruster, in the given reference frame.\nThis is opposite to the direction in which the thruster expels propellant.\nFor gimballed engines, this takes into account the current rotation of the gimbal.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned direction is in.\n# Returns\nThe direction as a unit vector.\n" ThrustDirection
-export ThrustDirection
-import ..Thruster_InitialThrustPosition as var"##1521"
-InitialThrustPosition(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1521"(this, referenceFrame))
-    end
-@doc "    InitialThrustPosition(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe position at which the thruster generates thrust, when the engine is in its\ninitial position (no gimballing), in the given reference frame.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n# Remarks\n This position can move when the gimbal rotates. This is because the thrust position and gimbal position are not necessarily the same. \n" InitialThrustPosition
-export InitialThrustPosition
-import ..Thruster_InitialThrustDirection as var"##1522"
-InitialThrustDirection(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1522"(this, referenceFrame))
-    end
-@doc "    InitialThrustDirection(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame)\n\nThe direction of the force generated by the thruster, when the engine is in its\ninitial position (no gimballing), in the given reference frame.\nThis is opposite to the direction in which the thruster expels propellant.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned direction is in.\n# Returns\nThe direction as a unit vector.\n" InitialThrustDirection
-export InitialThrustDirection
-import ..Thruster_GimbalPosition as var"##1523"
-GimbalPosition(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##1523"(this, referenceFrame))
-    end
-@doc "    GimbalPosition(this::RemoteTypes.Thruster, referenceFrame::RemoteTypes.ReferenceFrame)\n\nPosition around which the gimbal pivots.\n\n# Arguments\n- `referenceFrame::RemoteTypes.ReferenceFrame`: The reference frame that the returned position vector is in.\n# Returns\nThe position as a vector.\n" GimbalPosition
-export GimbalPosition
-import ..Thruster_get_Part as var"##1524"
-Part(this::RemoteTypes.Thruster) = begin
-        kerbal(this.conn, var"##1524"(this))
-    end
-@doc "    Part(this::RemoteTypes.Thruster)\n\nThe  that contains this thruster.\n\n" Part
-export Part
-import ..Thruster_get_ThrustReferenceFrame as var"##1525"
-ThrustReferenceFrame(this::RemoteTypes.Thruster) = begin
-        kerbal(this.conn, var"##1525"(this))
-    end
-@doc "    ThrustReferenceFrame(this::RemoteTypes.Thruster)\n\nA reference frame that is fixed relative to the thruster and orientated with\nits thrust direction ().\nFor gimballed engines, this takes into account the current rotation of the gimbal.\n\nThe origin is at the position of thrust for this thruster\n().\nThe axes rotate with the thrust direction.\nThis is the direction in which the thruster expels propellant, including any gimballing.\nThe y-axis points along the thrust direction.The x-axis and z-axis are perpendicular to the thrust direction.\n\n" ThrustReferenceFrame
-export ThrustReferenceFrame
-import ..Thruster_get_Gimballed as var"##1526"
-Gimballed(this::RemoteTypes.Thruster) = begin
-        kerbal(this.conn, var"##1526"(this))
-    end
-@doc "    Gimballed(this::RemoteTypes.Thruster)\n\nWhether the thruster is gimballed.\n\n" Gimballed
-export Gimballed
-import ..Thruster_get_GimbalAngle as var"##1527"
-GimbalAngle(this::RemoteTypes.Thruster) = begin
-        kerbal(this.conn, var"##1527"(this))
-    end
-@doc "    GimbalAngle(this::RemoteTypes.Thruster)\n\nThe current gimbal angle in the pitch, roll and yaw axes, in degrees.\n\n" GimbalAngle
-export GimbalAngle
-import ..Wheel_get_Part as var"##1528"
-Part(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1528"(this))
-    end
-@doc "    Part(this::RemoteTypes.Wheel)\n\nThe part object for this wheel.\n\n" Part
-export Part
-import ..Wheel_get_State as var"##1529"
-State(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1529"(this))
-    end
-@doc "    State(this::RemoteTypes.Wheel)\n\nThe current state of the wheel.\n\n" State
-export State
-import ..Wheel_get_Radius as var"##1530"
-Radius(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1530"(this))
-    end
-@doc "    Radius(this::RemoteTypes.Wheel)\n\nRadius of the wheel, in meters.\n\n" Radius
-export Radius
-import ..Wheel_get_Grounded as var"##1531"
-Grounded(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1531"(this))
-    end
-@doc "    Grounded(this::RemoteTypes.Wheel)\n\nWhether the wheel is touching the ground.\n\n" Grounded
-export Grounded
-import ..Wheel_get_HasBrakes as var"##1532"
-HasBrakes(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1532"(this))
-    end
-@doc "    HasBrakes(this::RemoteTypes.Wheel)\n\nWhether the wheel has brakes.\n\n" HasBrakes
-export HasBrakes
-import ..Wheel_get_Brakes as var"##1533"
-Brakes(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1533"(this))
-    end
-@doc "    Brakes(this::RemoteTypes.Wheel)\n\nThe braking force, as a percentage of maximum, when the brakes are applied.\n\n" Brakes
-export Brakes
-import ..Wheel_set_Brakes as var"##1534"
-Brakes!(this::RemoteTypes.Wheel, value::Float32) = begin
-        kerbal(this.conn, var"##1534"(this, value))
-    end
-@doc "    Brakes!(this::RemoteTypes.Wheel, value::Float32)\n\nThe braking force, as a percentage of maximum, when the brakes are applied.\n\n" Brakes!
-export Brakes!
-import ..Wheel_get_AutoFrictionControl as var"##1535"
-AutoFrictionControl(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1535"(this))
-    end
-@doc "    AutoFrictionControl(this::RemoteTypes.Wheel)\n\nWhether automatic friction control is enabled.\n\n" AutoFrictionControl
-export AutoFrictionControl
-import ..Wheel_set_AutoFrictionControl as var"##1536"
-AutoFrictionControl!(this::RemoteTypes.Wheel, value::Bool) = begin
-        kerbal(this.conn, var"##1536"(this, value))
-    end
-@doc "    AutoFrictionControl!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether automatic friction control is enabled.\n\n" AutoFrictionControl!
-export AutoFrictionControl!
-import ..Wheel_get_ManualFrictionControl as var"##1537"
-ManualFrictionControl(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1537"(this))
-    end
-@doc "    ManualFrictionControl(this::RemoteTypes.Wheel)\n\nManual friction control value. Only has an effect if automatic friction control is disabled.\nA value between 0 and 5 inclusive.\n\n" ManualFrictionControl
-export ManualFrictionControl
-import ..Wheel_set_ManualFrictionControl as var"##1538"
-ManualFrictionControl!(this::RemoteTypes.Wheel, value::Float32) = begin
-        kerbal(this.conn, var"##1538"(this, value))
-    end
-@doc "    ManualFrictionControl!(this::RemoteTypes.Wheel, value::Float32)\n\nManual friction control value. Only has an effect if automatic friction control is disabled.\nA value between 0 and 5 inclusive.\n\n" ManualFrictionControl!
-export ManualFrictionControl!
-import ..Wheel_get_Deployable as var"##1539"
-Deployable(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1539"(this))
-    end
-@doc "    Deployable(this::RemoteTypes.Wheel)\n\nWhether the wheel is deployable.\n\n" Deployable
-export Deployable
-import ..Wheel_get_Deployed as var"##1540"
-Deployed(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1540"(this))
-    end
-@doc "    Deployed(this::RemoteTypes.Wheel)\n\nWhether the wheel is deployed.\n\n" Deployed
-export Deployed
-import ..Wheel_set_Deployed as var"##1541"
-Deployed!(this::RemoteTypes.Wheel, value::Bool) = begin
-        kerbal(this.conn, var"##1541"(this, value))
-    end
-@doc "    Deployed!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether the wheel is deployed.\n\n" Deployed!
-export Deployed!
-import ..Wheel_get_Powered as var"##1542"
-Powered(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1542"(this))
-    end
-@doc "    Powered(this::RemoteTypes.Wheel)\n\nWhether the wheel is powered by a motor.\n\n" Powered
-export Powered
-import ..Wheel_get_MotorEnabled as var"##1543"
-MotorEnabled(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1543"(this))
-    end
-@doc "    MotorEnabled(this::RemoteTypes.Wheel)\n\nWhether the motor is enabled.\n\n" MotorEnabled
-export MotorEnabled
-import ..Wheel_set_MotorEnabled as var"##1544"
-MotorEnabled!(this::RemoteTypes.Wheel, value::Bool) = begin
-        kerbal(this.conn, var"##1544"(this, value))
-    end
-@doc "    MotorEnabled!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether the motor is enabled.\n\n" MotorEnabled!
-export MotorEnabled!
-import ..Wheel_get_MotorInverted as var"##1545"
-MotorInverted(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1545"(this))
-    end
-@doc "    MotorInverted(this::RemoteTypes.Wheel)\n\nWhether the direction of the motor is inverted.\n\n" MotorInverted
-export MotorInverted
-import ..Wheel_set_MotorInverted as var"##1546"
-MotorInverted!(this::RemoteTypes.Wheel, value::Bool) = begin
-        kerbal(this.conn, var"##1546"(this, value))
-    end
-@doc "    MotorInverted!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether the direction of the motor is inverted.\n\n" MotorInverted!
-export MotorInverted!
-import ..Wheel_get_MotorState as var"##1547"
-MotorState(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1547"(this))
-    end
-@doc "    MotorState(this::RemoteTypes.Wheel)\n\nWhether the direction of the motor is inverted.\n\n" MotorState
-export MotorState
-import ..Wheel_get_MotorOutput as var"##1548"
-MotorOutput(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1548"(this))
-    end
-@doc "    MotorOutput(this::RemoteTypes.Wheel)\n\nThe output of the motor. This is the torque currently being generated, in Newton meters.\n\n" MotorOutput
-export MotorOutput
-import ..Wheel_get_TractionControlEnabled as var"##1549"
-TractionControlEnabled(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1549"(this))
-    end
-@doc "    TractionControlEnabled(this::RemoteTypes.Wheel)\n\nWhether automatic traction control is enabled.\nA wheel only has traction control if it is powered.\n\n" TractionControlEnabled
-export TractionControlEnabled
-import ..Wheel_set_TractionControlEnabled as var"##1550"
-TractionControlEnabled!(this::RemoteTypes.Wheel, value::Bool) = begin
-        kerbal(this.conn, var"##1550"(this, value))
-    end
-@doc "    TractionControlEnabled!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether automatic traction control is enabled.\nA wheel only has traction control if it is powered.\n\n" TractionControlEnabled!
-export TractionControlEnabled!
-import ..Wheel_get_TractionControl as var"##1551"
-TractionControl(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1551"(this))
-    end
-@doc "    TractionControl(this::RemoteTypes.Wheel)\n\nSetting for the traction control.\nOnly takes effect if the wheel has automatic traction control enabled.\nA value between 0 and 5 inclusive.\n\n" TractionControl
-export TractionControl
-import ..Wheel_set_TractionControl as var"##1552"
-TractionControl!(this::RemoteTypes.Wheel, value::Float32) = begin
-        kerbal(this.conn, var"##1552"(this, value))
-    end
-@doc "    TractionControl!(this::RemoteTypes.Wheel, value::Float32)\n\nSetting for the traction control.\nOnly takes effect if the wheel has automatic traction control enabled.\nA value between 0 and 5 inclusive.\n\n" TractionControl!
-export TractionControl!
-import ..Wheel_get_DriveLimiter as var"##1553"
-DriveLimiter(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1553"(this))
-    end
-@doc "    DriveLimiter(this::RemoteTypes.Wheel)\n\nManual setting for the motor limiter.\nOnly takes effect if the wheel has automatic traction control disabled.\nA value between 0 and 100 inclusive.\n\n" DriveLimiter
-export DriveLimiter
-import ..Wheel_set_DriveLimiter as var"##1554"
-DriveLimiter!(this::RemoteTypes.Wheel, value::Float32) = begin
-        kerbal(this.conn, var"##1554"(this, value))
-    end
-@doc "    DriveLimiter!(this::RemoteTypes.Wheel, value::Float32)\n\nManual setting for the motor limiter.\nOnly takes effect if the wheel has automatic traction control disabled.\nA value between 0 and 100 inclusive.\n\n" DriveLimiter!
-export DriveLimiter!
-import ..Wheel_get_Steerable as var"##1555"
-Steerable(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1555"(this))
-    end
-@doc "    Steerable(this::RemoteTypes.Wheel)\n\nWhether the wheel has steering.\n\n" Steerable
-export Steerable
-import ..Wheel_get_SteeringEnabled as var"##1556"
-SteeringEnabled(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1556"(this))
-    end
-@doc "    SteeringEnabled(this::RemoteTypes.Wheel)\n\nWhether the wheel steering is enabled.\n\n" SteeringEnabled
-export SteeringEnabled
-import ..Wheel_set_SteeringEnabled as var"##1557"
-SteeringEnabled!(this::RemoteTypes.Wheel, value::Bool) = begin
-        kerbal(this.conn, var"##1557"(this, value))
-    end
-@doc "    SteeringEnabled!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether the wheel steering is enabled.\n\n" SteeringEnabled!
-export SteeringEnabled!
-import ..Wheel_get_SteeringInverted as var"##1558"
-SteeringInverted(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1558"(this))
-    end
-@doc "    SteeringInverted(this::RemoteTypes.Wheel)\n\nWhether the wheel steering is inverted.\n\n" SteeringInverted
-export SteeringInverted
-import ..Wheel_set_SteeringInverted as var"##1559"
-SteeringInverted!(this::RemoteTypes.Wheel, value::Bool) = begin
-        kerbal(this.conn, var"##1559"(this, value))
-    end
-@doc "    SteeringInverted!(this::RemoteTypes.Wheel, value::Bool)\n\nWhether the wheel steering is inverted.\n\n" SteeringInverted!
-export SteeringInverted!
-import ..Wheel_get_SteeringAngleLimiter as var"##1560"
-SteeringAngleLimiter(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1560"(this))
-    end
-@doc "    SteeringAngleLimiter(this::RemoteTypes.Wheel)\n\nManually set steering angle limit.  1.12 feature\n\n" SteeringAngleLimiter
-export SteeringAngleLimiter
-import ..Wheel_set_SteeringAngleLimiter as var"##1561"
-SteeringAngleLimiter!(this::RemoteTypes.Wheel, value::Float32) = begin
-        kerbal(this.conn, var"##1561"(this, value))
-    end
-@doc "    SteeringAngleLimiter!(this::RemoteTypes.Wheel, value::Float32)\n\nManually set steering angle limit.  1.12 feature\n\n" SteeringAngleLimiter!
-export SteeringAngleLimiter!
-import ..Wheel_get_SteeringAngleResponse as var"##1562"
-SteeringAngleResponse(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1562"(this))
-    end
-@doc "    SteeringAngleResponse(this::RemoteTypes.Wheel)\n\nSteering Response Time  - 1.12 feature\n\n" SteeringAngleResponse
-export SteeringAngleResponse
-import ..Wheel_set_SteeringAngleResponse as var"##1563"
-SteeringAngleResponse!(this::RemoteTypes.Wheel, value::Float32) = begin
-        kerbal(this.conn, var"##1563"(this, value))
-    end
-@doc "    SteeringAngleResponse!(this::RemoteTypes.Wheel, value::Float32)\n\nSteering Response Time  - 1.12 feature\n\n" SteeringAngleResponse!
-export SteeringAngleResponse!
-import ..Wheel_get_HasSuspension as var"##1564"
-HasSuspension(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1564"(this))
-    end
-@doc "    HasSuspension(this::RemoteTypes.Wheel)\n\nWhether the wheel has suspension.\n\n" HasSuspension
-export HasSuspension
-import ..Wheel_get_SuspensionSpringStrength as var"##1565"
-SuspensionSpringStrength(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1565"(this))
-    end
-@doc "    SuspensionSpringStrength(this::RemoteTypes.Wheel)\n\nSuspension spring strength, as set in the editor.\n\n" SuspensionSpringStrength
-export SuspensionSpringStrength
-import ..Wheel_get_SuspensionDamperStrength as var"##1566"
-SuspensionDamperStrength(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1566"(this))
-    end
-@doc "    SuspensionDamperStrength(this::RemoteTypes.Wheel)\n\nSuspension damper strength, as set in the editor.\n\n" SuspensionDamperStrength
-export SuspensionDamperStrength
-import ..Wheel_get_Broken as var"##1567"
-Broken(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1567"(this))
-    end
-@doc "    Broken(this::RemoteTypes.Wheel)\n\nWhether the wheel is broken.\n\n" Broken
-export Broken
-import ..Wheel_get_Repairable as var"##1568"
-Repairable(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1568"(this))
-    end
-@doc "    Repairable(this::RemoteTypes.Wheel)\n\nWhether the wheel is repairable.\n\n" Repairable
-export Repairable
-import ..Wheel_get_Stress as var"##1569"
-Stress(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1569"(this))
-    end
-@doc "    Stress(this::RemoteTypes.Wheel)\n\nCurrent stress on the wheel.\n\n" Stress
-export Stress
-import ..Wheel_get_StressTolerance as var"##1570"
-StressTolerance(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1570"(this))
-    end
-@doc "    StressTolerance(this::RemoteTypes.Wheel)\n\nStress tolerance of the wheel.\n\n" StressTolerance
-export StressTolerance
-import ..Wheel_get_StressPercentage as var"##1571"
-StressPercentage(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1571"(this))
-    end
-@doc "    StressPercentage(this::RemoteTypes.Wheel)\n\nCurrent stress on the wheel as a percentage of its stress tolerance.\n\n" StressPercentage
-export StressPercentage
-import ..Wheel_get_Deflection as var"##1572"
-Deflection(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1572"(this))
-    end
-@doc "    Deflection(this::RemoteTypes.Wheel)\n\nCurrent deflection of the wheel.\n\n" Deflection
-export Deflection
-import ..Wheel_get_Slip as var"##1573"
-Slip(this::RemoteTypes.Wheel) = begin
-        kerbal(this.conn, var"##1573"(this))
-    end
-@doc "    Slip(this::RemoteTypes.Wheel)\n\nCurrent slip of the wheel.\n\n" Slip
-export Slip
 end
 end
 module KerbalAlarmClock
@@ -15874,182 +15777,255 @@ import ....KRPCConnection
 import ....Request
 import ..RemoteTypes
 import ...SpaceCenter
-import ...KerbalAlarmClock.EAlarmType
 import ...KerbalAlarmClock.EAlarmAction
-import ..AlarmWithName as var"##451"
+import ...KerbalAlarmClock.EAlarmType
+import ..AlarmWithName as var"##511"
 AlarmWithName(conn::KRPCConnection, name::String) = begin
-        kerbal(conn, var"##451"(name))
+        kerbal(conn, var"##511"(name))
     end
 @doc "    AlarmWithName(name::String)\n\nGet the alarm with the given , or null\nif no alarms have that name. If more than one alarm has the name,\nonly returns one of them.\n\n# Arguments\n- `name::String`: Name of the alarm to search for.\n" AlarmWithName
 export AlarmWithName
-import ..AlarmsWithType as var"##452"
+import ..AlarmsWithType as var"##512"
 AlarmsWithType(conn::KRPCConnection, type::EAlarmType) = begin
-        kerbal(conn, var"##452"(type))
+        kerbal(conn, var"##512"(type))
     end
 @doc "    AlarmsWithType(type::EAlarmType)\n\nGet a list of alarms of the specified .\n\n# Arguments\n- `type::EAlarmType`: Type of alarm to return.\n" AlarmsWithType
 export AlarmsWithType
-import ..CreateAlarm as var"##453"
+import ..CreateAlarm as var"##513"
 CreateAlarm(conn::KRPCConnection, type::EAlarmType, name::String, ut::Float64) = begin
-        kerbal(conn, var"##453"(type, name, ut))
+        kerbal(conn, var"##513"(type, name, ut))
     end
 @doc "    CreateAlarm(type::EAlarmType, name::String, ut::Float64)\n\nCreate a new alarm and return it.\n\n# Arguments\n- `type::EAlarmType`: Type of the new alarm.\n- `name::String`: Name of the new alarm.\n- `ut::Float64`: Time at which the new alarm should trigger.\n" CreateAlarm
 export CreateAlarm
-import ..get_Available as var"##454"
+import ..get_Available as var"##514"
 Available(this::RemoteTypes.KerbalAlarmClock) = begin
-        kerbal(this.conn, var"##454"())
+        kerbal(this.conn, var"##514"())
     end
 @doc "    Available()\n\nWhether Kerbal Alarm Clock is available.\n\n" Available
 export Available
-import ..get_Alarms as var"##455"
+import ..get_Alarms as var"##515"
 Alarms(this::RemoteTypes.KerbalAlarmClock) = begin
-        kerbal(this.conn, var"##455"())
+        kerbal(this.conn, var"##515"())
     end
 @doc "    Alarms()\n\nA list of all the alarms.\n\n" Alarms
 export Alarms
-import ..Alarm_Remove as var"##456"
+import ..Alarm_Remove as var"##516"
 Remove(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##456"(this))
+        kerbal(this.conn, var"##516"(this))
     end
 @doc "    Remove(this::RemoteTypes.Alarm)\n\nRemoves the alarm.\n\n" Remove
 export Remove
-import ..Alarm_get_Action as var"##457"
+import ..Alarm_get_Action as var"##517"
 Action(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##457"(this))
+        kerbal(this.conn, var"##517"(this))
     end
 @doc "    Action(this::RemoteTypes.Alarm)\n\nThe action that the alarm triggers.\n\n" Action
 export Action
-import ..Alarm_set_Action as var"##458"
+import ..Alarm_set_Action as var"##518"
 Action!(this::RemoteTypes.Alarm, value::EAlarmAction) = begin
-        kerbal(this.conn, var"##458"(this, value))
+        kerbal(this.conn, var"##518"(this, value))
     end
 @doc "    Action!(this::RemoteTypes.Alarm, value::EAlarmAction)\n\nThe action that the alarm triggers.\n\n" Action!
 export Action!
-import ..Alarm_get_Margin as var"##459"
+import ..Alarm_get_Margin as var"##519"
 Margin(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##459"(this))
+        kerbal(this.conn, var"##519"(this))
     end
 @doc "    Margin(this::RemoteTypes.Alarm)\n\nThe number of seconds before the event that the alarm will fire.\n\n" Margin
 export Margin
-import ..Alarm_set_Margin as var"##460"
+import ..Alarm_set_Margin as var"##520"
 Margin!(this::RemoteTypes.Alarm, value::Float64) = begin
-        kerbal(this.conn, var"##460"(this, value))
+        kerbal(this.conn, var"##520"(this, value))
     end
 @doc "    Margin!(this::RemoteTypes.Alarm, value::Float64)\n\nThe number of seconds before the event that the alarm will fire.\n\n" Margin!
 export Margin!
-import ..Alarm_get_Time as var"##461"
+import ..Alarm_get_Time as var"##521"
 Time(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##461"(this))
+        kerbal(this.conn, var"##521"(this))
     end
 @doc "    Time(this::RemoteTypes.Alarm)\n\nThe time at which the alarm will fire.\n\n" Time
 export Time
-import ..Alarm_set_Time as var"##462"
+import ..Alarm_set_Time as var"##522"
 Time!(this::RemoteTypes.Alarm, value::Float64) = begin
-        kerbal(this.conn, var"##462"(this, value))
+        kerbal(this.conn, var"##522"(this, value))
     end
 @doc "    Time!(this::RemoteTypes.Alarm, value::Float64)\n\nThe time at which the alarm will fire.\n\n" Time!
 export Time!
-import ..Alarm_get_Type as var"##463"
+import ..Alarm_get_Type as var"##523"
 Type(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##463"(this))
+        kerbal(this.conn, var"##523"(this))
     end
 @doc "    Type(this::RemoteTypes.Alarm)\n\nThe type of the alarm.\n\n" Type
 export Type
-import ..Alarm_get_ID as var"##464"
+import ..Alarm_get_ID as var"##524"
 ID(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##464"(this))
+        kerbal(this.conn, var"##524"(this))
     end
 @doc "    ID(this::RemoteTypes.Alarm)\n\nThe unique identifier for the alarm.\n\n" ID
 export ID
-import ..Alarm_get_Name as var"##465"
+import ..Alarm_get_Name as var"##525"
 Name(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##465"(this))
+        kerbal(this.conn, var"##525"(this))
     end
 @doc "    Name(this::RemoteTypes.Alarm)\n\nThe short name of the alarm.\n\n" Name
 export Name
-import ..Alarm_set_Name as var"##466"
+import ..Alarm_set_Name as var"##526"
 Name!(this::RemoteTypes.Alarm, value::String) = begin
-        kerbal(this.conn, var"##466"(this, value))
+        kerbal(this.conn, var"##526"(this, value))
     end
 @doc "    Name!(this::RemoteTypes.Alarm, value::String)\n\nThe short name of the alarm.\n\n" Name!
 export Name!
-import ..Alarm_get_Notes as var"##467"
+import ..Alarm_get_Notes as var"##527"
 Notes(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##467"(this))
+        kerbal(this.conn, var"##527"(this))
     end
 @doc "    Notes(this::RemoteTypes.Alarm)\n\nThe long description of the alarm.\n\n" Notes
 export Notes
-import ..Alarm_set_Notes as var"##468"
+import ..Alarm_set_Notes as var"##528"
 Notes!(this::RemoteTypes.Alarm, value::String) = begin
-        kerbal(this.conn, var"##468"(this, value))
+        kerbal(this.conn, var"##528"(this, value))
     end
 @doc "    Notes!(this::RemoteTypes.Alarm, value::String)\n\nThe long description of the alarm.\n\n" Notes!
 export Notes!
-import ..Alarm_get_Remaining as var"##469"
+import ..Alarm_get_Remaining as var"##529"
 Remaining(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##469"(this))
+        kerbal(this.conn, var"##529"(this))
     end
 @doc "    Remaining(this::RemoteTypes.Alarm)\n\nThe number of seconds until the alarm will fire.\n\n" Remaining
 export Remaining
-import ..Alarm_get_Repeat as var"##470"
+import ..Alarm_get_Repeat as var"##530"
 Repeat(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##470"(this))
+        kerbal(this.conn, var"##530"(this))
     end
 @doc "    Repeat(this::RemoteTypes.Alarm)\n\nWhether the alarm will be repeated after it has fired.\n\n" Repeat
 export Repeat
-import ..Alarm_set_Repeat as var"##471"
+import ..Alarm_set_Repeat as var"##531"
 Repeat!(this::RemoteTypes.Alarm, value::Bool) = begin
-        kerbal(this.conn, var"##471"(this, value))
+        kerbal(this.conn, var"##531"(this, value))
     end
 @doc "    Repeat!(this::RemoteTypes.Alarm, value::Bool)\n\nWhether the alarm will be repeated after it has fired.\n\n" Repeat!
 export Repeat!
-import ..Alarm_get_RepeatPeriod as var"##472"
+import ..Alarm_get_RepeatPeriod as var"##532"
 RepeatPeriod(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##472"(this))
+        kerbal(this.conn, var"##532"(this))
     end
 @doc "    RepeatPeriod(this::RemoteTypes.Alarm)\n\nThe time delay to automatically create an alarm after it has fired.\n\n" RepeatPeriod
 export RepeatPeriod
-import ..Alarm_set_RepeatPeriod as var"##473"
+import ..Alarm_set_RepeatPeriod as var"##533"
 RepeatPeriod!(this::RemoteTypes.Alarm, value::Float64) = begin
-        kerbal(this.conn, var"##473"(this, value))
+        kerbal(this.conn, var"##533"(this, value))
     end
 @doc "    RepeatPeriod!(this::RemoteTypes.Alarm, value::Float64)\n\nThe time delay to automatically create an alarm after it has fired.\n\n" RepeatPeriod!
 export RepeatPeriod!
-import ..Alarm_get_Vessel as var"##474"
+import ..Alarm_get_Vessel as var"##534"
 Vessel(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##474"(this))
+        kerbal(this.conn, var"##534"(this))
     end
 @doc "    Vessel(this::RemoteTypes.Alarm)\n\nThe vessel that the alarm is attached to.\n\n" Vessel
 export Vessel
-import ..Alarm_set_Vessel as var"##475"
+import ..Alarm_set_Vessel as var"##535"
 Vessel!(this::RemoteTypes.Alarm, value::SpaceCenter.RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##475"(this, value))
+        kerbal(this.conn, var"##535"(this, value))
     end
 @doc "    Vessel!(this::RemoteTypes.Alarm, value::SpaceCenter.RemoteTypes.Vessel)\n\nThe vessel that the alarm is attached to.\n\n" Vessel!
 export Vessel!
-import ..Alarm_get_XferOriginBody as var"##476"
+import ..Alarm_get_XferOriginBody as var"##536"
 XferOriginBody(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##476"(this))
+        kerbal(this.conn, var"##536"(this))
     end
 @doc "    XferOriginBody(this::RemoteTypes.Alarm)\n\nThe celestial body the vessel is departing from.\n\n" XferOriginBody
 export XferOriginBody
-import ..Alarm_set_XferOriginBody as var"##477"
+import ..Alarm_set_XferOriginBody as var"##537"
 XferOriginBody!(this::RemoteTypes.Alarm, value::SpaceCenter.RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##477"(this, value))
+        kerbal(this.conn, var"##537"(this, value))
     end
 @doc "    XferOriginBody!(this::RemoteTypes.Alarm, value::SpaceCenter.RemoteTypes.CelestialBody)\n\nThe celestial body the vessel is departing from.\n\n" XferOriginBody!
 export XferOriginBody!
-import ..Alarm_get_XferTargetBody as var"##478"
+import ..Alarm_get_XferTargetBody as var"##538"
 XferTargetBody(this::RemoteTypes.Alarm) = begin
-        kerbal(this.conn, var"##478"(this))
+        kerbal(this.conn, var"##538"(this))
     end
 @doc "    XferTargetBody(this::RemoteTypes.Alarm)\n\nThe celestial body the vessel is arriving at.\n\n" XferTargetBody
 export XferTargetBody
-import ..Alarm_set_XferTargetBody as var"##479"
+import ..Alarm_set_XferTargetBody as var"##539"
 XferTargetBody!(this::RemoteTypes.Alarm, value::SpaceCenter.RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##479"(this, value))
+        kerbal(this.conn, var"##539"(this, value))
     end
 @doc "    XferTargetBody!(this::RemoteTypes.Alarm, value::SpaceCenter.RemoteTypes.CelestialBody)\n\nThe celestial body the vessel is arriving at.\n\n" XferTargetBody!
 export XferTargetBody!
+end
+end
+module DockingCamera
+import ...kRPCTypes
+import ...Request
+import ..SpaceCenter
+module RemoteTypes
+import ....kRPCTypes
+import ....KRPCConnection
+struct Camera <: kRPCTypes.Class
+    conn::KRPCConnection
+    id::Int
+end
+struct DockingCamera
+    conn::KRPCConnection
+end
+export Camera
+export DockingCamera
+end
+struct Camera <: Request{:DockingCamera, :Camera, RemoteTypes.Camera}
+    Camera(part::SpaceCenter.RemoteTypes.Part) = begin
+            new(part)
+        end
+    part::SpaceCenter.RemoteTypes.Part
+end
+struct get_Available <: Request{:DockingCamera, :get_Available, Bool}
+    get_Available() = begin
+            new()
+        end
+end
+struct Camera_get_Part <: Request{:DockingCamera, :Camera_get_Part, SpaceCenter.RemoteTypes.Part}
+    Camera_get_Part(this::RemoteTypes.Camera) = begin
+            new(this)
+        end
+    this::RemoteTypes.Camera
+end
+struct Camera_get_Image <: Request{:DockingCamera, :Camera_get_Image, Array{UInt8, 1}}
+    Camera_get_Image(this::RemoteTypes.Camera) = begin
+            new(this)
+        end
+    this::RemoteTypes.Camera
+end
+export Camera, get_Available, Camera_get_Part, Camera_get_Image
+module Helpers
+import ....kerbal
+import ....KRPCConnection
+import ....Request
+import ..RemoteTypes
+import ...SpaceCenter
+import ..Camera as var"##382"
+Camera(conn::KRPCConnection, part::SpaceCenter.RemoteTypes.Part) = begin
+        kerbal(conn, var"##382"(part))
+    end
+@doc "    Camera(part::SpaceCenter.RemoteTypes.Part)\n\nGet a Camera part\n\n" Camera
+export Camera
+import ..get_Available as var"##383"
+Available(this::RemoteTypes.DockingCamera) = begin
+        kerbal(this.conn, var"##383"())
+    end
+@doc "    Available()\n\nCheck if the Camera API is avaiable\n\n" Available
+export Available
+import ..Camera_get_Part as var"##384"
+Part(this::RemoteTypes.Camera) = begin
+        kerbal(this.conn, var"##384"(this))
+    end
+@doc "    Part(this::RemoteTypes.Camera)\n\nGet the part containing this Camera.\n\n" Part
+export Part
+import ..Camera_get_Image as var"##385"
+Image(this::RemoteTypes.Camera) = begin
+        kerbal(this.conn, var"##385"(this))
+    end
+@doc "    Image(this::RemoteTypes.Camera)\n\nGet the image.\n\n" Image
+export Image
 end
 end
 module InfernalRobotics
@@ -16433,336 +16409,411 @@ import ....KRPCConnection
 import ....Request
 import ..RemoteTypes
 import ...SpaceCenter
-import ..ServoGroups as var"##395"
+import ..ServoGroups as var"##455"
 ServoGroups(conn::KRPCConnection, vessel::SpaceCenter.RemoteTypes.Vessel) = begin
-        kerbal(conn, var"##395"(vessel))
+        kerbal(conn, var"##455"(vessel))
     end
 @doc "    ServoGroups(vessel::SpaceCenter.RemoteTypes.Vessel)\n\nA list of all the servo groups in the given .\n\n" ServoGroups
 export ServoGroups
-import ..ServoGroupWithName as var"##396"
+import ..ServoGroupWithName as var"##456"
 ServoGroupWithName(conn::KRPCConnection, vessel::SpaceCenter.RemoteTypes.Vessel, name::String) = begin
-        kerbal(conn, var"##396"(vessel, name))
+        kerbal(conn, var"##456"(vessel, name))
     end
 @doc "    ServoGroupWithName(vessel::SpaceCenter.RemoteTypes.Vessel, name::String)\n\nReturns the servo group in the given  with the given ,\nor null if none exists. If multiple servo groups have the same name, only one of them is returned.\n\n# Arguments\n- `vessel::SpaceCenter.RemoteTypes.Vessel`: Vessel to check.\n- `name::String`: Name of servo group to find.\n" ServoGroupWithName
 export ServoGroupWithName
-import ..ServoWithName as var"##397"
+import ..ServoWithName as var"##457"
 ServoWithName(conn::KRPCConnection, vessel::SpaceCenter.RemoteTypes.Vessel, name::String) = begin
-        kerbal(conn, var"##397"(vessel, name))
+        kerbal(conn, var"##457"(vessel, name))
     end
 @doc "    ServoWithName(vessel::SpaceCenter.RemoteTypes.Vessel, name::String)\n\nReturns the servo in the given  with the given  or\nnull if none exists. If multiple servos have the same name, only one of them is returned.\n\n# Arguments\n- `vessel::SpaceCenter.RemoteTypes.Vessel`: Vessel to check.\n- `name::String`: Name of the servo to find.\n" ServoWithName
 export ServoWithName
-import ..get_Available as var"##398"
+import ..get_Available as var"##458"
 Available(this::RemoteTypes.InfernalRobotics) = begin
-        kerbal(this.conn, var"##398"())
+        kerbal(this.conn, var"##458"())
     end
 @doc "    Available()\n\nWhether Infernal Robotics is installed.\n\n" Available
 export Available
-import ..get_Ready as var"##399"
+import ..get_Ready as var"##459"
 Ready(this::RemoteTypes.InfernalRobotics) = begin
-        kerbal(this.conn, var"##399"())
+        kerbal(this.conn, var"##459"())
     end
 @doc "    Ready()\n\nWhether Infernal Robotics API is ready.\n\n" Ready
 export Ready
-import ..Servo_MoveRight as var"##400"
+import ..Servo_MoveRight as var"##460"
 MoveRight(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##400"(this))
+        kerbal(this.conn, var"##460"(this))
     end
 @doc "    MoveRight(this::RemoteTypes.Servo)\n\nMoves the servo to the right.\n\n" MoveRight
 export MoveRight
-import ..Servo_MoveLeft as var"##401"
+import ..Servo_MoveLeft as var"##461"
 MoveLeft(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##401"(this))
+        kerbal(this.conn, var"##461"(this))
     end
 @doc "    MoveLeft(this::RemoteTypes.Servo)\n\nMoves the servo to the left.\n\n" MoveLeft
 export MoveLeft
-import ..Servo_MoveCenter as var"##402"
+import ..Servo_MoveCenter as var"##462"
 MoveCenter(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##402"(this))
+        kerbal(this.conn, var"##462"(this))
     end
 @doc "    MoveCenter(this::RemoteTypes.Servo)\n\nMoves the servo to the center.\n\n" MoveCenter
 export MoveCenter
-import ..Servo_MoveNextPreset as var"##403"
+import ..Servo_MoveNextPreset as var"##463"
 MoveNextPreset(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##403"(this))
+        kerbal(this.conn, var"##463"(this))
     end
 @doc "    MoveNextPreset(this::RemoteTypes.Servo)\n\nMoves the servo to the next preset.\n\n" MoveNextPreset
 export MoveNextPreset
-import ..Servo_MovePrevPreset as var"##404"
+import ..Servo_MovePrevPreset as var"##464"
 MovePrevPreset(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##404"(this))
+        kerbal(this.conn, var"##464"(this))
     end
 @doc "    MovePrevPreset(this::RemoteTypes.Servo)\n\nMoves the servo to the previous preset.\n\n" MovePrevPreset
 export MovePrevPreset
-import ..Servo_MoveTo as var"##405"
+import ..Servo_MoveTo as var"##465"
 MoveTo(this::RemoteTypes.Servo, position::Float32, speed::Float32) = begin
-        kerbal(this.conn, var"##405"(this, position, speed))
+        kerbal(this.conn, var"##465"(this, position, speed))
     end
 @doc "    MoveTo(this::RemoteTypes.Servo, position::Float32, speed::Float32)\n\nMoves the servo to  and sets the\nspeed multiplier to .\n\n# Arguments\n- `position::Float32`: The position to move the servo to.\n- `speed::Float32`: Speed multiplier for the movement.\n" MoveTo
 export MoveTo
-import ..Servo_Stop as var"##406"
+import ..Servo_Stop as var"##466"
 Stop(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##406"(this))
+        kerbal(this.conn, var"##466"(this))
     end
 @doc "    Stop(this::RemoteTypes.Servo)\n\nStops the servo.\n\n" Stop
 export Stop
-import ..Servo_get_Name as var"##407"
+import ..Servo_get_Name as var"##467"
 Name(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##407"(this))
+        kerbal(this.conn, var"##467"(this))
     end
 @doc "    Name(this::RemoteTypes.Servo)\n\nThe name of the servo.\n\n" Name
 export Name
-import ..Servo_set_Name as var"##408"
+import ..Servo_set_Name as var"##468"
 Name!(this::RemoteTypes.Servo, value::String) = begin
-        kerbal(this.conn, var"##408"(this, value))
+        kerbal(this.conn, var"##468"(this, value))
     end
 @doc "    Name!(this::RemoteTypes.Servo, value::String)\n\nThe name of the servo.\n\n" Name!
 export Name!
-import ..Servo_get_Part as var"##409"
+import ..Servo_get_Part as var"##469"
 Part(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##409"(this))
+        kerbal(this.conn, var"##469"(this))
     end
 @doc "    Part(this::RemoteTypes.Servo)\n\nThe part containing the servo.\n\n" Part
 export Part
-import ..Servo_set_Highlight as var"##410"
+import ..Servo_set_Highlight as var"##470"
 Highlight!(this::RemoteTypes.Servo, value::Bool) = begin
-        kerbal(this.conn, var"##410"(this, value))
+        kerbal(this.conn, var"##470"(this, value))
     end
 @doc "    Highlight!(this::RemoteTypes.Servo, value::Bool)\n\nWhether the servo should be highlighted in-game.\n\n" Highlight!
 export Highlight!
-import ..Servo_get_Position as var"##411"
+import ..Servo_get_Position as var"##471"
 Position(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##411"(this))
+        kerbal(this.conn, var"##471"(this))
     end
 @doc "    Position(this::RemoteTypes.Servo)\n\nThe position of the servo.\n\n" Position
 export Position
-import ..Servo_get_MinConfigPosition as var"##412"
+import ..Servo_get_MinConfigPosition as var"##472"
 MinConfigPosition(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##412"(this))
+        kerbal(this.conn, var"##472"(this))
     end
 @doc "    MinConfigPosition(this::RemoteTypes.Servo)\n\nThe minimum position of the servo, specified by the part configuration.\n\n" MinConfigPosition
 export MinConfigPosition
-import ..Servo_get_MaxConfigPosition as var"##413"
+import ..Servo_get_MaxConfigPosition as var"##473"
 MaxConfigPosition(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##413"(this))
+        kerbal(this.conn, var"##473"(this))
     end
 @doc "    MaxConfigPosition(this::RemoteTypes.Servo)\n\nThe maximum position of the servo, specified by the part configuration.\n\n" MaxConfigPosition
 export MaxConfigPosition
-import ..Servo_get_MinPosition as var"##414"
+import ..Servo_get_MinPosition as var"##474"
 MinPosition(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##414"(this))
+        kerbal(this.conn, var"##474"(this))
     end
 @doc "    MinPosition(this::RemoteTypes.Servo)\n\nThe minimum position of the servo, specified by the in-game tweak menu.\n\n" MinPosition
 export MinPosition
-import ..Servo_set_MinPosition as var"##415"
+import ..Servo_set_MinPosition as var"##475"
 MinPosition!(this::RemoteTypes.Servo, value::Float32) = begin
-        kerbal(this.conn, var"##415"(this, value))
+        kerbal(this.conn, var"##475"(this, value))
     end
 @doc "    MinPosition!(this::RemoteTypes.Servo, value::Float32)\n\nThe minimum position of the servo, specified by the in-game tweak menu.\n\n" MinPosition!
 export MinPosition!
-import ..Servo_get_MaxPosition as var"##416"
+import ..Servo_get_MaxPosition as var"##476"
 MaxPosition(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##416"(this))
+        kerbal(this.conn, var"##476"(this))
     end
 @doc "    MaxPosition(this::RemoteTypes.Servo)\n\nThe maximum position of the servo, specified by the in-game tweak menu.\n\n" MaxPosition
 export MaxPosition
-import ..Servo_set_MaxPosition as var"##417"
+import ..Servo_set_MaxPosition as var"##477"
 MaxPosition!(this::RemoteTypes.Servo, value::Float32) = begin
-        kerbal(this.conn, var"##417"(this, value))
+        kerbal(this.conn, var"##477"(this, value))
     end
 @doc "    MaxPosition!(this::RemoteTypes.Servo, value::Float32)\n\nThe maximum position of the servo, specified by the in-game tweak menu.\n\n" MaxPosition!
 export MaxPosition!
-import ..Servo_get_ConfigSpeed as var"##418"
+import ..Servo_get_ConfigSpeed as var"##478"
 ConfigSpeed(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##418"(this))
+        kerbal(this.conn, var"##478"(this))
     end
 @doc "    ConfigSpeed(this::RemoteTypes.Servo)\n\nThe speed multiplier of the servo, specified by the part configuration.\n\n" ConfigSpeed
 export ConfigSpeed
-import ..Servo_get_Speed as var"##419"
+import ..Servo_get_Speed as var"##479"
 Speed(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##419"(this))
+        kerbal(this.conn, var"##479"(this))
     end
 @doc "    Speed(this::RemoteTypes.Servo)\n\nThe speed multiplier of the servo, specified by the in-game tweak menu.\n\n" Speed
 export Speed
-import ..Servo_set_Speed as var"##420"
+import ..Servo_set_Speed as var"##480"
 Speed!(this::RemoteTypes.Servo, value::Float32) = begin
-        kerbal(this.conn, var"##420"(this, value))
+        kerbal(this.conn, var"##480"(this, value))
     end
 @doc "    Speed!(this::RemoteTypes.Servo, value::Float32)\n\nThe speed multiplier of the servo, specified by the in-game tweak menu.\n\n" Speed!
 export Speed!
-import ..Servo_get_CurrentSpeed as var"##421"
+import ..Servo_get_CurrentSpeed as var"##481"
 CurrentSpeed(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##421"(this))
+        kerbal(this.conn, var"##481"(this))
     end
 @doc "    CurrentSpeed(this::RemoteTypes.Servo)\n\nThe current speed at which the servo is moving.\n\n" CurrentSpeed
 export CurrentSpeed
-import ..Servo_set_CurrentSpeed as var"##422"
+import ..Servo_set_CurrentSpeed as var"##482"
 CurrentSpeed!(this::RemoteTypes.Servo, value::Float32) = begin
-        kerbal(this.conn, var"##422"(this, value))
+        kerbal(this.conn, var"##482"(this, value))
     end
 @doc "    CurrentSpeed!(this::RemoteTypes.Servo, value::Float32)\n\nThe current speed at which the servo is moving.\n\n" CurrentSpeed!
 export CurrentSpeed!
-import ..Servo_get_Acceleration as var"##423"
+import ..Servo_get_Acceleration as var"##483"
 Acceleration(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##423"(this))
+        kerbal(this.conn, var"##483"(this))
     end
 @doc "    Acceleration(this::RemoteTypes.Servo)\n\nThe current speed multiplier set in the UI.\n\n" Acceleration
 export Acceleration
-import ..Servo_set_Acceleration as var"##424"
+import ..Servo_set_Acceleration as var"##484"
 Acceleration!(this::RemoteTypes.Servo, value::Float32) = begin
-        kerbal(this.conn, var"##424"(this, value))
+        kerbal(this.conn, var"##484"(this, value))
     end
 @doc "    Acceleration!(this::RemoteTypes.Servo, value::Float32)\n\nThe current speed multiplier set in the UI.\n\n" Acceleration!
 export Acceleration!
-import ..Servo_get_IsMoving as var"##425"
+import ..Servo_get_IsMoving as var"##485"
 IsMoving(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##425"(this))
+        kerbal(this.conn, var"##485"(this))
     end
 @doc "    IsMoving(this::RemoteTypes.Servo)\n\nWhether the servo is moving.\n\n" IsMoving
 export IsMoving
-import ..Servo_get_IsFreeMoving as var"##426"
+import ..Servo_get_IsFreeMoving as var"##486"
 IsFreeMoving(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##426"(this))
+        kerbal(this.conn, var"##486"(this))
     end
 @doc "    IsFreeMoving(this::RemoteTypes.Servo)\n\nWhether the servo is freely moving.\n\n" IsFreeMoving
 export IsFreeMoving
-import ..Servo_get_IsLocked as var"##427"
+import ..Servo_get_IsLocked as var"##487"
 IsLocked(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##427"(this))
+        kerbal(this.conn, var"##487"(this))
     end
 @doc "    IsLocked(this::RemoteTypes.Servo)\n\nWhether the servo is locked.\n\n" IsLocked
 export IsLocked
-import ..Servo_set_IsLocked as var"##428"
+import ..Servo_set_IsLocked as var"##488"
 IsLocked!(this::RemoteTypes.Servo, value::Bool) = begin
-        kerbal(this.conn, var"##428"(this, value))
+        kerbal(this.conn, var"##488"(this, value))
     end
 @doc "    IsLocked!(this::RemoteTypes.Servo, value::Bool)\n\nWhether the servo is locked.\n\n" IsLocked!
 export IsLocked!
-import ..Servo_get_IsAxisInverted as var"##429"
+import ..Servo_get_IsAxisInverted as var"##489"
 IsAxisInverted(this::RemoteTypes.Servo) = begin
-        kerbal(this.conn, var"##429"(this))
+        kerbal(this.conn, var"##489"(this))
     end
 @doc "    IsAxisInverted(this::RemoteTypes.Servo)\n\nWhether the servos axis is inverted.\n\n" IsAxisInverted
 export IsAxisInverted
-import ..Servo_set_IsAxisInverted as var"##430"
+import ..Servo_set_IsAxisInverted as var"##490"
 IsAxisInverted!(this::RemoteTypes.Servo, value::Bool) = begin
-        kerbal(this.conn, var"##430"(this, value))
+        kerbal(this.conn, var"##490"(this, value))
     end
 @doc "    IsAxisInverted!(this::RemoteTypes.Servo, value::Bool)\n\nWhether the servos axis is inverted.\n\n" IsAxisInverted!
 export IsAxisInverted!
-import ..ServoGroup_ServoWithName as var"##431"
+import ..ServoGroup_ServoWithName as var"##491"
 ServoWithName(this::RemoteTypes.ServoGroup, name::String) = begin
-        kerbal(this.conn, var"##431"(this, name))
+        kerbal(this.conn, var"##491"(this, name))
     end
 @doc "    ServoWithName(this::RemoteTypes.ServoGroup, name::String)\n\nReturns the servo with the given  from this group,\nor null if none exists.\n\n# Arguments\n- `name::String`: Name of servo to find.\n" ServoWithName
 export ServoWithName
-import ..ServoGroup_MoveRight as var"##432"
+import ..ServoGroup_MoveRight as var"##492"
 MoveRight(this::RemoteTypes.ServoGroup) = begin
-        kerbal(this.conn, var"##432"(this))
+        kerbal(this.conn, var"##492"(this))
     end
 @doc "    MoveRight(this::RemoteTypes.ServoGroup)\n\nMoves all of the servos in the group to the right.\n\n" MoveRight
 export MoveRight
-import ..ServoGroup_MoveLeft as var"##433"
+import ..ServoGroup_MoveLeft as var"##493"
 MoveLeft(this::RemoteTypes.ServoGroup) = begin
-        kerbal(this.conn, var"##433"(this))
+        kerbal(this.conn, var"##493"(this))
     end
 @doc "    MoveLeft(this::RemoteTypes.ServoGroup)\n\nMoves all of the servos in the group to the left.\n\n" MoveLeft
 export MoveLeft
-import ..ServoGroup_MoveCenter as var"##434"
+import ..ServoGroup_MoveCenter as var"##494"
 MoveCenter(this::RemoteTypes.ServoGroup) = begin
-        kerbal(this.conn, var"##434"(this))
+        kerbal(this.conn, var"##494"(this))
     end
 @doc "    MoveCenter(this::RemoteTypes.ServoGroup)\n\nMoves all of the servos in the group to the center.\n\n" MoveCenter
 export MoveCenter
-import ..ServoGroup_MoveNextPreset as var"##435"
+import ..ServoGroup_MoveNextPreset as var"##495"
 MoveNextPreset(this::RemoteTypes.ServoGroup) = begin
-        kerbal(this.conn, var"##435"(this))
+        kerbal(this.conn, var"##495"(this))
     end
 @doc "    MoveNextPreset(this::RemoteTypes.ServoGroup)\n\nMoves all of the servos in the group to the next preset.\n\n" MoveNextPreset
 export MoveNextPreset
-import ..ServoGroup_MovePrevPreset as var"##436"
+import ..ServoGroup_MovePrevPreset as var"##496"
 MovePrevPreset(this::RemoteTypes.ServoGroup) = begin
-        kerbal(this.conn, var"##436"(this))
+        kerbal(this.conn, var"##496"(this))
     end
 @doc "    MovePrevPreset(this::RemoteTypes.ServoGroup)\n\nMoves all of the servos in the group to the previous preset.\n\n" MovePrevPreset
 export MovePrevPreset
-import ..ServoGroup_Stop as var"##437"
+import ..ServoGroup_Stop as var"##497"
 Stop(this::RemoteTypes.ServoGroup) = begin
-        kerbal(this.conn, var"##437"(this))
+        kerbal(this.conn, var"##497"(this))
     end
 @doc "    Stop(this::RemoteTypes.ServoGroup)\n\nStops the servos in the group.\n\n" Stop
 export Stop
-import ..ServoGroup_get_Name as var"##438"
+import ..ServoGroup_get_Name as var"##498"
 Name(this::RemoteTypes.ServoGroup) = begin
-        kerbal(this.conn, var"##438"(this))
+        kerbal(this.conn, var"##498"(this))
     end
 @doc "    Name(this::RemoteTypes.ServoGroup)\n\nThe name of the group.\n\n" Name
 export Name
-import ..ServoGroup_set_Name as var"##439"
+import ..ServoGroup_set_Name as var"##499"
 Name!(this::RemoteTypes.ServoGroup, value::String) = begin
-        kerbal(this.conn, var"##439"(this, value))
+        kerbal(this.conn, var"##499"(this, value))
     end
 @doc "    Name!(this::RemoteTypes.ServoGroup, value::String)\n\nThe name of the group.\n\n" Name!
 export Name!
-import ..ServoGroup_get_ForwardKey as var"##440"
+import ..ServoGroup_get_ForwardKey as var"##500"
 ForwardKey(this::RemoteTypes.ServoGroup) = begin
-        kerbal(this.conn, var"##440"(this))
+        kerbal(this.conn, var"##500"(this))
     end
 @doc "    ForwardKey(this::RemoteTypes.ServoGroup)\n\nThe key assigned to be the \"forward\" key for the group.\n\n" ForwardKey
 export ForwardKey
-import ..ServoGroup_set_ForwardKey as var"##441"
+import ..ServoGroup_set_ForwardKey as var"##501"
 ForwardKey!(this::RemoteTypes.ServoGroup, value::String) = begin
-        kerbal(this.conn, var"##441"(this, value))
+        kerbal(this.conn, var"##501"(this, value))
     end
 @doc "    ForwardKey!(this::RemoteTypes.ServoGroup, value::String)\n\nThe key assigned to be the \"forward\" key for the group.\n\n" ForwardKey!
 export ForwardKey!
-import ..ServoGroup_get_ReverseKey as var"##442"
+import ..ServoGroup_get_ReverseKey as var"##502"
 ReverseKey(this::RemoteTypes.ServoGroup) = begin
-        kerbal(this.conn, var"##442"(this))
+        kerbal(this.conn, var"##502"(this))
     end
 @doc "    ReverseKey(this::RemoteTypes.ServoGroup)\n\nThe key assigned to be the \"reverse\" key for the group.\n\n" ReverseKey
 export ReverseKey
-import ..ServoGroup_set_ReverseKey as var"##443"
+import ..ServoGroup_set_ReverseKey as var"##503"
 ReverseKey!(this::RemoteTypes.ServoGroup, value::String) = begin
-        kerbal(this.conn, var"##443"(this, value))
+        kerbal(this.conn, var"##503"(this, value))
     end
 @doc "    ReverseKey!(this::RemoteTypes.ServoGroup, value::String)\n\nThe key assigned to be the \"reverse\" key for the group.\n\n" ReverseKey!
 export ReverseKey!
-import ..ServoGroup_get_Speed as var"##444"
+import ..ServoGroup_get_Speed as var"##504"
 Speed(this::RemoteTypes.ServoGroup) = begin
-        kerbal(this.conn, var"##444"(this))
+        kerbal(this.conn, var"##504"(this))
     end
 @doc "    Speed(this::RemoteTypes.ServoGroup)\n\nThe speed multiplier for the group.\n\n" Speed
 export Speed
-import ..ServoGroup_set_Speed as var"##445"
+import ..ServoGroup_set_Speed as var"##505"
 Speed!(this::RemoteTypes.ServoGroup, value::Float32) = begin
-        kerbal(this.conn, var"##445"(this, value))
+        kerbal(this.conn, var"##505"(this, value))
     end
 @doc "    Speed!(this::RemoteTypes.ServoGroup, value::Float32)\n\nThe speed multiplier for the group.\n\n" Speed!
 export Speed!
-import ..ServoGroup_get_Expanded as var"##446"
+import ..ServoGroup_get_Expanded as var"##506"
 Expanded(this::RemoteTypes.ServoGroup) = begin
-        kerbal(this.conn, var"##446"(this))
+        kerbal(this.conn, var"##506"(this))
     end
 @doc "    Expanded(this::RemoteTypes.ServoGroup)\n\nWhether the group is expanded in the InfernalRobotics UI.\n\n" Expanded
 export Expanded
-import ..ServoGroup_set_Expanded as var"##447"
+import ..ServoGroup_set_Expanded as var"##507"
 Expanded!(this::RemoteTypes.ServoGroup, value::Bool) = begin
-        kerbal(this.conn, var"##447"(this, value))
+        kerbal(this.conn, var"##507"(this, value))
     end
 @doc "    Expanded!(this::RemoteTypes.ServoGroup, value::Bool)\n\nWhether the group is expanded in the InfernalRobotics UI.\n\n" Expanded!
 export Expanded!
-import ..ServoGroup_get_Servos as var"##448"
+import ..ServoGroup_get_Servos as var"##508"
 Servos(this::RemoteTypes.ServoGroup) = begin
-        kerbal(this.conn, var"##448"(this))
+        kerbal(this.conn, var"##508"(this))
     end
 @doc "    Servos(this::RemoteTypes.ServoGroup)\n\nThe servos that are in the group.\n\n" Servos
 export Servos
-import ..ServoGroup_get_Parts as var"##449"
+import ..ServoGroup_get_Parts as var"##509"
 Parts(this::RemoteTypes.ServoGroup) = begin
-        kerbal(this.conn, var"##449"(this))
+        kerbal(this.conn, var"##509"(this))
     end
 @doc "    Parts(this::RemoteTypes.ServoGroup)\n\nThe parts containing the servos in the group.\n\n" Parts
 export Parts
+end
+end
+module LiDAR
+import ...kRPCTypes
+import ...Request
+import ..SpaceCenter
+module RemoteTypes
+import ....kRPCTypes
+import ....KRPCConnection
+struct Laser <: kRPCTypes.Class
+    conn::KRPCConnection
+    id::Int
+end
+struct LiDAR
+    conn::KRPCConnection
+end
+export Laser
+export LiDAR
+end
+struct Laser <: Request{:LiDAR, :Laser, RemoteTypes.Laser}
+    Laser(part::SpaceCenter.RemoteTypes.Part) = begin
+            new(part)
+        end
+    part::SpaceCenter.RemoteTypes.Part
+end
+struct get_Available <: Request{:LiDAR, :get_Available, Bool}
+    get_Available() = begin
+            new()
+        end
+end
+struct Laser_get_Part <: Request{:LiDAR, :Laser_get_Part, SpaceCenter.RemoteTypes.Part}
+    Laser_get_Part(this::RemoteTypes.Laser) = begin
+            new(this)
+        end
+    this::RemoteTypes.Laser
+end
+struct Laser_get_Cloud <: Request{:LiDAR, :Laser_get_Cloud, begin
+                Array{Float64, 1}
+            end}
+    Laser_get_Cloud(this::RemoteTypes.Laser) = begin
+            new(this)
+        end
+    this::RemoteTypes.Laser
+end
+export Laser, get_Available, Laser_get_Part, Laser_get_Cloud
+module Helpers
+import ....kerbal
+import ....KRPCConnection
+import ....Request
+import ..RemoteTypes
+import ...SpaceCenter
+import ..Laser as var"##541"
+Laser(conn::KRPCConnection, part::SpaceCenter.RemoteTypes.Part) = begin
+        kerbal(conn, var"##541"(part))
+    end
+@doc "    Laser(part::SpaceCenter.RemoteTypes.Part)\n\nGet a LaserDist part\n\n" Laser
+export Laser
+import ..get_Available as var"##542"
+Available(this::RemoteTypes.LiDAR) = begin
+        kerbal(this.conn, var"##542"())
+    end
+@doc "    Available()\n\nCheck if the LaserDist API is avaiable\n\n" Available
+export Available
+import ..Laser_get_Part as var"##543"
+Part(this::RemoteTypes.Laser) = begin
+        kerbal(this.conn, var"##543"(this))
+    end
+@doc "    Part(this::RemoteTypes.Laser)\n\nGet the part containing this LiDAR.\n\n" Part
+export Part
+import ..Laser_get_Cloud as var"##544"
+Cloud(this::RemoteTypes.Laser) = begin
+        kerbal(this.conn, var"##544"(this))
+    end
+@doc "    Cloud(this::RemoteTypes.Laser)\n\nGet the pointcloud.\n\n" Cloud
+export Cloud
 end
 end
 module RemoteTech
@@ -16948,141 +16999,141 @@ import ....Request
 import ..RemoteTypes
 import ...SpaceCenter
 import ...RemoteTech.ETarget
-import ..Comms as var"##482"
+import ..Comms as var"##547"
 Comms(conn::KRPCConnection, vessel::SpaceCenter.RemoteTypes.Vessel) = begin
-        kerbal(conn, var"##482"(vessel))
+        kerbal(conn, var"##547"(vessel))
     end
 @doc "    Comms(vessel::SpaceCenter.RemoteTypes.Vessel)\n\nGet a communications object, representing the communication capability of a particular vessel.\n\n" Comms
 export Comms
-import ..Antenna as var"##483"
+import ..Antenna as var"##548"
 Antenna(conn::KRPCConnection, part::SpaceCenter.RemoteTypes.Part) = begin
-        kerbal(conn, var"##483"(part))
+        kerbal(conn, var"##548"(part))
     end
 @doc "    Antenna(part::SpaceCenter.RemoteTypes.Part)\n\nGet the antenna object for a particular part.\n\n" Antenna
 export Antenna
-import ..get_Available as var"##484"
+import ..get_Available as var"##549"
 Available(this::RemoteTypes.RemoteTech) = begin
-        kerbal(this.conn, var"##484"())
+        kerbal(this.conn, var"##549"())
     end
 @doc "    Available()\n\nWhether RemoteTech is installed.\n\n" Available
 export Available
-import ..get_GroundStations as var"##485"
+import ..get_GroundStations as var"##550"
 GroundStations(this::RemoteTypes.RemoteTech) = begin
-        kerbal(this.conn, var"##485"())
+        kerbal(this.conn, var"##550"())
     end
 @doc "    GroundStations()\n\nThe names of the ground stations.\n\n" GroundStations
 export GroundStations
-import ..Antenna_get_Part as var"##486"
+import ..Antenna_get_Part as var"##551"
 Part(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##486"(this))
+        kerbal(this.conn, var"##551"(this))
     end
 @doc "    Part(this::RemoteTypes.Antenna)\n\nGet the part containing this antenna.\n\n" Part
 export Part
-import ..Antenna_get_HasConnection as var"##487"
+import ..Antenna_get_HasConnection as var"##552"
 HasConnection(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##487"(this))
+        kerbal(this.conn, var"##552"(this))
     end
 @doc "    HasConnection(this::RemoteTypes.Antenna)\n\nWhether the antenna has a connection.\n\n" HasConnection
 export HasConnection
-import ..Antenna_get_Target as var"##488"
+import ..Antenna_get_Target as var"##553"
 Target(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##488"(this))
+        kerbal(this.conn, var"##553"(this))
     end
 @doc "    Target(this::RemoteTypes.Antenna)\n\nThe object that the antenna is targetting.\nThis property can be used to set the target to  or .\nTo set the target to a celestial body, ground station or vessel see ,\n and .\n\n" Target
 export Target
-import ..Antenna_set_Target as var"##489"
+import ..Antenna_set_Target as var"##554"
 Target!(this::RemoteTypes.Antenna, value::ETarget) = begin
-        kerbal(this.conn, var"##489"(this, value))
+        kerbal(this.conn, var"##554"(this, value))
     end
 @doc "    Target!(this::RemoteTypes.Antenna, value::ETarget)\n\nThe object that the antenna is targetting.\nThis property can be used to set the target to  or .\nTo set the target to a celestial body, ground station or vessel see ,\n and .\n\n" Target!
 export Target!
-import ..Antenna_get_TargetBody as var"##490"
+import ..Antenna_get_TargetBody as var"##555"
 TargetBody(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##490"(this))
+        kerbal(this.conn, var"##555"(this))
     end
 @doc "    TargetBody(this::RemoteTypes.Antenna)\n\nThe celestial body the antenna is targetting.\n\n" TargetBody
 export TargetBody
-import ..Antenna_set_TargetBody as var"##491"
+import ..Antenna_set_TargetBody as var"##556"
 TargetBody!(this::RemoteTypes.Antenna, value::SpaceCenter.RemoteTypes.CelestialBody) = begin
-        kerbal(this.conn, var"##491"(this, value))
+        kerbal(this.conn, var"##556"(this, value))
     end
 @doc "    TargetBody!(this::RemoteTypes.Antenna, value::SpaceCenter.RemoteTypes.CelestialBody)\n\nThe celestial body the antenna is targetting.\n\n" TargetBody!
 export TargetBody!
-import ..Antenna_get_TargetGroundStation as var"##492"
+import ..Antenna_get_TargetGroundStation as var"##557"
 TargetGroundStation(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##492"(this))
+        kerbal(this.conn, var"##557"(this))
     end
 @doc "    TargetGroundStation(this::RemoteTypes.Antenna)\n\nThe ground station the antenna is targetting.\n\n" TargetGroundStation
 export TargetGroundStation
-import ..Antenna_set_TargetGroundStation as var"##493"
+import ..Antenna_set_TargetGroundStation as var"##558"
 TargetGroundStation!(this::RemoteTypes.Antenna, value::String) = begin
-        kerbal(this.conn, var"##493"(this, value))
+        kerbal(this.conn, var"##558"(this, value))
     end
 @doc "    TargetGroundStation!(this::RemoteTypes.Antenna, value::String)\n\nThe ground station the antenna is targetting.\n\n" TargetGroundStation!
 export TargetGroundStation!
-import ..Antenna_get_TargetVessel as var"##494"
+import ..Antenna_get_TargetVessel as var"##559"
 TargetVessel(this::RemoteTypes.Antenna) = begin
-        kerbal(this.conn, var"##494"(this))
+        kerbal(this.conn, var"##559"(this))
     end
 @doc "    TargetVessel(this::RemoteTypes.Antenna)\n\nThe vessel the antenna is targetting.\n\n" TargetVessel
 export TargetVessel
-import ..Antenna_set_TargetVessel as var"##495"
+import ..Antenna_set_TargetVessel as var"##560"
 TargetVessel!(this::RemoteTypes.Antenna, value::SpaceCenter.RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##495"(this, value))
+        kerbal(this.conn, var"##560"(this, value))
     end
 @doc "    TargetVessel!(this::RemoteTypes.Antenna, value::SpaceCenter.RemoteTypes.Vessel)\n\nThe vessel the antenna is targetting.\n\n" TargetVessel!
 export TargetVessel!
-import ..Comms_SignalDelayToVessel as var"##496"
+import ..Comms_SignalDelayToVessel as var"##561"
 SignalDelayToVessel(this::RemoteTypes.Comms, other::SpaceCenter.RemoteTypes.Vessel) = begin
-        kerbal(this.conn, var"##496"(this, other))
+        kerbal(this.conn, var"##561"(this, other))
     end
 @doc "    SignalDelayToVessel(this::RemoteTypes.Comms, other::SpaceCenter.RemoteTypes.Vessel)\n\nThe signal delay between the this vessel and another vessel, in seconds.\n\n# Arguments\n- `other::SpaceCenter.RemoteTypes.Vessel`: \n" SignalDelayToVessel
 export SignalDelayToVessel
-import ..Comms_get_Vessel as var"##497"
+import ..Comms_get_Vessel as var"##562"
 Vessel(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##497"(this))
+        kerbal(this.conn, var"##562"(this))
     end
 @doc "    Vessel(this::RemoteTypes.Comms)\n\nGet the vessel.\n\n" Vessel
 export Vessel
-import ..Comms_get_HasLocalControl as var"##498"
+import ..Comms_get_HasLocalControl as var"##563"
 HasLocalControl(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##498"(this))
+        kerbal(this.conn, var"##563"(this))
     end
 @doc "    HasLocalControl(this::RemoteTypes.Comms)\n\nWhether the vessel can be controlled locally.\n\n" HasLocalControl
 export HasLocalControl
-import ..Comms_get_HasFlightComputer as var"##499"
+import ..Comms_get_HasFlightComputer as var"##564"
 HasFlightComputer(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##499"(this))
+        kerbal(this.conn, var"##564"(this))
     end
 @doc "    HasFlightComputer(this::RemoteTypes.Comms)\n\nWhether the vessel has a flight computer on board.\n\n" HasFlightComputer
 export HasFlightComputer
-import ..Comms_get_HasConnection as var"##500"
+import ..Comms_get_HasConnection as var"##565"
 HasConnection(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##500"(this))
+        kerbal(this.conn, var"##565"(this))
     end
 @doc "    HasConnection(this::RemoteTypes.Comms)\n\nWhether the vessel has any connection.\n\n" HasConnection
 export HasConnection
-import ..Comms_get_HasConnectionToGroundStation as var"##501"
+import ..Comms_get_HasConnectionToGroundStation as var"##566"
 HasConnectionToGroundStation(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##501"(this))
+        kerbal(this.conn, var"##566"(this))
     end
 @doc "    HasConnectionToGroundStation(this::RemoteTypes.Comms)\n\nWhether the vessel has a connection to a ground station.\n\n" HasConnectionToGroundStation
 export HasConnectionToGroundStation
-import ..Comms_get_SignalDelay as var"##502"
+import ..Comms_get_SignalDelay as var"##567"
 SignalDelay(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##502"(this))
+        kerbal(this.conn, var"##567"(this))
     end
 @doc "    SignalDelay(this::RemoteTypes.Comms)\n\nThe shortest signal delay to the vessel, in seconds.\n\n" SignalDelay
 export SignalDelay
-import ..Comms_get_SignalDelayToGroundStation as var"##503"
+import ..Comms_get_SignalDelayToGroundStation as var"##568"
 SignalDelayToGroundStation(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##503"(this))
+        kerbal(this.conn, var"##568"(this))
     end
 @doc "    SignalDelayToGroundStation(this::RemoteTypes.Comms)\n\nThe signal delay between the vessel and the closest ground station, in seconds.\n\n" SignalDelayToGroundStation
 export SignalDelayToGroundStation
-import ..Comms_get_Antennas as var"##504"
+import ..Comms_get_Antennas as var"##569"
 Antennas(this::RemoteTypes.Comms) = begin
-        kerbal(this.conn, var"##504"(this))
+        kerbal(this.conn, var"##569"(this))
     end
 @doc "    Antennas(this::RemoteTypes.Comms)\n\nThe antennas for this vessel.\n\n" Antennas
 export Antennas
@@ -17636,427 +17687,427 @@ import ..RemoteTypes
 import ...SpaceCenter
 import ...UI
 import ...UI.ETextAnchor
-import ...UI.EFontStyle
 import ...UI.ETextAlignment
-import ..AddLine as var"##329"
+import ...UI.EFontStyle
+import ..AddLine as var"##389"
 AddLine(conn::KRPCConnection, start::begin
                 Tuple{Float64, Float64, Float64}
             end, kEnd::begin
                 Tuple{Float64, Float64, Float64}
             end, referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame, visible::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(conn, var"##329"(start, kEnd, referenceFrame, visible))
+        kerbal(conn, var"##389"(start, kEnd, referenceFrame, visible))
     end
 @doc "    AddLine(start::begin\n    Tuple{Float64, Float64, Float64}\nend, kEnd::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame, visible::Bool)\n\nDraw a line in the scene.\n\n# Arguments\n- `start::begin\n    Tuple{Float64, Float64, Float64}\nend`: Position of the start of the line.\n- `kEnd::begin\n    Tuple{Float64, Float64, Float64}\nend`: Position of the end of the line.\n- `referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame`: Reference frame that the positions are in.\n- `visible::Bool`: Whether the line is visible.\n" AddLine
 export AddLine
-import ..AddDirection as var"##330"
+import ..AddDirection as var"##390"
 AddDirection(conn::KRPCConnection, direction::begin
                 Tuple{Float64, Float64, Float64}
             end, referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame, length::Float32 = getJuliaValue(this.conn, UInt8[0x00, 0x00, 0x20, 0x41], Float32), visible::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(conn, var"##330"(direction, referenceFrame, length, visible))
+        kerbal(conn, var"##390"(direction, referenceFrame, length, visible))
     end
 @doc "    AddDirection(direction::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame, length::Float32, visible::Bool)\n\nDraw a direction vector in the scene, starting from the origin of the given reference frame.\n\n# Arguments\n- `direction::begin\n    Tuple{Float64, Float64, Float64}\nend`: Direction to draw the line in.\n- `referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame`: Reference frame that the direction is in and defines the start position.\n- `length::Float32`: The length of the line.\n- `visible::Bool`: Whether the line is visible.\n" AddDirection
 export AddDirection
-import ..AddDirectionFromCom as var"##331"
+import ..AddDirectionFromCom as var"##391"
 AddDirectionFromCom(conn::KRPCConnection, direction::begin
                 Tuple{Float64, Float64, Float64}
             end, referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame, length::Float32 = getJuliaValue(this.conn, UInt8[0x00, 0x00, 0x20, 0x41], Float32), visible::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(conn, var"##331"(direction, referenceFrame, length, visible))
+        kerbal(conn, var"##391"(direction, referenceFrame, length, visible))
     end
 @doc "    AddDirectionFromCom(direction::begin\n    Tuple{Float64, Float64, Float64}\nend, referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame, length::Float32, visible::Bool)\n\nDraw a direction vector in the scene, from the center of mass of the active vessel.\n\n# Arguments\n- `direction::begin\n    Tuple{Float64, Float64, Float64}\nend`: Direction to draw the line in.\n- `referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame`: Reference frame that the direction is in.\n- `length::Float32`: The length of the line.\n- `visible::Bool`: Whether the line is visible.\n" AddDirectionFromCom
 export AddDirectionFromCom
-import ..AddPolygon as var"##332"
+import ..AddPolygon as var"##392"
 AddPolygon(conn::KRPCConnection, vertices::begin
                 Array{begin
                         Tuple{Float64, Float64, Float64}
                     end, 1}
             end, referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame, visible::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(conn, var"##332"(vertices, referenceFrame, visible))
+        kerbal(conn, var"##392"(vertices, referenceFrame, visible))
     end
 @doc "    AddPolygon(vertices::begin\n    Array{begin\n            Tuple{Float64, Float64, Float64}\n        end, 1}\nend, referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame, visible::Bool)\n\nDraw a polygon in the scene, defined by a list of vertices.\n\n# Arguments\n- `vertices::begin\n    Array{begin\n            Tuple{Float64, Float64, Float64}\n        end, 1}\nend`: Vertices of the polygon.\n- `referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame`: Reference frame that the vertices are in.\n- `visible::Bool`: Whether the polygon is visible.\n" AddPolygon
 export AddPolygon
-import ..AddText as var"##333"
+import ..AddText as var"##393"
 AddText(conn::KRPCConnection, text::String, referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame, position::begin
                 Tuple{Float64, Float64, Float64}
             end, rotation::begin
                 Tuple{Float64, Float64, Float64, Float64}
             end, visible::Bool = getJuliaValue(this.conn, UInt8[0x01], Bool)) = begin
-        kerbal(conn, var"##333"(text, referenceFrame, position, rotation, visible))
+        kerbal(conn, var"##393"(text, referenceFrame, position, rotation, visible))
     end
 @doc "    AddText(text::String, referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame, position::begin\n    Tuple{Float64, Float64, Float64}\nend, rotation::begin\n    Tuple{Float64, Float64, Float64, Float64}\nend, visible::Bool)\n\nDraw text in the scene.\n\n# Arguments\n- `text::String`: The string to draw.\n- `referenceFrame::SpaceCenter.RemoteTypes.ReferenceFrame`: Reference frame that the text position is in.\n- `position::begin\n    Tuple{Float64, Float64, Float64}\nend`: Position of the text.\n- `rotation::begin\n    Tuple{Float64, Float64, Float64, Float64}\nend`: Rotation of the text, as a quaternion.\n- `visible::Bool`: Whether the text is visible.\n" AddText
 export AddText
-import ..Clear as var"##334"
+import ..Clear as var"##394"
 Clear(conn::KRPCConnection, clientOnly::Bool = getJuliaValue(this.conn, UInt8[0x00], Bool)) = begin
-        kerbal(conn, var"##334"(clientOnly))
+        kerbal(conn, var"##394"(clientOnly))
     end
 @doc "    Clear(clientOnly::Bool)\n\nRemove all objects being drawn.\n\n# Arguments\n- `clientOnly::Bool`: If true, only remove objects created by the calling client.\n" Clear
 export Clear
-import ..Line_Remove as var"##335"
+import ..Line_Remove as var"##395"
 Remove(this::RemoteTypes.Line) = begin
-        kerbal(this.conn, var"##335"(this))
+        kerbal(this.conn, var"##395"(this))
     end
 @doc "    Remove(this::RemoteTypes.Line)\n\nRemove the object.\n\n" Remove
 export Remove
-import ..Line_get_Start as var"##336"
+import ..Line_get_Start as var"##396"
 Start(this::RemoteTypes.Line) = begin
-        kerbal(this.conn, var"##336"(this))
+        kerbal(this.conn, var"##396"(this))
     end
 @doc "    Start(this::RemoteTypes.Line)\n\nStart position of the line.\n\n" Start
 export Start
-import ..Line_set_Start as var"##337"
+import ..Line_set_Start as var"##397"
 Start!(this::RemoteTypes.Line, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##337"(this, value))
+        kerbal(this.conn, var"##397"(this, value))
     end
 @doc "    Start!(this::RemoteTypes.Line, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nStart position of the line.\n\n" Start!
 export Start!
-import ..Line_get_End as var"##338"
+import ..Line_get_End as var"##398"
 End(this::RemoteTypes.Line) = begin
-        kerbal(this.conn, var"##338"(this))
+        kerbal(this.conn, var"##398"(this))
     end
 @doc "    End(this::RemoteTypes.Line)\n\nEnd position of the line.\n\n" End
 export End
-import ..Line_set_End as var"##339"
+import ..Line_set_End as var"##399"
 End!(this::RemoteTypes.Line, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##339"(this, value))
+        kerbal(this.conn, var"##399"(this, value))
     end
 @doc "    End!(this::RemoteTypes.Line, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nEnd position of the line.\n\n" End!
 export End!
-import ..Line_get_Color as var"##340"
+import ..Line_get_Color as var"##400"
 Color(this::RemoteTypes.Line) = begin
-        kerbal(this.conn, var"##340"(this))
+        kerbal(this.conn, var"##400"(this))
     end
 @doc "    Color(this::RemoteTypes.Line)\n\nSet the color\n\n" Color
 export Color
-import ..Line_set_Color as var"##341"
+import ..Line_set_Color as var"##401"
 Color!(this::RemoteTypes.Line, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##341"(this, value))
+        kerbal(this.conn, var"##401"(this, value))
     end
 @doc "    Color!(this::RemoteTypes.Line, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nSet the color\n\n" Color!
 export Color!
-import ..Line_get_Thickness as var"##342"
+import ..Line_get_Thickness as var"##402"
 Thickness(this::RemoteTypes.Line) = begin
-        kerbal(this.conn, var"##342"(this))
+        kerbal(this.conn, var"##402"(this))
     end
 @doc "    Thickness(this::RemoteTypes.Line)\n\nSet the thickness\n\n" Thickness
 export Thickness
-import ..Line_set_Thickness as var"##343"
+import ..Line_set_Thickness as var"##403"
 Thickness!(this::RemoteTypes.Line, value::Float32) = begin
-        kerbal(this.conn, var"##343"(this, value))
+        kerbal(this.conn, var"##403"(this, value))
     end
 @doc "    Thickness!(this::RemoteTypes.Line, value::Float32)\n\nSet the thickness\n\n" Thickness!
 export Thickness!
-import ..Line_get_ReferenceFrame as var"##344"
+import ..Line_get_ReferenceFrame as var"##404"
 ReferenceFrame(this::RemoteTypes.Line) = begin
-        kerbal(this.conn, var"##344"(this))
+        kerbal(this.conn, var"##404"(this))
     end
 @doc "    ReferenceFrame(this::RemoteTypes.Line)\n\nReference frame for the positions of the object.\n\n" ReferenceFrame
 export ReferenceFrame
-import ..Line_set_ReferenceFrame as var"##345"
+import ..Line_set_ReferenceFrame as var"##405"
 ReferenceFrame!(this::RemoteTypes.Line, value::SpaceCenter.RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##345"(this, value))
+        kerbal(this.conn, var"##405"(this, value))
     end
 @doc "    ReferenceFrame!(this::RemoteTypes.Line, value::SpaceCenter.RemoteTypes.ReferenceFrame)\n\nReference frame for the positions of the object.\n\n" ReferenceFrame!
 export ReferenceFrame!
-import ..Line_get_Visible as var"##346"
+import ..Line_get_Visible as var"##406"
 Visible(this::RemoteTypes.Line) = begin
-        kerbal(this.conn, var"##346"(this))
+        kerbal(this.conn, var"##406"(this))
     end
 @doc "    Visible(this::RemoteTypes.Line)\n\nWhether the object is visible.\n\n" Visible
 export Visible
-import ..Line_set_Visible as var"##347"
+import ..Line_set_Visible as var"##407"
 Visible!(this::RemoteTypes.Line, value::Bool) = begin
-        kerbal(this.conn, var"##347"(this, value))
+        kerbal(this.conn, var"##407"(this, value))
     end
 @doc "    Visible!(this::RemoteTypes.Line, value::Bool)\n\nWhether the object is visible.\n\n" Visible!
 export Visible!
-import ..Line_get_Material as var"##348"
+import ..Line_get_Material as var"##408"
 Material(this::RemoteTypes.Line) = begin
-        kerbal(this.conn, var"##348"(this))
+        kerbal(this.conn, var"##408"(this))
     end
 @doc "    Material(this::RemoteTypes.Line)\n\nMaterial used to render the object.\nCreates the material from a shader with the given name.\n\n" Material
 export Material
-import ..Line_set_Material as var"##349"
+import ..Line_set_Material as var"##409"
 Material!(this::RemoteTypes.Line, value::String) = begin
-        kerbal(this.conn, var"##349"(this, value))
+        kerbal(this.conn, var"##409"(this, value))
     end
 @doc "    Material!(this::RemoteTypes.Line, value::String)\n\nMaterial used to render the object.\nCreates the material from a shader with the given name.\n\n" Material!
 export Material!
-import ..Polygon_Remove as var"##350"
+import ..Polygon_Remove as var"##410"
 Remove(this::RemoteTypes.Polygon) = begin
-        kerbal(this.conn, var"##350"(this))
+        kerbal(this.conn, var"##410"(this))
     end
 @doc "    Remove(this::RemoteTypes.Polygon)\n\nRemove the object.\n\n" Remove
 export Remove
-import ..Polygon_get_Vertices as var"##351"
+import ..Polygon_get_Vertices as var"##411"
 Vertices(this::RemoteTypes.Polygon) = begin
-        kerbal(this.conn, var"##351"(this))
+        kerbal(this.conn, var"##411"(this))
     end
 @doc "    Vertices(this::RemoteTypes.Polygon)\n\nVertices for the polygon.\n\n" Vertices
 export Vertices
-import ..Polygon_set_Vertices as var"##352"
+import ..Polygon_set_Vertices as var"##412"
 Vertices!(this::RemoteTypes.Polygon, value::begin
                 Array{begin
                         Tuple{Float64, Float64, Float64}
                     end, 1}
             end) = begin
-        kerbal(this.conn, var"##352"(this, value))
+        kerbal(this.conn, var"##412"(this, value))
     end
 @doc "    Vertices!(this::RemoteTypes.Polygon, value::begin\n    Array{begin\n            Tuple{Float64, Float64, Float64}\n        end, 1}\nend)\n\nVertices for the polygon.\n\n" Vertices!
 export Vertices!
-import ..Polygon_get_Color as var"##353"
+import ..Polygon_get_Color as var"##413"
 Color(this::RemoteTypes.Polygon) = begin
-        kerbal(this.conn, var"##353"(this))
+        kerbal(this.conn, var"##413"(this))
     end
 @doc "    Color(this::RemoteTypes.Polygon)\n\nSet the color\n\n" Color
 export Color
-import ..Polygon_set_Color as var"##354"
+import ..Polygon_set_Color as var"##414"
 Color!(this::RemoteTypes.Polygon, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##354"(this, value))
+        kerbal(this.conn, var"##414"(this, value))
     end
 @doc "    Color!(this::RemoteTypes.Polygon, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nSet the color\n\n" Color!
 export Color!
-import ..Polygon_get_Thickness as var"##355"
+import ..Polygon_get_Thickness as var"##415"
 Thickness(this::RemoteTypes.Polygon) = begin
-        kerbal(this.conn, var"##355"(this))
+        kerbal(this.conn, var"##415"(this))
     end
 @doc "    Thickness(this::RemoteTypes.Polygon)\n\nSet the thickness\n\n" Thickness
 export Thickness
-import ..Polygon_set_Thickness as var"##356"
+import ..Polygon_set_Thickness as var"##416"
 Thickness!(this::RemoteTypes.Polygon, value::Float32) = begin
-        kerbal(this.conn, var"##356"(this, value))
+        kerbal(this.conn, var"##416"(this, value))
     end
 @doc "    Thickness!(this::RemoteTypes.Polygon, value::Float32)\n\nSet the thickness\n\n" Thickness!
 export Thickness!
-import ..Polygon_get_ReferenceFrame as var"##357"
+import ..Polygon_get_ReferenceFrame as var"##417"
 ReferenceFrame(this::RemoteTypes.Polygon) = begin
-        kerbal(this.conn, var"##357"(this))
+        kerbal(this.conn, var"##417"(this))
     end
 @doc "    ReferenceFrame(this::RemoteTypes.Polygon)\n\nReference frame for the positions of the object.\n\n" ReferenceFrame
 export ReferenceFrame
-import ..Polygon_set_ReferenceFrame as var"##358"
+import ..Polygon_set_ReferenceFrame as var"##418"
 ReferenceFrame!(this::RemoteTypes.Polygon, value::SpaceCenter.RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##358"(this, value))
+        kerbal(this.conn, var"##418"(this, value))
     end
 @doc "    ReferenceFrame!(this::RemoteTypes.Polygon, value::SpaceCenter.RemoteTypes.ReferenceFrame)\n\nReference frame for the positions of the object.\n\n" ReferenceFrame!
 export ReferenceFrame!
-import ..Polygon_get_Visible as var"##359"
+import ..Polygon_get_Visible as var"##419"
 Visible(this::RemoteTypes.Polygon) = begin
-        kerbal(this.conn, var"##359"(this))
+        kerbal(this.conn, var"##419"(this))
     end
 @doc "    Visible(this::RemoteTypes.Polygon)\n\nWhether the object is visible.\n\n" Visible
 export Visible
-import ..Polygon_set_Visible as var"##360"
+import ..Polygon_set_Visible as var"##420"
 Visible!(this::RemoteTypes.Polygon, value::Bool) = begin
-        kerbal(this.conn, var"##360"(this, value))
+        kerbal(this.conn, var"##420"(this, value))
     end
 @doc "    Visible!(this::RemoteTypes.Polygon, value::Bool)\n\nWhether the object is visible.\n\n" Visible!
 export Visible!
-import ..Polygon_get_Material as var"##361"
+import ..Polygon_get_Material as var"##421"
 Material(this::RemoteTypes.Polygon) = begin
-        kerbal(this.conn, var"##361"(this))
+        kerbal(this.conn, var"##421"(this))
     end
 @doc "    Material(this::RemoteTypes.Polygon)\n\nMaterial used to render the object.\nCreates the material from a shader with the given name.\n\n" Material
 export Material
-import ..Polygon_set_Material as var"##362"
+import ..Polygon_set_Material as var"##422"
 Material!(this::RemoteTypes.Polygon, value::String) = begin
-        kerbal(this.conn, var"##362"(this, value))
+        kerbal(this.conn, var"##422"(this, value))
     end
 @doc "    Material!(this::RemoteTypes.Polygon, value::String)\n\nMaterial used to render the object.\nCreates the material from a shader with the given name.\n\n" Material!
 export Material!
-import ..Text_static_AvailableFonts as var"##363"
+import ..Text_static_AvailableFonts as var"##423"
 AvailableFonts(conn::KRPCConnection) = begin
-        kerbal(conn, var"##363"())
+        kerbal(conn, var"##423"())
     end
 @doc "    AvailableFonts()\n\nA list of all available fonts.\n\n" AvailableFonts
 export AvailableFonts
-import ..Text_Remove as var"##364"
+import ..Text_Remove as var"##424"
 Remove(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##364"(this))
+        kerbal(this.conn, var"##424"(this))
     end
 @doc "    Remove(this::RemoteTypes.Text)\n\nRemove the object.\n\n" Remove
 export Remove
-import ..Text_get_Position as var"##365"
+import ..Text_get_Position as var"##425"
 Position(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##365"(this))
+        kerbal(this.conn, var"##425"(this))
     end
 @doc "    Position(this::RemoteTypes.Text)\n\nPosition of the text.\n\n" Position
 export Position
-import ..Text_set_Position as var"##366"
+import ..Text_set_Position as var"##426"
 Position!(this::RemoteTypes.Text, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##366"(this, value))
+        kerbal(this.conn, var"##426"(this, value))
     end
 @doc "    Position!(this::RemoteTypes.Text, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nPosition of the text.\n\n" Position!
 export Position!
-import ..Text_get_Rotation as var"##367"
+import ..Text_get_Rotation as var"##427"
 Rotation(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##367"(this))
+        kerbal(this.conn, var"##427"(this))
     end
 @doc "    Rotation(this::RemoteTypes.Text)\n\nRotation of the text as a quaternion.\n\n" Rotation
 export Rotation
-import ..Text_set_Rotation as var"##368"
+import ..Text_set_Rotation as var"##428"
 Rotation!(this::RemoteTypes.Text, value::begin
                 Tuple{Float64, Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##368"(this, value))
+        kerbal(this.conn, var"##428"(this, value))
     end
 @doc "    Rotation!(this::RemoteTypes.Text, value::begin\n    Tuple{Float64, Float64, Float64, Float64}\nend)\n\nRotation of the text as a quaternion.\n\n" Rotation!
 export Rotation!
-import ..Text_get_Content as var"##369"
+import ..Text_get_Content as var"##429"
 Content(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##369"(this))
+        kerbal(this.conn, var"##429"(this))
     end
 @doc "    Content(this::RemoteTypes.Text)\n\nThe text string\n\n" Content
 export Content
-import ..Text_set_Content as var"##370"
+import ..Text_set_Content as var"##430"
 Content!(this::RemoteTypes.Text, value::String) = begin
-        kerbal(this.conn, var"##370"(this, value))
+        kerbal(this.conn, var"##430"(this, value))
     end
 @doc "    Content!(this::RemoteTypes.Text, value::String)\n\nThe text string\n\n" Content!
 export Content!
-import ..Text_get_Font as var"##371"
+import ..Text_get_Font as var"##431"
 Font(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##371"(this))
+        kerbal(this.conn, var"##431"(this))
     end
 @doc "    Font(this::RemoteTypes.Text)\n\nName of the font\n\n" Font
 export Font
-import ..Text_set_Font as var"##372"
+import ..Text_set_Font as var"##432"
 Font!(this::RemoteTypes.Text, value::String) = begin
-        kerbal(this.conn, var"##372"(this, value))
+        kerbal(this.conn, var"##432"(this, value))
     end
 @doc "    Font!(this::RemoteTypes.Text, value::String)\n\nName of the font\n\n" Font!
 export Font!
-import ..Text_get_Size as var"##373"
+import ..Text_get_Size as var"##433"
 Size(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##373"(this))
+        kerbal(this.conn, var"##433"(this))
     end
 @doc "    Size(this::RemoteTypes.Text)\n\nFont size.\n\n" Size
 export Size
-import ..Text_set_Size as var"##374"
+import ..Text_set_Size as var"##434"
 Size!(this::RemoteTypes.Text, value::Int32) = begin
-        kerbal(this.conn, var"##374"(this, value))
+        kerbal(this.conn, var"##434"(this, value))
     end
 @doc "    Size!(this::RemoteTypes.Text, value::Int32)\n\nFont size.\n\n" Size!
 export Size!
-import ..Text_get_CharacterSize as var"##375"
+import ..Text_get_CharacterSize as var"##435"
 CharacterSize(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##375"(this))
+        kerbal(this.conn, var"##435"(this))
     end
 @doc "    CharacterSize(this::RemoteTypes.Text)\n\nCharacter size.\n\n" CharacterSize
 export CharacterSize
-import ..Text_set_CharacterSize as var"##376"
+import ..Text_set_CharacterSize as var"##436"
 CharacterSize!(this::RemoteTypes.Text, value::Float32) = begin
-        kerbal(this.conn, var"##376"(this, value))
+        kerbal(this.conn, var"##436"(this, value))
     end
 @doc "    CharacterSize!(this::RemoteTypes.Text, value::Float32)\n\nCharacter size.\n\n" CharacterSize!
 export CharacterSize!
-import ..Text_get_Style as var"##377"
+import ..Text_get_Style as var"##437"
 Style(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##377"(this))
+        kerbal(this.conn, var"##437"(this))
     end
 @doc "    Style(this::RemoteTypes.Text)\n\nFont style.\n\n" Style
 export Style
-import ..Text_set_Style as var"##378"
+import ..Text_set_Style as var"##438"
 Style!(this::RemoteTypes.Text, value::UI.EFontStyle) = begin
-        kerbal(this.conn, var"##378"(this, value))
+        kerbal(this.conn, var"##438"(this, value))
     end
 @doc "    Style!(this::RemoteTypes.Text, value::UI.EFontStyle)\n\nFont style.\n\n" Style!
 export Style!
-import ..Text_get_Alignment as var"##379"
+import ..Text_get_Alignment as var"##439"
 Alignment(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##379"(this))
+        kerbal(this.conn, var"##439"(this))
     end
 @doc "    Alignment(this::RemoteTypes.Text)\n\nAlignment.\n\n" Alignment
 export Alignment
-import ..Text_set_Alignment as var"##380"
+import ..Text_set_Alignment as var"##440"
 Alignment!(this::RemoteTypes.Text, value::UI.ETextAlignment) = begin
-        kerbal(this.conn, var"##380"(this, value))
+        kerbal(this.conn, var"##440"(this, value))
     end
 @doc "    Alignment!(this::RemoteTypes.Text, value::UI.ETextAlignment)\n\nAlignment.\n\n" Alignment!
 export Alignment!
-import ..Text_get_LineSpacing as var"##381"
+import ..Text_get_LineSpacing as var"##441"
 LineSpacing(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##381"(this))
+        kerbal(this.conn, var"##441"(this))
     end
 @doc "    LineSpacing(this::RemoteTypes.Text)\n\nLine spacing.\n\n" LineSpacing
 export LineSpacing
-import ..Text_set_LineSpacing as var"##382"
+import ..Text_set_LineSpacing as var"##442"
 LineSpacing!(this::RemoteTypes.Text, value::Float32) = begin
-        kerbal(this.conn, var"##382"(this, value))
+        kerbal(this.conn, var"##442"(this, value))
     end
 @doc "    LineSpacing!(this::RemoteTypes.Text, value::Float32)\n\nLine spacing.\n\n" LineSpacing!
 export LineSpacing!
-import ..Text_get_Anchor as var"##383"
+import ..Text_get_Anchor as var"##443"
 Anchor(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##383"(this))
+        kerbal(this.conn, var"##443"(this))
     end
 @doc "    Anchor(this::RemoteTypes.Text)\n\nAnchor.\n\n" Anchor
 export Anchor
-import ..Text_set_Anchor as var"##384"
+import ..Text_set_Anchor as var"##444"
 Anchor!(this::RemoteTypes.Text, value::UI.ETextAnchor) = begin
-        kerbal(this.conn, var"##384"(this, value))
+        kerbal(this.conn, var"##444"(this, value))
     end
 @doc "    Anchor!(this::RemoteTypes.Text, value::UI.ETextAnchor)\n\nAnchor.\n\n" Anchor!
 export Anchor!
-import ..Text_get_Color as var"##385"
+import ..Text_get_Color as var"##445"
 Color(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##385"(this))
+        kerbal(this.conn, var"##445"(this))
     end
 @doc "    Color(this::RemoteTypes.Text)\n\nSet the color\n\n" Color
 export Color
-import ..Text_set_Color as var"##386"
+import ..Text_set_Color as var"##446"
 Color!(this::RemoteTypes.Text, value::begin
                 Tuple{Float64, Float64, Float64}
             end) = begin
-        kerbal(this.conn, var"##386"(this, value))
+        kerbal(this.conn, var"##446"(this, value))
     end
 @doc "    Color!(this::RemoteTypes.Text, value::begin\n    Tuple{Float64, Float64, Float64}\nend)\n\nSet the color\n\n" Color!
 export Color!
-import ..Text_get_ReferenceFrame as var"##387"
+import ..Text_get_ReferenceFrame as var"##447"
 ReferenceFrame(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##387"(this))
+        kerbal(this.conn, var"##447"(this))
     end
 @doc "    ReferenceFrame(this::RemoteTypes.Text)\n\nReference frame for the positions of the object.\n\n" ReferenceFrame
 export ReferenceFrame
-import ..Text_set_ReferenceFrame as var"##388"
+import ..Text_set_ReferenceFrame as var"##448"
 ReferenceFrame!(this::RemoteTypes.Text, value::SpaceCenter.RemoteTypes.ReferenceFrame) = begin
-        kerbal(this.conn, var"##388"(this, value))
+        kerbal(this.conn, var"##448"(this, value))
     end
 @doc "    ReferenceFrame!(this::RemoteTypes.Text, value::SpaceCenter.RemoteTypes.ReferenceFrame)\n\nReference frame for the positions of the object.\n\n" ReferenceFrame!
 export ReferenceFrame!
-import ..Text_get_Visible as var"##389"
+import ..Text_get_Visible as var"##449"
 Visible(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##389"(this))
+        kerbal(this.conn, var"##449"(this))
     end
 @doc "    Visible(this::RemoteTypes.Text)\n\nWhether the object is visible.\n\n" Visible
 export Visible
-import ..Text_set_Visible as var"##390"
+import ..Text_set_Visible as var"##450"
 Visible!(this::RemoteTypes.Text, value::Bool) = begin
-        kerbal(this.conn, var"##390"(this, value))
+        kerbal(this.conn, var"##450"(this, value))
     end
 @doc "    Visible!(this::RemoteTypes.Text, value::Bool)\n\nWhether the object is visible.\n\n" Visible!
 export Visible!
-import ..Text_get_Material as var"##391"
+import ..Text_get_Material as var"##451"
 Material(this::RemoteTypes.Text) = begin
-        kerbal(this.conn, var"##391"(this))
+        kerbal(this.conn, var"##451"(this))
     end
 @doc "    Material(this::RemoteTypes.Text)\n\nMaterial used to render the object.\nCreates the material from a shader with the given name.\n\n" Material
 export Material
-import ..Text_set_Material as var"##392"
+import ..Text_set_Material as var"##452"
 Material!(this::RemoteTypes.Text, value::String) = begin
-        kerbal(this.conn, var"##392"(this, value))
+        kerbal(this.conn, var"##452"(this, value))
     end
 @doc "    Material!(this::RemoteTypes.Text, value::String)\n\nMaterial used to render the object.\nCreates the material from a shader with the given name.\n\n" Material!
 export Material!
 end
 end
-version = "0.4.8"
+version = "0.4.9"
 end

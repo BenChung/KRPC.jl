@@ -40,6 +40,8 @@ function sanitizeName(kName::Symbol)
         return :kFunction
     elseif kName == :end
         return :kEnd
+    elseif kName == :module 
+        return :kModule
     end
     return kName
 end

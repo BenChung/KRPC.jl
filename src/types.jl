@@ -95,7 +95,7 @@ function getWireValue(arg::kRPCTypes.kStream)
 end
 
 function getJuliaValue(conn, value::krpc.schema.Response, rtype::Type)
-    return getJuliaValue(value.return_value, rtype)
+    return getJuliaValue(conn, value.return_value, rtype)
 end
 function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{T}) where {T<:kRPCTypes.Class}
     return rtype(conn, ProtoBuf.read_varint(PipeBuffer(value), Int64))

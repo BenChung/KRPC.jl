@@ -93,7 +93,26 @@ function kerbal_connect(client_name::String, host::String="localhost", port::Int
     return conn
 end
 
+struct KRPCError <: Exception
+    service::String
+    name::String
+    description::String
+    stack_trace::String
+    KRPCError(err::krpc.schema.Error) = new(err.service, err.name, err.description, err.stack_trace)
+end
+function Base.showerror(io::IO, err::KRPCError) 
+    println(io, "The KRPC server returned an error.")
+    println(io, "Service: $(err.service)")
+    println(io, "Description:")
+    println(io, "===============")
+    println(io, unescape_string(err.description))
+    println(io, "")
+    println(io, "Server internal stack trace:")
+    println(io, "===============")
+    println(io, "$(err.name)")
+    println(io, unescape_string(err.stack_trace))
 
+end
 
 """
     kerbal_connect(f::Function, client_name::String, host::String="localhost", port::Int64=50000, stream_port::Int64=50001)
@@ -125,11 +144,11 @@ end
 
 function handle_potential_error(result) 
     if ProtoBuf.hasproperty(result, :error)
-        throw(kRPC.make_error(result.error))
+        throw(KRPCError(result.error))
+    end
+    for result in result.results
+        if ProtoBuf.hasproperty(result, :error)
+            throw(KRPCError(result.error))
+        end
     end
 end
-
-function make_error(err::krpc.schema.Error)
-    return "A remote RPC error occured.\nThe error occured in $(err.service).$(err.name):\n$(err.description)\n$(err.stack_trace)"
-end
-

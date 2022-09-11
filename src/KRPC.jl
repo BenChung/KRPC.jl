@@ -43,6 +43,7 @@ include("streams.jl")
 include("codegen.jl")
 if isfile("generated.jl")
 	include("generated.jl")
+	include("aftertypes.jl")
 end
 
 struct AddStream_Phantom <: Request{:KRPC, :AddStream, kRPCTypes.kStream}

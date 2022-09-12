@@ -41,7 +41,7 @@ include("types.jl")
 include("message.jl")
 include("streams.jl")
 include("codegen.jl")
-if isfile("generated.jl")
+@static if isfile(joinpath(@__DIR__, ("generated.jl")))
 	include("generated.jl")
 end
 

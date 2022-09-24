@@ -2,6 +2,7 @@ module KRPC
 using Sockets
 using ProtoBuf
 using LightXML
+using UUIDs
 import MacroTools
 
 include("proto/krpc.jl")
@@ -16,6 +17,7 @@ struct Listener{T}
 	connection::T
 	current_value
 	channel::Channel
+    uuid::UUID
 end
 
 """
@@ -27,7 +29,8 @@ mutable struct KRPCConnection
     identifier::Array{UInt8, 1}
 
     str_listener::Union{Nothing, Task}
-    listeners::Dict{UInt64, Listener}
+    one_to_many::Dict{UInt64, Array{UUID, 1}}
+    listeners::Dict{UUID, Listener}
     active::Channel
 end
 

@@ -146,6 +146,10 @@ function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{Set{T}}) where 
     return Set{T}(getJuliaValue(conn,item,T) for item in res.items)
 end
 
+function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{E}) where {E <: kRPCTypes.Enum}
+    return E(ProtoBuf.read_varint(PipeBuffer(value), Int32))
+end
+
 function getJuliaValue(conn, value::Array{UInt8, 1}, rtype::Type{Union{T, Nothing}}) where {T<:kRPCTypes.Class}
     res = ProtoBuf.read_varint(PipeBuffer(value), Int64)
     if res == 0

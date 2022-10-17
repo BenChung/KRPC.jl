@@ -23,8 +23,16 @@ function add_stream(conn::KRPCConnection, calls::T) where {K, T<:Tuple{Vararg{RT
     default_value = Any[Nothing() for i=1:K]
     out = Channel{Vector}(0)
     bind(out, conn.str_listener)
-    listener = Listener(request_map, conn, default_value, out)
-    setindex!.((conn.listeners, ), (listener, ), getproperty.(handles, :id))
+    uuid = uuid4()
+    listener = Listener(request_map, conn, default_value, out, uuid)
+    conn.listeners[uuid] = listener
+    for id in getproperty.(handles, :id)
+        if id in keys(conn.one_to_many)
+            push!(conn.one_to_many[id], uuid)
+        else
+            conn.one_to_many[id] = [uuid]
+        end
+    end
     return listener
 end
 
@@ -71,9 +79,15 @@ function Base.close(channel::Listener)
         if !(id in keys(channel.streams))
             error("Attempted to remove unbound stream. Check if the stream has already been removed.")
         end
-        delete!(channel.connection.listeners, id)
-        push!(req, RemoveStream_Phantom(id))
+        lmap = channel.connection.one_to_many[id]
+        index = findfirst(x -> x==channel.uuid, lmap)
+        deleteat!(lmap, index)
+        if length(lmap) == 0
+            delete!(channel.connection.one_to_many, id)
+            push!(req, RemoveStream_Phantom(id))
+        end
     end
+    delete!(channel.connection.listeners, channel.uuid)
     kerbal(channel.connection, (req..., ))
 end
 
@@ -117,13 +131,15 @@ function stream_listener(conn::KRPCConnection)
         while (!isready(conn.active) || take!(conn.active))
             updated = Set{Listener}()
             data = readproto(RecvRawProto(conn.stream_conn), krpc.schema.StreamUpdate())
-            for result in data.results 
-                if !(result.id in keys(conn.listeners))
+            for result in data.results
+                if !(result.id in keys(conn.one_to_many))
                     continue
                 end
-                listener = conn.listeners[result.id]
-                update_value(listener, result.id, result.result.value)
-                push!(updated, listener)
+                for uuid in conn.one_to_many[result.id]
+                    listener = conn.listeners[uuid]
+                    update_value(listener, result.id, result.result.value)
+                    push!(updated, listener)
+                end
             end
             send_current_values.(updated)
         end

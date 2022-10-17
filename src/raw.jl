@@ -28,6 +28,7 @@ function RecvRawProto(inp::IO)
 end
 
 function SendBiMessage(conn::KRPCConnection, req::KRPC.krpc.schema.Request)
+    Base.acquire(conn.semaphore)
     iob = PipeBuffer()
     SendRawProto(conn.conn, req)
     res = readproto(RecvRawProto(conn.conn), krpc.schema.Response())
@@ -35,6 +36,7 @@ function SendBiMessage(conn::KRPCConnection, req::KRPC.krpc.schema.Request)
     if hasproperty(res, :error)
         throw(make_error(res.error))
     end
+    Base.release(conn.semaphore)
     return res
 end
 

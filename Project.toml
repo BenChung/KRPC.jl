@@ -1,7 +1,7 @@
 name = "KRPC"
 uuid = "7a052949-c101-4ca3-9a7e-43a2532b2fa8"
 authors = ["Ben Chung <ckfinite@gmail.com> and contributors"]
-version = "0.3.0"
+version = "0.4.0"
 
 [deps]
 LightXML = "9c8b4983-aa76-5018-a973-4c85ecc9e179"

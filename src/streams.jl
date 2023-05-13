@@ -89,6 +89,7 @@ function Base.close(channel::Listener)
     end
     delete!(channel.connection.listeners, channel.uuid)
     kerbal(channel.connection, (req..., ))
+    close(channel.channel)
 end
 
 function update_value(listener::Listener, stream::UInt64, value)

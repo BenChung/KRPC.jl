@@ -31,7 +31,6 @@ function SendBiMessage(conn::KRPCConnection, req::KRPC.krpc.schema.Request)
     Base.acquire(conn.semaphore)
     res = nothing
     try
-        iob = PipeBuffer()
         SendRawProto(conn.conn, req)
         res = readproto(RecvRawProto(conn.conn), krpc.schema.Response())
 

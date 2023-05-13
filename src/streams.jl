@@ -76,7 +76,7 @@ Base.iterate(channel::Listener, state) = iterate(channel.channel, state)
 function Base.close(channel::Listener)
     req = Request[]
     for id in keys(channel.streams)
-        if !(id in keys(channel.streams))
+        if !(id in keys(channel.connection.one_to_many))
             error("Attempted to remove unbound stream. Check if the stream has already been removed.")
         end
         lmap = channel.connection.one_to_many[id]

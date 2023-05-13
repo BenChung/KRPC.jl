@@ -29,14 +29,18 @@ end
 
 function SendBiMessage(conn::KRPCConnection, req::KRPC.krpc.schema.Request)
     Base.acquire(conn.semaphore)
-    iob = PipeBuffer()
-    SendRawProto(conn.conn, req)
-    res = readproto(RecvRawProto(conn.conn), krpc.schema.Response())
+    res = nothing
+    try
+        iob = PipeBuffer()
+        SendRawProto(conn.conn, req)
+        res = readproto(RecvRawProto(conn.conn), krpc.schema.Response())
 
-    if hasproperty(res, :error)
-        throw(make_error(res.error))
+        if hasproperty(res, :error)
+            throw(make_error(res.error))
+        end
+    finally
+        Base.release(conn.semaphore)
     end
-    Base.release(conn.semaphore)
     return res
 end
 

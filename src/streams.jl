@@ -74,6 +74,8 @@ Base.iterate(channel::Listener) = iterate(channel.channel)
 Base.iterate(channel::Listener, state) = iterate(channel.channel, state)
 
 function Base.close(channel::Listener)
+    # id = unique value given per variable source.
+    # uuid = a unique id given per listener. (it can listen to multiple sources)
     req = Request[]
     for id in keys(channel.streams)
         if !(id in keys(channel.connection.one_to_many))
@@ -81,16 +83,23 @@ function Base.close(channel::Listener)
             @warn "Attempted to remove unbound stream $id. Check if the stream has already been removed."
             continue
         end
+        # lmap = a registration of "streams" sharing this source.
         lmap = channel.connection.one_to_many[id]
+        # find the UUID from this registry and then remove it.
         index = findfirst(x -> x==channel.uuid, lmap)
         deleteat!(lmap, index)
+        # if the registry is empty, no one is using the stream anymore.
         if length(lmap) == 0
+            # so it's safe to unregister this stream.
             delete!(channel.connection.one_to_many, id)
             push!(req, RemoveStream_Phantom(id))
         end
     end
+    # remove the UUID from the listener list, as it's closed.
     delete!(channel.connection.listeners, channel.uuid)
+    # actually unregister the stream.
     kerbal(channel.connection, (req..., ))
+    # close the Julia channel as well.
     close(channel.channel)
 end
 

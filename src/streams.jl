@@ -77,7 +77,9 @@ function Base.close(channel::Listener)
     req = Request[]
     for id in keys(channel.streams)
         if !(id in keys(channel.connection.one_to_many))
-            error("Attempted to remove unbound stream. Check if the stream has already been removed.")
+            # there is no such ID to delete here. this shouldn't happen, but it's not critical.
+            @warn "Attempted to remove unbound stream $id. Check if the stream has already been removed."
+            continue
         end
         lmap = channel.connection.one_to_many[id]
         index = findfirst(x -> x==channel.uuid, lmap)

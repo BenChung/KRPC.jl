@@ -69,7 +69,7 @@ end
 
 function getWireValue(arg::Tuple)
     opb = PipeBuffer()
-    ProtoBuf.writeproto(opb, krpc.schema.Tuple_(items=convert(Array{Array{UInt8,1},1}, collect(map(getWireValue, arg)))))
+    ProtoBuf.writeproto(opb, krpc.schema.Tuple(items=convert(Array{Array{UInt8,1},1}, collect(map(getWireValue, arg)))))
     return readavailable(opb)
 end
 

@@ -77,7 +77,7 @@ function kerbal_connect(client_name::String, host::String="localhost", port::Int
     resp = connect_or_error(conn, krpc.schema.ConnectionRequest(client_name=client_name,_type=krpc.schema.ConnectionRequest_Type.RPC))
     connect_or_error(str_conn, krpc.schema.ConnectionRequest(client_identifier=resp.client_identifier,_type=krpc.schema.ConnectionRequest_Type.STREAM))
 
-    active = Channel(0)
+    active = Channel{Bool}(0)
     conn = KRPCConnection(conn, str_conn, resp.client_identifier, active)
     conn.str_listener = @async stream_listener(conn)
     bind(active, conn.str_listener)

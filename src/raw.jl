@@ -35,7 +35,7 @@ function SendBiMessage(conn::KRPCConnection, req::KRPC.krpc.schema.Request)
         res = readproto(RecvRawProto(conn.conn), krpc.schema.Response())
 
         if hasproperty(res, :error)
-            throw(make_error(res.error))
+            throw(res.error)
         end
     finally
         Base.release(conn.semaphore)
@@ -47,10 +47,10 @@ function GetInfo(conn::KRPCConnection)
     rv = SendBiMessage(conn, 
         krpc.schema.Request(calls=[krpc.schema.ProcedureCall(service="KRPC", procedure="GetStatus")]))
     if hasfield(rv, :error)
-        throw(make_error(rv.error))
+        throw(rv.error)
     end
     if hasfield(rv.results[1], :error)
-        throw(make_error(rv.results[1].error))
+        throw(rv.results[1].error)
     end
     iob = PipeBuffer()
     write(iob, rv.results[1].value)
@@ -61,10 +61,10 @@ function GetServices(conn::KRPCConnection)
     rv = SendBiMessage(conn, 
         krpc.schema.Request(calls=[krpc.schema.ProcedureCall(service="KRPC", procedure="GetServices")]))
     if hasproperty(rv, :error)
-        throw(make_error(rv.error))
+        throw(rv.error)
     end
     if hasproperty(rv.results[1], :error)
-        throw(make_error(rv.results[1].error))
+        throw(rv.results[1].error)
     end
     iob = PipeBuffer()
     write(iob, rv.results[1].value)

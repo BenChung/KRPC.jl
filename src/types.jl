@@ -20,7 +20,13 @@ end
 
 #type helper functions
 
-function getWireValue(arg::Union{Int32,Int64,Float32,Float64,UInt32,UInt64})
+function getWireValue(arg::Integer)
+    opb = PipeBuffer()
+    ProtoBuf.write_varint(opb, arg)
+    return readavailable(opb)
+end
+
+function getWireValue(arg::AbstractFloat)
     opb = PipeBuffer()
     ProtoBuf.write_fixed(opb, arg)
     return readavailable(opb)

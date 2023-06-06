@@ -213,7 +213,7 @@ end
 
 function make_param(argname, param, ctx)
     if !isnothing(param.default_value) && length(param.default_value) > 0
-        return Expr(:kw, Expr(:(::), argname, kRPCToJuliaType(param._type, ctx)), :(getJuliaValue(this.conn, $(param.default_value), $(kRPCToJuliaType(param._type, ctx)))))
+        return Expr(:kw, Expr(:(::), argname, kRPCToJuliaType(param._type, ctx)), :(getJuliaValue(conn.conn, $(param.default_value), $(kRPCToJuliaType(param._type, ctx)))))
     else
         return :($(argname)::$(kRPCToJuliaType(param._type, ctx)))
     end
@@ -350,6 +350,7 @@ function generateHelpers(info::krpc.schema.Services, status::krpc.schema.Status)
             import ....kerbal;
             import ....KRPCConnection;
             import ....Request;
+            import ....getJuliaValue;
             import ..RemoteTypes; 
             $((:(import ...($(Symbol(req)))) for req in ctx.needed)...);
             $((:(import ...($(enum[1])).($(enum[2]))) for enum in ctx.neededEnums)...); 

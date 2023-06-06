@@ -18,8 +18,8 @@ mutable struct ConnectionRequest <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -68,8 +68,8 @@ mutable struct ConnectionResponse <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -111,8 +111,8 @@ mutable struct Argument <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -152,8 +152,8 @@ mutable struct ProcedureCall <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -200,8 +200,8 @@ mutable struct Request <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -239,8 +239,8 @@ mutable struct Error <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -284,8 +284,8 @@ mutable struct ProcedureResult <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -325,8 +325,8 @@ mutable struct Response <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -366,8 +366,8 @@ mutable struct StreamResult <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -407,8 +407,8 @@ mutable struct StreamUpdate <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -446,8 +446,8 @@ mutable struct Class <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -487,8 +487,8 @@ mutable struct EnumerationValue <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -530,8 +530,8 @@ mutable struct Enumeration <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -573,8 +573,8 @@ mutable struct Exception <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -638,8 +638,8 @@ mutable struct _Type <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -683,8 +683,8 @@ mutable struct Parameter <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -735,8 +735,8 @@ mutable struct Procedure <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -786,8 +786,8 @@ mutable struct Service <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -835,8 +835,8 @@ mutable struct Services <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -874,8 +874,8 @@ mutable struct Tuple <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -913,8 +913,8 @@ mutable struct List <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -952,8 +952,8 @@ mutable struct _Set <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -991,8 +991,8 @@ mutable struct DictionaryEntry <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -1032,8 +1032,8 @@ mutable struct Dictionary <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -1071,8 +1071,8 @@ mutable struct Stream <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -1110,8 +1110,8 @@ mutable struct Event <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -1149,8 +1149,8 @@ mutable struct Status <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -1224,8 +1224,8 @@ mutable struct MultiplexedRequest <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end
@@ -1265,8 +1265,8 @@ mutable struct MultiplexedResponse <: ProtoType
         symdict = obj.__protobuf_jl_internal_meta.symdict
         for nv in kwargs
             fldname, fldval = nv
-            fldtype = symdict[fldname].jtyp
             (fldname in keys(symdict)) || error(string(typeof(obj), " has no field with name ", fldname))
+            fldtype = symdict[fldname].jtyp
             if fldval !== nothing
                 values[fldname] = isa(fldval, fldtype) ? fldval : convert(fldtype, fldval)
             end

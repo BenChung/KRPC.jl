@@ -350,6 +350,7 @@ function generateHelpers(info::krpc.schema.Services, status::krpc.schema.Status)
             import ....kerbal;
             import ....KRPCConnection;
             import ....Request;
+            import ....getJuliaValue;
             import ..RemoteTypes; 
             $((:(import ...($(Symbol(req)))) for req in ctx.needed)...);
             $((:(import ...($(enum[1])).($(enum[2]))) for enum in ctx.neededEnums)...); 

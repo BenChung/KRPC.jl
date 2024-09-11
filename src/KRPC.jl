@@ -31,10 +31,10 @@ mutable struct KRPCConnection
     str_listener::Union{Nothing, Task}
     one_to_many::Dict{UInt64, Array{UUID, 1}}
     listeners::Dict{UUID, Listener}
-    active::Channel
+    active::Channel{Bool}
     semaphore::Base.Semaphore
 
-    function KRPCConnection(conn::TCPSocket, stream_conn::TCPSocket, identifier::Array{UInt8, 1}, active::Channel)
+    function KRPCConnection(conn::TCPSocket, stream_conn::TCPSocket, identifier::Array{UInt8, 1}, active::Channel{Bool})
         new(
             conn, stream_conn, identifier,
             Nothing(), Dict{UInt8, Array{UUID, 1}}(), Dict{UUID, Listener}(), active, Base.Semaphore(1)
